@@ -7,4 +7,4 @@ We're using webpack: https://github.com/webpack/webpack
 * `sudo npm install`
 * `sudo npm start`
 * `sudo npm build` (not working yet)
-* Open: http://localhost:8080/webpack-dev-server/bundle
+* Open: http://localhost:8080/

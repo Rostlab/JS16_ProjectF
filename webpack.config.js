@@ -1,4 +1,5 @@
 var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   devtool: 'eval-source-map',
@@ -31,14 +32,27 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: "style!css?modules"
+        loader: "style!css?modules!postcss"
       }
     ]
   },
+
+  postcss: [
+      require('autoprefixer')
+  ],
+
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: __dirname + "/app/index.tmpl.html"
+    }),
+    new webpack.HotModuleReplacementPlugin()
+  ],
+
   devServer: {
     contentBase: "./public",
     colors: true,
     historyApiFallback: true,
-    inline: true
+    inline: true,
+    hot: true
   }
 };
