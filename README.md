@@ -6,5 +6,5 @@ We're using webpack: https://github.com/webpack/webpack
 ## Documentation
 * `sudo npm install`
 * `sudo npm start`
-* `sudo npm build` (not working yet)
+* `sudo npm run-script build`
 * Open: http://localhost:8080/
