@@ -1,0 +1,44 @@
+var webpack = require('webpack');
+
+module.exports = {
+  devtool: 'eval-source-map',
+
+  entry:  __dirname + "/app/main.jsx",
+  output: {
+    path: __dirname + "/build",
+    filename: "bundle.js"
+  },
+
+  module: {
+    preLoaders: [
+      {test: /\.jsx$/, loader: "eslint-loader", exclude: /node_modules/}
+    ],
+    loaders: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel',
+        query: {
+          presets: ['es2015','react']
+        }
+      },{
+        test: /\.jsx$/,
+        exclude: /node_modules/,
+        loader: 'babel',
+        query: {
+          presets: ['es2015','react']
+        }
+      },
+      {
+        test: /\.css$/,
+        loader: "style!css"
+      }
+    ]
+  },
+  devServer: {
+    contentBase: "./public",
+    colors: true,
+    historyApiFallback: true,
+    inline: true
+  }
+};

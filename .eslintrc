@@ -1,0 +1,17 @@
+{
+  "plugins": [
+    "react"
+  ],
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module",
+      "ecmaFeatures": {
+          "impliedStrict": true,
+          "jsx": true
+      },
+  },
+  "rules": {
+      "semi": 2
+  }
+}
