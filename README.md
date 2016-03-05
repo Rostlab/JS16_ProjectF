@@ -4,7 +4,7 @@ In this project we will build a web portal for our GoT data analysis and visuali
 # Developer information
 We're using webpack: https://github.com/webpack/webpack
 ## Documentation
-* `sudo npm install`
-* `sudo npm start`
-* `sudo npm run-script build`
+* `npm install`
+* `npm start`
+* `npm run-script build`
 * Open: http://localhost:8080/
