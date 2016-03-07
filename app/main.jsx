@@ -2,9 +2,14 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Greeter from './Greeter/Greeter.jsx';
+import { Router, Route, browserHistory } from 'react-router';
 
-ReactDOM.render(
-  <Greeter />,
-  document.getElementById('root')
-);
+import App from './App/App.jsx';
+import About from './About/About.jsx';
+
+ReactDOM.render((
+  <Router history={browserHistory}>
+    <Route path="/" component={App}/>
+    <Route path="/about" component={About}/>
+  </Router>
+), document.getElementById('root'));
