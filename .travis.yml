@@ -1,5 +1,11 @@
 language: node_js
 node_js:
-  - 0.12
+- 0.12
 script:
-  - npm run-script build
+- npm run-script build
+deploy:
+  api_key:
+    secure: W9ntBU+Lie7btccg7/Zzm6bO1/neP3+w8fJgcvnzXVrbg5GFaOOHqJaClINXfO9w0DZmD3GaJuKH1MI8n99JTFRTXrWj/3GYw8HDVIhVH569wWWK1g3AYJcdr3kYR4Va57OrKv/+28NHJuwraLA/Lp1XDu4cKyqCjldwk/pLrA5FQcJiYyC4lN5/dEqvsvcsxGfMXMGOZ2acOKssPviSNb21u45XCBazNayx2MG0MuX5Ee5iCzOwVnwMtWO6lKrtbj1fip3Y2UTp/4XRRs08QmDEn9Rka5ZEZRjoiV54rhnXypO4S43D5XPhJsC6r2bNUE3hGONxKc3F6xuXOAhOb3Hq2ka0xts6eCBMsDpNEeTLy1ODjTxc8F/92nxbJS37QKyDi9shvWZwlMhFFP/bPVuV1XauQNTiJJ2tI0XhFUfEQDlC1py4Sd13VlUgilT/un5XaBDboU5c2DAOjctsM4lkwXLFi+gjZ15mzRk6gEXi2oaGU3LE2M92jLrzlwKx8HZopDpFTxI20gyNphNOeevsSAUvqdi9D59oY/lhduOChDHua/mUDDeQxBkHc+Fmprs4XSl3R8FgzYxVuOVkvFMBFi8vH+4CC05HGZmFyGMlhzbBeiESG8PV2DZnQyWpGRPUwpFvoHqmhuqvZ7y+8HmKT2yldvfXvMAYJm8H2D8=
+  run:
+    - "npm install -g http-server "
+    - "http-server -p 80"
