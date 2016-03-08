@@ -14,5 +14,6 @@ ReactDOM.render((
       <Route path="/" component={Start}/>
       <Route path="/about" component={About}/>
     </Route>
+    <Route path="*" component={App}/>
   </Router>
 ), document.getElementById('root'));
