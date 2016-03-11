@@ -1,5 +1,5 @@
 /*eslint-env browser*/
-
+'use strict';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, browserHistory } from 'react-router';
@@ -7,6 +7,9 @@ import { Router, Route, browserHistory } from 'react-router';
 import App from './components/App/App.jsx';
 import About from './components/public/About/About.jsx';
 import Start from './components/public/Start/Start.jsx';
+
+import 'bootstrap-webpack';
+import 'jquery';
 
 ReactDOM.render((
   <Router history={browserHistory}>
@@ -17,3 +20,4 @@ ReactDOM.render((
     <Route path="*" component={App}/>
   </Router>
 ), document.getElementById('root'));
+
