@@ -3,6 +3,9 @@ node_js:
 - 0.12
 script:
 - npm run-script build
+cache:
+  directories:
+    - node_modules
 deploy:
   provider: heroku
   api_key:
