@@ -5,6 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "node_modules/.bin/webpack-dev-server --progress",
+    "test": "grunt",
     "build": "NODE_ENV=production node_modules/.bin/webpack --config ./webpack.production.config.js --progress"
   },
   "repository": {
@@ -30,6 +31,9 @@
     "eslint-plugin-react": "^4.1.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
+    "grunt": "~0.4.1",
+    "grunt-contrib-csslint": "^1.0.0",
+    "grunt-contrib-jshint": "^1.0.0",
     "html-webpack-plugin": "^2.9.0",
     "postcss-loader": "^0.8.1",
     "react-router": "^2.0.0",
