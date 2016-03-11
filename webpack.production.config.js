@@ -10,6 +10,9 @@ module.exports = {
   },
 
   module: {
+    preLoaders: [
+      {test: /\.jsx$/, loader: "eslint-loader", exclude: /node_modules/}
+    ],
     loaders: [
       {
         test: /\.js$/,
@@ -29,7 +32,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style', 'css?modules!postcss')
+        loader: ExtractTextPlugin.extract('style', 'css?modules!postcss!csslint')
       }
     ]
   },
@@ -42,7 +45,11 @@ module.exports = {
       template: __dirname + "/app/index.tmpl.html"
     }),
     new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+          warnings: false
+      }
+    }),
     new ExtractTextPlugin("style.css")
   ]
 }
