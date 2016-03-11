@@ -4,8 +4,8 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "node_modules/.bin/webpack-dev-server --progress",
-    "build": "NODE_ENV=production node_modules/.bin/webpack --config ./webpack.production.config.js --progress"
+    "start": "node_modules/.bin/webpack-dev-server --progress --inline --content-base public  --history-api-fallback",
+    "build": "NODE_ENV=production node_modules/.bin/webpack --config ./webpack.production.config.js  --progress"
   },
   "repository": {
     "type": "git",
@@ -39,6 +39,8 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
+    "compression": "^1.6.1",
+    "express": "^4.13.4",
     "react": "^0.14.7",
     "react-dom": "^0.14.7"
   }
