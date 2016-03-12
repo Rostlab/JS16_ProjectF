@@ -1,14 +1,9 @@
 import React from 'react';
-var Bootstrap = require('react-bootstrap');
+
+import { Navbar, Nav, NavItem, DropdownButton, MenuItem} from 'react-bootstrap';
 
 let {Component} = React;
-// import { Link } from 'react-router';
-// import styles from './Header.css';
-var Navbar = Bootstrap.Navbar;
-var Nav = Bootstrap.Nav;
-var NavItem = Bootstrap.NavItem;
-var DropdownButton = Bootstrap.DropdownButton;
-var MenuItem = Bootstrap.MenuItem;
+
 export default class Header extends Component {
   render() {
     return (
