@@ -13,7 +13,7 @@ export default class Header extends Component {
   render() {
     return (
       <Navbar className="navbar navbar-inverse navbar-fixed-top">
-                <a className="navbar-brand" href="#">asdasd                                                 </a>
+                <a className="navbar-brand" href="#">asdasd</a>
                 <Nav className="nav navbar-nav">
                     <NavItem className="active" eventKey={1} href="#home">Home</NavItem>
                     <NavItem eventKey={2} href="#about">About</NavItem>
