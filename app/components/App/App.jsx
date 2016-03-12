@@ -1,6 +1,6 @@
 import React from 'react';
 let {Component} = React;
-import './App.css';
+//import './App.css';
 import Header from './Header/Header.jsx';
 import Footer from './Footer/Footer.jsx';
 
