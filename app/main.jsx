@@ -20,4 +20,3 @@ ReactDOM.render((
     <Route path="*" component={App}/>
   </Router>
 ), document.getElementById('root'));
-
