@@ -1,18 +1,28 @@
-/*.header {
-  background: grey;
-  height: 20px;
-  top: 0;
-  left: 0;
-  width: 100%;
-  position: absolute;
+header {
+    background: black url('https://walter.trakt.us/images/shows/000/001/390/fanarts/original/76d5df8aed.jpg') 50% 10%;
+    background-size: cover;
+    transition: all .5s;
+    height: 550px;
+    font-family: 'Cinzel Decorative', cursive;
 }
 
-.nav {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+.navbar-inverse .navbar-nav > li > a,
+.navbar-brand {
+    color: white;
 }
 
-.nav li {
-  display: inline;
-}*/
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+    text-align: center;
+}
+
+.navbar-inverse {
+    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-color: #080808;
+}
