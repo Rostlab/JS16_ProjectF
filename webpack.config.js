@@ -1,15 +1,17 @@
 'use strict';
 
-
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var npm_dir = __dirname + '/node_modules/';
 
-module.exports = {
+var config = {
     devtool: 'eval-source-map',
 
-    entry: __dirname + "/app/main.jsx",
+    entry: {
+      app: __dirname + "/app/main.jsx"
+    },
     output: {
-        path: __dirname + "/public",
+        path: __dirname + "/build",
         filename: "bundle.js"
     },
 
@@ -43,9 +45,6 @@ module.exports = {
                 test: /\.(png|jpg)$/,
                 loader: 'file-loader?name=static/images/[name].[ext]'
             }, {
-                test: /bootstrap\/js\//,
-                loader: 'imports?jQuery=jquery'
-            }, {
                 test: /\.(woff|woff2)$/,
                 loader: "url?prefix=font/&limit=5000"
             }, {
@@ -67,6 +66,11 @@ module.exports = {
     ],
 
     plugins: [
+        new webpack.ProvidePlugin({
+          $: 'jquery',
+          jQuery: 'jquery',
+          'window.jQuery': 'jquery'
+        }),
         new HtmlWebpackPlugin({
             template: __dirname + "/app/index.tmpl.html"
         }),
@@ -74,10 +78,12 @@ module.exports = {
     ],
 
     devServer: {
-        contentBase: "./public",
+        contentBase: "./build",
         colors: true,
         historyApiFallback: true,
         inline: true,
         hot: true
     }
 };
+
+module.exports = config;
