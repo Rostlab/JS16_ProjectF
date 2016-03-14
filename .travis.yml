@@ -13,4 +13,4 @@ deploy:
   app: got-stats
   on:
     repo: Rostlab/JS16_ProjectF
-    all_branches: true
+    branch: build
