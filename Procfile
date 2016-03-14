@@ -1,1 +1,1 @@
-web: git add -A && git commit -a && node server.js
+web: node server.js
