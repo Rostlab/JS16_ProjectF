@@ -1,11 +1,9 @@
 import React from 'react';
 
-
-import "./Header.css";
-
 import { Navbar, Nav, Button } from 'react-bootstrap';
 import { IndexLinkContainer, LinkContainer} from 'react-router-bootstrap';
 
+import "./Header.css";
 
 let {Component} = React;
 
