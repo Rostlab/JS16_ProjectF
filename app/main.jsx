@@ -5,8 +5,8 @@ import ReactDOM from 'react-dom';
 import { Router, Route, browserHistory } from 'react-router';
 
 import 'jquery';
-import '!style!css!bootstrap/dist/css/bootstrap.css';
-import '!bootstrap/dist/js/bootstrap.js';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.js';
 
 import App from './components/App/App.jsx';
 import About from './components/public/About/About.jsx';

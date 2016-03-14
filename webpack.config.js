@@ -17,11 +17,7 @@ var config = {
 
     module: {
         preLoaders: [
-            {
-                test: /\.jsx$/,
-                loader: "eslint-loader",
-                exclude: /node_modules/
-            }
+            {test: /\.jsx$/, loader: "eslint-loader", exclude: /node_modules/}
         ],
         loaders: [
             {
@@ -38,9 +34,9 @@ var config = {
                 query: {
                     presets: ['es2015', 'react']
                 }
-            }, {
+            },{
                 test: /\.css$/,
-                loader: 'style-loader!css!postcss?modules!csslint'
+                loader: 'style-loader!css!postcss!csslint'
             }, {
                 test: /\.(png|jpg)$/,
                 loader: 'file-loader?name=static/images/[name].[ext]'
