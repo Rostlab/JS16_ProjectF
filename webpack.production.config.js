@@ -63,7 +63,6 @@ var config = {
         new HtmlWebpackPlugin({
             template: __dirname + "/app/index.tmpl.html"
         }),
-        new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js'),
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.optimize.UglifyJsPlugin({
             compress: {
