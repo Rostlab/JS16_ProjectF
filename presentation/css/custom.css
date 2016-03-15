@@ -1,0 +1,34 @@
+div.right {
+	float: right;
+	width: 50%;
+}
+
+div.left {
+	float: left;
+	width: 50%;
+}
+
+div.clear {
+	clear:both;
+}
+
+div#footer {
+	position: absolute;
+	width: 100%;
+	margin: 0 5px;
+	bottom: 0px;
+	font-size: smaller;
+	z-index: 1;
+}
+
+#pageCount {
+    display: inline-block;
+    margin-right: 10px;
+    float: right;
+}
+
+.ready::before {
+	content: "✓";
+	font-size: 2em;
+	color: #8BC34A;
+}

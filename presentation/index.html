@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>DOM, Manipulation &amp; Styles< | JavaScript Technologies2016 @TUM</title>
+
+		<meta name="description" content="Presentation about DOM, DOM manipulation and styles">
+		<meta name="author" content="Georgi Anastasov, Max Muth">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+		<link rel="stylesheet" href="css/custom.css">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+			<div id="footer">
+				<small>Georgi Anastasov, Max Muth</small>
+				<small id="pageCount"></small>
+			</div>
+			<div class="slides">
+
+
+
+
+
+				<section>
+					<h2>Web development basics</h2>
+					<h3>DOM &amp; Styles</h3>
+					<br />
+					<p>
+						<small>Georgi Anastasov and Max Muth<br/>
+						Group 8, Project F</small>
+					</p>
+				</section>
+
+
+
+
+<!-- 
+#
+# Structure (HTML markup, XML, Design planning
+#
+-->
+
+
+
+				<section>
+					<h2>Document Object Model</h2>
+					<p>Programming interface for representation and interaction with objects in HTML, XHTML and XML documents</p>
+					<div class="fragment">
+						Is the HTML you write the DOM? No.
+					</div>
+					<div class="fragment">
+						Is 'View Source' the DOM? No.
+					</div>
+					<div class="fragment">
+						<img src="img/DevTools.png" />
+					</div>
+				</section>
+
+
+				<section>
+					<h2>DOM hierarchy</h2>
+					<p>Nodes are organized in a tree structure -> DOM tree</p>
+					<div class="fragment">
+						<p>The document hierarchy provides us with an 'address' for each element.</p>
+						<img src="img/htmltree.gif" />
+					</div>
+				</section>
+
+				<section>
+					<h2>< !DOCTYPE html ></h2>
+					<p>The doctype is not actually a tag, but a declaration, telling the browser what kind of HTML we are using. In this case: HTML5.</p>
+				</section>
+
+				<section>
+					<h2>< html > < /html > </h2>
+					<p>Defines the boundaries of the HTML document.</p>
+				</section>
+
+				<section>
+					<h2>< head > < /head > </h2>
+					<p>The < head > element is a container for metadata.</p>
+					<p>document title, styles, links, scripts and other</p>
+					<p>Metadata is not displayed.</p>
+				</section>
+
+				<section>
+					<h2>< body > < /body > </h2>
+					<p>The < body > element contains all of the contents for an HTML document.</p>
+					<p>text, hyperlinks, images, tables, lists..</p>
+				</section>
+
+
+				<section>
+					<h2>HTML markup and Nesting</h2>
+					<img src="img/snippet.png" />
+					<p>The purpose of the tags is to group and describe page content.</p>
+				</section>
+	
+
+				<section>
+					<h2>HTML Elements</h2>
+					<h3>Anatomy of an element</h3>
+					<p>< tag > The content < /tag></p>
+					<p>Tags normally come in pairs: <br/>
+					< h1>< /h1><br/>
+					< p>< /p><br/>
+					..</p>
+				</section>
+
+				<section>
+					<h2>HTML Elements</h2>
+					<h3>Anatomy of an element</h3>
+					<pre><code class="html" data-trim>
+						<div class="blue">This is a div.</div>
+					</code></pre>
+					<pre><code class="html" data-trim>
+						<a href="http://rostlab.org">Rostlab homepage</a>
+					</code></pre>
+					<pre><code class="html" data-trim>
+						<img src="images/image.jpg" alt="Image description">
+					</code></pre>
+					<p>Most elements can have attributes, which provides additional information about the element.</p>
+				</section>
+
+
+<!-- 
+#
+# Styles / Presentation
+#
+-->
+
+<!--
+# Basic Selectors
+-->
+				<section>
+					<h2>Cascading Style Sheets</h2>
+					<h3>a.k.a CSS</h3>
+
+					<img data-src="img/css_syntax.gif">
+				</section>
+
+				<section>
+				<h3>Basic Selectors</h3>
+
+				<!-- First example -->
+				<div class='left'>
+					<pre><code class="html" data-trim>
+<p>This is a paragraph.</p>
+					</code></pre>
+				</div>
+				<div class='right'>
+					<pre><code class="css" data-trim>
+p {...}
+					</code></pre>
+				</div>
+				<div class="clear"></div>
+
+				<!-- Second example -->
+				<div class='left'>
+				<pre><code class="html"><h1 id="slogan">
+	Awesome Slogan
+</h1></code></pre>
+					
+				</div>
+				<div class='right'>
+					<pre><code class="css" data-trim>
+h1, h2 {font-color: white; ...}
+h1#slogan {font-color: #101010;}
+					</code></pre>
+				</div>
+				<div class="clear"></div>
+
+				<!-- Second example -->
+				<div class='left'>
+					<pre><code class="html" data-trim>
+<input class="btn btn-primary">
+	Buy!
+< /input>
+					</code></pre>
+				</div>
+				<div class='right'>
+					<pre><code class="hljs" data-trim>
+.btn {padding: 15px;}
+.btn-primary {
+background: green;
+color: white;
+}
+					</code></pre>
+				</div>
+				<div class="clear"></div>
+
+				<!-- Inline CSS -->
+				<pre><code class="html" data-trim>
+<h1 style="color:blue;margin-left:30px;">This is a heading.</h1>
+				</code></pre>
+
+
+			</section>
+
+
+
+<!--
+# Advanced Selectors
+-->
+
+			<section>
+				<h3>Advanced Selecotrs</h3>
+				<ol>
+					<li>div.column > p
+					<li>:first-child, :nth-child(42), :last-child
+					<li style="white-space:pre">p:nth-last-of-type(2)	
+
+					<li>:hover, :active, :focus, :checked, :disabled
+					<li style="white-space:pre">::before, ::after
+
+					<li>a[href$=".pdf"]
+					<li>input[type="radio"]
+				</ol>
+
+			</section>
+
+
+<!--
+# Cascading stylesheets (overwriting)
+-->
+
+			<section>
+				<h3>Cascading stylesheets (overwriting)</h3>
+				<img class="stretch" data-src="img/css_priority.gif">
+				<p><pre><code class="css">selector {property: value !important;}</code></pre> rules them all!</p>
+
+			</section>
+
+
+<!--
+# Layout
+-->
+
+			<section>
+				<h3>Modern Layouting</h3>
+				<p>Bootstrap, Foundation, Skeleton, ...</p>
+				<br>
+				<ul>
+					<li>Contains CSS, JS, (icon-)fonts
+					<li>Components like tabs, navbars, buttons, forms, tables, ...
+					<li>Mighty grid-system
+				</ul>
+			</section>
+
+			<section>
+				<h3>Grid System</h3>
+				<img data-src="img/css_grid.png">
+				<pre>
+<code class="html"><div class="row">
+  <div class="col-md-4">.col-md-4</div>
+  <div class="col-md-4">.col-md-4</div>
+  <div class="col-md-4">.col-md-4</div>
+</div></code></pre>
+				<p>Classes like .col-xs-* for other screen sizes</p>
+			</section>
+			
+
+<!--
+# LESS / SASS
+-->
+			<section>
+				<h3>CSS Pre-processors</h3>
+				<ul>
+					<li>LESS, SASS, SCSS
+					<li>Extend features of CSS
+					<li>Variables, mixins, nesting
+					<li>LESS e.g. runs inside Node &amp; browser
+				</ul>
+			</section>
+
+			<section>
+				<h3>LESS</h3>
+				<pre>
+<code class="less">@base: #888888;
+
+.box {
+  color: saturate(@base, 5%);
+  border-color: lighten(@base, 30%);
+  div { box-shadow: 10px 10px 5px @base; }
+}</code></pre>
+				<p>compiles to:</p>
+				<pre>
+<code class="css">.box {
+  color: #fe33ac;
+  border-color: #fdcdea;
+}
+.box div {
+  box-shadow: 10px 10px 5px #888888;
+}</code></pre>
+			</section>
+
+
+
+
+
+
+<!-- 
+#
+# Manipulation & Behaviour 
+#
+-->
+
+
+				<section>
+					<h2>Manipulation &amp; Behaviour</h2>
+					<h3>JavaScript as "the behaviour layer"</h3>
+					<p>Executed on client and defines how different objects behave on interaction from user.</p>
+				</section>
+
+				<section>
+					<h2>Finding DOM Elements</h2>
+					<p>Return a specific object</p>
+					<pre><code class="javascript">document.getElementById(id)</code></pre><br/>
+					<div class="fragment"><p>Return an array of objects</p>
+					<pre><code class="javascript">document.getElementByTagName(DIV)</code></pre><br/></div>
+					<div class="fragment"><p>Return a collection of objects with the specified <b>name</b></p>
+					<pre><code class="javascript">document.getElementByName(name)</code></pre> </div>
+				</section>
+				<section>
+					<h2>Creating DOM Elements</h2>
+						<pre><code class="javascript">document.createElement('div');</code></pre>
+				</section>
+				<section>
+					<h2>Insert elements before </h2>
+						<pre><code class="html"><div id="1"></div>
+<div id="2"></div>
+<div id="3"></div></code></pre>
+<div class="fragment"><pre><code class="javascript">document.getElementById('1')
+    .insertAdjacentHTML('beforebegin', '<div id="0.9"></div>');</code></pre></div>
+					<div class="fragment">
+					<pre><code class="html"><div id="0.9"></div>
+<div id="1"></div>					
+<div id="2"></div>
+<div id="3"></div></code></pre></div>
+				</section>
+				<section>
+					<h2>Insert elements after</h2>
+						<pre><code class="html"><div id="1"></div>
+<div id="2"></div>
+<div id="3"></div></code></pre>
+<div class="fragment"><pre><code class="javascript">document.getElementById('1')
+    .insertAdjacentHTML('afterend', '<div id="1.1"></div>');</code></pre></div>
+					<div class="fragment">
+					<pre><code class="html"><div id="1"></div>
+<div id="1.1"></div>					
+<div id="2"></div>
+<div id="3"></div></code></pre></div>
+				</section>
+				<section>
+					<h2>Insert elements as child</h2>
+						<pre><code class="html"><div id="parent">
+    <div id="oldChild"></div>
+</div></code></pre>
+<div class="fragment"><pre><code class="javascript">document.getElementById('parent')
+    .insertAdjacentHTML('afterbegin', '<div id="newChild"></div>');</code></pre></div>
+					<div class="fragment">
+					<pre><code class="html"><div id="parent">
+    <div id="newChild"></div>
+    <div id="oldChild"></div>
+</div></code></pre></div>
+				</section>
+				<section>
+					<h2>Moving elements</h2>
+						<pre><code class="html"><div id="parent">
+    <div id="c1"></div>
+    <div id="c2"></div>
+    <div id="c3"></div>
+</div>
+<div id="orphan"></div></code></pre>
+<div class="fragment"><pre><code class="javascript">document.getElementById('parent')
+    .appendChild(document.getElementById('orphan'));</code></pre></div>
+					<div class="fragment">
+					<pre><code class="html"><div id="parent">
+    <div id="c1"></div>
+    <div id="c2"></div>
+    <div id="c3"></div>
+    <div id="orphan"></div>
+</div></code></pre></div>
+				</section>
+				<section>
+					<h2>Moving elements II</h2>
+						<pre><code class="html"><div id="parent">
+    <div id="c1"></div>
+    <div id="c2"></div>
+    <div id="c3"></div>
+</div>
+<div id="orphan"></div></code></pre>
+<div class="fragment"><pre><code class="javascript">document.getElementById('parent')
+    .insertBefore(document.getElementById('orphan'),
+     document.getElementById('c1'));</code></pre></div>
+					<div class="fragment">
+					<pre><code class="html"><div id="parent">
+    <div id="orphan"></div>
+    <div id="c1"></div>
+    <div id="c2"></div>
+    <div id="c3"></div>
+</div></code></pre></div>
+				</section>
+				<section>
+					<h2>Removing elements</h2>
+<pre><code class="javascript">document.getElementById('foobar').parentNode
+    .removeChild(document.getElementById('foobar'));</code></pre>
+					<div class="fragment"><p>Verbose and ugly, but it works!!!</p></div>
+				</section>
+				<section>
+					<h2>Adding CSS Classes</h2>
+					<pre><code class="html"><div id="foo"></div></code></pre>
+					<div class="fragment">
+<pre><code class="javascript">document.getElementById('foo').classList.add('bold');</code></pre>
+<pre><code class="javascript">document.getElementById('foo').className += 'bold';</code></pre>
+    </div>
+					<div class="fragment">
+					<pre><code class="html"><div id="foo" class="bold"></div></code></pre>
+					</div>
+				</section>
+				<section>
+					<h2>Adding/Removing/Changing Attributes</h2><p>Let's say "foo" works as a button..</p>
+					<pre><code class="html"><div id="foo"></div></code></pre>
+					<div class="fragment">
+<pre><code class="javascript">document.getElementById('foo').setAttribute('role', 'button');</code></pre>
+    </div>
+					<div class="fragment">
+					<pre><code class="javascript">document.getElementById('foo').removeAttribute('role');</code></pre>
+					</div>
+				</section>
+				<section>
+					<h2>Adding & Changing Text Content</h2>
+					<pre><code class="html"><div id="foo">Hi there!</div></code></pre>
+					<div class="fragment">
+<pre><code class="javascript">document.getElementById('foo').innerHTML = 'Goodbye!';</code></pre>
+    </div>
+    <div class="fragment">
+<pre><code class="javascript">document.getElementById('foo').innerText = 'GoodBye!';</code></pre>
+    </div>
+    <div class="fragment">
+<pre><code class="javascript">document.getElementById('foo').textContent = 'Goodbye!';</code></pre>
+    </div>
+					<div class="fragment">
+					<pre><code class="html"><div id="foo">Goodbye!</div></code></pre>
+					</div>
+				</section>
+				<section>
+					<h2>Adding/Updating Element Styles</h2>
+					<pre><code class="html"><span id="note">Attention!</span></code></pre>
+					<div class="fragment">
+<pre><code class="javascript">document.getElementById('note').style.fontWeight = 'bold';</code></pre>
+    </div>
+    
+					<div class="fragment">
+					<pre><code class="html"><span id="note" style="font-weight: bold;">Attention!</span></code></pre>
+					</div>
+				</section>
+				
+
+
+
+
+
+
+				<section data-background="img/snow_the_end.jpg">
+				<h1>THE END</h1>
+				</section>
+
+				<section>
+					<h1>Project F</h1>
+					<h4>Putting it all together on the web</h4>
+				</section>
+
+				<section>
+					<h2>Data</h2>
+					<ul>
+						<li>Characters PLOD (percent likelihood of death) (provided by Project B)</li>
+						<li>Character-Location association on a map (provided by Project C)</li>
+						<li>Whom people liked the best from the last episode? (provided by Project D)</li>
+						<li>Character Popularity over time (provided by Project D)</li>
+						<li>Characters sentiments on twitter over time (provided by Project D)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Pages and their Content</h2>
+					<h4>Home</h4>
+					<ul>
+						<li>PLOD Top3</li>
+						<li>Whom people liked the best from the last episode (App by Project D)</li>
+						<li>Character Sentiments Top5</li>
+						<li>Map App by Project C</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Pages and their Content</h2>
+					<h4>Characters List / Catalogue</h4>
+					<ul>
+						<li>Corresponding House</li>
+						<li>PLOD (App by Project B)</li>
+						<li>popularity from the last episode</li>
+						<li>Popularity over time (App by Project D)</li>
+						<li>Sentiments on twitter over time (App by Project D)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Outcome</h2>
+					<ul style="list-style-type: none;">
+						<li class="ready">Corresponding House</li>
+						<li class="ready">PLOD (App by Project B)</li>
+						<li>popularity from the last episode</li>
+						<li>Popularity over time (App by Project D)</li>
+						<li>Sentiments on twitter over time (App by Project D)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Model-View-Control</h1>
+					<span style="background: #fff; display: block;"><img src="img/mvc.png" /></span>
+				</section>
+				<section>
+				<h1>Achievements</h1>
+				<ul>
+					<li>Mockup</li>
+					<li>Base Infostructure</li>
+					<li>Joy!</li>
+				</ul>
+				</section>
+				
+				<section>
+				<h1>Hosting. Yay or nay?</h1>
+				<img src="img/Hosting/aws-logo.png" style="width: 30%; float: left; margin-right: 10px;" />
+				<div class="fragment">
+					<img src="img/Hosting/gcplogo.jpg" style="width: 30%; float: left; margin-right: 10px;" />
+				</div>
+				<div class="fragment">
+					<img src="img/Hosting/heroku.png" style="width: 30%; float: left;" />
+				</div>
+				</section>
+				<section>
+				<h1>Webpack</h1>
+				<ul>
+					<li>not configuration heavy</li>
+					<li>easy bundling and compiling using loader</li>
+					<li>not just javascript bundeling</li>
+					<li>require('style!css!less!./style.less'); css, less, images, fonts</li>
+					<li>faster deploys</li>
+				</ul>
+				</section>
+
+
+				<section>
+				<h1>Problems</h1>
+				<ul>
+					<li>Communication with E</li>
+					<li>Task distribution</li>
+				</ul>
+				</section>
+				<section data-background="img/thatll_work.gif">
+					<h1>Attribution</h1>
+					<p style="font-size: 0.5em;">http://www.unionnet.jp/app/wp-content/uploads/2013/08/aws-logo.png<br/>
+https://cloud.google.com/_static/ef4324f0ea/images/new-gcp-logo.png<br/>
+http://ericholsinger.com/wp-content/uploads/2012/08/heroku.png<br/>
+http://media.findapps.com/wp-content/uploads/2015/10/Slack.png<br/>
+https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller#/media/File:MVC-Process.svg<br/>
+http://www.w3schools.com/<br/>
+http://www.hbo.com/game-of-thrones<br/>
+http://www.warnerbros.com/hangover-part-ii<br/>
+http://blog.garstasio.com/you-dont-need-jquery/dom-manipulation/<br/>
+https://en.wikipedia.org/wiki/Document_Object_Model<br/>
+https://en.wikipedia.org/wiki/Document_Object_Model</p>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: false,
+				progress: true,
+				history: true,
+				center: true,
+
+				 // Parallax background image
+			    parallaxBackgroundImage: 'img/bg_flags.jpg',
+
+			    // Parallax background size
+			    parallaxBackgroundSize: 'cover',
+
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+
+		<!-- Add Pagecounts to the footer -->
+		<script>
+			Reveal.addEventListener( 'slidechanged', function( event ) {
+			    document.getElementById('pageCount').innerHTML = Reveal.getIndices().h;
+			} );
+		</script>
+
+	</body>
+</html>
