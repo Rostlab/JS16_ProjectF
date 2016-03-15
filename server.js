@@ -6,10 +6,10 @@ var app = express()
 
 app.use(compression())
 
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'build')))
 
 app.get('*', function (req, res) {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'))
+  res.sendFile(path.join(__dirname, 'build', 'index.html'))
 })
 
 var PORT = process.env.PORT || 8080
