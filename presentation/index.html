@@ -801,7 +801,6 @@ bold;">Attention!</span></code></pre>
 					<ul>
 						<li>Using the package webpack-devserver</li>
 						<li>Hot Module Replacement Integration (HMR)</li>
-						<li></li>
 					</ul>
 				</section>
 
@@ -816,9 +815,46 @@ bold;">Attention!</span></code></pre>
 
 				<section>
 					<h2>Deploy</h2>
-					<ul>
-						<li>Using travis and heroku</li>
-					</ul>
+					<div class="left">
+						<ul>
+							<li>Using travis and heroku</li>
+							<li>Travis</li>
+							Deploy on:
+							<ul>
+								<li>AWS Codedeploy</li>
+								<li>S3</li>
+								<li>NPM</li>
+								<li>Cloud 66</li>
+								<li>Azure Web Apps</li>
+							</ul>
+							<li><a href="https://docs.travis-ci.com/user/deployment/">https://docs.travis-ci.com/user/deployment/</a></li>
+						</ul>
+						Heroku needs Procfile:
+						<pre><code>web: node server.js</code></pre
+					</div>
+					<div class="right ">
+						<div>
+							<pre><code style="width: 500px; max-height: 800px">
+language: node_js
+node_js:
+- 0.12
+script:
+- npm run-script build
+cache:
+  directories:
+    - node_modules
+deploy:
+  skip_cleanup: true
+  provider: heroku
+  api_key:
+    secure: [ENCRYPTED_HEROKU_API_KEY]
+  app: got-stats
+  on:
+    repo: Rostlab/JS16_ProjectF
+    branch: develop
+						</code></pre>
+				    </div>
+					</div>
 				</section>
 
 				<section>
@@ -829,8 +865,18 @@ bold;">Attention!</span></code></pre>
 				<section>
 				<h1>Problems</h1>
 				<ul>
-					<li>Communication with E</li>
-					<li>Task distribution</li>
+					<li>A week ago:</li>
+					<ul>
+						<li>Communication with E</li>
+						<li>Task distribution</li>
+						<li>Technological issues (React, Webpack)</li>
+					</ul>
+					<li>Now:</li>
+					<ul>
+						<li>Better communication</li>
+						<li>Better task distribution using GitHub issues</li>
+						<li>Still technological issues</li>
+					</ul>
 				</ul>
 				</section>
 				<section data-background="img/thatll_work.gif">
