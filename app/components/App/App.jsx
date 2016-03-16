@@ -1,6 +1,8 @@
 import React from 'react';
 let {Component} = React;
 
+import Grid from 'react-bootstrap/lib/Grid';
+
 import './App.css';
 
 import Header from './Header/Header.jsx';
@@ -13,7 +15,9 @@ export default class App extends Component {
     return (
       <div>
         <Header />
-          {this.props.children || <Start />}
+        <Grid fluid>
+            {this.props.children || <Start />}
+        </Grid>
         <Footer />
       </div>
     );
