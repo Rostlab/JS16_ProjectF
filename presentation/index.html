@@ -699,41 +699,36 @@ bold;">Attention!</span></code></pre>
 
 				<section>
 					<h1>Project F</h1>
-					<h3>-- Putting it all together on the web --</h3>
-					<h4>Team 8 & 9</h4>
-					<p>Mina Zaki, Andreas Salvermoser, Yasar Kücükkaya, Georgi Anastasov, Max Muth, Pallabi Bhowmick</p>
+					<h3>– Putting it all together on the web –</h3>
+					<h4>Team 8 &amp; 9</h4>
+					<p>Mina Zaki, Andreas Salvermoser, Yasar Kücükkaya, Georgi Anastasov, Max Muth</p>
 					<h4>
 				</section>
 
 				<section>
 					<h2>Data</h2>
 					<ul>
-						<li>Characters PLOD (percent likelihood of death) (provided by Project B)</li>
-						<li>Character-Location association on a map (provided by Project C)</li>
-						<li>Whom people liked the best from the last episode? (provided by Project D)</li>
-						<li>Character Popularity over time (provided by Project D)</li>
-						<li>Characters sentiments on twitter over time (provided by Project D)</li>
+						<li>Characters PLOD (likelihood of death)</li>
+						<li>Character-Location association on a map</li></li>
+						<li>Characters sentiments on twitter</li>
 					</ul>
 				</section>
 
 				<section>
-					<h1>Achivements</h1>
-				</section>
-
-				<section>
-					<h2>Pages and their Content</h2>
-					<h4>Home</h4>
+					<h2>Page I</h2>
+					<h4>Home-Page</h4>
 					<ul>
 						<li>PLOD Top3</li>
-						<li>Whom people liked the best from the last episode (App by Project D)</li>
-						<li>Character Sentiments Top5</li>
-						<li>Map App by Project C</li>
+						<li>Character Sentiments Top3</li>
+						<li>Character Sentiments Flop3</li>
+						<li>Most talked about Top3</li>
+						<li>Map of characters</li>
 					</ul>
 				</section>
 
 				<section>
-					<h2>Pages and their Content</h2>
-					<h4>Characters List / Catalogue</h4>
+					<h2>Page II</h2>
+					<h4>Characters-List / Catalogue</h4>
 					<ul>
 						<li>Displays all characters</li>
 						<li>Sorting function</li>
@@ -741,36 +736,25 @@ bold;">Attention!</span></code></pre>
 				</section>
 
 				<section>
-					<h2>Pages and their Content</h2>
-					<h4>Character Detail</h4>
+					<h2>Page III</h2>
+					<h4>Character-Detail</h4>
 					<ul>
-						<li>Corresponding House</li>
-						<li>PLOD (App by Project B)</li>
-						<li>popularity from the last episode</li>
-						<li>Popularity over time (App by Project D)</li>
-						<li>Sentiments on twitter over time (App by Project D)</li>
+						<li>Basic available informations</li>
+						<li>2x PLOD</li>
+						<li>Sentiment from the last episode</li>
+						<li>Map with characters location-history</li>
 					</ul>
 				</section>
 
 				<section>
-					<h2>Pages and their Content</h2>
+					<h2>Page IV</h2>
 					<h4>About</h4>
 					<ul>
 						<li>Link to GitHub</li>
-						<li>Content Description</li>
-						<li>Contains all of the Collaboratos and Tutors</li>
-						<li>Images, Names</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Outcome</h2>
-					<ul style="list-style-type: none;">
-						<li class="ready">Corresponding House</li>
-						<li class="ready">PLOD (App by Project B)</li>
-						<li>popularity from the last episode</li>
-						<li>Popularity over time (App by Project D)</li>
-						<li>Sentiments on twitter over time (App by Project D)</li>
+						<li>Project Description</li>
+						<li>Highlighting OSS &amp; API</li>
+						<li>Contains all the Collaboratos and Tutors</li>
+						<li>(maybe images and names of every projects members by using GitHub API)</li>
 					</ul>
 				</section>
 
@@ -779,10 +763,10 @@ bold;">Attention!</span></code></pre>
 				</section>
 
 				<section>
-					<img src="../mockups/Home.jpg" style="height: 70%; width: 70%"/>
+					<img src="img/Home.jpg" style="height: 70%; width: 70%"/>
 				</section>
 
-				<section data-background="../mockups/Character1.png">
+				<section data-background="img/Character1.png" data-background-size="contain">
 				</section>
 
 				<section>
@@ -835,7 +819,6 @@ bold;">Attention!</span></code></pre>
 					<ul>
 						<li>Using the package webpack-devserver</li>
 						<li>Hot Module Replacement Integration (HMR)</li>
-						<li></li>
 					</ul>
 				</section>
 
@@ -850,9 +833,46 @@ bold;">Attention!</span></code></pre>
 
 				<section>
 					<h2>Deploy</h2>
-					<ul>
-						<li>Using travis and heroku</li>
-					</ul>
+					<div class="left">
+						<ul>
+							<li>Using travis and heroku</li>
+							<li>Travis</li>
+							Deploy on:
+							<ul>
+								<li>AWS Codedeploy</li>
+								<li>S3</li>
+								<li>NPM</li>
+								<li>Cloud 66</li>
+								<li>Azure Web Apps</li>
+							</ul>
+							<li><a href="https://docs.travis-ci.com/user/deployment/">https://docs.travis-ci.com/user/deployment/</a></li>
+						</ul>
+						Heroku needs Procfile:
+						<pre><code>web: node server.js</code></pre
+					</div>
+					<div class="right ">
+						<div>
+							<pre><code style="width: 500px; max-height: 800px">
+language: node_js
+node_js:
+- 0.12
+script:
+- npm run-script build
+cache:
+  directories:
+    - node_modules
+deploy:
+  skip_cleanup: true
+  provider: heroku
+  api_key:
+    secure: [ENCRYPTED_HEROKU_API_KEY]
+  app: got-stats
+  on:
+    repo: Rostlab/JS16_ProjectF
+    branch: develop
+						</code></pre>
+				    </div>
+					</div>
 				</section>
 
 				<section>
@@ -863,8 +883,18 @@ bold;">Attention!</span></code></pre>
 				<section>
 				<h1>Problems</h1>
 				<ul>
-					<li>Communication with E</li>
-					<li>Task distribution</li>
+					<li>A week ago:</li>
+					<ul>
+						<li>Communication about Integration</li>
+						<li>Task distribution</li>
+						<li>Technological issues (React, Webpack)</li>
+					</ul>
+					<li>Now:</li>
+					<ul>
+						<li>Better communication</li>
+						<li>Better task distribution using GitHub &amp; Slack</li>
+						<li>Still technological issues</li>
+					</ul>
 				</ul>
 				</section>
 				<section data-background="img/thatll_work.gif">
