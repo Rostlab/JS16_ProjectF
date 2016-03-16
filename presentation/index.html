@@ -61,7 +61,7 @@
 
 
 
-<!-- 
+<!--
 #
 # Structure (HTML markup, XML, Design planning
 #
@@ -122,7 +122,7 @@
 					<img src="img/snippet.png" />
 					<p>The purpose of the tags is to group and describe page content.</p>
 				</section>
-	
+
 
 				<section>
 					<h2>HTML Elements</h2>
@@ -150,7 +150,7 @@
 				</section>
 
 
-<!-- 
+<!--
 #
 # Styles / Presentation
 #
@@ -188,7 +188,7 @@ p {...}
 				<pre><code class="html"><h1 id="slogan">
 	Awesome Slogan
 </h1></code></pre>
-					
+
 				</div>
 				<div class='right'>
 					<pre><code class="css" data-trim>
@@ -239,7 +239,7 @@ h1#slogan {font-color: #101010;}
 				<div class="fragment">
 					<li>div.column > p
 					<li>:first-child, :nth-child(42), :last-child
-					<li style="white-space:pre">p:nth-last-of-type(2)	
+					<li style="white-space:pre">p:nth-last-of-type(2)
 				</div>
 				<div class="fragment">
 					<li>:hover, :active, :focus, :checked, :disabled
@@ -292,7 +292,7 @@ h1#slogan {font-color: #101010;}
 </div></code></pre>
 				<p>Classes like .col-xs-* for other screen sizes</p>
 			</section>
-			
+
 
 <!--
 # LESS / SASS
@@ -380,9 +380,9 @@ button {
 
 
 
-<!-- 
+<!--
 #
-# Manipulation & Behaviour 
+# Manipulation & Behaviour
 #
 -->
 
@@ -404,8 +404,8 @@ button {
 					</div>
 					<div class="fragment">
 						<p>Return a collection of objects with the specified <b>name</b></p>
-						<pre><code class="javascript">document.getElementByName(name)</code></pre> 
-						<pre><code class="javascript">$([name='name'])</code></pre> 
+						<pre><code class="javascript">document.getElementByName(name)</code></pre>
+						<pre><code class="javascript">$([name='name'])</code></pre>
 					</div>
 				</section>
 
@@ -423,7 +423,7 @@ button {
 <pre><code class="javascript">document.getElementById('1')
     .insertAdjacentHTML('beforebegin', '<div id="0.9"></div>');</code></pre>
     				</div>
-					
+
 					<div class="fragment">
 						<pre><code class="javascript">$('#1').before('<div id="0.9"></div>');</code></pre>
 					</div>
@@ -436,7 +436,7 @@ button {
 
 					<div class="fragment">
 					<pre><code class="html"><div id="0.9"></div>
-<div id="1"></div>					
+<div id="1"></div>
 <div id="2"></div>
 <div id="3"></div></code></pre></div>
 
@@ -457,7 +457,7 @@ button {
     .insertAdjacentHTML('afterend', '<div id="1.1"></div>');</code></pre></div>
 					<div class="fragment">
 					<pre><code class="html"><div id="1"></div>
-<div id="1.1"></div>					
+<div id="1.1"></div>
 <div id="2"></div>
 <div id="3"></div></code></pre></div>
 				</section> -->
@@ -465,7 +465,7 @@ button {
 
 				<section>
 					<h2>Insert elements as child</h2>
-						
+
 <div class="fragment"><pre><code class="javascript">document.getElementById('parent')
     .insertAdjacentHTML('afterbegin', '<div id="newChild"></div>');</code></pre></div>
 
@@ -545,9 +545,9 @@ button {
 <pre><code class="javascript">document.getElementById('foobar').parentNode
     .removeChild(document.getElementById('foobar'));</code></pre>
 					<div class="fragment"><p>Verbose and ugly, but it works!!!</p></div>
-					
+
 					<div class="fragment">
-						<pre><code class="javascript">$('#foobar').remove();</code></pre>	
+						<pre><code class="javascript">$('#foobar').remove();</code></pre>
 					</div>
 
 				</section>
@@ -584,7 +584,7 @@ Attention!</span></code></pre>
 						<pre><code class="html"><span id="note">Attention!</span></code></pre>
 					</div>
 					<div class="fragment right">
-						<pre><code class="html"><span id="note" style="font-weight: 
+						<pre><code class="html"><span id="note" style="font-weight:
 bold;">Attention!</span></code></pre>
 					</div>
 				</section>
@@ -624,7 +624,7 @@ bold;">Attention!</span></code></pre>
 					</div>
 					<div class="fragment right">
 						<pre><code class="html"><div id="foo" role="button"></div></code></pre>
-					</div>				
+					</div>
 				</section>
 
 
@@ -638,7 +638,7 @@ bold;">Attention!</span></code></pre>
     </div>
     <div class="fragment">
 <pre><code class="javascript">document.getElementById('foo').textContent = 'Goodbye!';</code></pre>
-    </div>    
+    </div>
     <div class="fragment">
 <pre><code class="javascript">$('#foo').text('Goodbye!');</code></pre>
     </div>
@@ -652,7 +652,7 @@ bold;">Attention!</span></code></pre>
 
 
 
-				
+
 
 
 
@@ -694,11 +694,31 @@ bold;">Attention!</span></code></pre>
 					<h2>Pages and their Content</h2>
 					<h4>Characters List / Catalogue</h4>
 					<ul>
+						<li>Displays all characters</li>
+						<li>Sorting function</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Pages and their Content</h2>
+					<h4>Character Detail</h4>
+					<ul>
 						<li>Corresponding House</li>
 						<li>PLOD (App by Project B)</li>
 						<li>popularity from the last episode</li>
 						<li>Popularity over time (App by Project D)</li>
 						<li>Sentiments on twitter over time (App by Project D)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Pages and their Content</h2>
+					<h4>About</h4>
+					<ul>
+						<li>Link to GitHub</li>
+						<li>Content Description</li>
+						<li>Contains all of the Collaboratos and Tutors</li>
+						<li>Images, Names</li>
 					</ul>
 				</section>
 
@@ -714,18 +734,20 @@ bold;">Attention!</span></code></pre>
 				</section>
 
 				<section>
-					<h1>Model-View-Control</h1>
-					<span style="background: #fff; display: block;"><img src="img/mvc.png" /></span>
+					<h1>Achivements</h1>
 				</section>
+
 				<section>
-				<h1>Achievements</h1>
-				<ul>
-					<li>Mockup</li>
-					<li>Base Infostructure</li>
-					<li>Joy!</li>
-				</ul>
+					<h1>Mockups</h1>
 				</section>
-				
+
+				<section>
+					<img src="../mockups/Home.jpg" style="height: 70%; width: 70%"/>
+				</section>
+
+				<section data-background="../mockups/Character1.png">
+				</section>
+
 				<section>
 				<h1>Hosting. Yay or nay?</h1>
 				<img src="img/Hosting/aws-logo.png" style="width: 30%; float: left; margin-right: 10px;" />
@@ -736,6 +758,30 @@ bold;">Attention!</span></code></pre>
 					<img src="img/Hosting/heroku.png" style="width: 30%; float: left;" />
 				</div>
 				</section>
+
+				<section>
+					<h1>Hosting. Yay or nay?</h1>
+					<h3>Problems:</h3>
+					<ul>
+						<li>Heroku:</li>
+						<ul>
+							<li>sleeps after 30min</li>
+							<li>has to sleep at least 6h a day</li>
+							<li>doesn't expire</li>
+						</ul>
+						<li>Amazon Webservices:</li>
+						<ul>
+							<li>expires after 12 months</li>
+							<li>creditcard neccessary</li>
+						</ul>
+						<li>Google Cloud Services:</li>
+						<ul>
+							<li>creditcard neccessary</li>
+							<li>doesn't expire</li>
+						</ul>
+					</ul>
+				</section>
+
 				<section>
 				<h1>Webpack</h1>
 				<ul>
@@ -747,6 +793,13 @@ bold;">Attention!</span></code></pre>
 				</ul>
 				</section>
 
+				<section>
+					<h2>Development</h2>
+					<ul>
+						<li>Hot Module Replacement Integration (HMR)</li>
+						
+					</ul>
+				</section>
 
 				<section>
 				<h1>Problems</h1>
