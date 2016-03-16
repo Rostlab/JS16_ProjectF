@@ -310,6 +310,7 @@ color: white;
   border-color: lighten(@base, 30%);
   div { box-shadow: 10px 10px 5px @base; }
 }</code></pre>
+				<div class="fragment">
 				<p>compiles to:</p>
 				<pre>
 <code class="css">.box {
@@ -319,6 +320,52 @@ color: white;
 .box div {
   box-shadow: 10px 10px 5px #888888;
 }</code></pre>
+				</div>
+			</section>
+
+
+			<section>
+				<h3>Mixins in LESS</h3>
+				<pre><code class="less">.a, #b {
+  color: red;
+}
+.mixin-class {
+  .a();
+}
+.mixin-id {
+  #b();
+}</code></pre>
+				<div class="fragment">
+				<p>compiles to:</p>
+				<pre><code class="css">.a, #b {
+  color: red;
+}
+.mixin-class {
+  color: red;
+}
+.mixin-id {
+  color: red;
+}</code></pre>
+				</div>
+			</section>
+
+
+			<section>
+				<h3>Mixins II</h3>
+				<pre><code class="less">.my-hover-mixin() {
+  &:hover {
+    border: 1px solid red;
+  }
+}
+button {
+  .my-hover-mixin();
+}</code></pre>
+			<div class="fragment">
+			<p>compiles to:</p>
+			<pre><code class="css">button:hover {
+  border: 1px solid red;
+}</code></pre>
+				</div>
 			</section>
 
 
@@ -335,37 +382,66 @@ color: white;
 
 				<section>
 					<h2>Manipulation &amp; Behaviour</h2>
-					<h3>JavaScript as "the behaviour layer"</h3>
 					<p>Executed on client and defines how different objects behave on interaction from user.</p>
 				</section>
 
 				<section>
 					<h2>Finding DOM Elements</h2>
 					<p>Return a specific object</p>
-					<pre><code class="javascript">document.getElementById(id)</code></pre><br/>
+					<pre><code class="javascript">document.getElementById(id)</code></pre>
+					<pre><code class="javascript">$('#id')</code></pre>
+
 					<div class="fragment"><p>Return an array of objects</p>
-					<pre><code class="javascript">document.getElementByTagName(DIV)</code></pre><br/></div>
-					<div class="fragment"><p>Return a collection of objects with the specified <b>name</b></p>
-					<pre><code class="javascript">document.getElementByName(name)</code></pre> </div>
+						<pre><code class="javascript">document.getElementByTagName(DIV)</code></pre>
+						<pre><code class="javascript">$('div')</code></pre>
+					</div>
+					<div class="fragment">
+						<p>Return a collection of objects with the specified <b>name</b></p>
+						<pre><code class="javascript">document.getElementByName(name)</code></pre> 
+						<pre><code class="javascript">$([name='name'])</code></pre> 
+					</div>
 				</section>
+
+
 				<section>
 					<h2>Creating DOM Elements</h2>
 						<pre><code class="javascript">document.createElement('div');</code></pre>
+						<pre><code class="javascript">$('<div></div>');</code></pre>
 				</section>
+
+
 				<section>
 					<h2>Insert elements before </h2>
+					<div class="fragment">
+<pre><code class="javascript">document.getElementById('1')
+    .insertAdjacentHTML('beforebegin', '<div id="0.9"></div>');</code></pre>
+    				</div>
+					
+					<div class="fragment">
+						<pre><code class="javascript">$('#1').before('<div id="0.9"></div>');</code></pre>
+					</div>
+
+					<div class="left">
 						<pre><code class="html"><div id="1"></div>
 <div id="2"></div>
 <div id="3"></div></code></pre>
-<div class="fragment"><pre><code class="javascript">document.getElementById('1')
-    .insertAdjacentHTML('beforebegin', '<div id="0.9"></div>');</code></pre></div>
+					</div> <!-- endLeft -->
+
 					<div class="fragment">
 					<pre><code class="html"><div id="0.9"></div>
 <div id="1"></div>					
 <div id="2"></div>
 <div id="3"></div></code></pre></div>
+
+					<br />
+					<div class="fragment">
+						<h3>Insert after</h3>
+						<p>use <i>'afterend'</i> and <i>.after()</i></p>
+					</div>
 				</section>
-				<section>
+
+
+<!-- 				<section>
 					<h2>Insert elements after</h2>
 						<pre><code class="html"><div id="1"></div>
 <div id="2"></div>
@@ -377,31 +453,49 @@ color: white;
 <div id="1.1"></div>					
 <div id="2"></div>
 <div id="3"></div></code></pre></div>
-				</section>
+				</section> -->
+
+
 				<section>
 					<h2>Insert elements as child</h2>
+						
+<div class="fragment"><pre><code class="javascript">document.getElementById('parent')
+    .insertAdjacentHTML('afterbegin', '<div id="newChild"></div>');</code></pre></div>
+
+<div class="fragment"><pre><code class="javascript">$('#parent').prepend('<div id="newChild"></div>');
+</code></pre></div>
+
+					<div class="left">
 						<pre><code class="html"><div id="parent">
     <div id="oldChild"></div>
 </div></code></pre>
-<div class="fragment"><pre><code class="javascript">document.getElementById('parent')
-    .insertAdjacentHTML('afterbegin', '<div id="newChild"></div>');</code></pre></div>
+					</div> <!-- endLeft -->
+
 					<div class="fragment">
-					<pre><code class="html"><div id="parent">
+						<pre><code class="html"><div id="parent">
     <div id="newChild"></div>
     <div id="oldChild"></div>
 </div></code></pre></div>
 				</section>
+
+
 				<section>
 					<h2>Moving elements</h2>
+<div class="fragment"><pre><code class="javascript">document.getElementById('parent')
+    .appendChild(document.getElementById('orphan'));</code></pre></div>
+
+<div class="fragment"><pre><code class="javascript">$('#parent').append($('#orphan'));</code></pre></div>
+
+<div class="left">
 						<pre><code class="html"><div id="parent">
     <div id="c1"></div>
     <div id="c2"></div>
     <div id="c3"></div>
 </div>
 <div id="orphan"></div></code></pre>
-<div class="fragment"><pre><code class="javascript">document.getElementById('parent')
-    .appendChild(document.getElementById('orphan'));</code></pre></div>
-					<div class="fragment">
+</div>
+
+					<div class="fragment right">
 					<pre><code class="html"><div id="parent">
     <div id="c1"></div>
     <div id="c2"></div>
@@ -409,18 +503,27 @@ color: white;
     <div id="orphan"></div>
 </div></code></pre></div>
 				</section>
+
+
 				<section>
 					<h2>Moving elements II</h2>
-						<pre><code class="html"><div id="parent">
-    <div id="c1"></div>
-    <div id="c2"></div>
-    <div id="c3"></div>
-</div>
-<div id="orphan"></div></code></pre>
+
 <div class="fragment"><pre><code class="javascript">document.getElementById('parent')
     .insertBefore(document.getElementById('orphan'),
      document.getElementById('c1'));</code></pre></div>
-					<div class="fragment">
+
+<div class="fragment"><pre><code class="javascript">$('#parent').prepend($('#orphan'));</code></pre></div>
+
+
+					<div class="left">
+											<pre><code class="html"><div id="parent">
+    <div id="c1"></div>
+    <div id="c2"></div>
+    <div id="c3"></div>
+</div>
+<div id="orphan"></div></code></pre>
+</div>
+					<div class="fragment right">
 					<pre><code class="html"><div id="parent">
     <div id="orphan"></div>
     <div id="c1"></div>
@@ -428,36 +531,98 @@ color: white;
     <div id="c3"></div>
 </div></code></pre></div>
 				</section>
+
+
 				<section>
 					<h2>Removing elements</h2>
 <pre><code class="javascript">document.getElementById('foobar').parentNode
     .removeChild(document.getElementById('foobar'));</code></pre>
 					<div class="fragment"><p>Verbose and ugly, but it works!!!</p></div>
+					
+					<div class="fragment">
+						<pre><code class="javascript">$('#foobar').remove();</code></pre>	
+					</div>
+
 				</section>
+
+
+				<section>
+					<h2>Adding Styles</h2>
+					<div class="fragment">
+<pre><code class="javascript">document.getElementById('note').style.fontWeight = 'bold';</code></pre>
+					</div>
+					<div class="fragment">
+<pre><code class="javascript">$('#note').css('fontWeight', 'bold');</code></pre>
+					</div>
+					<div class="left">
+						<pre><code class="html"><span id="note">Attention!</span></code></pre>
+					</div>
+					<div class="fragment right">
+					<pre><code class="html"><span id="note" style="
+font-weight: bold;">
+Attention!</span></code></pre>
+					</div>
+				</section>
+
+
+				<section>
+					<h2>Adding/Updating Element Styles</h2>
+					<div class="fragment">
+						<pre><code class="javascript">document.getElementById('note').style.fontWeight = 'bold';</code></pre>
+					</div>
+					<div class="fragment">
+						<pre><code class="javascript">$('#note').css('fontWeight', 'bold');</code></pre>
+					</div>
+					<div class="left">
+						<pre><code class="html"><span id="note">Attention!</span></code></pre>
+					</div>
+					<div class="fragment right">
+						<pre><code class="html"><span id="note" style="font-weight: 
+bold;">Attention!</span></code></pre>
+					</div>
+				</section>
+
+
 				<section>
 					<h2>Adding CSS Classes</h2>
-					<pre><code class="html"><div id="foo"></div></code></pre>
 					<div class="fragment">
 <pre><code class="javascript">document.getElementById('foo').classList.add('bold');</code></pre>
 <pre><code class="javascript">document.getElementById('foo').className += 'bold';</code></pre>
     </div>
-					<div class="fragment">
-					<pre><code class="html"><div id="foo" class="bold"></div></code></pre>
+    					<div class="fragment">
+<pre><code class="javascript">$('#foo').addClass('bold');</code></pre>
+    </div>
+					<div class="left">
+						<pre><code class="html"><div id="foo"></div></code></pre>
+					</div>
+					<div class="fragment right">
+						<pre><code class="html"><div id="foo" class="bold"></div></code></pre>
 					</div>
 				</section>
+
+
 				<section>
 					<h2>Adding/Removing/Changing Attributes</h2><p>Let's say "foo" works as a button..</p>
-					<pre><code class="html"><div id="foo"></div></code></pre>
 					<div class="fragment">
 <pre><code class="javascript">document.getElementById('foo').setAttribute('role', 'button');</code></pre>
-    </div>
-					<div class="fragment">
 					<pre><code class="javascript">document.getElementById('foo').removeAttribute('role');</code></pre>
 					</div>
+
+					<div class="fragment">
+<pre><code class="javascript">$('#foo').attr('role', 'button');</code></pre>
+<pre><code class="javascript">$('#foo').removeAttr('role');</code></pre>
+    </div>
+					<div class="left">
+						<pre><code class="html"><div id="foo"></div></code></pre>
+					</div>
+					<div class="fragment right">
+						<pre><code class="html"><div id="foo" role="button"></div></code></pre>
+					</div>				
 				</section>
+
+
 				<section>
 					<h2>Adding & Changing Text Content</h2>
-					<pre><code class="html"><div id="foo">Hi there!</div></code></pre>
 					<div class="fragment">
 <pre><code class="javascript">document.getElementById('foo').innerHTML = 'Goodbye!';</code></pre>
     </div>
@@ -466,22 +631,20 @@ color: white;
     </div>
     <div class="fragment">
 <pre><code class="javascript">document.getElementById('foo').textContent = 'Goodbye!';</code></pre>
+    </div>    
+    <div class="fragment">
+<pre><code class="javascript">$('#foo').text('Goodbye!');</code></pre>
     </div>
-					<div class="fragment">
-					<pre><code class="html"><div id="foo">Goodbye!</div></code></pre>
+					<div class="left">
+						<pre><code class="html"><div id="foo">Hi there!</div></code></pre>
+					</div>
+					<div class="fragment right">
+						<pre><code class="html"><div id="foo">Goodbye!</div></code></pre>
 					</div>
 				</section>
-				<section>
-					<h2>Adding/Updating Element Styles</h2>
-					<pre><code class="html"><span id="note">Attention!</span></code></pre>
-					<div class="fragment">
-<pre><code class="javascript">document.getElementById('note').style.fontWeight = 'bold';</code></pre>
-    </div>
-    
-					<div class="fragment">
-					<pre><code class="html"><span id="note" style="font-weight: bold;">Attention!</span></code></pre>
-					</div>
-				</section>
+
+
+
 				
 
 
