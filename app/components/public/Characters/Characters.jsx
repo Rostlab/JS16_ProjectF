@@ -10,8 +10,7 @@ export default class Character extends Component {
     render() {
         return (
             <div className="character-container">
-                <Grid fluid>
-                    <Row fluid className="character-intro">
+                    <Row className="character-intro" fluid >
                         <Col md={3} mdOffset={1}>
                             <Image className="character-photo"
                                    src="https://placeholdit.imgix.net/~text?txtsize=33&txt=profile%20picture%20&w=350&h=350"/>
@@ -57,7 +56,6 @@ export default class Character extends Component {
                             <Map />
                         </Col>
                     </Row>
-                </Grid>
             </div>
         );
     }
