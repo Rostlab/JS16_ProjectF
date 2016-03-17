@@ -69,7 +69,7 @@ var config = {
                 warnings: false
             }
         }),
-        new ExtractTextPlugin("style.css")
+        new ExtractTextPlugin("/style.css")
     ]
 }
 
