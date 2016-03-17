@@ -4,11 +4,10 @@ import './Characters.css';
 import { Grid, Row, Col, Image, Panel } from 'react-bootstrap';
 
 export default class Character extends Component {
-
   render() {
     return (
     <div>
-      <div fluid>CharID: asd</div>
+      <div fluid>CharID: {this.props.params.id}</div>
         <Grid fluid>
           <Row className="show-grid">
             <Col xs={12} md={4}>
