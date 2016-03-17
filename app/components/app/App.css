@@ -8,3 +8,9 @@ body {
     /* ToDo: Add background texture*/
     color: white;
 }
+
+.tab-pane{
+    padding: 15px;
+    background-color: #202020;
+}
+

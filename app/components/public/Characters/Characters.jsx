@@ -20,7 +20,7 @@ export default class Character extends Component {
                         </Col>
                     </Row>
                     <Row>
-                        <Col md={10} mdOffset={2}>
+                        <Col md={8} mdOffset={2}>
                             <h2>Likelihood of Death</h2>
                             <p>Check out what our two different algorithms say</p>
                             <Tabs>
@@ -34,7 +34,7 @@ export default class Character extends Component {
                         </Col>
                     </Row>
                     <Row>
-                        <Col md={10} mdOffset={2}>
+                        <Col md={8} mdOffset={2}>
                             <h2>People on Twitter say</h2>
                             <Tabs>
                                 <Tab eventKey={1} title="Twitter Analysis 1">
@@ -51,7 +51,7 @@ export default class Character extends Component {
                         </Col>
                     </Row>
                     <Row>
-                        <Col md={10} mdOffset={2}>
+                        <Col md={8} mdOffset={2}>
                             <h2>Location History</h2>
                             <Map />
                         </Col>
