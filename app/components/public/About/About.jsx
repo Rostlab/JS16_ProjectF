@@ -89,6 +89,7 @@ class TeamMemberListing extends Component {
 TeamMemberListing.propTypes = { teamID: React.PropTypes.string };
 
 class TeamMember extends Component {
+    ,
     render() {
         return (
             <Column md={3}>
