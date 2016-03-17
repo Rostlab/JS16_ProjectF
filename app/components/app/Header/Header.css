@@ -26,6 +26,9 @@ header {
     border-width: 0 0 1px 0;
 }
 
+.navbar-nav li {
+    transition: all .2s;
+}
 
 .navbar-inverse .navbar-nav > .active > a,
 .navbar-inverse .navbar-nav > .active > a:hover,
@@ -35,4 +38,5 @@ header {
 
 .navbar-nav li:hover {
     background-color: #5A180C;
+    transition: all .2s;
 }
