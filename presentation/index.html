@@ -300,6 +300,57 @@
 					</div>
 
 				</section>
+				<section>
+					<h2>Adding/Removing/Changing Attributes</h2><p>Let's say "foo" works as a button..</p>
+					<div class="fragment">
+<pre><code class="javascript">document.getElementById('foo').setAttribute('role', 'button');</code></pre>
+					<pre><code class="javascript">document.getElementById('foo').removeAttribute('role');</code></pre>
+					</div>
+
+					<div class="fragment">
+<pre><code class="javascript">$('#foo').attr('role', 'button');</code></pre>
+<pre><code class="javascript">$('#foo').removeAttr('role');</code></pre>
+    </div>
+					<div class="left">
+						<pre><code class="html"><div id="foo"></div></code></pre>
+					</div>
+					<div class="fragment right">
+						<pre><code class="html"><div id="foo" role="button"></div></code></pre>
+					</div>
+				</section>
+
+				<section>
+					<h2>Adding & Changing Text Content</h2>
+					<div class="fragment">
+<pre><code class="javascript">document.getElementById('foo').innerHTML = 'Goodbye!';</code></pre>
+    </div>
+    <div class="fragment">
+<pre><code class="javascript">document.getElementById('foo').innerText = 'GoodBye!';</code></pre>
+    </div>
+    <div class="fragment">
+<pre><code class="javascript">document.getElementById('foo').textContent = 'Goodbye!';</code></pre>
+    </div>
+    <div class="fragment">
+<pre><code class="javascript">$('#foo').text('Goodbye!');</code></pre>
+    </div>
+					<div class="left">
+						<pre><code class="html"><div id="foo">Hi there!</div></code></pre>
+					</div>
+					<div class="fragment right">
+						<pre><code class="html"><div id="foo">Goodbye!</div></code></pre>
+					</div>
+				</section>
+
+				<section>
+				<h1>...</h1>
+					<div class="fragment">
+						<h2>But what is the difference?!</h2>
+					</div>
+				</section>
+
+				<section>
+					<img src="img/whatisdom/difference.png" />
+				</section>
 <!--
 #
 # Styles / Presentation
@@ -589,48 +640,13 @@ bold;">Attention!</span></code></pre>
 
 
 				<section>
-					<h2>Adding/Removing/Changing Attributes</h2><p>Let's say "foo" works as a button..</p>
-					<div class="fragment">
-<pre><code class="javascript">document.getElementById('foo').setAttribute('role', 'button');</code></pre>
-					<pre><code class="javascript">document.getElementById('foo').removeAttribute('role');</code></pre>
-					</div>
-
-					<div class="fragment">
-<pre><code class="javascript">$('#foo').attr('role', 'button');</code></pre>
-<pre><code class="javascript">$('#foo').removeAttr('role');</code></pre>
-    </div>
-					<div class="left">
-						<pre><code class="html"><div id="foo"></div></code></pre>
-					</div>
-					<div class="fragment right">
-						<pre><code class="html"><div id="foo" role="button"></div></code></pre>
-					</div>
+				<h2>How cool is this?</h2>
+				<div class="fragment">
+					<iframe height='500' scrolling='no' src='http://codepen.io/kevinjannis/embed/bpezow/?height=500&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/kevinjannis/pen/bpezow/'>Chuck Norris's kickass pushups!</a> by Kevin Jannis (<a href='http://codepen.io/kevinjannis'>@kevinjannis</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>	</div>
 				</section>
-
-
-				<section>
-					<h2>Adding & Changing Text Content</h2>
-					<div class="fragment">
-<pre><code class="javascript">document.getElementById('foo').innerHTML = 'Goodbye!';</code></pre>
-    </div>
-    <div class="fragment">
-<pre><code class="javascript">document.getElementById('foo').innerText = 'GoodBye!';</code></pre>
-    </div>
-    <div class="fragment">
-<pre><code class="javascript">document.getElementById('foo').textContent = 'Goodbye!';</code></pre>
-    </div>
-    <div class="fragment">
-<pre><code class="javascript">$('#foo').text('Goodbye!');</code></pre>
-    </div>
-					<div class="left">
-						<pre><code class="html"><div id="foo">Hi there!</div></code></pre>
-					</div>
-					<div class="fragment right">
-						<pre><code class="html"><div id="foo">Goodbye!</div></code></pre>
-					</div>
-				</section>
-
-
+				
+				
 
 
 
