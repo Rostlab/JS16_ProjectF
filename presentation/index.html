@@ -127,63 +127,179 @@
 					<h2>DOM Traversal with JS</h2>
 						<img src="img/whatisdom/parentNodes.png" style="width: 60%;" />
 				</section>
-				<!-- <section>
-					<h2>< !DOCTYPE html ></h2>
-					<p>The doctype is not actually a tag, but a declaration, telling the browser what kind of HTML we are using. In this case: HTML5.</p>
-				</section>
+				
 
-				<section>
-					<h2>< html > < /html > </h2>
-					<p>Defines the boundaries of the HTML document.</p>
-				</section>
-
-				<section>
-					<h2>< head > < /head > </h2>
-					<p>The < head > element is a container for metadata.</p>
-					<p>document title, styles, links, scripts and other</p>
-					<p>Metadata is not displayed.</p>
-				</section>
-
-				<section>
-					<h2>< body > < /body > </h2>
-					<p>The < body > element contains all of the contents for an HTML document.</p>
-					<p>text, hyperlinks, images, tables, lists..</p>
-				</section>
+				<!--
+#
+# Manipulation & Behaviour
+#
+-->
 
 
 				<section>
-					<h2>HTML markup and Nesting</h2>
-					<img src="img/snippet.png" />
-					<p>The purpose of the tags is to group and describe page content.</p>
+					<h2>Manipulation &amp; Behaviour</h2>
+					<p>Executed on client and defines how different objects behave on interaction from user.</p>
+				</section>
+
+				<section>
+					<h2>Finding DOM Elements</h2>
+					<p>Return a specific object</p>
+					<pre><code class="javascript">document.getElementById(id)</code></pre>
+					<pre><code class="javascript">$('#id')</code></pre>
+
+					<div class="fragment"><p>Return an array of objects</p>
+						<pre><code class="javascript">document.getElementByTagName(DIV)</code></pre>
+						<pre><code class="javascript">$('div')</code></pre>
+					</div>
+					<div class="fragment">
+						<p>Return a collection of objects with the specified <b>name</b></p>
+						<pre><code class="javascript">document.getElementByName(name)</code></pre>
+						<pre><code class="javascript">$([name='name'])</code></pre>
+					</div>
 				</section>
 
 
 				<section>
-					<h2>HTML Elements</h2>
-					<h3>Anatomy of an element</h3>
-					<p>< tag > The content < /tag></p>
-					<p>Tags normally come in pairs: <br/>
-					< h1>< /h1><br/>
-					< p>< /p><br/>
-					..</p>
+					<h2>Creating DOM Elements</h2>
+						<pre><code class="javascript">document.createElement('div');</code></pre>
+						<pre><code class="javascript">$('<div></div>');</code></pre>
+				</section>
+
+
+				<section>
+					<h2>Insert elements before </h2>
+					<div class="fragment">
+<pre><code class="javascript">document.getElementById('1')
+    .insertAdjacentHTML('beforebegin', '<div id="0.9"></div>');</code></pre>
+    				</div>
+
+					<div class="fragment">
+						<pre><code class="javascript">$('#1').before('<div id="0.9"></div>');</code></pre>
+					</div>
+
+					<div class="left">
+						<pre><code class="html"><div id="1"></div>
+<div id="2"></div>
+<div id="3"></div></code></pre>
+					</div> <!-- endLeft -->
+
+					<div class="fragment">
+					<pre><code class="html"><div id="0.9"></div>
+<div id="1"></div>
+<div id="2"></div>
+<div id="3"></div></code></pre></div>
+
+					<br />
+				</section>
+
+				<section>
+					<h4>element.insertAdjacentHTML(position, text);</h4>
+					<img src="img/whatisdom/adjacentHTML.png" />
+				</section>
+
+<!-- 				<section>
+					<h2>Insert elements after</h2>
+						<pre><code class="html"><div id="1"></div>
+<div id="2"></div>
+<div id="3"></div></code></pre>
+<div class="fragment"><pre><code class="javascript">document.getElementById('1')
+    .insertAdjacentHTML('afterend', '<div id="1.1"></div>');</code></pre></div>
+					<div class="fragment">
+					<pre><code class="html"><div id="1"></div>
+<div id="1.1"></div>
+<div id="2"></div>
+<div id="3"></div></code></pre></div>
 				</section> -->
 
-				<!-- <section>
-					<h2>HTML Elements</h2>
-					<h3>Anatomy of an element</h3>
-					<pre><code class="html" data-trim>
-						<div class="blue">This is a div.</div>
-					</code></pre>
-					<pre><code class="html" data-trim>
-						<a href="http://rostlab.org">Rostlab homepage</a>
-					</code></pre>
-					<pre><code class="html" data-trim>
-						<img src="images/image.jpg" alt="Image description">
-					</code></pre>
-					<p>Most elements can have attributes, which provides additional information about the element.</p>
-				</section> -->
+
+				<section>
+					<h2>Insert elements as child</h2>
+
+<div class="fragment"><pre><code class="javascript">document.getElementById('parent')
+    .insertAdjacentHTML('afterbegin', '<div id="newChild"></div>');</code></pre></div>
+
+<div class="fragment"><pre><code class="javascript">$('#parent').prepend('<div id="newChild"></div>');
+</code></pre></div>
+
+					<div class="left">
+						<pre><code class="html"><div id="parent">
+    <div id="oldChild"></div>
+</div></code></pre>
+					</div> <!-- endLeft -->
+
+					<div class="fragment">
+						<pre><code class="html"><div id="parent">
+    <div id="newChild"></div>
+    <div id="oldChild"></div>
+</div></code></pre></div>
+				</section>
 
 
+				<section>
+					<h2>Moving elements</h2>
+<div class="fragment"><pre><code class="javascript">document.getElementById('parent')
+    .appendChild(document.getElementById('orphan'));</code></pre></div>
+
+<div class="fragment"><pre><code class="javascript">$('#parent').append($('#orphan'));</code></pre></div>
+
+<div class="left">
+						<pre><code class="html"><div id="parent">
+    <div id="c1"></div>
+    <div id="c2"></div>
+    <div id="c3"></div>
+</div>
+<div id="orphan"></div></code></pre>
+</div>
+
+					<div class="fragment right">
+					<pre><code class="html"><div id="parent">
+    <div id="c1"></div>
+    <div id="c2"></div>
+    <div id="c3"></div>
+    <div id="orphan"></div>
+</div></code></pre></div>
+				</section>
+
+
+				<section>
+					<h2>Moving elements II</h2>
+
+<div class="fragment"><pre><code class="javascript">document.getElementById('parent')
+    .insertBefore(document.getElementById('orphan'),
+     document.getElementById('c1'));</code></pre></div>
+
+<div class="fragment"><pre><code class="javascript">$('#parent').prepend($('#orphan'));</code></pre></div>
+
+
+					<div class="left">
+											<pre><code class="html"><div id="parent">
+    <div id="c1"></div>
+    <div id="c2"></div>
+    <div id="c3"></div>
+</div>
+<div id="orphan"></div></code></pre>
+</div>
+					<div class="fragment right">
+					<pre><code class="html"><div id="parent">
+    <div id="orphan"></div>
+    <div id="c1"></div>
+    <div id="c2"></div>
+    <div id="c3"></div>
+</div></code></pre></div>
+				</section>
+
+
+				<section>
+					<h2>Removing elements</h2>
+<pre><code class="javascript">document.getElementById('foobar').parentNode
+    .removeChild(document.getElementById('foobar'));</code></pre>
+					<div class="fragment"><p>Verbose and ugly, but it works!!!</p></div>
+
+					<div class="fragment">
+						<pre><code class="javascript">$('#foobar').remove();</code></pre>
+					</div>
+
+				</section>
 <!--
 #
 # Styles / Presentation
@@ -414,177 +530,7 @@ button {
 
 
 
-<!--
-#
-# Manipulation & Behaviour
-#
--->
 
-
-				<section>
-					<h2>Manipulation &amp; Behaviour</h2>
-					<p>Executed on client and defines how different objects behave on interaction from user.</p>
-				</section>
-
-				<section>
-					<h2>Finding DOM Elements</h2>
-					<p>Return a specific object</p>
-					<pre><code class="javascript">document.getElementById(id)</code></pre>
-					<pre><code class="javascript">$('#id')</code></pre>
-
-					<div class="fragment"><p>Return an array of objects</p>
-						<pre><code class="javascript">document.getElementByTagName(DIV)</code></pre>
-						<pre><code class="javascript">$('div')</code></pre>
-					</div>
-					<div class="fragment">
-						<p>Return a collection of objects with the specified <b>name</b></p>
-						<pre><code class="javascript">document.getElementByName(name)</code></pre>
-						<pre><code class="javascript">$([name='name'])</code></pre>
-					</div>
-				</section>
-
-
-				<section>
-					<h2>Creating DOM Elements</h2>
-						<pre><code class="javascript">document.createElement('div');</code></pre>
-						<pre><code class="javascript">$('<div></div>');</code></pre>
-				</section>
-
-
-				<section>
-					<h2>Insert elements before </h2>
-					<div class="fragment">
-<pre><code class="javascript">document.getElementById('1')
-    .insertAdjacentHTML('beforebegin', '<div id="0.9"></div>');</code></pre>
-    				</div>
-
-					<div class="fragment">
-						<pre><code class="javascript">$('#1').before('<div id="0.9"></div>');</code></pre>
-					</div>
-
-					<div class="left">
-						<pre><code class="html"><div id="1"></div>
-<div id="2"></div>
-<div id="3"></div></code></pre>
-					</div> <!-- endLeft -->
-
-					<div class="fragment">
-					<pre><code class="html"><div id="0.9"></div>
-<div id="1"></div>
-<div id="2"></div>
-<div id="3"></div></code></pre></div>
-
-					<br />
-					<div class="fragment">
-						<h3>Insert after</h3>
-						<p>use <i>'afterend'</i> and <i>.after()</i></p>
-					</div>
-				</section>
-
-
-<!-- 				<section>
-					<h2>Insert elements after</h2>
-						<pre><code class="html"><div id="1"></div>
-<div id="2"></div>
-<div id="3"></div></code></pre>
-<div class="fragment"><pre><code class="javascript">document.getElementById('1')
-    .insertAdjacentHTML('afterend', '<div id="1.1"></div>');</code></pre></div>
-					<div class="fragment">
-					<pre><code class="html"><div id="1"></div>
-<div id="1.1"></div>
-<div id="2"></div>
-<div id="3"></div></code></pre></div>
-				</section> -->
-
-
-				<section>
-					<h2>Insert elements as child</h2>
-
-<div class="fragment"><pre><code class="javascript">document.getElementById('parent')
-    .insertAdjacentHTML('afterbegin', '<div id="newChild"></div>');</code></pre></div>
-
-<div class="fragment"><pre><code class="javascript">$('#parent').prepend('<div id="newChild"></div>');
-</code></pre></div>
-
-					<div class="left">
-						<pre><code class="html"><div id="parent">
-    <div id="oldChild"></div>
-</div></code></pre>
-					</div> <!-- endLeft -->
-
-					<div class="fragment">
-						<pre><code class="html"><div id="parent">
-    <div id="newChild"></div>
-    <div id="oldChild"></div>
-</div></code></pre></div>
-				</section>
-
-
-				<section>
-					<h2>Moving elements</h2>
-<div class="fragment"><pre><code class="javascript">document.getElementById('parent')
-    .appendChild(document.getElementById('orphan'));</code></pre></div>
-
-<div class="fragment"><pre><code class="javascript">$('#parent').append($('#orphan'));</code></pre></div>
-
-<div class="left">
-						<pre><code class="html"><div id="parent">
-    <div id="c1"></div>
-    <div id="c2"></div>
-    <div id="c3"></div>
-</div>
-<div id="orphan"></div></code></pre>
-</div>
-
-					<div class="fragment right">
-					<pre><code class="html"><div id="parent">
-    <div id="c1"></div>
-    <div id="c2"></div>
-    <div id="c3"></div>
-    <div id="orphan"></div>
-</div></code></pre></div>
-				</section>
-
-
-				<section>
-					<h2>Moving elements II</h2>
-
-<div class="fragment"><pre><code class="javascript">document.getElementById('parent')
-    .insertBefore(document.getElementById('orphan'),
-     document.getElementById('c1'));</code></pre></div>
-
-<div class="fragment"><pre><code class="javascript">$('#parent').prepend($('#orphan'));</code></pre></div>
-
-
-					<div class="left">
-											<pre><code class="html"><div id="parent">
-    <div id="c1"></div>
-    <div id="c2"></div>
-    <div id="c3"></div>
-</div>
-<div id="orphan"></div></code></pre>
-</div>
-					<div class="fragment right">
-					<pre><code class="html"><div id="parent">
-    <div id="orphan"></div>
-    <div id="c1"></div>
-    <div id="c2"></div>
-    <div id="c3"></div>
-</div></code></pre></div>
-				</section>
-
-
-				<section>
-					<h2>Removing elements</h2>
-<pre><code class="javascript">document.getElementById('foobar').parentNode
-    .removeChild(document.getElementById('foobar'));</code></pre>
-					<div class="fragment"><p>Verbose and ugly, but it works!!!</p></div>
-
-					<div class="fragment">
-						<pre><code class="javascript">$('#foobar').remove();</code></pre>
-					</div>
-
-				</section>
 
 
 				<section>
