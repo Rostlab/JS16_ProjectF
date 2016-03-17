@@ -1,7 +1,7 @@
 import React from 'react';
 let {Component} = React;
 import './Characters.css';
-import { Grid, Row, Col, Image, Panel, Tabs, Tab } from 'react-bootstrap';
+import { Row, Col, Image, Tabs, Tab } from 'react-bootstrap';
 
 import Map from '../../common/MapComp/MapComp.jsx';
 
