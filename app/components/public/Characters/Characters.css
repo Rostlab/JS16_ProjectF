@@ -1,15 +1,12 @@
-.character-container .row {
-	padding: 50px 0;
-}
-
 .row.character-intro {
-	margin-top: -80px;
+	height: 80px;
+	transform: translateY(-100%);
 	background-color: rgba(0, 0, 0, 0.6);
 	padding: 0;
 }
 .character-photo {
 	max-width: 100%;
-	margin-top: -180px;
+	transform: translateY(-50%);
 }
 
 .character-name h1 {

@@ -10,6 +10,7 @@ export default class About extends Component {
     render() {
         return (
             <div className="about-container">
+                <h1>About</h1>
                 <Row className="about-intro">
                     <Column md={8} mdPush={2}>
                         <p>This webapp ist the result of a JavaScript Course at the Technical University Munich.</p>

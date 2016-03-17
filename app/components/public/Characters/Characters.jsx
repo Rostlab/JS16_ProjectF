@@ -10,6 +10,9 @@ export default class Character extends Component {
     render() {
         return (
             <div className="character-container">
+                <Row fluid>
+                    <div className="header-image"></div>
+                </Row>
                     <Row className="character-intro" fluid >
                         <Col md={3} mdOffset={1}>
                             <Image className="character-photo"
