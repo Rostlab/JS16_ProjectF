@@ -6,7 +6,7 @@ import MapComp from '../../common/MapComp/MapComp.jsx';
 export default class Map extends Component {
   render() {
     return (
-      <div>
+      <div className="row">
         <h1>Map</h1>
 
         <MapComp />

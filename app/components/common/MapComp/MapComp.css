@@ -1,11 +1,11 @@
 .row {
   position: relative;
   height: 496px;
-  width: auto;
+  width: 100%;
   margin: 0;
 }
 
-#map, #sidebar, #timeline, #dynModal {
+#map, #sidebar, #timeline, #dynModal{
   position: absolute;
 }
 
