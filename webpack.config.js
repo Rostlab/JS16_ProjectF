@@ -7,12 +7,11 @@ var npm_dir = __dirname + '/node_modules/';
 var config = {
     devtool: 'eval-source-map',
 
-    entry: {
-      app: __dirname + "/app/main.jsx"
-    },
+    context: __dirname + "/app",
+    entry: "./main.jsx",
     output: {
         path: __dirname + "/build",
-        filename: "bundle.js"
+        filename: "/bundle.js"
     },
 
     module: {
