@@ -33,6 +33,15 @@
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
+		<script>
+
+	var i = 0;
+function tester_button() {
+    var btn = document.createElement("BUTTON");
+    btn.innerText = i++;
+    document.getElementById("tester-button").appendChild(btn);
+}
+</script>
 	</head>
 
 	<body>
@@ -161,13 +170,18 @@
 
 				<section>
 					<h2>Creating DOM Elements</h2>
-						<pre><code class="javascript">document.createElement('div');</code></pre>
-						<pre><code class="javascript">$('<div></div>');</code></pre>
+						<pre><code class="javascript">document.createElement('button');</code></pre>
+						<pre><code class="javascript">$('<button></button>');</code></pre>
+						<p>And then most probably <pre><code class="javascript">element.appendChild(btn)</code></pre></p><br/>
+						<div class="fragment">	
+							<button style="padding: 20px;" onclick="tester_button()">Try it</button>
+							<div id="tester-button"></div>
+						</div>
 				</section>
 
 
 				<section>
-					<h2>Insert elements before </h2>
+					<h2>Insert elements 'before' </h2>
 					<div class="fragment">
 <pre><code class="javascript">document.getElementById('1')
     .insertAdjacentHTML('beforebegin', '<div id="0.9"></div>');</code></pre>
@@ -196,20 +210,6 @@
 					<h4>element.insertAdjacentHTML(position, text);</h4>
 					<img src="img/whatisdom/adjacentHTML.png" />
 				</section>
-
-<!-- 				<section>
-					<h2>Insert elements after</h2>
-						<pre><code class="html"><div id="1"></div>
-<div id="2"></div>
-<div id="3"></div></code></pre>
-<div class="fragment"><pre><code class="javascript">document.getElementById('1')
-    .insertAdjacentHTML('afterend', '<div id="1.1"></div>');</code></pre></div>
-					<div class="fragment">
-					<pre><code class="html"><div id="1"></div>
-<div id="1.1"></div>
-<div id="2"></div>
-<div id="3"></div></code></pre></div>
-				</section> -->
 
 
 				<section>
@@ -294,7 +294,9 @@
 <pre><code class="javascript">document.getElementById('foobar').parentNode
     .removeChild(document.getElementById('foobar'));</code></pre>
 					<div class="fragment"><p>Verbose and ugly, but it works!!!</p></div>
-
+					<div class="fragment">
+						<img src="img/aufgeregt.gif" />
+					</div>
 					<div class="fragment">
 						<pre><code class="javascript">$('#foobar').remove();</code></pre>
 					</div>
@@ -341,7 +343,7 @@
 					</div>
 				</section>
 
-				<section>
+				<section data-background="img/confused.gif">
 				<h1>...</h1>
 					<div class="fragment">
 						<h2>But what is the difference?!</h2>
@@ -871,7 +873,8 @@ http://www.hbo.com/game-of-thrones<br/>
 http://www.warnerbros.com/hangover-part-ii<br/>
 http://blog.garstasio.com/you-dont-need-jquery/dom-manipulation/<br/>
 https://en.wikipedia.org/wiki/Document_Object_Model<br/>
-https://en.wikipedia.org/wiki/Document_Object_Model</p>
+https://en.wikipedia.org/wiki/Document_Object_Model<br/>
+http://imgur.com/gallery/0UIwFbR</p>
 				</section>
 
 			</div>
