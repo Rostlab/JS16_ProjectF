@@ -1,4 +1,14 @@
-.map {
-  background: grey;
-  height: 300px;
+.row {
+  position: relative;
+  height: 496px;
+  width: auto;
+  margin: 0;
+}
+
+#map, #sidebar, #timeline, #dynModal {
+  position: absolute;
+}
+
+.map-wrapper {
+  height: 496px;
 }

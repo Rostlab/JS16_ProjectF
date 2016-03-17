@@ -7,6 +7,12 @@ import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 import 'jquery';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
+import map from "gotmap";
+map.config({
+  apiLocation = "",
+  apiToken = ""
+});
+map.init();
 
 import App from './components/app/App.jsx';
 import About from './components/public/About/About.jsx';

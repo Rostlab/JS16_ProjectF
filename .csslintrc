@@ -1,5 +1,6 @@
 {
 	"fallback-colors": false,
+	"ids": false,
 
   "adjoining-classes": false,
   "box-sizing": false,
