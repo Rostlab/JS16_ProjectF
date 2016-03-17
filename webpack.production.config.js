@@ -6,7 +6,7 @@ var config = {
     entry: __dirname + "/app/main.jsx",
     output: {
         path: __dirname + "/build",
-        filename: "bundle.js"
+        filename: "/bundle.js"
     },
 
     module: {

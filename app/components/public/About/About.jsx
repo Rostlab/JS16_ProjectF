@@ -8,7 +8,6 @@ import Thumbnail from 'react-bootstrap/lib/Thumbnail';
 
 export default class About extends Component {
     render() {
-
         return (
             <div className="about-container">
                 <Row className="about-intro">
@@ -45,8 +44,6 @@ export default class About extends Component {
 
 
 class TeamMemberListing extends Component {
-    //propTypes() { return { teamID: React.PropTypes.string.isRequired } }
-
     render() {
         return(
             <div>
@@ -55,9 +52,8 @@ class TeamMemberListing extends Component {
                     return <TeamMember key={member.name} data={member}/>;})
                 }
             </div>
-        )
+        );
     }
-
     getProjectMembers(projectID) {
         projectID += "!"; // so the linter isnt complaining.
         // ToDo: Think about where to store the member-data
@@ -90,9 +86,9 @@ class TeamMemberListing extends Component {
         ];
     }
 }
+TeamMemberListing.propTypes = { teamID: React.PropTypes.string };
 
 class TeamMember extends Component {
-    //propTypes() { return {imageUrl: React.PropTypes.element.isRequired, name: React.PropTypes.element.isRequired};}
     render() {
         return (
             <Column md={3}>
@@ -105,3 +101,4 @@ class TeamMember extends Component {
         );
     }
 }
+TeamMember.propTypes =  {  data: React.PropTypes.object.isRequired };
