@@ -1,6 +1,6 @@
 import React from 'react';
 let {Component} = React;
- import styles from './About.css';
+//import styles from './About.css';
 import Row from 'react-bootstrap/lib/Row';
 import Column from 'react-bootstrap/lib/Col';
 import Thumbnail from 'react-bootstrap/lib/Thumbnail';

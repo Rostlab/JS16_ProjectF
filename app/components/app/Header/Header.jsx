@@ -23,7 +23,7 @@ export default class Header extends Component {
                             <IndexLinkContainer to={{ pathname: '/'}}>
                                 <Button bsStyle="link">Home</Button>
                             </IndexLinkContainer>
-                            <LinkContainer to={{ pathname: '/character'}}>
+                            <LinkContainer to={{ pathname: '/characters'}}>
                                 <Button bsStyle="link">Character</Button>
                             </LinkContainer>
                             <LinkContainer to={{ pathname: '/about'}}>
