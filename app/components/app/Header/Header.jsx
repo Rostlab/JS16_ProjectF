@@ -26,6 +26,12 @@ export default class Header extends Component {
                             <LinkContainer to={{ pathname: '/characters'}}>
                                 <Button bsStyle="link">Character</Button>
                             </LinkContainer>
+                            <LinkContainer to={{ pathname: '/ranking'}}>
+                                <Button bsStyle="link">Ranking</Button>
+                            </LinkContainer>
+                            <LinkContainer to={{ pathname: '/map'}}>
+                                <Button bsStyle="link">Map</Button>
+                            </LinkContainer>
                             <LinkContainer to={{ pathname: '/about'}}>
                                 <Button bsStyle="link">About</Button>
                             </LinkContainer>
