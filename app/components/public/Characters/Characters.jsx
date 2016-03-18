@@ -14,12 +14,16 @@ export default class Character extends Component {
                     <div className="header-image"></div>
                 </Row>
                     <Row className="character-intro" fluid >
-                        <Col md={3} mdOffset={1}>
+                        <Col xs={12} sm={6} md={3} mdOffset={1}>
                             <Image className="character-photo"
                                    src="https://placeholdit.imgix.net/~text?txtsize=33&txt=profile%20picture%20&w=350&h=350"/>
                         </Col>
-                        <Col md={6}>
+                        <Col xs={12} sm={6} md={8}>
                             <div className="character-name"><h1>Cercei Stark, ID: {this.props.params.id}</h1></div>
+                            <p className="lead">TEST TEST TEST TEST TEST</p>
+                            <p className="lead">TEST TEST TEST TEST TEST</p>
+                            <p className="lead">TEST TEST TEST TEST TEST</p>
+                            <p className="lead">TEST TEST TEST TEST TEST</p>
                         </Col>
                     </Row>
                     <Row>

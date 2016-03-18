@@ -1,14 +1,13 @@
 .row.character-intro {
-	height: 80px;
-	transform: translateY(-100%);
-	background-color: rgba(0, 0, 0, 0.6);
+	transform: translateY(-50%);
 	padding: 0;
 }
 .character-photo {
-	max-width: 100%;
-	transform: translateY(-50%);
+	width: 100%;
 }
 
 .character-name h1 {
 	line-height: 50px;
+	background-color: rgba(0, 0, 0, 0.9);
+	width: 100%;
 }
