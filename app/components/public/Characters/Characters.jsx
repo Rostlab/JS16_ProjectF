@@ -20,10 +20,7 @@ export default class Character extends Component {
                         </Col>
                         <Col xs={12} sm={6} md={8}>
                             <div className="character-name"><h1>Cercei Stark, ID: {this.props.params.id}</h1></div>
-                            <p className="lead">TEST TEST TEST TEST TEST</p>
-                            <p className="lead">TEST TEST TEST TEST TEST</p>
-                            <p className="lead">TEST TEST TEST TEST TEST</p>
-                            <p className="lead">TEST TEST TEST TEST TEST</p>
+                            
                         </Col>
                     </Row>
                     <Row>
