@@ -18,7 +18,6 @@ var CharactersStore = assign({}, EventEmitter.prototype, {
     },
 
     emitChange: function() {
-        console.log("emitting");
         this.emit('change');
     },
 
