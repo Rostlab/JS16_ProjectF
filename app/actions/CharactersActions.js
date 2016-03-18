@@ -8,13 +8,13 @@ var CharactersActions = {
         Api
             .get('https://got-api.bruck.me/api/characters')
             .then(function (characters) {
-
                 // Dispatch an action containing the categories.
                 AppDispatcher.handleViewAction({
                     actionType: Constants.RECEIVE_CHARACTERS,
                     data: characters
                 });
             });
+
     }
 
 };

@@ -42,8 +42,6 @@ CharactersStore.dispatchToken = AppDispatcher.register(function (payload) {
     }
 
     CharactersStore.emitChange();
-
-    return true;
 });
 
 module.exports = CharactersStore;
