@@ -4,7 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 
-import './analytivs.js'
+import './analytics.js'
 
 import 'jquery';
 import 'bootstrap/dist/css/bootstrap.css';
