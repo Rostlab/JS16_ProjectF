@@ -2,10 +2,7 @@
 #root {
 	background: none;
 }
-.footer {
-	position: absolute;
-	bottom: 0;
-}
+
 .notfound h1 {
 	font-size: 13em;
 	font-weight: 900;
