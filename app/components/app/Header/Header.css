@@ -42,3 +42,7 @@ header {
     background-color: #5A180C;
     transition: all .2s;
 }
+.footer {
+    position: absolute;
+    bottom: 0;
+}
