@@ -4,11 +4,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 
+
+
+
 import 'jquery';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
-import map from "gotmap";
-map.init();
+
+import "gotmap/builds/deploy.bundle.js";
+import "!css!gotmap/mockup/css/gotmap.css";
+import "!css!gotmap/mockup/css/demo.css"; 
 
 import App from './components/app/App.jsx';
 import About from './components/public/About/About.jsx';
@@ -23,12 +28,12 @@ ReactDOM.render((
   <Router history={browserHistory}>
     <Route name="app" path="/" component={App}>
       <IndexRoute name="start"  component={Start}/>
-      <Route name="map" path="/map" component={Map}/>
       <Route name="ranking" path="/ranking" component={Ranking}/>
       <Route name="about" path="/about" component={About}/>
       <Route name="characters" path="/characters" component={CharacterList}/>
       <Route name="charDetail" path="/characters/:id" component={Characters}/>
-      <Route path="*" component={Site404}/>
     </Route>
+    <Route name="/map" path="/map" component={Map}/>
+    <Route path="*" component={Site404}/>
   </Router>
 ), document.getElementById('root'));

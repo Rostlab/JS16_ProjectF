@@ -1,14 +1,9 @@
-.row {
-  position: relative;
-  height: 496px;
-  width: 100%;
-  margin: 0;
-}
 
-#map, #sidebar, #timeline, #dynModal{
+#map, #sidebar, #dynModal{
+    top: 52px;
+}
+.leaflet-control-container {
   position: absolute;
-}
-
-.map-wrapper {
-  height: 496px;
+  width: 100%;
+  height: 100%;
 }
