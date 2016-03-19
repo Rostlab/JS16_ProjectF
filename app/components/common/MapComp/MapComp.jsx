@@ -1,6 +1,6 @@
 import React from 'react';
 let {Component} = React;
-import 	'./MapComp.css';
+//import 	'./MapComp.css';
 
 export default class MapComp extends Component {
   render() {

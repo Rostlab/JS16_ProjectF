@@ -1,9 +1,1 @@
 
-#map, #sidebar, #dynModal{
-    top: 52px;
-}
-.leaflet-control-container {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
