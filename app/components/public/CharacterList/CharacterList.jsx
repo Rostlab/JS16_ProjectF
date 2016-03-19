@@ -29,9 +29,6 @@ export default class CharacterList extends Component {
   }
 
   _onChange() {
-    // here Store.getCharacters() return the filled list of characters  and the state should be updated and update the view.
-    // but the state behaves weird and view isnt updated
-
     this.setState({
       characters: Store.getCharacters()
     });

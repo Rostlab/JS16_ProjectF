@@ -11,7 +11,7 @@ function setCharacters(characters) {
     _characters = characters;
 }
 function setCharacter(character) {
-    _character = character;
+    _character = character.data[0];
 }
 
 // Merge our store with Node's Event Emitter
