@@ -6,7 +6,7 @@ import Thumbnail from 'react-bootstrap/lib/Thumbnail';
 export default class CharacterThumbnail extends Component {
     render() {
         return (
-            <Col md={3}>
+            <Col md={3} xs={6} >
                 <Thumbnail src={this.props.imageUrl} >
                     <p> {this.props.name}</p>
                 </Thumbnail>
