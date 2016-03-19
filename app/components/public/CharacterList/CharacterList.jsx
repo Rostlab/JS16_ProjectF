@@ -17,12 +17,11 @@ export default class CharacterList extends Component {
   }
 
   componentWillMount (){
-    Actions.loadCharacters();
     Store.addChangeListener(this._onChange);
   }
 
   componentDidMount(){
-    Store.addChangeListener(this._onChange);
+    Actions.loadCharacters();
   }
 
   componentWillUnmount(){
