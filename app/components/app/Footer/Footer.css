@@ -18,8 +18,7 @@ footer, .wrap:after {
 }
 
 footer {
-	background-color: #1c1c1c;
-	color: #a0a0a0;
+	background-color: #313131;
 	min-height: 250px;
 	padding-top: 35px;
 }
@@ -29,12 +28,9 @@ footer hr {
 	border-top: 1px dotted #444;
 }
 
-footer p {
-	color: #666;
-}
-
-footer p a {
-	color: #666;
+footer p, 
+footer a {
+	color: #999;
 }
 
 footer p a:hover {
