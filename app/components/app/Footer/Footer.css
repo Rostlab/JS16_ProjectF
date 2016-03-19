@@ -13,14 +13,18 @@ html, body, #root, .page-wrap {
 	display: block;
 }
 
-footer, .wrap:after {
+.wrap:after {
 	height: 250px;
 }
 
 footer {
 	background-color: #313131;
 	min-height: 250px;
-	padding-top: 35px;
+	padding: 35px;
+}
+
+footer div[class^='col-'] {
+	padding-bottom: 10px;
 }
 
 footer hr {
