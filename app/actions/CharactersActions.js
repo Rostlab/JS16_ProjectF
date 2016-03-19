@@ -9,12 +9,22 @@ var CharactersActions = {
             .get('characters')
             .then(function (characters) {
                 // Dispatch an action containing the categories.
-                AppDispatcher.handleViewAction({
+                AppDispatcher.handleServerAction({
                     actionType: Constants.RECEIVE_CHARACTERS,
                     data: characters
                 });
             });
-
+    },
+    loadCharacter: function(name) {
+        Api
+            .get('characters/'+name)
+            .then(function (character) {
+                // Dispatch an action containing the categories.
+                AppDispatcher.handleServerAction({
+                    actionType: Constants.RECEIVE_CHARACTER,
+                    data: character
+                });
+            });
     }
 
 };

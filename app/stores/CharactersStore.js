@@ -5,9 +5,13 @@ var assign = require('object-assign');
 
 
 var _characters = [];
+var _character = {}
 
 function setCharacters(characters) {
     _characters = characters;
+}
+function setCharacter(character) {
+    _character = character;
 }
 
 // Merge our store with Node's Event Emitter
@@ -15,6 +19,10 @@ var CharactersStore = assign({}, EventEmitter.prototype, {
 
     getCharacters: function() {
         return _characters;
+    },
+
+    getCharacter: function() {
+        return _character;
     },
 
     emitChange: function() {
@@ -36,6 +44,9 @@ CharactersStore.dispatchToken = AppDispatcher.register(function (payload) {
     switch (action.actionType) {
         case Constants.RECEIVE_CHARACTERS:
             setCharacters(action.data);
+            break;
+        case Constants.RECEIVE_CHARACTER:
+            setCharacter(action.data);
             break;
         default:
             return true;
