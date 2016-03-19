@@ -19,13 +19,15 @@ import Site404 from './components/public/404/404.jsx';
 
 ReactDOM.render((
   <Router history={browserHistory}>
-    <Route name="app" path="/" component={App}>
-      <IndexRoute name="start"  component={Start}/>
-      <Route name="map" path="/map" component={Map}/>
-      <Route name="ranking" path="/ranking" component={Ranking}/>
-      <Route name="about" path="/about" component={About}/>
-      <Route name="characters" path="/characters" component={CharacterList}/>
-      <Route name="charDetail" path="/characters/:id" component={Characters}/>
+    <Route path="/" component={App}>
+      <IndexRoute component={Start}/>
+      <Route path="/map" component={Map}/>
+      <Route path="/ranking" component={Ranking}/>
+      <Route path="/about" component={About}/>
+      <Route path="/characters">
+        <IndexRoute component={CharacterList}/>
+        <Route path="/characters/:id" component={Characters}/>
+      </Route>
       <Route path="*" component={Site404}/>
     </Route>
   </Router>
