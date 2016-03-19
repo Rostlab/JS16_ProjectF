@@ -1,3 +1,22 @@
 .character-thumbnail img {
 	max-height: 150px;
 }
+
+.thumbnail {
+	background-color: #313131;
+    border-radius: 2px;
+    border: 0;
+
+    transition: all .1s ease-out;
+}
+
+.thumbnail:hover {
+	transition: all .1s ease-out;
+	transform: scale(1.05);
+}
+
+.thumbnail .caption {
+	color: whitesmoke;
+    padding: 0 9px;
+    text-align: center;
+}

@@ -47,7 +47,7 @@ export default class CharacterList extends Component {
           <Col md={8} mdOffset={2}>
             <div>{
               this.state.characters.map(function (character) {
-                return <CharacterThumbnail key={character._id} name={character.name} imageUrl={character.imageLink}/>;
+                return <CharacterThumbnail id={character._id} name={character.name} imageUrl={character.imageLink}/>;
               })
             }
             </div>
