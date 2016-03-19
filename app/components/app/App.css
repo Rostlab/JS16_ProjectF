@@ -42,8 +42,10 @@ body {
 
 .header-image {
     height: 550px;
-    margin-top: -65px;
     background-image: url('https://walter.trakt.us/images/shows/000/001/390/fanarts/original/76d5df8aed.jpg');
     background-size: cover;
     background-position: 100% 50%;
+}
+.main-container {
+   padding-top: 50px;
 }

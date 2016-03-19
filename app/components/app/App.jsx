@@ -15,7 +15,7 @@ export default class App extends Component {
     return (
       <div>
         <Header />
-        <Grid fluid>
+        <Grid fluid className="main-container">
             {this.props.children || <Start />}
         </Grid>
         <Footer />

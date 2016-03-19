@@ -1,5 +1,8 @@
 header {
     transition: all .5s;
+    position: absolute;
+    top: 0;
+    width: 100%;
     font-family: 'Cinzel Decorative', cursive;
 }
 
