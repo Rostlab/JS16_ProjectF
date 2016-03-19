@@ -6,7 +6,7 @@ var CharactersActions = {
 
     loadCharacters: function() {
         Api
-            .get('https://got-api.bruck.me/api/characters')
+            .get('characters')
             .then(function (characters) {
                 // Dispatch an action containing the categories.
                 AppDispatcher.handleViewAction({
