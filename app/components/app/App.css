@@ -1,6 +1,6 @@
 body {
   background: #1F1F1F;
-  overflow: hidden;
+  overflow-x: hidden;
   height: 100%;
   width: 100%;
   margin: 0;
