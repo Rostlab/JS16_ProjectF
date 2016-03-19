@@ -5,7 +5,7 @@ var assign = require('object-assign');
 
 
 var _characters = [];
-var _character = {}
+var _character = {};
 
 function setCharacters(characters) {
     _characters = characters;
