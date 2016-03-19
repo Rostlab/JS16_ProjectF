@@ -2,15 +2,16 @@
 
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var npm_dir = __dirname + '/node_modules/';
+var path = require('path');
+var npm_dir = path.join(__dirname, '/node_modules/');
 
 var config = {
     devtool: 'eval-source-map',
 
-    context: __dirname + "/app",
+    context: path.join(__dirname, 'app'),
     entry: "./main.jsx",
     output: {
-        path: __dirname + "/build",
+        path: path.join(__dirname, 'build'),
         filename: "/bundle.js"
     },
 
@@ -54,6 +55,10 @@ var config = {
             }
 
         ]
+    },
+
+    resolve: {
+        root: path.join(__dirname, 'node_modules')
     },
 
     postcss: [
