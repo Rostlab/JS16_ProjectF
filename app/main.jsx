@@ -13,7 +13,7 @@ import 'bootstrap/dist/js/bootstrap.js';
 
 import "gotmap/builds/deploy.bundle.js";
 import "!css!gotmap/mockup/css/gotmap.css";
-import "!css!gotmap/mockup/css/demo.css"; 
+import "!css!gotmap/mockup/css/demo.css";
 
 import App from './components/app/App.jsx';
 import About from './components/public/About/About.jsx';
@@ -26,12 +26,16 @@ import Site404 from './components/public/404/404.jsx';
 
 ReactDOM.render((
   <Router history={browserHistory}>
-    <Route name="app" path="/" component={App}>
-      <IndexRoute name="start"  component={Start}/>
-      <Route name="ranking" path="/ranking" component={Ranking}/>
-      <Route name="about" path="/about" component={About}/>
-      <Route name="characters" path="/characters" component={CharacterList}/>
-      <Route name="charDetail" path="/characters/:id" component={Characters}/>
+    <Route path="/" component={App}>
+      <IndexRoute component={Start}/>
+      <Route path="/map" component={Map}/>
+      <Route path="/ranking" component={Ranking}/>
+      <Route path="/about" component={About}/>
+      <Route path="/characters">
+        <IndexRoute component={CharacterList}/>
+        <Route path="/characters/:id" component={Characters}/>
+      </Route>
+      <Route path="*" component={Site404}/>
     </Route>
     <Route name="/map" path="/map" component={Map}/>
     <Route path="*" component={Site404}/>

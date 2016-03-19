@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "node_modules/.bin/webpack-dev-server --progress --inline --content-base public  --history-api-fallback",
-    "build": "NODE_ENV=production node_modules/.bin/webpack --config ./webpack.production.config.js  --progress"
+    "build": "NODE_ENV=production node_modules/.bin/webpack --config ./webpack.production.config.js --bail --progress"
   },
   "repository": {
     "type": "git",
@@ -54,6 +54,13 @@
     "react-bootstrap": "^0.28.3",
     "react-dom": "^0.14.7",
     "react-router": "^2.0.0",
-    "react-router-bootstrap": "^0.20.1"
+    "react-router-bootstrap": "^0.20.1",
+    "bootstrap": "^3.3.6",
+    "compression": "^1.6.1",
+    "express": "^4.13.4",
+    "es6-promise": "^3.1.2",
+    "flux": "^2.1.1",
+    "object-assign": "^4.0.1",
+    "superagent": "^1.8.1"
   }
 }

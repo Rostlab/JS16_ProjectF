@@ -1,4 +1,15 @@
-
+.row.character-intro {
+	padding: 0;
+}
 .character-photo {
 	width: 100%;
+	transform: translateY(-50%);
+}
+
+.character-name h1 {
+	margin: 0;
+	transform: translateY(-100%);
+	background-color: rgba(0, 0, 0, 0.9);
+	width: 100%;
+	padding: 10px;
 }
