@@ -7,18 +7,22 @@ import './App.css';
 
 import Header from './Header/Header.jsx';
 import Footer from './Footer/Footer.jsx';
+import FooterCopy from './Footer/FooterCopy.jsx';
 
 import Start from '../public/Start/Start.jsx';
 
 export default class App extends Component {
   render() {
     return (
-      <div>
-        <Header />
-        <Grid fluid className="main-container">
-            {this.props.children || <Start />}
-        </Grid>
+      <div className="page-wrap">
+        <div className="wrap">
+          <Header />
+          <Grid fluid className="main-container">
+              {this.props.children || <Start />}
+          </Grid>
+        </div>
         <Footer />
+        <FooterCopy />
       </div>
     );
   }
