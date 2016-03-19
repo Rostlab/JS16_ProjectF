@@ -28,7 +28,7 @@
 	z-index: 100;
 	background:url('cloud3.png') no-repeat;
 	background-size: contain;
-	left: 00%;
+	left: 0;
 	animation: leftright 300s infinite;
 }
 .cloud2 {
