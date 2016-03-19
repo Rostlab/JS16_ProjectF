@@ -74,7 +74,8 @@ var config = {
         new HtmlWebpackPlugin({
             template: __dirname + "/app/index.tmpl.html"
         }),
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.DefinePlugin({GA_TRACKING_CODE: JSON.stringify('UA-75295085-1')})
     ],
 
     devServer: {
