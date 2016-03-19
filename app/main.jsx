@@ -4,16 +4,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 
-
-
-
 import 'jquery';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
 
-import "gotmap/builds/deploy.bundle.js";
-import "!css!gotmap/mockup/css/gotmap.css";
-import "!css!gotmap/mockup/css/demo.css";
+//import "jquery-ui";
+import map from "gotmap";
+map.init();
+map.demo();
 
 import App from './components/app/App.jsx';
 import About from './components/public/About/About.jsx';
