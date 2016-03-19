@@ -1,5 +1,6 @@
 import React from 'react';
 let {Component} = React;
+import Stats from '../../common/Stats/Stats.jsx';
 import { Row } from 'react-bootstrap';
 
 export default class Start extends Component {
@@ -10,6 +11,7 @@ export default class Start extends Component {
           <div className="header-image"></div>
         </Row>
         Start
+        <Stats/>
       </div>
     );
   }

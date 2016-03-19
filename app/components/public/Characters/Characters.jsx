@@ -4,8 +4,34 @@ import './Characters.css';
 import { Row, Col, Image, Tabs, Tab } from 'react-bootstrap';
 
 import Map from '../../common/MapComp/MapComp.jsx';
+import Store from '../../../stores/CharactersStore';
+import Actions from '../../../actions/CharactersActions';
 
 export default class Character extends Component {
+
+    constructor (props) {
+        super(props);
+        this.state = {character: Store.getCharacter()};
+        this._onChange = this._onChange.bind(this);
+    }
+
+    componentWillMount (){
+        Store.addChangeListener(this._onChange);
+    }
+
+    componentDidMount(){
+        Actions.loadCharacter(this.props.params.id);
+    }
+
+    componentWillUnmount(){
+        Store.removeChangeListener(this._onChange);
+    }
+
+    _onChange() {
+        this.setState({
+            character: Store.getCharacter()
+        });
+    }
 
     render() {
         return (
@@ -18,9 +44,8 @@ export default class Character extends Component {
                             <Image className="character-photo"
                                    src="https://placeholdit.imgix.net/~text?txtsize=33&txt=profile%20picture%20&w=350&h=350"/>
                         </Col>
-                        <Col xs={12} sm={6} md={8}>
-                            <div className="character-name"><h1>Cercei Stark, ID: {this.props.params.id}</h1></div>
-                            
+                          <Col xs={12} sm={6} md={8}>
+                             <div className="character-name"><h1>{this.state.character.name}, ID: {this.state.character._id}</h1></div>                            
                         </Col>
                     </Row>
                     <Row>
