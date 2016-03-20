@@ -83,4 +83,3 @@ export default class CharacterListPage extends Component {
       );
     }
 }
-CharacterListPage.propTypes = { params: React.PropTypes.object };
