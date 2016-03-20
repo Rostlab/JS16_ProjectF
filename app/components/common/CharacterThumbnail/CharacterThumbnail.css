@@ -1,16 +1,20 @@
-.character-thumbnail img {
-	max-height: 150px;
+.character-thumbnail  {
+	height: 200px;
 }
-
+.character-thumbnail img {
+	height: 150px;
+	max-width: 90%;
+	margin: 0 auto;
+}
 .thumbnail {
-	background-color: #313131;
+	background-color: #333;
     border-radius: 2px;
     border: 0;
-
+    color: #999;
     transition: all .1s ease-out;
 }
 
-.thumbnail:hover {
+.to-transition:hover {
 	transition: all .1s ease-out;
 	transform: scale(1.05);
 }
@@ -19,4 +23,8 @@
 	color: whitesmoke;
     padding: 0 9px;
     text-align: center;
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    right: 0;
 }

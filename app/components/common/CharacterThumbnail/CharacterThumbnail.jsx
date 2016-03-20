@@ -14,7 +14,7 @@ export default class CharacterThumbnail extends Component {
 
         return (
             <Col md={3} xs={6}>
-              <a href={detailLink}>
+              <a href={detailLink} className="to-transition">
                 <Thumbnail src={img} className="character-thumbnail" >
                 	<p> {this.props.name}</p>
                 </Thumbnail>
