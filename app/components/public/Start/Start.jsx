@@ -3,7 +3,7 @@ let {Component} = React;
 import { Row } from 'react-bootstrap';
 
 import Stats from '../../common/Stats/Stats.jsx';
-import MapComp from '../../common/MapComp/MapComp.jsx';
+//import MapComp from '../../common/MapComp/MapComp.jsx';
 import './Start.css';
 
 export default class Start extends Component {
@@ -16,7 +16,6 @@ export default class Start extends Component {
         Start
         <Stats/>
         <Row>
-          <MapComp />
         </Row>
       </div>
     );
