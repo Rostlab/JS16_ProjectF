@@ -48,10 +48,11 @@ CharactersStore.dispatchToken = AppDispatcher.register(function (payload) {
         case Constants.RECEIVE_CHARACTER:
             setCharacter(action.data);
             break;
+        case Constants.SEND_CHARACTERS:
+            break;
         default:
             return true;
     }
-
     CharactersStore.emitChange();
 });
 
