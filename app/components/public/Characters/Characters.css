@@ -16,11 +16,13 @@
 	padding: 0;
 }
 .character-name h1 {
+	position: absolute;
+	bottom: 0;
 	margin: 0;
-	transform: translateY(-100%);
+    line-height: 2em;
+	/*transform: translateY(-100%);*/
 	background-color: rgba(0, 0, 0, 0.9);
 	width: 100%;
-	padding: 10px;
 }
 .list-group-item {
 	background: #333;

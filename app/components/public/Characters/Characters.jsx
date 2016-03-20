@@ -42,6 +42,7 @@ export default class Character extends Component {
             <div className="character-container">
                 <Row fluid>
                     <div className="header-image"></div>
+                    
                 </Row>
                 <Row className="character-intro" fluid >
                     <Col xs={6} xsOffset={3} sm={3} smOffset={0} md={3} mdOffset={1} className="character-photo">
