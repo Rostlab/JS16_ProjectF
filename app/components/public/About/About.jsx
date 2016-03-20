@@ -3,7 +3,6 @@ let {Component} = React;
 //import styles from './About.css';
 import Row from 'react-bootstrap/lib/Row';
 import Column from 'react-bootstrap/lib/Col';
-import Thumbnail from 'react-bootstrap/lib/Thumbnail';
 
 
 export default class About extends Component {
@@ -107,7 +106,7 @@ class TeamMemberListing extends Component {
                 link: "https://github.com",
                 team: "E"
             }
-        ].filter(function(member){return member.team == projectID});
+        ].filter(function(member){return member.team == projectID;});
     }
 }
 TeamMemberListing.propTypes = { teamID: React.PropTypes.string };
@@ -118,7 +117,7 @@ class TeamMember extends Component {
                 return (<p><a target="_blank" href={this.props.data.link}>{this.props.data.name}</a></p>);
             } else {
                 return (<p>{this.props.data.name}</p>);
-            };
+            }
     }
 }
 TeamMember.propTypes =  {  data: React.PropTypes.object.isRequired };
