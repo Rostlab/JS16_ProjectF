@@ -17,8 +17,13 @@ function setCharacter(data) {
 // Merge our store with Node's Event Emitter
 var CharactersStore = assign({}, EventEmitter.prototype, {
 
-    getCharacters: function() {
-        return _characters;
+    getCharacters: function(page) {
+        if(!page){
+            page = 0
+        }
+        var start = page * 20;
+        var end = start + 20;
+        return _characters.slice(start,end);
     },
 
     getCharacter: function() {
