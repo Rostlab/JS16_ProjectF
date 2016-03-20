@@ -73,7 +73,9 @@ body {
 
 .pagination > li > a:hover, .pagination > li > span:hover, .pagination > li > a:focus, .pagination > li > span:focus,
 .pagination > li > a, .pagination > li > span {
-    color: #5A180C;
+    color: whitesmoke;
+    background-color: #333;
+    border: none;
 }
 
 
