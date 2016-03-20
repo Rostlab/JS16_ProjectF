@@ -2,7 +2,7 @@ var AppDispatcher = require('../dispatcher/AppDispatcher');
 var Constants = require('../constants/Constants');
 var EventEmitter = require('events').EventEmitter;
 var assign = require('object-assign');
-
+var firstBy = require('thenby');
 
 var _characters = [];
 var _character = {};
@@ -14,16 +14,34 @@ function setCharacter(data) {
     _character = data.data[0];
 }
 
+function sortCharacters(charaters,sort){
+    if(sort){
+        return charaters.sort(firstBy(sort["field"],sort.type));
+    }
+    return charaters;
+}
+function filterCharacters(characters,filter){
+    if(filter){
+        return characters.filter(function(element){
+            return element.name.toLowerCase().indexOf(filter.value.toLowerCase()) >= 0;
+        });
+        return characters;
+    }
+}
 // Merge our store with Node's Event Emitter
 var CharactersStore = assign({}, EventEmitter.prototype, {
 
-    getCharacters: function(page) {
+    getCharacters: function(page, sort, filter) {
+        // sort = {field: Constants.SORT_FIELD_NAME, type: Constants.SORT_TYPE_DESC};
+        // filter = {field: "name",value: "LyRI"};
         if(!page){
             page = 0
         }
         var start = page * 20;
         var end = start + 20;
-        return _characters.slice(start,end);
+        var filteredCharacters = filterCharacters(_characters,filter);
+        var sortedCharacters = sortCharacters(filteredCharacters,sort);
+        return sortedCharacters.slice(start,end);
     },
 
     getCharactersCount: function(){
