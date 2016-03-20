@@ -34,6 +34,7 @@ export default class Character extends Component {
     }
 
     render() {
+        console.log(this.state.character); /*eslint no-console: 0, no-undef: 0*/
         return (
             <div className="character-container">
                 <Row fluid>
@@ -44,7 +45,7 @@ export default class Character extends Component {
                             <Image src="https://placeholdit.imgix.net/~text?txtsize=33&txt=profile%20picture%20&w=350&h=350"/>
                         </Col>
                           <Col xs={12} sm={9} md={8} className="character-name">
-                             <div><h1>{this.state.character.name}, ID: {this.state.character._id}</h1></div>                            
+                             <div><h1>{this.state.character.name}, ID: {this.state.character._id}</h1></div>
                         </Col>
                     </Row>
                     <Row>
