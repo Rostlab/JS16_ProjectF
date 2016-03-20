@@ -14,15 +14,41 @@ export default class About extends Component {
                 <Row className="about-intro">
                     <Column md={8} mdPush={2}>
                         <p>This webapp ist the result of a JavaScript Course at the Technical University Munich.</p>
+                        <br />
+                        <p>We wanted to tell some of the Game of Thrones’ stories using data that we acquire on the web. Many fans of the Ice and Fire books and of the HBO show have amassed a lot of data about the plot, the characters, the great houses of westeros, the history and culture of the world of Ice and Fire, and in general anything you can think about this cultural phenomenon. </p>
                     </Column>
                 </Row>
+
+                <br />
+
                 <Row>
                     <Column md={8} mdPush={2}>
                         <h1>Contributors</h1>
-                        <h3>Frontend &amp; Design</h3>
-                        <TeamMemberListing teamID="F"/>
+                        <Row>
+                            <Column md={6}>
+                                <h3>Frontend &amp; Design</h3>
+                                <TeamMemberListing teamID="F"/>
+                            </Column>
+                            <Column md={6}>
+                                <h3>Data Analyisis</h3>
+                                <TeamMemberListing teamID="B"/>
+                            </Column>
+                        </Row>
+                        <Row>
+                            <Column md={6}>
+                                <h3>Database &amp; API</h3>
+                                <TeamMemberListing teamID="A"/>
+                            </Column>
+                            <Column md={6}>
+                                <h3>Infrastructure</h3>
+                                <TeamMemberListing teamID="E"/>
+                            </Column>
+                        </Row>
                     </Column>
                 </Row>
+
+                <br />
+                
                 <Row>
                     <Column md={8} mdPush={2}>
                         <h1>Attributions</h1>
@@ -31,12 +57,7 @@ export default class About extends Component {
                         </ul>
                     </Column>
                 </Row>
-                <Row>
-                    <Column md={8} mdPush={2}>
-                        <h1>Imprint</h1>
-                        <p>Don't sue us!</p>
-                    </Column>
-                </Row>
+                
             </div>
         );
     }
@@ -56,50 +77,48 @@ class TeamMemberListing extends Component {
         );
     }
     getProjectMembers(projectID) {
-        projectID += "!"; // so the linter isnt complaining.
-        // ToDo: Think about where to store the member-data
-        // OR whether it makes sense to fetch the infos from github
         return [
             {
                 name: "Member1",
                 imageUrl: "http://www.socialgiri.com/wp-content/uploads/2013/08/about-thumbnail-placeholder.png",
-                twitter: "twitter.com",
-                github: "github.com"
+                link: "https://github.com",
+                team: "F"
             },
             {
                 name: "Member2",
                 imageUrl: "http://www.socialgiri.com/wp-content/uploads/2013/08/about-thumbnail-placeholder.png",
-                twitter: "twitter.com",
-                github: "github.com"
+                link: "https://github.com",
+                team: "F"
             },
             {
                 name: "Member3",
                 imageUrl: "http://www.socialgiri.com/wp-content/uploads/2013/08/about-thumbnail-placeholder.png",
-                twitter: "twitter.com",
-                github: "github.com"
+                link: "https://github.com",
+                team: "A"
             },
             {
                 name: "Member4",
                 imageUrl: "http://www.socialgiri.com/wp-content/uploads/2013/08/about-thumbnail-placeholder.png",
-                twitter: "twitter.com",
-                github: "github.com"
+                team: "B"
+            },            
+            {
+                name: "Member5",
+                imageUrl: "http://www.socialgiri.com/wp-content/uploads/2013/08/about-thumbnail-placeholder.png",
+                link: "https://github.com",
+                team: "E"
             }
-        ];
+        ].filter(function(member){return member.team == projectID});
     }
 }
 TeamMemberListing.propTypes = { teamID: React.PropTypes.string };
 
 class TeamMember extends Component {
     render() {
-        return (
-            <Column md={3}>
-                <Thumbnail src = {this.props.data.imageUrl}>
-                    <p> {this.props.data.name}</p>
-                    <p> {this.props.data.twitter}</p>
-                    <p> {this.props.data.github}</p>
-                </Thumbnail>
-            </Column>
-        );
+            if (this.props.data.link) {
+                return (<p><a target="_blank" href={this.props.data.link}>{this.props.data.name}</a></p>);
+            } else {
+                return (<p>{this.props.data.name}</p>);
+            };
     }
 }
 TeamMember.propTypes =  {  data: React.PropTypes.object.isRequired };
