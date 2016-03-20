@@ -26,6 +26,10 @@ var CharactersStore = assign({}, EventEmitter.prototype, {
         return _characters.slice(start,end);
     },
 
+    getCharactersCount: function(){
+        return _characters.length;
+    },
+
     getCharacter: function() {
         return _character;
     },
