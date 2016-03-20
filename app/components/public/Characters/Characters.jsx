@@ -2,6 +2,7 @@ import React from 'react';
 let {Component} = React;
 import './Characters.css';
 import { Row, Col, Image, Tabs, Tab } from 'react-bootstrap';
+import { browserHistory } from 'react-router';
 
 import Map from '../../common/MapComp/MapComp.jsx';
 import Store from '../../../stores/CharactersStore';
@@ -34,6 +35,9 @@ export default class Character extends Component {
     }
 
     render() {
+        if (Object.keys(this.state.character).length === 0) {
+          browserHistory.push('/character');
+        }
         return (
             <div className="character-container">
                 <Row fluid>
