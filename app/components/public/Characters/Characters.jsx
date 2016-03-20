@@ -82,7 +82,7 @@ export default class Character extends Component {
                     <Row>
                         <Col md={8} mdOffset={2}>
                             <h2>Location History</h2>
-                            <Map character={this.props.params.id}/>
+                            <Map />
                         </Col>
                     </Row>
             </div>

@@ -22,10 +22,7 @@ export default class MapComp extends Component {
         'realmDataSource':'https://raw.githubusercontent.com/Rostlab/JS16_ProjectC_Group10/develop/data/realms.js'
       });/*eslint no-undef: 0, no-unused-vars: 0 */
     });
-    if (this.props.character == undefined) {
-      let char = mymap.searchCharacter(searchString);
-      console.log(char);/*eslint no-console: 0, no-undef: 0, no-unused-vars: 0 */
-    }
+
   }
   render() {
       return (
