@@ -9,5 +9,6 @@ module.exports = {
     SORT_FIELD_PLOD: "plod",
     SORT_FIELD_POPULARITY: "popularity",
     SORT_TYPE_ASC: 1,
-    SORT_TYPE_DESC: -1
+    SORT_TYPE_DESC: -1,
+    FILTER_FIELD_NAME: "name"
 };
