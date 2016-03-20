@@ -1,13 +1,6 @@
-/*eslint react/prop-types: 0*/
-/*eslint react/prop-types: 0*/
-/*eslint no-console: 0*/
-/*eslint no-undef: 0*/
-/*eslint no-unused-vars: 0*/
-
-
 import React, {Component} from 'react';
 
-import { Row, Col, ButtonToolbar, ButtonGroup,Button, Pagination } from 'react-bootstrap';
+import { Row, Col, Pagination } from 'react-bootstrap';
 
 import Store from '../../../stores/CharactersStore';
 import Actions from '../../../actions/CharactersActions';
@@ -36,9 +29,8 @@ class CharacterList extends Component {
     );
   }
 }
-CharacterThumbnail.propTypes = { data: React.PropTypes.object.isRequired};
+CharacterList.propTypes = { data: React.PropTypes.object.isRequired};
 
-var itemsPerPage = 20;
 export default class CharacterListPage extends Component {
     constructor (props) {
       super(props);
