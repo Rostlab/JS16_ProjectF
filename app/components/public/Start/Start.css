@@ -7,7 +7,5 @@
 }
 
 .map-wrapper {
-  position: relative;
-  height: 200px;
-  width: 100px;
+  width: 100%
 }

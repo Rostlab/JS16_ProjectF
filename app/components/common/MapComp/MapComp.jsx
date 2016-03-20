@@ -1,6 +1,6 @@
 import React from 'react';
 let {Component} = React;
-//import './gotmap.css';
+
 import 	'./MapComp.css';
 
 import map from "gotmap";

@@ -82,7 +82,6 @@ export default class Character extends Component {
                     <Row>
                         <Col md={8} mdOffset={2}>
                             <h2>Location History</h2>
-
                         </Col>
                     </Row>
             </div>

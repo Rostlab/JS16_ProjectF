@@ -15,7 +15,6 @@
 #filter .input-group {
 	width: 100%;
 }
-
 #map {
 	background: #001;
 	position: absolute;
@@ -55,12 +54,20 @@
   color: grey;
 }
 
+.gotmap-dropdown {
+	position: absolute;
+	overflow-y: auto;
+	overflow-x: hidden;	
+	height: 300px;
+}
+
 .gotmap-dropdown 	a {
 	width: 236px;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
+
 .dropdown-header {
 	width: 236px;
 }

@@ -9,7 +9,7 @@ import './Map.css';
 export default class Map extends Component {
   render() {
     return (
-      <div>
+      <div className="mapPage">
         <Header />
         <MapComp />
       </div>
