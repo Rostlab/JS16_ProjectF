@@ -43,7 +43,7 @@ export default class CharacterListPage extends Component {
     constructor (props) {
       super(props);
       this.state = {
-        data: Store.getCharacters().slice(0,19),
+        data: Store.getCharacters(1),
         activePage: 1
       };
       this._onChange = this._onChange.bind(this);
@@ -62,13 +62,13 @@ export default class CharacterListPage extends Component {
 
     _onChange() {
       this.setState({
-        data: Store.getCharacters().slice(this.state.activePage*itemsPerPage-itemsPerPage,this.state.activePage*itemsPerPage)
+        data: Store.getCharacters(this.state.activePage)
       });
     }
 
     handleSelect(event, selectedEvent) {
       this.setState({
-        data: Store.getCharacters().slice(selectedEvent.eventKey*itemsPerPage-itemsPerPage,selectedEvent.eventKey*itemsPerPage),
+        data: Store.getCharacters(this.state.activePage),
         activePage: selectedEvent.eventKey
       });
     }
@@ -83,7 +83,7 @@ export default class CharacterListPage extends Component {
             last
             ellipsis
             boundaryLinks
-            items={Math.ceil(Store.getCharacters().length/20)}
+            items={Math.ceil(Store.getCharactersCount()/20)}
             maxButtons={5}
             activePage={this.state.activePage}
             onSelect={this.handleSelect.bind(this)} />
