@@ -1,8 +1,13 @@
 .row.character-intro {
 	padding: 0;
+	margin-top: -20%;
 }
 .character-photo {
 	padding: 0;
+}
+.character-details {
+	margin: 0;
+	text-align: left;
 }
 /*TODO: align char name left for bigger screens;*/
 .character-name.col-xs-12 {
@@ -10,19 +15,18 @@
 }
 .character-photo img {
 	width: 100%;
-	transform: translateY(-50%);
+	/*transform: translateY(-50%);*/
 }
 .character-name {
+	background-color: rgba(0, 0, 0, 0.7);
 	padding: 0;
 }
 .character-name h1 {
-	position: absolute;
-	bottom: 0;
-	margin: 0;
-    line-height: 2em;
 	/*transform: translateY(-100%);*/
-	background-color: rgba(0, 0, 0, 0.9);
+	line-height: 3em;
+	/*background-color: rgba(0, 0, 0, 0.7);*/
 	width: 100%;
+	padding: 10px;
 }
 .list-group-item {
 	background: #333;

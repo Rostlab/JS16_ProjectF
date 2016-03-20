@@ -42,7 +42,6 @@ export default class Character extends Component {
             <div className="character-container">
                 <Row fluid>
                     <div className="header-image"></div>
-                    
                 </Row>
                 <Row className="character-intro" fluid >
                     <Col xs={6} xsOffset={3} sm={3} smOffset={0} md={3} mdOffset={1} className="character-photo">
@@ -50,7 +49,18 @@ export default class Character extends Component {
 
                     </Col>
                       <Col xs={12} sm={9} md={8} className="character-name">
-                         <div><h1>{this.state.character.name}</h1></div>                         
+                        <div><h1>{this.state.character.name}</h1></div>    
+                        <Row className="character-details" fluid >
+                            <Col xs={6}>
+                                <ListGroup>
+                                    <ListGroupItem>Age</ListGroupItem>
+                                    <ListGroupItem>House</ListGroupItem>
+                                    <ListGroupItem>Culture</ListGroupItem>
+                                    <ListGroupItem>House</ListGroupItem>
+                                    <ListGroupItem>Reputation</ListGroupItem>
+                                </ListGroup>
+                            </Col>
+                        </Row>                    
                     </Col>
                 </Row>
                 
@@ -60,10 +70,10 @@ export default class Character extends Component {
                         <p>Check out what our two different algorithms say</p>
                         <Tabs>
                             <Tab eventKey={1} title="Predictor 1">
-                                <p>Cercei's likeliyhood to die is 50%</p>
+                                <p>{this.state.character.name}'s likeliyhood to die is 50%</p>
                             </Tab>
                             <Tab eventKey={2} title="Predictor 2">
-                                <p>Cercei's likeliyhood to die is 10%</p>
+                                <p>{this.state.character.name}'s likeliyhood to die is 10%</p>
                             </Tab>
                         </Tabs>
                     </Col>
@@ -91,6 +101,10 @@ export default class Character extends Component {
                         <Map />
                     </Col>
                 </Row>
+                    
+                    
+                    
+                   
             </div>
         );
     }
