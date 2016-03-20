@@ -4,7 +4,8 @@
 .character-photo {
 	padding: 0;
 }
-.col-xs-12.character-name {
+/*TODO: align char name left for bigger screens;*/
+.character-name.col-xs-12 {
 	text-align: center;
 }
 .character-photo img {
@@ -20,4 +21,7 @@
 	background-color: rgba(0, 0, 0, 0.9);
 	width: 100%;
 	padding: 10px;
+}
+.list-group-item {
+	background: #333;
 }

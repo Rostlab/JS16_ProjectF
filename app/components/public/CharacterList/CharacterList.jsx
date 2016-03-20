@@ -17,7 +17,6 @@ export default class CharacterList extends Component {
   constructor (props) {
     super(props);
     this.state = {characters: Store.getCharacters()};
-
     this._onChange = this._onChange.bind(this);
   }
 
