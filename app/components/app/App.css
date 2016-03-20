@@ -40,7 +40,8 @@ body {
     /*z-index: -1; !* Make sure the image sits below the content *! */
 /*}*/
 
-.tab-pane{
+/* Tabs */
+.tab-pane {
     padding: 15px;
     background-color: #313131;
 }
@@ -60,6 +61,23 @@ body {
     border-color: transparent;
     border-bottom-color: #ddd;
 }
+
+/* Pagination */
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+    z-index: 3;
+    color: #fff;
+    cursor: default;
+    background-color: #5A180C;
+    border-color: #5A180C;
+}
+
+.pagination > li > a:hover, .pagination > li > span:hover, .pagination > li > a:focus, .pagination > li > span:focus,
+.pagination > li > a, .pagination > li > span {
+    color: whitesmoke;
+    background-color: #333;
+    border: none;
+}
+
 
 .header-image {
     height: 550px;
