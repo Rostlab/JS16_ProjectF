@@ -5,3 +5,10 @@
 .home {
     background-color: black;
 }
+
+.map-wrapper {
+  top: 53px;
+  bottom: 0;
+  position: relative;
+  height: 500px;
+}

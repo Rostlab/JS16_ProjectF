@@ -7,10 +7,8 @@ import map from "gotmap";
 import "jquery-ui";
 
 export default class MapComp extends Component {
-  componentWillMount() {
-      map.init();
-  }
   componentDidMount() {
+    map.init();
     jQuery(function() {
       var mymap = gotmap('#map', {
         'characterBox':'#characters',

@@ -1,7 +1,10 @@
 import React from 'react';
 let {Component} = React;
-import Stats from '../../common/Stats/Stats.jsx';
 import { Row } from 'react-bootstrap';
+
+import Stats from '../../common/Stats/Stats.jsx';
+import MapComp from '../../common/MapComp/MapComp.jsx';
+import './Start.css';
 
 export default class Start extends Component {
   render() {
@@ -12,6 +15,9 @@ export default class Start extends Component {
         </Row>
         Start
         <Stats/>
+        <Row>
+          <MapComp />
+        </Row>
       </div>
     );
   }
