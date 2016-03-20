@@ -1,52 +1,24 @@
-/*eslint no-undef: 2*/
-/*eslint no-console: 2*/
+import React, {Component} from 'react';
 
-
-import React from 'react';
-let {Component} = React;
-
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Pagination } from 'react-bootstrap';
 
 import Store from '../../../stores/CharactersStore';
 import Actions from '../../../actions/CharactersActions';
 import CharacterThumbnail from '../../common/CharacterThumbnail/CharacterThumbnail.jsx';
 
 
-export default class CharacterList extends Component {
-
+class CharacterList extends Component {
   constructor (props) {
     super(props);
-    this.state = {characters: Store.getCharacters()};
-
-    this._onChange = this._onChange.bind(this);
   }
-
-  componentWillMount (){
-    Store.addChangeListener(this._onChange);
-  }
-
-  componentDidMount(){
-    Actions.loadCharacters();
-  }
-
-  componentWillUnmount(){
-    Store.removeChangeListener(this._onChange);
-  }
-
-  _onChange() {
-    this.setState({
-      characters: Store.getCharacters()
-    });
-  }
-
   render() {
     return (
       <div>
-        <h1>CharacterList ({this.state.characters.length})</h1>
+        <h1>CharacterList:</h1>
         <Row>
           <Col md={8} mdOffset={2}>
-            <div>
-              { this.state.characters.map(function (character) {
+            <div>{
+              this.props.data.map(function (character) {
                 return <CharacterThumbnail id={character._id} name={character.name} imageUrl={character.imageLink}/>;
               })
             }
@@ -56,4 +28,58 @@ export default class CharacterList extends Component {
       </div>
     );
   }
+}
+CharacterList.propTypes = { data: React.PropTypes.object.isRequired};
+
+export default class CharacterListPage extends Component {
+    constructor (props) {
+      super(props);
+      this.state = {
+        data: Store.getCharacters(1),
+        activePage: 1
+      };
+      this._onChange = this._onChange.bind(this);
+    }
+    componentWillMount(){
+      Store.addChangeListener(this._onChange);
+    }
+
+    componentDidMount(){
+      Actions.loadCharacters();
+    }
+
+    componentWillUnmount(){
+      Store.removeChangeListener(this._onChange);
+    }
+
+    _onChange() {
+      this.setState({
+        data: Store.getCharacters(this.state.activePage)
+      });
+    }
+
+    handleSelect(event, selectedEvent) {
+      this.setState({
+        data: Store.getCharacters(this.state.activePage),
+        activePage: selectedEvent.eventKey
+      });
+    }
+    render(){
+      return (
+        <div>
+          <CharacterList data={this.state.data} />
+          <Pagination
+            prev
+            next
+            first
+            last
+            ellipsis
+            boundaryLinks
+            items={Math.ceil(Store.getCharactersCount()/20)}
+            maxButtons={5}
+            activePage={this.state.activePage}
+            onSelect={this.handleSelect.bind(this)} />
+        </div>
+      );
+    }
 }
