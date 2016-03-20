@@ -99,7 +99,6 @@ class TeamMemberListing extends Component {
             {
                 name: "Member4",
                 imageUrl: "http://www.socialgiri.com/wp-content/uploads/2013/08/about-thumbnail-placeholder.png",
-                link: "https://github.com",
                 team: "B"
             },            
             {
@@ -115,16 +114,11 @@ TeamMemberListing.propTypes = { teamID: React.PropTypes.string };
 
 class TeamMember extends Component {
     render() {
-        return (
-            // <Column md={3}>
-            //     <Thumbnail src = {this.props.data.imageUrl}>
-            //         <p> {this.props.data.name}</p>
-            //         <p> {this.props.data.twitter}</p>
-            //         <p> {this.props.data.github}</p>
-            //     </Thumbnail>
-            // </Column>
-            <p><a target="_blank" href={this.props.data.link}>{this.props.data.name}</a></p>
-        );
+            if (this.props.data.link) {
+                return (<p><a target="_blank" href={this.props.data.link}>{this.props.data.name}</a></p>);
+            } else {
+                return (<p>{this.props.data.name}</p>);
+            };
     }
 }
 TeamMember.propTypes =  {  data: React.PropTypes.object.isRequired };
