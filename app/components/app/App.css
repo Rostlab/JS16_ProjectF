@@ -45,6 +45,18 @@ body {
     background-color: #313131;
 }
 
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    color: whitesmoke;
+    background-color: #5A180C;
+    border: none;
+}
+
+.nav-tabs > li > a:hover {
+    background-color: #5A180C;
+    border-color: transparent;
+    border-bottom-color: #ddd;
+}
+
 .header-image {
     height: 550px;
     background-image: url('https://walter.trakt.us/images/shows/000/001/390/fanarts/original/76d5df8aed.jpg');
