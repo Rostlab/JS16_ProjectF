@@ -45,6 +45,10 @@ body {
     background-color: #313131;
 }
 
+.nav-tabs > li > a {
+    font-family: 'Cinzel Decorative', cursive;
+}
+
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
     color: whitesmoke;
     background-color: #5A180C;
