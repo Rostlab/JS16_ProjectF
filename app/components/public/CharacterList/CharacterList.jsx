@@ -20,7 +20,7 @@ class CharacterList extends Component {
           <Col md={8} mdOffset={2}>
             <div>{
               this.props.data.map(function (character) {
-                return <CharacterThumbnail id={character._id} name={character.name} imageUrl={character.imageLink}/>;
+                return <CharacterThumbnail key={character._id} id={character._id} name={character.name} imageUrl={character.imageLink}/>;
               })
             }
             </div>
@@ -30,7 +30,7 @@ class CharacterList extends Component {
     );
   }
 }
-CharacterList.propTypes = { data: React.PropTypes.object.isRequired};
+CharacterList.propTypes = { data: React.PropTypes.array.isRequired};
 
 export default class CharacterListPage extends Component {
     constructor (props) {

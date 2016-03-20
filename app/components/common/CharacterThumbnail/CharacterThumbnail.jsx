@@ -9,7 +9,7 @@ export default class CharacterThumbnail extends Component {
 
     render() {
 		var img = (this.props.imageUrl ===
-		"https://placeholdit.imgix.net/~text?txtsize=28&txt=Fallback-Image&w=300&h=350") ? this.props.imageUrl : "https://got-api.bruck.me/"+this.props.imageUrl ;
+		"https://placeholdit.imgix.net/~text?txtsize=28&txt=Fallback-Image&w=300&h=350") ? this.props.imageUrl : "https://got-api.bruck.me"+this.props.imageUrl ;
 
 		var detailLink = '/characters/'+this.props.id;
 
@@ -25,5 +25,5 @@ export default class CharacterThumbnail extends Component {
     }
 }
 
-CharacterThumbnail.propTypes = { id: React.PropTypes.element.isRequired, imageUrl: React.PropTypes.element, name: React.PropTypes.element.isRequired };
+CharacterThumbnail.propTypes = { id: React.PropTypes.string.isRequired, imageUrl: React.PropTypes.string, name: React.PropTypes.string.isRequired };
 CharacterThumbnail.defaultProps = { imageUrl: 'https://placeholdit.imgix.net/~text?txtsize=28&txt=Fallback-Image&w=300&h=350' };
