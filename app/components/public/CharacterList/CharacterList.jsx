@@ -71,14 +71,10 @@ export default class CharacterListPage extends Component {
           <CharacterList data={this.state.data} />
           <div className="center">
             <Pagination
-              prev
-              next
-              first
-              last
-              ellipsis
+              maxButtons={3}
+              ellipsis={false}
               boundaryLinks
               items={Math.ceil(Store.getCharactersCount()/20)}
-              maxButtons={5}
               activePage={this.state.activePage}
               onSelect={this.handleSelect.bind(this)} />
             </div>
