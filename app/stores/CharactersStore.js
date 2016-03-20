@@ -25,14 +25,14 @@ function filterCharacters(characters,filter){
         return characters.filter(function(element){
             return element.name.toLowerCase().indexOf(filter.value.toLowerCase()) >= 0;
         });
-        return characters;
     }
+    return characters;
 }
 // Merge our store with Node's Event Emitter
 var CharactersStore = assign({}, EventEmitter.prototype, {
 
     getCharacters: function(page, sort, filter) {
-        // sort = {field: Constants.SORT_FIELD_NAME, type: Constants.SORT_TYPE_DESC};
+        // sort = {field: Constants.SORT_FIELD_NAME, type: Constants.SORT_TYPE_ASC};
         // filter = {field: "name",value: "LyRI"};
         if(!page){
             page = 0
