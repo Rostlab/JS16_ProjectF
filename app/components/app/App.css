@@ -15,6 +15,11 @@ a {
     color: whitesmoke;
 }
 
+a:hover {
+  color: white;
+  text-decoration: none;
+}
+
 body {
     color: whitesmoke;
 }

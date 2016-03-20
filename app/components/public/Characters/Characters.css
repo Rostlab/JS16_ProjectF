@@ -2,10 +2,18 @@
 	padding: 0;
 }
 .character-photo {
+	padding: 0;
+}
+.col-xs-12.character-name {
+	text-align: center;
+}
+.character-photo img {
 	width: 100%;
 	transform: translateY(-50%);
 }
-
+.character-name {
+	padding: 0;
+}
 .character-name h1 {
 	margin: 0;
 	transform: translateY(-100%);
