@@ -10,7 +10,7 @@ var LandingPageActions = {
             .then(function (characters) {
                 // Dispatch an action containing the categories.
                 AppDispatcher.handleServerAction({
-                    actionType: Constants.RECEIVE_CHARACTERS,
+                    actionType: Constants.RECEIVE_PLOD_CHARACTERS,
                     data: characters
                 });
             });
