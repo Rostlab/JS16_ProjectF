@@ -6,6 +6,7 @@ import Store from '../../../stores/CharactersStore';
 import Actions from '../../../actions/CharactersActions';
 import CharacterThumbnail from '../../common/CharacterThumbnail/CharacterThumbnail.jsx';
 
+import './CharacterList.css';
 
 class CharacterList extends Component {
   constructor (props) {
@@ -60,7 +61,7 @@ export default class CharacterListPage extends Component {
 
     handleSelect(event, selectedEvent) {
       this.setState({
-        data: Store.getCharacters(this.state.activePage),
+        data: Store.getCharacters(selectedEvent.eventKey),
         activePage: selectedEvent.eventKey
       });
     }
@@ -68,18 +69,21 @@ export default class CharacterListPage extends Component {
       return (
         <div>
           <CharacterList data={this.state.data} />
-          <Pagination
-            prev
-            next
-            first
-            last
-            ellipsis
-            boundaryLinks
-            items={Math.ceil(Store.getCharactersCount()/20)}
-            maxButtons={5}
-            activePage={this.state.activePage}
-            onSelect={this.handleSelect.bind(this)} />
+          <div className="center">
+            <Pagination
+              prev
+              next
+              first
+              last
+              ellipsis
+              boundaryLinks
+              items={Math.ceil(Store.getCharactersCount()/20)}
+              maxButtons={5}
+              activePage={this.state.activePage}
+              onSelect={this.handleSelect.bind(this)} />
+            </div>
         </div>
+
       );
     }
 }

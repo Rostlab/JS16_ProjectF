@@ -18,6 +18,10 @@
 	margin: 0;
 	transform: translateY(-100%);
 	background-color: rgba(0, 0, 0, 0.9);
-	width: 100%;
+	width: 236px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: auto;
 	padding: 10px;
 }
