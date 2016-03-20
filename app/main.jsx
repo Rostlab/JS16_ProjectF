@@ -20,6 +20,7 @@ import Characters from './components/public/Characters/Characters.jsx';
 import CharacterListPage from './components/public/CharacterList/CharacterList.jsx';
 import Site404 from './components/public/404/404.jsx';
 
+
 import ga from 'ga-react-router';
 import createBrowserHistory from 'history/lib/createBrowserHistory';
 const history = createBrowserHistory();
@@ -34,15 +35,15 @@ ReactDOM.render(
   <Router history={history}>
     <Route path="/" component={App}>
       <IndexRoute component={Start}/>
-      <Route path="/map" component={Map}/>
       <Route path="/ranking" component={Ranking}/>
       <Route path="/about" component={About}/>
       <Route path="/characters">
         <IndexRoute component={CharacterListPage}/>
         <Route path="/characters/:id" component={Characters}/>
       </Route>
-      <Route path="*" component={Site404}/>
     </Route>
+    <Route name="/map" path="/map" component={Map}/>
+    <Route path="*" component={Site404}/>
   </Router>
 , document.getElementById('root'));
 

@@ -50,6 +50,8 @@
     "es6-promise": "^3.1.2",
     "express": "^4.13.4",
     "flux": "^2.1.1",
+    "gotmap": "^0.1.0",
+    "jquery-ui": "^1.10.5",
     "ga-react-router": "^2.0.0",
     "history": "^2.0.1",
     "jquery": "^2.2.1",
@@ -60,6 +62,7 @@
     "react-paginate": "^0.5.4",
     "react-router": "^2.0.0",
     "react-router-bootstrap": "^0.20.1",
-    "superagent": "^1.8.1"
+    "superagent": "^1.8.1",
+    "thenby": "^1.1.3"
   }
 }
