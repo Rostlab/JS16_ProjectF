@@ -3,7 +3,7 @@ let {Component} = React;
 import './Characters.css';
 import { Row, Col, Image, Tabs, Tab } from 'react-bootstrap';
 
-//import Map from '../../common/MapComp/MapComp.jsx';
+import Map from '../../common/MapComp/MapComp.jsx';
 import Store from '../../../stores/CharactersStore';
 import Actions from '../../../actions/CharactersActions';
 
@@ -82,6 +82,7 @@ export default class Character extends Component {
                     <Row>
                         <Col md={8} mdOffset={2}>
                             <h2>Location History</h2>
+                            <Map character={this.props.params.id}/>
                         </Col>
                     </Row>
             </div>
