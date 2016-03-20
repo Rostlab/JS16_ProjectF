@@ -25,7 +25,7 @@ class CharacterList extends Component {
         <Row>
           <Col md={8} mdOffset={2}>
             <div>{
-              this.state.characters.map(function (character) {
+              this.props.data.map(function (character) {
                 return <CharacterThumbnail id={character._id} name={character.name} imageUrl={character.imageLink}/>;
               })
             }
@@ -38,6 +38,7 @@ class CharacterList extends Component {
 }
 CharacterThumbnail.propTypes = { data: React.PropTypes.object.isRequired};
 
+var itemsPerPage = 20;
 export default class CharacterListPage extends Component {
     constructor (props) {
       super(props);
@@ -45,7 +46,6 @@ export default class CharacterListPage extends Component {
         data: Store.getCharacters().slice(0,19),
         activePage: 1
       };
-
       this._onChange = this._onChange.bind(this);
     }
     componentWillMount(){
@@ -62,18 +62,17 @@ export default class CharacterListPage extends Component {
 
     _onChange() {
       this.setState({
-        data: Store.getCharacters().slice(this.state.activePage*20-20,this.state.activePage*20-1)
+        data: Store.getCharacters().slice(this.state.activePage*itemsPerPage-itemsPerPage,this.state.activePage*itemsPerPage)
       });
     }
 
     handleSelect(event, selectedEvent) {
       this.setState({
-        data: Store.getCharacters().slice(selectedEvent.eventKey*20-20,selectedEvent.eventKey*20-1),
+        data: Store.getCharacters().slice(selectedEvent.eventKey*itemsPerPage-itemsPerPage,selectedEvent.eventKey*itemsPerPage),
         activePage: selectedEvent.eventKey
       });
     }
     render(){
-      console.log(Store.getCharacters().length);
       return (
         <div>
           <CharacterList data={this.state.data} />
