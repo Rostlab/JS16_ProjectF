@@ -34,7 +34,6 @@ export default class Character extends Component {
     }
 
     render() {
-        console.log(this.state.character); /*eslint no-console: 0, no-undef: 0*/
         return (
             <div className="character-container">
                 <Row fluid>
