@@ -69,7 +69,8 @@ var config = {
                 warnings: false
             }
         }),
-        new ExtractTextPlugin("/style.css")
+        new ExtractTextPlugin("/style.css"),
+        new webpack.DefinePlugin({GA_TRACKING_CODE: JSON.stringify('UA-75295085-1')})
     ]
 }
 

@@ -2,15 +2,16 @@
 
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var npm_dir = __dirname + '/node_modules/';
+var path = require('path');
+var npm_dir = path.join(__dirname, '/node_modules/');
 
 var config = {
     devtool: 'eval-source-map',
 
-    context: __dirname + "/app",
+    context: path.join(__dirname, 'app'),
     entry: "./main.jsx",
     output: {
-        path: __dirname + "/build",
+        path: path.join(__dirname, 'build'),
         filename: "/bundle.js"
     },
 
@@ -56,6 +57,10 @@ var config = {
         ]
     },
 
+    resolve: {
+        root: path.join(__dirname, 'node_modules')
+    },
+
     postcss: [
         require('autoprefixer')
     ],
@@ -69,7 +74,8 @@ var config = {
         new HtmlWebpackPlugin({
             template: __dirname + "/app/index.tmpl.html"
         }),
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.DefinePlugin({GA_TRACKING_CODE: JSON.stringify('UA-75295085-1')})
     ],
 
     devServer: {

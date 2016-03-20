@@ -40,9 +40,8 @@ export default class Character extends Component {
                     <div className="header-image"></div>
                 </Row>
                     <Row className="character-intro" fluid >
-                        <Col xs={12} sm={6} md={3} mdOffset={1}>
-                            <Image className="character-photo"
-                                   src="https://placeholdit.imgix.net/~text?txtsize=33&txt=profile%20picture%20&w=350&h=350"/>
+                        <Col xs={6} xsOffset={3} sm={3} smOffset={0} md={3} mdOffset={1} className="character-photo">
+                            <Image src="https://placeholdit.imgix.net/~text?txtsize=33&txt=profile%20picture%20&w=350&h=350"/>
                         </Col>
                           <Col xs={12} sm={6} md={8}>
                              <div className="character-name"><h1>{this.state.character.name}, ID: {this.state.character._id}</h1></div>
