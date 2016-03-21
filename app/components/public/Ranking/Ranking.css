@@ -29,3 +29,10 @@
 .ranking-fields .col-xs-12, .ranking-fields .col-sm-6{
 	margin-top: 3em;
 }
+
+h3.ranking-title {
+	cursor: pointer;	
+}
+h3.popover-title, .popover-content {
+	color: #333;
+}
