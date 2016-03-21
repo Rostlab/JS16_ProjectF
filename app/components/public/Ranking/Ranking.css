@@ -29,12 +29,3 @@
 .ranking-fields .col-xs-12, .ranking-fields .col-sm-6{
 	margin-top: 3em;
 }
-
-.ranking-fields .nav > li > a:hover, .ranking-fields .nav > li > a:focus {
-	background-color: #3A3A3A;
-}
-
-.ranking-fields .nav > li.active > a:hover, .ranking-fields .nav > li.active > a:focus {
-	background: #fff;
-	cursor: pointer;
-}

@@ -56,8 +56,13 @@ body {
     border: none;
 }
 
+.ranking-fields .nav > li.active > a:hover, .ranking-fields .nav > li.active > a:focus {
+    cursor: pointer;
+}
+
+
 .nav-tabs > li > a:hover {
-    background-color: #5A180C;
+    background-color: #3A3A3A;
     border-color: transparent;
     border-bottom-color: #ddd;
 }
