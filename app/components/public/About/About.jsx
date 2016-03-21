@@ -47,7 +47,7 @@ export default class About extends Component {
                 </Row>
 
                 <br />
-                
+
                 <Row>
                     <Column md={8} mdPush={2}>
                         <h1>Attributions</h1>
@@ -56,7 +56,7 @@ export default class About extends Component {
                         </ul>
                     </Column>
                 </Row>
-                
+
             </div>
         );
     }

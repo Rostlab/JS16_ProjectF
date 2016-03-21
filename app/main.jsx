@@ -22,21 +22,15 @@ import Site404 from './components/public/404/404.jsx';
 
 
 import ga from 'ga-react-router';
-import { createHashHistory } from 'history';
-import { useRouterHistory } from 'react-router';
+import { browserHistory } from 'react-router';
 
-// useRouterHistory creates a composable higher-order function
-const history = useRouterHistory(createHashHistory)({ queryKey: false });
-
-// Listen for changes to the current location. The
-// listener is called once immediately.
-const unlisten = history.listen(location => {
+browserHistory.listen(location => {
   ga('send','page', location.pathname);
   ga('send', 'pageview');
 });
 
 ReactDOM.render(
-  <Router history={history}>
+  <Router history={browserHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={Start}/>
       <Route path="/ranking" component={Ranking}/>
@@ -50,5 +44,3 @@ ReactDOM.render(
     <Route path="*" component={Site404}/>
   </Router>
 , document.getElementById('root'));
-
-unlisten();
