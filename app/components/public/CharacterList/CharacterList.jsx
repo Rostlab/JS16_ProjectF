@@ -71,7 +71,7 @@ export default class CharacterListPage extends Component {
       return (
         <div>
           <h1>CharacterList:</h1>
-          <Input ref="input" type="text" placeholder="Search" onChange={this.handleChange.bind(this)} />
+          <Input ref="input" type="text" placeholder="Search for character" onChange={this.handleChange.bind(this)} />
           <CharacterList data={this.state.data} />
           <div className="center">
             <Pagination
