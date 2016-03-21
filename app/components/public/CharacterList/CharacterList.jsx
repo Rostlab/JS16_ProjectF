@@ -78,7 +78,7 @@ export default class CharacterListPage extends Component {
               maxButtons={3}
               ellipsis={false}
               boundaryLinks
-              items={Math.ceil(Store.getCharactersCount()/20)}
+              items={Math.ceil(Store.getCharactersCount(this.state.filter)/20)}
               activePage={this.state.activePage}
               onSelect={this.handleSelect.bind(this)} />
             </div>
