@@ -11,12 +11,6 @@ import './CharacterList.css';
 class CharacterList extends Component {
   constructor (props) {
     super(props);
-    this.state = {characters: Store.getCharacters()};
-    this._onChange = this._onChange.bind(this);
-  }
-
-  componentWillMount (){
-    Store.addChangeListener(this._onChange);
   }
   render() {
     return (
