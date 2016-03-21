@@ -11,7 +11,7 @@ export default class CharacterThumbnail extends Component {
 		var img = (this.props.imageUrl ===
 		"https://placeholdit.imgix.net/~text?txtsize=28&txt=Fallback-Image&w=300&h=350") ? this.props.imageUrl : "https://got-api.bruck.me"+this.props.imageUrl ;
 
-		var detailLink = '/characters/'+this.props.id;
+		var detailLink = '/characters/'+encodeURIComponent(this.props.id);
 
         return (
             <Col md={3} xs={6}>

@@ -23,7 +23,7 @@ export default class Character extends Component {
     }
 
     componentDidMount(){
-        Actions.loadCharacter(this.props.params.id);
+        Actions.loadCharacter(decodeURIComponent(this.props.params.id));
     }
 
     componentWillUnmount(){

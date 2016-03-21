@@ -23,7 +23,7 @@ var CharactersActions = {
     },
     loadCharacter: function(id) {
         Api
-            .get('characters/byId/'+id)
+            .get('characters/'+id)
             .then(function (character) {
                 // Dispatch an action containing the categories.
                 AppDispatcher.handleServerAction({
