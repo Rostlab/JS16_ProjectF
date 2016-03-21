@@ -21,9 +21,9 @@ var CharactersActions = {
                 });
         }
     },
-    loadCharacter: function(name) {
+    loadCharacter: function(id) {
         Api
-            .get('characters/'+name)
+            .get('characters/byId/'+id)
             .then(function (character) {
                 // Dispatch an action containing the categories.
                 AppDispatcher.handleServerAction({

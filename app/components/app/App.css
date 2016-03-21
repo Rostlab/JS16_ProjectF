@@ -85,6 +85,8 @@ body {
     background-size: cover;
     margin-top: -50px;
     background-position: 50% 50%;
+    padding: 0; 
+    position: relative;
 }
 .main-container {
    padding-top: 50px;
