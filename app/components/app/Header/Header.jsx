@@ -14,7 +14,7 @@ export default class Header extends Component {
                 <Navbar inverse>
                     <Navbar.Header>
                         <Navbar.Brand>
-                            <a href="#">Of Ice And Data</a>
+                            <a href="#">A Song of Ice and Data</a>
                         </Navbar.Brand>
                         <Navbar.Toggle />
                     </Navbar.Header>
