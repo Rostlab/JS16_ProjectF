@@ -6,6 +6,9 @@ https://got-stats.herokuapp.com/
 
 # Developer information
 We're using webpack: https://github.com/webpack/webpack
+
+**Please set up your setting in config.json**
+
 ## Development
 * `npm install`
 * `npm start`
@@ -22,6 +25,6 @@ We use a dedicated 'staging' branch which is automagically deployed to https://g
 * git checkout staging
 * git pull
 * git pull origin develop
-* git push 
+* git push
 
-**NEVER EVER PUSH COMMITS DIRECTLY TO 'staging' !11!!** :bomb: 
+**NEVER EVER PUSH COMMITS DIRECTLY TO 'staging' !11!!** :bomb:

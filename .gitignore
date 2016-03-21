@@ -37,3 +37,6 @@ build
 
 #webstorm idea file
 .idea/
+
+#configfile
+config.json

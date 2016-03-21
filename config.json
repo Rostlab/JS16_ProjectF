@@ -1,0 +1,36 @@
+{
+  "google_analytics": {
+    "key": "xxx"
+  },
+
+
+  "twitter_hash_tag": {
+    "hash": "hashtag for timeline twitter widget"
+  },
+
+
+  "gotdailysentiment": {
+    "_comment" : "More info: https://www.npmjs.com/package/gotdailysentiment",
+    "twitter" : {
+        "_comment": "These are the access tokens to the Twitter-API",
+        "consumer_key": "xxx",
+        "consumer_secret": "xxx",
+        "access_token_key": "xxx",
+        "access_token_secret": "xxx"
+    },
+
+    "database" : {
+      "_comment": "This is the access to the database, where the tweets are stored by the package",
+      "user" : "Username goes here",
+      "password" : "Password here",
+      "port" : "808080",
+      "uri" : "uri to mongoDB",
+      "name" : "name of mongoDB"
+    },
+
+    "databaseA" : {
+      "_comment": "This is the access token to access the database from https://github.com/Rostlab/JS16_ProjectA",
+      "token" : "xxxxxxxxxxxxxxxxx"
+    }
+  }
+}
