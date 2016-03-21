@@ -4,6 +4,7 @@
 import React from 'react';
 let {Component} = React;
 import './Characters.css';
+import { browserHistory } from 'react-router';
 import { Row, Col, Image, Tabs, Tab, ListGroup, ListGroupItem } from 'react-bootstrap';
 
 import Map from '../../common/MapComp/MapComp.jsx';
@@ -36,6 +37,9 @@ export default class Character extends Component {
         });
     }
     render() {
+        if (Object.keys(this.state.character).length === 0) {
+          browserHistory.push('/character');
+        }
         var base_url = "https://got-api.bruck.me/";
         var img = (!this.state.character.imageLink) ? "https://placeholdit.imgix.net/~text?txtsize=33&txt=profile%20picture%20&w=350&h=350" : base_url+this.state.character.imageLink;
         return (
@@ -44,7 +48,7 @@ export default class Character extends Component {
                     <div className="header-image">
                         <div className="character-name-container">
                             <Col xs={12} sm={9}  md={8} className="character-name">
-                                <div><h1>{this.state.character.name}</h1></div>                      
+                                <div><h1>{this.state.character.name}</h1></div>
                             </Col>
                         </div>
                     </div>
@@ -105,10 +109,10 @@ export default class Character extends Component {
                         <Map />
                     </Col>
                 </Row>
-                </div>  
-                    
-                    
-                   
+                </div>
+
+
+
             </div>
         );
     }
