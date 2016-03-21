@@ -30,7 +30,7 @@ export default class About extends Component {
                             </Column>
                             <Column md={6}>
                                 <h3>Data Analyisis</h3>
-                                <TeamMemberListing teamID="B"/>
+                                <TeamMemberListing teamID="BCD"/>
                             </Column>
                         </Row>
                         <Row>
@@ -77,43 +77,46 @@ class TeamMemberListing extends Component {
     }
     getProjectMembers(projectID) {
         return [
-{
-  name: "Georgi Anastasov",
-  link: "https://github.com/jorjo1",
-  team: "F"
-},
-{
-  name: "Max Muth",
-  link: "http://www.maxi-muth.de",
-  team: "F"
-},
-{
-  name: "Florian Gareis",
-  link: "https://www.florian-gareis.com",
-  team: "E"
-},
-{
-  name: "Christian Dallago",
-  link: "https://github.com/sacdallago",
-  team: "ABCDEF"
-},
-{
-  name: "Kordian Bruck",
-  link: "https://bruck.me",
-  team: "A"
-},
-{
-  name: "Julien Schmidt",
-  link: "https://github.com/julienschmidt",
-  team: "D"
-},
-{
-  name: "Jonas Kaltenbach",
-  link : "https://github.com/kajo404",
-  team : "D"
-}
-]
-.filter(function(member){return member.team.indexOf(projectID) != -1;});
+            {
+              name: "Georgi Anastasov",
+              link: "https://github.com/jorjo1",
+              team: "F"
+            },
+            {
+              name: "Max Muth",
+              link: "http://www.maxi-muth.de",
+              team: "F"
+            },
+            {
+              name: "Florian Gareis",
+              link: "https://www.florian-gareis.com",
+              team: "E"
+            },
+            {
+              name: "Kordian Bruck",
+              link: "https://bruck.me",
+              team: "A"
+            },
+            {
+              name: "Julien Schmidt",
+              link: "https://github.com/julienschmidt",
+              team: "D"
+            },
+            {
+              name: "Jonas Kaltenbach",
+              link : "https://github.com/kajo404",
+              team : "D"
+            },
+            {
+              name: "Christian Dallago",
+              link: "https://github.com/sacdallago",
+              team: "ABCDEF"
+            },
+        ].filter((member) => {
+            return member.team.split('').map((teamID) => {
+                return projectID.indexOf(teamID) != -1;
+            }).reduce((a, b) => {return a || b});
+        });
     }
 }
 TeamMemberListing.propTypes = { teamID: React.PropTypes.string };
