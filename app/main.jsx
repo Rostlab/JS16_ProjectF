@@ -24,7 +24,7 @@ import Site404 from './components/public/404/404.jsx';
 import ga from 'ga-react-router';
 import { browserHistory } from 'react-router';
 
-const unlisten = browserHistory.listen(location => {
+browserHistory.listen(location => {
   ga('send','page', location.pathname);
   ga('send', 'pageview');
 });
@@ -44,5 +44,3 @@ ReactDOM.render(
     <Route path="*" component={Site404}/>
   </Router>
 , document.getElementById('root'));
-
-unlisten();
