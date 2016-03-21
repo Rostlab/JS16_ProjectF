@@ -1,6 +1,6 @@
 {
   "google_analytics": {
-    "key": "xxx"
+    "key": "ENV['ANALYTICS']"
   },
 
 
