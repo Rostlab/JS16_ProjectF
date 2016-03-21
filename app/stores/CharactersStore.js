@@ -45,8 +45,9 @@ var CharactersStore = assign({}, EventEmitter.prototype, {
         return sortedCharacters.slice(start,end);
     },
 
-    getCharactersCount: function(){
-        return _characters.length;
+    getCharactersCount: function(filter){
+        var filteredCharacters = filterCharacters(_characters,filter);
+        return filteredCharacters.length;
     },
 
     getCharacter: function() {

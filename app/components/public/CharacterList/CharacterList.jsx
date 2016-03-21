@@ -1,6 +1,7 @@
+
 import React, {Component} from 'react';
 
-import { Row, Col, Pagination } from 'react-bootstrap';
+import { Row, Col, Pagination, Input } from 'react-bootstrap';
 
 import Store from '../../../stores/CharactersStore';
 import Actions from '../../../actions/CharactersActions';
@@ -15,7 +16,6 @@ class CharacterList extends Component {
   render() {
     return (
       <div>
-        <h1>CharacterList:</h1>
         <Row>
           <Col md={8} mdOffset={2}>
             <div>{
@@ -37,7 +37,8 @@ export default class CharacterListPage extends Component {
       super(props);
       this.state = {
         data: Store.getCharacters(1),
-        activePage: 1
+        activePage: 1,
+        filter: {'value': ''}
       };
       this._onChange = this._onChange.bind(this);
     }
@@ -55,31 +56,46 @@ export default class CharacterListPage extends Component {
 
     _onChange() {
       this.setState({
-        data: Store.getCharacters(this.state.activePage)
+        data: Store.getCharacters(this.state.activePage, {}, this.state.filter)
       });
     }
 
     handleSelect(event, selectedEvent) {
       this.setState({
-        data: Store.getCharacters(selectedEvent.eventKey),
+        data: Store.getCharacters(selectedEvent.eventKey, {}, this.state.filter),
         activePage: selectedEvent.eventKey
       });
     }
+
     render(){
       return (
         <div>
+          <Row>
+            <Col md={6} mdOffset={3}>
+              <Input className="character-search" ref="input" type="text" placeholder="Search for character" onChange={this.handleChange.bind(this)} />
+            </Col>
+          </Row>
           <CharacterList data={this.state.data} />
           <div className="center">
             <Pagination
               maxButtons={3}
               ellipsis={false}
               boundaryLinks
-              items={Math.ceil(Store.getCharactersCount()/20)}
+              items={Math.ceil(Store.getCharactersCount(this.state.filter)/20)}
               activePage={this.state.activePage}
               onSelect={this.handleSelect.bind(this)} />
             </div>
         </div>
 
       );
+    }
+
+    handleChange() {
+      let filter = {'value': this.refs.input.getValue()};
+      this.setState({
+        data: Store.getCharacters(1, {}, filter),
+        filter: {'value': this.refs.input.getValue()},
+        activePage: 1
+      });
     }
 }
