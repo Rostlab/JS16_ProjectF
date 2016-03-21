@@ -1,7 +1,3 @@
-.home {
-    background-color: black;
-}
-
 .map-wrapper {
   width: 100%
 }
@@ -11,5 +7,5 @@
 }
 
 .home-plod {
-    transform: translateY(-60%);
+    transform: translateY(-50%);
 }
