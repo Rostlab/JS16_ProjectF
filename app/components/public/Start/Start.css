@@ -1,7 +1,11 @@
-.home {
-    background-color: black;
-}
-
 .map-wrapper {
   width: 100%
+}
+
+.home {
+	text-align: center;
+}
+
+.home-plod {
+    transform: translateY(-50%);
 }
