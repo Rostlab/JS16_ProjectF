@@ -63,7 +63,7 @@ export default class Character extends Component {
                                 </ListGroup>
                     </Col>
                 </Row>
-                
+                <div className="character-stats">
                 <Row>
                     <Col md={10} mdOffset={1}>
                         <h2>Likelihood of Death</h2>
@@ -105,7 +105,7 @@ export default class Character extends Component {
                         <Map />
                     </Col>
                 </Row>
-                    
+                </div>  
                     
                     
                    
