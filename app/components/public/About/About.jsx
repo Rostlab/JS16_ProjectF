@@ -77,36 +77,43 @@ class TeamMemberListing extends Component {
     }
     getProjectMembers(projectID) {
         return [
-            {
-                name: "Member1",
-                imageUrl: "http://www.socialgiri.com/wp-content/uploads/2013/08/about-thumbnail-placeholder.png",
-                link: "https://github.com",
-                team: "F"
-            },
-            {
-                name: "Member2",
-                imageUrl: "http://www.socialgiri.com/wp-content/uploads/2013/08/about-thumbnail-placeholder.png",
-                link: "https://github.com",
-                team: "F"
-            },
-            {
-                name: "Member3",
-                imageUrl: "http://www.socialgiri.com/wp-content/uploads/2013/08/about-thumbnail-placeholder.png",
-                link: "https://github.com",
-                team: "A"
-            },
-            {
-                name: "Member4",
-                imageUrl: "http://www.socialgiri.com/wp-content/uploads/2013/08/about-thumbnail-placeholder.png",
-                team: "B"
-            },            
-            {
-                name: "Member5",
-                imageUrl: "http://www.socialgiri.com/wp-content/uploads/2013/08/about-thumbnail-placeholder.png",
-                link: "https://github.com",
-                team: "E"
-            }
-        ].filter(function(member){return member.team == projectID;});
+{
+  name: "Georgi Anastasov",
+  link: "https://github.com/jorjo1",
+  team: "F"
+},
+{
+  name: "Max Muth",
+  link: "http://www.maxi-muth.de",
+  team: "F"
+},
+{
+  name: "Florian Gareis",
+  link: "https://www.florian-gareis.com",
+  team: "E"
+},
+{
+  name: "Christian Dallago",
+  link: "https://github.com/sacdallago",
+  team: "ABCDEF"
+},
+{
+  name: "Kordian Bruck",
+  link: "https://bruck.me",
+  team: "A"
+},
+{
+  name: "Julien Schmidt",
+  link: "https://github.com/julienschmidt",
+  team: "D"
+},
+{
+  name: "Jonas Kaltenbach",
+  link : "https://github.com/kajo404",
+  team : "D"
+}
+]
+.filter(function(member){return member.team.indexOf(projectID) != -1;});
     }
 }
 TeamMemberListing.propTypes = { teamID: React.PropTypes.string };
