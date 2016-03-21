@@ -91,7 +91,8 @@ export default class CharacterListPage extends Component {
       let filter = {'value': this.refs.input.getValue()};
       this.setState({
         data: Store.getCharacters(1, {}, filter),
-        filter: {'value': this.refs.input.getValue()}
+        filter: {'value': this.refs.input.getValue()},
+        activePage: 1
       });
     }
 }
