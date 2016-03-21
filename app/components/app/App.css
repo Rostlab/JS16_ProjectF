@@ -15,9 +15,11 @@ a {
     color: whitesmoke;
 }
 
-a:hover {
+a:hover,
+a:focus {
   color: white;
   text-decoration: none;
+  outline: 0;
 }
 
 body {
@@ -40,10 +42,55 @@ body {
     /*z-index: -1; !* Make sure the image sits below the content *! */
 /*}*/
 
-.tab-pane{
+/* Tabs */
+.tab-pane {
     padding: 15px;
     background-color: #313131;
 }
+
+.nav-tabs > li > a {
+    font-family: 'Cinzel Decorative', cursive;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    color: whitesmoke;
+    background-color: #5A180C;
+    border: none;
+}
+
+.ranking-fields .nav > li.active > a:hover, .ranking-fields .nav > li.active > a:focus {
+    cursor: pointer;
+}
+
+
+.nav-tabs > li > a:hover {
+    background-color: #3A3A3A;
+    border-color: transparent;
+    border-bottom-color: #ddd;
+}
+.nav-tabs>li.active>a,
+.nav-tabs>li.active>a:focus,
+.nav-tabs>li.active>a:active, 
+.nav-tabs>li.active>a:hover {
+    outline: none;
+}
+
+/* Pagination */
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+    z-index: 3;
+    color: #fff;
+    cursor: default;
+    background-color: #5A180C;
+    border-color: #5A180C;
+}
+
+.pagination > li > a:hover, .pagination > li > span:hover, .pagination > li > a:focus, .pagination > li > span:focus,
+.pagination > li > a, .pagination > li > span {
+    color: whitesmoke;
+    background-color: #333;
+    border: none;
+}
+
 
 .header-image {
     height: 550px;
@@ -51,6 +98,8 @@ body {
     background-size: cover;
     margin-top: -50px;
     background-position: 50% 50%;
+    padding: 0; 
+    position: relative;
 }
 .main-container {
    padding-top: 50px;

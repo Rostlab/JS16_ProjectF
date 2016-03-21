@@ -11,14 +11,15 @@ function setCharacters(characters) {
     _characters = characters;
 }
 function setCharacter(data) {
-    _character = data.data[0];
+    _character = data.data;
+    console.log(data.data);
 }
 
-function sortCharacters(charaters,sort){
+function sortCharacters(characters,sort){
     if(sort){
-        return charaters.sort(firstBy(sort["field"],sort.type));
+        return characters.sort(firstBy(sort["field"],sort.type));
     }
-    return charaters;
+    return characters;
 }
 function filterCharacters(characters,filter){
     if(filter){
@@ -35,17 +36,18 @@ var CharactersStore = assign({}, EventEmitter.prototype, {
         // sort = {field: Constants.SORT_FIELD_NAME, type: Constants.SORT_TYPE_ASC};
         // filter = {field: Constants.FILTER_FIELD_NAME ,value: "LyRI"};
         if(!page){
-            page = 0
+            page = 1
         }
-        var start = page * 20;
+        var start = page * 20-20;
         var end = start + 20;
         var filteredCharacters = filterCharacters(_characters,filter);
         var sortedCharacters = sortCharacters(filteredCharacters,sort);
         return sortedCharacters.slice(start,end);
     },
 
-    getCharactersCount: function(){
-        return _characters.length;
+    getCharactersCount: function(filter){
+        var filteredCharacters = filterCharacters(_characters,filter);
+        return filteredCharacters.length;
     },
 
     getCharacter: function() {

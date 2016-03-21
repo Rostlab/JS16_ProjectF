@@ -21,6 +21,10 @@ footer {
 	background-color: #313131;
 	min-height: 250px;
 	padding: 35px;
+	background-image: url('https://www.schueler.tum.de/fileadmin/tum/org/tum-logo.png');
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    filter: grayscale(100%);
 }
 
 footer div[class^='col-'] {
