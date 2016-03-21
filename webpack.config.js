@@ -6,6 +6,13 @@ var path = require('path');
 var npm_dir = path.join(__dirname, '/node_modules/');
 var json = require('./config.json');
 
+var analytics;
+if (process.env.ANALYTICS == undefined) {
+  analytics = process.env.ANALYTICS;
+} else {
+  json = require('./config.json');
+  analytics = json.google_analytics.key;
+}
 
 var config = {
     devtool: 'eval-source-map',
@@ -77,7 +84,7 @@ var config = {
             template: __dirname + "/app/index.tmpl.html"
         }),
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.DefinePlugin({GA_TRACKING_CODE: JSON.stringify(json.google_analytics.key)})
+        new webpack.DefinePlugin({GA_TRACKING_CODE: JSON.stringify(analytics)})
     ],
 
     devServer: {

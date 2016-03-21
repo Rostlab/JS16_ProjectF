@@ -2,6 +2,14 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+var analytics;
+if (process.env.ANALYTICS == undefined) {
+  analytics = process.env.ANALYTICS;
+} else {
+  json = require('./config.json');
+  analytics = json.google_analytics.key;
+}
+
 var config = {
     entry: __dirname + "/app/main.jsx",
     output: {
@@ -70,7 +78,7 @@ var config = {
             }
         }),
         new ExtractTextPlugin("/style.css"),
-        new webpack.DefinePlugin({GA_TRACKING_CODE: JSON.stringify('UA-75295085-1')})
+        new webpack.DefinePlugin({GA_TRACKING_CODE: JSON.stringify(analytics)})
     ]
 }
 
