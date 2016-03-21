@@ -66,6 +66,12 @@ body {
     border-color: transparent;
     border-bottom-color: #ddd;
 }
+.nav-tabs>li.active>a,
+.nav-tabs>li.active>a:focus,
+.nav-tabs>li.active>a:active, 
+.nav-tabs>li.active>a:hover {
+    outline: none;
+}
 
 /* Pagination */
 .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {

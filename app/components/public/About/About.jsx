@@ -111,11 +111,11 @@ class TeamMemberListing extends Component {
               name: "Christian Dallago",
               link: "https://github.com/sacdallago",
               team: "ABCDEF"
-            },
+            }
         ].filter((member) => {
             return member.team.split('').map((teamID) => {
                 return projectID.indexOf(teamID) != -1;
-            }).reduce((a, b) => {return a || b});
+            }).reduce((a, b) => {return a || b;});
         });
     }
 }
