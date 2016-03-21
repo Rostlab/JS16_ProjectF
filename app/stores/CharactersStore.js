@@ -37,6 +37,7 @@ var CharactersStore = assign({}, EventEmitter.prototype, {
         if(!page){
             page = 1
         }
+        console.log(filter); /*eslint no-console:0, no-undef:0 */
         var start = page * 20-20;
         var end = start + 20;
         var filteredCharacters = filterCharacters(_characters,filter);

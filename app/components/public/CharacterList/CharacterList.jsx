@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
 import { Row, Col, Pagination } from 'react-bootstrap';
+import SearchInput from 'react-search-input';
 
 import Store from '../../../stores/CharactersStore';
 import Actions from '../../../actions/CharactersActions';
@@ -16,6 +17,7 @@ class CharacterList extends Component {
     return (
       <div>
         <h1>CharacterList:</h1>
+        <SearchInput ref='search' onChange={this.searchUpdated.bind(this)} />
         <Row>
           <Col md={8} mdOffset={2}>
             <div>{
@@ -65,7 +67,13 @@ export default class CharacterListPage extends Component {
         activePage: selectedEvent.eventKey
       });
     }
+
     render(){
+      if (this.refs.search) {
+        var filter = {'value': this.state.searchTerm}.bind(this);
+        console.log(this.state.characters); /*eslint no-console:0, no-undef:0 */
+        this.setState({characters: Store.getCharacters(this.state.activePage, {}, filter)});
+      }
       return (
         <div>
           <CharacterList data={this.state.data} />
@@ -81,5 +89,11 @@ export default class CharacterListPage extends Component {
         </div>
 
       );
+    }
+
+    searchUpdated(term) {
+      console.log('coming in with ' + term); /*eslint no-console:0, no-undef:0 */
+
+      this.setState({searchTerm: term}); // needed to force re-render 
     }
 }
