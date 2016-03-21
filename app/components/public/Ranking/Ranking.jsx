@@ -1,6 +1,6 @@
 import React from 'react';
 let {Component} = React;
-import {Grid, Row, Col, Image, Tabs, Tab, ListGroup, ListGroupItem, OverlayTrigger, Popover} from 'react-bootstrap';
+import {Grid, Row, Col, Image, Tabs, Tab, OverlayTrigger, Popover} from 'react-bootstrap';
 import "./Ranking.css";
 export default class Ranking extends Component {
   render() {
@@ -32,30 +32,30 @@ export default class Ranking extends Component {
 </OverlayTrigger>
 <Tabs defaultActiveKey={1}>
     <Tab eventKey={1} title="Algorithm 1">
-    	<Row>
-    		<Col xs={8}>Character 1</Col>
-    		<Col xs={4}>1</Col>
-    	</Row><Row>
-    		<Col xs={8}>Character 2</Col>
-    		<Col xs={4}>2</Col>
-    	</Row><Row>
-    		<Col xs={8}>Character 3</Col>
-    		<Col xs={4}>3</Col>
-    	</Row><Row>
-    		<Col xs={8}>Character 4</Col>
-    		<Col xs={4}>4</Col>
-    	</Row><Row>
-    		<Col xs={8}>Character 5</Col>
-    		<Col xs={4}>5</Col>
-    	</Row>
+      <Row>
+        <Col xs={8}>Character 1</Col>
+        <Col xs={4}>1</Col>
+      </Row><Row>
+        <Col xs={8}>Character 2</Col>
+        <Col xs={4}>2</Col>
+      </Row><Row>
+        <Col xs={8}>Character 3</Col>
+        <Col xs={4}>3</Col>
+      </Row><Row>
+        <Col xs={8}>Character 4</Col>
+        <Col xs={4}>4</Col>
+      </Row><Row>
+        <Col xs={8}>Character 5</Col>
+        <Col xs={4}>5</Col>
+      </Row>
     </Tab>
     <Tab eventKey={2} title="Algorithm 2">
-    	<Row>
-    		<Col xs={8}>Character 1</Col>
-    		<Col xs={4}>1</Col>
-    	</Row><Row>
-    		<Col xs={8}>Character 2</Col>
-    		<Col xs={4}>2</Col>
+      <Row>
+        <Col xs={8}>Character 1</Col>
+        <Col xs={4}>1</Col>
+      </Row><Row>
+        <Col xs={8}>Character 2</Col>
+        <Col xs={4}>2</Col>
     	</Row><Row>
     		<Col xs={8}>Character 3</Col>
     		<Col xs={4}>3</Col>
@@ -68,22 +68,22 @@ export default class Ranking extends Component {
     	</Row>
     </Tab>
   </Tabs>
-				</Col>
-				<Col xs={12} sm={6}>
+  </Col>
+<Col xs={12} sm={6}>
 <h3 className="text-center">Twitter top 5 hated</h3>
-<Tabs defaultActiveKey={1}>
+  <Tabs defaultActiveKey={1}>
     <Tab eventKey={1} title="Algorithm 1">
-    	<Row>
-    		<Col xs={8}>Character 1</Col>
-    		<Col xs={4}>1</Col>
-    	</Row><Row>
-    		<Col xs={8}>Character 2</Col>
-    		<Col xs={4}>2</Col>
-    	</Row><Row>
-    		<Col xs={8}>Character 3</Col>
-    		<Col xs={4}>3</Col>
-    	</Row><Row>
-    		<Col xs={8}>Character 4</Col>
+      <Row>
+        <Col xs={8}>Character 1</Col>
+        <Col xs={4}>1</Col>
+      </Row><Row>
+        <Col xs={8}>Character 2</Col>
+        <Col xs={4}>2</Col>
+      </Row><Row>
+        <Col xs={8}>Character 3</Col>
+        <Col xs={4}>3</Col>
+      </Row><Row>
+        <Col xs={8}>Character 4</Col>
     		<Col xs={4}>4</Col>
     	</Row><Row>
     		<Col xs={8}>Character 5</Col>

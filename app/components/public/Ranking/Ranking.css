@@ -3,17 +3,17 @@
 }
 .big-battle {
 	border: 3px solid #fff;
-	max-height: 4	00px;	
+	max-height: 400px;	
 	overflow: hidden;
 }
 .big-battle .col-xs-6:first-child {
 	border-right: 1px solid #fff;
 }
 .big-battle img {
-	width: 100%;	
+	width: 100%;
 }
 .big-battle div {
-	padding: 0;	
+	padding: 0;
 }
 .big-battle-info {
 	background: #313131;
@@ -22,7 +22,7 @@
 }
 .big-battle-info .col-xs-6 {
 	text-align: center;
-	padding: 1em 0;	
+	padding: 1em 0;
 }
 
 
