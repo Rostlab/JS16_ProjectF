@@ -15,9 +15,11 @@ a {
     color: whitesmoke;
 }
 
-a:hover {
+a:hover,
+a:focus {
   color: white;
   text-decoration: none;
+  outline: 0;
 }
 
 body {
