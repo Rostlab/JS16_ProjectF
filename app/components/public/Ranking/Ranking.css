@@ -30,9 +30,9 @@
 	margin-top: 3em;
 }
 
-h3.ranking-title {
+.ranking-title {
 	cursor: pointer;	
 }
-h3.popover-title, .popover-content {
+.popover-title, .popover-content {
 	color: #333;
 }
