@@ -11,15 +11,12 @@ import './CharacterList.css';
 class CharacterList extends Component {
   constructor (props) {
     super(props);
-<<<<<<< HEAD
     this.state = {characters: Store.getCharacters()};
     this._onChange = this._onChange.bind(this);
   }
 
   componentWillMount (){
     Store.addChangeListener(this._onChange);
-=======
->>>>>>> 9c7bdbd855258583a6a88361c79ab456d986ae42
   }
   render() {
     return (
