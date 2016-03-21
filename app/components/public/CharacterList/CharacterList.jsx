@@ -70,8 +70,11 @@ export default class CharacterListPage extends Component {
     render(){
       return (
         <div>
-          <h1>CharacterList:</h1>
-          <Input ref="input" type="text" placeholder="Search for character" onChange={this.handleChange.bind(this)} />
+          <Row>
+            <Col md={6} mdOffset={3}>
+              <Input className="character-search" ref="input" type="text" placeholder="Search for character" onChange={this.handleChange.bind(this)} />
+            </Col>
+          </Row>
           <CharacterList data={this.state.data} />
           <div className="center">
             <Pagination
