@@ -41,31 +41,31 @@ export default class Character extends Component {
         return (
             <div className="character-container">
                 <Row fluid>
-                    <div className="header-image"></div>
+                    <div className="header-image">
+                        <div className="character-name-container">
+                            <Col xs={12} sm={9}  md={8} className="character-name">
+                                <div><h1>{this.state.character.name}</h1></div>                      
+                            </Col>
+                        </div>
+                    </div>
                 </Row>
                 <Row className="character-intro" fluid >
                     <Col xs={6} xsOffset={3} sm={3} smOffset={0} md={3} mdOffset={1} className="character-photo">
                         <Image thumbnail src={img}/>
-
                     </Col>
-                      <Col xs={12} sm={9} md={8} className="character-name">
-                        <div><h1>{this.state.character.name}</h1></div>    
-                        <Row className="character-details" fluid >
-                            <Col xs={6}>
-                                <ListGroup>
+                    <Col xs={12} sm={6}  smOffset={1}>
+                        <ListGroup className="character-details">
                                     <ListGroupItem>Age</ListGroupItem>
                                     <ListGroupItem>House</ListGroupItem>
                                     <ListGroupItem>Culture</ListGroupItem>
                                     <ListGroupItem>House</ListGroupItem>
                                     <ListGroupItem>Reputation</ListGroupItem>
                                 </ListGroup>
-                            </Col>
-                        </Row>                    
                     </Col>
                 </Row>
                 
                 <Row>
-                    <Col md={8} mdOffset={2}>
+                    <Col md={10} mdOffset={1}>
                         <h2>Likelihood of Death</h2>
                         <p>Check out what our two different algorithms say</p>
                         <Tabs>
@@ -79,7 +79,7 @@ export default class Character extends Component {
                     </Col>
                 </Row>
                 <Row>
-                    <Col md={8} mdOffset={2}>
+                    <Col md={5} mdOffset={1}>
                         <h2>People on Twitter say</h2>
                         <Tabs>
                             <Tab eventKey={1} title="Twitter Analysis 1">
@@ -94,9 +94,13 @@ export default class Character extends Component {
                             </Tab>
                         </Tabs>
                     </Col>
+                    <Col md={5}>
+                        <h2>Top Tweets about {this.state.character.name}</h2>
+                        <p className="lead">Tweet box - to be integrated with alpha release</p>
+                    </Col>
                 </Row>
                 <Row>
-                    <Col md={8} mdOffset={2}>
+                    <Col md={10} mdOffset={1}>
                         <h2>Location History</h2>
                         <Map />
                     </Col>
