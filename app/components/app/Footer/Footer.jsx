@@ -34,6 +34,9 @@ export default class Footer extends Component {
                 <h4>Legal</h4>
                 <hr />
                 <p>
+                  <a href="#">Feedback</a>
+                </p>
+                <p>
                   <a href="#">Imprint</a>
                 </p>
                 <p>
