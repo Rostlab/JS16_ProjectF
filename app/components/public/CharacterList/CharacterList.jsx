@@ -20,7 +20,7 @@ class CharacterList extends Component {
           <Col md={8} mdOffset={2}>
             <div>{
               this.props.data.map(function (character) {
-                return <CharacterThumbnail key={character._id} id={character.name} name={character.name} imageUrl={character.imageLink}/>;
+                return <CharacterThumbnail key={character._id} name={character.name} imageUrl={character.imageLink}/>;
               })
             }
             </div>
