@@ -27,8 +27,8 @@ export default class Ranking extends Component {
 
 			<Row className="ranking-fields">
 				<Col xs={12} sm={6}>
-<OverlayTrigger trigger="hover" placement="top" overlay={<Popover title="Popover top"><strong>Holy guacamole!</strong> Check this info.</Popover>}>
-<h3 className="text-center">Twitter top 5 loved</h3>
+<OverlayTrigger trigger="click" placement="top" overlay={<Popover title="Top 5 loved">We have two algorithms!</Popover>}>
+<h3 className="text-center ranking-title">Twitter top 5 loved</h3>
 </OverlayTrigger>
 <Tabs defaultActiveKey={1}>
     <Tab eventKey={1} title="Algorithm 1">
@@ -70,7 +70,9 @@ export default class Ranking extends Component {
   </Tabs>
   </Col>
 <Col xs={12} sm={6}>
-<h3 className="text-center">Twitter top 5 hated</h3>
+<OverlayTrigger trigger="click" placement="top" overlay={<Popover title="Top 5 hated">We have two algorithms!</Popover>}>
+<h3 className="text-center ranking-title">Twitter top 5 hated</h3>
+</OverlayTrigger>
   <Tabs defaultActiveKey={1}>
     <Tab eventKey={1} title="Algorithm 1">
       <Row>
@@ -113,7 +115,9 @@ export default class Ranking extends Component {
 			</Row>
 			<Row className="ranking-fields">
 				<Col xs={12} sm={6}>
-<h3 className="text-center">Who is most likely to die next</h3>
+<OverlayTrigger trigger="click" placement="top" overlay={<Popover title="PLOD">We have two algorithms!</Popover>}>				
+<h3 className="text-center ranking-title">Who is most likely to die next</h3>
+</OverlayTrigger>
 <Tabs defaultActiveKey={1}>
     <Tab eventKey={1} title="Algorithm 1">Algorithm 1</Tab>
     <Tab eventKey={2} title="Algorithm 2">Algorithm 2</Tab>
