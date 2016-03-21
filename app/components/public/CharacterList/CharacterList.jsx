@@ -1,7 +1,7 @@
+
 import React, {Component} from 'react';
 
-import { Row, Col, Pagination } from 'react-bootstrap';
-import SearchInput from 'react-search-input';
+import { Row, Col, Pagination, Input } from 'react-bootstrap';
 
 import Store from '../../../stores/CharactersStore';
 import Actions from '../../../actions/CharactersActions';
@@ -16,8 +16,6 @@ class CharacterList extends Component {
   render() {
     return (
       <div>
-        <h1>CharacterList:</h1>
-        <SearchInput ref='search' onChange={this.searchUpdated.bind(this)} />
         <Row>
           <Col md={8} mdOffset={2}>
             <div>{
@@ -39,7 +37,8 @@ export default class CharacterListPage extends Component {
       super(props);
       this.state = {
         data: Store.getCharacters(1),
-        activePage: 1
+        activePage: 1,
+        filter: {'value': ''}
       };
       this._onChange = this._onChange.bind(this);
     }
@@ -57,25 +56,22 @@ export default class CharacterListPage extends Component {
 
     _onChange() {
       this.setState({
-        data: Store.getCharacters(this.state.activePage)
+        data: Store.getCharacters(this.state.activePage, {}, this.state.filter)
       });
     }
 
     handleSelect(event, selectedEvent) {
       this.setState({
-        data: Store.getCharacters(selectedEvent.eventKey),
+        data: Store.getCharacters(selectedEvent.eventKey, {}, this.state.filter),
         activePage: selectedEvent.eventKey
       });
     }
 
     render(){
-      if (this.refs.search) {
-        var filter = {'value': this.state.searchTerm}.bind(this);
-        console.log(this.state.characters); /*eslint no-console:0, no-undef:0 */
-        this.setState({characters: Store.getCharacters(this.state.activePage, {}, filter)});
-      }
       return (
         <div>
+          <h1>CharacterList:</h1>
+          <Input ref="input" type="text" placeholder="Search" onChange={this.handleChange.bind(this)} />
           <CharacterList data={this.state.data} />
           <div className="center">
             <Pagination
@@ -91,9 +87,11 @@ export default class CharacterListPage extends Component {
       );
     }
 
-    searchUpdated(term) {
-      console.log('coming in with ' + term); /*eslint no-console:0, no-undef:0 */
-
-      this.setState({searchTerm: term}); // needed to force re-render 
+    handleChange() {
+      let filter = {'value': this.refs.input.getValue()};
+      this.setState({
+        data: Store.getCharacters(1, {}, filter),
+        filter: {'value': this.refs.input.getValue()}
+      });
     }
 }
