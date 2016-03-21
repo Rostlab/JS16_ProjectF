@@ -3,8 +3,8 @@ let {Component} = React;
 import { Row } from 'react-bootstrap';
 
 import Stats from '../../common/Stats/Stats.jsx';
-import MapComp from '../../common/MapComp/MapComp.jsx';
 import './Start.css';
+import TwitterComp from '../../common/TwitterComp/TwitterComp.jsx';
 
 export default class Start extends Component {
   render() {
@@ -15,9 +15,11 @@ export default class Start extends Component {
         </Row>
         Start
         <Stats/>
-        <div className="container">
-          <MapComp />
-        </div>
+        <Row fluid>
+          <div className="twitter">
+            <TwitterComp widgetID='711756872454373377' height='600'/>
+          </div>
+        </Row>
       </div>
     );
   }
