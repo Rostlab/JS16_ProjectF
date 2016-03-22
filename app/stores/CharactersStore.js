@@ -16,15 +16,19 @@ function setCharacter(data) {
 }
 
 function sortCharacters(characters,sort){
-    if(sort){
-        return characters.sort(firstBy(sort["field"],sort.type));
+    if(sort && Object.keys(sort).length > 1){
+        return characters.sort(firstBy(sort.field,sort.type));
     }
     return characters;
 }
 function filterCharacters(characters,filter){
-    if(filter){
+    if(filter && Object.keys(filter).length > 1){
         return characters.filter(function(element){
-            return element.name.toLowerCase().indexOf(filter.value.toLowerCase()) >= 0;
+            if(element.hasOwnProperty(filter.field))
+            {
+                return element[filter.field].toLowerCase().indexOf(filter.value.toLowerCase()) >= 0;
+            }
+            return false;
         });
     }
     return characters;
