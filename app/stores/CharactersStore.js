@@ -38,7 +38,7 @@ var CharactersStore = assign({}, EventEmitter.prototype, {
 
     getCharacters: function(page, sort, filter) {
         // sort = {field: Constants.SORT_FIELD_NAME, type: Constants.SORT_TYPE_ASC};
-        filter = {field: Constants.FILTER_FIELD_NAME ,value: "LyRI"};
+        // filter = {field: Constants.FILTER_FIELD_NAME ,value: "LyRI"};
         if(!page){
             page = 1
         }
