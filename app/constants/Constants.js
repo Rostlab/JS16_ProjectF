@@ -10,5 +10,7 @@ module.exports = {
     SORT_FIELD_POPULARITY: "popularity",
     SORT_TYPE_ASC: 1,
     SORT_TYPE_DESC: -1,
-    FILTER_FIELD_NAME: "name"
+    FILTER_FIELD_NAME: "name",
+    FILTER_FIELD_HOUSE: "house",
+    FILTER_FIELD_CULTURE: "culture"
 };
