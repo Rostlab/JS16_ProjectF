@@ -44,7 +44,7 @@ export default class Character extends Component {
                     <div className="header-image">
                         <div className="character-name-container">
                             <Col xs={12} sm={9}  md={8} className="character-name">
-                                <div><h1>{this.state.character.name}</h1></div>                      
+                                <div><h1>{this.state.character.name}</h1></div>
                             </Col>
                         </div>
                     </div>
@@ -105,10 +105,10 @@ export default class Character extends Component {
                         <Map />
                     </Col>
                 </Row>
-                </div>  
-                    
-                    
-                   
+                </div>
+
+
+
             </div>
         );
     }
