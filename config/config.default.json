@@ -30,5 +30,22 @@
       "_comment": "This is the access token to access the database from https://github.com/Rostlab/JS16_ProjectA",
       "minutes" : 12
     }
-  }
+  },
+  
+  "gotsent": {
+        "mongodb": {
+            "uri": "mongodb://localhost/gotsentimental"
+        },
+        "api": {
+            "https": true,
+            "host": "got-api.bruck.me",
+            "prefix": "/api/"
+        },
+        "twitter": {
+            "access_token": "",
+            "access_token_secret": "",
+            "consumer_key": "",
+            "consumer_secret": ""
+        }
+    }
 }

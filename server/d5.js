@@ -1,5 +1,5 @@
 /* D5 Integration */
-var express = require('express')
+var express = require('express');
 var d5 = express();
 
 //var initPack = require('gotdailysentiment');
