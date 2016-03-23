@@ -12,19 +12,27 @@ function setCharacters(characters) {
 }
 function setCharacter(data) {
     _character = data.data;
-    console.log(data.data);
 }
 
 function sortCharacters(characters,sort){
-    if(sort){
-        return characters.sort(firstBy(sort["field"],sort.type));
+    if(sort && Object.keys(sort).length > 1){
+        return characters.sort(firstBy(sort.field,sort.type));
     }
     return characters;
 }
 function filterCharacters(characters,filter){
-    if(filter){
+    if(filter && Object.keys(filter).length > 0){
         return characters.filter(function(element){
-            return element.name.toLowerCase().indexOf(filter.value.toLowerCase()) >= 0;
+
+            var matchFound = false;
+            if(element.hasOwnProperty(Constants.FILTER_FIELD_NAME)) {
+                matchFound |= element[Constants.FILTER_FIELD_NAME].toLowerCase().indexOf(filter.value.toLowerCase()) >= 0;
+            } else if(!matchFound && element.hasOwnProperty(Constants.FILTER_FIELD_HOUSE)){
+                matchFound |= element[Constants.FILTER_FIELD_HOUSE].toLowerCase().indexOf(filter.value.toLowerCase()) >= 0;
+            } else if(!matchFound && element.hasOwnProperty(Constants.FILTER_FIELD_CULTURE)){
+                matchFound |= element[Constants.FILTER_FIELD_CULTURE].toLowerCase().indexOf(filter.value.toLowerCase()) >= 0;
+            }
+            return matchFound;
         });
     }
     return characters;
@@ -34,7 +42,7 @@ var CharactersStore = assign({}, EventEmitter.prototype, {
 
     getCharacters: function(page, sort, filter) {
         // sort = {field: Constants.SORT_FIELD_NAME, type: Constants.SORT_TYPE_ASC};
-        // filter = {field: Constants.FILTER_FIELD_NAME ,value: "LyRI"};
+        // filter = {value: "targa"};
         if(!page){
             page = 1
         }

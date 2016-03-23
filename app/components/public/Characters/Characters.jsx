@@ -6,7 +6,7 @@ let {Component} = React;
 import './Characters.css';
 import { Row, Col, Image, Tabs, Tab, ListGroup, ListGroupItem } from 'react-bootstrap';
 
-import Map from '../../common/MapComp/MapComp.jsx';
+import MapComp from '../../common/MapComp/MapComp.jsx';
 import Store from '../../../stores/CharactersStore';
 import Actions from '../../../actions/CharactersActions';
 
@@ -44,7 +44,7 @@ export default class Character extends Component {
                     <div className="header-image">
                         <div className="character-name-container">
                             <Col xs={12} sm={9}  md={8} className="character-name">
-                                <div><h1>{this.state.character.name}</h1></div>                      
+                                <div><h1>{this.state.character.name}</h1></div>
                             </Col>
                         </div>
                     </div>
@@ -94,21 +94,17 @@ export default class Character extends Component {
                             </Tab>
                         </Tabs>
                     </Col>
-                    <Col md={5}>
-                        <h2>Top Tweets about {this.state.character.name}</h2>
-                        <p className="lead">Tweet box - to be integrated with alpha release</p>
-                    </Col>
                 </Row>
                 <Row>
                     <Col md={10} mdOffset={1}>
                         <h2>Location History</h2>
-                        <Map />
+                        <MapComp character={[this.props.params.id]} />
                     </Col>
                 </Row>
-                </div>  
-                    
-                    
-                   
+                </div>
+
+
+
             </div>
         );
     }
