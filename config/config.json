@@ -15,7 +15,7 @@
         "_comment": "These are the access tokens to the Twitter-API",
         "consumer_key": "VMYudbqPGcJQNXKSnXg0veHdd",
         "consumer_secret": "pZiIWjBmptDIDgK4HO5o229khUCR2kHbtpKbLkVylADKlSiGHT",
-        "access_token_key": "	3308613545-R7LM0CkFWLBahADosqhEtOiX4VkoDfsKDmwalcr",
+        "access_token_key": "3308613545-R7LM0CkFWLBahADosqhEtOiX4VkoDfsKDmwalcr",
         "access_token_secret": "Q2qlfOXagSWVz2vD9OZ1J1uENZgrrJwGP2lUjHRE1i0uH"
     },
 
@@ -42,8 +42,8 @@
             "prefix": "/api/"
         },
         "twitter": {
-            "access_token": "",
-            "access_token_secret": "",
+            "access_token": "3308613545-R7LM0CkFWLBahADosqhEtOiX4VkoDfsKDmwalcr",
+            "access_token_secret": "Q2qlfOXagSWVz2vD9OZ1J1uENZgrrJwGP2lUjHRE1i0uH",
             "consumer_key": "VMYudbqPGcJQNXKSnXg0veHdd",
             "consumer_secret": "pZiIWjBmptDIDgK4HO5o229khUCR2kHbtpKbLkVylADKlSiGHT"
         }

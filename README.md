@@ -18,6 +18,14 @@ We're using webpack: https://github.com/webpack/webpack
 * `npm install`
 * `npm run build`
 
+## Build and serve files
+* `npm install`
+* `npm run build-serve`
+
+## serve files
+* `npm install`
+* `npm run serve`
+
 ## Deploy to heroku
 We use a dedicated 'staging' branch which is automagically deployed to https://got-stats.herokuapp.com/.
 
