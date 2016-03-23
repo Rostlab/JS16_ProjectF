@@ -15,8 +15,12 @@ class CharacterList extends Component {
     super(props);
   }
   render() {
-    var found = this.props.data.length === 0 ? "Nothing found, please search something else" : "";
-    console.log(found); /*eslint no-console:0,no-undef:0*/
+    var found = "";
+    if(this.props.loaded == false) {
+      found = "Loading ...";
+    } else if (this.props.data.length === 0) {
+      found = "Nothing found, please search something else";
+    }
     return (
       <div>
         <Row>
@@ -37,14 +41,20 @@ class CharacterList extends Component {
   }
 }
 CharacterList.propTypes = { data: React.PropTypes.array.isRequired};
+CharacterList.propTypes = { loaded: React.PropTypes.bool.isRequired};
 
 export default class CharacterListPage extends Component {
     constructor (props) {
       super(props);
+      var page = 1;
+      if( this.props.location.query.page != undefined ) {
+        page = parseInt(this.props.location.query.page);
+      }
       this.state = {
-        data: Store.getCharacters(1),
-        activePage: 1,
-        filter: {'value': ''}
+        data: Store.getCharacters(page),
+        activePage: page,
+        filter: {'value': ''},
+        loaded: false
       };
       this._onChange = this._onChange.bind(this);
     }
@@ -64,7 +74,8 @@ export default class CharacterListPage extends Component {
 
     _onChange() {
       this.setState({
-        data: Store.getCharacters(this.state.activePage, {}, this.state.filter)
+        data: Store.getCharacters(this.state.activePage, {}, this.state.filter),
+        loaded: true
       });
     }
 
@@ -99,7 +110,7 @@ export default class CharacterListPage extends Component {
               <Input value={this.props.location.query.search} className="character-search" ref="input" type="text" placeholder="Search for character" onChange={this.handleChange.bind(this)} />
             </Col>
           </Row>
-          <CharacterList data={this.state.data} />
+          <CharacterList data={this.state.data} loaded={this.state.loaded}/>
           <div className="center">
             <Pagination
               maxButtons={3}
