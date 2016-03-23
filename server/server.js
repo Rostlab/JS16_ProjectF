@@ -11,15 +11,13 @@ var app = express();
 
 app.use(compression());
 
-app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, '../', 'build')));
 
 app.use('/d5', d5);
 //app.use(d4);
 
-
-
 app.get('*', function (req, res) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  res.sendFile(path.join(__dirname, '../', 'build', 'index.html'));
 })
 
 var PORT = process.env.PORT || 8080;
