@@ -8,7 +8,6 @@ import './Map.css';
 
 export default class Map extends Component {
   render() {
-    console.log(this.props.location.query); /*eslint no-console:0,no-undef:0*/
     return (
       <div className="mapPage">
         <Header />

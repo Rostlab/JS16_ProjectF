@@ -9,9 +9,6 @@ import "jquery-ui";
 export default class MapComp extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      mymap: {}
-    };
   }
 
   componentWillMount() {
@@ -32,21 +29,16 @@ export default class MapComp extends Component {
       'cityDataSource':'https://raw.githubusercontent.com/Rostlab/JS16_ProjectC_Group10/develop/data/cities.js',
       'realmDataSource':'https://raw.githubusercontent.com/Rostlab/JS16_ProjectC_Group10/develop/data/realms.js'
     };
-    var mymap = gotmap('#map', config);
+    var mymap = gotmap('#map', config); /*eslint no-undef:0*/
 
     var range = this.parseRange();
     mymap.updateMap(range);
-    console.log(this.props.character); /*eslint no-console:0,no-undef:0*/
     for (let i of this.props.character) {
-      setTimeout(function (){
+      setTimeout(function (){ /*eslint no-undef:0*/
         let character = mymap.searchCharacter(i.toLowerCase());
         mymap.addCharacter(character[0]);
       },5000);
     }
-
-    this.setState({
-      mymap: mymap /*eslint no-undef: 0, no-unused-vars: 0 */
-    });
   }
 
   parseRange(){
