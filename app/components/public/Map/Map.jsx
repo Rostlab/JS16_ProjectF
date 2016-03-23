@@ -11,8 +11,12 @@ export default class Map extends Component {
     return (
       <div className="mapPage">
         <Header />
-        <MapComp />
+        <MapComp
+          character={this.props.location.query.character}
+          begintimeline={this.props.location.query.begin_time_line}
+          endtimeline={this.props.location.query.end_time_line}/>
       </div>
     );
   }
 }
+Map.propTypes = { location: React.PropTypes.object };
