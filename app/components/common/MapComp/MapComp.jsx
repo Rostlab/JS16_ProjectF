@@ -1,5 +1,6 @@
 import React from 'react';
 let {Component} = React;
+import { browserHistory } from 'react-router';
 
 import 	'./MapComp.css';
 
@@ -24,6 +25,12 @@ export default class MapComp extends Component {
       'characterBox':'#characters',
       'timeline':'#timeline',
       'filter':'#filter input',
+      'characterDetails': function (modal, character) {
+        browserHistory.push('/characters/'+ character.name);
+        $("body").removeClass("modal-open");
+        $(".gotmap-modal").remove();
+        $(".modal-backdrop").remove();
+      },
       'characterDataSource':'https://raw.githubusercontent.com/Rostlab/JS16_ProjectC_Group10/develop/data/characters.js',
       'episodeDataSource':'https://raw.githubusercontent.com/Rostlab/JS16_ProjectC_Group10/develop/data/episodes.js',
       'cityDataSource':'https://raw.githubusercontent.com/Rostlab/JS16_ProjectC_Group10/develop/data/cities.js',
