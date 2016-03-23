@@ -1,5 +1,8 @@
+'use strict';
+
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var analytics;
@@ -11,9 +14,9 @@ if (process.env.ANALYTICS == undefined) {
 }
 
 var config = {
-    entry: __dirname + "/app/main.jsx",
+    entry: path.join(__dirname, "/app/main.jsx"),
     output: {
-        path: __dirname + "/build",
+        path: path.join(__dirname, "/build"),
         filename: "/bundle.js"
     },
 
@@ -69,7 +72,7 @@ var config = {
           'window.jQuery': 'jquery'
         }),
         new HtmlWebpackPlugin({
-            template: __dirname + "/app/index.tmpl.html"
+            template: path.join(__dirname, "/app/index.tmpl.html")
         }),
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.optimize.UglifyJsPlugin({
