@@ -5,7 +5,9 @@
   "main": "main.js",
   "scripts": {
     "start": "node_modules/.bin/webpack-dev-server --progress --inline --content-base public  --history-api-fallback",
-    "build": "NODE_ENV=production node_modules/.bin/webpack --config ./webpack.production.config.js --bail --progress && node ./server/server.js"
+    "build": "NODE_ENV=production node_modules/.bin/webpack --config ./webpack.production.config.js --bail --progress",
+    "build-serve": "NODE_ENV=production node_modules/.bin/webpack --config ./webpack.production.config.js --bail --progress && node ./server/server.js",
+    "serve": "node ./server/server.js"
   },
   "repository": {
     "type": "git",
