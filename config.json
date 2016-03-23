@@ -19,18 +19,16 @@
         "access_token_secret": "xxx"
     },
 
-    "database" : {
+    "databaseA" : {
       "_comment": "This is the access to the database, where the tweets are stored by the package",
-      "user" : "Username goes here",
-      "password" : "Password here",
-      "port" : "808080",
-      "uri" : "uri to mongoDB",
-      "name" : "name of mongoDB"
+      "token" : "xxxxxxxxxxxxxxxxx",
+      "airDateURL" : "xxxxxxxxxxxxxxxxx",
+      "characterNamesURL" : "xxxxxxxxxxxxxxxxx"
     },
 
     "databaseA" : {
       "_comment": "This is the access token to access the database from https://github.com/Rostlab/JS16_ProjectA",
-      "token" : "xxxxxxxxxxxxxxxxx"
+      "minutes" : 12
     }
   }
 }
