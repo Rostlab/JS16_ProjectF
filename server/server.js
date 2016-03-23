@@ -3,7 +3,6 @@
 var express = require('express');
 var path = require('path');
 var compression = require('compression');
-var json = require('../config/config.json');
 var d5 = require('./d5.js');
 //var d4 = require('./d4.js');
 

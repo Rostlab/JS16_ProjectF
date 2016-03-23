@@ -2,11 +2,40 @@
 var express = require('express');
 var d5 = express();
 
-//var initPack = require('gotdailysentiment');
-//console.log(json.gotdailysentiment);
-//var gotdailysentiment = initPack.init(json.gotdailysentiment);
+// var initPack = require('gotdailysentiment');
+// var json = require('../config/config.json');
+// console.log(json.gotdailysentiment);
+// var gotdailysentiment = initPack.init(json.gotdailysentiment);
 
-d5.get('/gotdailysentiment', function (req, res) {
+var dummyByName = {
+  "characterName": "Jon Snow",
+  "date": "2016-03-18T", //date of the tweets
+  "posSum": 23,          //sum of the positive sentiment score on that given day
+  "negSum": 21,          //sum of the negative sentiment score on that given day
+  "posCount": 11,        //count of positive tweets that day
+  "negCount": 5,         //sum of negative tweets that day
+  "nullCount": 8         //sum of neutral tweets that day
+};
+
+var dummyByTopFlop = {
+    "name": "Jon Snow",
+    "posSum": 23,
+    "negSum": 66,
+    "posCount": 11,
+    "negCount": 5,
+    "nullCount": 8
+};
+
+var dummyByEpisode = {
+    "name": "Jon Snow",
+    "posSum": 23,
+    "negSum": 21,
+    "posCount": 11,
+    "negCount": 5,
+    "nullCount": 8
+}
+
+d5.get('/getSentimentForName', function (req, res) {
   if (!req.query.name || !req.query.date) { res.status(400).send('Bad Request'); }
 
   var patt = /\d{4}-\d{2}-\d{2}T/;
@@ -16,7 +45,7 @@ d5.get('/gotdailysentiment', function (req, res) {
   // gotdailysentiment.getSentimentForName({name: req.query.name, date: req.query.date}, function(result) {
   //   res.json(result);
   // });
-  res.json({ gotdailysentiment: 1 });
+  res.json(dummyByName);
 })
 
 d5.get('/getSentimentForNameTimeframe', function (req, res) {
@@ -38,7 +67,7 @@ d5.get('/getSentimentForNameTimeframe', function (req, res) {
   // gotdailysentiment.getSentimentForNameTimeframe(param, function(result) {
   //   res.json(result);
   // });
-  res.json({ getSentimentForNameTimeframe: 1 });
+  res.json(dummyByName);
 })
 
 var getTopFlops = function(req,res,func){
@@ -64,32 +93,32 @@ var getTopFlops = function(req,res,func){
 
 d5.get('/topSentiment', function (req, res) {
   //getTopFlops(res,rec,gotdailysentiment.topSentiment);
-  res.json({ topSentiment: 1 });
+  res.json(dummyByTopFlop);
 })
 
 d5.get('/worstSentiment', function (req, res) {
   //getTopFlops(res,rec,gotdailysentiment.worstSentiment);
-  res.json({ worstSentiment: 1 });
+  res.json(dummyByTopFlop);
 })
 
 d5.get('/mostTalkedAbout', function (req, res) {
   //getTopFlops(res,rec,gotdailysentiment.mostTalkedAbout);
-  res.json({ mostTalkedAbout: 1 });
+  res.json(dummyByTopFlop);
 })
 
 d5.get('/topControversial', function (req, res) {
   //getTopFlops(res,rec,gotdailysentiment.topControversial);
-  res.json({ topControversial: 1 });
+  res.json(dummyByTopFlop);
 })
 d5.get('/sentimentPerEpisode', function (req, res) {
   if (!req.query.name || !req.query.season || !req.query.episode) {
     res.status(400).send('Bad Request');
   }
-
-  var patt = /\d{2}/;
-  if (!patt.test(req.query.startDate) || !patt.test(req.query.endDate)) {
-    res.status(400).send('Wrong Number Format');
-  }
+  //
+  // var patt = /\d{1}|\d{2}/;
+  // if (!patt.test(req.query.season) || !patt.test(req.query.episode)) {
+  //   res.status(400).send('Wrong Number Format');
+  // }
 
   //execute function
   // var param = {
@@ -100,7 +129,7 @@ d5.get('/sentimentPerEpisode', function (req, res) {
   // gotdailysentiment.getSentimentForNameTimeframe(param, function(result) {
   //   res.json(result);
   // });
-  res.json({ sentimentPerEpisode: 1 });
+  res.json(dummyByEpisode);
 })
 
 module.exports = d5;

@@ -54,7 +54,7 @@
     "express": "^4.13.4",
     "flux": "^2.1.1",
     "ga-react-router": "^2.0.0",
-    "gotdailysentiment": "0.0.4",
+    "gotdailysentiment": "^0.0.5",
     "gotmap": "^0.1.0",
     "gotsentimental": "0.0.3",
     "history": "^2.0.1",

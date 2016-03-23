@@ -13,10 +13,10 @@
     "_comment" : "More info: https://www.npmjs.com/package/gotdailysentiment",
     "twitter" : {
         "_comment": "These are the access tokens to the Twitter-API",
-        "consumer_key": "xxx",
-        "consumer_secret": "xxx",
-        "access_token_key": "xxx",
-        "access_token_secret": "xxx"
+        "consumer_key": "VMYudbqPGcJQNXKSnXg0veHdd",
+        "consumer_secret": "pZiIWjBmptDIDgK4HO5o229khUCR2kHbtpKbLkVylADKlSiGHT",
+        "access_token_key": "	3308613545-R7LM0CkFWLBahADosqhEtOiX4VkoDfsKDmwalcr",
+        "access_token_secret": "Q2qlfOXagSWVz2vD9OZ1J1uENZgrrJwGP2lUjHRE1i0uH"
     },
 
     "databaseA" : {
@@ -44,8 +44,8 @@
         "twitter": {
             "access_token": "",
             "access_token_secret": "",
-            "consumer_key": "",
-            "consumer_secret": ""
+            "consumer_key": "VMYudbqPGcJQNXKSnXg0veHdd",
+            "consumer_secret": "pZiIWjBmptDIDgK4HO5o229khUCR2kHbtpKbLkVylADKlSiGHT"
         }
     }
 }
