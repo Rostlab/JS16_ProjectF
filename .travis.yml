@@ -3,6 +3,9 @@ node_js:
 - 0.12
 script:
 - npm run-script build
+addons:
+  code_climate:
+  repo_token: 0cd3cfc8fedd9d398b04d42d8f88617c1842ed4eafc814d2edc61eb6d223c61d
 cache:
   directories:
   - node_modules
