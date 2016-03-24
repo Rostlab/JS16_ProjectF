@@ -13,8 +13,7 @@ export default class FooterCopy extends Component {
                     <Row>
                         <Column md={12}>
                             <p className="text-center">
-                                &copy; 2016 Game of Thrones All rights reserved.
-                                <span className="build-version"></span>
+                                &copy; 2016 Song of Ice and Data - <span className="build-version"></span>
                             </p>
                         </Column>
                     </Row>
