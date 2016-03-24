@@ -2,10 +2,9 @@
 var express = require('express');
 var d5 = express();
 
-// var initPack = require('gotdailysentiment');
-// var json = require('../config/config.json');
-// console.log(json.gotdailysentiment);
-// var gotdailysentiment = initPack.init(json.gotdailysentiment);
+var initPack = require('gotdailysentiment');
+var json = require('../config/config.json');
+var gotdailysentiment = initPack.init(json.gotdailysentiment);
 
 var dummyByName = {
   "characterName": "Jon Snow",
@@ -35,46 +34,17 @@ var dummyByEpisode = {
     "nullCount": 8
 }
 
-d5.get('/getSentimentForName', function (req, res) {
-  if (!req.query.name || !req.query.date) { res.status(400).send('Bad Request'); }
-
+const reqByName = function(req, res){
   var patt = /\d{4}-\d{2}-\d{2}T/;
   if (!patt.test(req.query.date)) {res.status(400).send('Wrong Date Format');}
 
-  //execute function
-  // gotdailysentiment.getSentimentForName({name: req.query.name, date: req.query.date}, function(result) {
-  //   res.json(result);
-  // });
-  res.json(dummyByName);
-})
+  // execute function
+  gotdailysentiment.getSentimentForName({name: req.query.name, date: req.query.date}, function(result) {
+    res.json(result);
+  });
+}
 
-d5.get('/getSentimentForNameTimeframe', function (req, res) {
-  if (!req.query.name || !req.query.startDate || !req.query.startDate) {
-    res.status(400).send('Bad Request');
-  }
-
-  var patt = /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}/;
-  if (!patt.test(req.query.startDate) || !patt.test(req.query.endDate)) {
-    res.status(400).send('Wrong Date Format');
-  }
-
-  //execute function
-  // var param = {
-  //   name: req.query.name,
-  //   startDate: req.query.startDate,
-  //   endDate: req.query.endDate,
-  // }
-  // gotdailysentiment.getSentimentForNameTimeframe(param, function(result) {
-  //   res.json(result);
-  // });
-  res.json(dummyByName);
-})
-
-var getTopFlops = function(req,res,func){
-  if (!req.query.number || !req.query.startDate || !req.query.startDate) {
-    res.status(400).send('Bad Request');
-  }
-
+const reqByNameTimeline = function(req, res) {
   var patt = /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}/;
   if (!patt.test(req.query.startDate) || !patt.test(req.query.endDate)) {
     res.status(400).send('Wrong Date Format');
@@ -82,54 +52,77 @@ var getTopFlops = function(req,res,func){
 
   //execute function
   var param = {
-    number: req.query.number,
+    name: req.query.name,
     startDate: req.query.startDate,
     endDate: req.query.endDate,
   }
-  func(param, function(result) {
+  gotdailysentiment.getSentimentForNameTimeframe(param, function(result) {
     res.json(result);
   });
 }
 
-d5.get('/topSentiment', function (req, res) {
-  //getTopFlops(res,rec,gotdailysentiment.topSentiment);
-  res.json(dummyByTopFlop);
-})
+const reqPerEpisode = function(req, res) {
+  var patt = /\d{1}|\d{2}/;
+  if (!patt.test(req.query.season) || !patt.test(req.query.episode)) {
+    res.status(400).send('Wrong Number Format');
+  }
 
-d5.get('/worstSentiment', function (req, res) {
-  //getTopFlops(res,rec,gotdailysentiment.worstSentiment);
-  res.json(dummyByTopFlop);
-})
+  // execute function
+  var param = {
+    name: req.query.name,
+    startDate: req.query.startDate,
+    endDate: req.query.endDate,
+  }
+  gotdailysentiment.getSentimentForNameTimeframe(param, function(result) {
+    res.json(result);
+  });
+  // res.json(dummyByEpisode);
+}
 
-d5.get('/mostTalkedAbout', function (req, res) {
-  //getTopFlops(res,rec,gotdailysentiment.mostTalkedAbout);
-  res.json(dummyByTopFlop);
-})
-
-d5.get('/topControversial', function (req, res) {
-  //getTopFlops(res,rec,gotdailysentiment.topControversial);
-  res.json(dummyByTopFlop);
-})
-d5.get('/sentimentPerEpisode', function (req, res) {
-  if (!req.query.name || !req.query.season || !req.query.episode) {
+d5.get('/sentiment', function (req, res) {
+  if (req.query.name && req.query.date) {
+    reqByName(req, res);
+  } else if (req.query.name  && req.query.startDate && req.query.endDate) {
+    reqByNameTimeline(req, res);
+  } else if (req.query.name, req.query.season, req.query.episode){
+    reqPerEpisode(req, res);
+  } else {
     res.status(400).send('Bad Request');
   }
-  //
-  // var patt = /\d{1}|\d{2}/;
-  // if (!patt.test(req.query.season) || !patt.test(req.query.episode)) {
-  //   res.status(400).send('Wrong Number Format');
-  // }
-
-  //execute function
-  // var param = {
-  //   name: req.query.name,
-  //   startDate: req.query.startDate,
-  //   endDate: req.query.endDate,
-  // }
-  // gotdailysentiment.getSentimentForNameTimeframe(param, function(result) {
-  //   res.json(result);
-  // });
-  res.json(dummyByEpisode);
 })
+
+d5.get('/sentiment/:rank', function (req,res) {
+  if (req.query.number && req.query.startDate && req.query.startDate) {
+    var patt = /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}/;
+
+    //execute function
+    var param = {
+      number: req.query.number,
+      startDate: req.query.startDate,
+      endDate: req.query.endDate,
+    }
+
+    if (!patt.test(req.query.startDate) || !patt.test(req.query.endDate)) {
+      res.status(400).send('Wrong Date Format');
+    }
+    if (req.params.rank == "top") {
+      gotdailysentiment.topSentiment(param, function(result) { res.json(result); });
+      // res.json(dummyByTopFlop);
+    } else if (req.params.rank == "worst") {
+      gotdailysentiment.worstSentiment(param, function(result) { res.json(result); });
+      // res.json(dummyByTopFlop);
+    } else if (req.params.rank == "talked") {
+      gotdailysentiment.mostTalkedAbout(param, function(result) { res.json(result); });
+      // res.json(dummyByTopFlop);
+    } else if (req.params.rank == "controversial") {
+      gotdailysentiment.topControversial(param, function(result) { res.json(result); });
+      // res.json(dummyByTopFlop);
+    } else {
+      res.status(400).send('Bad Request');
+    }
+  } else {
+    res.status(400).send('Bad Request');
+  }
+});
 
 module.exports = d5;
