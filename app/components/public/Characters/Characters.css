@@ -48,3 +48,14 @@
 .list-group-item {
 	background: #333;
 }
+
+@media (max-width: 767px) {
+	.character-photo {
+		padding: 0;
+		position: absolute;
+		top: 100px;
+	}
+	.character-photo img {
+		transform: none !important;
+	}
+}
