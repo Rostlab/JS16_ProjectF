@@ -26,12 +26,12 @@
       "characterNamesURL" : "xxxxxxxxxxxxxxxxx"
     },
 
-    "databaseA" : {
+    "automation" : {
       "_comment": "This is the access token to access the database from https://github.com/Rostlab/JS16_ProjectA",
       "minutes" : 12
     }
   },
-  
+
   "gotsent": {
         "mongodb": {
             "uri": "mongodb://localhost/gotsentimental"
