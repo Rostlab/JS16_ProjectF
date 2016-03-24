@@ -36,11 +36,6 @@
         "mongodb": {
             "uri": "mongodb://localhost/gotsentimental"
         },
-        "api": {
-            "https": true,
-            "host": "got-api.bruck.me",
-            "prefix": "/api/"
-        },
         "twitter": {
             "access_token": "3308613545-R7LM0CkFWLBahADosqhEtOiX4VkoDfsKDmwalcr",
             "access_token_secret": "Q2qlfOXagSWVz2vD9OZ1J1uENZgrrJwGP2lUjHRE1i0uH",
