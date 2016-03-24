@@ -5,6 +5,14 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require('path');
 var npm_dir = path.join(__dirname, '/node_modules/');
 
+var analytics;
+if (process.env.ANALYTICS == undefined) {
+  analytics = process.env.ANALYTICS;
+} else {
+  json = require('./config/config.json');
+  analytics = json.google_analytics.key;
+}
+
 var config = {
     devtool: 'eval-source-map',
 
@@ -72,10 +80,10 @@ var config = {
           'window.jQuery': 'jquery'
         }),
         new HtmlWebpackPlugin({
-            template: __dirname + "/app/index.tmpl.html"
+            template: path.join(__dirname, "/app/index.tmpl.html")
         }),
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.DefinePlugin({GA_TRACKING_CODE: JSON.stringify('UA-75295085-1')})
+        new webpack.DefinePlugin({GA_TRACKING_CODE: JSON.stringify(analytics)})
     ],
 
     devServer: {
