@@ -24,25 +24,32 @@ export default class About extends Component {
                     <Column md={8} mdPush={2}>
                         <h1>Contributors</h1>
                         <Row>
-                            <Column md={6}>
+                            <Column md={2} sm={4}>
                                 <h3>Frontend &amp; Design</h3>
                                 <TeamMemberListing teamID="F"/>
                             </Column>
-                            <Column md={6}>
-                                <h3>Data Analyisis</h3>
-                                <TeamMemberListing teamID="BCD"/>
+                            <Column md={2} sm={4}>
+                                <h3>Map</h3>
+                                <TeamMemberListing teamID="C"/>
                             </Column>
-                        </Row>
-                        <Row>
-                            <Column md={6}>
+                            <Column md={2} sm={4}>
                                 <h3>Database &amp; API</h3>
                                 <TeamMemberListing teamID="A"/>
                             </Column>
-                            <Column md={6}>
-                                <h3>Infrastructure</h3>
+                            <Column md={2} sm={4}>
+                                <h3>Data Analysis</h3>
+                                <TeamMemberListing teamID="BD"/>
+                            </Column>
+                            <Column md={2} sm={4}>
+                                <h3>Integration</h3>
                                 <TeamMemberListing teamID="E"/>
                             </Column>
+                            <Column md={2} sm={4}>
+                                <h3>Coordination</h3>
+                                <TeamMemberListing teamID="Mentor"/>
+                            </Column>
                         </Row>
+
                     </Column>
                 </Row>
 
@@ -52,7 +59,9 @@ export default class About extends Component {
                     <Column md={8} mdPush={2}>
                         <h1>Attributions</h1>
                         <ul>
-                            <li>HBO</li>
+                            <li><a href="http://www.wikia.com/explore" target="_blank">MediaWiki</a></li>
+                            <li><a href="http://awoiaf.westeros.org/index.php/Main_Page" target="_blank">Westeros Wiki</a></li>
+                            <li><a href="http://vignette4.wikia.nocookie.net/hieloyfuego/images/4/43/Hodor_HBO.jpg/revision/latest?cb=20130815031401" target="_blank">404 imges</a></li>
                         </ul>
                     </Column>
                 </Row>
@@ -78,39 +87,139 @@ class TeamMemberListing extends Component {
     getProjectMembers(projectID) {
         return [
             {
-              name: "Georgi Anastasov",
-              link: "https://github.com/jorjo1",
-              team: "F"
+                name: "Georgi Anastasov",
+                link: "https://github.com/jorjo1",
+                team: "F"
             },
             {
-              name: "Max Muth",
-              link: "http://www.maxi-muth.de",
-              team: "F"
+                name: "Max Muth",
+                link: "http://www.maxi-muth.de",
+                team: "F"
             },
             {
-              name: "Florian Gareis",
-              link: "https://www.florian-gareis.com",
-              team: "E"
+                name: "Florian Gareis",
+                link: "https://www.florian-gareis.com",
+                team: "E"
             },
             {
-              name: "Kordian Bruck",
-              link: "https://bruck.me",
-              team: "A"
+                name: "Christian Dallago",
+                link: "http://dallago.us",
+                team: "Mentor"
             },
             {
-              name: "Julien Schmidt",
-              link: "https://github.com/julienschmidt",
-              team: "D"
+                name: "Kordian Bruck",
+                link: "https://bruck.me",
+                team: "A"
             },
             {
-              name: "Jonas Kaltenbach",
-              link : "https://github.com/kajo404",
-              team : "D"
+                name: "Julien Schmidt",
+                link: "https://github.com/julienschmidt",
+                team: "D"
             },
             {
-              name: "Christian Dallago",
-              link: "https://github.com/sacdallago",
-              team: "ABCDEF"
+                name: "Jonas Kaltenbach",
+                link : "https://github.com/kajo404",
+                team : "D"
+            },
+            {
+                name: "Marcus Novotny",
+                link : "https://github.com/marcusnovotny",
+                team : "D"
+            },
+            {
+                name: "Michael Legenc",
+                link : "http://michael.legenc.de",
+                team : "A"
+            },
+            {
+                name : "Georg Gar",
+                link : "https://github.com/Hack3l",
+                team : "B"
+            },
+            {
+                name: "Alexander Beischl",
+                link: "https://github.com/AlexBeischl",
+                team: "C"
+            },
+            {
+                name: "Maximilian Bandle",
+                link: "https://github.com/mbandle",
+                team: "C"
+            },
+            {
+                name: "Tobias Piffrader",
+                link: "https://github.com/tPiffrader",
+                team: "C"
+            },
+            {
+                name: "Yasar Kücükkaya",
+                link: "http://www.yk-code.de",
+                team: "F"
+            },
+            {
+                name: "Camille Mainz",
+                link : "https://github.com/Logarythms",
+                team : "D"
+            },
+            {
+                name: "Oleksii Moroz",
+                link: "https://github.com/AlexMoroz",
+                team: "E"
+            },
+            {
+                name : "Subburam Rajaram",
+                link : "https://github.com/subburamr",
+                team : "B"
+            },
+            {
+                name: "Anna Sesselmann",
+                link: "https://github.com/asesselmann",
+                team: "B"
+            },
+            {
+                name: "Guy Yachdav",
+                link: "https://www.linkedin.com/in/gyachdav",
+                team: "Mentor"
+            },
+            {
+                name: "Santanu Mohanta",
+                link: "https://github.com/santanumohanta",
+                team: "D"
+            },
+            {
+                name: "Sohel Mahmud",
+                link: "https://github.com/docjag",
+                team: "A"
+            },
+            {
+                name: "Cavid Salahov",
+                link: "https://github.com/CavidSalahov",
+                team: "E"
+            },
+            {
+                name: "Nicola De Socio",
+                link: "https://github.com/nicoladesocio",
+                team: "B"
+            },
+            {
+                name: "Thuy Tran",
+                link: "https://github.com/ThuyNganTran",
+                team: "B"
+            },
+            {
+                name: "Tatyana Goldberg",
+                link: "https://rostlab.org/~goldberg/",
+                team: "Mentor"
+            },
+            {
+                name: "Jonas Ebel",
+                link: "https://github.com/jonny3576",
+                team: "E"
+            },
+            {
+                name:"Dat Nguyen",
+                link:"https://github.com/vanp33",
+                team:"D"
             }
         ].filter((member) => {
             return member.team.split('').map((teamID) => {
