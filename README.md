@@ -6,6 +6,10 @@ https://got-stats.herokuapp.com/
 
 # Developer information
 We're using webpack: https://github.com/webpack/webpack
+
+**Please make a config.json in folder config and set up your setting**
+At the moment gotdailysentiment config isn't configurable
+
 ## Development
 * `npm install`
 * `npm start`
@@ -15,6 +19,14 @@ We're using webpack: https://github.com/webpack/webpack
 * `npm install`
 * `npm run build`
 
+## Build and serve files
+* `npm install`
+* `npm run build-serve`
+
+## serve files
+* `npm install`
+* `npm run serve`
+
 ## Deploy to heroku
 We use a dedicated 'staging' branch which is automagically deployed to https://got-stats.herokuapp.com/.
 
@@ -22,6 +34,6 @@ We use a dedicated 'staging' branch which is automagically deployed to https://g
 * git checkout staging
 * git pull
 * git pull origin develop
-* git push 
+* git push
 
-**NEVER EVER PUSH COMMITS DIRECTLY TO 'staging' !11!!** :bomb: 
+**NEVER EVER PUSH COMMITS DIRECTLY TO 'staging' !11!!** :bomb:

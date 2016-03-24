@@ -5,7 +5,9 @@
   "main": "main.js",
   "scripts": {
     "start": "node_modules/.bin/webpack-dev-server --progress --inline --content-base public  --history-api-fallback",
-    "build": "NODE_ENV=production node_modules/.bin/webpack --config ./webpack.production.config.js --bail --progress"
+    "build": "NODE_ENV=production node_modules/.bin/webpack --config ./webpack.production.config.js --bail --progress",
+    "build-serve": "NODE_ENV=production node_modules/.bin/webpack --config ./webpack.production.config.js --bail --progress && node ./server/server.js",
+    "serve": "node ./server/server.js"
   },
   "repository": {
     "type": "git",
@@ -35,6 +37,7 @@
     "file-loader": "^0.8.5",
     "html-webpack-plugin": "^2.9.0",
     "imports-loader": "^0.6.5",
+    "json-loader": "^0.5.4",
     "less": "^2.6.1",
     "less-loader": "^2.2.2",
     "postcss-loader": "^0.8.1",
@@ -51,7 +54,9 @@
     "express": "^4.13.4",
     "flux": "^2.1.1",
     "ga-react-router": "^2.0.0",
+    "gotdailysentiment": "^0.0.5",
     "gotmap": "^0.1.0",
+    "gotsentimental": "^0.0.4",
     "history": "^2.0.1",
     "jquery": "^2.2.1",
     "jquery-ui": "^1.10.5",
