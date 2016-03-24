@@ -2,6 +2,7 @@ var AppDispatcher = require('../dispatcher/AppDispatcher');
 var Constants = require('../constants/Constants');
 var Api = require('../network/Api')
 var Store = require('../stores/CharactersStore');
+import { browserHistory } from 'react-router';
 var CharactersActions = {
 
     loadCharacters: function() {
@@ -30,6 +31,8 @@ var CharactersActions = {
                     actionType: Constants.RECEIVE_CHARACTER,
                     data: character
                 });
+            }, function(failed) {
+              browserHistory.push('/characters');
             });
     }
 
