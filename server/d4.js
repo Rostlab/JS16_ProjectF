@@ -10,18 +10,60 @@ const ctrData = require('./controllers/data');
 gotsent.cfg.extend(cfg.gotsent);
 gotsent.init();
 
+gotsent.update();
+
+d4.use('/csv/:slug.csv', ctrData);
+d4.use('/chart.css', gotsent.css.serve);
+d4.use('/chart.js', gotsent.js.serve);
+
+d4.get('/sentiment/:rank', function (req,res) {
+  if (req.params.rank == "top") {
+    gotsent.mostPopular(parseInt(req.query.number)).then(function(result){
+      res.json(result);
+    }, function () {
+      res.status(400).send('Bad Request');
+    });
+  } else if(req.params.rank == "worst") {
+    gotsent.mostHated(parseInt(req.query.number)).then(function(result){
+      res.json(result);
+    }, function () {
+      res.status(400).send('Bad Request');
+    });
+  } else if(req.params.rank == "discussed"){
+    gotsent.mostDiscussed(parseInt(req.query.number)).then(function(result){
+      res.json(result);
+    }, function () {
+      res.status(400).send('Bad Request');
+    });
+  } else {
+    res.status(400).send('Bad Request');
+  }
+});
+
+d4.get('/character', function (req,res) {
+  res.status(400).send('Please send an ID!');
+});
+
+d4.get('/character/:id', function (req,res) {
+  gotsent.character(req.params.id).then(function(result){
+    res.json(result);
+  }, function () {
+    res.status(400).send('Bad Request');
+  });
+});
+
 // update DB - this might take a few hours
-// gotsent.update().then(function(res) {
+// .then(function(res) {
 //     // print some update stats
 //     console.log(res);
-
-    // get top5 most popular characters
-    gotsent.mostDiscussed(20).then(function(res) {
-        res.forEach(function(character) {
-            console.log(character.name);
-        });
-    }, console.error);
-
+//
+//     // get top5 most popular characters
+//     gotsent.mostDiscussed(20).then(function(res) {
+//         res.forEach(function(character) {
+//             console.log(character.name);
+//         });
+//     }, console.error);
+//
 //     // gracefully shut down
 //     gotsent.shutdown();
 // }, function(err) {
