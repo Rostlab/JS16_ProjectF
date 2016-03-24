@@ -1,7 +1,11 @@
-/*.wrapper {
-  margin-top: 20px;
-}*/
-
 .home {
-    background-color: black;
+	text-align: center;
+}
+
+.home-plod {
+    transform: translateY(-50%);
+}
+
+.twitter {
+  text-align: center;
 }

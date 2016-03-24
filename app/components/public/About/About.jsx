@@ -30,7 +30,7 @@ export default class About extends Component {
                             </Column>
                             <Column md={6}>
                                 <h3>Data Analyisis</h3>
-                                <TeamMemberListing teamID="B"/>
+                                <TeamMemberListing teamID="BCD"/>
                             </Column>
                         </Row>
                         <Row>
@@ -47,7 +47,7 @@ export default class About extends Component {
                 </Row>
 
                 <br />
-                
+
                 <Row>
                     <Column md={8} mdPush={2}>
                         <h1>Attributions</h1>
@@ -56,7 +56,7 @@ export default class About extends Component {
                         </ul>
                     </Column>
                 </Row>
-                
+
             </div>
         );
     }
@@ -78,35 +78,45 @@ class TeamMemberListing extends Component {
     getProjectMembers(projectID) {
         return [
             {
-                name: "Member1",
-                imageUrl: "http://www.socialgiri.com/wp-content/uploads/2013/08/about-thumbnail-placeholder.png",
-                link: "https://github.com",
-                team: "F"
+              name: "Georgi Anastasov",
+              link: "https://github.com/jorjo1",
+              team: "F"
             },
             {
-                name: "Member2",
-                imageUrl: "http://www.socialgiri.com/wp-content/uploads/2013/08/about-thumbnail-placeholder.png",
-                link: "https://github.com",
-                team: "F"
+              name: "Max Muth",
+              link: "http://www.maxi-muth.de",
+              team: "F"
             },
             {
-                name: "Member3",
-                imageUrl: "http://www.socialgiri.com/wp-content/uploads/2013/08/about-thumbnail-placeholder.png",
-                link: "https://github.com",
-                team: "A"
+              name: "Florian Gareis",
+              link: "https://www.florian-gareis.com",
+              team: "E"
             },
             {
-                name: "Member4",
-                imageUrl: "http://www.socialgiri.com/wp-content/uploads/2013/08/about-thumbnail-placeholder.png",
-                team: "B"
-            },            
+              name: "Kordian Bruck",
+              link: "https://bruck.me",
+              team: "A"
+            },
             {
-                name: "Member5",
-                imageUrl: "http://www.socialgiri.com/wp-content/uploads/2013/08/about-thumbnail-placeholder.png",
-                link: "https://github.com",
-                team: "E"
+              name: "Julien Schmidt",
+              link: "https://github.com/julienschmidt",
+              team: "D"
+            },
+            {
+              name: "Jonas Kaltenbach",
+              link : "https://github.com/kajo404",
+              team : "D"
+            },
+            {
+              name: "Christian Dallago",
+              link: "https://github.com/sacdallago",
+              team: "ABCDEF"
             }
-        ].filter(function(member){return member.team == projectID;});
+        ].filter((member) => {
+            return member.team.split('').map((teamID) => {
+                return projectID.indexOf(teamID) != -1;
+            }).reduce((a, b) => {return a || b;});
+        });
     }
 }
 TeamMemberListing.propTypes = { teamID: React.PropTypes.string };

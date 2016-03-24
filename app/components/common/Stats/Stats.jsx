@@ -1,8 +1,12 @@
 import React from 'react';
 let {Component} = React;
-import styles from './Stats.css';
+
+import { Row, Col } from 'react-bootstrap';
+
 import Store from '../../../stores/LandingPageStore';
 import Actions from '../../../actions/LandingPageActions';
+
+import CharacterThumbnail from '../CharacterThumbnail/CharacterThumbnail.jsx';
 
 export default class Stats extends Component {
 
@@ -31,11 +35,19 @@ export default class Stats extends Component {
   }
 
   render() {
-    return (
-      <div className={styles.stats}>
-        {this.state.characters.map(function(character){
-          return <p>{character.name}</p>;
-        })}
+  return (
+      <div>
+        <Row className="home-plod">
+          <Col md={8} mdOffset={3}>
+            <div>{
+              this.state.characters.map(function (character) {
+                return <CharacterThumbnail key={character._id} id={character._id} name={character.name} imageUrl={character.imageLink}/>;
+              })
+            }
+            </div>
+          </Col>
+            <h1>Characters most likely to die</h1>
+        </Row>
       </div>
     );
   }
