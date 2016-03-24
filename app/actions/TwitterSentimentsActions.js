@@ -59,7 +59,49 @@ var TwitterSentimentsActions = {
                     data: sentiments
                 });
             });
+    },
+    loadChatacterSentiment: function(name,date) {
+        Api
+            .get('getSentimentForName')
+            .query({name: name})
+            .query({date: date})
+            .then(function (sentiments) {
+                // Dispatch an action containing the categories.
+                AppDispatcher.handleServerAction({
+                    actionType: Constants.RECEIVE_TWITTER_CHARACTER_SENTIMENT,
+                    data: sentiments
+                });
+            });
+    },
+    loadCharacterSentimentByTimeframe: function(name,startDate,endDate) {
+        Api
+            .get('getSentimentForNameTimeframe')
+            .query({name: name})
+            .query({startDate: startDate})
+            .query({endDate: endDate})
+            .then(function (sentiments) {
+                // Dispatch an action containing the categories.
+                AppDispatcher.handleServerAction({
+                    actionType: Constants.RECEIVE_TWITTER_CHARACTER_SENTIMENT,
+                    data: sentiments
+                });
+            });
+    },
+    loadCharacterSentimentByEpisode: function(name,season,episode) {
+        Api
+            .get('sentimentPerEpisode')
+            .query({name: name})
+            .query({season: season})
+            .query({episode: epsiode})
+            .then(function (sentiments) {
+                // Dispatch an action containing the categories.
+                AppDispatcher.handleServerAction({
+                    actionType: Constants.RECEIVE_TWITTER_CHARACTER_SENTIMENT,
+                    data: sentiments
+                });
+            });
     }
+
 
 };
 

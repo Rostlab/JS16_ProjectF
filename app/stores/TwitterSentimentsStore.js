@@ -8,6 +8,7 @@ var _topCharacters = [];
 var _flopCharacters = [];
 var _mostTalkedAboutCharacters = [];
 var _topControversialCharacters = [];
+var _characterSentiment = {}
 
 function setTopCharacters(data) {
     _topCharacters = data;
@@ -21,6 +22,11 @@ function setMostTalkedAboutCharacters(data) {
 function setTopControversialCharacters(data) {
     _topControversialCharacters = data;
 }
+
+function setCharacterSentiment(data) {
+    _characterSentiment = data;
+}
+
 
 // Merge our store with Node's Event Emitter
 var TwitterSentimentsStore = assign({}, EventEmitter.prototype, {
@@ -40,6 +46,11 @@ var TwitterSentimentsStore = assign({}, EventEmitter.prototype, {
     getTopControversialCharacters: function() {
         return _topControversialCharacters;
     },
+
+    getCharacterSentiment: function() {
+        return _characterSentiment;
+    },
+
 
     emitChange: function() {
         this.emit('change');
@@ -69,6 +80,9 @@ TwitterSentimentsStore.dispatchToken = AppDispatcher.register(function (payload)
             break;
         case Constants.RECEIVE_TWITTER_TALKED_ABOUT_CHARACTERS:
             setMostTalkedAboutCharacters(action.data);
+            break;
+        case Constants.RECEIVE_TWITTER_CHARACTER_SENTIMENT:
+            setCharacterSentiment(action.data);
             break;
         default:
             return true;
