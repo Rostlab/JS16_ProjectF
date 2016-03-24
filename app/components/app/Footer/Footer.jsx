@@ -58,10 +58,16 @@ export default class Footer extends Component {
                   <a href="#">Imprint</a>
                 </p>
                 <p>
-                  <a href="#">Privacy</a>
+                  <a href="https://www.tum.de/">TUM</a>
                 </p>
                 <p>
-                  <a href="https://www.tum.de/">TUM</a>
+                  <a rel="license" href="http://creativecommons.org/licenses/by/3.0" target="_blank">
+                    <img alt="Creative Commons License" src="https://i.creativecommons.org/l/by/3.0/de/80x15.png" />
+                  </a>
+                  <br />
+                  <a rel="license" href="http://creativecommons.org/licenses/by/3.0" target="_blank">
+                    Licensed under Creative Commons Attribution 3.0
+                  </a>.
                 </p>
               </Column>
             </Row>
