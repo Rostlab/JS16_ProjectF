@@ -40,7 +40,7 @@ ReactDOM.render(
         <Route path="/characters/:id" component={Characters}/>
       </Route>
     </Route>
-    <Route name="/map" path="/map" component={Map}/>
+    <Route path="/map" component={Map}/>
     <Route path="*" component={Site404}/>
   </Router>
 , document.getElementById('root'));

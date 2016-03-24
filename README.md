@@ -7,7 +7,8 @@ https://got-stats.herokuapp.com/
 # Developer information
 We're using webpack: https://github.com/webpack/webpack
 
-**Please set up your setting in config.json**
+**Please make a config.json in folder config and set up your setting**
+At the moment gotdailysentiment config isn't configurable
 
 ## Development
 * `npm install`
