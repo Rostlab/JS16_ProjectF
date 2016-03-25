@@ -39,7 +39,7 @@
 
   "gotsent": {
         "mongodb": {
-            "uri": "mongodb://localhost/gotsentimental"
+            "uri": "mongodb://<user>:<pass>@<server>/<db>"
         },
         "api": {
             "https": true,
