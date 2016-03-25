@@ -12,7 +12,7 @@ We're using webpack: https://github.com/webpack/webpack
 **Please make a config.json in folder config and set up your setting**
 At the moment gotdailysentiment config isn't configurable
 
-gotsent.mongo.uri = "mongodb://<user>:<pass>@<server>/<db>"
+`gotsent.mongo.uri = "mongodb://<user>:<pass>@<server>/<db>"`
 
 ## Development
 * `npm install`
