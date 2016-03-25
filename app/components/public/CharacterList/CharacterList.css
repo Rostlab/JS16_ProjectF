@@ -3,6 +3,10 @@
   text-align: center;
 }
 
+.inputbar {
+    margin: 80px 0;
+}
+
 input.character-search {
     font-family: 'Cinzel Decorative', cursive;
     background-color: black;
@@ -11,7 +15,6 @@ input.character-search {
     border-bottom: 1px solid #999;
     height: 50px;
     line-height: 50px;
-    margin: 80px 0;
     color: whitesmoke;
     text-decoration: none;
 }

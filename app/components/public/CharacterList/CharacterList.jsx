@@ -1,7 +1,8 @@
 
 import React, {Component} from 'react';
 
-import { Row, Col, Pagination, Input } from 'react-bootstrap';
+import { Row, Col, Pagination, Input} from 'react-bootstrap';
+import { ButtonToolbar,DropdownButton, MenuItem} from 'react-bootstrap';
 import { browserHistory } from 'react-router';
 
 import Store from '../../../stores/CharactersStore';
@@ -105,9 +106,20 @@ export default class CharacterListPage extends Component {
     render(){
       return (
         <div>
-          <Row>
-            <Col md={6} mdOffset={3}>
+          <Row className="inputbar">
+            <Col md={3} mdOffset={3}>
               <Input value={this.props.location.query.search} className="character-search" ref="input" type="text" placeholder="Search for character" onChange={this.handleChange.bind(this)} />
+            </Col>
+            <Col md={3}>
+              <ButtonToolbar>
+                <DropdownButton title="Default button" id="dropdown-size-medium">
+                  <MenuItem eventKey="1">Action</MenuItem>
+                  <MenuItem eventKey="2">Another action</MenuItem>
+                  <MenuItem eventKey="3">Something else here</MenuItem>
+                  <MenuItem divider />
+                  <MenuItem eventKey="4">Separated link</MenuItem>
+                </DropdownButton>
+              </ButtonToolbar>
             </Col>
           </Row>
           <CharacterList data={this.state.data} loaded={this.state.loaded}/>
