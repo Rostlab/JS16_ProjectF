@@ -4,12 +4,12 @@ var d5 = express();
 
 var initPack = require('gotdailysentiment');
 
-
+var json;
 try {
-  var json = require('../config/config.json').gotdailysentiment;
+  json = require('../config/config.json').gotdailysentiment;
 } catch (err) {
   console.log(err);
-  var json = {
+  json = {
     "twitter" : {
       "consumer_key": "process.env.consumer_key",
       "consumer_secret": "process.env.consumer_secret",

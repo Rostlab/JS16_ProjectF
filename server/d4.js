@@ -3,8 +3,8 @@ const express = require('express');
 const d4 = express();
 
 const gotsent = require('gotsentimental');
-var cfg;
 
+var cfg;
 try {
   cfg = require('../config/config.json').gotsent;
 } catch (err) {
