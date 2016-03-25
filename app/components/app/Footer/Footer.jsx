@@ -6,6 +6,8 @@ import Column from 'react-bootstrap/lib/Col';
 
 import $ from 'jquery';
 
+import FooterText from '../Static/footer.md';
+
 export default class Footer extends Component {
 
   componentDidMount() {
@@ -29,11 +31,7 @@ export default class Footer extends Component {
           <div className="container">
             <Row>
               <Column md={4}>
-                <h4>About</h4>
-                <hr />
-                <p>
-                  We provide you with a lot of interesting Game of Thrones data.
-                </p>
+                <FooterText />
               </Column>
               <Column md={4}>
                 <h4>Social</h4>
