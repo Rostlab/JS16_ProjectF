@@ -3,8 +3,32 @@ var express = require('express');
 var d5 = express();
 
 var initPack = require('gotdailysentiment');
-var json = require('../config/config.json');
-var gotdailysentiment = initPack.init(json.gotdailysentiment);
+
+
+try {
+  var json = require('../config/config.json').gotdailysentiment;
+} catch (err) {
+  console.log(err);
+  var json = {
+    "twitter" : {
+      "consumer_key": "process.env.consumer_key",
+      "consumer_secret": "process.env.consumer_secret",
+      "access_token_key": "process.env.access_token_key",
+      "access_token_secret": "process.env.access_token_secret"
+    },
+
+    "databaseA" : {
+      "token" : "xxxxxxxxxxxxxxxxx",
+      "airDateURL" : "xxxxxxxxxxxxxxxxx",
+      "characterNamesURL" : "xxxxxxxxxxxxxxxxx"
+    },
+
+    "automation" : {
+      "minutes" : 12
+    }
+  };
+}
+gotdailysentiment = initPack.init(json);
 
 var dummyByName = {
   "characterName": "Jon Snow",

@@ -9,7 +9,7 @@ var analytics;
 if (process.env.ANALYTICS == undefined) {
   analytics = process.env.ANALYTICS;
 } else {
-  json = require('./config/config.json');
+  var json = require('./config/config.json');
   analytics = json.google_analytics.key;
 }
 

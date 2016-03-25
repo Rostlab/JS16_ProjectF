@@ -3,11 +3,32 @@ const express = require('express');
 const d4 = express();
 
 const gotsent = require('gotsentimental');
+var cfg;
 
-const cfg = require('../config/config.json');
+try {
+  cfg = require('../config/config.json').gotsent;
+} catch (err) {
+  console.log(err)
+  cfg = {
+    "mongodb": {
+      "uri": "mongodb://localhost/gotsentimental"
+    },
+    "api": {
+      "https": true,
+      "host": "got-api.bruck.me",
+      "prefix": "/api/"
+    },
+    "twitter": {
+      "access_token": process.env.access_token_key,
+      "access_token_secret": process.env.access_token_secret,
+      "consumer_key": process.env.consumer_key,
+      "consumer_secret": process.env.consumer_secret
+    }
+  }
+}
 const ctrData = require('./controllers/data');
 
-gotsent.cfg.extend(cfg.gotsent);
+gotsent.cfg.extend(cfg);
 gotsent.init();
 
 gotsent.update();
