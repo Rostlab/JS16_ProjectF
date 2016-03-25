@@ -11,7 +11,7 @@ try {
   console.log(err)
   cfg = {
     "mongodb": {
-      "uri": "mongodb://localhost/gotsentimental"
+      "uri": process.env.MONGODB
     },
     "api": {
       "https": true,

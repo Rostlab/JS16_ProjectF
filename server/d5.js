@@ -11,10 +11,10 @@ try {
   console.log(err);
   json = {
     "twitter" : {
-      "consumer_key": "process.env.consumer_key",
-      "consumer_secret": "process.env.consumer_secret",
-      "access_token_key": "process.env.access_token_key",
-      "access_token_secret": "process.env.access_token_secret"
+      "consumer_key": process.env.consumer_key,
+      "consumer_secret": process.env.consumer_secret,
+      "access_token_key": process.env.access_token_key,
+      "access_token_secret": process.env.access_token_secret
     },
 
     "databaseA" : {
@@ -28,7 +28,7 @@ try {
     }
   };
 }
-gotdailysentiment = initPack.init(json);
+//gotdailysentiment = initPack.init(json);
 
 var dummyByName = {
   "characterName": "Jon Snow",
@@ -62,10 +62,11 @@ const reqByName = function(req, res){
   var patt = /\d{4}-\d{2}-\d{2}T/;
   if (!patt.test(req.query.date)) {res.status(400).send('Wrong Date Format');}
 
-  // execute function
+  /*// execute function
   gotdailysentiment.getSentimentForName({name: req.query.name, date: req.query.date}, function(result) {
     res.json(result);
-  });
+  });*/
+  res.json(dummyByName);
 }
 
 const reqByNameTimeline = function(req, res) {
@@ -74,7 +75,7 @@ const reqByNameTimeline = function(req, res) {
     res.status(400).send('Wrong Date Format');
   }
 
-  //execute function
+ /* //execute function
   var param = {
     name: req.query.name,
     startDate: req.query.startDate,
@@ -82,7 +83,8 @@ const reqByNameTimeline = function(req, res) {
   }
   gotdailysentiment.getSentimentForNameTimeframe(param, function(result) {
     res.json(result);
-  });
+  });*/
+  res.json(dummyByName);
 }
 
 const reqPerEpisode = function(req, res) {
@@ -92,15 +94,15 @@ const reqPerEpisode = function(req, res) {
   }
 
   // execute function
-  var param = {
+  /*var param = {
     name: req.query.name,
     startDate: req.query.startDate,
     endDate: req.query.endDate,
   }
   gotdailysentiment.getSentimentForNameTimeframe(param, function(result) {
     res.json(result);
-  });
-  // res.json(dummyByEpisode);
+  });*/
+  res.json(dummyByEpisode);
 }
 
 d5.get('/sentiment', function (req, res) {
@@ -130,17 +132,17 @@ d5.get('/sentiment/:rank', function (req,res) {
       res.status(400).send('Wrong Date Format');
     }
     if (req.params.rank == "top") {
-      gotdailysentiment.topSentiment(param, function(result) { res.json(result); });
-      // res.json(dummyByTopFlop);
+      // gotdailysentiment.topSentiment(param, function(result) { res.json(result); });
+      res.json(dummyByTopFlop);
     } else if (req.params.rank == "worst") {
-      gotdailysentiment.worstSentiment(param, function(result) { res.json(result); });
-      // res.json(dummyByTopFlop);
+      // gotdailysentiment.worstSentiment(param, function(result) { res.json(result); });
+      res.json(dummyByTopFlop);
     } else if (req.params.rank == "talked") {
-      gotdailysentiment.mostTalkedAbout(param, function(result) { res.json(result); });
-      // res.json(dummyByTopFlop);
+      // gotdailysentiment.mostTalkedAbout(param, function(result) { res.json(result); });
+      res.json(dummyByTopFlop);
     } else if (req.params.rank == "controversial") {
-      gotdailysentiment.topControversial(param, function(result) { res.json(result); });
-      // res.json(dummyByTopFlop);
+      // gotdailysentiment.topControversial(param, function(result) { res.json(result); });
+      res.json(dummyByTopFlop);
     } else {
       res.status(400).send('Bad Request');
     }
