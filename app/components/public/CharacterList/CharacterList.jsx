@@ -54,7 +54,8 @@ export default class CharacterListPage extends Component {
         data: Store.getCharacters(page),
         activePage: page,
         filter: {'value': ''},
-        loaded: false
+        loaded: false,
+        text_changed: false
       };
       this._onChange = this._onChange.bind(this);
     }
@@ -91,6 +92,12 @@ export default class CharacterListPage extends Component {
     }
 
     handleChange() { // Event triggered by search input
+      if (!this.state.text_changed) { // On page load loading
+        this.setState({
+          text_changed: true
+        });
+        return;
+      }
       let filter = {'value': this.refs.input.getValue()};
       this.setState({
         data: Store.getCharacters(this.state.activePage, {}, filter),
