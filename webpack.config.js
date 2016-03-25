@@ -5,12 +5,13 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require('path');
 var npm_dir = path.join(__dirname, '/node_modules/');
 
+var analytics;
 try {
     var json = require('./config/config.json');
-    var analytics = json.google_analytics.key;
+    analytics = json.google_analytics.key;
 } catch (err) {
     console.log(err);
-    var analytics = process.env.ANALYTICS;
+    analytics = process.env.ANALYTICS;
 }
 
 var config = {
