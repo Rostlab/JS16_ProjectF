@@ -1,0 +1,3 @@
+This webapp ist the result of a JavaScript Course at the Technical University Munich.
+
+We wanted to tell some of the Game of Thrones stories using data that we acquire on the web. Many fans of the Ice and Fire books and of the HBO show have amassed a lot of data about the plot, the characters, the great houses of westeros, the history and culture of the world of Ice and Fire, and in general anything you can think about this cultural phenomenon.
