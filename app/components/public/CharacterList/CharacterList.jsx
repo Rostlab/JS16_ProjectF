@@ -95,11 +95,11 @@ export default class CharacterListPage extends Component {
       this.setState({
         data: Store.getCharacters(this.state.activePage, {}, filter),
         filter: {'value': this.refs.input.getValue()},
-        activePage: this.state.activePage
+        activePage: 1
       });
       browserHistory.push({
         pathname: '/characters/',
-        search: '?search=' + this.refs.input.getValue() + '&page=' + this.state.activePage}
+        search: '?search=' + this.refs.input.getValue() + '&page=' + 1}
       );
     }
     render(){
