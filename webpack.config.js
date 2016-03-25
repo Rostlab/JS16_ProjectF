@@ -6,11 +6,12 @@ var path = require('path');
 var npm_dir = path.join(__dirname, '/node_modules/');
 
 var analytics;
-if (process.env.ANALYTICS == undefined) {
-  analytics = process.env.ANALYTICS;
-} else {
-  json = require('./config/config.json');
-  analytics = json.google_analytics.key;
+try {
+    var json = require('./config/config.json');
+    analytics = json.google_analytics.key;
+} catch (err) {
+    console.log(err);
+    analytics = process.env.ANALYTICS;
 }
 
 var config = {

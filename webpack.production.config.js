@@ -6,11 +6,12 @@ var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var analytics;
-if (process.env.ANALYTICS == undefined) {
-  analytics = process.env.ANALYTICS;
-} else {
-  json = require('./config/config.json');
-  analytics = json.google_analytics.key;
+try {
+    var json = require('./config/config.json');
+    analytics = json.google_analytics.key;
+} catch (err) {
+    console.log(err);
+    analytics = process.env.ANALYTICS;
 }
 
 var config = {
@@ -83,6 +84,6 @@ var config = {
         new ExtractTextPlugin("/style.css"),
         new webpack.DefinePlugin({GA_TRACKING_CODE: JSON.stringify(analytics)})
     ]
-}
+};
 
 module.exports = config;

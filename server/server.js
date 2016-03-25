@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 var express = require('express');
 var path = require('path');
@@ -17,9 +17,9 @@ app.use('/d4', d4);
 
 app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, '../', 'build', 'index.html'));
-})
+});
 
 var PORT = process.env.PORT || 8080;
 app.listen(PORT, function() {
   console.log('Production Express server running at localhost:' + PORT);
-})
+});
