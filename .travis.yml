@@ -14,7 +14,7 @@ deploy:
   provider: heroku
   api_key:
     secure: BU0kqVwRY+0Aj8s6al/kHMUOEGM86dR4XMOs5VdpX4DlOtGCezqEiJHcPSUV4cx683+qm2f1qaDf5BQTp+vCjaPJz4HEyuPgo3WwjhtszWTXdaZDFuUYRGZpNDL181ZmDQZ17AB2mwQPtmvklTb24ZmrY/i6OWE2VbjQytPF5dPL7kSfLmHVWMXdR0XHwFrSAMnAWkLAnP454FH6PhTasbrIK2mx2GnkUFY2alW4xE69yiYRoT9K7Uta9d84AG3ZZrL8y6H200cmVBtYnUkzOGFQCEHnFpsTy8cmJ9vXmGHL/V+kLyxjjxnQSqSmS2tOFRSHFtFJHYejpWgwYimoDX+D0074jO0WHJxBy3IjG1g4EG/wmw2/s2DSDwDSxSH52BceV5kXcju2nuGtKRePBt/lRYcyCvOvl5CCjQT4hPc6CL7Fb5v4sa5vSBlBvpwPtONcg/azN9bRGk/whcUpG8RBZAEu6TQR+YjGyeJ6CbjFuxoNSq2D9AVPzkJeM6/5U8LLLtxHj1XwJCKnL4SShygkYsiKqW56FflvcIwCNn4UTk572k1ByzZ9WjxEWaQT+iWGV7+SFUs2ehfTQhSYnfwHYIpdKvNwftVQiDlH5nk/fheQdejDybjQqYsKoYIzZ6qn/5kNsssZtxALc7ijzsDfWF0LQe4Exkj6mZNSGD4=
-  app: got-stats-test
+  app: got-stats
   on:
     repo: Rostlab/JS16_ProjectF
-    branch: teststaging
+    branch: staging
