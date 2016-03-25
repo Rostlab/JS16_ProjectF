@@ -53,7 +53,7 @@ export default class Character extends Component {
                     <Col xs={6} xsOffset={3} sm={3} smOffset={0} md={3} mdOffset={1} className="character-photo">
                         <Image thumbnail src={img}/>
                     </Col>
-                    <Col xs={12} sm={6}  smOffset={1}>
+                    <Col xs={11} sm={5}  smOffset={1}>
                         <ListGroup className="character-details">
                                     <ListGroupItem>Age</ListGroupItem>
                                     <ListGroupItem>House</ListGroupItem>
@@ -65,7 +65,7 @@ export default class Character extends Component {
                 </Row>
                 <div className="character-stats">
                 <Row>
-                    <Col md={10} mdOffset={1}>
+                    <Col md={8} mdOffset={2}>
                         <h2>Likelihood of Death</h2>
                         <p>Check out what our two different algorithms say</p>
                         <Tabs>
@@ -79,7 +79,7 @@ export default class Character extends Component {
                     </Col>
                 </Row>
                 <Row>
-                    <Col md={5} mdOffset={1}>
+                    <Col md={8} mdOffset={2}>
                         <h2>People on Twitter say</h2>
                         <Tabs>
                             <Tab eventKey={1} title="Twitter Analysis 1">
@@ -96,7 +96,7 @@ export default class Character extends Component {
                     </Col>
                 </Row>
                 <Row>
-                    <Col md={10} mdOffset={1}>
+                    <Col md={8} mdOffset={2}>
                         <h2>Location History</h2>
                         <MapComp character={[this.props.params.id]} />
                     </Col>
