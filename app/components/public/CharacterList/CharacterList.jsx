@@ -120,9 +120,9 @@ export default class CharacterListPage extends Component {
           <CharacterList data={this.state.data} loaded={this.state.loaded}/>
           <div className="center">
             <Pagination
+              boundaryLinks={true}
+              ellipsis
               maxButtons={3}
-              ellipsis={false}
-              boundaryLinks
               items={Math.ceil(Store.getCharactersCount(this.state.filter)/20)}
               activePage={this.state.activePage}
               onSelect={this.handleSelect.bind(this)} />
