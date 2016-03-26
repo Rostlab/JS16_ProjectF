@@ -78,12 +78,7 @@ export default class MapComp extends Component {
         $(".gotmap-modal").remove();
         $(".modal-backdrop").remove();
       },
-      'cityDetails': this.handleCityClick,
-
-      'characterDataSource':'https://raw.githubusercontent.com/Rostlab/JS16_ProjectC_Group10/develop/data/characters.js',
-      'episodeDataSource':'https://raw.githubusercontent.com/Rostlab/JS16_ProjectC_Group10/develop/data/episodes.js',
-      'cityDataSource':'https://raw.githubusercontent.com/Rostlab/JS16_ProjectC_Group10/develop/data/cities.js',
-      'realmDataSource':'https://raw.githubusercontent.com/Rostlab/JS16_ProjectC_Group10/develop/data/realms.js'
+      'cityDetails': this.handleCityClick
     };
     var mymap = gotmap('#map', config); /*eslint no-undef:0*/
 
