@@ -71,3 +71,32 @@
 .dropdown-header {
 	width: 236px;
 }
+
+.map-wrapper {
+	width: 100% !important;
+	height: 0;
+	padding-bottom: 50%;
+}
+
+@media (max-width: 767px) {
+	.map-wrapper {
+		position: relative;
+	}
+	.map-wrapper #map {
+		width: 100%;
+		margin-top: 60px;
+	}
+	.map-wrapper #sidebar {
+		position: relative;
+		width: 100%;
+	}
+	.map-wrapper #sidebar #characters {
+		display: none;
+	}
+	.map-wrapper #sidebar hr {
+		display: none;
+	}
+	.map-wrapper #timeline {
+		width: 100%;
+	}
+}
