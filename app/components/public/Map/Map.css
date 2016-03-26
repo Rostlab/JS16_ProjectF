@@ -5,3 +5,14 @@
   width: 100%;
   height: auto;
 }
+
+.characterInfo a {
+  cursor: pointer;
+}
+
+.gotmap-modal {
+  color: black;
+}
+.gotmap-modal a{
+  color: #5A180C !important;
+}
