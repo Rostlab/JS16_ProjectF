@@ -27,7 +27,7 @@ export default class MapComp extends Component {
     bodyEl.html("<span class='glyphicon glyphicon-cog glyph-spin glyph-big'></span>").addClass('text-center');
 
     var cEl = modal.find('.modal-footer .classes').empty(); // Classes Container
-    modal.find('.wikilink').attr('href', 'http://awoiaf.westeros.org/index.php/'+city); // Update the Wiki-Link
+    modal.find('.wikilink').attr('href', 'http://awoiaf.westeros.org/index.php/'+city.name); // Wiki-Link
 
     // Get the wiki
     jQuery.ajax({
@@ -58,6 +58,9 @@ export default class MapComp extends Component {
       });
       // Remove infobox-image caption
       content.find('.infobox-image').each(function(i, e) {
+        $(e).hide();
+      });
+      content.find('.thumbinner').each(function(i, e) {
         $(e).hide();
       });
       bodyEl.html(content);
