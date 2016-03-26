@@ -52,10 +52,11 @@ export default class CharacterListPage extends Component {
         page = parseInt(this.props.location.query.page);
       }
       let sort = {field: "pageRank", type: -1};
+      let filter ={'value': ''};
       this.state = {
-        data: Store.getCharacters(page,sort),
+        data: Store.getCharacters(page,sort, filter),
         activePage: page,
-        filter: {'value': ''},
+        filter: filter,
         loaded: false,
         sortText: "Popularity",
         sort: sort,
@@ -83,46 +84,58 @@ export default class CharacterListPage extends Component {
         loaded: true
       });
     }
+    pushHistory(newPage,newSort) {
+      let search = '?search=' + this.refs.input.getValue();
+      let page = '&page=';
+      page  += (newPage == undefined) ? this.state.activePage : newPage;
+      let sort = '&sort=';
+      sort += (newSort == undefined) ? this.state.sort.field : newSort.field;
+      let order = '&order=';
+      order += (newSort == undefined) ? this.state.sort.type : newSort.type;
+
+      let query = search + page + sort + order;
+      browserHistory.push({
+        pathname: '/characters/',
+        search: query
+      });
+    }
 
     handleSelectPage(event, selectedEvent) { // Event triggered by page change
       this.setState({
         data: Store.getCharacters(selectedEvent.eventKey, this.state.sort, this.state.filter),
         activePage: selectedEvent.eventKey
       });
-      browserHistory.push({
-        pathname: '/characters/',
-        search: '?search=' + this.refs.input.getValue() + '&page=' + selectedEvent.eventKey
-      });
+      this.pushHistory(selectedEvent.eventKey);
     }
 
-    handleSelectSort(event, eventKey) { // Event triggered by page change
+    handleSelectSort(event, eventKey) { // Event triggered by sort change
+      let sort;
       if(eventKey == 1) {
-        let sort = {field: "pageRank", type: -1};
+        sort = {field: "pageRank", type: -1};
         this.setState({
-          data: Store.getCharacters(1,sort),
+          data: Store.getCharacters(1,sort, this.state.filter),
+          sort: sort,
           activePage: 1,
           sortText: "Popularity"
         });
-        console.log(Store.getCharacters(1,sort)); /*eslint no-console:0, no-undef:0*/
       } else if(eventKey == 2) {
-        let sort = {field: "name", type: 1};
+        sort = {field: "name", type: 1};
         this.setState({
-          data: Store.getCharacters(1,sort),
+          data: Store.getCharacters(1,sort, this.state.filter),
+          sort: sort,
           activePage: 1,
           sortText: "Name asc"
         });
       } else if(eventKey == 3) {
-        let sort = {field: "name", type: -1};
+        sort = {field: "name", type: -1};
         this.setState({
-          data: Store.getCharacters(1,sort),
+          data: Store.getCharacters(1,sort, this.state.filter),
+          sort: sort,
           activePage: 1,
           sortText: "Name desc"
         });
       }
-      browserHistory.push({
-          pathname: '/characters/',
-          search: '?search=' + this.refs.input.getValue() + '&page=' + 1}
-      );
+      this.pushHistory(undefined,sort);
     }
 
     handleChange() { // Event triggered by search input
@@ -138,10 +151,7 @@ export default class CharacterListPage extends Component {
         filter: {'value': this.refs.input.getValue()},
         activePage: 1
       });
-      browserHistory.push({
-        pathname: '/characters/',
-        search: '?search=' + this.refs.input.getValue() + '&page=' + 1}
-      );
+      this.pushHistory();
     }
 
     render(){
@@ -154,7 +164,7 @@ export default class CharacterListPage extends Component {
             <Col md={1}>
               <DropdownButton onSelect={this.handleSelectSort.bind(this)} title={this.state.sortText} id="dropdown-size-medium">
                 <MenuItem eventKey="1">Popularity</MenuItem>
-                <MenuItem eventKey="2">Name asc</MenuItem>
+                <MenuItem eventKey="2">Name A to Z</MenuItem>
                 <MenuItem eventKey="3">Name desc</MenuItem>
               </DropdownButton>
             </Col>
