@@ -4,6 +4,7 @@ let {Component} = React;
 import Row from 'react-bootstrap/lib/Row';
 import Column from 'react-bootstrap/lib/Col';
 
+import AboutText from '../../app/Static/about.md';
 
 export default class About extends Component {
     render() {
@@ -12,9 +13,7 @@ export default class About extends Component {
                 <h1>About</h1>
                 <Row className="about-intro">
                     <Column md={8} mdPush={2}>
-                        <p>This webapp ist the result of a JavaScript Course at the Technical University Munich.</p>
-                        <br />
-                        <p>We wanted to tell some of the Game of Thrones’ stories using data that we acquire on the web. Many fans of the Ice and Fire books and of the HBO show have amassed a lot of data about the plot, the characters, the great houses of westeros, the history and culture of the world of Ice and Fire, and in general anything you can think about this cultural phenomenon. </p>
+                        <AboutText />
                     </Column>
                 </Row>
 
