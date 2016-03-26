@@ -62,7 +62,8 @@ var config = {
                 loader: "url?limit=10000&mimetype=image/svg+xml"
             }, {
                 test: /\.md$/,
-                loader: 'react-markdown'
+                exclude: /README.md/,
+                loader: 'react-markdown-loader'
             }
 
         ]

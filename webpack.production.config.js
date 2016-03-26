@@ -61,7 +61,7 @@ var config = {
             }, {
                 test: /\.md$/,
                 exclude: /README.md/,
-                loader: 'react-markdown'
+                loader: 'react-markdown-loader'
             }
         ]
     },
