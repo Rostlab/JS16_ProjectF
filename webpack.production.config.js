@@ -58,6 +58,9 @@ var config = {
             }, {
                 test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
                 loader: "url?limit=10000&minetype=image/svg+xml"
+            }, {
+                test: /\.md$/,
+                loader: 'react-markdown'
             }
         ]
     },
