@@ -58,10 +58,10 @@
 	position: absolute;
 	overflow-y: auto;
 	overflow-x: hidden;	
-	height: 300px;
+	max-height: 300px;
 }
 
-.gotmap-dropdown 	a {
+.gotmap-dropdown a {
 	width: 236px;
 	overflow: hidden;
 	text-overflow: ellipsis;
