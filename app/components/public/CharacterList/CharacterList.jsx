@@ -1,7 +1,8 @@
 
 import React, {Component} from 'react';
 
-import { Row, Col, Pagination, Input } from 'react-bootstrap';
+import { Row, Col, Pagination, Input} from 'react-bootstrap';
+import { DropdownButton, MenuItem} from 'react-bootstrap';
 import { browserHistory } from 'react-router';
 
 import Store from '../../../stores/CharactersStore';
@@ -46,15 +47,19 @@ CharacterList.propTypes = { loaded: React.PropTypes.bool.isRequired};
 export default class CharacterListPage extends Component {
     constructor (props) {
       super(props);
-      var page = 1;
+      let page = 1;
       if( this.props.location.query.page != undefined ) {
         page = parseInt(this.props.location.query.page);
       }
+      let sort = {field: "pageRank", type: -1};
+      let filter ={'value': ''};
       this.state = {
-        data: Store.getCharacters(page),
+        data: Store.getCharacters(page,sort, filter),
         activePage: page,
-        filter: {'value': ''},
+        filter: filter,
         loaded: false,
+        sortText: "Popularity",
+        sort: sort,
         text_changed: false
       };
       this._onChange = this._onChange.bind(this);
@@ -75,20 +80,62 @@ export default class CharacterListPage extends Component {
 
     _onChange() {
       this.setState({
-        data: Store.getCharacters(this.state.activePage, {}, this.state.filter),
+        data: Store.getCharacters(this.state.activePage, this.state.sort, this.state.filter),
         loaded: true
       });
     }
+    pushHistory(newPage,newSort) {
+      let search = '?search=' + this.refs.input.getValue();
+      let page = '&page=';
+      page  += (newPage == undefined) ? this.state.activePage : newPage;
+      let sort = '&sort=';
+      sort += (newSort == undefined) ? this.state.sort.field : newSort.field;
+      let order = '&order=';
+      order += (newSort == undefined) ? this.state.sort.type : newSort.type;
 
-    handleSelect(event, selectedEvent) { // Event triggered by page change
-      this.setState({
-        data: Store.getCharacters(selectedEvent.eventKey, {}, this.state.filter),
-        activePage: selectedEvent.eventKey
-      });
+      let query = search + page + sort + order;
       browserHistory.push({
         pathname: '/characters/',
-        search: '?search=' + this.refs.input.getValue() + '&page=' + selectedEvent.eventKey
+        search: query
       });
+    }
+
+    handleSelectPage(event, selectedEvent) { // Event triggered by page change
+      this.setState({
+        data: Store.getCharacters(selectedEvent.eventKey, this.state.sort, this.state.filter),
+        activePage: selectedEvent.eventKey
+      });
+      this.pushHistory(selectedEvent.eventKey);
+    }
+
+    handleSelectSort(event, eventKey) { // Event triggered by sort change
+      let sort;
+      if(eventKey == 1) {
+        sort = {field: "pageRank", type: -1};
+        this.setState({
+          data: Store.getCharacters(1,sort, this.state.filter),
+          sort: sort,
+          activePage: 1,
+          sortText: "Popularity"
+        });
+      } else if(eventKey == 2) {
+        sort = {field: "name", type: 1};
+        this.setState({
+          data: Store.getCharacters(1,sort, this.state.filter),
+          sort: sort,
+          activePage: 1,
+          sortText: "Name asc"
+        });
+      } else if(eventKey == 3) {
+        sort = {field: "name", type: -1};
+        this.setState({
+          data: Store.getCharacters(1,sort, this.state.filter),
+          sort: sort,
+          activePage: 1,
+          sortText: "Name desc"
+        });
+      }
+      this.pushHistory(undefined,sort);
     }
 
     handleChange() { // Event triggered by search input
@@ -100,21 +147,26 @@ export default class CharacterListPage extends Component {
       }
       let filter = {'value': this.refs.input.getValue()};
       this.setState({
-        data: Store.getCharacters(this.state.activePage, {}, filter),
+        data: Store.getCharacters(this.state.activePage, this.state.sort, filter),
         filter: {'value': this.refs.input.getValue()},
         activePage: 1
       });
-      browserHistory.push({
-        pathname: '/characters/',
-        search: '?search=' + this.refs.input.getValue() + '&page=' + 1}
-      );
+      this.pushHistory();
     }
+
     render(){
       return (
         <div>
-          <Row>
-            <Col md={6} mdOffset={3}>
+          <Row className="inputbar">
+            <Col md={7} mdOffset={2}>
               <Input value={this.props.location.query.search} className="character-search" ref="input" type="text" placeholder="Search for character" onChange={this.handleChange.bind(this)} />
+            </Col>
+            <Col md={1}>
+              <DropdownButton className="sortButton" onSelect={this.handleSelectSort.bind(this)} title={this.state.sortText} id="dropdown-size-medium">
+                <MenuItem eventKey="1">Popularity</MenuItem>
+                <MenuItem eventKey="2">Name A to Z</MenuItem>
+                <MenuItem eventKey="3">Name desc</MenuItem>
+              </DropdownButton>
             </Col>
           </Row>
           <CharacterList data={this.state.data} loaded={this.state.loaded}/>
@@ -125,7 +177,7 @@ export default class CharacterListPage extends Component {
               maxButtons={3}
               items={Math.ceil(Store.getCharactersCount(this.state.filter)/20)}
               activePage={this.state.activePage}
-              onSelect={this.handleSelect.bind(this)} />
+              onSelect={this.handleSelectPage.bind(this)} />
             </div>
         </div>
 
