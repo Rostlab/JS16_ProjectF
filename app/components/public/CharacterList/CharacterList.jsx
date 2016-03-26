@@ -152,7 +152,7 @@ export default class CharacterListPage extends Component {
               <Input value={this.props.location.query.search} className="character-search" ref="input" type="text" placeholder="Search for character" onChange={this.handleChange.bind(this)} />
             </Col>
             <Col md={1}>
-              <DropdownButton onSelect={this.handleSelectSort.bind(this)} title={this.state.sortText} id="dropdown-size-medium">
+              <DropdownButton className="sortButton" onSelect={this.handleSelectSort.bind(this)} title={this.state.sortText} id="dropdown-size-medium">
                 <MenuItem eventKey="1">Popularity</MenuItem>
                 <MenuItem eventKey="2">Name asc</MenuItem>
                 <MenuItem eventKey="3">Name desc</MenuItem>
