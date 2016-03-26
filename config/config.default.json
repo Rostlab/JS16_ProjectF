@@ -4,6 +4,11 @@
   },
 
 
+  "apiA": {
+    "url": "https://got-api.bruck.me/api/"
+  },
+
+
   "twitter_hash_tag": {
     "hash": "hashtag for timeline twitter widget"
   },
@@ -34,7 +39,7 @@
 
   "gotsent": {
         "mongodb": {
-            "uri": "mongodb://localhost/gotsentimental"
+            "uri": "mongodb://<user>:<pass>@<server>/<db>"
         },
         "api": {
             "https": true,

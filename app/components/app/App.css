@@ -85,12 +85,13 @@ body {
 }
 
 .pagination > li > a:hover, .pagination > li > span:hover, .pagination > li > a:focus, .pagination > li > span:focus,
-.pagination > li > a, .pagination > li > span {
+.pagination > li > a,
+.pagination > li > span,
+.pagination > .disabled > a, .pagination > .disabled > a:hover, .pagination > .disabled > a:active, .pagination > .disabled > a:focus {
     color: whitesmoke;
     background-color: #333;
     border: none;
 }
-
 
 .header-image {
     height: 550px;
