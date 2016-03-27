@@ -58,4 +58,14 @@
 	.character-photo img {
 		transform: none !important;
 	}
+	/* Optimize Map for smartphones */
+	.character-container .map-wrapper {
+		padding-bottom: 100%;
+	}
+
+}
+
+
+.character-container .map-wrapper #sidebar {
+	display: none;
 }
