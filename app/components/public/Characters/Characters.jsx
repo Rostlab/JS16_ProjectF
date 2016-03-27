@@ -93,11 +93,14 @@ export default class Character extends Component {
                                 <p>Number of tweets: 124</p>
                             </Tab>
                         </Tabs>
-                    </Col>
+                    </Col>  
                 </Row>
                 <Row>
                     <Col md={8} mdOffset={2}>
-                        <h2>Location History</h2>
+                        <h2>Places associated with {this.state.character.name}</h2>
+                        <p>Location history</p>
+                    </Col>
+                    <Col md={8} mdOffset={2}>
                         <MapComp character={[this.props.params.id]} />
                     </Col>
                 </Row>
