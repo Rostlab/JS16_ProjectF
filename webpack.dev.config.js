@@ -95,15 +95,7 @@ var config = {
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin(),
         new webpack.DefinePlugin({GA_TRACKING_CODE: JSON.stringify(analytics)})
-    ],
-
-    devServer: {
-        contentBase: "./build",
-        colors: true,
-        historyApiFallback: true,
-        inline: true,
-        hot: true
-    }
+    ]
 };
 
 module.exports = config;
