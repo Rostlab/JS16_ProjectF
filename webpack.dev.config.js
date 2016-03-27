@@ -23,7 +23,7 @@ var config = {
     output: {
         path: path.join(__dirname, 'build'),
         filename: "bundle.js",
-        publicPath: '/'
+        publicPath: '/assets/'
     },
 
     module: {
@@ -75,7 +75,7 @@ var config = {
 
     resolve: {
         modulesDirectories: ['app', 'node_modules'],
-        extensions: ['', '.js', '.jsx']
+        extensions: ['', '.js', '.jsx', '.css']
     },
 
     postcss: [

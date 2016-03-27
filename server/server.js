@@ -35,14 +35,14 @@ if (isDev) {
 
   app.use(this.middleware = devMiddleware);
 
+  app.use(require('webpack-hot-middleware')(compiler));
+
   app.get('*', function(req, res) {
     /*eslint-disable */
     var index = this.middleware.fileSystem.readFileSync(path.join(config.output.path, 'index.html'));
     /*eslint-enable */
     res.end(index);
   }.bind(this));
-
-  app.use(require('webpack-hot-middleware')(compiler));
 }
 
 if (isProd) {
