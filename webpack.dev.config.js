@@ -16,12 +16,14 @@ try {
 
 var config = {
     devtool: 'eval-source-map',
-
-    context: path.join(__dirname, 'app'),
-    entry: "./main.jsx",
+    entry: [
+      'webpack-hot-middleware/client',
+      "./app/main.jsx"
+    ],
     output: {
         path: path.join(__dirname, 'build'),
-        filename: "/bundle.js"
+        filename: "bundle.js",
+        publicPath: '/'
     },
 
     module: {
@@ -32,7 +34,7 @@ var config = {
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                loader: 'babel',
+                loader:  'babel',
                 query: {
                     presets: ['es2015', 'react']
                 }
@@ -42,7 +44,8 @@ var config = {
                 loader: 'babel',
                 query: {
                     presets: ['es2015', 'react']
-                }
+                },
+                include: path.join(__dirname, 'app')
             },{
                 test: /\.css$/,
                 loader: 'style-loader!css!postcss!csslint'
@@ -71,7 +74,8 @@ var config = {
     },
 
     resolve: {
-        root: path.join(__dirname, 'node_modules')
+        modulesDirectories: ['app', 'node_modules'],
+        extensions: ['', '.js', '.jsx']
     },
 
     postcss: [
@@ -87,7 +91,9 @@ var config = {
         new HtmlWebpackPlugin({
             template: path.join(__dirname, "/app/index.tmpl.html")
         }),
+        new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin(),
+        new webpack.NoErrorsPlugin(),
         new webpack.DefinePlugin({GA_TRACKING_CODE: JSON.stringify(analytics)})
     ],
 
