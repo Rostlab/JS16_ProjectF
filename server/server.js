@@ -18,19 +18,27 @@ app.use('/d4', d4);
 
 var webpack = require('webpack');
 
+
+
 var isDev = process.env.NODE_ENV === 'development';
 var isProd = process.env.NODE_ENV === 'production';
 
 if (isDev) {
   var config = require('../webpack.dev.config.js');
   var compiler = webpack(config);
-  app.use(require('webpack-dev-middleware')(compiler, {
-    noInfo: false,
-    publicPath: config.output.publicPath,
-    stats: {
-      colors: true
-    }
-  }));
+  var devMiddleware = require('webpack-dev-middleware')(compiler, {
+    noInfo: true,
+    publicPath: config.output.publicPath
+  });
+
+  app.use(this.middleware = devMiddleware);
+
+  app.get('*', function(req, res) {
+    /*eslint-disable */
+    var index = this.middleware.fileSystem.readFileSync(path.join(config.output.path, 'index.html'));
+    /*eslint-enable */
+    res.end(index);
+  }.bind(this));
 
   app.use(require('webpack-hot-middleware')(compiler));
 }
