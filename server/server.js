@@ -17,11 +17,43 @@ app.use('/d5', d5);
 app.use('/d4', d4);
 app.use('/wikirequest', wikirequest);
 
-app.get('*', function (req, res) {
-  res.sendFile(path.join(__dirname, '../', 'build', 'index.html'));
-});
 
+var webpack = require('webpack');
+
+
+
+var isDev = process.env.NODE_ENV === 'development';
+var isProd = process.env.NODE_ENV === 'production';
+
+if (isDev) {
+  var config = require('../webpack.dev.config.js');
+  var compiler = webpack(config);
+  var devMiddleware = require('webpack-dev-middleware')(compiler, {
+    noInfo: true,
+    publicPath: config.output.publicPath
+  });
+
+  app.use(this.middleware = devMiddleware);
+
+  app.get('*', function(req, res) {
+    /*eslint-disable */
+    var index = this.middleware.fileSystem.readFileSync(path.join(config.output.path, 'index.html'));
+    /*eslint-enable */
+    res.end(index);
+  }.bind(this));
+
+  app.use(require('webpack-hot-middleware')(compiler));
+}
+
+if (isProd) {
+  app.get('*', function (req, res) {
+   res.sendFile(path.join(__dirname, '../', 'build', 'index.html'));
+   });
+}
+
+var log = isDev ? 'Development' : '';
+log += isProd ? 'Production' : '';
 var PORT = process.env.PORT || 8080;
 app.listen(PORT, function() {
-  console.log('Production Express server running at localhost:' + PORT);
+  console.log(log + ' Express server running at localhost:' + PORT);
 });

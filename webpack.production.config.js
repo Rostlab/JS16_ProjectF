@@ -79,7 +79,7 @@ var config = {
         new HtmlWebpackPlugin({
             template: path.join(__dirname, "/app/index.tmpl.html")
         }),
-        new webpack.optimize.OccurenceOrderPlugin(),
+        new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: false

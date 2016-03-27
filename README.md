@@ -10,7 +10,10 @@ We're using webpack: https://github.com/webpack/webpack
 ## Requirements:
 
 **Please make a config.json in folder config and set up your setting**
-At the moment gotdailysentiment config isn't configurable
+
+1. Duplicate the config.default.json to config.json
+2. Add twitter access keys to gotsent in the config
+3. Add mongodb access url to gotsent.mongo.uri in the config (ask @yashha for an access)
 
 `gotsent.mongo.uri = "mongodb://<user>:<pass>@<server>/<db>"`
 
@@ -22,10 +25,6 @@ At the moment gotdailysentiment config isn't configurable
 ## Build manually
 * `npm install`
 * `npm run build`
-
-## Build and serve files
-* `npm install`
-* `npm run build-serve`
 
 ## serve files
 * `npm install`
