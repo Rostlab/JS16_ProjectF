@@ -169,7 +169,6 @@ export default class CharacterListPage extends Component {
               </DropdownButton>
             </Col>
           </Row>
-          <CharacterList data={this.state.data} loaded={this.state.loaded}/>
           <div className="center">
             <Pagination
               boundaryLinks={true}
@@ -179,6 +178,7 @@ export default class CharacterListPage extends Component {
               activePage={this.state.activePage}
               onSelect={this.handleSelectPage.bind(this)} />
             </div>
+          <CharacterList data={this.state.data} loaded={this.state.loaded}/>
         </div>
 
       );
