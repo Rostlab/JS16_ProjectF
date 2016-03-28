@@ -4,6 +4,8 @@ body {
   height: 100%;
   width: 100%;
   margin: 0;
+  color: whitesmoke;
+  font-family: 'Gotham SSm 3r';
 }
 
 h1,h2,h3,h4,h5,
@@ -20,11 +22,6 @@ a:focus {
   color: white;
   text-decoration: none;
   outline: 0;
-}
-
-body {
-    color: whitesmoke;
-    font-family: 'Gotham SSm 3r';
 }
 
 #root {
