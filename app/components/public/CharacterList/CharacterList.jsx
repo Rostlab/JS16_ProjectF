@@ -165,7 +165,7 @@ export default class CharacterListPage extends Component {
               <DropdownButton className="sortButton" onSelect={this.handleSelectSort.bind(this)} title={this.state.sortText} id="dropdown-size-medium">
                 <MenuItem eventKey="1">Popularity</MenuItem>
                 <MenuItem eventKey="2">Name A to Z</MenuItem>
-                <MenuItem eventKey="3">Name desc</MenuItem>
+                <MenuItem eventKey="3">Name Z to A</MenuItem>
               </DropdownButton>
             </Col>
           </Row>
