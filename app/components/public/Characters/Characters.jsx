@@ -22,8 +22,11 @@ export default class Character extends Component {
         Store.addChangeListener(this._onChange);
     }
 
-    componentDidMount(){
-        Actions.loadCharacter(decodeURIComponent(this.props.params.id));
+    componentDidMount() {
+        var char = decodeURIComponent(this.props.params.id);
+        char = char.replace('(', '%5C(');
+        char = char.replace(')', '%5C)');
+        Actions.loadCharacter(char);
     }
 
     componentWillUnmount(){
