@@ -48,3 +48,24 @@
 .list-group-item {
 	background: #333;
 }
+
+@media (max-width: 767px) {
+	.character-photo {
+		padding: 0;
+		position: absolute;
+		top: 100px;
+	}
+	.character-photo img {
+		transform: none !important;
+	}
+	/* Optimize Map for smartphones */
+	.character-container .map-wrapper {
+		padding-bottom: 100%;
+	}
+
+}
+
+
+.character-container .map-wrapper #sidebar {
+	display: none;
+}

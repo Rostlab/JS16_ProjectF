@@ -4,7 +4,8 @@ import { Row } from 'react-bootstrap';
 
 import Stats from '../../common/Stats/Stats.jsx';
 import './Start.css';
-import TwitterComp from '../../common/TwitterComp/TwitterComp.jsx';
+
+import StartText from '../../app/Static/start.md';
 
 export default class Start extends Component {
   render() {
@@ -12,13 +13,9 @@ export default class Start extends Component {
       <div className="home">
         <Row fluid>
           <div className="header-image"></div>
+          <StartText />
         </Row>
         <Stats/>
-        <Row fluid>
-          <div className="twitter">
-            <TwitterComp widgetID='711756872454373377' height='600'/>
-          </div>
-        </Row>
       </div>
     );
   }

@@ -1,11 +1,23 @@
+'use strict';
+
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+var analytics;
+try {
+    var json = require('./config/config.json');
+    analytics = json.google_analytics.key;
+} catch (err) {
+    console.log(err);
+    analytics = process.env.ANALYTICS;
+}
+
 var config = {
-    entry: __dirname + "/app/main.jsx",
+    entry: path.join(__dirname, "/app/main.jsx"),
     output: {
-        path: __dirname + "/build",
+        path: path.join(__dirname, "/build"),
         filename: "/bundle.js"
     },
 
@@ -47,6 +59,10 @@ var config = {
             }, {
                 test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
                 loader: "url?limit=10000&minetype=image/svg+xml"
+            }, {
+                test: /\.md$/,
+                exclude: /README.md/,
+                loader: 'react-markdown-loader'
             }
         ]
     },
@@ -61,17 +77,17 @@ var config = {
           'window.jQuery': 'jquery'
         }),
         new HtmlWebpackPlugin({
-            template: __dirname + "/app/index.tmpl.html"
+            template: path.join(__dirname, "/app/index.tmpl.html")
         }),
-        new webpack.optimize.OccurenceOrderPlugin(),
+        new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: false
             }
         }),
         new ExtractTextPlugin("/style.css"),
-        new webpack.DefinePlugin({GA_TRACKING_CODE: JSON.stringify('UA-75295085-1')})
+        new webpack.DefinePlugin({GA_TRACKING_CODE: JSON.stringify(analytics)})
     ]
-}
+};
 
 module.exports = config;

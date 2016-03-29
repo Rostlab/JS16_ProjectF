@@ -3,7 +3,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+import 'file?name=favicon.png!./favicon.png';
 import { Router, Route, IndexRoute } from 'react-router';
 
 import 'jquery';
@@ -40,7 +40,7 @@ ReactDOM.render(
         <Route path="/characters/:id" component={Characters}/>
       </Route>
     </Route>
-    <Route name="/map" path="/map" component={Map}/>
+    <Route path="/map" component={Map}/>
     <Route path="*" component={Site404}/>
   </Router>
 , document.getElementById('root'));

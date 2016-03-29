@@ -1,7 +1,18 @@
 .mapPage .map-wrapper {
+  position: absolute;
   top: 53px;
   bottom: 0;
-  position: fixed;
   width: 100%;
   height: auto;
+}
+
+.mapPage #timeline {
+	position: fixed;
+}
+
+.gotmap-modal {
+  color: black;
+}
+.gotmap-modal a{
+  color: #5A180C !important;
 }

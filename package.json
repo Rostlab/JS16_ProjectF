@@ -4,8 +4,9 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "node_modules/.bin/webpack-dev-server --progress --inline --content-base public  --history-api-fallback",
-    "build": "NODE_ENV=production node_modules/.bin/webpack --config ./webpack.production.config.js --bail --progress"
+    "start": "NODE_ENV=development node ./server/server.js",
+    "build": "NODE_ENV=production node_modules/.bin/webpack --config ./webpack.production.config.js --bail --progress",
+    "serve": "NODE_ENV=production node ./server/server.js"
   },
   "repository": {
     "type": "git",
@@ -35,9 +36,11 @@
     "file-loader": "^0.8.5",
     "html-webpack-plugin": "^2.9.0",
     "imports-loader": "^0.6.5",
+    "json-loader": "^0.5.4",
     "less": "^2.6.1",
     "less-loader": "^2.2.2",
     "postcss-loader": "^0.8.1",
+    "react-markdown-loader": "git+https://github.com/osnr/react-markdown-loader.git",
     "react-transform-hmr": "^1.0.2",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
@@ -51,8 +54,9 @@
     "express": "^4.13.4",
     "flux": "^2.1.1",
     "ga-react-router": "^2.0.0",
-    "gotdailysentiment": "0.0.3",
-    "gotmap": "^0.1.0",
+    "gotdailysentiment": "latest",
+    "gotmap": "latest",
+    "gotsentimental": "latest",
     "history": "^2.0.1",
     "jquery": "^2.2.1",
     "jquery-ui": "^1.10.5",
@@ -63,6 +67,8 @@
     "react-router": "^2.0.0",
     "react-router-bootstrap": "^0.20.1",
     "superagent": "^1.8.1",
-    "thenby": "^1.1.3"
+    "thenby": "^1.1.3",
+    "webpack-dev-middleware": "^1.6.1",
+    "webpack-hot-middleware": "^2.10.0"
   }
 }

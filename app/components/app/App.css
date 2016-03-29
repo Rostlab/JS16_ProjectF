@@ -4,6 +4,8 @@ body {
   height: 100%;
   width: 100%;
   margin: 0;
+  color: whitesmoke;
+  font-family: 'Gotham SSm 3r';
 }
 
 h1,h2,h3,h4,h5,
@@ -20,10 +22,6 @@ a:focus {
   color: white;
   text-decoration: none;
   outline: 0;
-}
-
-body {
-    color: whitesmoke;
 }
 
 #root {
@@ -85,10 +83,58 @@ body {
 }
 
 .pagination > li > a:hover, .pagination > li > span:hover, .pagination > li > a:focus, .pagination > li > span:focus,
-.pagination > li > a, .pagination > li > span {
+.pagination > li > a,
+.pagination > li > span,
+.pagination > .disabled > a, .pagination > .disabled > a:hover, .pagination > .disabled > a:active, .pagination > .disabled > a:focus {
     color: whitesmoke;
     background-color: #333;
     border: none;
+}
+
+
+/* Dropdown */
+.dropdown-toggle,
+.dropdown-toggle:focus,
+.dropdown-toggle:active {
+    background-color: #000000;
+    color: whitesmoke;
+    border: none;
+    border-bottom: 1px solid grey;
+}
+
+.dropdown-toggle:hover, .btn-default:active:hover, .btn-default.active:hover, .open > .dropdown-toggle.btn-default:hover, .btn-default:active:focus, .btn-default.active:focus, .open > .dropdown-toggle.btn-default:focus, .btn-default:active.focus, .btn-default.active.focus, .open > .dropdown-toggle.btn-default.focus {
+    color: whitesmoke;
+    background-color: black;
+
+    border-color: #5A180C;
+    outline: 0;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgb(90, 24, 12);
+}
+.dropdown-menu {
+    background-color: black;
+    /* border-color: #5A180C; */
+    outline: 0;
+    /* box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgb(90, 24, 12); */
+    border-bottom: 1px solid grey;
+}
+.dropdown.open {
+    color: whitesmoke !important;
+    background-color: black !important;;
+
+    border-color: #5A180C !important;;
+    outline: 0 !important;;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgb(90, 24, 12) !important;;
+}
+
+.dropdown-menu > li > a {
+    color: whitesmoke;
+}
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+    background-color: #5A180C;
+    color: whitesmoke;
+}
+.dropdown-menu {
+    min-width: 0;
 }
 
 
@@ -104,4 +150,10 @@ body {
 .main-container {
    padding-top: 50px;
    padding-bottom: 50px;
+}
+
+.map-wrapper {
+    width: 100% !important;
+    height: 0;
+    padding-bottom: 50%;
 }

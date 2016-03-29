@@ -1,79 +1,114 @@
 #characters {
-	position: absolute;
-	width: 245px;
-	margin-top:3.5em;
-	top: 0;
-	bottom: 0;
-	overflow: scroll;
-	right: 0;
+    position: absolute;
+    width: 245px;
+    margin-top: 3.5em;
+    top: 0;
+    bottom: 0;
+    overflow: scroll;
+    right: 0;
 }
 
 #characters .glyphicon-remove {
-	right: 8px;
+    right: 8px;
 }
 
 #filter .input-group {
-	width: 100%;
+    width: 100%;
 }
+
 #map {
-	background: #001;
-	position: absolute;
-	left:0;
-	right: 250px;
-	top:0;
-	bottom: 40px;
+    background: #001;
+    position: absolute;
+    left: 0;
+    right: 250px;
+    top: 0;
+    bottom: 40px;
+    width: 100%
 }
 
 #sidebar {
-	background: #CFD8DC;
-	padding: 0.5em;
-	position: absolute;
-	width: 250px;
-	right: 0;
-	top:0;
-	bottom: 0;
+    background: #CFD8DC;
+    padding: 0.5em;
+    position: absolute;
+    width: 250px;
+    right: 0;
+    top: 0;
+    bottom: 0;
 }
 
-#sidebar hr{
-	margin: 0.5em 0;
-	border: 2px solid #B6B6B6;
+#sidebar hr {
+    margin: 0.5em 0;
+    border: 2px solid #B6B6B6;
 }
 
 #timeline {
-	position:absolute;
-	left:0;
-	right:250px;
-	bottom:0;
-	height:40px;
-	background:#030912;
-	color:#fff;
-	padding: 5px 15px 0;
+    position: absolute;
+    left: 0;
+    right: 250px;
+    bottom: 0;
+    height: 40px;
+    background: #030912;
+    color: #fff;
+    padding: 5px 15px 0;
+    width: 100%
 }
 
 .glyphicon-flag {
-  color: grey;
+    color: grey;
 }
 
 .gotmap-dropdown {
-	position: absolute;
-	overflow-y: auto;
-	overflow-x: hidden;	
-	height: 300px;
+    position: absolute;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 300px;
 }
 
-.gotmap-dropdown 	a {
-	width: 236px;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
+.gotmap-dropdown a {
+    width: 236px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .dropdown-header {
-	width: 236px;
+    width: 236px;
+}
+
+.characterinfo a {
+    cursor: pointer;
 }
 
 .map-wrapper {
-  position: relative;
-  height: 400px;
-  width: 800px;
+    width: 100% !important;
+    height: 0;
+    padding-bottom: 50%;
+}
+
+@media (max-width: 767px) {
+    .map-wrapper {
+        position: relative;
+    }
+
+    .map-wrapper #map {
+        width: 100%;
+        margin-top: 60px;
+    }
+
+    .map-wrapper #sidebar {
+        position: relative;
+        width: 100%;
+    }
+
+    .map-wrapper #sidebar #characters {
+        display: none;
+    }
+
+    .map-wrapper #sidebar hr {
+        display: none;
+    }
+
+    .map-wrapper #timeline {
+        width: 100%;
+    }
 }
