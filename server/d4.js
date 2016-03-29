@@ -34,8 +34,12 @@ gotsent.init();
 gotsent.update();
 
 d4.use('/csv/:slug.csv', ctrData);
-d4.use('/chart.css', gotsent.css.serve);
-d4.use('/chart.js', gotsent.js.serve);
+d4.get('/chart.css', function(req,res) {
+    res.sendFile(gotsent.css);
+});
+d4.get('/chart.js', function(req,res) {
+    res.sendFile(gotsent.js);
+});
 
 d4.get('/sentiment/:rank', function (req,res) {
   if (req.params.rank == "top") {
