@@ -4,9 +4,9 @@ var Api = require('../network/SentimentAPI');
 
 var TwitterSentimentsActions = {
 
-    loadTopSentimetns: function(count,startDate,endDate) {
+    loadTopSentiments: function(count,startDate,endDate) {
         Api
-            .get('topSentiment')
+            .get('d5/sentiment/top')
             .query({number: count})
             .query({startDate: startDate})
             .query({endDate: endDate})
@@ -20,7 +20,7 @@ var TwitterSentimentsActions = {
     },
     loadFlopSentiments: function(count,startDate,endDate) {
         Api
-            .get('worstSentiment')
+            .get('d5/sentiment/worst')
             .query({number: count})
             .query({startDate: startDate})
             .query({endDate: endDate})
@@ -34,7 +34,7 @@ var TwitterSentimentsActions = {
     },
     loadTopControversial: function(count,startDate,endDate) {
         Api
-            .get('topControversial')
+            .get('d5/sentiment/controversial')
             .query({number: count})
             .query({startDate: startDate})
             .query({endDate: endDate})
@@ -48,7 +48,7 @@ var TwitterSentimentsActions = {
     },
     loadMostTalkedAbout: function(count,startDate,endDate) {
         Api
-            .get('mostTalkedAbout')
+            .get('d5/sentiment/talked')
             .query({number: count})
             .query({startDate: startDate})
             .query({endDate: endDate})
@@ -62,7 +62,7 @@ var TwitterSentimentsActions = {
     },
     loadChatacterSentiment: function(name,date) {
         Api
-            .get('getSentimentForName')
+            .get('d5/sentiment')
             .query({name: name})
             .query({date: date})
             .then(function (sentiments) {
@@ -75,7 +75,7 @@ var TwitterSentimentsActions = {
     },
     loadCharacterSentimentByTimeframe: function(name,startDate,endDate) {
         Api
-            .get('getSentimentForNameTimeframe')
+            .get('d5/sentiment/')
             .query({name: name})
             .query({startDate: startDate})
             .query({endDate: endDate})
@@ -89,10 +89,10 @@ var TwitterSentimentsActions = {
     },
     loadCharacterSentimentByEpisode: function(name,season,episode) {
         Api
-            .get('sentimentPerEpisode')
+            .get('d5/sentiment')
             .query({name: name})
             .query({season: season})
-            .query({episode: epsiode})
+            .query({episode: episode})
             .then(function (sentiments) {
                 // Dispatch an action containing the categories.
                 AppDispatcher.handleServerAction({
