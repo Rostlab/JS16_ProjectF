@@ -1,7 +1,7 @@
 var request = require('superagent');
 var Promise = require('es6-promise').Promise;
 
-var baseUrl = 'localhost:8080/';
+var baseUrl = process.env.__PROTOCOL__ + process.env.__API__ + process.env.__PREFIX__;
 
 var SentimentAPI = {
     get: function (url) {
