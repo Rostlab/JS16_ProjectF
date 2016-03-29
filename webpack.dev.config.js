@@ -16,8 +16,8 @@ try {
     console.log(err);
     analytics = process.env.ANALYTICS;
     api = process.env.__API__;
-    https = process.env.__HTTPS__;
-    prefix = process.env.__prefix__;
+    https = process.env.__PROTOCOL__;
+    prefix = process.env.__PREFIX__;
 }
 
 var config = {
