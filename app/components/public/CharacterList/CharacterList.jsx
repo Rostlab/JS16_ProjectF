@@ -152,20 +152,22 @@ export default class CharacterListPage extends Component {
     }
 
     handleChange() { // Event triggered by search input
+      let filter = {'value': this.refs.input.getValue()};
       if (!this.state.text_changed) { // On page load loading
         this.setState({
+          text_changed: true,
           data: Store.getCharacters(this.state.activePage, this.state.sort, filter),
-          filter: {'value': this.refs.input.getValue()},
-          text_changed: true
+          filter: {'value': this.refs.input.getValue()}
         });
         return;
       }
-      let filter = {'value': this.refs.input.getValue()};
+
       this.setState({
         data: Store.getCharacters(this.state.activePage, this.state.sort, filter),
         filter: {'value': this.refs.input.getValue()},
         activePage: 1
       });
+
       this.pushHistory();
     }
 
