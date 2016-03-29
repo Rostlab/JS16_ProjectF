@@ -17,7 +17,7 @@ try {
     analytics = process.env.ANALYTICS;
     api = process.env.API;
     https = process.env.PROTOCOL;
-    prefix = process.env.PREFIX;
+    prefix = process.env.PREFIXDIR;
 }
 
 
