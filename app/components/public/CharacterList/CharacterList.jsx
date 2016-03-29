@@ -124,7 +124,7 @@ export default class CharacterListPage extends Component {
           data: Store.getCharacters(1,sort, this.state.filter),
           sort: sort,
           activePage: 1,
-          sortText: "Name asc"
+          sortText: "Name A to Z"
         });
       } else if(eventKey == 3) {
         sort = {field: "name", type: -1};
@@ -132,7 +132,7 @@ export default class CharacterListPage extends Component {
           data: Store.getCharacters(1,sort, this.state.filter),
           sort: sort,
           activePage: 1,
-          sortText: "Name desc"
+          sortText: "Name Z to A"
         });
       }
       this.pushHistory(undefined,sort);
