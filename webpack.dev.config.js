@@ -5,13 +5,16 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require('path');
 var npm_dir = path.join(__dirname, '/node_modules/');
 
-var analytics;
+var analytics, api;
 try {
     var json = require('./config/config.json');
     analytics = json.google_analytics.key;
+    api = json.gotsent.api.host;
 } catch (err) {
     console.log(err);
     analytics = process.env.ANALYTICS;
+    api = process.env.__API__;
+
 }
 
 var config = {
@@ -94,7 +97,14 @@ var config = {
         new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin(),
-        new webpack.DefinePlugin({GA_TRACKING_CODE: JSON.stringify(analytics)})
+        new webpack.DefinePlugin({
+            GA_TRACKING_CODE: JSON.stringify(analytics),
+            'process.env':{
+                'NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+                '__API__': JSON.stringify(api)
+            },
+
+        })
     ]
 };
 

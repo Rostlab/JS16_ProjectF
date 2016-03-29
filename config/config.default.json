@@ -5,7 +5,7 @@
 
 
   "apiA": {
-    "url": "https://got-api.bruck.me/api/"
+    "url": "https://api.got.show/api/"
   },
 
 
@@ -24,11 +24,13 @@
         "access_token_secret": "xxx"
     },
 
-    "databaseA" : {
+    "database" : {
       "_comment": "This is the access to the database, where the tweets are stored by the package",
-      "token" : "xxxxxxxxxxxxxxxxx",
-      "airDateURL" : "xxxxxxxxxxxxxxxxx",
-      "characterNamesURL" : "xxxxxxxxxxxxxxxxx"
+      "airDateURL": "xxxxx",
+      "characterNamesURL": "xxxxx",
+      "sentimentSave": "xxxxx",
+      "sentimentGetChar": "xxxxx",
+      "sentimentGetAll": "xxxxx"
     },
 
     "automation" : {
@@ -43,7 +45,7 @@
         },
         "api": {
             "https": true,
-            "host": "got-api.bruck.me",
+            "host": "api.got.show",
             "prefix": "/api/"
         },
         "twitter": {

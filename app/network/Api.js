@@ -1,7 +1,7 @@
 var request = require('superagent');
 var Promise = require('es6-promise').Promise;
 
-var baseUrl = 'https://got-api.bruck.me/api/';
+var baseUrl = "https://" + process.env.__API__ + "/api/";
 
 var Api = {
     get: function (url) {
