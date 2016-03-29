@@ -14,5 +14,8 @@
   "rules": {
       "semi": 2,
     	"no-mixed-spaces-and-tabs": 0
+  },
+  "globals": {
+    "process": true
   }
 }

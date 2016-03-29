@@ -22,8 +22,11 @@ export default class Character extends Component {
         Store.addChangeListener(this._onChange);
     }
 
-    componentDidMount(){
-        Actions.loadCharacter(decodeURIComponent(this.props.params.id));
+    componentDidMount() {
+        var char = decodeURIComponent(this.props.params.id);
+        char = char.replace('(', '%5C(');
+        char = char.replace(')', '%5C)');
+        Actions.loadCharacter(char);
     }
 
     componentWillUnmount(){
@@ -36,7 +39,7 @@ export default class Character extends Component {
         });
     }
     render() {
-        var base_url = "https://got-api.bruck.me/";
+        var base_url = process.env.__PROTOCOL__ + process.env.__API__ + "/";
         var img = (!this.state.character.imageLink) ? "https://placeholdit.imgix.net/~text?txtsize=33&txt=profile%20picture%20&w=350&h=350" : base_url+this.state.character.imageLink;
         return (
             <div className="character-container">

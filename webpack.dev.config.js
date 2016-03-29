@@ -5,13 +5,19 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require('path');
 var npm_dir = path.join(__dirname, '/node_modules/');
 
-var analytics;
+var analytics, api, https, prefix;
 try {
     var json = require('./config/config.json');
     analytics = json.google_analytics.key;
+    api = json.gotsent.api.host;
+    https = json.gotsent.api.https ? "https://" : "http://";
+    prefix = json.gotsent.api.prefix;
 } catch (err) {
     console.log(err);
     analytics = process.env.ANALYTICS;
+    api = process.env.__API__;
+    https = process.env.__HTTPS__;
+    prefix = process.env.__prefix__;
 }
 
 var config = {
@@ -94,7 +100,16 @@ var config = {
         new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin(),
-        new webpack.DefinePlugin({GA_TRACKING_CODE: JSON.stringify(analytics)})
+        new webpack.DefinePlugin({
+            GA_TRACKING_CODE: JSON.stringify(analytics),
+            'process.env':{
+                'NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+                '__API__': JSON.stringify(api),
+                '__PROTOCOL__': JSON.stringify(https),
+                '__PREFIX__': JSON.stringify(prefix)
+            },
+
+        })
     ]
 };
 

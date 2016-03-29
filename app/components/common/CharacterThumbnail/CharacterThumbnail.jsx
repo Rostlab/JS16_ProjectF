@@ -9,7 +9,7 @@ export default class CharacterThumbnail extends Component {
 
     render() {
 		var img = (this.props.imageUrl ===
-		"https://placeholdit.imgix.net/~text?txtsize=28&txt=Fallback-Image&w=300&h=350") ? this.props.imageUrl : "https://got-api.bruck.me"+this.props.imageUrl ;
+		"https://placeholdit.imgix.net/~text?txtsize=28&txt=Fallback-Image&w=300&h=350") ? this.props.imageUrl :process.env.__PROTOCOL__ + process.env.__API__ + this.props.imageUrl ;
 
 		var detailLink = '/characters/'+encodeURIComponent(this.props.name);
 
