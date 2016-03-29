@@ -10,7 +10,7 @@ var TwitterSentimentsActions = {
             .query({number: count})
             .then(function (sentiments) {
                 AppDispatcher.handleServerAction({
-                    actionType: Constants.RECEIVE_TWITTER_TOP_CHARACTERS,
+                    actionType: Constants.RECEIVE_TWITTER_TOP_SENTIMENTS,
                     data: sentiments
                 });
             });
@@ -21,7 +21,7 @@ var TwitterSentimentsActions = {
             .query({number: count})
             .then(function (sentiments) {
                 AppDispatcher.handleServerAction({
-                    actionType: Constants.RECEIVE_TWITTER_FLOP_CHARACTERS,
+                    actionType: Constants.RECEIVE_TWITTER_FLOP_SENTIMENTS,
                     data: sentiments
                 });
             });
@@ -34,7 +34,7 @@ var TwitterSentimentsActions = {
             .query({endDate: endDate})
             .then(function (sentiments) {
                 AppDispatcher.handleServerAction({
-                    actionType: Constants.RECEIVE_TWITTER_CONTROVERSIAL_CHARACTERS,
+                    actionType: Constants.RECEIVE_TWITTER_CONTROVERSIAL_SENTIMENTS,
                     data: sentiments
                 });
             });
@@ -45,7 +45,7 @@ var TwitterSentimentsActions = {
             .query({number: count})
             .then(function (sentiments) {
                 AppDispatcher.handleServerAction({
-                    actionType: Constants.RECEIVE_TWITTER_TALKED_ABOUT_CHARACTERS,
+                    actionType: Constants.RECEIVE_TWITTER_TALKED_ABOUT_SENTIMENTS,
                     data: sentiments
                 });
             });
