@@ -1,9 +1,9 @@
 var request = require('superagent');
 var Promise = require('es6-promise').Promise;
 
-var baseUrl = 'https://got-api.bruck.me/api/';
+var baseUrl = 'localhost:8080/';
 
-var Api = {
+var SentimentAPI = {
     get: function (url) {
         return new Promise(function (resolve, reject) {
             request
@@ -19,4 +19,4 @@ var Api = {
     }
 };
 
-module.exports = Api;
+module.exports = SentimentAPI;
