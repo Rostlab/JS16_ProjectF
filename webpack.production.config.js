@@ -15,9 +15,9 @@ try {
 } catch (err) {
     console.log(err);
     analytics = process.env.ANALYTICS;
-    api = process.env.__API__;
-    https = process.env.__PROTOCOL__;
-    prefix = process.env.__PREFIX__;
+    api = process.env.API;
+    https = process.env.PROTOCOL;
+    prefix = process.env.PREFIX;
 }
 
 
