@@ -11,7 +11,6 @@ var TwitterSentimentsActions = {
             .query({startDate: startDate})
             .query({endDate: endDate})
             .then(function (sentiments) {
-                // Dispatch an action containing the categories.
                 AppDispatcher.handleServerAction({
                     actionType: Constants.RECEIVE_TWITTER_TOP_CHARACTERS,
                     data: sentiments
@@ -25,7 +24,6 @@ var TwitterSentimentsActions = {
             .query({startDate: startDate})
             .query({endDate: endDate})
             .then(function (sentiments) {
-                // Dispatch an action containing the categories.
                 AppDispatcher.handleServerAction({
                     actionType: Constants.RECEIVE_TWITTER_FLOP_CHARACTERS,
                     data: sentiments
@@ -39,7 +37,6 @@ var TwitterSentimentsActions = {
             .query({startDate: startDate})
             .query({endDate: endDate})
             .then(function (sentiments) {
-                // Dispatch an action containing the categories.
                 AppDispatcher.handleServerAction({
                     actionType: Constants.RECEIVE_TWITTER_CONTROVERSIAL_CHARACTERS,
                     data: sentiments
@@ -53,7 +50,6 @@ var TwitterSentimentsActions = {
             .query({startDate: startDate})
             .query({endDate: endDate})
             .then(function (sentiments) {
-                // Dispatch an action containing the categories.
                 AppDispatcher.handleServerAction({
                     actionType: Constants.RECEIVE_TWITTER_TALKED_ABOUT_CHARACTERS,
                     data: sentiments
@@ -66,7 +62,6 @@ var TwitterSentimentsActions = {
             .query({name: name})
             .query({date: date})
             .then(function (sentiments) {
-                // Dispatch an action containing the categories.
                 AppDispatcher.handleServerAction({
                     actionType: Constants.RECEIVE_TWITTER_CHARACTER_SENTIMENT,
                     data: sentiments
@@ -80,7 +75,6 @@ var TwitterSentimentsActions = {
             .query({startDate: startDate})
             .query({endDate: endDate})
             .then(function (sentiments) {
-                // Dispatch an action containing the categories.
                 AppDispatcher.handleServerAction({
                     actionType: Constants.RECEIVE_TWITTER_CHARACTER_SENTIMENT,
                     data: sentiments
@@ -94,7 +88,6 @@ var TwitterSentimentsActions = {
             .query({season: season})
             .query({episode: episode})
             .then(function (sentiments) {
-                // Dispatch an action containing the categories.
                 AppDispatcher.handleServerAction({
                     actionType: Constants.RECEIVE_TWITTER_CHARACTER_SENTIMENT,
                     data: sentiments
