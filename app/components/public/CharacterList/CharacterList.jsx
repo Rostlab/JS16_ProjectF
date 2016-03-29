@@ -51,17 +51,30 @@ export default class CharacterListPage extends Component {
       if( this.props.location.query.page != undefined ) {
         page = parseInt(this.props.location.query.page);
       }
-      let sort = {field: "pageRank", type: -1};
-      let filter ={'value': ''};
+
+      let sortText, sort;
+      if( this.props.location.query.sort != undefined && this.props.location.query.order != undefined  ) {
+        if (this.props.location.query.sort == 'name' && this.props.location.query.order == '1') {
+          sortText =  "Name A to Z";
+          sort = {field: "name", type: 1};
+        } else if (this.props.location.query.sort == 'name' && this.props.location.query.order == '-1') {
+          sortText =  "Name Z to A";
+          sort = {field: "name", type: -1};
+        }
+      } else {
+        sortText =  "Popularity";
+        sort = {field: "pageRank", type: -1};
+      }
       this.state = {
-        data: Store.getCharacters(page,sort, filter),
+        data: Store.getCharacters(page,sort, {'value': ''}),
         activePage: page,
-        filter: filter,
+        filter: {'value': ''},
         loaded: false,
-        sortText: "Popularity",
+        sortText: sortText,
         sort: sort,
         text_changed: false
       };
+
       this._onChange = this._onChange.bind(this);
     }
 
@@ -124,7 +137,7 @@ export default class CharacterListPage extends Component {
           data: Store.getCharacters(1,sort, this.state.filter),
           sort: sort,
           activePage: 1,
-          sortText: "Name asc"
+          sortText: "Name A to Z"
         });
       } else if(eventKey == 3) {
         sort = {field: "name", type: -1};
@@ -132,7 +145,7 @@ export default class CharacterListPage extends Component {
           data: Store.getCharacters(1,sort, this.state.filter),
           sort: sort,
           activePage: 1,
-          sortText: "Name desc"
+          sortText: "Name Z to A"
         });
       }
       this.pushHistory(undefined,sort);
@@ -158,7 +171,7 @@ export default class CharacterListPage extends Component {
       this.pushHistory();
     }
 
-    render(){
+    render() {
       return (
         <div>
           <Row className="inputbar">

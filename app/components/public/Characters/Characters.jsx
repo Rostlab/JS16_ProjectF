@@ -1,4 +1,3 @@
-/*eslint no-console: 0*/
 /*eslint no-undef: 0*/
 
 import React from 'react';
@@ -23,10 +22,7 @@ export default class Character extends Component {
     }
 
     componentDidMount() {
-        var char = decodeURIComponent(this.props.params.id);
-        char = char.replace('(', '%5C(');
-        char = char.replace(')', '%5C)');
-        Actions.loadCharacter(char);
+        Actions.loadCharacter(decodeURIComponent(this.props.params.id));
     }
 
     componentWillUnmount(){
