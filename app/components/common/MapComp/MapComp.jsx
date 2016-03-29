@@ -68,7 +68,16 @@ export default class MapComp extends Component {
   }
 
   initMap(){
+    let url = process.env.__PROTOCOL__ + process.env.__API__ + process.env.__PREFIX__;
     let config = {
+      'apiLocation': url,
+      'personImageBaseUrl': process.env.__PROTOCOL__ + process.env.__API__,
+      'characterDataSource':  url + '/characters',
+      'cityDataSource': url + '/cities',
+      'realmDataSource': url + '/regions',
+      'pathDataSource': url + '/characters/paths',
+      'episodeDataSource': url + '/episodes',
+      'pinDataSource': url + '/characters/locations',
       'characterBox':'#characters',
       'timeline':'#timeline',
       'filter':'#filter input',

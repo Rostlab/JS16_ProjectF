@@ -26,15 +26,14 @@
 
     "database" : {
       "_comment": "This is the access to the database, where the tweets are stored by the package",
-      "airDateURL": "xxxxx",
-      "characterNamesURL": "xxxxx",
-      "sentimentSave": "xxxxx",
-      "sentimentGetChar": "xxxxx",
-      "sentimentGetAll": "xxxxx"
+      "airDateURL": "https://api.got.show/api/episodes/find",
+      "characterNamesURL": "https://api.got.show/api/characters/",
+      "sentimentSave": "https://api.got.show/api/sentiment?token=got-very-secure-token-no-one-will-ever-actually-guess",
+      "sentimentGetChar": "https://api.got.show/api/sentiment/find",
+      "sentimentGetAll": "https://api.got.show/api/sentiment/byTimeRange?beginDate=startdate&endDate=enddate"
     },
 
     "automation" : {
-      "_comment": "This is the access token to access the database from https://github.com/Rostlab/JS16_ProjectA",
       "minutes" : 12
     }
   },
