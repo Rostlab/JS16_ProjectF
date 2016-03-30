@@ -4,6 +4,13 @@
   },
 
 
+  "api": {
+    "https": true,
+    "host": "api.got.show",
+    "prefix": "/api/"
+  },
+
+
   "twitter_hash_tag": {
     "hash": "hashtag for timeline twitter widget"
   },
@@ -37,11 +44,6 @@
         "_comment": "More info https://www.npmjs.com/package/gotsentimental",
         "mongodb": {
             "uri": "mongodb://<user>:<pass>@<server>/<db>"
-        },
-        "api": {
-            "https": true,
-            "host": "api.got.show",
-            "prefix": "/api/"
         },
         "twitter": {
             "access_token": "",

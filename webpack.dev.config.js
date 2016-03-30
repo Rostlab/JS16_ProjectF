@@ -9,15 +9,15 @@ var analytics, api, https, prefix;
 try {
     var json = require('./config/config.json');
     analytics = json.google_analytics.key;
-    api = json.gotsent.api.host;
-    https = json.gotsent.api.https ? "https://" : "http://";
-    prefix = json.gotsent.api.prefix;
+    api = json.api.host;
+    https = json.api.https ? "https://" : "http://";
+    prefix = json.api.prefix;
 } catch (err) {
     console.log(err);
     analytics = process.env.ANALYTICS;
-    api = process.env.__API__;
-    https = process.env.__PROTOCOL__;
-    prefix = process.env.__PREFIX__;
+    api = process.env.API;
+    https = process.env.PROTOCOL;
+    prefix = process.env.PREFIXDIR;
 }
 
 var config = {
