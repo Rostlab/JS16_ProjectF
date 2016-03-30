@@ -112,9 +112,7 @@ export default class MapComp extends Component {
     let end = this.props.endtimeline;
     if (patt.test(end)) {
       end = (patt.exec(end)[1]) *  patt.exec(end)[2];
-    } else { end = 2; }
-    console.log(begin); /*eslint no-console:0, no-undef:0*/
-    console.log(end); /*eslint no-console:0, no-undef:0*/
+    } else { end = 50; }
     return [parseInt(begin),parseInt(end)];
   }
 
