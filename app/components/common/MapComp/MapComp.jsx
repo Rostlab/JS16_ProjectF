@@ -91,7 +91,9 @@ export default class MapComp extends Component {
     };
     var mymap = gotmap('#map', config); /*eslint no-undef:0*/
 
-    var range = this.parseRange();
+
+    var range = this.props.begintimeline !== undefined ? this.parseRange() : [1,50];
+
     mymap.updateMap(range);
     for (let i of this.props.character) {
       setTimeout(function (){ /*eslint no-undef:0*/
@@ -102,15 +104,15 @@ export default class MapComp extends Component {
   }
 
   parseRange(){
-    let patt = /s([0-9])e([0-9])/i;
+    let patt = /s([0-9]{2}|[0-9]{1})e([0-9]{2}|[0-9]{1})/i;
     let begin = this.props.begintimeline;
     if (patt.test(begin)) {
-      begin = patt.exec(begin)[1]-1 + patt.exec(begin)[2];
+      begin = (patt.exec(begin)[1]) * patt.exec(begin)[2];
     } else { begin = 1; }
     let end = this.props.endtimeline;
     if (patt.test(end)) {
-      end = patt.exec(end)[1]-1 +  patt.exec(end)[2];
-    } else { end = 2; }
+      end = (patt.exec(end)[1]) *  patt.exec(end)[2];
+    } else { end = 50; }
     return [parseInt(begin),parseInt(end)];
   }
 
