@@ -60,6 +60,9 @@ export default class CharacterListPage extends Component {
         } else if (this.props.location.query.sort == 'name' && this.props.location.query.order == '-1') {
           sortText =  "Name Z to A";
           sort = {field: "name", type: -1};
+        } else {
+          sortText =  "Popularity";
+          sort = {field: "pageRank", type: -1};
         }
       } else {
         sortText =  "Popularity";
