@@ -4,11 +4,6 @@
   },
 
 
-  "apiA": {
-    "url": "https://api.got.show/api/"
-  },
-
-
   "twitter_hash_tag": {
     "hash": "hashtag for timeline twitter widget"
   },
@@ -26,10 +21,10 @@
 
     "database" : {
       "_comment": "This is the access to the database, where the tweets are stored by the package",
-      "airDateURL": "https://api.got.show/api/episodes/find",
+      "airDateURL": "https://api.got.show/api/episodes/find?token=<TOKEN>",
       "characterNamesURL": "https://api.got.show/api/characters/",
-      "sentimentSave": "https://api.got.show/api/sentiment?token=got-very-secure-token-no-one-will-ever-actually-guess",
-      "sentimentGetChar": "https://api.got.show/api/sentiment/find",
+      "sentimentSave": "https://api.got.show/api/sentiment?token=<TOKEN",
+      "sentimentGetChar": "https://api.got.show/api/sentiment/find?token=<TOKEN>",
       "sentimentGetAll": "https://api.got.show/api/sentiment/byTimeRange?beginDate=startdate&endDate=enddate"
     },
 
@@ -39,6 +34,7 @@
   },
 
   "gotsent": {
+        "_comment": "More info https://www.npmjs.com/package/gotsentimental",
         "mongodb": {
             "uri": "mongodb://<user>:<pass>@<server>/<db>"
         },
