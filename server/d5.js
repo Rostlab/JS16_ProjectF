@@ -17,10 +17,12 @@ try {
       "access_token_secret": process.env.access_token_secret
     },
 
-    "databaseA" : {
-      "token" : "xxxxxxxxxxxxxxxxx",
-      "airDateURL" : "xxxxxxxxxxxxxxxxx",
-      "characterNamesURL" : "xxxxxxxxxxxxxxxxx"
+    "database" : {
+      "airDateURL": "https://api.got.show/api/episodes/find?token=<TOKEN>",
+      "characterNamesURL": "https://api.got.show/api/characters/",
+      "sentimentSave": "https://api.got.show/api/sentiment?token=<TOKEN>",
+      "sentimentGetChar": "https://api.got.show/api/sentiment/find?token=<TOKEN>",
+      "sentimentGetAll": "https://api.got.show/api/sentiment/byTimeRange?beginDate=startdate&endDate=enddate"
     },
 
     "automation" : {

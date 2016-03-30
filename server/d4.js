@@ -13,11 +13,6 @@ try {
     "mongodb": {
       "uri": process.env.MONGODB
     },
-    "api": {
-      "https": true,
-      "host": "got-api.bruck.me",
-      "prefix": "/api/"
-    },
     "twitter": {
       "access_token": process.env.access_token,
       "access_token_secret": process.env.access_token_secret,
