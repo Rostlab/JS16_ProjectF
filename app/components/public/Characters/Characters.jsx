@@ -3,11 +3,13 @@
 import React from 'react';
 let {Component} = React;
 import './Characters.css';
-import { Row, Col, Image, Tabs, Tab, ListGroup, ListGroupItem } from 'react-bootstrap';
+import { Row, Col, Image, Tabs, Tab, ListGroup, ListGroupItem, ProgressBar } from 'react-bootstrap';
 
 import MapComp from '../../common/MapComp/MapComp.jsx';
 import Store from '../../../stores/CharactersStore';
 import Actions from '../../../actions/CharactersActions';
+
+import tombstone from './rip_tombstone.png';
 
 export default class Character extends Component {
 
@@ -69,10 +71,15 @@ export default class Character extends Component {
                         <p>Check out what our two different algorithms say</p>
                         <Tabs>
                             <Tab eventKey={1} title="Predictor 1">
-                                <p>{this.state.character.name}'s likeliyhood to die is 50%</p>
+                                <p>{this.state.character.name}'s likelihood to die is:</p>
+                                <div className="plodContainer">
+                                    <ProgressBar now={60} label="%(percent)s%" />
+                                    <img src={tombstone} />
+                                </div>
+                                <p>We developed a machine learning-based algorithm that predicts character's percentage likelihood of death (PLOD) based on characteristics such as age, gender, title and others (described here).</p>
                             </Tab>
                             <Tab eventKey={2} title="Predictor 2">
-                                <p>{this.state.character.name}'s likeliyhood to die is 10%</p>
+                                <p>{this.state.character.name}'s likelihood to die is 10%</p>
                             </Tab>
                         </Tabs>
                     </Col>
