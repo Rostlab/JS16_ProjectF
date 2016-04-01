@@ -78,7 +78,7 @@
 .plodContainer .progress {
 	display: inline-block;
 	width: 90%;
-	background-color: #1F1F1F;
+	background-color: #333333;
 }
 .plodContainer .progress-bar {
 	background-color: #5A180C;
