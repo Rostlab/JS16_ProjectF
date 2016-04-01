@@ -2,30 +2,23 @@
   "google_analytics": {
     "key": "xxx"
   },
-
-
   "api": {
     "https": true,
     "host": "api.got.show",
     "prefix": "/api/"
   },
-
-
   "twitter_hash_tag": {
     "hash": "hashtag for timeline twitter widget"
   },
-
-
   "gotdailysentiment": {
     "_comment" : "More info: https://www.npmjs.com/package/gotdailysentiment",
     "twitter" : {
-        "_comment": "These are the access tokens to the Twitter-API",
-        "consumer_key": "xxx",
-        "consumer_secret": "xxx",
-        "access_token_key": "xxx",
-        "access_token_secret": "xxx"
+      "_comment": "These are the access tokens to the Twitter-API",
+      "consumer_key": "xxx",
+      "consumer_secret": "xxx",
+      "access_token_key": "xxx",
+      "access_token_secret": "xxx"
     },
-
     "database" : {
       "_comment": "This is the access to the database, where the tweets are stored by the package",
       "airDateURL": "https://api.got.show/api/episodes/find?token=<TOKEN>",
@@ -34,22 +27,25 @@
       "sentimentGetChar": "https://api.got.show/api/sentiment/find?token=<TOKEN>",
       "sentimentGetAll": "https://api.got.show/api/sentiment/byTimeRange?beginDate=startdate&endDate=enddate"
     },
-
     "automation" : {
       "minutes" : 12
     }
   },
-
   "gotsent": {
-        "_comment": "More info https://www.npmjs.com/package/gotsentimental",
-        "mongodb": {
-            "uri": "mongodb://<user>:<pass>@<server>/<db>"
-        },
-        "twitter": {
-            "access_token": "",
-            "access_token_secret": "",
-            "consumer_key": "",
-            "consumer_secret": ""
-        }
+    "_comment": "More info https://www.npmjs.com/package/gotsentimental",
+    "mongodb": {
+      "uri": "mongodb://<user>:<pass>@<server>/<db>"
+    },
+    "api": {
+      "https": true,
+      "host": "api.got.show",
+      "prefix": "/api/"
+    },
+    "twitter": {
+      "access_token": "",
+      "access_token_secret": "",
+      "consumer_key": "",
+      "consumer_secret": ""
     }
+  }
 }

@@ -19,7 +19,8 @@ import Start from './components/public/Start/Start.jsx';
 import Characters from './components/public/Characters/Characters.jsx';
 import CharacterListPage from './components/public/CharacterList/CharacterList.jsx';
 import Site404 from './components/public/404/404.jsx';
-
+import Imprint from './components/public/Imprint/Imprint.jsx';
+import PrivacyPolicy from './components/public/PrivacyPolicy/PrivacyPolicy.jsx';
 
 import ga from 'ga-react-router';
 import { browserHistory } from 'react-router';
@@ -35,6 +36,8 @@ ReactDOM.render(
       <IndexRoute component={Start}/>
       <Route path="/ranking" component={Ranking}/>
       <Route path="/about" component={About}/>
+      <Route path="/imprint" component={Imprint}/>
+      <Route path="/privacy" component={PrivacyPolicy}/>
       <Route path="/characters">
         <IndexRoute component={CharacterListPage}/>
         <Route path="/characters/:id" component={Characters}/>

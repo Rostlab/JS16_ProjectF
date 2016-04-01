@@ -69,3 +69,22 @@
 .character-container .map-wrapper #sidebar {
 	display: none;
 }
+
+/* PLOD */
+.plodContainer {
+	margin-top: 20px;
+	margin-bottom: -15px;
+}
+.plodContainer .progress {
+	display: inline-block;
+	width: 90%;
+	background-color: #1F1F1F;
+}
+.plodContainer .progress-bar {
+	background-color: #5A180C;
+}
+.plodContainer img {
+	display: inline-block;
+	height: 50px;
+	transform: translateY(-30px);
+}

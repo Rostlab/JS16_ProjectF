@@ -14,7 +14,9 @@ export default class Header extends Component {
                 <Navbar inverse>
                     <Navbar.Header>
                         <Navbar.Brand>
-                            <a href="#">A Song of Ice and Data</a>
+                            <IndexLinkContainer to={{ pathname: '/'}}>
+                                <Button bsStyle="link">A Song of Ice and Data</Button>
+                            </IndexLinkContainer>
                         </Navbar.Brand>
                         <Navbar.Toggle />
                     </Navbar.Header>
