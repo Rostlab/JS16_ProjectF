@@ -6,7 +6,7 @@ import Column from 'react-bootstrap/lib/Col';
 
 import $ from 'jquery';
 
-import FooterText from '../Static/footer.md';
+import FooterText from '../../../../static/footer.md';
 
 export default class Footer extends Component {
 
