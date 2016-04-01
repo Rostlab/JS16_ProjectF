@@ -4,7 +4,7 @@ let {Component} = React;
 import Row from 'react-bootstrap/lib/Row';
 import Column from 'react-bootstrap/lib/Col';
 
-import AboutText from '../../app/Static/about.md';
+import AboutText from '../../../../static/about.md';
 
 export default class About extends Component {
     render() {
