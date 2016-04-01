@@ -21,29 +21,31 @@ import CharacterListPage from './components/public/CharacterList/CharacterList.j
 import Site404 from './components/public/404/404.jsx';
 import Imprint from './components/public/Imprint/Imprint.jsx';
 import PrivacyPolicy from './components/public/PrivacyPolicy/PrivacyPolicy.jsx';
+import PlodDescription from './components/public/PlodDescription/PlodDescription.jsx';
 
 import ga from 'ga-react-router';
 import { browserHistory } from 'react-router';
 
 browserHistory.listen(location => {
-  ga('send','page', location.pathname);
-  ga('send', 'pageview');
+    ga('send', 'page', location.pathname);
+    ga('send', 'pageview');
 });
 
 ReactDOM.render(
-  <Router history={browserHistory}>
-    <Route path="/" component={App}>
-      <IndexRoute component={Start}/>
-      <Route path="/ranking" component={Ranking}/>
-      <Route path="/about" component={About}/>
-      <Route path="/imprint" component={Imprint}/>
-      <Route path="/privacy" component={PrivacyPolicy}/>
-      <Route path="/characters">
-        <IndexRoute component={CharacterListPage}/>
-        <Route path="/characters/:id" component={Characters}/>
-      </Route>
-    </Route>
-    <Route path="/map" component={Map}/>
-    <Route path="*" component={Site404}/>
-  </Router>
-, document.getElementById('root'));
+    <Router history={browserHistory}>
+        <Route path="/" component={App}>
+            <IndexRoute component={Start}/>
+            <Route path="/ranking" component={Ranking}/>
+            <Route path="/about" component={About}/>
+            <Route path="/imprint" component={Imprint}/>
+            <Route path="/privacy" component={PrivacyPolicy}/>
+            <Route path="/plod-description" component={PlodDescription}/>
+            <Route path="/characters">
+                <IndexRoute component={CharacterListPage}/>
+                <Route path="/characters/:id" component={Characters}/>
+            </Route>
+        </Route>
+        <Route path="/map" component={Map}/>
+        <Route path="*" component={Site404}/>
+    </Router>
+    , document.getElementById('root'));
