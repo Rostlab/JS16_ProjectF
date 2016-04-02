@@ -1,6 +1,6 @@
 import React from 'react';
 let {Component} = React;
-import { Row } from 'react-bootstrap';
+import { Row,Col } from 'react-bootstrap';
 
 import AntagonistsComp from '../../common/AntagonistsComp/AntagonistsComp.jsx';
 import Stats from '../../common/Stats/Stats.jsx';
@@ -13,11 +13,16 @@ export default class Start extends Component {
     return (
       <div className="home">
         <Row fluid>
-          <div className="header-image">
-          </div>
-          <StartText />
-          <AntagonistsComp />
+          <Col>
+            <div className="header-image" />
+          </Col>
         </Row>
+        <Row>
+          <Col>
+            <AntagonistsComp />
+          </Col>
+        </Row>
+        <StartText />
         <Stats/>
       </div>
     );

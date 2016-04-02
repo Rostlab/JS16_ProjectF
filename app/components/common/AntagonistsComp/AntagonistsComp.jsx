@@ -1,23 +1,27 @@
 import React from 'react';
-//import path from 'path';
+import { Grid, Row, Col } from 'react-bootstrap';
 let {Component} = React;
-function requireAll(requireContext) {
-  return requireContext.keys().map(requireContext);
-}
-let images = requireAll(require.context("./img", false, /^\.\/.*\.jpg$/));
+require.context("./img", false, /^\.\/.*\.jpg$/); /*eslint no-undef:0*/
 
+import BigBattle from '../BigBattle/BigBattle.jsx';
 import json from 'json!./antagonists.json';
 
 export default class AntagonistsComp extends Component {
   render() {
-    console.log(images[0], '.jpg'); /*eslint no-console:0,no-undef:0*/
-
+  let  randompair = Math.floor(Math.random() * json.length);
+  let name1 = json[randompair][0];
+  let name2 = json[randompair][1];
+  let img1 = '/assets/static/images/'+json[randompair][0].replace(/ /g,'_')+'.jpg';
+  let img2 = '/assets/static/images/'+json[randompair][1].replace(/ /g,'_')+'.jpg';
   return (
-    <div className="home">
-      {json.map(function(pair) {
-        console.log (pair);
-        return <img src={'/assets/static/images/'+pair[0].replace(' ','_')+'.jpg'}/>;
-      })}
+    <div>
+      <Grid>
+        <Row>
+          <Col>
+            <BigBattle name1={name1} name2={name2} img1={img1} img2={img2} />
+          </Col>
+        </Row>
+      </Grid>
     </div>
     );
   }

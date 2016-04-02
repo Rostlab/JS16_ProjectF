@@ -1,30 +1,12 @@
 import React from 'react';
 let {Component} = React;
-import {Grid, Row, Col, Image, Tabs, Tab, OverlayTrigger, Popover} from 'react-bootstrap';
+import {Grid, Row, Col, Tabs, Tab, OverlayTrigger, Popover} from 'react-bootstrap';
 import "./Ranking.css";
 export default class Ranking extends Component {
   render() {
     return (
       <div>
 		<Grid className="ranking">
-			<h1 className="text-center">Who will be the next eliminated?</h1>
-			<Row className="big-battle">
-				<Col xs={6}>
-				<Image src="https://placeholdit.imgix.net/~text?txtsize=33&txt=profile%20picture%20&w=350&h=150"/>
-				</Col>
-				<Col xs={6}>
-				<Image src="https://placeholdit.imgix.net/~text?txtsize=33&txt=profile%20picture%20&w=350&h=150"/>
-				</Col>
-			</Row>
-			<Row className="big-battle-info">
-				<Col xs={6}>
-				<span>character 1<br/>PLOD: 70%</span>
-				</Col>
-				<Col xs={6}>
-				<span>character 2<br/>PLOD: 73%</span>
-				</Col>
-			</Row>
-
 			<Row className="ranking-fields">
 				<Col xs={12} sm={6}>
 <OverlayTrigger trigger="click" placement="top" overlay={<Popover title="Top 5 loved">We have two algorithms!</Popover>}>
