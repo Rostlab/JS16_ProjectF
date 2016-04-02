@@ -1,0 +1,40 @@
+import React from 'react';
+import 'jquery';
+import {ListGroup, ListGroupItem} from 'react-bootstrap';
+let {Component} = React;
+
+export default class CharacterDetails extends Component {
+
+    render() {
+        var details = ["age","house","titles","dateOfDeath","placeOfDeath","books"];
+        var detail;
+        var result = [];
+        var meta = "";
+        for(detail of details){
+            if(detail in this.props.data){
+                switch (detail) {
+                    case "age" : meta = "Age"; break;
+                    case "house" : meta = "House"; break;
+                    case "titles" : meta = "Titles"; break;
+                    case "dateOfDeath" : meta = "Date of death"; break;
+                    case "placeOfDeath" : meta = "Place of death"; break;
+                    case "books" : meta = "Books"; break;
+                    default: break;
+                }
+                result.push(meta+': '+this.props.data[detail]);
+           }
+        }
+        console.log(result);/*eslint no-console:0,no-undef:0*/
+        return (
+            <ListGroup className="character-details">
+            {
+                result.map(function (detail) {
+                    return <ListGroupItem>{detail}</ListGroupItem>;
+                  })
+            }
+            </ListGroup>
+        );
+    }
+}
+
+CharacterDetails.propTypes = { data: React.PropTypes.object};
