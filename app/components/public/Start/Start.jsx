@@ -5,7 +5,7 @@ import { Row } from 'react-bootstrap';
 import Stats from '../../common/Stats/Stats.jsx';
 import './Start.css';
 
-import StartText from '../../app/Static/start.md';
+import StartText from '../../../../static/start.md';
 
 export default class Start extends Component {
   render() {

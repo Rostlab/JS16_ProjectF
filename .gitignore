@@ -40,3 +40,6 @@ build
 
 #configfile
 config.json
+
+#crawled files by d4
+csv
