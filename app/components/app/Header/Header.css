@@ -47,3 +47,18 @@ header {
     position: absolute;
     bottom: 0;
 }
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+    background-color: rgb(90,24,12) !important;
+}
+
+.open.dropdown {
+    background-color: transparent !important;
+}
+.navbar-nav .open .dropdown-menu {
+    border-bottom: 1px solid rgba(90,24,12,0.7);
+}
+.navbar-nav .dropdown .dropdown-toggle {
+    background-color: transparent;
+    border-bottom: none;
+}
