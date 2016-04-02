@@ -11,7 +11,7 @@ var app = express();
 
 app.use(compression());
 
-app.use(express.static(path.join(__dirname, '../', 'build')));
+app.use(express.static(path.join(__dirname, '../build')));
 
 app.use('/d5', d5);
 app.use('/d4', d4);
@@ -26,7 +26,7 @@ var isDev = process.env.NODE_ENV === 'development';
 var isProd = process.env.NODE_ENV === 'production';
 
 if (isDev) {
-  var config = require('../webpack.dev.config.js');
+    var config = require('../configWebpack/dev.js');
   var compiler = webpack(config);
   var devMiddleware = require('webpack-dev-middleware')(compiler, {
     noInfo: true,
