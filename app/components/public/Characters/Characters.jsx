@@ -68,20 +68,13 @@ export default class Character extends Component {
                 <Row>
                     <Col md={8} mdOffset={2}>
                         <h2>Likelihood of Death</h2>
-                        <p>Check out what our two different algorithms say</p>
-                        <Tabs>
-                            <Tab eventKey={1} title="Predictor 1">
-                                <p>{this.state.character.name}'s likelihood to die is:</p>
-                                <div className="plodContainer">
-                                    <ProgressBar now={60} label="%(percent)s%" />
-                                    <img src={tombstone} />
-                                </div>
-                                <p>We developed a machine learning-based algorithm that predicts character's percentage likelihood of death (PLOD) based on characteristics such as age, gender, title and others (described here).</p>
-                            </Tab>
-                            <Tab eventKey={2} title="Predictor 2">
-                                <p>{this.state.character.name}'s likelihood to die is 10%</p>
-                            </Tab>
-                        </Tabs>
+                        <p>{this.state.character.name}'s likelihood to die is:</p>
+                        <div className="plodContainer">
+                            <ProgressBar now={60} label="%(percent)s%" />
+                            <img src={tombstone} />
+                        </div>
+                        <p>We developed a machine learning-based algorithm that predicts character's percentage likelihood of death (PLOD) based on characteristics such as age, gender, title and others <a href="/plod-description">(described here)</a>.</p>
+                        <p>The PLOD score of our slighlty less accurate predictor <a href="/plod-description">(described here)</a> is: 50%</p>
                     </Col>
                 </Row>
                 <Row>
