@@ -16,6 +16,9 @@ import About from './components/public/About/About.jsx';
 import Ranking from './components/public/Ranking/Ranking.jsx';
 import Map from './components/public/Map/Map.jsx';
 import Start from './components/public/Start/Start.jsx';
+import Statistics from './components/public/Statistics/Statistics.jsx';
+import Contribute from './components/public/Contribute/Contribute.jsx';
+import Credits from './components/public/Credits/Credits.jsx';
 import Characters from './components/public/Characters/Characters.jsx';
 import CharacterListPage from './components/public/CharacterList/CharacterList.jsx';
 import Site404 from './components/public/404/404.jsx';
@@ -33,21 +36,24 @@ browserHistory.listen(location => {
 });
 
 ReactDOM.render(
-    <Router history={browserHistory}>
-        <Route path="/" component={App}>
-            <IndexRoute component={Start}/>
-            <Route path="/ranking" component={Ranking}/>
-            <Route path="/about" component={About}/>
-            <Route path="/imprint" component={Imprint}/>
-            <Route path="/privacy" component={PrivacyPolicy}/>
-            <Route path="/plod-description" component={PlodDescription1}/>
-            <Route path="/plod-description2" component={PlodDescription2}/>
-            <Route path="/characters">
-                <IndexRoute component={CharacterListPage}/>
-                <Route path="/characters/:id" component={Characters}/>
-            </Route>
-        </Route>
-        <Route path="/map" component={Map}/>
-        <Route path="*" component={Site404}/>
-    </Router>
-    , document.getElementById('root'));
+  <Router history={browserHistory}>
+    <Route path="/" component={App}>
+      <IndexRoute component={Start}/>
+      <Route path="/ranking" component={Ranking}/>
+      <Route path="/imprint" component={Imprint}/>
+      <Route path="/about" component={About} />
+      <Route path="/credits" component={Credits} />
+      <Route path="/contribute" component={Contribute} />
+      <Route path="/privacy" component={PrivacyPolicy}/>
+      <Route path="/plod-description" component={PlodDescription1}/>
+      <Route path="/plod-description2" component={PlodDescription2}/>
+      <Route path="/statistics" component={Statistics} />
+      <Route path="/characters">
+        <IndexRoute component={CharacterListPage}/>
+        <Route path="/characters/:id" component={Characters}/>
+      </Route>
+    </Route>
+    <Route path="/map" component={Map}/>
+    <Route path="*" component={Site404}/>
+  </Router>
+, document.getElementById('root'));

@@ -2,7 +2,6 @@ import React from 'react';
 
 import { Navbar, Nav, Button } from 'react-bootstrap';
 import { IndexLinkContainer, LinkContainer} from 'react-router-bootstrap';
-
 import "./Header.css";
 
 let {Component} = React;
@@ -22,17 +21,20 @@ export default class Header extends Component {
                     </Navbar.Header>
                     <Navbar.Collapse>
                         <Nav>
-                            <IndexLinkContainer to={{ pathname: '/'}}>
-                                <Button bsStyle="link">Home</Button>
-                            </IndexLinkContainer>
                             <LinkContainer to={{ pathname: '/characters'}}>
-                                <Button bsStyle="link">Character</Button>
+                                <Button bsStyle="link">Characters</Button>
                             </LinkContainer>
                             <LinkContainer to={{ pathname: '/ranking'}}>
                                 <Button bsStyle="link">Ranking</Button>
                             </LinkContainer>
                             <LinkContainer to={{ pathname: '/map'}}>
                                 <Button bsStyle="link">Map</Button>
+                            </LinkContainer>
+                            <LinkContainer to={{ pathname: '/statistics'}}>
+                                <Button bsStyle="link">Statistics</Button>
+                            </LinkContainer>
+                            <LinkContainer to={{ pathname: '/contribute'}}>
+                                <Button bsStyle="link">Contribute</Button>
                             </LinkContainer>
                             <LinkContainer to={{ pathname: '/about'}}>
                                 <Button bsStyle="link">About</Button>
@@ -42,6 +44,5 @@ export default class Header extends Component {
                 </Navbar>
             </header>
         );
-
     }
 }

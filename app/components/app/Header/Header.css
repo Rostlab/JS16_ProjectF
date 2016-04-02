@@ -7,6 +7,11 @@ header {
     font-family: 'Cinzel Decorative', cursive;
 }
 
+.footer {
+    position: absolute;
+    bottom: 0;
+}
+
 .navbar-inverse .navbar-nav > li > a,
 .navbar-brand {
     color: white;
@@ -42,8 +47,4 @@ header {
 .navbar-nav li:hover {
     background-color: #5A180C;
     transition: all .2s;
-}
-.footer {
-    position: absolute;
-    bottom: 0;
 }
