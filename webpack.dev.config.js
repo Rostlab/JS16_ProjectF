@@ -23,13 +23,13 @@ try {
 var config = {
     devtool: 'eval-source-map',
     entry: [
-      'webpack-hot-middleware/client',
-      "./app/main.jsx"
+        'webpack-hot-middleware/client',
+        "./app/main.jsx"
     ],
     output: {
-        path: path.join(__dirname, 'build'),
+        path: path.join(__dirname, '/build'),
         filename: "bundle.js",
-        publicPath: '/assets/'
+        publicPath: "/"
     },
 
     module: {
@@ -90,9 +90,9 @@ var config = {
 
     plugins: [
         new webpack.ProvidePlugin({
-          $: 'jquery',
-          jQuery: 'jquery',
-          'window.jQuery': 'jquery'
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery'
         }),
         new HtmlWebpackPlugin({
             template: path.join(__dirname, "/app/index.tmpl.html")
