@@ -10,7 +10,6 @@ export default class BigBattle extends Component {
   render() {
     return (
       <div>
-        <h1 className="text-center">Who will be the next eliminated?</h1>
         <Row className="big-battle">
           <Col xs={6}>
             <Image src={this.props.img1} alt={"Image of " + this.props.name1}  />
@@ -21,10 +20,14 @@ export default class BigBattle extends Component {
         </Row>
         <Row className="big-battle-info">
           <Col xs={6}>
-            <span>{this.props.name1}<br/>PLOD: 70%</span>
+            <h3>{this.props.name1}</h3>
+            <p>PLOD: 70%</p>
+            <p>[Sentiment-Placeholder]</p>
           </Col>
           <Col xs={6}>
-            <span>{this.props.name2}<br/>PLOD: 73%</span>
+            <h3>{this.props.name2}</h3>
+            <p>PLOD: 50%</p>
+            <p>[Sentiment-Placeholder]</p>
           </Col>
         </Row>
       </div>
