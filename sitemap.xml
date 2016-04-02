@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <url>
+        <loc>https://got.show/</loc>
+        <changefreq>always</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://got.show/characters/?search=&amp;page=1</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>https://got.show/ranking</loc>
+        <changefreq>hourly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>https://got.show/map</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>https://got.show/about</loc>
+        <changefreq>never</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+</urlset>

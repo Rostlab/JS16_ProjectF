@@ -6,7 +6,7 @@ import Column from 'react-bootstrap/lib/Col';
 
 import $ from 'jquery';
 
-import FooterText from '../Static/footer.md';
+import FooterText from '../../../../static/footer.md';
 
 export default class Footer extends Component {
 
@@ -50,10 +50,10 @@ export default class Footer extends Component {
                 <h4>Legal</h4>
                 <hr />
                 <p>
-                  <a href="#">Feedback</a>
+                  <a href="/privacy">Privacy Policy</a>
                 </p>
                 <p>
-                  <a href="#">Imprint</a>
+                  <a href="/imprint">Imprint</a>
                 </p>
                 <p>
                   <a href="https://www.tum.de/">TUM</a>
