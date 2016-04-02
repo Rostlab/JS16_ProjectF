@@ -6,9 +6,8 @@ var LandingPageActions = {
 
     loadPlodCharacters: function(count) {
         Api
-            .get('characters/plod/' + count)
+            .get('plod/byCount/' + count)
             .then(function (characters) {
-                // Dispatch an action containing the categories.
                 AppDispatcher.handleServerAction({
                     actionType: Constants.RECEIVE_PLOD_CHARACTERS,
                     data: characters

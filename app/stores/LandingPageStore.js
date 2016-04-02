@@ -10,7 +10,6 @@ function setPlodCharacter(data) {
     _plodCharacters = data.data;
 }
 
-// Merge our store with Node's Event Emitter
 var LandingPageStore = assign({}, EventEmitter.prototype, {
 
     getPlodCharacters: function() {
