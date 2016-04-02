@@ -3,10 +3,9 @@ let {Component} = React;
 import { Row,Col } from 'react-bootstrap';
 
 import AntagonistsComp from '../../common/AntagonistsComp/AntagonistsComp.jsx';
-import Stats from '../../common/Stats/Stats.jsx';
 import './Start.css';
 
-import StartText from '../../../../static/start.md';
+import HomepageBlog from '../../../../static/home-blog.md';
 
 export default class Start extends Component {
   render() {
@@ -22,8 +21,14 @@ export default class Start extends Component {
             <AntagonistsComp />
           </Col>
         </Row>
-        <StartText />
-        <Stats/>
+        <Row>
+            <br />
+            <Col md={8} mdPush={2}>
+                <div className="homeBlog">
+                    <HomepageBlog/>
+                </div>
+            </Col>
+        </Row>
       </div>
     );
   }
