@@ -1,1 +1,0 @@
-This is the content of /app/components/app/Static/plod-descriptoin.md
