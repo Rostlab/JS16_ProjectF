@@ -24,7 +24,8 @@ var config = {
     entry: path.join(__dirname, "/app/main.jsx"),
     output: {
         path: path.join(__dirname, "/build"),
-        filename: "/bundle.js"
+        filename: "bundle.js",
+        publicPath: "/"
     },
 
     module: {
@@ -78,9 +79,9 @@ var config = {
 
     plugins: [
         new webpack.ProvidePlugin({
-          $: 'jquery',
-          jQuery: 'jquery',
-          'window.jQuery': 'jquery'
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery'
         }),
         new HtmlWebpackPlugin({
             template: path.join(__dirname, "/app/index.tmpl.html")
@@ -91,7 +92,7 @@ var config = {
                 warnings: false
             }
         }),
-        new ExtractTextPlugin("/style.css"),
+        new ExtractTextPlugin("style.css"),
         new webpack.DefinePlugin({
             GA_TRACKING_CODE: JSON.stringify(analytics),
             'process.env':{
@@ -99,7 +100,7 @@ var config = {
                 '__API__': JSON.stringify(api),
                 '__PROTOCOL__': JSON.stringify(https),
                 '__PREFIX__': JSON.stringify(prefix)
-            },
+            }
         })
     ]
 };
