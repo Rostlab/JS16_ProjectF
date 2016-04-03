@@ -21,16 +21,16 @@ export default class CharacterDetails extends Component {
                     case "books" : meta = "Books"; break;
                     default: break;
                 }
-                result.push(meta+': '+this.props.data[detail]);
-           }
+                result.push({key: meta, value: (this.props.data[detail]).toString().replace(new RegExp(',', 'g'), ', ')});
+            }
         }
         return (
             <ListGroup className="character-details">
-            {
-                result.map(function (detail) {
-                    return <ListGroupItem>{detail}</ListGroupItem>;
-                  })
-            }
+                {
+                    result.map(function (detail) {
+                        return <ListGroupItem><h4>{detail.key}: </h4>{detail.value}</ListGroupItem>;
+                    })
+                }
             </ListGroup>
         );
     }
