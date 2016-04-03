@@ -6,8 +6,6 @@ import Column from 'react-bootstrap/lib/Col';
 
 import $ from 'jquery';
 
-import FooterText from '../../../../static/footer.md';
-
 export default class Footer extends Component {
 
   componentDidMount() {
@@ -30,10 +28,39 @@ export default class Footer extends Component {
         <footer>
           <div className="container">
             <Row>
-              <Column md={4}>
-                <FooterText />
+              <Column md={2} mdOffset={1}>
+                <h4>About</h4>
+                <hr />
+                <p>
+                  <a href="/about">About got.show</a>
+                </p>
+                <p>
+                  <a href="/about#credits">Credits</a>
+                </p>
+                <p>
+                  <a href="/attributions">Attributions</a>
+                </p>
+                <p>
+                  <a href="https://rostlab.org/owiki/index.php/Javascript_technology_2016" target="_blank">JavaScript Technology</a>
+                </p>
+                <p>
+                  <a href="http://rostlab.org" target="_blank">Rostlab</a>
+                </p>
+                <p>
+                  <a href="https://www.tum.de/" target="_blank">TUM</a>
+                </p>
               </Column>
-              <Column md={4}>
+              <Column md={2}>
+                <h4>Contribute</h4>
+                <hr />
+                <p>
+                  <a href="/contribute">Developers</a>
+                </p>
+                <p>
+                  <a href="http://map.got.show/">Contribute</a>
+                </p>
+              </Column>
+              <Column md={2}>
                 <h4>Social</h4>
                 <hr />
                 <p>
@@ -46,17 +73,14 @@ export default class Footer extends Component {
                   <a href="https://plus.google.com/116097558064950719723/about" target="_blank">Google Plus</a>
                 </p>
               </Column>
-              <Column md={4}>
+              <Column md={2}>
                 <h4>Legal</h4>
                 <hr />
                 <p>
+                  <a href="/imprint">Imprint &amp; Disclaimer</a>
+                </p>
+                <p>
                   <a href="/privacy">Privacy Policy</a>
-                </p>
-                <p>
-                  <a href="/imprint">Imprint</a>
-                </p>
-                <p>
-                  <a href="https://www.tum.de/">TUM</a>
                 </p>
                 <p>
                   <a rel="license" href="http://creativecommons.org/licenses/by/3.0" target="_blank">
@@ -66,6 +90,13 @@ export default class Footer extends Component {
                   <a rel="license" href="http://creativecommons.org/licenses/by/3.0" target="_blank">
                     Licensed under Creative Commons Attribution 3.0
                   </a>.
+                </p>
+              </Column>
+              <Column md={2}>
+                <h4>Contact</h4>
+                <hr />
+                <p>
+                  <a href="https://github.com/got-show/general/issues" target="_blank">Feedback</a>
                 </p>
               </Column>
             </Row>

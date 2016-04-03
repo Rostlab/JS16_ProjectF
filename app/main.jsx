@@ -17,6 +17,7 @@ import Ranking from './components/public/Ranking/Ranking.jsx';
 import Map from './components/public/Map/Map.jsx';
 import Start from './components/public/Start/Start.jsx';
 import Statistics from './components/public/Statistics/Statistics.jsx';
+import Attributions from './components/public/Attributions/Attributions.jsx';
 import Contribute from './components/public/Contribute/Contribute.jsx';
 import Credits from './components/public/Credits/Credits.jsx';
 import Characters from './components/public/Characters/Characters.jsx';
@@ -46,6 +47,7 @@ ReactDOM.render(
       <Route path="/privacy" component={PrivacyPolicy}/>
       <Route path="/machine-learning-algorithm-predict-death-game-of-thrones" component={PlodDescription}/>
       <Route path="/statistics" component={Statistics} />
+      <Route path="/attributions" component={Attributions} />
       <Route path="/characters">
         <IndexRoute component={CharacterListPage}/>
         <Route path="/characters/:id" component={Characters}/>
