@@ -1,9 +1,6 @@
 [
   ["Arya Stark","Cersei Lannister"],
   ["Ramsay Snow","Sansa Stark"],
-  ["Stannis Baratheon","Joffrey Baratheon"],
-  ["Gregor Clegane","Oberyn Martell"],
-  ["Jon Snow","Ygritte"],
   ["Theon Greyjoy","Ramsay Snow"],
   ["Ilyn Payne","Bronn"],
   ["Tyrion Lannister","Petyr Baelish"],
@@ -11,16 +8,12 @@
   ["Cersei Lannister","Margaery Tyrell"],
   ["Robert Baratheon","Rhaegar Targeryan"],
   ["Eddard Stark","Tywin Lannister"],
-  ["Jaime Lannister","Aerys Targaryen"],
-  ["Jaime Lannister","Robb Stark"],
-  ["Catelyn Stark","Walder Frey"],
   ["Daenerys Targaryen","Tyrion Lannister"],
   ["Daenerys Targaryen","Euron Greyjoy"],
   ["Aeron Greyjoy","Euron Greyjoy"],
   ["Brandon Stark","Brynden Rivers"],
   ["Jorah Mormont","Daenerys Targaryen"],
   ["Cersei Lannister","The High Sparrow"],
-  ["Mance Rayder","Jon Snow"],
   ["Bowen Marsh","Jon Snow"],
   ["Tyrion Lannister","Jaime Lannister"]
 ]
