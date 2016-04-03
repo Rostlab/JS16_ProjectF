@@ -76,8 +76,9 @@ Label | Number of characters | Precision | Recall | F-measure
 Alive | 1451 | 85% | 78% | 0.82
 Dead | 495 | 49% | 60% | 0.54
 
+&nbsp;
 
-
+&nbsp;
 
 ### Feature selection - algorithm 2
 
