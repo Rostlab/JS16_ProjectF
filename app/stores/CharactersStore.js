@@ -11,7 +11,7 @@ function setCharacters(characters) {
     _characters = characters;
 }
 function setCharacter(data) {
-    _character = data.data;
+    _character = data;
 }
 
 function sortCharacters(characters,sort){
