@@ -1,7 +1,7 @@
 import React from 'react';
 let {Component} = React;
-import request from 'superagent';
 import d3 from 'd3';
+import $ from 'jquery';
 import './BigBattle.css';
 import {Image, Row, Col} from 'react-bootstrap';
 
@@ -10,13 +10,15 @@ export default class BigBattle extends Component {
     super(props);
   }
   render() {
-    request
-      .get('/d4/chart.js')
-      .end(function(err,res) {
-        eval(res.text);
-      });
-    var chart = new characterChart(d3.select("#chart"), "/csv/Bran_Stark.csv");
-    d3.select(window).on('resize', chart.resize);
+    $('head').append('<link rel="stylesheet" type="text/css" href="/d4/chart.css">');
+    let name1 = this.props.name1.replace(/ /g,'_');
+    let name2 = this.props.name2.replace(/ /g,'_');
+    $.getScript("/d4/chart.js",function(){
+      var chart1 = new characterChart(d3.select("#chart1"), "/d4/csv/" + name1 + ".csv"); /*eslint no-undef:0*/
+      d3.select(window).on('resize', chart1.resize);/*eslint no-undef:0*/
+      var chart2 = new characterChart(d3.select("#chart2"), "/d4/csv/" + name2 + ".csv"); /*eslint no-undef:0*/
+      d3.select(window).on('resize', chart2.resize);/*eslint no-undef:0*/
+    });
     return (
       <div>
         <Row className="big-battle">
@@ -31,12 +33,12 @@ export default class BigBattle extends Component {
           <Col xs={6}>
             <h3>{this.props.name1}</h3>
             <p>PLOD: 70%</p>
-            <svg id="chart" width="100%" height="400"></svg>
+            <svg id="chart1" width="100%" height="400"></svg>
           </Col>
           <Col xs={6}>
             <h3>{this.props.name2}</h3>
             <p>PLOD: 50%</p>
-            <p>[Sentiment-Placeholder]</p>
+            <svg id="chart2" width="100%" height="400"></svg>
           </Col>
         </Row>
       </div>
