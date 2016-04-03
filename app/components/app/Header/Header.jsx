@@ -27,7 +27,7 @@ export default class Header extends Component {
                     <Navbar.Collapse>
                         <Nav>
                             <LinkContainer to={{ pathname: '/characters'}}>
-                                <Button bsStyle="link" className="asdasd">Characters</Button>
+                                <Button bsStyle="link">Characters</Button>
                             </LinkContainer>
                             <LinkContainer to={{ pathname: '/ranking'}}>
                                 <Button bsStyle="link">Ranking</Button>
