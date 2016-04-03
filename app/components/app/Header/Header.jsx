@@ -1,5 +1,5 @@
 import React from 'react';
-
+import 'jquery';
 import { Navbar, Nav, Button } from 'react-bootstrap';
 import { IndexLinkContainer, LinkContainer} from 'react-router-bootstrap';
 import "./Header.css";
@@ -8,6 +8,11 @@ let {Component} = React;
 
 export default class Header extends Component {
     render() {
+       $('.nav a').on('click', function(){/*eslint no-console:0,no-undef:0*/
+            $(".btn-navbar").click(); /*eslint no-console:0,no-undef:0*/
+            $(".navbar-toggle").click();/*eslint no-console:0,no-undef:0*/
+            this.forceUpdate({});
+        });
         return (
             <header>
                 <Navbar inverse>
