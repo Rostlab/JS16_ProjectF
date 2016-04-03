@@ -8,13 +8,14 @@ var CharactersPlodActions = {
         var charactersPlod = [];
         Api
             .get('plod/byCount/' + count)
-            .then(function (charactersPlod) {
-              return charactersPlod
+            .then(function (response) {
+              return response.data
             }).then(function(charactersPlod){
                 for(var characterPlod in charactersPlod){
                     Api
                         .get('characters/byId/' + characterPlod._id )
-                        .then(function(character){
+                        .then(function(response){
+                            var character = response.data
                             characterPlod.merge(character);
                             characterPlod.push(characterPlod);
                             AppDispatcher.handleServerAction({
@@ -28,8 +29,8 @@ var CharactersPlodActions = {
     loadCharacterPlodByName: function(name){
         Api
             .get('characters/' + name + '?strict=true')
-            .then(function (character) {
-                return character;
+            .then(function (response) {
+                return response.data;
             }).then(function(character){
                 Api
                     .get('plod/byId/' + character._id)
