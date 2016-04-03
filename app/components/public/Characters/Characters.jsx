@@ -3,12 +3,12 @@
 import React from 'react';
 let {Component} = React;
 import './Characters.css';
-import { Row, Col, Image, Tabs, Tab, ListGroup, ListGroupItem, ProgressBar } from 'react-bootstrap';
+import { Row, Col, Image, Tabs, Tab, ProgressBar } from 'react-bootstrap';
 
 import MapComp from '../../common/MapComp/MapComp.jsx';
 import Store from '../../../stores/CharactersStore';
 import Actions from '../../../actions/CharactersActions';
-
+import CharacterDetails from '../../common/CharacterDetails/CharacterDetails.jsx';
 import tombstone from './rip_tombstone.png';
 
 export default class Character extends Component {
@@ -55,33 +55,21 @@ export default class Character extends Component {
                         <Image thumbnail src={img}/>
                     </Col>
                     <Col xs={11} sm={5}  smOffset={1}>
-                        <ListGroup className="character-details">
-                                    <ListGroupItem>Age</ListGroupItem>
-                                    <ListGroupItem>House</ListGroupItem>
-                                    <ListGroupItem>Culture</ListGroupItem>
-                                    <ListGroupItem>House</ListGroupItem>
-                                    <ListGroupItem>Reputation</ListGroupItem>
-                                </ListGroup>
+                        <CharacterDetails data={this.state.character} />
                     </Col>
                 </Row>
                 <div className="character-stats">
                 <Row>
                     <Col md={8} mdOffset={2}>
                         <h2>Likelihood of Death</h2>
-                        <p>Check out what our two different algorithms say</p>
-                        <Tabs>
-                            <Tab eventKey={1} title="Predictor 1">
-                                <p>{this.state.character.name}'s likelihood to die is:</p>
-                                <div className="plodContainer">
-                                    <ProgressBar now={60} label="%(percent)s%" />
-                                    <img src={tombstone} />
-                                </div>
-                                <p>We developed a machine learning-based algorithm that predicts character's percentage likelihood of death (PLOD) based on characteristics such as age, gender, title and others (described here).</p>
-                            </Tab>
-                            <Tab eventKey={2} title="Predictor 2">
-                                <p>{this.state.character.name}'s likelihood to die is 10%</p>
-                            </Tab>
-                        </Tabs>
+                        <p>{this.state.character.name}'s likelihood to die is:</p>
+                        <div className="plodContainer">
+                            <ProgressBar now={60} label="%(percent)s%" />
+                            <img src={tombstone} />
+                        </div>
+                        <p>We developed a machine learning-based algorithm that predicts character's percentage likelihood of death (PLOD) based on character’s information extracted from the first five books of the Song of Ice and Fire series.
+                            <br /><a href="/plod-description">Click here to find out more about our prediction algorithm.</a></p>
+                        <p>The PLOD score of our less accurate predictor, <a href="/plod-description2">described here,</a> is: 50%</p>
                     </Col>
                 </Row>
                 <Row>

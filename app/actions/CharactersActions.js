@@ -32,7 +32,7 @@ var CharactersActions = {
                     data: character
                 });
             }, function(failed) {
-              browserHistory.push('/characters');
+              browserHistory.push('/404');
             });
     }
 
