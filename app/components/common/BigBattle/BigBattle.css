@@ -1,0 +1,26 @@
+.big-battle {
+    border: 3px solid #fff;
+    max-height: 400px;
+    overflow: hidden;
+}
+.big-battle .col-xs-6:first-child {
+    border-right: 1px solid #fff;
+}
+
+.big-battle img {
+    max-height: 100%;
+    max-width: 100%;
+    vertical-align: middle;
+}
+.big-battle div {
+    padding: 0;
+}
+.big-battle-info {
+    background: #313131;
+    font-size: 0.8em;
+    text-align: center;
+}
+.big-battle-info .col-xs-6 {
+    text-align: center;
+    padding: 1em 0;
+}

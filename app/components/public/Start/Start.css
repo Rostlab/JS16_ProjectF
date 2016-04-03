@@ -9,3 +9,16 @@
 .twitter {
   text-align: center;
 }
+
+.homeBlog {
+    text-align: left;
+}
+
+
+/* Map */
+.home .map-wrapper {
+    position: relative;
+}
+.home .map-wrapper #sidebar {
+     display: none;
+ }
