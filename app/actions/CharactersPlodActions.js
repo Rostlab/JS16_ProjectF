@@ -10,8 +10,8 @@ var CharactersPlodActions = {
             .get('plod/byCount/' + count)
             .then(function (response) {
               return response.data
-            }).then(function(charactersPlod){
-                for(var characterPlod in charactersPlod){
+            }).then(function(charactersPlodResponse){
+                for(var characterPlod in charactersPlodResponse){
                     Api
                         .get('characters/byId/' + characterPlod._id )
                         .then(function(response){
@@ -42,6 +42,28 @@ var CharactersPlodActions = {
                         });
                     });
             });
+    },
+    loadCharactersPlodByName: function(names){
+        var charactersPlod = []
+        for(var name in names){
+            Api
+                .get('characters/' + name + '?strict=true')
+                .then(function (response) {
+                    return response.data;
+                }).then(function(character){
+                    Api
+                        .get('plod/byId/' + character._id)
+                        .then(function (response) {
+                            var characterPlod = response.data;
+                            character.merge(characterPlod);
+                            charactersPlod.push(character)
+                            AppDispatcher.handleServerAction({
+                                actionType: Constants.RECEIVE_CHARACTERS_PLOD_BY_NAME,
+                                data: characterPlod
+                            });
+                        });
+                });
+        }
     }
 };
 
