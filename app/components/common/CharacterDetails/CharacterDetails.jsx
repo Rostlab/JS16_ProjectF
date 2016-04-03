@@ -24,7 +24,6 @@ export default class CharacterDetails extends Component {
                 result.push(meta+': '+this.props.data[detail]);
            }
         }
-        console.log(result);/*eslint no-console:0,no-undef:0*/
         return (
             <ListGroup className="character-details">
             {
