@@ -15,7 +15,7 @@ var CharactersPlodActions = {
                     Api
                         .get('characters/byId/' + characterPlod._id )
                         .then(function(response){
-                            var character = response.data
+                            var character = response.data;
                             characterPlod.merge(character);
                             charactersPlod.push(characterPlod);
                             AppDispatcher.handleServerAction({
@@ -44,7 +44,7 @@ var CharactersPlodActions = {
             });
     },
     loadCharactersPlodByName: function(names){
-        var charactersPlod = []
+        var charactersPlod = [];
         for(var name in names){
             Api
                 .get('characters/' + name + '?strict=true')
@@ -56,10 +56,10 @@ var CharactersPlodActions = {
                         .then(function (response) {
                             var characterPlod = response.data;
                             character.merge(characterPlod);
-                            charactersPlod.push(character)
+                            charactersPlod.push(character);
                             AppDispatcher.handleServerAction({
                                 actionType: Constants.RECEIVE_CHARACTERS_PLOD_BY_NAME,
-                                data: characterPlod
+                                data: charactersPlod
                             });
                         });
                 });
