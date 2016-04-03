@@ -24,8 +24,7 @@ import CharacterListPage from './components/public/CharacterList/CharacterList.j
 import Site404 from './components/public/404/404.jsx';
 import Imprint from './components/public/Imprint/Imprint.jsx';
 import PrivacyPolicy from './components/public/PrivacyPolicy/PrivacyPolicy.jsx';
-import PlodDescription1 from './components/public/PlodDescription/PlodDescription1.jsx';
-import PlodDescription2 from './components/public/PlodDescription/PlodDescription2.jsx';
+import PlodDescription from './components/public/PlodDescription/PlodDescription.jsx';
 
 import ga from 'ga-react-router';
 import { browserHistory } from 'react-router';
@@ -45,8 +44,7 @@ ReactDOM.render(
       <Route path="/credits" component={Credits} />
       <Route path="/contribute" component={Contribute} />
       <Route path="/privacy" component={PrivacyPolicy}/>
-      <Route path="/plod-description" component={PlodDescription1}/>
-      <Route path="/plod-description2" component={PlodDescription2}/>
+      <Route path="/machine-learning-algorithm-predict-death-game-of-thrones" component={PlodDescription}/>
       <Route path="/statistics" component={Statistics} />
       <Route path="/characters">
         <IndexRoute component={CharacterListPage}/>

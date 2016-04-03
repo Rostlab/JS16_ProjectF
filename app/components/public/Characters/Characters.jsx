@@ -68,8 +68,8 @@ export default class Character extends Component {
                             <img src={tombstone} />
                         </div>
                         <p>We developed a machine learning-based algorithm that predicts character's percentage likelihood of death (PLOD) based on character’s information extracted from the first five books of the Song of Ice and Fire series.
-                            <br /><a href="/plod-description">Click here to find out more about our prediction algorithm.</a></p>
-                        <p>The PLOD score of our less accurate predictor, <a href="/plod-description2">described here,</a> is: 50%</p>
+                            <br /><a href="/machine-learning-algorithm-predict-death-game-of-thrones">Click here to find out more about our prediction algorithm.</a></p>
+                        <p>The PLOD score of our less accurate predictor, <a href="/machine-learning-algorithm-predict-death-game-of-thrones">described here,</a> is: 50%</p>
                     </Col>
                 </Row>
                 <Row>
