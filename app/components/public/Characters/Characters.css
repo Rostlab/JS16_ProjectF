@@ -47,6 +47,7 @@
 }
 .list-group-item {
 	background: #333;
+	border: none;
 }
 
 @media (max-width: 767px) {

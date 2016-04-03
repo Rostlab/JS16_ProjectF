@@ -3,12 +3,12 @@
 import React from 'react';
 let {Component} = React;
 import './Characters.css';
-import { Row, Col, Image, Tabs, Tab, ListGroup, ListGroupItem, ProgressBar } from 'react-bootstrap';
+import { Row, Col, Image, Tabs, Tab, ProgressBar } from 'react-bootstrap';
 
 import MapComp from '../../common/MapComp/MapComp.jsx';
 import Store from '../../../stores/CharactersStore';
 import Actions from '../../../actions/CharactersActions';
-
+import CharacterDetails from '../../common/CharacterDetails/CharacterDetails.jsx';
 import tombstone from './rip_tombstone.png';
 
 export default class Character extends Component {
@@ -55,13 +55,7 @@ export default class Character extends Component {
                         <Image thumbnail src={img}/>
                     </Col>
                     <Col xs={11} sm={5}  smOffset={1}>
-                        <ListGroup className="character-details">
-                                    <ListGroupItem>Age</ListGroupItem>
-                                    <ListGroupItem>House</ListGroupItem>
-                                    <ListGroupItem>Culture</ListGroupItem>
-                                    <ListGroupItem>House</ListGroupItem>
-                                    <ListGroupItem>Reputation</ListGroupItem>
-                                </ListGroup>
+                        <CharacterDetails data={this.state.character} />
                     </Col>
                 </Row>
                 <div className="character-stats">
