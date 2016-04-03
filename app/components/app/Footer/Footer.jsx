@@ -4,8 +4,6 @@ import './Footer.css';
 import Row from 'react-bootstrap/lib/Row';
 import Column from 'react-bootstrap/lib/Col';
 
-import LinkContainer from 'react-router-bootstrap';
-
 import $ from 'jquery';
 
 export default class Footer extends Component {
@@ -98,7 +96,7 @@ export default class Footer extends Component {
                 <h4>Contact</h4>
                 <hr />
                 <p>
-                  <a href="https://github.com/got-show/general/issues">Feedback</a>
+                  <a href="https://github.com/got-show/general/issues" target="_blank">Feedback</a>
                 </p>
               </Column>
             </Row>

@@ -1,6 +1,7 @@
 import React from 'react';
 let {Component} = React;
-import { Row, Col } from 'react-bootstrap';
+import Row from 'react-bootstrap/lib/Row';
+import Column from 'react-bootstrap/lib/Col';
 
 export default class Contribute extends Component {
   render() {
