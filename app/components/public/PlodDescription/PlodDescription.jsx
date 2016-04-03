@@ -2,9 +2,9 @@ import React from 'react';
 let {Component} = React;
 import { Row, Col } from 'react-bootstrap';
 
-import PlodDescriptionText from '../../../../static/plod-description2.md';
+import PlodDescriptionText from '../../../../static/plod-description.md';
 
-export default class PlodDescription2 extends Component {
+export default class PlodDescription extends Component {
     render() {
         return (
             <div>
