@@ -1,5 +1,7 @@
 import React from 'react';
 let {Component} = React;
+import request from 'superagent';
+import d3 from 'd3';
 import './BigBattle.css';
 import {Image, Row, Col} from 'react-bootstrap';
 
@@ -8,6 +10,13 @@ export default class BigBattle extends Component {
     super(props);
   }
   render() {
+    request
+      .get('/d4/chart.js')
+      .end(function(err,res) {
+        eval(res.text);
+      });
+    var chart = new characterChart(d3.select("#chart"), "/csv/Bran_Stark.csv");
+    d3.select(window).on('resize', chart.resize);
     return (
       <div>
         <Row className="big-battle">
@@ -22,7 +31,7 @@ export default class BigBattle extends Component {
           <Col xs={6}>
             <h3>{this.props.name1}</h3>
             <p>PLOD: 70%</p>
-            <p>[Sentiment-Placeholder]</p>
+            <svg id="chart" width="100%" height="400"></svg>
           </Col>
           <Col xs={6}>
             <h3>{this.props.name2}</h3>

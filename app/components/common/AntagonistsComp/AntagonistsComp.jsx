@@ -9,7 +9,7 @@ import MapComp from '../MapComp/MapComp.jsx';
 
 export default class AntagonistsComp extends Component {
   render() {
-  let  randompair = Math.floor(Math.random() * json.length);
+  let randompair = Math.floor(Math.random() * json.length);
   let name1 = json[randompair][0];
   let name2 = json[randompair][1];
   let img1 = '/assets/static/images/'+json[randompair][0].replace(/ /g,'_')+'.jpg';
