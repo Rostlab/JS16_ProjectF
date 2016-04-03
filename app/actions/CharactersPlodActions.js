@@ -17,7 +17,7 @@ var CharactersPlodActions = {
                         .then(function(response){
                             var character = response.data
                             characterPlod.merge(character);
-                            characterPlod.push(characterPlod);
+                            charactersPlod.push(characterPlod);
                             AppDispatcher.handleServerAction({
                                 actionType: Constants.RECEIVE_CHARACTERS_PLOD_BY_COUNT,
                                 data: charactersPlod
