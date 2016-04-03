@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "NODE_ENV=development node ./server/server.js",
-    "build": "NODE_ENV=production node_modules/.bin/webpack --config ./webpack.production.config.js --bail --progress",
+    "build": "NODE_ENV=production node_modules/.bin/webpack --config ./configWebpack/prod.js --bail --progress",
     "serve": "NODE_ENV=production node ./server/server.js"
   },
   "repository": {
