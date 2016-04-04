@@ -36,11 +36,11 @@ var CharactersPlodActions = {
                 Api
                     .get('plod/bySlug/' + character.slug)
                     .then(function(response) {
-                        var characterPlod = response.data;
-                        character.merge(characterPlod);
+                        var characterPlod = response.data[0];
+                        var characterWithPlod = Object.assign(character,characterPlod);
                         AppDispatcher.handleServerAction({
                             actionType: Constants.RECEIVE_CHARACTER_PLOD_BY_NAME,
-                            data: character
+                            data: characterWithPlod
                         });
                     });
             });

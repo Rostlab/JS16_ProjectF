@@ -24,15 +24,23 @@ var CharactersActions = {
     },
     loadCharacter: function(name) {
         Api
-            .get('characters/'+name+'?strict=true')
+            .get('characters/' + name + '?strict=true')
             .then(function (response) {
+                return response;
+            }).then(function(response){
                 var character = response.data;
-                AppDispatcher.handleServerAction({
-                    actionType: Constants.RECEIVE_CHARACTER,
-                    data: character
-                });
-            }, function(failed) {
-              browserHistory.push('/404');
+                Api
+                    .get('plod/bySlug/' + character.slug)
+                    .then(function(response) {
+                        var characterPlod = response.data[0];
+                        var characterWithPlod = Object.assign(character,characterPlod);
+                        AppDispatcher.handleServerAction({
+                            actionType: Constants.RECEIVE_CHARACTER,
+                            data: characterWithPlod
+                        });
+                    });
+            },function(failed) {
+                browserHistory.push('/404');
             });
     }
 
