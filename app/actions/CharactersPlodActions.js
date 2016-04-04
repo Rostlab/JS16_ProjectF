@@ -11,13 +11,13 @@ var CharactersPlodActions = {
             .then(function (response) {
               return response.data;
             }).then(function(charactersPlodResponse){
-                for(var characterPlod in charactersPlodResponse){
+                for(var characterPlod of charactersPlodResponse){
                     Api
-                        .get('characters/' + characterPlod.name + "?strict=true" )
+                        .get('characters/' + characterPlod.character + "?strict=true" )
                         .then(function(response){
                             var character = response.data;
-                            characterPlod.merge(character);
-                            charactersPlod.push(characterPlod);
+                            var characterWithPlod = Object.assign(character,characterPlod);
+                            charactersPlod.push(characterWithPlod);
                             AppDispatcher.handleServerAction({
                                 actionType: Constants.RECEIVE_CHARACTERS_PLOD_BY_COUNT,
                                 data: charactersPlod
@@ -47,7 +47,7 @@ var CharactersPlodActions = {
     },
     loadCharactersPlodByName: function(names){
         var charactersPlod = [];
-        for(var name in names){
+        for(var name of names){
             Api
                 .get('characters/' + name + '?strict=true')
                 .then(function (response) {
@@ -56,9 +56,10 @@ var CharactersPlodActions = {
                     Api
                         .get('plod/bySlug/' + character.slug)
                         .then(function (response) {
-                            var characterPlod = response.data;
-                            character.merge(characterPlod);
-                            charactersPlod.push(character);
+                            var characterPlod = response.data[0];
+                            var characterWithPlod = Object.assign(character,characterPlod);
+                            charactersPlod.push(characterWithPlod);
+                            console.log(charactersPlod);
                             AppDispatcher.handleServerAction({
                                 actionType: Constants.RECEIVE_CHARACTERS_PLOD_BY_NAME,
                                 data: charactersPlod
