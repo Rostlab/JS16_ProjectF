@@ -1,4 +1,5 @@
 /* D4 Integration */
+'use strict';
 const express = require('express');
 const d4 = express();
 

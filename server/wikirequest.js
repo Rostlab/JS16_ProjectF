@@ -1,4 +1,5 @@
-/* ToDo */
+'use strict';
+
 const express = require('express');
 let request = require("request");
 
