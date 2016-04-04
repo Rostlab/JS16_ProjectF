@@ -59,7 +59,6 @@ var CharactersPlodActions = {
                             var characterPlod = response.data[0];
                             var characterWithPlod = Object.assign(character,characterPlod);
                             charactersPlod.push(characterWithPlod);
-                            console.log(charactersPlod);
                             AppDispatcher.handleServerAction({
                                 actionType: Constants.RECEIVE_CHARACTERS_PLOD_BY_NAME,
                                 data: charactersPlod
