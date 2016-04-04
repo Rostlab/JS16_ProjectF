@@ -9,11 +9,11 @@ var CharactersPlodActions = {
         Api
             .get('plod/byCount/' + count)
             .then(function (response) {
-              return response.data
+              return response.data;
             }).then(function(charactersPlodResponse){
                 for(var characterPlod in charactersPlodResponse){
                     Api
-                        .get('characters/byId/' + characterPlod._id )
+                        .get('characters/' + characterPlod.name + "?strict=true" )
                         .then(function(response){
                             var character = response.data;
                             characterPlod.merge(character);
@@ -30,11 +30,13 @@ var CharactersPlodActions = {
         Api
             .get('characters/' + name + '?strict=true')
             .then(function (response) {
-                return response.data;
-            }).then(function(character){
+                return response;
+            }).then(function(response){
+                var character = response.data;
                 Api
-                    .get('plod/byId/' + character._id)
-                    .then(function (characterPlod) {
+                    .get('plod/bySlug/' + character.slug)
+                    .then(function(response) {
+                        var characterPlod = response.data;
                         character.merge(characterPlod);
                         AppDispatcher.handleServerAction({
                             actionType: Constants.RECEIVE_CHARACTER_PLOD_BY_NAME,
@@ -52,7 +54,7 @@ var CharactersPlodActions = {
                     return response.data;
                 }).then(function(character){
                     Api
-                        .get('plod/byId/' + character._id)
+                        .get('plod/bySlug/' + character.slug)
                         .then(function (response) {
                             var characterPlod = response.data;
                             character.merge(characterPlod);
