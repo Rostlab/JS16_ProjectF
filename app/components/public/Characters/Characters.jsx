@@ -6,8 +6,8 @@ import './Characters.css';
 import { Row, Col, Image, Tabs, Tab, ProgressBar } from 'react-bootstrap';
 
 import MapComp from '../../common/MapComp/MapComp.jsx';
-import Store from '../../../stores/CharactersPlodStore';
-import Actions from '../../../actions/CharactersPlodActions';
+import Store from '../../../stores/CharactersStore';
+import Actions from '../../../actions/CharactersActions';
 import CharacterDetails from '../../common/CharacterDetails/CharacterDetails.jsx';
 import tombstone from './rip_tombstone.png';
 
@@ -15,7 +15,7 @@ export default class Character extends Component {
 
     constructor (props) {
         super(props);
-        this.state = {character: Store.getCharactersPlod()};
+        this.state = {character: Store.getCharacter()};
         this._onChange = this._onChange.bind(this);
     }
 
@@ -24,7 +24,7 @@ export default class Character extends Component {
     }
 
     componentDidMount() {
-        Actions.loadCharactersPlodByName(["Larys Strong","Daena Targaryen"]);
+        Actions.loadCharacter(decodeURIComponent(this.props.params.id));
     }
 
     componentWillUnmount(){
@@ -33,7 +33,7 @@ export default class Character extends Component {
 
     _onChange() {
         this.setState({
-            character: Store.getCharactersPlod()
+            character: Store.getCharacter()
         });
     }
     render() {
