@@ -36,7 +36,7 @@ try {
 let gotdailysentiment = initPack.init(json);
 
 const reqByName = function(req, res){
-  var patt = /\d{4}-\d{2}-\d{2}/;
+  const patt = /\d{4}-\d{2}-\d{2}/;
   if (!patt.test(req.query.date)) {res.status(400).send('Wrong Date Format');}
 
   // execute function

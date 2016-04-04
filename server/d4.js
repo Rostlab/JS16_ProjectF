@@ -4,7 +4,7 @@ const d4 = express();
 
 const gotsent = require('gotsentimental');
 
-var cfg;
+let cfg;
 try {
   cfg = require('../config/config.json').gotsent;
 } catch (err) {
