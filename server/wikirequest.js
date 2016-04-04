@@ -1,6 +1,7 @@
-/* ToDo */
+'use strict';
+
 const express = require('express');
-var request = require("request");
+let request = require("request");
 
 const wikirequest = express();
 
@@ -9,7 +10,7 @@ wikirequest.get('/', function (req,res) {
 });
 
 wikirequest.get('/:query', function (req,res) {
-    var link = 'http://awoiaf.westeros.org/index.php/'+req.params.query;
+    const link = 'http://awoiaf.westeros.org/index.php/'+req.params.query;
     request(link, function(error, response, body) {
         if (error) {
             res.status(500).send(error);
