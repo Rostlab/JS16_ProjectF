@@ -3,7 +3,9 @@
 const express = require('express');
 let d5 = express();
 
-let initPack = require('gotdailysentiment');
+const initPack = require('gotdailysentiment');
+
+const apiURL = process.env.PROTOCOL + process.env.API + process.env.PREFIXDIR;
 
 let json;
 try {
@@ -19,11 +21,11 @@ try {
     },
 
     "database" : {
-      "airDateURL": "https://api.got.show/api/episodes/find?token=" + process.env.api_token_A,
-      "characterNamesURL": "https://api.got.show/api/characters/",
-      "sentimentSave": "https://api.got.show/api/sentiment?token=" + process.env.api_token_A,
-      "sentimentGetChar": "https://api.got.show/api/sentiment/find?token=" + process.env.api_token_A,
-      "sentimentGetAll": "https://api.got.show/api/sentiment/byTimeRange?beginDate=startdate&endDate=enddate"
+      "airDateURL": apiURL + "/episodes/find?token=" + process.env.api_token_A,
+      "characterNamesURL": apiURL + "/characters/",
+      "sentimentSave": apiURL + "/sentiment?token=" + process.env.api_token_A,
+      "sentimentGetChar": apiURL + "/sentiment/find?token=" + process.env.api_token_A,
+      "sentimentGetAll": apiURL + "/sentiment/byTimeRange?beginDate=startdate&endDate=enddate"
     },
 
     "automation" : {
@@ -48,13 +50,13 @@ const reqByName = function(req, res){
 };
 
 const reqByNameTimeline = function(req, res) {
-  var patt = /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}/;
+  const patt = /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}/;
   if (!patt.test(req.query.startDate) || !patt.test(req.query.endDate)) {
     res.status(400).send('Wrong Date Format');
   }
 
   //execute function
-  var param = {
+  const param = {
     character: req.query.name,
     startDate: req.query.startDate,
     endDate: req.query.endDate
@@ -69,13 +71,13 @@ const reqByNameTimeline = function(req, res) {
 };
 
 const reqPerEpisode = function(req, res) {
-  var patt = /\d{1}|\d{2}/;
+  const patt = /\d{1}|\d{2}/;
   if (!patt.test(req.query.season) || !patt.test(req.query.episode)) {
     res.status(400).send('Wrong Number Format');
   }
 
   // execute function
-  let param = {
+  const param = {
     character: req.query.name,
     startDate: req.query.startDate,
     endDate: req.query.endDate
@@ -106,7 +108,7 @@ d5.get('/sentiment/:rank', function (req,res) {
     const patt = /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}/;
 
     //execute function
-    let param = {
+    const param = {
       number: req.query.number,
       startDate: req.query.startDate,
       endDate: req.query.endDate
