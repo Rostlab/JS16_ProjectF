@@ -19,10 +19,10 @@ try {
     },
 
     "database" : {
-      "airDateURL": "https://api.got.show/api/episodes/find?token=<TOKEN>",
+      "airDateURL": "https://api.got.show/api/episodes/find?token=" + process.env.api_token_A,
       "characterNamesURL": "https://api.got.show/api/characters/",
-      "sentimentSave": "https://api.got.show/api/sentiment?token=<TOKEN>",
-      "sentimentGetChar": "https://api.got.show/api/sentiment/find?token=<TOKEN>",
+      "sentimentSave": "https://api.got.show/api/sentiment?token=" + process.env.api_token_A,
+      "sentimentGetChar": "https://api.got.show/api/sentiment/find?token=" + process.env.api_token_A,
       "sentimentGetAll": "https://api.got.show/api/sentiment/byTimeRange?beginDate=startdate&endDate=enddate"
     },
 
