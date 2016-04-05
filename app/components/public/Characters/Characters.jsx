@@ -42,12 +42,12 @@ export default class Character extends Component {
         var img = (!this.state.character.imageLink) ? "https://placeholdit.imgix.net/~text?txtsize=33&txt=profile%20picture%20&w=350&h=350" : base_url+this.state.character.imageLink;
 
         $('head').append('<link rel="stylesheet" type="text/css" href="/d4/chart.css">');
-        const name = this.state.character.name.replace(/ /g,'_');
-        if (this.state != undefined){
-          $.getScript("/d4/chart.js",function(){
-            var chart = new characterChart(d3.select("#chart"), "/d4/csv/" + name + ".csv"); /*eslint no-undef:0*/
-            d3.select(window).on('resize', chart.resize);/*eslint no-undef:0*/
-          });
+        if (this.state.character.name != undefined){
+            const name = this.state.character.name.replace(/ /g,'_');
+            $.getScript("/d4/chart.js",function(){
+                var chart = new characterChart(d3.select("#chart"), "/d4/csv/" + name + ".csv"); /*eslint no-undef:0*/
+                d3.select(window).on('resize', chart.resize);/*eslint no-undef:0*/
+            });
         }
         return (
             <div className="character-container">

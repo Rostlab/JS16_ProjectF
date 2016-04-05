@@ -1,9 +1,11 @@
 /* D4 Integration */
 'use strict';
 const express = require('express');
-const d4 = express();
-
+const path = require('path');
 const gotsent = require('gotsentimental');
+
+
+const d4 = express();
 
 let cfg;
 try {
@@ -35,9 +37,12 @@ gotsent.startUpdateLoop();
 
 d4.get('/chart.css', function(req,res) {
     res.sendFile(gotsent.css);
+
 });
 d4.get('/chart.js', function(req,res) {
-    res.sendFile(gotsent.js);
+    //res.sendFile(gotsent.js);
+    console.log(path.join(__dirname, 'chart.js')),
+    res.sendFile(path.join(__dirname, 'chart.js'));
 });
 
 const oneHour = 3600000;
