@@ -2,6 +2,7 @@
 
 import React from 'react';
 let {Component} = React;
+import $ from 'jquery';
 import './Characters.css';
 import { Row, Col, Image, Tabs, Tab, ProgressBar } from 'react-bootstrap';
 
@@ -39,6 +40,15 @@ export default class Character extends Component {
     render() {
         var base_url = process.env.__PROTOCOL__ + process.env.__API__ + "/";
         var img = (!this.state.character.imageLink) ? "https://placeholdit.imgix.net/~text?txtsize=33&txt=profile%20picture%20&w=350&h=350" : base_url+this.state.character.imageLink;
+
+        $('head').append('<link rel="stylesheet" type="text/css" href="/d4/chart.css">');
+        const name = this.state.character.name.replace(/ /g,'_');
+        if (this.state != undefined){
+          $.getScript("/d4/chart.js",function(){
+            var chart = new characterChart(d3.select("#chart"), "/d4/csv/" + name + ".csv"); /*eslint no-undef:0*/
+            d3.select(window).on('resize', chart.resize);/*eslint no-undef:0*/
+          });
+        }
         return (
             <div className="character-container">
                 <Row fluid>
@@ -90,6 +100,9 @@ export default class Character extends Component {
                     </Col>  
                 </Row>
                 <Row>
+                    <Col md={8} mdOffset={2}>
+                        <svg id="chart" width="100%" height="400"></svg>
+                    </Col>
                     <Col md={8} mdOffset={2}>
                         <h2>Places associated with {this.state.character.name}</h2>
                         <p>Location history</p>
