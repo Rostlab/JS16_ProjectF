@@ -1,6 +1,8 @@
 language: node_js
 node_js:
-- 0.12
+- 4.4.1
+before_install:
+- npm install -g npm@2.14.20
 script:
 - npm run-script build
 addons:
