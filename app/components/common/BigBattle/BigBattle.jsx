@@ -33,11 +33,21 @@ export default class BigBattle extends Component {
           <Col xs={6}>
             <h3>{this.props.name1}</h3>
             <p>PLOD: 70%</p>
-            <svg id="chart1" width="100%" height="400"></svg>
+
           </Col>
           <Col xs={6}>
             <h3>{this.props.name2}</h3>
             <p>PLOD: 50%</p>
+          </Col>
+        </Row>
+        <p><em>PLOD</em> is the <strong>likelihood of death</strong> of a character. Learn more about how we calculate this score <a href="/plod-description">here</a>.</p>
+        <br />
+        <Row className="big-battle-info">
+          <h3>Twitter Sentiments</h3>
+          <Col xs={6}>
+            <svg id="chart1" width="100%" height="400"></svg>
+          </Col>
+          <Col xs={6}>
             <svg id="chart2" width="100%" height="400"></svg>
           </Col>
         </Row>
