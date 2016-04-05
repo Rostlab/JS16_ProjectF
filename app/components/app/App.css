@@ -14,7 +14,7 @@ title {
 }
 
 a {
-    color: whitesmoke;
+    color: #999;
 }
 
 a:hover,
@@ -140,7 +140,7 @@ a:focus {
 
 .header-image {
     height: 550px;
-    background-image: url('https://walter.trakt.us/images/shows/000/001/390/fanarts/original/76d5df8aed.jpg');
+    background-image: url('header.jpg');
     background-size: cover;
     margin-top: -50px;
     background-position: 50% 50%;

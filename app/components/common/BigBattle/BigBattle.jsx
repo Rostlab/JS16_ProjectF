@@ -40,7 +40,7 @@ export default class BigBattle extends Component {
             <p>PLOD: 50%</p>
           </Col>
         </Row>
-        <p><em>PLOD</em> is the <strong>likelihood of death</strong> of a character. Learn more about how we calculate this score <a href="/plod-description">here</a>.</p>
+        <p><em>PLOD</em> is the <strong>likelihood of death</strong> of a character. Learn more about how we calculate this score <a href="/machine-learning-algorithm-predict-death-game-of-thrones">here</a>.</p>
         <br />
         <Row className="big-battle-info">
           <h3>Twitter Sentiments</h3>

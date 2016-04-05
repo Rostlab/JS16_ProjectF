@@ -16,18 +16,23 @@ import About from './components/public/About/About.jsx';
 import Ranking from './components/public/Ranking/Ranking.jsx';
 import Map from './components/public/Map/Map.jsx';
 import Start from './components/public/Start/Start.jsx';
+import Statistics from './components/public/Statistics/Statistics.jsx';
+import Attributions from './components/public/Attributions/Attributions.jsx';
+import Contribute from './components/public/Contribute/Contribute.jsx';
+import Credits from './components/public/Credits/Credits.jsx';
 import Characters from './components/public/Characters/Characters.jsx';
 import CharacterListPage from './components/public/CharacterList/CharacterList.jsx';
 import Site404 from './components/public/404/404.jsx';
 import Imprint from './components/public/Imprint/Imprint.jsx';
 import PrivacyPolicy from './components/public/PrivacyPolicy/PrivacyPolicy.jsx';
+import PlodDescription from './components/public/PlodDescription/PlodDescription.jsx';
 
 import ga from 'ga-react-router';
 import { browserHistory } from 'react-router';
 
 browserHistory.listen(location => {
-  ga('send','page', location.pathname);
-  ga('send', 'pageview');
+    ga('send', 'page', location.pathname);
+    ga('send', 'pageview');
 });
 
 ReactDOM.render(
@@ -35,9 +40,14 @@ ReactDOM.render(
     <Route path="/" component={App}>
       <IndexRoute component={Start}/>
       <Route path="/ranking" component={Ranking}/>
-      <Route path="/about" component={About}/>
       <Route path="/imprint" component={Imprint}/>
+      <Route path="/about" component={About} />
+      <Route path="/credits" component={Credits} />
+      <Route path="/contribute" component={Contribute} />
       <Route path="/privacy" component={PrivacyPolicy}/>
+      <Route path="/machine-learning-algorithm-predict-death-game-of-thrones" component={PlodDescription}/>
+      <Route path="/statistics" component={Statistics} />
+      <Route path="/attributions" component={Attributions} />
       <Route path="/characters">
         <IndexRoute component={CharacterListPage}/>
         <Route path="/characters/:id" component={Characters}/>

@@ -25,14 +25,14 @@ var CharactersActions = {
     loadCharacter: function(name) {
         Api
             .get('characters/'+name+'?strict=true')
-            .then(function (character) {
-                // Dispatch an action containing the categories.
+            .then(function (response) {
+                var character = response.data;
                 AppDispatcher.handleServerAction({
                     actionType: Constants.RECEIVE_CHARACTER,
                     data: character
                 });
             }, function(failed) {
-              browserHistory.push('/characters');
+              browserHistory.push('/404');
             });
     }
 

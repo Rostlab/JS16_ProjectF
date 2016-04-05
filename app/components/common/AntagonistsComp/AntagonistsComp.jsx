@@ -12,8 +12,8 @@ export default class AntagonistsComp extends Component {
   let randompair = Math.floor(Math.random() * json.length);
   let name1 = json[randompair][0];
   let name2 = json[randompair][1];
-  let img1 = '/assets/static/images/'+json[randompair][0].replace(/ /g,'_')+'.jpg';
-  let img2 = '/assets/static/images/'+json[randompair][1].replace(/ /g,'_')+'.jpg';
+  let img1 = '/static/images/'+json[randompair][0].replace(/ /g,'_')+'.jpg';
+  let img2 = '/static/images/'+json[randompair][1].replace(/ /g,'_')+'.jpg';
   return (
     <div>
       <Grid>
