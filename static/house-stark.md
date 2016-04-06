@@ -48,6 +48,7 @@ Currently, we estimate Sansa’s survival chances to be:
 ![]( http://awoiaf.westeros.org/images/thumb/a/a0/Arya_Stark_by_AniaEm.jpg/250px-Arya_Stark_by_AniaEm.jpg)
 
 We’re not the only ones who’ve been kept dark when it comes to the Game of Thrones universe for the past few months. For Arya Stark, season 6 is going to look a lot like 50 Shades of Grey since she got punished with blindness by the Many-Faced-God for taking a life that wasn’t hers to take. I guess those things happen when you surround yourself with that kind of people. No reason to give us that look Arya, it’s certainly not our fault!
+
 ![]( http://vignette4.wikia.nocookie.net/gameofthrones/images/9/9e/Arya_Season_6.jpg/revision/latest/scale-to-width-down/270?cb=20160211211717)
 >	Alt text: Arya Stark, Game of Thrones
 
