@@ -57,7 +57,7 @@ export default class Footer extends Component {
                   <a href="/contribute">Developers</a>
                 </p>
                 <p>
-                  <a href="http://map.got.show/">Contribute</a>
+                  <a href="http://map.got.show/">Edit our map</a>
                 </p>
               </Column>
               <Column md={2}>
