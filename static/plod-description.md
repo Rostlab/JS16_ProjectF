@@ -69,7 +69,7 @@ We combined these two measures into a single F-measure value:
 
 ![](https://rostlab.org/~goldberg/fmeasure.png)
 
-The prediction results of our prediction method were:
+The prediction results of our method were:
 
 Label | Number of characters | Precision | Recall | F-measure
 :------------: | :-------------: | :-------------: | :-------------: | :-------------: |
