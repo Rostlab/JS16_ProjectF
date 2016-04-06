@@ -21,7 +21,7 @@ export default class CharacterDetails extends Component {
                     case "books" : meta = "Books"; break;
                     default: break;
                 }
-                result.push({key: meta, value: (this.props.data[detail]).toString().replace(new RegExp(',', 'g'), ', ')});
+                result.push({key: meta, value: (this.props.data[detail]).toString().replace(new RegExp(',', 'g'), ', ').replace(new RegExp('&apos;', 'g'), '\'')});
             }
         }
         return (
