@@ -103,7 +103,7 @@ ul.gotmap-dropdown .hover, ul.gotmap-dropdown li:hover {
 /*top-right flag which is a toggle for the realms
 gets colored when hovered*/
 .glyphicon-flag {
-    box-shadow: #000 0px 0px 20px!important;
+    box-shadow: #000 0 0 20px!important;
     background: rgba(255, 255, 255, 0.5)!important;
     color: #333;
     cursor: pointer!important;
