@@ -1,9 +1,18 @@
 import React from 'react';
 let {Component} = React;
 import {Grid, Row, Col, Tabs, Tab, OverlayTrigger, Popover} from 'react-bootstrap';
+
 import "./Ranking.css";
+import SentimentStore from '../../../stores/TwitterSentimentsStore';
+
 export default class Ranking extends Component {
   render() {
+      this.state = {
+          twitterTopSentiments: SentimentStore.getTopSentiments(),
+          twitterFlopSentiments: SentimentStore.getFlopSentiments(),
+          twitterTopControversial: SentimentStore.getTopControversialSentiments()
+      };
+
     return (
       <div>
 		<Grid className="ranking">
@@ -97,7 +106,7 @@ export default class Ranking extends Component {
 			</Row>
 			<Row className="ranking-fields">
 				<Col xs={12} sm={6}>
-<OverlayTrigger trigger="click" placement="top" overlay={<Popover title="PLOD">We have two algorithms!</Popover>}>				
+<OverlayTrigger trigger="click" placement="top" overlay={<Popover title="PLOD">We have two algorithms!</Popover>}>
 <h3 className="text-center ranking-title">Who is most likely to die next</h3>
 </OverlayTrigger>
 <Tabs defaultActiveKey={1}>
