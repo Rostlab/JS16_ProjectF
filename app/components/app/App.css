@@ -5,7 +5,8 @@ body {
   width: 100%;
   margin: 0;
   color: whitesmoke;
-  font-family: 'Gotham SSm 3r';
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
 }
 
 h1,h2,h3,h4,h5,
