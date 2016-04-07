@@ -95,6 +95,7 @@ export default class MapComp extends Component {
     var range = this.props.begintimeline !== undefined ? this.parseRange() : [1,50];
 
     mymap.updateMap(range);
+    mymap.getMap().zoomIn(2);
     for (let i of this.props.character) {
       setTimeout(function (){ /*eslint no-undef:0*/
         let character = mymap.searchCharacter(i.toLowerCase());
@@ -128,7 +129,6 @@ export default class MapComp extends Component {
                 <i className="glyphicon glyphicon-search form-control-feedback"></i>
               </div>
             </form>
-            <hr />
             <div id="characters"></div>
           </div>
           <div id="timeline"></div>
