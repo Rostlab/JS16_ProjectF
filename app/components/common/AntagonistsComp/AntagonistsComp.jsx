@@ -7,8 +7,8 @@ import BigBattle from '../BigBattle/BigBattle.jsx';
 import json from 'json!./antagonists.json';
 import MapComp from '../MapComp/MapComp.jsx';
 
-import Actions from '../../../actions/CharactersPlodActions';
-import Store from '../../../stores/CharactersPlodStore';
+import Actions from '../../../actions/CharactersPlodActions.js';
+import Store from '../../../stores/CharactersPlodStore.js';
 
 export default class AntagonistsComp extends Component {
   constructor (props) {
@@ -25,18 +25,24 @@ export default class AntagonistsComp extends Component {
       pair: {
         char1: {
           name: name1,
-          img: img1,
-          data: {}
+          img: img1
           },
         char2:{
           name: name2,
-          img: img2,
-          data: {}
-        },
-        characters: {}
-      }
+          img: img2
+        }
+      },
+      data: {}
     };
     this._onChange = this._onChange.bind(this);
+  }
+
+  componentWillMount (){
+    Store.addChangeListener(this._onChange);
+  }
+
+  componentWillUnmount(){
+    Store.removeChangeListener(this._onChange);
   }
 
   componentDidMount() {
@@ -45,31 +51,48 @@ export default class AntagonistsComp extends Component {
 
   _onChange() {
     this.setState({
-      characters: Store.getCharactersPlod()
+      characters: Store.getCharactersPlodByName()
     });
   }
 
+  getTitle(data) {
+    if(data === undefined){
+      return;
+    }
+    let likelierDeath;
+    let notLikelyDeath;
+    if(data[0].plod >= data[1].plod) {
+      likelierDeath = data[0];
+      notLikelyDeath = data[1];
+    } else {
+      likelierDeath = data[1];
+      notLikelyDeath = data[0];
+    }
+    const likelierDeathName = likelierDeath.character.replace(/\([a-zA-Z]*\)/ig, '');
+    const notLikelyDeathName = notLikelyDeath.character.replace(/\([a-zA-Z]*\)/ig, '');
+    const titles = [
+      `${ likelierDeathName } is likelier to die than ${ notLikelyDeathName }`,
+      `${ likelierDeathName } is likelier to get whacked`,
+      `${ likelierDeathName } will surely be the first to be slain`,
+      `The future of ${ likelierDeathName } is blood and fire`,
+      `${ likelierDeathName } will surely bite the dust`,
+      `${ notLikelyDeathName } would outlive ${ likelierDeathName }`
+    ];
+    const randomTitle = Math.floor(Math.random() * titles.length);
+    return titles[randomTitle];
+  }
+
   render() {
-  console.log(Store.getCharactersPlod()); /*eslint no-console:0,no-undef:0*/
-  // generate random title
-  // const liklierDeath = "test";
-  // const titles = [
-  //   `${ this.state.char1.name }`
-  // ];
-  // const randomTitle = Math.floor(Math.random() * titles.length);
-    let name1 = this.state.pair.char1.name;
-    let name2 = this.state.pair.char2.name;
-    let img1 = this.state.pair.char1.img;
-    let img2 = this.state.pair.char2.img;
+  let name1 = this.state.pair.char1.name;
+  let name2 = this.state.pair.char2.name;
+  let img1 = this.state.pair.char1.img;
+  let img2 = this.state.pair.char2.img;
   return (
     <div>
       <Grid>
         <Row>
           <Col>
-            <h1 className="text-center">Who will be the next eliminated?</h1>
-
-
-
+            <h1 className="text-center">{this.getTitle(this.state.characters)}</h1>
             <BigBattle name1={name1} name2={name2} img1={img1} img2={img2} />
             <br />
             <h3>{name1}'s and {name2}'s location-history on a map:</h3>

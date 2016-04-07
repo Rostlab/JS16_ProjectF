@@ -5,14 +5,19 @@ var assign = require('object-assign');
 
 
 var  _charactersPlod = [];
-var _characterPlod = {};
+var _charactersPlodByName = [];
+var _characterPlodByName = {};
 
 function setCharactersPlod(data) {
     _charactersPlod = data;
 }
 
-function setCharacterPlod(data){
-    _characterPlod = data;
+function setCharactersPlodByName(data){
+    _charactersPlodByName = data;
+}
+
+function setCharacterPlodByName(data){
+    _characterPlodByName = data;
 }
 
 var CharactersPlodStore = assign({}, EventEmitter.prototype, {
@@ -20,8 +25,12 @@ var CharactersPlodStore = assign({}, EventEmitter.prototype, {
     getCharactersPlod: function() {
         return _charactersPlod;
     },
-    getCharacterPlod: function() {
-        return _characterPlod;
+    getCharactersPlodByName: function() {
+        return _charactersPlodByName;
+    },
+
+    getCharacterPlodByName: function() {
+        return _characterPlodByName;
     },
 
     emitChange: function() {
@@ -45,7 +54,10 @@ CharactersPlodStore.dispatchToken = AppDispatcher.register(function (payload) {
             setCharactersPlod(action.data);
             break;
         case Constants.RECEIVE_CHARACTER_PLOD_BY_NAME:
-            setCharacterPlod(action.data);
+            setCharacterPlodByName(action.data);
+            break;
+        case Constants.RECEIVE_CHARACTERS_PLOD_BY_NAME:
+            setCharactersPlodByName(action.data);
             break;
         default:
             return true;
