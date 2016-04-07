@@ -2,6 +2,8 @@
 'use strict';
 const express = require('express');
 const d4 = express();
+const fs = require ('fs');
+const path = require ('path');
 
 const gotsent = require('gotsentimental');
 
@@ -38,11 +40,14 @@ d4.get('/chart.css', function(req,res) {
 });
 d4.get('/chart.js', function(req,res) {
     res.sendFile(gotsent.js);
+  fs.readdir(path.join(__dirname, '/../csv'), function(err, files) {
+    console.log(files);
+  });
 });
 
 const oneHour = 3600000;
-d4.use('/csv', express.static(__dirname + '/../csv', { maxAge: oneHour }));
-
+d4.use('/csv', express.static(path.join(__dirname, '/../csv'), { maxAge: oneHour }));
+console.log(__dirname);
 
 d4.get('/sentiment/:rank', function (req,res) {
   if (req.params.rank == "top") {
