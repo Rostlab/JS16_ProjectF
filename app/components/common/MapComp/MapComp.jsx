@@ -95,7 +95,7 @@ export default class MapComp extends Component {
     var range = this.props.begintimeline !== undefined ? this.parseRange() : [1,50];
 
     mymap.updateMap(range);
-    mymap.getMap().zoomIn(2);
+    mymap.getMap().zoomIn(1);
     for (let i of this.props.character) {
       setTimeout(function (){ /*eslint no-undef:0*/
         let character = mymap.searchCharacter(i.toLowerCase());
