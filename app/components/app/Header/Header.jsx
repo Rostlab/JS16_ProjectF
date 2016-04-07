@@ -8,10 +8,8 @@ let {Component} = React;
 
 export default class Header extends Component {
     render() {
-       $('.nav a').on('click', function(){/*eslint no-console:0,no-undef:0*/
-            $(".btn-navbar").click(); /*eslint no-console:0,no-undef:0*/
+       $('.navbar-collapse.collapse.in ul li a').on('click', function(){/*eslint no-console:0,no-undef:0*/
             $(".navbar-toggle").click();/*eslint no-console:0,no-undef:0*/
-            this.forceUpdate({});
         });
         return (
             <header>
