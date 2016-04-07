@@ -6,9 +6,9 @@ import ReactDOM from 'react-dom';
 import 'file?name=favicon.png!./favicon.png';
 import { Router, Route, IndexRoute } from 'react-router';
 
-import 'jquery';
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/dist/js/bootstrap.js';
+import 'jquery/dist/jquery.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.min.js';
 
 
 import App from './components/app/App.jsx';
