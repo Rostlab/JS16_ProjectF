@@ -11,16 +11,13 @@ const app = express();
 
 app.use(compression());
 
-app.use(express.static(path.join(__dirname, '../build')));
-
 app.use('/d5', d5);
 app.use('/d4', d4);
 app.use('/wikirequest', wikirequest);
 
+app.use(express.static(path.join(__dirname, '../build')));
 
 const webpack = require('webpack');
-
-
 
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = process.env.NODE_ENV === 'production';
