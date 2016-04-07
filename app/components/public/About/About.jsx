@@ -13,7 +13,7 @@ export default class About extends Component {
                 <h1>About</h1>
                 <Row className="about-intro">
                     <Column md={8} mdPush={2}>
-                        <AboutText />
+                         <div dangerouslySetInnerHTML={{ __html: AboutText}} />
                     </Column>
                 </Row>
 
