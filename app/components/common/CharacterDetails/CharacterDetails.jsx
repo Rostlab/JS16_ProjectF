@@ -11,7 +11,7 @@ export default class CharacterDetails extends Component {
         var result = [];
         var meta = "";
         for(detail of details){
-            if(detail in this.props.data){
+            if(detail in this.props.data && this.props.data[detail].length > 1){
                 switch (detail) {
                     case "age" : meta = "Age"; break;
                     case "house" : meta = "House"; break;
