@@ -4,7 +4,7 @@ import React from 'react';
 let {Component} = React;
 import $ from 'jquery';
 import './Characters.css';
-import { Row, Col, Image, Tabs, Tab, ProgressBar } from 'react-bootstrap';
+import { Row, Col, Image, ProgressBar } from 'react-bootstrap';
 
 import MapComp from '../../common/MapComp/MapComp.jsx';
 import Store from '../../../stores/CharactersStore';
@@ -85,24 +85,10 @@ export default class Character extends Component {
                 <Row>
                     <Col md={8} mdOffset={2}>
                         <h2>People on Twitter say</h2>
-                        <Tabs>
-                            <Tab eventKey={1} title="Twitter Analysis 1">
-                                <p>Like Reactions: love-emoji, love-emoji, ...</p>
-                                <p>Dislike Reactions: hate-emoji</p>
-                                <p>Number of tweets: 752</p>
-                            </Tab>
-                            <Tab eventKey={2} title="Twitter Analysis 2">
-                                <p>Like Reactions:</p>
-                                <p>Dislike Reactions: hate-emoji</p>
-                                <p>Number of tweets: 124</p>
-                            </Tab>
-                        </Tabs>
+                        <svg id="chart" width="100%" height="400"></svg>
                     </Col>  
                 </Row>
                 <Row>
-                    <Col md={8} mdOffset={2}>
-                        <svg id="chart" width="100%" height="400"></svg>
-                    </Col>
                     <Col md={8} mdOffset={2}>
                         <h2>Places associated with {this.state.character.name}</h2>
                         <p>Location history</p>
