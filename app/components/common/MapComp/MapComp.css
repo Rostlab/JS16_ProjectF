@@ -37,7 +37,7 @@
     background-color: #1E1E1E;
     border: none;
     padding: 20px;
-    transition: width ease-in-out 0.5s;
+    transition: all ease-in-out 0.5s;
 }
 #sidebar .form-control:focus {
     background-color: #fff;
