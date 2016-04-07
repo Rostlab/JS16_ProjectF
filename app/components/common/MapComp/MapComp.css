@@ -1,3 +1,8 @@
+.map-wrapper {
+    width: 100% !important;
+    min-height: 500px;
+}
+
 #filter .input-group {
     width: 100%;
 }
