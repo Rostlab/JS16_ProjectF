@@ -39,6 +39,7 @@ footer hr {
 footer p, 
 footer a {
 	color: #999;
+	font-weight: normal;
 }
 
 footer p a:hover {

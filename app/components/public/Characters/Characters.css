@@ -4,6 +4,7 @@
 .row.character-intro {
 	padding: 0;
 	max-height: 400px;
+	min-height: 200px;
 }
 .character-photo {
 	padding: 0;

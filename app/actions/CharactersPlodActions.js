@@ -9,15 +9,15 @@ var CharactersPlodActions = {
         Api
             .get('plod/byCount/' + count)
             .then(function (response) {
-              return response.data
+              return response.data;
             }).then(function(charactersPlodResponse){
-                for(var characterPlod in charactersPlodResponse){
+                for(var characterPlod of charactersPlodResponse){
                     Api
-                        .get('characters/byId/' + characterPlod._id )
+                        .get('characters/' + characterPlod.character + "?strict=true" )
                         .then(function(response){
                             var character = response.data;
-                            characterPlod.merge(character);
-                            charactersPlod.push(characterPlod);
+                            var characterWithPlod = Object.assign(character,characterPlod);
+                            charactersPlod.push(characterWithPlod);
                             AppDispatcher.handleServerAction({
                                 actionType: Constants.RECEIVE_CHARACTERS_PLOD_BY_COUNT,
                                 data: charactersPlod
@@ -30,33 +30,35 @@ var CharactersPlodActions = {
         Api
             .get('characters/' + name + '?strict=true')
             .then(function (response) {
-                return response.data;
-            }).then(function(character){
+                return response;
+            }).then(function(response){
+                var character = response.data;
                 Api
-                    .get('plod/byId/' + character._id)
-                    .then(function (characterPlod) {
-                        character.merge(characterPlod);
+                    .get('plod/bySlug/' + character.slug)
+                    .then(function(response) {
+                        var characterPlod = response.data[0];
+                        var characterWithPlod = Object.assign(character,characterPlod);
                         AppDispatcher.handleServerAction({
                             actionType: Constants.RECEIVE_CHARACTER_PLOD_BY_NAME,
-                            data: character
+                            data: characterWithPlod
                         });
                     });
             });
     },
     loadCharactersPlodByName: function(names){
         var charactersPlod = [];
-        for(var name in names){
+        for(var name of names){
             Api
                 .get('characters/' + name + '?strict=true')
                 .then(function (response) {
                     return response.data;
                 }).then(function(character){
                     Api
-                        .get('plod/byId/' + character._id)
+                        .get('plod/bySlug/' + character.slug)
                         .then(function (response) {
-                            var characterPlod = response.data;
-                            character.merge(characterPlod);
-                            charactersPlod.push(character);
+                            var characterPlod = response.data[0];
+                            var characterWithPlod = Object.assign(character,characterPlod);
+                            charactersPlod.push(characterWithPlod);
                             AppDispatcher.handleServerAction({
                                 actionType: Constants.RECEIVE_CHARACTERS_PLOD_BY_NAME,
                                 data: charactersPlod
