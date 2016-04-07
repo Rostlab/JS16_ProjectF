@@ -11,7 +11,7 @@ export default class PlodDescription extends Component {
                 <br/>
                 <Row>
                     <Col xs={10} xsOffset={1} sm={10} smOffset={1} md={8} mdOffset={2}>
-                        <PlodDescriptionText />
+                      <div dangerouslySetInnerHTML={{ __html: PlodDescriptionText}} />
                     </Col>
                 </Row>
             </div>

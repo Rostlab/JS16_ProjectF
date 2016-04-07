@@ -25,7 +25,7 @@ export default class Start extends Component {
             <br />
             <Col md={8} mdPush={2}>
                 <div className="homeBlog">
-                    <HomepageBlog/>
+                  <div dangerouslySetInnerHTML={{ __html: HomepageBlog}} />
                 </div>
             </Col>
         </Row>

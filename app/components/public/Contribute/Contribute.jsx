@@ -10,7 +10,7 @@ export default class Contribute extends Component {
     return (
         <Row>
           <Column md={8} mdPush={2}>
-            <ContributeText />
+            <div dangerouslySetInnerHTML={{ __html: ContributeText}} />
           </Column>
         </Row>
     );
