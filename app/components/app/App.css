@@ -14,14 +14,14 @@ title {
 }
 
 a {
-    color: #999;
+    color: whitesmoke;
+    font-weight: bold;
 }
 
 a:hover,
 a:focus {
-  color: white;
-  text-decoration: none;
-  outline: 0;
+    color: white;
+    outline: 0;
 }
 
 #root {
@@ -68,7 +68,7 @@ a:focus {
 }
 .nav-tabs>li.active>a,
 .nav-tabs>li.active>a:focus,
-.nav-tabs>li.active>a:active, 
+.nav-tabs>li.active>a:active,
 .nav-tabs>li.active>a:hover {
     outline: none;
 }
@@ -144,12 +144,12 @@ a:focus {
     background-size: cover;
     margin-top: -50px;
     background-position: 50% 50%;
-    padding: 0; 
+    padding: 0;
     position: relative;
 }
 .main-container {
-   padding-top: 50px;
-   padding-bottom: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 .map-wrapper {
