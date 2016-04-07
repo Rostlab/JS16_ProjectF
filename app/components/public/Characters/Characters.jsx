@@ -77,9 +77,9 @@ export default class Character extends Component {
                             <ProgressBar now={60} label="%(percent)s%" />
                             <img src={tombstone} />
                         </div>
-                        <p>We developed a machine learning-based algorithm that predicts character's percentage likelihood of death (PLOD) based on character’s information extracted from the first five books of the Song of Ice and Fire series.
-                            <br /><a href="/machine-learning-algorithm-predict-death-game-of-thrones">Click here to find out more about our prediction algorithm.</a></p>
-                        <p>The PLOD score of our less accurate predictor, <a href="/machine-learning-algorithm-predict-death-game-of-thrones">described here,</a> is: 50%</p>
+                        <p>Our in-house developed machine learning algorithm predicts likelihood of death based on various features that we extracted for each character from the first five books of the Song of Ice and Fire series. <br />
+                            Our second, less accurate, algorithm predicts likelihood to be XX%.</p>
+                        <p><a href="/machine-learning-algorithm-predict-death-game-of-thrones">Click here to read more about our prediction algorithms.</a></p>
                     </Col>
                 </Row>
                 <Row>
