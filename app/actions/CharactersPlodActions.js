@@ -47,6 +47,7 @@ var CharactersPlodActions = {
     },
     loadCharactersPlodByName: function(names){
         var charactersPlod = [];
+      console.log(names); /*eslint no-console:0,no-undef:0*/
         for(var name of names){
             Api
                 .get('characters/' + name + '?strict=true')

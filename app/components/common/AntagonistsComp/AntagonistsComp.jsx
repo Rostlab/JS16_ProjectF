@@ -40,7 +40,7 @@ export default class AntagonistsComp extends Component {
   }
 
   componentDidMount() {
-    Actions.loadCharactersPlodByName();
+    Actions.loadCharactersPlodByName([this.state.pair.char1.name,this.state.pair.char2.name]);
   }
 
   _onChange() {
