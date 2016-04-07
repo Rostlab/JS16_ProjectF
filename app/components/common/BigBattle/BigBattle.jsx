@@ -1,9 +1,14 @@
 import React from 'react';
 let {Component} = React;
+
 import d3 from 'd3';
 import $ from 'jquery';
-import './BigBattle.css';
+
+import { Link } from 'react-router';
+
 import {Image, Row, Col} from 'react-bootstrap';
+
+import './BigBattle.css';
 
 export default class BigBattle extends Component {
   constructor(props){
@@ -23,20 +28,28 @@ export default class BigBattle extends Component {
       <div>
         <Row className="big-battle">
           <Col xs={6}>
-            <Image src={this.props.img1} alt={"Image of " + this.props.name1}  />
+            <Link to={'/characters/' + this.props.name1}>
+              <Image src={this.props.img1} alt={"Image of " + this.props.name1}  />
+            </Link>
           </Col>
           <Col xs={6}>
-            <Image src={this.props.img2} alt={"Image of " + this.props.name2} />
+            <Link to={'/characters/' + this.props.name2}>
+              <Image src={this.props.img2} alt={"Image of " + this.props.name2} />
+            </Link>
           </Col>
         </Row>
         <Row className="big-battle-info">
           <Col xs={6}>
-            <h3>{this.props.name1}</h3>
+            <h3>
+              <Link to={'/characters/' + this.props.name1}>{this.props.name1}</Link>
+            </h3>
             <p>PLOD: 70%</p>
 
           </Col>
           <Col xs={6}>
-            <h3>{this.props.name2}</h3>
+            <h3>
+              <Link to={'/characters/' + this.props.name2}>{this.props.name2}</Link>
+            </h3>
             <p>PLOD: 50%</p>
           </Col>
         </Row>
