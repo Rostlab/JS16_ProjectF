@@ -5,12 +5,11 @@
 .ranking-fields .col-xs-12, .ranking-fields .col-sm-6{
 	margin-top: 3em;
 }
-
-.ranking-title {
-	cursor: pointer;	
-}
 .popover-title, .popover-content {
 	color: #333;
+}
+.ranking-title {
+	padding-bottom: 20px;
 }
 .ranking-field {
 	background-color: #313131;
@@ -33,4 +32,8 @@
 	position: relative;
 	right: 10px;
 	bottom: -8px;
+}
+.ranking-field h4 a {
+	font-weight: normal;
+	color: whitesmoke;
 }

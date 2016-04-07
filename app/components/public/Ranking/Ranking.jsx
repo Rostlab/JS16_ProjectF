@@ -8,6 +8,25 @@ import "./Ranking.css";
 import SentimentStore from '../../../stores/TwitterSentimentsStore';
 
 export default class Ranking extends Component {
+    getHardcodedPlodTop5() {
+        return [
+            {name: 'Tommen Baratheon', plod: '97.9'},
+            {name: 'Stannis Baratheon', plod: '96.4'},
+            {name: 'Daenerys Targaryen', plod: '95.3'},
+            {name: 'Davos Seaworth', plod: '91.8'},
+            {name: 'Petyr Baelish', plod: '91.8'}
+        ];
+    }
+    getHardcodedHousesTop5() {
+        return [
+            {name: 'House Cole'},
+            {name: 'House Rosby'},
+            {name: 'House Chelsted'},
+            {name: 'House Stokeworth'},
+            {name: 'House Cassel'}
+        ];
+    }
+
     render() {
         this.state = {
             twitterTopSentiments: SentimentStore.getTopSentiments(),
@@ -21,7 +40,7 @@ export default class Ranking extends Component {
                     <Row className="ranking-fields">
                         <Col xs={12} sm={6}>
                             <div className="ranking-field">
-                                <h3 className="text-center ranking-title">Twitter top 5 loved</h3>
+                                <h2 className="text-center ranking-title">Twitter top 5 loved</h2>
                                 <ul>
                                 {
                                     this.state.twitterTopSentiments.map((char) => {
@@ -33,7 +52,7 @@ export default class Ranking extends Component {
                         </Col>
                         <Col xs={12} sm={6}>
                             <div className="ranking-field">
-                            <h3 className="text-center ranking-title">Twitter top 5 hated</h3>
+                            <h2 className="text-center ranking-title">Twitter top 5 hated</h2>
                             {
                                 this.state.twitterFlopSentiments.map((char) => {
                                     return <div>{char}</div>;
@@ -45,19 +64,30 @@ export default class Ranking extends Component {
                     <Row className="ranking-fields">
                         <Col xs={12} sm={6}>
                             <div className="ranking-field">
-                                <h3 className="text-center ranking-title">Who is most likely to die next</h3>
+                                <h2 className="text-center ranking-title">Who is most likely to die next</h2>
+                                <ul>
+                                    {
+                                        this.getHardcodedPlodTop5().map((char) => {
+                                            return <li>
+                                                <h4><Link to={'/characters/' + char.name}>
+                                                    {char.name} [{char.plod}%]
+                                                </Link></h4>
+                                            </li>;
+                                        })
+                                    }
+                                </ul>
                                 <p className="see-more"><Link to={'/characters/?search=&page=1&sort=plod&order=1'}>See more</Link></p>
                             </div>
                         </Col>
                         <Col xs={12} sm={6}>
                             <div className="ranking-field">
-                                <h3 className="text-center">Most dangerous Houses </h3>
+                                <h2 className="text-center ranking-title">Most dangerous Houses </h2>
                                 <ul>
-                                    <li>Gonna Hardcode</li>
-                                    <li>Gonna Hardcode</li>
-                                    <li>Gonna Hardcode</li>
-                                    <li>Gonna Hardcode</li>
-                                    <li>Gonna Hardcode</li>
+                                    {
+                                        this.getHardcodedHousesTop5().map((house) => {
+                                            return <li><h4>{house.name}</h4></li>;
+                                        })
+                                    }
                                 </ul>
                             </div>
                         </Col>
