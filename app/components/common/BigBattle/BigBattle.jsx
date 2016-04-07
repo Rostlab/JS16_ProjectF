@@ -43,14 +43,14 @@ export default class BigBattle extends Component {
             <h3>
               <Link to={'/characters/' + this.props.name1}>{this.props.name1}</Link>
             </h3>
-            <p>PLOD: 70%</p>
+            <p>PLOD: {this.props.plod1}%</p>
 
           </Col>
           <Col xs={6}>
             <h3>
               <Link to={'/characters/' + this.props.name2}>{this.props.name2}</Link>
             </h3>
-            <p>PLOD: 50%</p>
+            <p>PLOD: {this.props.plod2}%</p>
           </Col>
         </Row>
         <p><em>PLOD</em> is the <strong>likelihood of death</strong> of a character. Learn more about how we calculate this score <a href="/machine-learning-algorithm-predict-death-game-of-thrones">here</a>.</p>
@@ -73,5 +73,7 @@ BigBattle.propTypes = {
   name1: React.PropTypes.string.isRequired,
   name2: React.PropTypes.string.isRequired,
   img1: React.PropTypes.string,
-  img2: React.PropTypes.string
+  img2: React.PropTypes.string,
+  plod1: React.PropTypes.number.isRequired,
+  plod2: React.PropTypes.number.isRequired
 };

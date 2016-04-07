@@ -22,17 +22,14 @@ export default class AntagonistsComp extends Component {
     let img2 = '/static/images/'+json[randompair][1].replace(/ /g,'_')+'.jpg';
 
     this.state = {
-      pair: {
-        char1: {
-          name: name1,
-          img: img1
-          },
-        char2:{
-          name: name2,
-          img: img2
-        }
-      },
-      data: {}
+      char1: {
+        name: name1,
+        img: img1
+        },
+      char2:{
+        name: name2,
+        img: img2
+      }
     };
     this._onChange = this._onChange.bind(this);
   }
@@ -46,7 +43,7 @@ export default class AntagonistsComp extends Component {
   }
 
   componentDidMount() {
-    Actions.loadCharactersPlodByName([this.state.pair.char1.name,this.state.pair.char2.name]);
+    Actions.loadCharactersPlodByName([this.state.char1.name,this.state.char2.name]);
   }
 
   _onChange() {
@@ -83,24 +80,33 @@ export default class AntagonistsComp extends Component {
   }
 
   render() {
-  let name1 = this.state.pair.char1.name;
-  let name2 = this.state.pair.char2.name;
-  let img1 = this.state.pair.char1.img;
-  let img2 = this.state.pair.char2.img;
-  return (
-    <div>
-      <Grid>
-        <Row>
-          <Col>
-            <h1 className="text-center">{this.getTitle(this.state.characters)}</h1>
-            <BigBattle name1={name1} name2={name2} img1={img1} img2={img2} />
-            <br />
-            <h3>{name1}'s and {name2}'s location-history on a map:</h3>
-            <MapComp character={[name1, name2]}/>
-          </Col>
-        </Row>
-      </Grid>
-    </div>
+    let name1 = this.state.char1.name;
+    let name2 = this.state.char2.name;
+    let img1 = this.state.char1.img;
+    let img2 = this.state.char2.img;
+    let plod1 = 0,plod2 = 0;
+    if (this.state.characters != undefined) {
+      plod1 = this.state.characters.find(function(ele) {
+        return ele.character === name1;
+      }).plod;
+      plod2 = this.state.characters.find(function(ele) {
+        return ele.character === name2;
+      }).plod;
+    }
+    return (
+      <div>
+        <Grid>
+          <Row>
+            <Col>
+              <h1 className="text-center">{this.getTitle(this.state.characters)}</h1>
+              <BigBattle name1={name1} name2={name2} img1={img1} img2={img2} plod1={plod1} plod2={plod2}/>
+              <br />
+              <h3>{name1}'s and {name2}'s location-history on a map:</h3>
+              <MapComp character={[name1, name2]}/>
+            </Col>
+          </Row>
+        </Grid>
+      </div>
     );
   }
 }
