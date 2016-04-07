@@ -96,6 +96,9 @@ export default class MapComp extends Component {
 
     mymap.updateMap(range);
     mymap.getMap().zoomIn(1);
+    if(this.props.pagex!=='/map') {
+      mymap.getMap().scrollWheelZoom.disable();
+    }
     for (let i of this.props.character) {
       setTimeout(function (){ /*eslint no-undef:0*/
         let character = mymap.searchCharacter(i.toLowerCase());
@@ -114,10 +117,12 @@ export default class MapComp extends Component {
     if (patt.test(end)) {
       end = (patt.exec(end)[1]) *  patt.exec(end)[2];
     } else { end = 50; }
-    return [parseInt(begin),parseInt(end)];
+   return [parseInt(begin),parseInt(end)];
   }
 
+    
   render() {
+    console.log(this.props.pagex);/*eslint no-console:0,no-undef:0*/
     return (
         <div className="map-wrapper">
           <div id="map">
@@ -136,6 +141,7 @@ export default class MapComp extends Component {
     );
   }
 }
+MapComp.propTypes = { pagex: React.PropTypes.string };
 MapComp.propTypes = { character: React.PropTypes.array };
 MapComp.propTypes = { location: React.PropTypes.object };
 MapComp.propTypes = { begintimeline: React.PropTypes.string };
