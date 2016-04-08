@@ -99,7 +99,7 @@ export default class Character extends Component {
 
                 <Row>
                     <Col md={8} mdOffset={2}>
-                        <h2>Places associated with {this.state.character.name}</h2>
+                        <h2>Follow {this.state.character.name}</h2>
                     </Col>
                     <Col>
                         <MapComp character={[this.props.params.id]} />
