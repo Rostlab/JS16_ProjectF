@@ -9,6 +9,7 @@ import { Link } from 'react-router';
 import {Image, Row, Col} from 'react-bootstrap';
 
 import './BigBattle.css';
+import tombstone from '../../public/Characters/rip_tombstone.png';
 
 export default class BigBattle extends Component {
   constructor(props){
@@ -28,14 +29,22 @@ export default class BigBattle extends Component {
       <div>
         <Row className="big-battle">
           <Col xs={6}>
-            <Link to={'/characters/' + this.props.name1}>
-              <Image src={this.props.img1} alt={"Image of " + this.props.name1}  />
-            </Link>
+            <div className="antagonistImageContainer">
+              <Link to={'/characters/' + this.props.name1}>
+                <Image className="antagonistImage" src={this.props.img1} alt={"Image of " + this.props.name1}  />
+              </Link>
+              <img className="antagonistTombstone" src={tombstone} />
+              <p className="antagonistTombstonePlod">{parseInt(this.props.plod1)}%</p>
+            </div>
           </Col>
           <Col xs={6}>
-            <Link to={'/characters/' + this.props.name2}>
-              <Image src={this.props.img2} alt={"Image of " + this.props.name2} />
-            </Link>
+            <div className="antagonistImageContainer">
+              <Link to={'/characters/' + this.props.name2}>
+                <Image className="antagonistImage" src={this.props.img2} alt={"Image of " + this.props.name2}  />
+              </Link>
+              <img className="antagonistTombstone" src={tombstone} />
+              <p className="antagonistTombstonePlod">{parseInt(this.props.plod2)}%</p>
+            </div>
           </Col>
         </Row>
         <Row className="big-battle-info">
@@ -43,17 +52,15 @@ export default class BigBattle extends Component {
             <h3>
               <Link to={'/characters/' + this.props.name1}>{this.props.name1}</Link>
             </h3>
-            <p>PLOD: {this.props.plod1}%</p>
-
           </Col>
           <Col xs={6}>
             <h3>
               <Link to={'/characters/' + this.props.name2}>{this.props.name2}</Link>
             </h3>
-            <p>PLOD: {this.props.plod2}%</p>
           </Col>
         </Row>
-        <p><em>PLOD</em> is the <strong>likelihood of death</strong> of a character. Learn more about how we calculate this score <a href="/machine-learning-algorithm-predict-death-game-of-thrones">here</a>.</p>
+        <br />
+        <p>The tombstone shows our <strong>predicted likelihood of death</strong>. Read how we calculate the score <a href="/machine-learning-algorithm-predict-death-game-of-thrones">here</a>!</p>
         <br />
         <Row className="big-battle-info">
           <h3>Twitter Sentiments</h3>
