@@ -57,7 +57,7 @@ var CharactersPlodActions = {
                       .get('plod/bySlug/' + character.slug)
                       .then(function (response) {
                         var characterPlod = response.data.find(function (ele) {
-                          return ele.algorithm == "gotplod";
+                          return ele.algorithm === "gotplod" && ele.characterSlug === character.slug;
                         });
                         var characterWithPlod = Object.assign(character,characterPlod);
                         charactersPlod.push(characterWithPlod);
