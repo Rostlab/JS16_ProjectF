@@ -7,12 +7,12 @@ var path = require('path');
 var PATH_CLIENT = path.join(__dirname, '../app');
 var PATH_DIST = path.join(__dirname, '../build');
 
-var analytics, api, https, prefix;
+var analytics, api, apiport, https, prefix;
 try {
   var json = require('../config/config.json');
   analytics = json.google_analytics.key;
   api = json.api.host;
-  apiport = json.api.port;
+  apiport = (json.api.port !== undefined) ? json.api.port : (json.api.https) ? '443' : '80';
   https = json.api.https ? "https://" : "http://";
   prefix = json.api.prefix;
 } catch (err) {
