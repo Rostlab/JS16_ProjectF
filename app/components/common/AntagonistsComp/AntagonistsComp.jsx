@@ -5,6 +5,7 @@ require.context("./img", false, /^\.\/.*\.jpg$/); /*eslint no-undef:0*/
 
 import BigBattle from '../BigBattle/BigBattle.jsx';
 import json from 'json!./antagonists.json';
+
 import MapComp from '../MapComp/MapComp.jsx';
 
 import Actions from '../../../actions/CharactersPlodActions.js';
