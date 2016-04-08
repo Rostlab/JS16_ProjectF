@@ -26,6 +26,15 @@ export default class Ranking extends Component {
             {name: 'House Cassel'}
         ];
     }
+    getHardcodedSurvivors() {
+        return [
+            {name: 'Sansa Stark', plod: '3.9'},
+            {name: 'Jon Snow', plod: '11.6'},
+            {name: 'Cersei Lannister', plod: '16.6'},
+            {name: 'Mace Tyrell', plod: '18.7'},
+            {name: 'Roose Bolton', plod: '28.9'}
+        ];
+    }
 
     render() {
         this.state = {
@@ -70,7 +79,7 @@ export default class Ranking extends Component {
                                         this.getHardcodedPlodTop5().map((char) => {
                                             return <li>
                                                 <h4><Link to={'/characters/' + char.name}>
-                                                    {char.name} [{char.plod}%]
+                                                    {char.name} [{parseInt(char.plod)}%]
                                                 </Link></h4>
                                             </li>;
                                         })
@@ -80,6 +89,25 @@ export default class Ranking extends Component {
                             </div>
                         </Col>
                         <Col xs={12} sm={6}>
+                            <div className="ranking-field">
+                                <h2 className="text-center ranking-title">Top Survivors</h2>
+                                <ul>
+                                    {
+                                        this.getHardcodedSurvivors().map((char) => {
+                                            return <li>
+                                                <h4><Link to={'/characters/' + char.name}>
+                                                    {char.name} [{parseInt(char.plod)}%]
+                                                </Link></h4>
+                                            </li>;
+                                        })
+                                    }
+                                </ul>
+                                <p className="see-more"><Link to={'/characters/?search=&page=1&sort=plod&order=-1'}>See more</Link></p>
+                            </div>
+                        </Col>
+                    </Row>
+                    <Row className="ranking-fields">
+                        <Col sm={6} smOffset={3}>
                             <div className="ranking-field">
                                 <h2 className="text-center ranking-title">Most dangerous Houses </h2>
                                 <ul>
