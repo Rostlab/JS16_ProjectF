@@ -72,10 +72,16 @@ export default class AntagonistsComp extends Component {
     const titles = [
       `${ likelierDeathName } is likelier to die than ${ notLikelyDeathName }`,
       `${ likelierDeathName } is likelier to get whacked`,
+      `${ likelierDeathName } is likelier to be liquidated`,
       `${ likelierDeathName } will surely be the first to be slain`,
       `The future of ${ likelierDeathName } is blood and fire`,
       `${ likelierDeathName } will surely bite the dust`,
-      `${ notLikelyDeathName } would outlive ${ likelierDeathName }`
+      `${ notLikelyDeathName } would outlive ${ likelierDeathName }`,
+      `${ likelierDeathName } is likelier to get iced`,
+      `${ likelierDeathName } will go to sleep with the fishes`,
+      `${ likelierDeathName } got a pair of cement shoes`,
+      `${ likelierDeathName } days are numbered`,
+      `The future is dark and full of terrors for ${ likelierDeathName }`
     ];
     const randomTitle = Math.floor(Math.random() * titles.length);
     return titles[randomTitle];
