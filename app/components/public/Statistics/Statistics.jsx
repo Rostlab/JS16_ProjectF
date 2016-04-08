@@ -7,7 +7,6 @@ export default class Statistics extends Component {
     return (
       <Row>
         <Col>
-          <h1>Statistics</h1>
         </Col>
       </Row>
     );
