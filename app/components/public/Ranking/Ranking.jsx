@@ -68,11 +68,15 @@ export default class Ranking extends Component {
                             <div className="ranking-field">
                                 <h2 className="text-center ranking-title">Twitter top 5 loved</h2>
                                 <ul>
-                                {
-                                    this.state.twitterTopSentiments.map((char) => {
-                                        return <li>{char.name}</li>;
-                                    })
-                                }
+                                    {
+                                        this.state.twitterTopSentiments.map((char) => {
+                                            return <li>
+                                                <h4><Link to={'/characters/' + char.name}>
+                                                    {char.name}
+                                                </Link></h4>
+                                            </li>;
+                                        })
+                                    }
                                 </ul>
                             </div>
                         </Col>
@@ -80,11 +84,15 @@ export default class Ranking extends Component {
                             <div className="ranking-field">
                                 <h2 className="text-center ranking-title">Twitter top 5 hated</h2>
                                 <ul>
-                                {
-                                    this.state.twitterFlopSentiments.map((char) => {
-                                        return <li>{char.name}</li>;
-                                    })
-                                }
+                                    {
+                                        this.state.twitterFlopSentiments.map((char) => {
+                                            return <li>
+                                                <h4><Link to={'/characters/' + char.name}>
+                                                    {char.name}
+                                                </Link></h4>
+                                            </li>;
+                                        })
+                                    }
                                 </ul>
                             </div>
                         </Col>
