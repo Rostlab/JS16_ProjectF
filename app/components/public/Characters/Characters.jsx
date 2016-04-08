@@ -94,18 +94,17 @@ export default class Character extends Component {
                         <svg id="chart" width="100%" height="400"></svg>
                     </Col>  
                 </Row>
+                
+                </div>
+
                 <Row>
                     <Col md={8} mdOffset={2}>
                         <h2>Places associated with {this.state.character.name}</h2>
-                        <p>Location history</p>
                     </Col>
-                    <Col md={8} mdOffset={2}>
+                    <Col>
                         <MapComp character={[this.props.params.id]} />
                     </Col>
                 </Row>
-                </div>
-
-
 
             </div>
         );

@@ -152,9 +152,3 @@ a:focus {
     padding-top: 50px;
     padding-bottom: 50px;
 }
-
-.map-wrapper {
-    width: 100% !important;
-    height: 0;
-    padding-bottom: 50%;
-}
