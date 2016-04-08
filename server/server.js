@@ -11,6 +11,10 @@ const app = express();
 
 app.use(compression());
 
+app.get('/sitemap.xml', function(req,res) {
+  res.sendFile(path.join(__dirname, '../sitemap.xml'))
+});
+
 app.use('/d5', d5);
 app.use('/d4', d4);
 app.use('/wikirequest', wikirequest);
