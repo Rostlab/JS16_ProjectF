@@ -60,7 +60,7 @@ export default class BigBattle extends Component {
           </Col>
         </Row>
         <br />
-        <p>The above <em>percentage</em> is the <strong>likelihood of death</strong> of a character. Learn more about how we calculate this score <a href="/machine-learning-algorithm-predict-death-game-of-thrones">here</a>.</p>
+        <p>The tombstone shows our <strong>predicted likelihood of death</strong>. Read how we calculate the score <a href="/machine-learning-algorithm-predict-death-game-of-thrones">here</a>!</p>
         <br />
         <Row className="big-battle-info">
           <h3>Twitter Sentiments</h3>
