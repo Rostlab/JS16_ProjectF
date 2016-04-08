@@ -170,7 +170,7 @@ a:focus {
     background-color: #5A180C;
     transition: all .1s ease-in-out;
 }
-.btn--secondary span.glyphicon {
+.btn--secondary .glyphicon {
     margin-right: 5px;
 }
 
