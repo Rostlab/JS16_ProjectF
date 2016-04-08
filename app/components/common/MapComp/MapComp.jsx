@@ -122,7 +122,6 @@ export default class MapComp extends Component {
 
     
   render() {
-    console.log(this.props.pagex);/*eslint no-console:0,no-undef:0*/
     return (
         <div className="map-wrapper">
           <div id="map">

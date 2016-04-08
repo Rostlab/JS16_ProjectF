@@ -27,6 +27,7 @@
     top: 10px;
     left: 20px;
     width: 300px;
+    max-height: 80%;
 }
 .glyphicon-search {
     color: #fff;
@@ -48,7 +49,8 @@
     overflow: auto;
     background: rgba(0, 0, 0, 0.4);
     transition: background ease-in-out 0.5s;
-    margin-top: -5px;
+    max-height: 300px;
+    overflow-y: auto;
 }
 #characters:hover {
     background: rgba(0, 0, 0, 0.7);
