@@ -2,7 +2,7 @@ var request = require('superagent');
 var Promise = require('es6-promise').Promise;
 var protocol = (process.env.NODE_ENV === 'development') ? 'http://' : process.env.__PROTOCOL__;
 var port = (process.env.NODE_ENV === 'development') ? ':8080' : '';
-var baseUrl = protocol + 'localhost' + port + '/';
+var baseUrl = protocol + process.env.__API__ + port + '/';
 
 var Api = {
   get: function (url, query) {
