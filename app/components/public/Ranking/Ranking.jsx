@@ -6,6 +6,7 @@ import {Grid, Row, Col} from 'react-bootstrap';
 
 import "./Ranking.css";
 import SentimentStore from '../../../stores/TwitterSentimentsStore';
+import SentimentsActions from '../../../actions/TwitterSentimentsActions';
 
 export default class Ranking extends Component {
     getHardcodedPlodTop5() {
@@ -27,13 +28,38 @@ export default class Ranking extends Component {
         ];
     }
 
-    render() {
+    constructor(props) {
+        super(props);
         this.state = {
+            twitterTopSentiments: [],
+            twitterFlopSentiments: [],
+            twitterTopControversial: []
+        };
+        this._onChange = this._onChange.bind(this);
+    }
+
+    componentWillMount (){
+        SentimentStore.addChangeListener(this._onChange);
+    }
+
+    componentWillUnmount(){
+        SentimentStore.removeChangeListener(this._onChange);
+    }
+
+
+    componentDidMount() {
+        SentimentsActions.loadTopSentiments(5);
+        SentimentsActions.loadFlopSentiments(5);
+    }
+
+    _onChange() {
+        this.setState({
             twitterTopSentiments: SentimentStore.getTopSentiments(),
             twitterFlopSentiments: SentimentStore.getFlopSentiments()
-            //twitterTopControversial: SentimentStore.getTopControversialSentiments()
-        };
+        });
+    }
 
+    render() {
         return (
             <div>
                 <Grid className="ranking">
@@ -44,7 +70,7 @@ export default class Ranking extends Component {
                                 <ul>
                                 {
                                     this.state.twitterTopSentiments.map((char) => {
-                                        return <li>{char}</li>;
+                                        return <li>{char.name}</li>;
                                     })
                                 }
                                 </ul>
@@ -52,12 +78,14 @@ export default class Ranking extends Component {
                         </Col>
                         <Col xs={12} sm={6}>
                             <div className="ranking-field">
-                            <h2 className="text-center ranking-title">Twitter top 5 hated</h2>
-                            {
-                                this.state.twitterFlopSentiments.map((char) => {
-                                    return <div>{char}</div>;
-                                })
-                            }
+                                <h2 className="text-center ranking-title">Twitter top 5 hated</h2>
+                                <ul>
+                                {
+                                    this.state.twitterFlopSentiments.map((char) => {
+                                        return <li>{char.name}</li>;
+                                    })
+                                }
+                                </ul>
                             </div>
                         </Col>
                     </Row>
