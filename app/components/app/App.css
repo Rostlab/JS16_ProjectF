@@ -153,3 +153,30 @@ a:focus {
     padding-top: 50px;
     padding-bottom: 50px;
 }
+
+.btn--secondary {
+    font-weight: normal;
+    border-radius: 4px;
+    font-size: 1.2em;
+    color: whitesmoke;
+    padding: 5px 15px;
+    background-color: transparent;
+    border: solid 2px #5A180C;
+    transition: all .1s ease-in-out;
+    cursor: pointer;
+    text-decoration: none !important;
+}
+.btn--secondary:hover {
+    background-color: #5A180C;
+    transition: all .1s ease-in-out;
+}
+.btn--secondary span.glyphicon {
+    margin-right: 5px;
+}
+
+/*
+ * Utillities
+ */
+.u-inlineBlock {
+    display: inline-block;
+}
