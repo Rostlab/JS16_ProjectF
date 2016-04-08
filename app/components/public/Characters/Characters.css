@@ -46,6 +46,12 @@
 	width: 100%;
 	padding: 10px;
 }
+.wikiButton {
+	top: 25px;
+	position: absolute;
+	right: 20px;
+}
+
 .list-group-item {
 	background: #333;
 	border: none;
@@ -64,7 +70,10 @@
 	.character-container .map-wrapper {
 		padding-bottom: 100%;
 	}
-
+	.wikiButton {
+		top: -50px;
+		right: 10px;
+	}
 }
 
 

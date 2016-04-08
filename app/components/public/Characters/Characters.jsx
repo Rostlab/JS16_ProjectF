@@ -4,7 +4,7 @@ import React from 'react';
 let {Component} = React;
 import $ from 'jquery';
 import './Characters.css';
-import { Row, Col, Image, ProgressBar } from 'react-bootstrap';
+import { Row, Col, Image, ProgressBar, Glyphicon } from 'react-bootstrap';
 
 import MapComp from '../../common/MapComp/MapComp.jsx';
 import Store from '../../../stores/CharactersStore';
@@ -61,7 +61,13 @@ export default class Character extends Component {
                     <div className="header-image">
                         <div className="character-name-container">
                             <Col xs={12} sm={9}  md={8} className="character-name">
-                                <div><h1>{this.state.character.name}</h1></div>
+                                <div className="u-inlineBlock"><h1>{this.state.character.name}</h1></div>
+                                <a href={"https://awoiaf.westeros.org/index.php/" + this.state.character.name}
+                                   target="_blank"
+                                   className="btn--secondary wikiButton u-inlineBlock">
+                                    <Glyphicon glyph="share-alt" />
+                                    Wiki
+                                </a>
                             </Col>
                         </div>
                     </div>
