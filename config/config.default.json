@@ -5,7 +5,7 @@
   "api": {
     "https": true,
     "host": "api.got.show",
-    "port": "3010",
+    "port": "443",
     "prefix": "/api/"
   },
   "twitter_hash_tag": {
@@ -40,7 +40,7 @@
     "api": {
       "https": true,
       "host": "api.got.show",
-      "port": "3010",
+      "port": "443",
       "prefix": "/api/"
     },
     "twitter": {

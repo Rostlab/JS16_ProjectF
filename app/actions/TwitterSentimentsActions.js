@@ -1,6 +1,6 @@
 var AppDispatcher = require('../dispatcher/AppDispatcher');
 var Constants = require('../constants/Constants');
-var Api = require('../network/SentimentAPI');
+var Api = require('../network/Api');
 
 var TwitterSentimentsActions = {
 
