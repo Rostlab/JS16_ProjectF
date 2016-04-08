@@ -5,6 +5,8 @@ require.context("./img", false, /^\.\/.*\.jpg$/); /*eslint no-undef:0*/
 
 import BigBattle from '../BigBattle/BigBattle.jsx';
 import json from 'json!./antagonists.json';
+// ["Arya Stark","Thoros of Myr"],  no plod
+// ["Aegon Targaryen (son of Rhaegar)","Jaime Lannister"], problem with plod request by slug
 import MapComp from '../MapComp/MapComp.jsx';
 
 import Actions from '../../../actions/CharactersPlodActions.js';

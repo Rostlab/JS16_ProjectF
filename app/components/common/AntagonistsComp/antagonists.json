@@ -6,7 +6,6 @@
   ["Arya Stark","Ilyn Payn"],
   ["Arya Stark","Meryn Trant"],
   ["Arya Stark","Meryn Trant"],
-  // ["Arya Stark","Thoros of Myr"],  no plod
   ["Arya Stark","Walder Frey"],
   ["Arya Stark","Ilyn Payne"],
   ["Ramsay Snow","Sansa Stark"],
@@ -31,7 +30,6 @@
   ["Bowen Marsh","Jon Snow"],
   ["Doran Martell","Tommen Baratheon"],
   ["Olenna Redwyne", "Cersei Lannister"],
-  // ["Aegon Targaryen (son of Rhaegar)","Jaime Lannister"], problem with plod request by slug
   ["Tyrion Lannister","Jaime Lannister"],
   ["Barristan Selmy","Jorah Mormont"],
   ["Obara Sand","Doran Martell"],
