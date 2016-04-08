@@ -7,7 +7,7 @@
     border-right: 1px solid #fff;
 }
 
-.big-battle img {
+.antagonistImage{
     width: 100%;
     vertical-align: middle;
 }
@@ -25,4 +25,26 @@
 }
 .big-battle-info a {
     color: whitesmoke;
+}
+.antagonistImageContainer  {
+    height: 400px;
+    display: block;
+    position: relative;
+}
+.antagonistTombstone {
+    height: 150px;
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    right: -5px;
+}
+.antagonistTombstonePlod {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    z-index: 2;
+    color: black;
 }
