@@ -1,134 +1,163 @@
 import React from 'react';
 let {Component} = React;
-import {Grid, Row, Col, Image, Tabs, Tab, OverlayTrigger, Popover} from 'react-bootstrap';
-import "./Ranking.css";
-export default class Ranking extends Component {
-  render() {
-    return (
-      <div>
-		<Grid className="ranking">
-			<h1 className="text-center">Who will be the next eliminated?</h1>
-			<Row className="big-battle">
-				<Col xs={6}>
-				<Image src="https://placeholdit.imgix.net/~text?txtsize=33&txt=profile%20picture%20&w=350&h=150"/>
-				</Col>
-				<Col xs={6}>
-				<Image src="https://placeholdit.imgix.net/~text?txtsize=33&txt=profile%20picture%20&w=350&h=150"/>
-				</Col>
-			</Row>
-			<Row className="big-battle-info">
-				<Col xs={6}>
-				<span>character 1<br/>PLOD: 70%</span>
-				</Col>
-				<Col xs={6}>
-				<span>character 2<br/>PLOD: 73%</span>
-				</Col>
-			</Row>
 
-			<Row className="ranking-fields">
-				<Col xs={12} sm={6}>
-<OverlayTrigger trigger="click" placement="top" overlay={<Popover title="Top 5 loved">We have two algorithms!</Popover>}>
-<h3 className="text-center ranking-title">Twitter top 5 loved</h3>
-</OverlayTrigger>
-<Tabs defaultActiveKey={1}>
-    <Tab eventKey={1} title="Algorithm 1">
-      <Row>
-        <Col xs={8}>Character 1</Col>
-        <Col xs={4}>1</Col>
-      </Row><Row>
-        <Col xs={8}>Character 2</Col>
-        <Col xs={4}>2</Col>
-      </Row><Row>
-        <Col xs={8}>Character 3</Col>
-        <Col xs={4}>3</Col>
-      </Row><Row>
-        <Col xs={8}>Character 4</Col>
-        <Col xs={4}>4</Col>
-      </Row><Row>
-        <Col xs={8}>Character 5</Col>
-        <Col xs={4}>5</Col>
-      </Row>
-    </Tab>
-    <Tab eventKey={2} title="Algorithm 2">
-      <Row>
-        <Col xs={8}>Character 1</Col>
-        <Col xs={4}>1</Col>
-      </Row><Row>
-        <Col xs={8}>Character 2</Col>
-        <Col xs={4}>2</Col>
-    	</Row><Row>
-    		<Col xs={8}>Character 3</Col>
-    		<Col xs={4}>3</Col>
-    	</Row><Row>
-    		<Col xs={8}>Character 4</Col>
-    		<Col xs={4}>4</Col>
-    	</Row><Row>
-    		<Col xs={8}>Character 5</Col>
-    		<Col xs={4}>5</Col>
-    	</Row>
-    </Tab>
-  </Tabs>
-  </Col>
-<Col xs={12} sm={6}>
-<OverlayTrigger trigger="click" placement="top" overlay={<Popover title="Top 5 hated">We have two algorithms!</Popover>}>
-<h3 className="text-center ranking-title">Twitter top 5 hated</h3>
-</OverlayTrigger>
-  <Tabs defaultActiveKey={1}>
-    <Tab eventKey={1} title="Algorithm 1">
-      <Row>
-        <Col xs={8}>Character 1</Col>
-        <Col xs={4}>1</Col>
-      </Row><Row>
-        <Col xs={8}>Character 2</Col>
-        <Col xs={4}>2</Col>
-      </Row><Row>
-        <Col xs={8}>Character 3</Col>
-        <Col xs={4}>3</Col>
-      </Row><Row>
-        <Col xs={8}>Character 4</Col>
-    		<Col xs={4}>4</Col>
-    	</Row><Row>
-    		<Col xs={8}>Character 5</Col>
-    		<Col xs={4}>5</Col>
-    	</Row>
-    </Tab>
-    <Tab eventKey={2} title="Algorithm 2">
-    	<Row>
-    		<Col xs={8}>Character 1</Col>
-    		<Col xs={4}>1</Col>
-    	</Row><Row>
-    		<Col xs={8}>Character 2</Col>
-    		<Col xs={4}>2</Col>
-    	</Row><Row>
-    		<Col xs={8}>Character 3</Col>
-    		<Col xs={4}>3</Col>
-    	</Row><Row>
-    		<Col xs={8}>Character 4</Col>
-    		<Col xs={4}>4</Col>
-    	</Row><Row>
-    		<Col xs={8}>Character 5</Col>
-    		<Col xs={4}>5</Col>
-    	</Row>
-    </Tab>
-  </Tabs>
-				</Col>
-			</Row>
-			<Row className="ranking-fields">
-				<Col xs={12} sm={6}>
-<OverlayTrigger trigger="click" placement="top" overlay={<Popover title="PLOD">We have two algorithms!</Popover>}>				
-<h3 className="text-center ranking-title">Who is most likely to die next</h3>
-</OverlayTrigger>
-<Tabs defaultActiveKey={1}>
-    <Tab eventKey={1} title="Algorithm 1">Algorithm 1</Tab>
-    <Tab eventKey={2} title="Algorithm 2">Algorithm 2</Tab>
-  </Tabs>
-				</Col>
-				<Col xs={12} sm={6}>
-<h3 className="text-center">Top 5 survivors	</h3>
-				</Col>
-			</Row>
-		</Grid>
-      </div>
-    );
-  }
+import { Link } from 'react-router';
+import {Grid, Row, Col} from 'react-bootstrap';
+
+import "./Ranking.css";
+import SentimentStore from '../../../stores/TwitterSentimentsStore';
+import SentimentsActions from '../../../actions/TwitterSentimentsActions';
+
+export default class Ranking extends Component {
+    getHardcodedPlodTop5() {
+        return [
+            {name: 'Tommen Baratheon', plod: '97.9'},
+            {name: 'Stannis Baratheon', plod: '96.4'},
+            {name: 'Daenerys Targaryen', plod: '95.3'},
+            {name: 'Davos Seaworth', plod: '91.8'},
+            {name: 'Petyr Baelish', plod: '91.8'}
+        ];
+    }
+    getHardcodedHousesTop5() {
+        return [
+            {name: 'House Cole'},
+            {name: 'House Rosby'},
+            {name: 'House Chelsted'},
+            {name: 'House Stokeworth'},
+            {name: 'House Cassel'}
+        ];
+    }
+    getHardcodedSurvivors() {
+        return [
+            {name: 'Sansa Stark', plod: '3.9'},
+            {name: 'Jon Snow', plod: '11.6'},
+            {name: 'Cersei Lannister', plod: '16.6'},
+            {name: 'Mace Tyrell', plod: '18.7'},
+            {name: 'Roose Bolton', plod: '28.9'}
+        ];
+    }
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            twitterTopSentiments: [],
+            twitterFlopSentiments: [],
+            twitterTopControversial: []
+        };
+        this._onChange = this._onChange.bind(this);
+    }
+
+    componentWillMount (){
+        SentimentStore.addChangeListener(this._onChange);
+    }
+
+    componentWillUnmount(){
+        SentimentStore.removeChangeListener(this._onChange);
+    }
+
+
+    componentDidMount() {
+        SentimentsActions.loadTopSentiments(5);
+        SentimentsActions.loadFlopSentiments(5);
+    }
+
+    _onChange() {
+        this.setState({
+            twitterTopSentiments: SentimentStore.getTopSentiments(),
+            twitterFlopSentiments: SentimentStore.getFlopSentiments()
+        });
+    }
+
+    render() {
+        return (
+            <div>
+                <Grid className="ranking">
+                    <Row className="ranking-fields">
+                        <Col xs={12} sm={6}>
+                            <div className="ranking-field">
+                                <h2 className="text-center ranking-title">Twitter top 5 loved</h2>
+                                <ul>
+                                    {
+                                        this.state.twitterTopSentiments.map((char) => {
+                                            return <li>
+                                                <h4><Link to={'/characters/' + char.name}>
+                                                    {char.name}
+                                                </Link></h4>
+                                            </li>;
+                                        })
+                                    }
+                                </ul>
+                            </div>
+                        </Col>
+                        <Col xs={12} sm={6}>
+                            <div className="ranking-field">
+                                <h2 className="text-center ranking-title">Twitter top 5 hated</h2>
+                                <ul>
+                                    {
+                                        this.state.twitterFlopSentiments.map((char) => {
+                                            return <li>
+                                                <h4><Link to={'/characters/' + char.name}>
+                                                    {char.name}
+                                                </Link></h4>
+                                            </li>;
+                                        })
+                                    }
+                                </ul>
+                            </div>
+                        </Col>
+                    </Row>
+                    <Row className="ranking-fields">
+                        <Col xs={12} sm={6}>
+                            <div className="ranking-field">
+                                <h2 className="text-center ranking-title">Who is most likely to die next</h2>
+                                <ul>
+                                    {
+                                        this.getHardcodedPlodTop5().map((char) => {
+                                            return <li>
+                                                <h4><Link to={'/characters/' + char.name}>
+                                                    {char.name} [{parseInt(char.plod)}%]
+                                                </Link></h4>
+                                            </li>;
+                                        })
+                                    }
+                                </ul>
+                                <p className="see-more"><Link to={'/characters/?search=&page=1&sort=plod&order=1'}>See more</Link></p>
+                            </div>
+                        </Col>
+                        <Col xs={12} sm={6}>
+                            <div className="ranking-field">
+                                <h2 className="text-center ranking-title">Top Survivors</h2>
+                                <ul>
+                                    {
+                                        this.getHardcodedSurvivors().map((char) => {
+                                            return <li>
+                                                <h4><Link to={'/characters/' + char.name}>
+                                                    {char.name} [{parseInt(char.plod)}%]
+                                                </Link></h4>
+                                            </li>;
+                                        })
+                                    }
+                                </ul>
+                                <p className="see-more"><Link to={'/characters/?search=&page=1&sort=plod&order=-1'}>See more</Link></p>
+                            </div>
+                        </Col>
+                    </Row>
+                    <Row className="ranking-fields">
+                        <Col sm={6} smOffset={3}>
+                            <div className="ranking-field">
+                                <h2 className="text-center ranking-title">Most dangerous Houses </h2>
+                                <ul>
+                                    {
+                                        this.getHardcodedHousesTop5().map((house) => {
+                                            return <li><h4>{house.name}</h4></li>;
+                                        })
+                                    }
+                                </ul>
+                            </div>
+                        </Col>
+                    </Row>
+                </Grid>
+            </div>
+        );
+    }
 }

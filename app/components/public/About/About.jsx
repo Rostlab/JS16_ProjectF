@@ -4,16 +4,15 @@ let {Component} = React;
 import Row from 'react-bootstrap/lib/Row';
 import Column from 'react-bootstrap/lib/Col';
 
-import AboutText from '../../app/Static/about.md';
+import AboutText from '../../../../static/about.md';
 
 export default class About extends Component {
     render() {
         return (
             <div className="about-container">
-                <h1>About</h1>
                 <Row className="about-intro">
                     <Column md={8} mdPush={2}>
-                        <AboutText />
+                        <div dangerouslySetInnerHTML={{ __html: AboutText}} />
                     </Column>
                 </Row>
 
@@ -57,23 +56,11 @@ export default class About extends Component {
                 <Row>
                     <Column md={8} mdPush={2}>
                         <h1>Attributions</h1>
-                        <ul>
-                            <li><a href="http://www.wikia.com/explore" target="_blank">MediaWiki</a></li>
-                            <li><a href="http://awoiaf.westeros.org/index.php/Main_Page" target="_blank">Westeros Wiki</a></li>
-                            <li><a href="http://vignette4.wikia.nocookie.net/hieloyfuego/images/4/43/Hodor_HBO.jpg/revision/latest?cb=20130815031401" target="_blank">404 imges</a></li>
-                        </ul>
+                        We used the sources and licenses listed on <a href="/attributions">this page</a>
                     </Column>
                 </Row>
 
                 <br />
-
-                <Row>
-                    <Column md={8} mdPush={2}>
-                        <h1>For Developers</h1>
-                        <p>We crawled a lot of data from primarly the <a href="awoiaf.westeros.org/index.php" target="_blank">AWOIAF wiki</a> but also other sources and we'd love to share our database with you guys!
-                            <br />Check out our <a href="https://got-api.bruck.me/doc/" target="_blank">API Reference here.</a></p>
-                    </Column>
-                </Row>
 
             </div>
         );
@@ -88,7 +75,7 @@ class TeamMemberListing extends Component {
             <div>
                 {
                     this.getProjectMembers(this.props.teamID).map(function (member) {
-                    return <TeamMember key={member.name} data={member}/>;})
+                        return <TeamMember key={member.name} data={member}/>;})
                 }
             </div>
         );
@@ -108,11 +95,13 @@ class TeamMemberListing extends Component {
             {
                 name: "Florian Gareis",
                 link: "https://www.florian-gareis.com",
+                img:  "http://gravatar.com/avatar/9c8cef19ae44af5e2ed64addfe701a77",
                 team: "E"
             },
             {
                 name: "Christian Dallago",
                 link: "http://dallago.us",
+                img:  "https://c2.staticflickr.com/2/1481/25418571675_2dbacb53a7_q.jpg",
                 team: "Mentor"
             },
             {
@@ -208,8 +197,7 @@ class TeamMemberListing extends Component {
             {
                 name: "Nicola De Socio",
                 link: "https://github.com/nicoladesocio",
-                team: "B"
-            },
+                team: "B"},
             {
                 name: "Thuy Tran",
                 link: "https://github.com/ThuyNganTran",
@@ -229,6 +217,21 @@ class TeamMemberListing extends Component {
                 name:"Dat Nguyen",
                 link:"https://github.com/vanp33",
                 team:"D"
+            },
+            {
+                name: "Togi Dashnyam",
+                link: "https://github.com/togiberlin",
+                team: "A"
+            },
+            {
+                name: "Theodor Cheslerean Boghiu",
+                link: "#",
+                team: "A"
+            },
+            {
+                name: "Boris Idesman",
+                link: "https://github.com/boriside",
+                team: "A"
             }
         ].filter((member) => {
             return member.team.split('').map((teamID) => {
@@ -241,11 +244,11 @@ TeamMemberListing.propTypes = { teamID: React.PropTypes.string };
 
 class TeamMember extends Component {
     render() {
-            if (this.props.data.link) {
-                return (<p><a target="_blank" href={this.props.data.link}>{this.props.data.name}</a></p>);
-            } else {
-                return (<p>{this.props.data.name}</p>);
-            }
+        if (this.props.data.link) {
+            return (<p><a target="_blank" href={this.props.data.link}>{this.props.data.name}</a></p>);
+        } else {
+            return (<p>{this.props.data.name}</p>);
+        }
     }
 }
 TeamMember.propTypes =  {  data: React.PropTypes.object.isRequired };

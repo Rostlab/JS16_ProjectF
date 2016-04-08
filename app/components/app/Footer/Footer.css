@@ -4,8 +4,6 @@ html, body, #root, .page-wrap {
 
 .wrap {
 	min-height: 100%;
-	/* equal to footer height */
-	margin-bottom: -250px;
 }
 
 .wrap:after {
@@ -39,6 +37,7 @@ footer hr {
 footer p, 
 footer a {
 	color: #999;
+	font-weight: normal;
 }
 
 footer p a:hover {

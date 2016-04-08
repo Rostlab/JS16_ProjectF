@@ -1,10 +1,15 @@
 /* D4 Integration */
+'use strict';
 const express = require('express');
-const d4 = express();
+const fs = require ('fs');
+const path = require ('path');
 
 const gotsent = require('gotsentimental');
 
-var cfg;
+
+const d4 = express();
+
+let cfg;
 try {
   cfg = require('../config/config.json').gotsent;
 } catch (err) {
@@ -15,7 +20,7 @@ try {
     },
     "api": {
       "https": true,
-      "host": "got-api.bruck.me",
+      "host": "api.got.show",
       "prefix": "/api/"
     },
     "twitter": {
@@ -26,20 +31,28 @@ try {
     }
   }
 }
-const ctrData = require('./controllers/data');
 
 gotsent.cfg.extend(cfg);
+
 gotsent.init();
+gotsent.startUpdateLoop();
 
-gotsent.update();
-
-d4.use('/csv/:slug.csv', ctrData);
 d4.get('/chart.css', function(req,res) {
     res.sendFile(gotsent.css);
+
 });
 d4.get('/chart.js', function(req,res) {
-    res.sendFile(gotsent.js);
+    //res.sendFile(gotsent.js);
+    console.log(path.join(__dirname, 'chart.js')),
+    res.sendFile(path.join(__dirname, 'chart.js'));
+  fs.readdir(path.join(__dirname, '/../csv'), function(err, files) {
+    console.log(files);
+  });
 });
+
+const oneHour = 3600000;
+d4.use('/csv', express.static(path.join(__dirname, '/../csv'), { maxAge: oneHour }));
+console.log(__dirname);
 
 d4.get('/sentiment/:rank', function (req,res) {
   if (req.params.rank == "top") {

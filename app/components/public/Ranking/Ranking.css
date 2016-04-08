@@ -1,38 +1,39 @@
 .ranking {
 	margin-top: 2em;
 }
-.big-battle {
-	border: 3px solid #fff;
-	max-height: 400px;	
-	overflow: hidden;
-}
-.big-battle .col-xs-6:first-child {
-	border-right: 1px solid #fff;
-}
-.big-battle img {
-	width: 100%;
-}
-.big-battle div {
-	padding: 0;
-}
-.big-battle-info {
-	background: #313131;
-	font-size: 0.8em;
-	text-align: middle;
-}
-.big-battle-info .col-xs-6 {
-	text-align: center;
-	padding: 1em 0;
-}
-
 
 .ranking-fields .col-xs-12, .ranking-fields .col-sm-6{
 	margin-top: 3em;
 }
-
-.ranking-title {
-	cursor: pointer;	
-}
 .popover-title, .popover-content {
 	color: #333;
+}
+.ranking-title {
+	padding-bottom: 20px;
+}
+.ranking-field {
+	background-color: #313131;
+	padding: 3px 0;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 3px 1px rgba(90, 24, 12, .5);
+	transition: all .1s ease-in-out;
+	-webkit-transition: all .1s ease-in-out;
+	-moz-transition: all .1s ease-in-out;
+	-o-transition: all .1s ease-in-out;
+}
+.ranking-field:hover {
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 3px 5px 10px rgb(90, 24, 12);
+	transition: all .1s ease-in-out;
+	-webkit-transition: all .1s ease-in-out;
+	-moz-transition: all .1s ease-in-out;
+	-o-transition: all .1s ease-in-out;
+}
+.ranking-field .see-more {
+	text-align: right;
+	position: relative;
+	right: 10px;
+	bottom: -8px;
+}
+.ranking-field h4 a {
+	font-weight: normal;
+	color: whitesmoke;
 }

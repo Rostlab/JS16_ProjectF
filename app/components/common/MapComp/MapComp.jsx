@@ -72,12 +72,12 @@ export default class MapComp extends Component {
     let config = {
       'apiLocation': url,
       'personImageBaseUrl': process.env.__PROTOCOL__ + process.env.__API__,
-      'characterDataSource':  url + '/characters',
-      'cityDataSource': url + '/cities',
-      'realmDataSource': url + '/regions',
-      'pathDataSource': url + '/characters/paths',
-      'episodeDataSource': url + '/episodes',
-      'pinDataSource': url + '/characters/locations',
+      'characterDataSource':  '/characters',
+      'cityDataSource': '/cities',
+      'realmDataSource': '/regions',
+      'pathDataSource': '/characters/paths',
+      'episodeDataSource': '/episodes',
+      'pinDataSource': '/characters/locations',
       'characterBox':'#characters',
       'timeline':'#timeline',
       'filter':'#filter input',
@@ -95,6 +95,10 @@ export default class MapComp extends Component {
     var range = this.props.begintimeline !== undefined ? this.parseRange() : [1,50];
 
     mymap.updateMap(range);
+    mymap.getMap().zoomIn(1);
+    if(this.props.pagex!=='/map') {
+      mymap.getMap().scrollWheelZoom.disable();
+    }
     for (let i of this.props.character) {
       setTimeout(function (){ /*eslint no-undef:0*/
         let character = mymap.searchCharacter(i.toLowerCase());
@@ -113,9 +117,10 @@ export default class MapComp extends Component {
     if (patt.test(end)) {
       end = (patt.exec(end)[1]) *  patt.exec(end)[2];
     } else { end = 50; }
-    return [parseInt(begin),parseInt(end)];
+   return [parseInt(begin),parseInt(end)];
   }
 
+    
   render() {
     return (
         <div className="map-wrapper">
@@ -128,7 +133,6 @@ export default class MapComp extends Component {
                 <i className="glyphicon glyphicon-search form-control-feedback"></i>
               </div>
             </form>
-            <hr />
             <div id="characters"></div>
           </div>
           <div id="timeline"></div>
@@ -136,6 +140,7 @@ export default class MapComp extends Component {
     );
   }
 }
+MapComp.propTypes = { pagex: React.PropTypes.string };
 MapComp.propTypes = { character: React.PropTypes.array };
 MapComp.propTypes = { location: React.PropTypes.object };
 MapComp.propTypes = { begintimeline: React.PropTypes.string };

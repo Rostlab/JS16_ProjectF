@@ -1,13 +1,12 @@
 var AppDispatcher = require('../dispatcher/AppDispatcher');
 var Constants = require('../constants/Constants');
-var Api = require('../network/SentimentAPI');
+var Api = require('../network/SentimentsApi');
 
 var TwitterSentimentsActions = {
 
     loadTopSentiments: function(count) {
         Api
-            .get('d4/sentiment/top')
-            .query({number: count})
+            .get('d4/sentiment/top',{number: count})
             .then(function (sentiments) {
                 AppDispatcher.handleServerAction({
                     actionType: Constants.RECEIVE_TWITTER_TOP_SENTIMENTS,
@@ -17,8 +16,7 @@ var TwitterSentimentsActions = {
     },
     loadFlopSentiments: function(count) {
         Api
-            .get('d4/sentiment/worst')
-            .query({number: count})
+            .get('d4/sentiment/worst',{number: count})
             .then(function (sentiments) {
                 AppDispatcher.handleServerAction({
                     actionType: Constants.RECEIVE_TWITTER_FLOP_SENTIMENTS,
@@ -28,10 +26,11 @@ var TwitterSentimentsActions = {
     },
     loadControversialSentiments: function(count,startDate,endDate) {
         Api
-            .get('d5/sentiment/controversial')
-            .query({number: count})
-            .query({startDate: startDate})
-            .query({endDate: endDate})
+            .get('d5/sentiment/controversial',{
+              number: count,
+              startDate: startDate,
+              endDate: endDate
+            })
             .then(function (sentiments) {
                 AppDispatcher.handleServerAction({
                     actionType: Constants.RECEIVE_TWITTER_CONTROVERSIAL_SENTIMENTS,
@@ -41,8 +40,7 @@ var TwitterSentimentsActions = {
     },
     loadMostDiscussedSentiments: function(count) {
         Api
-            .get('d4/sentiment/discussed')
-            .query({number: count})
+            .get('d4/sentiment/discussed', {number: count})
             .then(function (sentiments) {
                 AppDispatcher.handleServerAction({
                     actionType: Constants.RECEIVE_TWITTER_TALKED_ABOUT_SENTIMENTS,
@@ -52,8 +50,7 @@ var TwitterSentimentsActions = {
     },
     loadCharacterSentiment: function(characterId) {
         Api
-            .get('d4/character')
-            .query({id: characterId})
+            .get('d4/character', {id: characterId})
             .then(function (sentiments) {
                 AppDispatcher.handleServerAction({
                     actionType: Constants.RECEIVE_TWITTER_CHARACTER_SENTIMENT,

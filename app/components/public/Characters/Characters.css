@@ -4,6 +4,7 @@
 .row.character-intro {
 	padding: 0;
 	max-height: 400px;
+	min-height: 200px;
 }
 .character-photo {
 	padding: 0;
@@ -45,8 +46,15 @@
 	width: 100%;
 	padding: 10px;
 }
+.wikiButton {
+	top: 25px;
+	position: absolute;
+	right: 20px;
+}
+
 .list-group-item {
 	background: #333;
+	border: none;
 }
 
 @media (max-width: 767px) {
@@ -62,10 +70,32 @@
 	.character-container .map-wrapper {
 		padding-bottom: 100%;
 	}
-
+	.wikiButton {
+		top: -50px;
+		right: 10px;
+	}
 }
 
 
 .character-container .map-wrapper #sidebar {
 	display: none;
+}
+
+/* PLOD */
+.plodContainer {
+	margin-top: 20px;
+	margin-bottom: -15px;
+}
+.plodContainer .progress {
+	display: inline-block;
+	width: 90%;
+	background-color: #333333;
+}
+.plodContainer .progress-bar {
+	background-color: #5A180C;
+}
+.plodContainer img {
+	display: inline-block;
+	height: 50px;
+	transform: translateY(-30px);
 }

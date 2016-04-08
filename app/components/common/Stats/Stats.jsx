@@ -3,8 +3,8 @@ let {Component} = React;
 
 import { Row, Col } from 'react-bootstrap';
 
-import Store from '../../../stores/LandingPageStore';
-import Actions from '../../../actions/LandingPageActions';
+import Store from '../../../stores/CharactersPlodStore';
+import Actions from '../../../actions/CharactersActions';
 
 import CharacterThumbnail from '../CharacterThumbnail/CharacterThumbnail.jsx';
 
@@ -12,7 +12,7 @@ export default class Stats extends Component {
 
   constructor (props) {
     super(props);
-    this.state = {characters: Store.getPlodCharacters()};
+    this.state = {characters: Store.getCharacterPlod()};
     this._onChange = this._onChange.bind(this);
   }
 
@@ -21,7 +21,7 @@ export default class Stats extends Component {
   }
 
   componentDidMount(){
-    Actions.loadPlodCharacters(3);
+    Actions.loadCharactersPlodByCount(3);
   }
 
   componentWillUnmount(){
@@ -30,7 +30,7 @@ export default class Stats extends Component {
 
   _onChange() {
     this.setState({
-      characters: Store.getPlodCharacters()
+      characters: Store.getCharacterPlod()
     });
   }
 
