@@ -54,16 +54,18 @@ var CharactersPlodActions = {
                     return response.data;
                 }).then(function(character){
                     Api
-                        .get('plod/bySlug/' + character.slug)
-                        .then(function (response) {
-                            var characterPlod = response.data[0];
-                            var characterWithPlod = Object.assign(character,characterPlod);
-                            charactersPlod.push(characterWithPlod);
-                            AppDispatcher.handleServerAction({
-                                actionType: Constants.RECEIVE_CHARACTERS_PLOD_BY_NAME,
-                                data: charactersPlod
-                            });
+                      .get('plod/bySlug/' + character.slug)
+                      .then(function (response) {
+                        var characterPlod = response.data.find(function (ele) {
+                          return ele.algorithm == "gotplod";
                         });
+                        var characterWithPlod = Object.assign(character,characterPlod);
+                        charactersPlod.push(characterWithPlod);
+                        AppDispatcher.handleServerAction({
+                            actionType: Constants.RECEIVE_CHARACTERS_PLOD_BY_NAME,
+                            data: charactersPlod
+                        });
+                      });
                 });
         }
     }
