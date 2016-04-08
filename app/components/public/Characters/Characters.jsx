@@ -16,7 +16,9 @@ export default class Character extends Component {
 
     constructor (props) {
         super(props);
-        this.state = {character: Store.getCharacter()};
+        this.state = {
+            character: Store.getCharacter()
+        };
         this._onChange = this._onChange.bind(this);
     }
 
@@ -49,6 +51,10 @@ export default class Character extends Component {
                 d3.select(window).on('resize', chart.resize);/*eslint no-undef:0*/
             });
         }
+
+        const plod = (!this.state.character.dateOfDeath) ? this.state.character.plod || 0 : 100;
+        const plodText = (!this.state.character.dateOfDeath) ? '%(percent)s%' : 'D E A D';
+
         return (
             <div className="character-container">
                 <Row fluid>
@@ -74,7 +80,7 @@ export default class Character extends Component {
                         <h2>Likelihood of Death</h2>
                         <p>{this.state.character.name}'s likelihood to die is:</p>
                         <div className="plodContainer">
-                            <ProgressBar now={60} label="%(percent)s%" />
+                            <ProgressBar now={plod} label={plodText} />
                             <img src={tombstone} />
                         </div>
                         <p>Our in-house developed machine learning algorithm predicts likelihood of death based on various features that we extracted for each character from the first five books of the Song of Ice and Fire series. <br />
