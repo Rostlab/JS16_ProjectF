@@ -12,12 +12,14 @@ try {
   var json = require('../config/config.json');
   analytics = json.google_analytics.key;
   api = json.api.host;
+  apiport = json.api.port;
   https = json.api.https ? "https://" : "http://";
   prefix = json.api.prefix;
 } catch (err) {
   console.log(err);
   analytics = process.env.ANALYTICS;
   api = process.env.API;
+  apiport = process.env.APIPORT;
   https = process.env.PROTOCOL;
   prefix = process.env.PREFIXDIR;
 }
@@ -99,6 +101,7 @@ var config = {
       'process.env':{
         'NODE_ENV': JSON.stringify(process.env.NODE_ENV),
         '__API__': JSON.stringify(api),
+        '__PORT__': JSON.stringify(apiport),
         '__PROTOCOL__': JSON.stringify(https),
         '__PREFIX__': JSON.stringify(prefix)
       },

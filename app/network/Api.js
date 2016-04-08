@@ -1,7 +1,7 @@
 var request = require('superagent');
 var Promise = require('es6-promise').Promise;
 
-var baseUrl = process.env.__PROTOCOL__ + process.env.__API__ + process.env.__PREFIX__;
+var baseUrl = process.env.__PROTOCOL__ + process.env.__API__ + ':' + process.env.__PORT__ + process.env.__PREFIX__;
 
 var Api = {
     get: function (url) {
