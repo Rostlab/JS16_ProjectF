@@ -8,7 +8,7 @@ var _topSentiments = [];
 var _flopSentiments = [];
 var _mostTalkedAboutSentiments = [];
 var _topControversialSentiments = [];
-var _characterSentiment = {}
+var _characterSentiment = {};
 
 function setTopSentiments(data) {
     _topSentiments = data;
