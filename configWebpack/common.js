@@ -12,7 +12,7 @@ try {
   var json = require('../config/config.json');
   analytics = json.google_analytics.key;
   api = json.api.host;
-  apiport = (json.api.port !== undefined) ? json.api.port : (json.api.https) ? '443' : '80';
+  apiport = json.api.port;
   https = json.api.https ? "https://" : "http://";
   prefix = json.api.prefix;
 } catch (err) {
