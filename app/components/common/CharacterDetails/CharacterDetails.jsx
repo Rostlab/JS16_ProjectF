@@ -6,7 +6,7 @@ let {Component} = React;
 export default class CharacterDetails extends Component {
 
     render() {
-        var details = ["age","house","titles","dateOfDeath","placeOfDeath","books"];
+        var details = ["age","titles","house","culture","spouse","mother","father","dateOfDeath","placeOfDeath","books","actor"];
         var detail;
         var result = [];
         var meta = "";
@@ -14,11 +14,16 @@ export default class CharacterDetails extends Component {
             if(detail in this.props.data && this.props.data[detail].length > 1){
                 switch (detail) {
                     case "age" : meta = "Age"; break;
-                    case "house" : meta = "House"; break;
                     case "titles" : meta = "Titles"; break;
+                    case "house" : meta = "House"; break;
+                    case "culture" : meta = "Culture"; break;
+                    case "spouse" : meta = "Spouse"; break;
+                    case "mother" : meta = "Mother"; break;
+                    case "father" : meta = "Father"; break;
                     case "dateOfDeath" : meta = "Date of death"; break;
                     case "placeOfDeath" : meta = "Place of death"; break;
                     case "books" : meta = "Books"; break;
+                    case "actor" : meta = "Actor"; break;
                     default: break;
                 }
                 result.push({key: meta, value: (this.props.data[detail]).toString().replace(new RegExp(',', 'g'), ', ').replace(new RegExp('&apos;', 'g'), '\'')});
