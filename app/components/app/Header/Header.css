@@ -21,7 +21,6 @@ header {
 }
 
 .navbar .navbar-nav {
-    /*display: inline-block;*/
     float: right;
     vertical-align: top;
 }
@@ -75,15 +74,11 @@ header {
         display: none!important;
     }
     .navbar .navbar-nav {
-        /*float: none!important;*/
         margin-top: 7.5px;
         float: none;
     }
     .navbar-nav>li {
         float: none;
-    }
-    .navbar-nav>li>a {/*
-        padding: 10px 30px!important;*/
     }
     .collapse.in{
         display:block !important;
