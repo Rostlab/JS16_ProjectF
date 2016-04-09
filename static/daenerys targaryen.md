@@ -56,7 +56,15 @@ As you can see, she’s even among the most popular characters [(rank 4, 10th of
 
 … Is there a reason we’re still debating this? Seriously? Even though her lathery scaled friends started out as cute little hatchlings in season 1, those things are terrifying now. We all saw them eat the leaders of the great families in the season 5 episode “Kill the boy” (S05E05) – and as countless fantasy franchises suggest, if you have dragons by your side, chances are you’re going to bring home a victory.
 
-###H3: Follow Daenerys long journey through Essos
+#####H3: … Sooo, things are set, right?
+Well, almost. In Game of Thrones, there’s always a hint of uncertainty – and you have to admit that a lot of people want to see her dead. [Take this assassination attempt on youtube for example.]( https://www.youtube.com/watch?v=MIGYQr6ldJk) We in the got.show editorial department are confident that she’ll end up being victorious, even though our machine learning algorithm is a lot less optimistic. The algorithm mostly takes family history into account, and since her’s was cleared off the map, her calculated likelihood of death is pretty high. See our latest prediction here:
+> Placeholder, Daenerys Targaryen PLOD
+
+> Alt text: Daenery’s calculated percentage likelihood of death
+
+No reason to be worried, though. Valar morghulis, remember? 
+
+#####H3: Follow Daenerys long journey through Essos
 > Placeholder: our awesome GoT Map about Daenerys
 
 > Alt Text: Daenerys Targaryen put on the map – Game of Thrones character movements
