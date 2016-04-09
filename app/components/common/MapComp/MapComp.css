@@ -73,6 +73,9 @@
     color: #848484;
     font-weight: 300;
 }
+.popupCharacterList .name {
+    color: #333;
+}
 .dropdown-menu, .dropdown-header {
     width: 100%!important;
 }
