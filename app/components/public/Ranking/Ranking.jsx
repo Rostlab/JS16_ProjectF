@@ -42,7 +42,11 @@ export default class Ranking extends Component {
         this.state = {
             twitterTopSentiments: [],
             twitterFlopSentiments: [],
-            twitterTopControversial: []
+            twitterMostDiscussedSentiments: [],
+            twitterTopControversial: [],
+            twitterTopSentiments_d5: [],
+            twitterFlopSentiments_d5: [],
+            twitterMostDiscussedSentiments_d5: []
         };
         this._onChange = this._onChange.bind(this);
     }
@@ -57,14 +61,26 @@ export default class Ranking extends Component {
 
 
     componentDidMount() {
+        const startDate = (new Date(1995, 11, 17)).toISOString();
+        const today = (new Date()).toISOString();
         SentimentsActions.loadTopSentiments(5);
         SentimentsActions.loadFlopSentiments(5);
+        SentimentsActions.loadMostDiscussedSentiments(5);
+        SentimentsActions.loadControversialSentiments(5, startDate , today);
+        SentimentsActions.loadTopSentiments_d5(5, startDate , today);
+        SentimentsActions.loadFlopSentiments_d5(5, startDate , today);
+        SentimentsActions.loadMostDiscussedSentiments_d5(5, startDate , today);
     }
 
     _onChange() {
         this.setState({
             twitterTopSentiments: SentimentStore.getTopSentiments(),
-            twitterFlopSentiments: SentimentStore.getFlopSentiments()
+            twitterFlopSentiments: SentimentStore.getFlopSentiments(),
+            twitterMostDiscussedSentiments: SentimentStore.getMostDiscussedSentiments(),
+            twitterTopControversial: SentimentStore.getFlopSentiments(),
+            twitterTopSentiments_d5: SentimentStore.getTopSentiments_d5(),
+            twitterFlopSentiments_d5: SentimentStore.getFlopSentiments_d5(),
+            twitterMostDiscussedSentiments_d5: SentimentStore.getMostDiscussedSentiments_d5()
         });
     }
 
