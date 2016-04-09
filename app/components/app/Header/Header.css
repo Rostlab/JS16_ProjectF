@@ -15,11 +15,13 @@ header {
 .navbar-inverse .navbar-nav > li > a,
 .navbar-brand {
     color: white;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .navbar .navbar-nav {
-    display: inline-block;
-    float: none;
+    /*display: inline-block;*/
+    float: right;
     vertical-align: top;
 }
 
@@ -72,15 +74,14 @@ header {
         display: none!important;
     }
     .navbar-nav {
-        float: none!important;
+        /*float: none!important;*/
         margin-top: 7.5px;
     }
     .navbar-nav>li {
         float: none;
     }
-    .navbar-nav>li>a {
-        padding-top: 10px;
-        padding-bottom: 10px;
+    .navbar-nav>li>a {/*
+        padding: 10px 30px!important;*/
     }
     .collapse.in{
         display:block !important;
