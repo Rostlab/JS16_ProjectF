@@ -3,9 +3,8 @@ var Promise = require('es6-promise').Promise;
 
 var protocol = (process.env.NODE_ENV === 'development') ? 'http://' : process.env.__PROTOCOL__;
 var port = (process.env.NODE_ENV === 'development') ? ':8080' : '';
-var api = (process.env.NODE_ENV === 'development') ? 'localhost' : process.env.__API__;
 
-var baseUrl = protocol + api + port + '/';
+var baseUrl = protocol + document.location.hostname + port + '/'; /*eslint undef:0*/
 
 var Api = {
   get: function (url, query) {
