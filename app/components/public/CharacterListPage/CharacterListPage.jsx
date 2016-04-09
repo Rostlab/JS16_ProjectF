@@ -26,8 +26,13 @@ const ZtoA = {
   sort: {field: "name", type: -1}
 };
 
-const plod = {
-  sortText: "Likelihood of Death",
+const plodAsc = {
+  sortText: "Survival chance",
+  sort: {field: "plod", type: 1}
+};
+
+const plodDesc = {
+  sortText: "Death chance",
   sort: {field: "plod", type: -1}
 };
 
@@ -47,9 +52,12 @@ export default class CharacterListPage extends Component {
         } else if (this.props.location.query.sort == 'name' && this.props.location.query.order == '-1') {
           sortText =  ZtoA.sortText;
           sort = ZtoA.sort;
+        } else if (this.props.location.query.sort == 'plod' && this.props.location.query.order == '1') {
+          sortText =  plodAsc.sortText;
+          sort = plodAsc.sort;
         } else if (this.props.location.query.sort == 'plod' && this.props.location.query.order == '-1') {
-          sortText =  plod.sortText;
-          sort = plod.sort;
+          sortText =  plodDesc.sortText;
+          sort = plodDesc.sort;
         } else {
           sortText =  popularity.sortText;
           sort = popularity.sort;
@@ -141,12 +149,20 @@ export default class CharacterListPage extends Component {
           sortText: ZtoA.sortText
         });
       } else if(eventKey == 4) {
-        sort = plod.sort;
+        sort = plodAsc.sort;
         this.setState({
           data: Store.getCharacters(1,sort, this.state.filter),
           sort: sort,
           activePage: 1,
-          sortText: plod.sortText
+          sortText: plodAsc.sortText
+        });
+      } else if(eventKey == 5) {
+        sort = plodDesc.sort;
+        this.setState({
+          data: Store.getCharacters(1,sort, this.state.filter),
+          sort: sort,
+          activePage: 1,
+          sortText: plodDesc.sortText
         });
       }
       this.pushHistory(undefined,sort);
@@ -184,7 +200,8 @@ export default class CharacterListPage extends Component {
                 <MenuItem eventKey="1">{popularity.sortText}</MenuItem>
                 <MenuItem eventKey="2">{AtoZ.sortText}</MenuItem>
                 <MenuItem eventKey="3">{ZtoA.sortText}</MenuItem>
-                <MenuItem eventKey="4">{plod.sortText}</MenuItem>
+                <MenuItem eventKey="4">{plodAsc.sortText}</MenuItem>
+                <MenuItem eventKey="5">{plodDesc.sortText}</MenuItem>
               </DropdownButton>
             </Col>
           </Row>
@@ -196,8 +213,17 @@ export default class CharacterListPage extends Component {
               items={Math.ceil(Store.getCharactersCount(this.state.filter)/20)}
               activePage={this.state.activePage}
               onSelect={this.handleSelectPage.bind(this)} />
-            </div>
+          </div>
           <CharacterList data={this.state.data} loaded={this.state.loaded}/>
+          <div className="center">
+            <Pagination
+              boundaryLinks={true}
+              ellipsis
+              maxButtons={3}
+              items={Math.ceil(Store.getCharactersCount(this.state.filter)/20)}
+              activePage={this.state.activePage}
+              onSelect={this.handleSelectPage.bind(this)} />
+          </div>
         </div>
 
       );
