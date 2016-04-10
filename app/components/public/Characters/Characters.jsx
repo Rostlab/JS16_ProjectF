@@ -5,11 +5,14 @@ let {Component} = React;
 import $ from 'jquery';
 import './Characters.css';
 import { Row, Col, Image, ProgressBar, Glyphicon } from 'react-bootstrap';
+import {Chart} from 'react-google-charts';
 
 import MapComp from '../../common/MapComp/MapComp.jsx';
 import Store from '../../../stores/CharactersStore';
 import Actions from '../../../actions/CharactersActions';
 import CharacterDetails from '../../common/CharacterDetails/CharacterDetails.jsx';
+import SentimentStore from '../../../stores/TwitterSentimentsStore';
+import SentimentActions from '../../../actions/TwitterSentimentsActions';
 import tombstone from './rip_tombstone.png';
 
 export default class Character extends Component {
@@ -20,7 +23,11 @@ export default class Character extends Component {
             character: Store.getCharacter(),
             plod: 0,
             plodArff: '0',
-            plodText: ''
+            plodText: '',
+            sentiment: {
+                positive: 0,
+                negative: 0
+            }
         };
         this._onChange = this._onChange.bind(this);
     }
@@ -31,6 +38,7 @@ export default class Character extends Component {
 
     componentDidMount() {
         Actions.loadCharacter(decodeURIComponent(this.props.params.id));
+        SentimentActions.loadCharacterSentiment(decodeURIComponent(this.props.params.id));
     }
 
     componentWillUnmount(){
@@ -40,7 +48,8 @@ export default class Character extends Component {
     _onChange() {
         const character = Store.getCharacter();
         this.setState({
-            character: character
+            character: character,
+            sentiment: SentimentStore.getCharacterSentiment()
         });
 
         const check = !character.dateOfDeath && character.gotplod && character.gotarffplod;
@@ -108,7 +117,48 @@ export default class Character extends Component {
                     <Col md={8} mdOffset={2}>
                         <h2>People on Twitter say</h2>
                         <svg id="chart" width="100%" height="400"></svg>
-                    </Col>  
+
+                    </Col>
+                </Row>
+                <Row>
+                    <Col  md={8} mdOffset={2}>
+                        <Chart
+                          chartType="PieChart"
+                          height={"400px"}
+                          width={"100%"}
+                          options = {{
+                                    title: 'Total tweets',
+                                    pieHole: 0.4,
+                                    backgroundColor: {
+                                        fill: 'transparent',
+                                        stroke: 'transparent',
+                                        strokeWidth: '0'
+                                    },
+                                    colors: ['#6AAA1F','rgb(198, 61, 23)'],
+                                    legend: {
+                                        textStyle: { color: 'white'}
+                                    },
+                                    titleTextStyle: {
+                                        color: 'white'
+                                    },
+                                    chartArea: {
+                                        backgroundColor: {
+                                            stroke: 'transparent',
+                                            strokeWidth: '0'
+                                        },
+                                        width: '80%',
+                                        height: '80%',
+                                        left: '10px'
+                                    },
+                                    pieSliceBorderColor: 'transparent'
+                                   }}
+                          data={ [
+                                      ['Task', 'Hours per Day'],
+                                      ['Positive sentiments',     this.state.sentiment.positive || 0],
+                                      ['Negative sentiments',      this.state.sentiment.negative || 0]
+                                  ]}
+                        />
+                    </Col>
                 </Row>
                 
                 </div>
