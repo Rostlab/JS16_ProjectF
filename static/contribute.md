@@ -2,7 +2,7 @@
 
 WHAT IT IS
 
-A song of Ice and Fire provides statistical information about the GoT world and the impact it has on ours. Should we be worried about Sansa Stark? Where exactly has Jon Snow travelled? And how many tweets were written about Hound?
+A song of Ice and Data provides statistical information about the Ice and Fire world and the impact it has on ours. Should we be worried about Sansa Stark? Where exactly has Jon Snow travelled? And how many tweets were written about Hound?
 
 HOW IT STARTED
 
