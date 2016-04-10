@@ -2,12 +2,11 @@ import React from 'react';
 let {Component} = React;
 
 import { Link } from 'react-router';
-import {Grid, Row, Col} from 'react-bootstrap';
+import {Grid, Row, Col, OverlayTrigger, Popover} from 'react-bootstrap';
 
 import "./Ranking.css";
 import SentimentStore from '../../../stores/TwitterSentimentsStore';
 import SentimentsActions from '../../../actions/TwitterSentimentsActions';
-//import CharacterThumbnail from '../../common/CharacterThumbnail/CharacterThumbnail.jsx';
 
 export default class Ranking extends Component {
     getHardcodedPlodTop5() {
@@ -112,48 +111,69 @@ export default class Ranking extends Component {
                         
                     </Row>
                     <Row className="ranking-fields">
-                        <Col xs={12} sm={6}>
+                        <Col sm={12} md={6}>
                             <div className="ranking-field">
                                 <h2 className="text-center ranking-title">Twitter top 5 loved</h2>
                                     {
                                         this.state.twitterTopSentiments.map((char) => {
+                                            console.log(char); /*eslint no-console:0,no-undef:0*/
                                             return <Row>
-                                                    <Col xs={8}>
+                                                    <Col xs={6}>
                                                         <h4><Link to={'/characters/' + char.name}>
                                                             {char.name}
                                                         </Link>
                                                         </h4>
                                                     </Col>
 
-                                                    <Col xs={4}>
-                                                     <h4>
-                                                        <a className="glyphicon glyphicon-heart" href={"http://twitter.com/share?text=I%20love%20"+char.name+"&url=https://www.got.show/"} target="_blank">
-                                                        &nbsp;413</a>
-                                                    </h4>
+                                                    <Col xs={3} className="text-center">
+                                                        <OverlayTrigger trigger="hover" placement="top" overlay={<Popover title="Tweets">
+                                                        <strong>{char.positive}</strong> positive<br/><strong>{char.negative}</strong> negative<br/>
+                                                        <strong>{char.total}</strong> total</Popover>}>
+                                                            <h4>
+                                                            {char.positive}
+                                                            </h4>
+                                                        </OverlayTrigger>
+                                                    </Col>
+                                                    <Col xs={3}>
+                                                            <a href={"http://twitter.com/share?text=I%20love%20"+char.name+"&url=https://www.got.show/"} target="_blank">
+                                                                <h4 className="support">
+                                                                <span className="glyphicon glyphicon-thumbs-up"></span>
+                                                                </h4>
+                                                            </a>
                                                     </Col>
                                                     </Row>;
                                         })
                                     }
                             </div>
                         </Col>
-                        <Col xs={12} sm={6}>
+                        <Col sm={12} md={6}>
                             <div className="ranking-field">
                                 <h2 className="text-center ranking-title">Twitter top 5 hated</h2>
                                     {
                                         this.state.twitterFlopSentiments.map((char) => {
                                             return <Row>
-                                                    <Col xs={8}>
+                                                    <Col xs={6}>
                                                         <h4><Link to={'/characters/' + char.name}>
                                                             {char.name}
                                                         </Link>
                                                         </h4>
                                                     </Col>
 
-                                                    <Col xs={4}>
-                                                     <h4>
-                                                        <a className="glyphicon glyphicon-thumbs-down" href={"http://twitter.com/share?text=I%20love%20"+char.name+"&url=https://www.got.show/"} target="_blank">
-                                                        &nbsp;413</a>
-                                                    </h4>
+                                                    <Col xs={3} className="text-center">
+                                                        <OverlayTrigger trigger="hover" placement="top" overlay={<Popover title="Tweets">
+                                                        <strong>{char.positive}</strong> positive<br/><strong>{char.negative}</strong> negative<br/>
+                                                        <strong>{char.total}</strong> total</Popover>}>
+                                                            <h4>
+                                                            {char.positive}
+                                                            </h4>
+                                                        </OverlayTrigger>
+                                                    </Col>
+                                                    <Col xs={3}>
+                                                            <a href={"http://twitter.com/share?text=I%20dislike%20"+char.name+"&url=https://www.got.show/"} target="_blank">
+                                                                <h4 className="nosupport">
+                                                                <span className="glyphicon glyphicon-thumbs-down"></span>
+                                                                </h4>
+                                                            </a>
                                                     </Col>
                                                     </Row>;
                                         })
