@@ -3,7 +3,7 @@
 	transform: translateY(-20%);
 }
 
-.ranking-fields .col-xs-12, .ranking-fields .col-sm-6{
+.ranking-fields .col-sm-12, .ranking-fields .col-md-6{
 	margin-top: 3em;
 }
 .popover-title, .popover-content {
@@ -31,21 +31,36 @@
 	list-style-type: none;
 	padding: 0;
 }
-.ranking-field h4 a {
+.ranking-field h4 {
 	font-weight: normal;
 	color: whitesmoke;
 	padding: 20px;
 	background: #333;
 	display: block;
 	position: relative;
+	cursor: pointer;
+	transition: all ease-in-out 0.3s;
 }
-.ranking-field .glyphicon.glyphicon-thumbs-down, .ranking-field .glyphicon.glyphicon-heart {
+.ranking-field h4:hover {
+	text-decoration: none;
+	background: #232323;
+}
+.ranking-field a:hover {
+	text-decoration: none;
+}
+.ranking-field h4.support, .ranking-field h4.nosupport {
+	text-align: center;
+	transition: background ease-in-out 0.3s;
+}
+.ranking-field h4.support:hover {
+	background: green;
+}
+.ranking-field h4.nosupport:hover {
+	background: #FF4444;
+}
+.ranking-field .glyphicon.glyphicon-thumbs-down, .ranking-field .glyphicon.glyphicon-thumbs-up {
 	transition: all ease-in-out 0.3s;
 	text-align: center;
-}
-.ranking-field .glyphicon.glyphicon-thumbs-down:hover, .ranking-field .glyphicon.glyphicon-heart:hover {
-	color: red;
-	text-decoration: none;
 }
 
 .rankingTweets-heading {

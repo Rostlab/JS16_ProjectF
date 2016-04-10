@@ -3,11 +3,9 @@ let {Component} = React;
 
 import { Link } from 'react-router';
 import {Grid, Row, Col, OverlayTrigger, Tooltip, Glyphicon} from 'react-bootstrap';
-
 import "./Ranking.css";
 import SentimentStore from '../../../stores/TwitterSentimentsStore';
 import SentimentsActions from '../../../actions/TwitterSentimentsActions';
-//import CharacterThumbnail from '../../common/CharacterThumbnail/CharacterThumbnail.jsx';
 
 export default class Ranking extends Component {
     getHardcodedPlodTop5() {
@@ -114,7 +112,7 @@ export default class Ranking extends Component {
 
                     <h1 className="center rankingTweets-heading">Tweets about GoT-characters:</h1>
                     <Row className="ranking-fields">
-                        <Col xs={12} sm={6}>
+                        <Col sm={12} md={6}>
                             <div className="ranking-field">
                                     <h2 className="text-center ranking-title twitterTooltip">Most Positive Mentions
                                         <OverlayTrigger placement="top" overlay={<Tooltip>love, joy, enthusiasm</Tooltip>}>
@@ -123,6 +121,7 @@ export default class Ranking extends Component {
                                     </h2>
                                     {
                                         this.state.twitterTopSentiments.map((char) => {
+                                            console.log(char); /*eslint no-console:0,no-undef:0*/
                                             return <Row>
                                                     <Col xs={8}>
                                                         <h4><Link to={'/characters/' + char.name}>
@@ -130,19 +129,22 @@ export default class Ranking extends Component {
                                                         </Link>
                                                         </h4>
                                                     </Col>
-
-                                                    <Col xs={4}>
-                                                     <h4>
-                                                        <a className="glyphicon glyphicon-heart" href={"http://twitter.com/share?text=I%20love%20"+char.name+"&url=https://got.show/&via=asoiad"} target="_blank">
-                                                        &nbsp;413</a>
-                                                    </h4>
+                                                    <Col xs={4} className="text-center">
+                                                        <OverlayTrigger trigger="hover" placement="top" overlay={<Tooltip><u><strong>Tweets</strong></u><br/><strong>{char.positive}</strong> positive<br/><strong>{char.negative}</strong> negative<br/>
+                                                        <strong>{char.total}</strong> total</Tooltip>}>
+                                                            <a href={"http://twitter.com/share?text=I%20love%20"+char.name+"&url=https://got.show/&via=asoiad"} target="_blank">
+                                                                <h4 className="support">
+                                                                {char.positive} &nbsp;<span className="glyphicon glyphicon-thumbs-up"></span>
+                                                                </h4>
+                                                            </a>
+                                                        </OverlayTrigger>
                                                     </Col>
                                                     </Row>;
                                         })
                                     }
                             </div>
                         </Col>
-                        <Col xs={12} sm={6}>
+                        <Col sm={12} md={6}>
                             <div className="ranking-field">
                                 <h2 className="text-center ranking-title twitterTooltip">Most Negative Mentions
                                     <OverlayTrigger placement="top" overlay={<Tooltip>hate, fear, anger, frustration</Tooltip>}>
@@ -158,12 +160,16 @@ export default class Ranking extends Component {
                                                         </Link>
                                                         </h4>
                                                     </Col>
-
-                                                    <Col xs={4}>
-                                                     <h4>
-                                                        <a className="glyphicon glyphicon-thumbs-down" href={"http://twitter.com/share?text=I%20hate%20"+char.name+"&url=https://got.show/&via=asoiad"} target="_blank">
-                                                        &nbsp;413</a>
-                                                    </h4>
+                                                    <Col xs={4} className="text-center">
+                                                        <OverlayTrigger trigger="hover" placement="top" 
+                                                        overlay={<Tooltip><u><strong>Tweets</strong></u><br/><strong>{char.positive}</strong> positive<br/><strong>{char.negative}</strong> negative<br/>
+                                                        <strong>{char.total}</strong> total</Tooltip>}>
+                                                            <a href={"http://twitter.com/share?text=I%20hate%20"+char.name+"&url=https://got.show/&via=asoiad"} target="_blank">
+                                                                <h4 className="nosupport">
+                                                                {char.negative} &nbsp;<span className="glyphicon glyphicon-thumbs-down"></span>
+                                                                </h4>
+                                                            </a>
+                                                        </OverlayTrigger>
                                                     </Col>
                                                     </Row>;
                                         })
@@ -173,7 +179,7 @@ export default class Ranking extends Component {
                     </Row>
 
                     <Row className="ranking-fields">
-                        <Col xs={12} sm={6}>
+                        <Col sm={12} md={6}>
                             <div className="ranking-field">
                                 <h2 className="text-center ranking-title">Most dangerous Houses </h2>
                                 <ul>
@@ -185,7 +191,7 @@ export default class Ranking extends Component {
                                 </ul>
                             </div>
                         </Col>
-                        <Col xs={12} sm={6}>
+                        <Col sm={12} md={6}>
                             <div className="ranking-field">
                                 <h2 className="text-center ranking-title">Top Survivors</h2>
                                 <ul>
