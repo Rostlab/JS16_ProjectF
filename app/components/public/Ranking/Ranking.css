@@ -1,8 +1,9 @@
 .ranking {
 	margin-top: 2em;
-	transform: translateY(-20%);
 }
-
+.ranking-plod {
+	margin-top: 15%;
+}
 .ranking-fields .col-sm-12, .ranking-fields .col-md-6{
 	margin-top: 3em;
 }
@@ -62,7 +63,9 @@
 	transition: all ease-in-out 0.3s;
 	text-align: center;
 }
-
+.tweets-fields {
+	margin-top: 15%;
+}
 .rankingTweets-heading {
 	margin-top: 2em;
 	margin-bottom: -.5em;
