@@ -116,16 +116,17 @@ export default class Character extends Component {
                 <Row>
                     <Col md={8} mdOffset={2}>
                         <h2>People on Twitter say</h2>
-                        <Row>
-                            <Col md={6}>
-                                <svg id="chart" width="100%" height="400"></svg>
-                            </Col>
-                            <Col md={6} className="pieCol">
-                                <Chart
-                                  chartType="PieChart"
-                                  height={"400px"}
-                                  width={"100%"}
-                                  options = {{
+                        <svg id="chart" width="100%" height="400"></svg>
+
+                    </Col>
+                </Row>
+                <Row>
+                    <Col  md={8} mdOffset={2}>
+                        <Chart
+                          chartType="PieChart"
+                          height={"400px"}
+                          width={"100%"}
+                          options = {{
                                     title: 'Total tweets',
                                     pieHole: 0.4,
                                     backgroundColor: {
@@ -133,7 +134,7 @@ export default class Character extends Component {
                                         stroke: 'transparent',
                                         strokeWidth: '0'
                                     },
-                                    colors: ['#6AAA1F','#5A180C'],
+                                    colors: ['#6AAA1F','rgb(198, 61, 23)'],
                                     legend: {
                                         textStyle: { color: 'white'}
                                     },
@@ -151,15 +152,13 @@ export default class Character extends Component {
                                     },
                                     pieSliceBorderColor: 'transparent'
                                    }}
-                                  data={ [
+                          data={ [
                                       ['Task', 'Hours per Day'],
                                       ['Positive sentiments',     this.state.sentiment.positive || 0],
                                       ['Negative sentiments',      this.state.sentiment.negative || 0]
                                   ]}
-                                />
-                            </Col>
-                        </Row>
-                    </Col>  
+                        />
+                    </Col>
                 </Row>
                 
                 </div>
