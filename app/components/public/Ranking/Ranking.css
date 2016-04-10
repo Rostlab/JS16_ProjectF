@@ -51,3 +51,8 @@
 	margin-top: 2em;
 	margin-bottom: -.5em;
 }
+.twitterTooltip .glyphicon {
+	font-size: .5em;
+	margin-left: .5em;
+	vertical-align: middle;
+}

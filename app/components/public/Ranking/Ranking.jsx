@@ -2,7 +2,7 @@ import React from 'react';
 let {Component} = React;
 
 import { Link } from 'react-router';
-import {Grid, Row, Col} from 'react-bootstrap';
+import {Grid, Row, Col, OverlayTrigger, Tooltip, Glyphicon} from 'react-bootstrap';
 
 import "./Ranking.css";
 import SentimentStore from '../../../stores/TwitterSentimentsStore';
@@ -109,14 +109,18 @@ export default class Ranking extends Component {
                                 <p className="see-more"><Link to={'/characters/?search=&page=1&sort=plod&order=1'}>See more</Link></p>
                             </div>
                         </Col>
-                        
+
                     </Row>
 
                     <h1 className="center rankingTweets-heading">Tweets about GoT-characters:</h1>
                     <Row className="ranking-fields">
                         <Col xs={12} sm={6}>
                             <div className="ranking-field">
-                                <h2 className="text-center ranking-title">Most Positive Mentions</h2>
+                                    <h2 className="text-center ranking-title twitterTooltip">Most Positive Mentions
+                                        <OverlayTrigger placement="top" overlay={<Tooltip>love, joy, enthusiasm</Tooltip>}>
+                                            <Glyphicon glyph="question-sign" />
+                                        </OverlayTrigger>
+                                    </h2>
                                     {
                                         this.state.twitterTopSentiments.map((char) => {
                                             return <Row>
@@ -140,7 +144,11 @@ export default class Ranking extends Component {
                         </Col>
                         <Col xs={12} sm={6}>
                             <div className="ranking-field">
-                                <h2 className="text-center ranking-title">Most Negative Mentions</h2>
+                                <h2 className="text-center ranking-title twitterTooltip">Most Negative Mentions
+                                    <OverlayTrigger placement="top" overlay={<Tooltip>hate, fear, anger, frustration</Tooltip>}>
+                                        <Glyphicon glyph="question-sign" />
+                                    </OverlayTrigger>
+                                </h2>
                                     {
                                         this.state.twitterFlopSentiments.map((char) => {
                                             return <Row>
@@ -163,7 +171,7 @@ export default class Ranking extends Component {
                             </div>
                         </Col>
                     </Row>
-                    
+
                     <Row className="ranking-fields">
                         <Col xs={12} sm={6}>
                             <div className="ranking-field">
