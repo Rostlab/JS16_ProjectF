@@ -57,6 +57,7 @@
     "markdown-loader": "^0.1.7",
     "object-assign": "^4.0.1",
     "postcss-loader": "^0.8.1",
+    "raw-loader": "^0.5.1",
     "react": "^0.14.7",
     "react-bootstrap": "^0.28.3",
     "react-dom": "^0.14.7",
