@@ -210,7 +210,7 @@ export default class CharacterListPage extends Component {
               boundaryLinks={true}
               ellipsis
               maxButtons={3}
-              items={Math.ceil(Store.getCharactersCount(this.state.filter)/20)}
+              items={Math.ceil(Store.getCharactersCount(this.state.filter,this.state.sort)/20)}
               activePage={this.state.activePage}
               onSelect={this.handleSelectPage.bind(this)} />
           </div>
@@ -220,7 +220,7 @@ export default class CharacterListPage extends Component {
               boundaryLinks={true}
               ellipsis
               maxButtons={3}
-              items={Math.ceil(Store.getCharactersCount(this.state.filter)/20)}
+              items={Math.ceil(Store.getCharactersCount(this.state.filter,this.state.sort)/20)}
               activePage={this.state.activePage}
               onSelect={this.handleSelectPage.bind(this)} />
           </div>
