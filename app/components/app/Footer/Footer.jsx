@@ -89,7 +89,7 @@ export default class Footer extends Component {
                   <br />
                   <a rel="license" href="http://creativecommons.org/licenses/by/3.0" target="_blank">
                     Licensed under Creative Commons Attribution 3.0
-                  </a>.
+                  </a>
                 </p>
               </Column>
               <Column md={2}>
