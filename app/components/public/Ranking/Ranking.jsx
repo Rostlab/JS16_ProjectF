@@ -133,7 +133,7 @@ export default class Ranking extends Component {
 
                                                     <Col xs={4}>
                                                      <h4>
-                                                        <a className="glyphicon glyphicon-heart" href={"http://twitter.com/share?text=I%20love%20"+char.name+"&url=https://www.got.show/"} target="_blank">
+                                                        <a className="glyphicon glyphicon-heart" href={"http://twitter.com/share?text=I%20love%20"+char.name+"&url=https://got.show/&via=asoiad"} target="_blank">
                                                         &nbsp;413</a>
                                                     </h4>
                                                     </Col>
@@ -161,7 +161,7 @@ export default class Ranking extends Component {
 
                                                     <Col xs={4}>
                                                      <h4>
-                                                        <a className="glyphicon glyphicon-thumbs-down" href={"http://twitter.com/share?text=I%20love%20"+char.name+"&url=https://www.got.show/"} target="_blank">
+                                                        <a className="glyphicon glyphicon-thumbs-down" href={"http://twitter.com/share?text=I%20hate%20"+char.name+"&url=https://got.show/&via=asoiad"} target="_blank">
                                                         &nbsp;413</a>
                                                     </h4>
                                                     </Col>
