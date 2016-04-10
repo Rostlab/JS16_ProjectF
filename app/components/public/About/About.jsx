@@ -1,64 +1,58 @@
 import React from 'react';
 let {Component} = React;
 //import styles from './About.css';
-import Row from 'react-bootstrap/lib/Row';
-import Column from 'react-bootstrap/lib/Col';
-
+import { Row, Col } from 'react-bootstrap';
+import './About.css';
 import AboutText from '../../../../static/about.md';
+import group from './group.jpg';
 
 export default class About extends Component {
     render() {
         return (
             <div className="about-container">
-                <Row className="about-intro">
-                    <Column md={8} mdPush={2}>
-                        <div dangerouslySetInnerHTML={{ __html: AboutText}} />
-                    </Column>
-                </Row>
 
-                <br />
-
-                <Row>
-                    <Column md={8} mdPush={2}>
-                        <h1>Contributors</h1>
+                <Row> 
+                    <h1 className="about-title">Our Team</h1>     
+                    <Col sm={10} smOffset={1} md={5}>
+                        <img src={group} className="group-photo" />
+                    </Col>
+                    <Col sm={10} smOffset={1} md={5} mdOffset={0}>
+                        <div className="about-description" dangerouslySetInnerHTML={{ __html: AboutText}} />
+                    </Col>
+                    <Col md={8} mdPush={2}>
+                        <h1 className="about-title">Contributors</h1>
                         <Row>
-                            <Column md={2} sm={4}>
-                                <h3>Frontend &amp; Design</h3>
-                                <TeamMemberListing teamID="F"/>
-                            </Column>
-                            <Column md={2} sm={4}>
-                                <h3>Map</h3>
-                                <TeamMemberListing teamID="C"/>
-                            </Column>
-                            <Column md={2} sm={4}>
+                            <Col xs={10} xsOffset={1} sm={5}>
+                                <h3>Mentors</h3>
+                                <TeamMemberListing teamID="Mentor"/>
                                 <h3>Database &amp; API</h3>
                                 <TeamMemberListing teamID="A"/>
-                            </Column>
-                            <Column md={2} sm={4}>
                                 <h3>Data Analysis</h3>
                                 <TeamMemberListing teamID="BD"/>
-                            </Column>
-                            <Column md={2} sm={4}>
-                                <h3>Integration</h3>
+                            </Col>
+                            <Col xs={10} xsOffset={1} sm={5}>
+                                <h3>Frontend &amp; Design</h3>
+                                <TeamMemberListing teamID="F"/>
+                                <h3>Map</h3>
+                                <TeamMemberListing teamID="C"/>
+                                 <h3>Integration</h3>
                                 <TeamMemberListing teamID="E"/>
-                            </Column>
-                            <Column md={2} sm={4}>
-                                <h3>Coordination</h3>
-                                <TeamMemberListing teamID="Mentor"/>
-                            </Column>
+                            </Col>
+                                                     
+                            
                         </Row>
 
-                    </Column>
+                    </Col>
                 </Row>
 
                 <br />
 
                 <Row>
-                    <Column md={8} mdPush={2}>
-                        <h1>Attributions</h1>
-                        <p>Most of our data was - and is periodically- scraped by <a href="http://awoiaf.westeros.org" target="_blank">A Wiki of Ice and Fire</a>. Contributing to this wiki will enhance this portal greatly, so make sure you drop a visit to our wiki-partners and request an account.</p>
-                        <p>We used the sources and licenses listed on <a href="/attributions">this page</a>.</p>
-                    </Column>
+                    <Col md={8} mdPush={2}>
+                        <h1 className="about-title">Attributions</h1>
+                        <p className="about-description">Most of our data was - and is periodically- scraped by <a href="http://awoiaf.westeros.org" target="_blank">A Wiki of Ice and Fire</a>. Contributing to this wiki will enhance this portal greatly, so make sure you drop a visit to our wiki-partners and request an account.</p>
+                        <p className="about-description">We used the sources and licenses listed on <a href="/attributions">this page</a>.</p>
+                    </Col>
                 </Row>
 
                 <br />
@@ -228,6 +222,11 @@ class TeamMemberListing extends Component {
                 name: "Theodor Cheslerean Boghiu",
                 link: "#",
                 team: "A"
+            },
+            {
+                name: "Mina Zaki",
+                link: "https://github.com/mina-zaki",
+                team: "F"
             },
             {
                 name: "Boris Idesman",
