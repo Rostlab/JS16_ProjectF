@@ -149,20 +149,20 @@ export default class CharacterListPage extends Component {
           sortText: ZtoA.sortText
         });
       } else if(eventKey == 4) {
-        sort = plodAsc.sort;
-        this.setState({
-          data: Store.getCharacters(1,sort, this.state.filter),
-          sort: sort,
-          activePage: 1,
-          sortText: plodAsc.sortText
-        });
-      } else if(eventKey == 5) {
         sort = plodDesc.sort;
         this.setState({
           data: Store.getCharacters(1,sort, this.state.filter),
           sort: sort,
           activePage: 1,
           sortText: plodDesc.sortText
+        });
+      } else if(eventKey == 5) {
+        sort = plodAsc.sort;
+        this.setState({
+          data: Store.getCharacters(1,sort, this.state.filter),
+          sort: sort,
+          activePage: 1,
+          sortText: plodAsc.sortText
         });
       }
       this.pushHistory(undefined,sort);
@@ -200,8 +200,8 @@ export default class CharacterListPage extends Component {
                 <MenuItem eventKey="1">{popularity.sortText}</MenuItem>
                 <MenuItem eventKey="2">{AtoZ.sortText}</MenuItem>
                 <MenuItem eventKey="3">{ZtoA.sortText}</MenuItem>
-                <MenuItem eventKey="4">{plodAsc.sortText}</MenuItem>
-                <MenuItem eventKey="5">{plodDesc.sortText}</MenuItem>
+                <MenuItem eventKey="4">{plodDesc.sortText}</MenuItem>
+                <MenuItem eventKey="5">{plodAsc.sortText}</MenuItem>
               </DropdownButton>
             </Col>
           </Row>
