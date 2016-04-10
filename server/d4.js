@@ -42,9 +42,7 @@ d4.get('/chart.css', function(req,res) {
 
 });
 d4.get('/chart.js', function(req,res) {
-    //res.sendFile(gotsent.js);
-    console.log(path.join(__dirname, 'chart.js')),
-    res.sendFile(path.join(__dirname, 'chart.js'));
+    res.sendFile(gotsent.js);
   fs.readdir(path.join(__dirname, '/../csv'), function(err, files) {
     console.log(files);
   });

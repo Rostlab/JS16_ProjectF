@@ -41,15 +41,16 @@ var CharactersActions = {
                 return response;
             }).then(function(response){
                 var character = response.data;
+                let characterSlug = character.slug.replace(/(\([a-z_A-z]*\))/g, ''); // temp fix for #371
                 Api
-                    .get('plod/bySlug/' + character.slug)
+                    .get('plod/bySlug/' + characterSlug)
                     .then(function(response) {
                         var characterPlod = {
                           gotplod: response.data.find(function(ele) {
-                            return ele.algorithm === "gotplod" && ele.characterSlug.toLowerCase() == character.slug.toLowerCase();
+                            return ele.algorithm === "gotplod" && ele.characterSlug.toLowerCase().replace(/(\()|(\))|(_)$/g, '') == character.slug.toLowerCase().replace(/(\()|(\))|(_)$/g, '');  // temp fix for #371
                           }),
                           gotarffplod: response.data.find(function(ele) {
-                            return ele.algorithm === "gotarffplod" && ele.characterSlug.toLowerCase() == character.slug.toLowerCase();
+                            return ele.algorithm === "gotarffplod" && ele.characterSlug.toLowerCase().replace(/(\()|(\))|(_)$/g, '') == character.slug.toLowerCase().replace(/(\()|(\))|(_)$/g, '');  // temp fix for #371
                           })
                         };
                         var characterWithPlod = Object.assign(character,characterPlod);

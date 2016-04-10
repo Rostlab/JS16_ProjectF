@@ -1,5 +1,6 @@
 .ranking {
 	margin-top: 2em;
+	transform: translateY(-20%);
 }
 
 .ranking-fields .col-sm-12, .ranking-fields .col-md-6{
@@ -44,7 +45,7 @@
 	text-decoration: none;
 	background: #232323;
 }
-.ranking-field h4 a:hover {
+.ranking-field a:hover {
 	text-decoration: none;
 }
 .ranking-field h4.support, .ranking-field h4.nosupport {
@@ -60,4 +61,14 @@
 .ranking-field .glyphicon.glyphicon-thumbs-down, .ranking-field .glyphicon.glyphicon-thumbs-up {
 	transition: all ease-in-out 0.3s;
 	text-align: center;
+}
+
+.rankingTweets-heading {
+	margin-top: 2em;
+	margin-bottom: -.5em;
+}
+.twitterTooltip .glyphicon {
+	font-size: .5em;
+	margin-left: .5em;
+	vertical-align: middle;
 }

@@ -101,7 +101,7 @@ export default class Character extends Component {
                         </div>
                         <p>Our in-house developed machine learning algorithm predicts likelihood of death based on various features that we extracted for each character from the first five books of the Song of Ice and Fire series. <br />
                             Our second, less accurate, algorithm predicts likelihood to be {this.state.plodArff}.</p>
-                        <p><a href="/machine-learning-algorithm-predict-death-game-of-thrones">Click here to read more about our prediction algorithms.</a></p>
+                        <p><a href="/machine-learning-algorithm-predicts-death-game-of-thrones">Click here to read more about our prediction algorithms.</a></p>
                     </Col>
                 </Row>
                 <Row>

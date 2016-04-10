@@ -45,7 +45,7 @@ ReactDOM.render(
       <Route path="/credits" component={Credits} />
       <Route path="/contribute" component={Contribute} />
       <Route path="/privacy" component={PrivacyPolicy}/>
-      <Route path="/machine-learning-algorithm-predict-death-game-of-thrones" component={PlodDescription}/>
+      <Route path="/machine-learning-algorithm-predicts-death-game-of-thrones" component={PlodDescription}/>
       <Route path="/statistics" component={Statistics} />
       <Route path="/attributions" component={Attributions} />
       <Route path="/characters">
