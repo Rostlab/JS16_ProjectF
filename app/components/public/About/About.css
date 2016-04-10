@@ -1,6 +1,20 @@
-.about-container {
+.about-title {
+	text-align: center;
+	margin: 50px 0;
 }
-
+.about-description {
+	font-size: 1.5em;
+	padding-top: 50px;
+}
 .about-intro {
     padding: 50px 0;
+}
+.group-photo {
+	width: 100%;
+}
+.about-container {
+	margin-top: 50px;
+}
+.contributors-title {
+	margin-top: 50px;
 }
