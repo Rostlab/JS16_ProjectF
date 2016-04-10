@@ -38,4 +38,6 @@ Most of the applications included in this website can be easily downloaded and i
 If you would like to contribute code, our [repository can be found here](https://github.com/got-show/general)
 
 # Community
-If you would like to edit our map, 
+It always feel better with friends, right? so how about joinning our grwoing community of developers and contributors who help make the World of Ice and Fire data accessible to all fans! 
+
+Are you a renowned expert on the geogrpahy of Essos? do you know where exactly was the Battle of the Burning Mill? Found a mistake in one of the locations we put on the map? Then why not **use our [map editor](map.got.show)** to chart paths for less known characters and highlight landmarks where major events took place.  
