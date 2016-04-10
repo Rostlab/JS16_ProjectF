@@ -1,5 +1,6 @@
 .ranking {
 	margin-top: 2em;
+	transform: translateY(-20%);
 }
 
 .ranking-fields .col-xs-12, .ranking-fields .col-sm-6{
@@ -45,4 +46,14 @@
 .ranking-field .glyphicon.glyphicon-thumbs-down:hover, .ranking-field .glyphicon.glyphicon-heart:hover {
 	color: red;
 	text-decoration: none;
+}
+
+.rankingTweets-heading {
+	margin-top: 2em;
+	margin-bottom: -.5em;
+}
+.twitterTooltip .glyphicon {
+	font-size: .5em;
+	margin-left: .5em;
+	vertical-align: middle;
 }
