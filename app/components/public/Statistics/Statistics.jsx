@@ -2,7 +2,7 @@ import React from 'react';
 let {Component} = React;
 import { Row, Col } from 'react-bootstrap';
 import $ from 'jquery';
-import js from 'raw!./src.js';
+let js = require('raw!./src.js'); /*eslint no-undef:0 */
 
 export default class Statistics extends Component {
   render() {
