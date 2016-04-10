@@ -46,10 +46,10 @@ var CharactersActions = {
                     .then(function(response) {
                         var characterPlod = {
                           gotplod: response.data.find(function(ele) {
-                            return ele.algorithm === "gotplod";
+                            return ele.algorithm === "gotplod" && ele.characterSlug.toLowerCase() == character.slug.toLowerCase();
                           }),
                           gotarffplod: response.data.find(function(ele) {
-                            return ele.algorithm === "gotarffplod";
+                            return ele.algorithm === "gotarffplod" && ele.characterSlug.toLowerCase() == character.slug.toLowerCase();
                           })
                         };
                         var characterWithPlod = Object.assign(character,characterPlod);

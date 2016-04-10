@@ -4,45 +4,37 @@ import React, {Component} from 'react';
 import { Row, Col, Pagination, Input} from 'react-bootstrap';
 import { DropdownButton, MenuItem} from 'react-bootstrap';
 import { browserHistory } from 'react-router';
+import CharacterList from '../../common/CharacterList/CharacterList';
 
 import Store from '../../../stores/CharactersStore';
 import Actions from '../../../actions/CharactersActions';
-import CharacterThumbnail from '../../common/CharacterThumbnail/CharacterThumbnail.jsx';
 
-import './CharacterList.css';
+import './CharacterListPage.css';
 
-class CharacterList extends Component {
-  constructor (props) {
-    super(props);
-  }
-  render() {
-    var found = "";
-    if(this.props.loaded == false) {
-      found = "Loading ...";
-    } else if (this.props.data.length === 0) {
-      found = "Nothing found, please search something else";
-    }
-    return (
-      <div>
-        <Row>
-          <Col md={8} mdOffset={2}>
-            <div> {
-                      this.props.data.map(function (character) {
-                        return <CharacterThumbnail key={character._id} name={character.name} imageUrl={character.imageLink}/>;
-                      })
-                  }
-            </div>
-          </Col>
-          <div className="center">
-            <h3>{ found }</h3>
-          </div>
-        </Row>
-      </div>
-    );
-  }
-}
-CharacterList.propTypes = { data: React.PropTypes.array.isRequired};
-CharacterList.propTypes = { loaded: React.PropTypes.bool.isRequired};
+const popularity = {
+  sortText: "Popularity",
+  sort: {field: "pageRank", type: -1}
+};
+
+const AtoZ = {
+  sortText:  "Name A to Z",
+  sort: {field: "name", type: 1}
+};
+
+const ZtoA = {
+  sortText:  "Name Z to A",
+  sort: {field: "name", type: -1}
+};
+
+const plodAsc = {
+  sortText: "Survival chance",
+  sort: {field: "plod", type: 1}
+};
+
+const plodDesc = {
+  sortText: "Death chance",
+  sort: {field: "plod", type: -1}
+};
 
 export default class CharacterListPage extends Component {
     constructor (props) {
@@ -55,18 +47,24 @@ export default class CharacterListPage extends Component {
       let sortText, sort;
       if( this.props.location.query.sort != undefined && this.props.location.query.order != undefined  ) {
         if (this.props.location.query.sort == 'name' && this.props.location.query.order == '1') {
-          sortText =  "Name A to Z";
-          sort = {field: "name", type: 1};
+          sortText =  AtoZ.sortText;
+          sort = AtoZ.sort;
         } else if (this.props.location.query.sort == 'name' && this.props.location.query.order == '-1') {
-          sortText =  "Name Z to A";
-          sort = {field: "name", type: -1};
+          sortText =  ZtoA.sortText;
+          sort = ZtoA.sort;
+        } else if (this.props.location.query.sort == 'plod' && this.props.location.query.order == '1') {
+          sortText =  plodAsc.sortText;
+          sort = plodAsc.sort;
+        } else if (this.props.location.query.sort == 'plod' && this.props.location.query.order == '-1') {
+          sortText =  plodDesc.sortText;
+          sort = plodDesc.sort;
         } else {
-          sortText =  "Popularity";
-          sort = {field: "pageRank", type: -1};
+          sortText =  popularity.sortText;
+          sort = popularity.sort;
         }
       } else {
-        sortText =  "Popularity";
-        sort = {field: "pageRank", type: -1};
+        sortText =  popularity.sortText;
+        sort = popularity.sort;
       }
       this.state = {
         data: Store.getCharacters(page,sort, {'value': ''}),
@@ -127,28 +125,44 @@ export default class CharacterListPage extends Component {
     handleSelectSort(event, eventKey) { // Event triggered by sort change
       let sort;
       if(eventKey == 1) {
-        sort = {field: "pageRank", type: -1};
+        sort = popularity.sort;
         this.setState({
           data: Store.getCharacters(1,sort, this.state.filter),
           sort: sort,
           activePage: 1,
-          sortText: "Popularity"
+          sortText: popularity.sortText
         });
       } else if(eventKey == 2) {
-        sort = {field: "name", type: 1};
+        sort = AtoZ.sort;
         this.setState({
           data: Store.getCharacters(1,sort, this.state.filter),
           sort: sort,
           activePage: 1,
-          sortText: "Name A to Z"
+          sortText: AtoZ.sortText
         });
       } else if(eventKey == 3) {
-        sort = {field: "name", type: -1};
+        sort = ZtoA.sort;
         this.setState({
           data: Store.getCharacters(1,sort, this.state.filter),
           sort: sort,
           activePage: 1,
-          sortText: "Name Z to A"
+          sortText: ZtoA.sortText
+        });
+      } else if(eventKey == 4) {
+        sort = plodAsc.sort;
+        this.setState({
+          data: Store.getCharacters(1,sort, this.state.filter),
+          sort: sort,
+          activePage: 1,
+          sortText: plodAsc.sortText
+        });
+      } else if(eventKey == 5) {
+        sort = plodDesc.sort;
+        this.setState({
+          data: Store.getCharacters(1,sort, this.state.filter),
+          sort: sort,
+          activePage: 1,
+          sortText: plodDesc.sortText
         });
       }
       this.pushHistory(undefined,sort);
@@ -178,14 +192,16 @@ export default class CharacterListPage extends Component {
       return (
         <div>
           <Row className="inputbar">
-            <Col md={7} mdOffset={2}>
+            <Col md={6} mdOffset={2}>
               <Input value={this.props.location.query.search} className="character-search" ref="input" type="text" placeholder="Search for character" onChange={this.handleChange.bind(this)} />
             </Col>
-            <Col md={1}>
+            <Col md={2} className="sortCol">
               <DropdownButton className="sortButton" onSelect={this.handleSelectSort.bind(this)} title={this.state.sortText} id="dropdown-size-medium">
-                <MenuItem eventKey="1">Popularity</MenuItem>
-                <MenuItem eventKey="2">Name A to Z</MenuItem>
-                <MenuItem eventKey="3">Name Z to A</MenuItem>
+                <MenuItem eventKey="1">{popularity.sortText}</MenuItem>
+                <MenuItem eventKey="2">{AtoZ.sortText}</MenuItem>
+                <MenuItem eventKey="3">{ZtoA.sortText}</MenuItem>
+                <MenuItem eventKey="4">{plodAsc.sortText}</MenuItem>
+                <MenuItem eventKey="5">{plodDesc.sortText}</MenuItem>
               </DropdownButton>
             </Col>
           </Row>
@@ -194,11 +210,20 @@ export default class CharacterListPage extends Component {
               boundaryLinks={true}
               ellipsis
               maxButtons={3}
-              items={Math.ceil(Store.getCharactersCount(this.state.filter)/20)}
+              items={Math.ceil(Store.getCharactersCount(this.state.filter,this.state.sort)/20)}
               activePage={this.state.activePage}
               onSelect={this.handleSelectPage.bind(this)} />
-            </div>
+          </div>
           <CharacterList data={this.state.data} loaded={this.state.loaded}/>
+          <div className="center">
+            <Pagination
+              boundaryLinks={true}
+              ellipsis
+              maxButtons={3}
+              items={Math.ceil(Store.getCharactersCount(this.state.filter,this.state.sort)/20)}
+              activePage={this.state.activePage}
+              onSelect={this.handleSelectPage.bind(this)} />
+          </div>
         </div>
 
       );

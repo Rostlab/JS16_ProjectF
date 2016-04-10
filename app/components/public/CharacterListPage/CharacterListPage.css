@@ -30,4 +30,13 @@ input.character-search {
 
 .sortButton {
     height: 50px;
+    font-size: small;
+    width: 100%;
+}
+.sortCol .dropdown {
+    width: 100%;
+}
+
+.sortCol .dropdown .dropdown-menu {
+    text-align: center;
 }

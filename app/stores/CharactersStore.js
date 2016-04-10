@@ -15,7 +15,14 @@ function setCharacter(data) {
 }
 
 function sortCharacters(characters,sort){
+    let filteredCharacters;
     if(sort && Object.keys(sort).length > 1){
+        if (sort.field === Constants.SORT_FIELD_PLOD){
+            filteredCharacters = characters.filter(function(ele){
+                return ele.plod && !ele.dateOfDeath;
+            });
+            return filteredCharacters.sort(firstBy(sort.field,sort.type));
+        }
         return characters.sort(firstBy(sort.field,sort.type));
     }
     return characters;
@@ -46,16 +53,17 @@ var CharactersStore = assign({}, EventEmitter.prototype, {
         if(!page){
             page = 1
         }
-        var start = page * 20-20;
-        var end = start + 20;
-        var filteredCharacters = filterCharacters(_characters,filter);
-        var sortedCharacters = sortCharacters(filteredCharacters,sort);
+        const start = page * 20-20;
+        const end = start + 20;
+        const filteredCharacters = filterCharacters(_characters,filter);
+        const sortedCharacters = sortCharacters(filteredCharacters,sort);
         return sortedCharacters.slice(start,end);
     },
 
-    getCharactersCount: function(filter){
-        var filteredCharacters = filterCharacters(_characters,filter);
-        return filteredCharacters.length;
+    getCharactersCount: function(filter,sort){
+        const filteredCharacters = filterCharacters(_characters,filter);
+        const sortedCharacters = sortCharacters(filteredCharacters,sort);
+        return sortedCharacters.length;
     },
 
     getCharacter: function() {

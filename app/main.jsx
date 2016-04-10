@@ -21,7 +21,7 @@ import Attributions from './components/public/Attributions/Attributions.jsx';
 import Contribute from './components/public/Contribute/Contribute.jsx';
 import Credits from './components/public/Credits/Credits.jsx';
 import Characters from './components/public/Characters/Characters.jsx';
-import CharacterListPage from './components/public/CharacterList/CharacterList.jsx';
+import CharacterListPage from 'components/public/CharacterListPage/CharacterListPage.jsx';
 import Site404 from './components/public/404/404.jsx';
 import Imprint from './components/public/Imprint/Imprint.jsx';
 import PrivacyPolicy from './components/public/PrivacyPolicy/PrivacyPolicy.jsx';
