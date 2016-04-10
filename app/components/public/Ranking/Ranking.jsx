@@ -106,7 +106,7 @@ export default class Ranking extends Component {
                                         })
                                     }
                                 </ul>
-                                <p className="see-more"><Link to={'/characters/?search=&page=1&sort=plod&order=1'}>See more</Link></p>
+                                <p className="see-more"><Link to={'/characters/?search=&page=1&sort=plod&order=-1'}>See more</Link></p>
                             </div>
                         </Col>
                         
@@ -189,7 +189,7 @@ export default class Ranking extends Component {
                                         })
                                     }
                                 </ul>
-                                <p className="see-more"><Link to={'/characters/?search=&page=1&sort=plod&order=-1'}>See more</Link></p>
+                                <p className="see-more"><Link to={'/characters/?search=&page=1&sort=plod&order=1'}>See more</Link></p>
                             </div>
                         </Col>
                     </Row>
