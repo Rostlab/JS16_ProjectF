@@ -61,13 +61,13 @@ We used John Platt's sequential minimal optimization algorithm (Platt, 1999) for
 
 We measured accuracy/precision and coverage/recall of our prediction method using ratios of TP (true positives, _i.e._ correctly predicted dead characters), FP (false positives, _i.e._ alive characters predicted to be dead), FN (false negatives, _i.e._ dead characters predicted to be alive), and TN (true negatives, _i.e._ correctly predicted alive characters).
 
-![](https://rostlab.org/~goldberg/precision.png) 
+![](https://rostlab.org/~goldberg/Precision.gif)
                                             
-![](https://rostlab.org/~goldberg/precision.png)
+![](https://rostlab.org/~goldberg/Recall.gif)
                                             
 We combined these two measures into a single F-measure value:
 
-![](https://rostlab.org/~goldberg/fmeasure.png)
+![](https://rostlab.org/~goldberg/Fmeasure.gif)
 
 The prediction results of our method were:
 
