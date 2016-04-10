@@ -20,10 +20,19 @@ Our results amused and pleased us, so we decided to share our findings with the 
 Now it's your turn - use the data we made available and build beautiful useful apps about the GoT world!
 
 # API links
-If you would like to access the data, check out our [API Reference here](https://api.got.show/doc/)
+If you would like to access the first ever open and strucutred document database for the Ice and Fire world, check out our [API Reference here](https://api.got.show/doc/). 
 
 # NPM packages
-If you would like to install our packages,
+Most of the applications included in this website can be easily downloaded and installed from NPM. Feel free to download and try our apps, extend them or incorporate them in your own apps. Like our apps? [Let us know](https://twitter.com/asoiad).
+
+| Package name  | Description   | link  |
+|---|---|---|
+| gotmap  | the most beautiful, complete, interactive world of ice and fire map. Made for fans by fans!  | https://www.npmjs.com/package/gotmap  |
+|  gotsentimental | a powerful Twitter sentiments analysis tool for GoT characters with visualization capabilities.   |  https://www.npmjs.com/package/gotsentimental |
+| gotdailysentiment  | GoT specific twitter senitment analysis tool.  |  https://www.npmjs.com/package/gotdailysentiment |
+| gotplod  | an accurate likelihood of death predictor for 1946 GoT characters.   |  https://www.npmjs.com/package/gotplod |
+| gotarffplod  | likelihood of death prediction for over 1000 GoT characters.    |  https://www.npmjs.com/package/gotarffplod |
+
 
 # GitHub Repo
 If you would like to contribute code, our [repository can be found here](https://github.com/got-show/general)
