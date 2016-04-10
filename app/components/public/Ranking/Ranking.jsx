@@ -121,7 +121,6 @@ export default class Ranking extends Component {
                                     </h2>
                                     {
                                         this.state.twitterTopSentiments.map((char) => {
-                                            console.log(char); /*eslint no-console:0,no-undef:0*/
                                             return <Row>
                                                     <Col xs={8}>
                                                         <h4><Link to={'/characters/' + char.name}>
