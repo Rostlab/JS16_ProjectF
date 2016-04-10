@@ -46,3 +46,8 @@
 	color: red;
 	text-decoration: none;
 }
+
+.rankingTweets-heading {
+	margin-top: 2em;
+	margin-bottom: -.5em;
+}

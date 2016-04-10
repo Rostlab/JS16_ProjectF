@@ -111,10 +111,12 @@ export default class Ranking extends Component {
                         </Col>
                         
                     </Row>
+
+                    <h1 className="center rankingTweets-heading">Tweets about GoT-characters:</h1>
                     <Row className="ranking-fields">
                         <Col xs={12} sm={6}>
                             <div className="ranking-field">
-                                <h2 className="text-center ranking-title">Twitter top 5 loved</h2>
+                                <h2 className="text-center ranking-title">Most Positive Mentions</h2>
                                     {
                                         this.state.twitterTopSentiments.map((char) => {
                                             return <Row>
@@ -138,7 +140,7 @@ export default class Ranking extends Component {
                         </Col>
                         <Col xs={12} sm={6}>
                             <div className="ranking-field">
-                                <h2 className="text-center ranking-title">Twitter top 5 hated</h2>
+                                <h2 className="text-center ranking-title">Most Negative Mentions</h2>
                                     {
                                         this.state.twitterFlopSentiments.map((char) => {
                                             return <Row>
