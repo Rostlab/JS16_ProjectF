@@ -99,6 +99,20 @@ var TwitterSentimentsActions = {
             data: sentiments
           });
         });
+    },
+
+    loadLiveListen: function(name,duration) {
+      Api
+        .get('d5/runListen', {
+          name: name,
+          duration: duration
+        })
+        .then(function (sentiments) {
+          AppDispatcher.handleServerAction({
+            actionType: Constants.RECEIVE_TWITTER_LISTEN_SENTIMENTS,
+            data: sentiments
+          });
+        });
     }
     // ,
     // loadCharacterSentimentByTimeframe: function(name,startDate,endDate) {

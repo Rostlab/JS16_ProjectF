@@ -13,6 +13,7 @@ var _characterSentiment = {};
 var _topSentiments_d5 = [];
 var _flopSentiments_d5 = [];
 var _mostDiscussedSentiments_d5 = [];
+var _liveListen = {};
 
 function setTopSentiments(data) {
     _topSentiments = data;
@@ -38,6 +39,9 @@ function setFlopSentiments_d5(data) {
 }
 function setMostDiscussedSentiments_d5(data) {
     _mostDiscussedSentiments_d5 = data;
+}
+function setLiveListen(data) {
+    _liveListen = data;
 }
 
 
@@ -73,6 +77,10 @@ var TwitterSentimentsStore = assign({}, EventEmitter.prototype, {
         return _mostDiscussedSentiments_d5;
     },
 
+    getLiveListen: function() {
+        return _liveListen;
+    },
+
     getCharacterSentiment: function() {
         return _characterSentiment;
     },
@@ -106,6 +114,9 @@ TwitterSentimentsStore.dispatchToken = AppDispatcher.register(function (payload)
             break;
         case Constants.RECEIVE_TWITTER_DISCUSSED_SENTIMENTS_D5:
             setMostDiscussedSentiments_d5(action.data);
+            break;
+        case Constants.RECEIVE_TWITTER_LISTEN_SENTIMENTS:
+            setLiveListen(action.data);
             break;
         case Constants.RECEIVE_TWITTER_FLOP_SENTIMENTS:
             setFlopSentiments(action.data);

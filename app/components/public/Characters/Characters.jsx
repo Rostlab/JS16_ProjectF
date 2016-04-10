@@ -5,6 +5,7 @@ let {Component} = React;
 import $ from 'jquery';
 import './Characters.css';
 import { Row, Col, Image, ProgressBar, Glyphicon } from 'react-bootstrap';
+import TimePicker from 'material-ui/lib/time-picker/time-picker';
 
 import MapComp from '../../common/MapComp/MapComp.jsx';
 import Store from '../../../stores/CharactersStore';
@@ -30,6 +31,7 @@ export default class Character extends Component {
     }
 
     componentDidMount() {
+        Actions.loadCharacter(decodeURIComponent(this.props.params.id));
         Actions.loadCharacter(decodeURIComponent(this.props.params.id));
     }
 
@@ -109,6 +111,17 @@ export default class Character extends Component {
                         <h2>People on Twitter say</h2>
                         <svg id="chart" width="100%" height="400"></svg>
                     </Col>  
+                </Row>
+                <Row>
+                    <Col md={8} mdOffset={2}>
+                        <h2>People on Twitter say at the moment</h2>
+                        <p>Enter a time until our bot should listen for the currently posted tweets on Twitter.</p>
+                        <TimePicker
+                          ref="picker24hr"
+                          format="24hr"
+                          hintText="24hr Format"
+                        />
+                    </Col>
                 </Row>
                 
                 </div>

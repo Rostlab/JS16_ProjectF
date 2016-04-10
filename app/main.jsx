@@ -27,6 +27,9 @@ import Imprint from './components/public/Imprint/Imprint.jsx';
 import PrivacyPolicy from './components/public/PrivacyPolicy/PrivacyPolicy.jsx';
 import PlodDescription from './components/public/PlodDescription/PlodDescription.jsx';
 
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
+
 import ga from 'ga-react-router';
 import { browserHistory } from 'react-router';
 
