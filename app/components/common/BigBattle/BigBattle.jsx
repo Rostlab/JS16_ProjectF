@@ -60,7 +60,7 @@ export default class BigBattle extends Component {
           </Col>
         </Row>
         <br />
-        <p>The tombstone shows our <strong>predicted likelihood of death</strong>. Read how we calculate the score <a href="/machine-learning-algorithm-predict-death-game-of-thrones">here</a>!</p>
+        <p>The tombstone shows our <strong>predicted likelihood of death</strong>. Read how we calculate the score <a href="/machine-learning-algorithm-predicts-death-game-of-thrones">here</a>!</p>
         <br />
         <Row className="big-battle-info">
           <h3>Twitter Sentiments</h3>
