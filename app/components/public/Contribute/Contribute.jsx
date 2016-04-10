@@ -3,7 +3,7 @@ let {Component} = React;
 import Row from 'react-bootstrap/lib/Row';
 import Column from 'react-bootstrap/lib/Col';
 
-import ContributeText from '../../../../static/contribute.md';
+import ContributeText from '../../../../config/markdown/contribute.md';
 
 export default class Contribute extends Component {
   render() {

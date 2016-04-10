@@ -3,7 +3,7 @@ let {Component} = React;
 //import styles from './About.css';
 import { Row, Col } from 'react-bootstrap';
 import './About.css';
-import AboutText from '../../../../static/about.md';
+import AboutText from '../../../../config/markdown/about.md';
 import group from './group.jpg';
 
 export default class About extends Component {
