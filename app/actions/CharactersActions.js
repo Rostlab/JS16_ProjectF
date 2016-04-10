@@ -44,7 +44,14 @@ var CharactersActions = {
                 Api
                     .get('plod/bySlug/' + character.slug)
                     .then(function(response) {
-                        var characterPlod = response.data[0];
+                        var characterPlod = {
+                          gotplod: response.data.find(function(ele) {
+                            return ele.algorithm === "gotplod";
+                          }),
+                          gotarffplod: response.data.find(function(ele) {
+                            return ele.algorithm === "gotarffplod";
+                          })
+                        };
                         var characterWithPlod = Object.assign(character,characterPlod);
                         AppDispatcher.handleServerAction({
                             actionType: Constants.RECEIVE_CHARACTER,
