@@ -1,5 +1,6 @@
 .ranking {
 	margin-top: 2em;
+	transform: translateY(-20%);
 }
 
 .ranking-fields .col-xs-12, .ranking-fields .col-sm-6{
