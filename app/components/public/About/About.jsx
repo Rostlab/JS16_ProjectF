@@ -56,7 +56,8 @@ export default class About extends Component {
                 <Row>
                     <Column md={8} mdPush={2}>
                         <h1>Attributions</h1>
-                        We used the sources and licenses listed on <a href="/attributions">this page</a>
+                        <p>Most of our data was - and is periodically- scraped by <a href="http://awoiaf.westeros.org" target="_blank">A Wiki of Ice and Fire</a>. Contributing to this wiki will enhance this portal greatly, so make sure you drop a visit to our wiki-partners and request an account.</p>
+                        <p>We used the sources and licenses listed on <a href="/attributions">this page</a>.</p>
                     </Column>
                 </Row>
 
