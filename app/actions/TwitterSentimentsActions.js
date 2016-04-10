@@ -36,7 +36,7 @@ var TwitterSentimentsActions = {
     },
     loadCharacterSentiment: function(characterId) {
         Api
-            .get('d4/character', {id: characterId})
+            .get('d4/character/' + characterId)
             .then(function (sentiments) {
                 AppDispatcher.handleServerAction({
                     actionType: Constants.RECEIVE_TWITTER_CHARACTER_SENTIMENT,
