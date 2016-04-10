@@ -13,15 +13,8 @@
 }
 .ranking-field {
 	background-color: #313131;
-	padding: 3px 0;
-	box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 3px 1px rgba(90, 24, 12, .5);
-	transition: all .1s ease-in-out;
-	-webkit-transition: all .1s ease-in-out;
-	-moz-transition: all .1s ease-in-out;
-	-o-transition: all .1s ease-in-out;
-}
-.ranking-field:hover {
-	box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 3px 5px 10px rgb(90, 24, 12);
+	padding: 50px 20px;
+	box-shadow: inset 0 0 1px rgba(0,0,0,.075), 0 3px 1px rgba(90, 24, 12, .5);
 	transition: all .1s ease-in-out;
 	-webkit-transition: all .1s ease-in-out;
 	-moz-transition: all .1s ease-in-out;
@@ -33,7 +26,23 @@
 	right: 10px;
 	bottom: -8px;
 }
+.ranking-field ul {
+	list-style-type: none;
+	padding: 0;
+}
 .ranking-field h4 a {
 	font-weight: normal;
 	color: whitesmoke;
+	padding: 20px;
+	background: #333;
+	display: block;
+	position: relative;
+}
+.ranking-field .glyphicon.glyphicon-thumbs-down, .ranking-field .glyphicon.glyphicon-heart {
+	transition: all ease-in-out 0.3s;
+	text-align: center;
+}
+.ranking-field .glyphicon.glyphicon-thumbs-down:hover, .ranking-field .glyphicon.glyphicon-heart:hover {
+	color: red;
+	text-decoration: none;
 }

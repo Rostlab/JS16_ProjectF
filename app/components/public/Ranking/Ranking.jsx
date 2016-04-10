@@ -7,6 +7,7 @@ import {Grid, Row, Col} from 'react-bootstrap';
 import "./Ranking.css";
 import SentimentStore from '../../../stores/TwitterSentimentsStore';
 import SentimentsActions from '../../../actions/TwitterSentimentsActions';
+//import CharacterThumbnail from '../../common/CharacterThumbnail/CharacterThumbnail.jsx';
 
 export default class Ranking extends Component {
     getHardcodedPlodTop5() {
@@ -85,45 +86,13 @@ export default class Ranking extends Component {
     }
 
     render() {
+
         return (
             <div>
+            <div className="header-image"></div>
                 <Grid className="ranking">
                     <Row className="ranking-fields">
-                        <Col xs={12} sm={6}>
-                            <div className="ranking-field">
-                                <h2 className="text-center ranking-title">Twitter top 5 loved</h2>
-                                <ul>
-                                    {
-                                        this.state.twitterTopSentiments.map((char) => {
-                                            return <li>
-                                                <h4><Link to={'/characters/' + char.name}>
-                                                    {char.name}
-                                                </Link></h4>
-                                            </li>;
-                                        })
-                                    }
-                                </ul>
-                            </div>
-                        </Col>
-                        <Col xs={12} sm={6}>
-                            <div className="ranking-field">
-                                <h2 className="text-center ranking-title">Twitter top 5 hated</h2>
-                                <ul>
-                                    {
-                                        this.state.twitterFlopSentiments.map((char) => {
-                                            return <li>
-                                                <h4><Link to={'/characters/' + char.name}>
-                                                    {char.name}
-                                                </Link></h4>
-                                            </li>;
-                                        })
-                                    }
-                                </ul>
-                            </div>
-                        </Col>
-                    </Row>
-                    <Row className="ranking-fields">
-                        <Col xs={12} sm={6}>
+                        <Col xs={12}>
                             <div className="ranking-field">
                                 <h2 className="text-center ranking-title">Who is most likely to die next</h2>
                                 <ul>
@@ -138,6 +107,72 @@ export default class Ranking extends Component {
                                     }
                                 </ul>
                                 <p className="see-more"><Link to={'/characters/?search=&page=1&sort=plod&order=1'}>See more</Link></p>
+                            </div>
+                        </Col>
+                        
+                    </Row>
+                    <Row className="ranking-fields">
+                        <Col xs={12} sm={6}>
+                            <div className="ranking-field">
+                                <h2 className="text-center ranking-title">Twitter top 5 loved</h2>
+                                    {
+                                        this.state.twitterTopSentiments.map((char) => {
+                                            return <Row>
+                                                    <Col xs={8}>
+                                                        <h4><Link to={'/characters/' + char.name}>
+                                                            {char.name}
+                                                        </Link>
+                                                        </h4>
+                                                    </Col>
+
+                                                    <Col xs={4}>
+                                                     <h4>
+                                                        <a className="glyphicon glyphicon-heart" href={"http://twitter.com/share?text=I%20love%20"+char.name+"&url=https://www.got.show/"} target="_blank">
+                                                        &nbsp;413</a>
+                                                    </h4>
+                                                    </Col>
+                                                    </Row>;
+                                        })
+                                    }
+                            </div>
+                        </Col>
+                        <Col xs={12} sm={6}>
+                            <div className="ranking-field">
+                                <h2 className="text-center ranking-title">Twitter top 5 hated</h2>
+                                    {
+                                        this.state.twitterFlopSentiments.map((char) => {
+                                            return <Row>
+                                                    <Col xs={8}>
+                                                        <h4><Link to={'/characters/' + char.name}>
+                                                            {char.name}
+                                                        </Link>
+                                                        </h4>
+                                                    </Col>
+
+                                                    <Col xs={4}>
+                                                     <h4>
+                                                        <a className="glyphicon glyphicon-thumbs-down" href={"http://twitter.com/share?text=I%20love%20"+char.name+"&url=https://www.got.show/"} target="_blank">
+                                                        &nbsp;413</a>
+                                                    </h4>
+                                                    </Col>
+                                                    </Row>;
+                                        })
+                                    }
+                            </div>
+                        </Col>
+                    </Row>
+                    
+                    <Row className="ranking-fields">
+                        <Col xs={12} sm={6}>
+                            <div className="ranking-field">
+                                <h2 className="text-center ranking-title">Most dangerous Houses </h2>
+                                <ul>
+                                    {
+                                        this.getHardcodedHousesTop5().map((house) => {
+                                            return <li><h4>{house.name}</h4></li>;
+                                        })
+                                    }
+                                </ul>
                             </div>
                         </Col>
                         <Col xs={12} sm={6}>
@@ -155,20 +190,6 @@ export default class Ranking extends Component {
                                     }
                                 </ul>
                                 <p className="see-more"><Link to={'/characters/?search=&page=1&sort=plod&order=-1'}>See more</Link></p>
-                            </div>
-                        </Col>
-                    </Row>
-                    <Row className="ranking-fields">
-                        <Col sm={6} smOffset={3}>
-                            <div className="ranking-field">
-                                <h2 className="text-center ranking-title">Most dangerous Houses </h2>
-                                <ul>
-                                    {
-                                        this.getHardcodedHousesTop5().map((house) => {
-                                            return <li><h4>{house.name}</h4></li>;
-                                        })
-                                    }
-                                </ul>
                             </div>
                         </Col>
                     </Row>
