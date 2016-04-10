@@ -56,7 +56,7 @@ export default class Character extends Component {
 
         $('head').append('<link rel="stylesheet" type="text/css" href="/d4/chart.css">');
         if (this.state.character.name != undefined){
-            const name = this.state.character.name.replace(/ /g,'_');
+            const name = this.state.character.name.replace(/ |'/g,'_');
             $.getScript("/d4/chart.js",function(){
                 var chart = new characterChart(d3.select("#chart"), "/d4/csv/" + name + ".csv"); /*eslint no-undef:0*/
                 d3.select(window).on('resize', chart.resize);/*eslint no-undef:0*/
