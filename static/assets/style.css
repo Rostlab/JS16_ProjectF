@@ -1,8 +1,6 @@
 body {
     background: #1F1F1F;
-    overflow-x: hidden;
     height: 100%;
-    width: 100%;
     margin: 0;
     color: whitesmoke;
     font-family: 'Lato', sans-serif;
@@ -25,6 +23,13 @@ a:focus {
     color: white;
     outline: 0;
 }
-#first_row {
-    display: inline;
+
+img {
+    width: 100%;
+}
+
+.float-img-right {
+    width: 50vh;
+    float: right;
+    margin: 10px 0 10px 10px;
 }

@@ -35,15 +35,16 @@
         <link rel="stylesheet" type="text/css" href="assets/style.css">
         <title>Why Jon Snow is not dead - Game of Thrones - A Song of Ice and Data</title>
     </head>
-    <body role="document">
+    <body role="document" class="container">
         <div class="row">
-            <div class="col-sm-8 col-sm-offset-2">
+            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
                 <header>
                     <h1 id="h1-why-jon-snow-is-not-dead">Why Jon Snow is not dead</h1>
                 </header>
-                <main class="container" role="main">
-                    <p><a href="https://www.youtube.com/watch?v=IxI8aPISq8I">“The past is already written, the ink is dry”</a> – so says the
-                        teaser for the sixth season of the popular TV show Game of Thrones. And until recently, that’s what we at <strong>got.show</strong>
+                <main role="main">
+                    <p>
+                        <a href="https://www.youtube.com/watch?v=IxI8aPISq8I">“The past is already written, the ink is dry”</a>
+                        – so says the teaser for the sixth season of the popular TV show Game of Thrones. And until recently, that’s what we at <strong>got.show</strong>
                         believed too. 9 long months after we saw our favourite character <strong>Jon Snow</strong> join his father up in GoT
                         heaven in the season 5 finale “Mother’s Mercy” however, we have reason to believe that he’s going to stick around on
                         earth with the rest of us for a little longer. You don’t think so? Well, then <strong>you know nothing, Jon
@@ -67,6 +68,8 @@
                         it’s different. Just see what an outrage the season 5 finale caused on Twitter with our Twitter Sentiment Analysis
                         App – and then think about the gigantic plot twist of bringing him back to the living! &gt; Placeholder 2) Twitter
                         graph. &gt; How does Twitter feel about Jon Snow? See for yourself with our Game of Thrones Sentiment analysis.</p>
+
+                    <img class="float-img-right" alt="Official Announcement poster for the sixth season Game of Thrones, featuring Jon Snow." src="http://www.hbo.com/custom-assets/img/series/game-of-thrones/season-6-tease.jpg"/>
                     <h3 id="h3-kit-harington-jon-snows-actor-has-been-on-set-for-the-sixth-season-game-of-thrones">Kit Harington (Jon
                         Snow’s actor) has been on set for the sixth season Game of Thrones!</h3>
                     <p>
@@ -74,7 +77,6 @@
                             Read about it in the independent.
                         </a>.
                         And if that’s still not enough for you, what do you think about this official HBO poster?
-                        <img alt="Official Announcement poster for the sixth season Game of Thrones, featuring Jon Snow." src="http://www.hbo.com/custom-assets/img/series/game-of-thrones/season-6-tease.jpg"/>
                     </p>
                     <h3 id="h3-he-just-cant-be-dead.">He just can’t be dead.</h3>
                     <p>I can’t even. Who’s going to care for Sam &amp; Gilly? Who will handle the wildlings? Let me tell you one thing: If
@@ -96,21 +98,25 @@
                     <section>
                         <h2 id="placeholder-1-infographic-about-plod-contributing-features">Placeholder 1) Infographic about PLOD contributing
                             features</h2>
-                        <div id = "first_row">
-                            <h3>Culture Most or Least Likely to Die</h3>
-                            <div id="culture_most_likely_to_die"></div>
-                            <div id="culture_least_likely_to_die"></div>
+                        <h3>Culture Most or Least Likely to Die</h3>
+                        <div class="row first-row">
+                            <div class="col-xs-12 col-md-6" id="culture_most_likely_to_die"></div>
+                            <div class="col-xs-12 col-md-6" id="culture_least_likely_to_die"></div>
                         </div>
-                        <div id = "second_row">
-                            <h3>Title Most or Least Likely to Die</h3>
-                            <div id="title_most_likely_to_die"></div>
-                            <div id="title_least_likely_to_die"></div>
+
+                        <h3>Title Most or Least Likely to Die</h3>
+                        <div class="row second-row">
+                            <div class="col-xs-12 col-md-6" id="title_most_likely_to_die"></div>
+                            <div class="col-xs-12 col-md-6" id="title_least_likely_to_die"></div>
+                        </div>
                             <p>John Snow as Lord Commander has a relatively low death probability of 11.6%</p>
-                        </div>
-                        <div id = "third_row">
-                            <h3>Which Gender is More Likely to Die?</h3>
-                            <div id="survival_rate_men_vs_women"></div>
-                            <p>Women are more likely to survive</p>
+
+                        <h3>Which Gender is More Likely to Die?</h3>
+                        <div class="row third-row">
+                            <div class="col-md-12">
+                                <div id="survival_rate_men_vs_women"></div>
+                                <p>Women are more likely to survive</p>
+                            </div>
                         </div>
                     </section>
                     <section>
@@ -144,7 +150,7 @@
                 ]);
 
                 var options = {
-                    width: 250,
+                    width: '100%',
                     height: 250,
                     is3D: true,
                     pieSliceText: 'value',
@@ -165,7 +171,7 @@
                 ]);
 
                 var options = {
-                    width: 250,
+                    width: '100%',
                     height: 250,
                     is3D: true,
                     pieSliceText: 'value',
@@ -187,7 +193,7 @@
                 ]);
 
                 var options = {
-                    width: 250,
+                    width: '100%',
                     height: 250,
                     is3D: true,
                     pieSliceText: 'value',
@@ -209,7 +215,7 @@
                 ]);
 
                 var options = {
-                    width: 250,
+                    width: '100%',
                     height: 250,
                     is3D: true,
                     pieSliceText: 'value',
@@ -230,7 +236,7 @@
                 ]);
 
                 var options = {
-                    width: 400,
+                    width: '100%',
                     height: 300,
                     hAxis: {maxValue: 100, minValue: 0},
                     legend: {position: 'none'},
