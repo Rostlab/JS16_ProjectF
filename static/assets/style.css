@@ -25,3 +25,6 @@ a:focus {
     color: white;
     outline: 0;
 }
+#first_row {
+    display: inline;
+}

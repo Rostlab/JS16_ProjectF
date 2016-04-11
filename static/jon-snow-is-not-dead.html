@@ -93,22 +93,157 @@
                     </blockquote>
                     <hr/>
                     <h1 id="about-the-placeholders">About the Placeholders</h1>
-                    <h2 id="placeholder-1-infographic-about-plod-contributing-features">Placeholder 1) Infographic about PLOD contributing
-                        features</h2>
-                    <p><span class="citation">@togiberlin</span> Please make an infographic referencing the stats from this <a
-                            href="https://github.com/Rostlab/JS16_ProjectB_Group6/issues/60#issuecomment-201949253">ProjectB issue</a>. I’d
-                        only focus on Culture, Title &amp; Gender info. Maybe emphasize Jon Snow’s survival change explicitly again when it
-                        comes to the Lord Commander of the Night’s Watch. Project F will be able to give you some guidelines on size &amp;
-                        formatting while they’re arranging the template page.</p>
-                    <h2 id="placeholder-2-twitter-sentiment">Placeholder 2) Twitter sentiment</h2>
-                    <p>Here we’ll just serve a view from ProjectD_Group4’s Twitter graph (my group). I’ve added startDate &amp; endDate
-                        parameters to the function that creates the graph, so you can specify the default date Range when loading the tool.
-                        I’d go for something around May 20 – June 20 2015 (season finale aired on June 14th)</p>
-                    <h2 id="placeholder-3-got-map">Placeholder 3) GOT Map</h2>
-                    <p>Just our amazing Map with Jon Snow added as a character. I’d show all the available data.</p>
+                    <section>
+                        <h2 id="placeholder-1-infographic-about-plod-contributing-features">Placeholder 1) Infographic about PLOD contributing
+                            features</h2>
+                        <div id = "first_row">
+                            <h3>Culture Most or Least Likely to Die</h3>
+                            <div id="culture_most_likely_to_die"></div>
+                            <div id="culture_least_likely_to_die"></div>
+                        </div>
+                        <div id = "second_row">
+                            <h3>Title Most or Least Likely to Die</h3>
+                            <div id="title_most_likely_to_die"></div>
+                            <div id="title_least_likely_to_die"></div>
+                            <p>John Snow as Lord Commander has a relatively low death probability of 11.6%</p>
+                        </div>
+                        <div id = "third_row">
+                            <h3>Which Gender is More Likely to Die?</h3>
+                            <div id="survival_rate_men_vs_women"></div>
+                            <p>Women are more likely to survive</p>
+                        </div>
+                    </section>
+                    <section>
+                        <h2 id="placeholder-2-twitter-sentiment">Placeholder 2) Twitter sentiment</h2>
+                        <p>Here we’ll just serve a view from ProjectD_Group4’s Twitter graph (my group). I’ve added startDate &amp; endDate
+                            parameters to the function that creates the graph, so you can specify the default date Range when loading the tool.
+                            I’d go for something around May 20 – June 20 2015 (season finale aired on June 14th)</p>
+                        <h2 id="placeholder-3-got-map">Placeholder 3) GOT Map</h2>
+                        <p>Just our amazing Map with Jon Snow added as a character. I’d show all the available data.</p>
+                    </section>
                 </main>
             </div>
         </div>
+
         <footer></footer>
+
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+            google.charts.load('current', {'packages':['corechart']});
+            google.charts.setOnLoadCallback(drawCultureMostLikelyToDie);
+            google.charts.setOnLoadCallback(drawCultureLeastLikelyToDie);
+            google.charts.setOnLoadCallback(drawTitleMostLikelyToDie);
+            google.charts.setOnLoadCallback(drawTitleLeastLikelyToDie);
+            google.charts.setOnLoadCallback(drawSurvivalRateMenVsWomen);
+
+            function drawCultureMostLikelyToDie() {
+                var data = new google.visualization.arrayToDataTable([
+                    ['Culture', 'Count'],
+                    ['Dead', 37],
+                    ['Alive', 6]
+                ]);
+
+                var options = {
+                    width: 250,
+                    height: 250,
+                    is3D: true,
+                    pieSliceText: 'value',
+                    title: 'Culture Most Likely to Die:\nValyrians',
+                    slices: { 0: { color: '#8C232C' }, 1: { color: '#347338' }},
+                    fontName: 'Cinzel Decorative'
+                };
+
+                var chart = new google.visualization.PieChart(document.getElementById('culture_most_likely_to_die'));
+                chart.draw(data, options);
+            };
+
+            function drawCultureLeastLikelyToDie() {
+                var data = new google.visualization.arrayToDataTable([
+                    ['Culture', 'Count'],
+                    ['Dead', 0],
+                    ['Alive', 5]
+                ]);
+
+                var options = {
+                    width: 250,
+                    height: 250,
+                    is3D: true,
+                    pieSliceText: 'value',
+                    title: 'Culture Least Likely to Die:\nIronmen',
+                    slices: { 0: { color: '#8C232C' }, 1: { color: '#347338' }},
+                    fontName: 'Cinzel Decorative'
+
+                };
+
+                var chart = new google.visualization.PieChart(document.getElementById('culture_least_likely_to_die'));
+                chart.draw(data, options);
+            };
+
+            function drawTitleMostLikelyToDie() {
+                var data = new google.visualization.arrayToDataTable([
+                    ['Culture', 'Count'],
+                    ['Dead', 5],
+                    ['Alive', 0]
+                ]);
+
+                var options = {
+                    width: 250,
+                    height: 250,
+                    is3D: true,
+                    pieSliceText: 'value',
+                    title: 'Title Most Likely to Die:\nPrince of Dragonstone',
+                    slices: { 0: { color: '#8C232C' }, 1: { color: '#347338' }},
+                    fontName: 'Cinzel Decorative'
+
+                };
+
+                var chart = new google.visualization.PieChart(document.getElementById('title_most_likely_to_die'));
+                chart.draw(data, options);
+            };
+
+            function drawTitleLeastLikelyToDie() {
+                var data = new google.visualization.arrayToDataTable([
+                    ['Culture', 'Count'],
+                    ['Dead', 2],
+                    ['Alive', 9]
+                ]);
+
+                var options = {
+                    width: 250,
+                    height: 250,
+                    is3D: true,
+                    pieSliceText: 'value',
+                    title: 'Title Least Likely to Die:\nLord Commander of the Night\'s Watch',
+                    slices: { 0: { color: '#8C232C' }, 1: { color: '#347338' }},
+                    fontName: 'Cinzel Decorative'
+                };
+
+                var chart = new google.visualization.PieChart(document.getElementById('title_least_likely_to_die'));
+                chart.draw(data, options);
+            };
+
+            function drawSurvivalRateMenVsWomen() {
+                var data = new google.visualization.arrayToDataTable([
+                    ['Gender', 'Death Percentage', {role: 'annotation'}],
+                    ['Men', 30.45, '30% or 367/1205 Males Dead'],
+                    ['Women', 17.27, '17% or 128/741 Females Dead']
+                ]);
+
+                var options = {
+                    width: 400,
+                    height: 300,
+                    hAxis: {maxValue: 100, minValue: 0},
+                    legend: {position: 'none'},
+                    title: 'Death Rate Classified by Gender',
+                    series: { 0: { color: '#593159' }},
+                    fontName: 'Cinzel Decorative',
+                    annotations: {alwaysOutside: true, highContrast: true}
+                };
+
+                var chart = new google.visualization.BarChart(document.getElementById('survival_rate_men_vs_women'));
+                chart.draw(data, options);
+            };
+        </script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     </body>
 </html>
