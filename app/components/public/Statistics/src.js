@@ -18,6 +18,8 @@ function drawNewCharactersIntroduced() {
   var options = {
     width: '100%',
     height: 400,
+    colors: ['#2196f3', '#f44336'],
+    backgroundColor: '#1F1F1F',
     legend: {
       position: 'top',
       maxLines: 3,
@@ -34,6 +36,9 @@ function drawNewCharactersIntroduced() {
       format: ';',
       title: "Number of characters",
       titleFontSize: 17,
+      titleTextStyle: {
+        color: '#AAAAAA'
+      },
       textStyle: {
         fontSize: 17
       },
@@ -41,9 +46,9 @@ function drawNewCharactersIntroduced() {
     vAxis: {
       direction: -1,
       textStyle: {
-        fontSize: 17
-      },
-
+        fontSize: 17,
+        color: '#AAAAAA'
+      }
     }
   };
 
@@ -111,38 +116,51 @@ function drawCharactersPerEpisode() {
     ['5S9E', 37, 0],
     ['5S10E', 55, 6]
   ]);
-  var options = {
 
+  var options = {
     curveType: 'function',
     legend: {
       position: 'top',
       textStyle: {
-        fontSize: 17
+        fontSize: 17,
+        color: '#AAAAAA'
       }
     },
-    width: '100%',
+    width: 1000,
     height: 400,
     pointSize: 7,
+    colors: ['#2196f3', '#f44336'],
+    backgroundColor: '#1F1F1F',
+
     lineWidth: 4,
     hAxis: {
       title: "Season & Episode number",
       titleFontSize: 17,
+      titleTextStyle: {
+        color: '#AAAAAA'
+      },
       slantedTextAngle: 60,
       textStyle: {
-        fontSize: 17
-      }
+        fontSize: 17,
+        color: '#AAAAAA'
+      },
     },
     vAxis: {
       title: "Number of characters",
       titleFontSize: 17,
+      titleTextStyle: {
+        color: '#AAAAAA'
+      },
       textStyle: {
-        fontSize: 17
+        fontSize: 17,
+        color: '#AAAAAA'
       },
       viewWindow: {
         max: 60,
         min: 0
       }
     }
+
   };
   var chart = new google.visualization.LineChart(document.getElementById('characters_per_episode'));
   chart.draw(data, options);
@@ -161,13 +179,16 @@ function drawDeadAndAlive() {
   var chart = new google.visualization.BarChart(document.getElementById('dead_and_alive'));
 
   var options = {
-    width: '100%',
+    width: 600,
     height: 400,
+    colors: ['#2196f3', '#f44336'],
+    backgroundColor: '#1F1F1F',
     legend: {
       position: 'top',
       maxLines: 3,
       textStyle: {
-        fontSize: 17
+        fontSize: 17,
+        color: '#AAAAAA'
       }
 
     },
@@ -178,19 +199,25 @@ function drawDeadAndAlive() {
     hAxis: {
       format: ';',
       title: "Number of characters",
+      titleTextStyle: {
+        color: '#AAAAAA'
+      },
       titleFontSize: 17,
       textStyle: {
-        fontSize: 17
+        fontSize: 17,
+        color: '#AAAAAA'
       },
     },
     vAxis: {
       direction: -1,
       textStyle: {
-        fontSize: 17
+        fontSize: 17,
+        color: '#AAAAAA'
       },
 
     }
   };
+
 
   var formatter = new google.visualization.NumberFormat({
     pattern: ';'
@@ -211,8 +238,7 @@ function drawDistributionPLODs() {
     }, 'Women', {
       'type': 'string',
       'role': 'style'
-    }
-    ],
+    }],
     [0, 100, null, 100, null],
     [1, 95, null, 92, null],
     [2, 87, null, 78, null],
@@ -316,28 +342,38 @@ function drawDistributionPLODs() {
     [100, 0, null, 0, null]
   ]);
   var options = {
-    width: '100%',
+    width: 600,
     height: 400,
+    colors: ['#2196f3', '#f44336'],
+    backgroundColor: '#1F1F1F',
     lineWidth: 3,
     pointSize: 1,
     dataOpacity: 0.9,
     hAxis: {
       title: 'Likelihood of Death (%)',
       titleFontSize: 17,
+      titleTextStyle: {
+        color: '#AAAAAA'
+      },
       textStyle: {
-        fontSize: 17
+        fontSize: 17,
+        color: '#AAAAAA'
       },
     },
 
     vAxis: {
       title: 'Percentage of Characters (%)',
       titleFontSize: 17,
+      titleTextStyle: {
+        color: '#AAAAAA'
+      },
       viewWindow: {
         min: 0,
         max: 100
       },
       textStyle: {
-        fontSize: 17
+        fontSize: 17,
+        color: '#AAAAAA'
       },
     },
     curveType: 'function',
@@ -345,7 +381,8 @@ function drawDistributionPLODs() {
       position: 'top',
       maxLines: 3,
       textStyle: {
-        fontSize: 17
+        fontSize: 17,
+        color: '#AAAAAA'
       }
 
     }
@@ -358,131 +395,141 @@ google.charts.setOnLoadCallback(drawDistributionNoblesPLODs);
 function drawDistributionNoblesPLODs() {
   var data = new google.visualization.arrayToDataTable([
     ['PLOD', 'Nobles', 'Peasants'],
-    [0,100,100],
-    [1,95,93],
-    [2,86,81],
-    [3,82,78],
-    [4,80,76],
-    [5,77,74],
-    [6,76,73],
-    [7,75,72],
-    [8,73,71],
-    [9,72,70],
-    [10,71,68],
-    [11,70,68],
-    [12,69,67],
-    [13,68,66],
-    [14,68,65],
-    [15,67,65],
-    [16,65,64],
-    [17,63,63],
-    [18,63,60],
-    [19,60,57],
-    [20,59,55],
-    [21,57,51],
-    [22,56,50],
-    [23,55,48],
-    [24,53,45],
-    [25,49,41],
-    [26,48,38],
-    [27,46,36],
-    [28,44,33],
-    [29,41,31],
-    [30,39,28],
-    [31,38,27],
-    [32,37,26],
-    [33,35,24],
-    [34,35,23],
-    [35,34,22],
-    [36,33,22],
-    [37,32,22],
-    [38,32,22],
-    [39,31,21],
-    [40,31,21],
-    [41,30,21],
-    [42,29,20],
-    [43,29,20],
-    [44,28,20],
-    [45,28,20],
-    [46,27,20],
-    [47,27,19],
-    [48,26,19],
-    [49,26,19],
-    [50,26,18],
-    [51,24,18],
-    [52,24,17],
-    [53,23,16],
-    [54,22,16],
-    [55,20,16],
-    [56,20,16],
-    [57,19,15],
-    [58,18,15],
-    [59,18,15],
-    [60,18,15],
-    [61,17,14],
-    [62,16,14],
-    [63,16,14],
-    [64,15,13],
-    [65,15,13],
-    [66,15,13],
-    [67,14,13],
-    [68,14,13],
-    [69,14,12],
-    [70,13,11],
-    [71,13,11],
-    [72,12,11],
-    [73,12,11],
-    [74,11,10],
-    [75,11,10],
-    [76,10,10],
-    [77,10,10],
-    [78,10,9],
-    [79,9,8],
-    [80,8,8],
-    [81,8,6],
-    [82,7,6],
-    [83,7,5],
-    [84,6,5],
-    [85,6,5],
-    [86,6,4],
-    [87,5,4],
-    [88,5,4],
-    [89,5,3],
-    [90,5,3],
-    [91,4,3],
-    [92,4,3],
-    [93,3,2],
-    [94,3,2],
-    [95,2,2],
-    [96,1,1],
-    [97,1,1],
-    [98,1,0],
-    [99,0,0],
-    [100,0,0]
+    [0, 100, 100],
+    [1, 95, 93],
+    [2, 86, 81],
+    [3, 82, 78],
+    [4, 80, 76],
+    [5, 77, 74],
+    [6, 76, 73],
+    [7, 75, 72],
+    [8, 73, 71],
+    [9, 72, 70],
+    [10, 71, 68],
+    [11, 70, 68],
+    [12, 69, 67],
+    [13, 68, 66],
+    [14, 68, 65],
+    [15, 67, 65],
+    [16, 65, 64],
+    [17, 63, 63],
+    [18, 63, 60],
+    [19, 60, 57],
+    [20, 59, 55],
+    [21, 57, 51],
+    [22, 56, 50],
+    [23, 55, 48],
+    [24, 53, 45],
+    [25, 49, 41],
+    [26, 48, 38],
+    [27, 46, 36],
+    [28, 44, 33],
+    [29, 41, 31],
+    [30, 39, 28],
+    [31, 38, 27],
+    [32, 37, 26],
+    [33, 35, 24],
+    [34, 35, 23],
+    [35, 34, 22],
+    [36, 33, 22],
+    [37, 32, 22],
+    [38, 32, 22],
+    [39, 31, 21],
+    [40, 31, 21],
+    [41, 30, 21],
+    [42, 29, 20],
+    [43, 29, 20],
+    [44, 28, 20],
+    [45, 28, 20],
+    [46, 27, 20],
+    [47, 27, 19],
+    [48, 26, 19],
+    [49, 26, 19],
+    [50, 26, 18],
+    [51, 24, 18],
+    [52, 24, 17],
+    [53, 23, 16],
+    [54, 22, 16],
+    [55, 20, 16],
+    [56, 20, 16],
+    [57, 19, 15],
+    [58, 18, 15],
+    [59, 18, 15],
+    [60, 18, 15],
+    [61, 17, 14],
+    [62, 16, 14],
+    [63, 16, 14],
+    [64, 15, 13],
+    [65, 15, 13],
+    [66, 15, 13],
+    [67, 14, 13],
+    [68, 14, 13],
+    [69, 14, 12],
+    [70, 13, 11],
+    [71, 13, 11],
+    [72, 12, 11],
+    [73, 12, 11],
+    [74, 11, 10],
+    [75, 11, 10],
+    [76, 10, 10],
+    [77, 10, 10],
+    [78, 10, 9],
+    [79, 9, 8],
+    [80, 8, 8],
+    [81, 8, 6],
+    [82, 7, 6],
+    [83, 7, 5],
+    [84, 6, 5],
+    [85, 6, 5],
+    [86, 6, 4],
+    [87, 5, 4],
+    [88, 5, 4],
+    [89, 5, 3],
+    [90, 5, 3],
+    [91, 4, 3],
+    [92, 4, 3],
+    [93, 3, 2],
+    [94, 3, 2],
+    [95, 2, 2],
+    [96, 1, 1],
+    [97, 1, 1],
+    [98, 1, 0],
+    [99, 0, 0],
+    [100, 0, 0]
   ]);
   var options = {
-    width: '100%',
+    width: 600,
     height: 400,
     lineWidth: 3,
+    colors: ['#2196f3', '#f44336'],
+    backgroundColor: '#1F1F1F',
     pointSize: 1,
     dataOpacity: 0.9,
     hAxis: {
       title: 'Likelihood of Death (%)',
       titleFontSize: 17,
+      titleTextStyle: {
+        color: '#AAAAAA'
+      },
       textStyle: {
-        fontSize: 17
+        fontSize: 17,
+        color: '#AAAAAA'
       },
     },
 
     vAxis: {
       title: 'Percentage of Characters (%)',
       titleFontSize: 17,
+      titleTextStyle: {
+        color: '#AAAAAA'
+      },
       viewWindow: {
         min: 0,
         max: 100
       },
       textStyle: {
-        fontSize: 17
+        fontSize: 17,
+        color: '#AAAAAA'
       },
     },
     curveType: 'function',
@@ -490,7 +537,8 @@ function drawDistributionNoblesPLODs() {
       position: 'top',
       maxLines: 3,
       textStyle: {
-        fontSize: 17
+        fontSize: 17,
+        color: '#AAAAAA'
       }
 
     }
@@ -499,42 +547,62 @@ function drawDistributionNoblesPLODs() {
   chart.draw(data, options);
 };
 google.charts.setOnLoadCallback(drawDistributionPLODsAgeDistribution);
+
 function drawDistributionPLODsAgeDistribution() {
   var data = new google.visualization.arrayToDataTable([
-    ['Age Distribution','Averaged Likelihood of Death'],
-    ['0-10',34],
-    ['11-20',30],
-    ['21-30',41],
-    ['31-40',45],
-    ['41-50',35],
-    ['51-60',42],
-    ['61-70',35],
-    ['71-80',27],
-    ['81-90',25],
-    ['91-100',19]
+    ['Age Distribution', 'Averaged Likelihood of Death'],
+    ['0-10', 34],
+    ['11-20', 30],
+    ['21-30', 41],
+    ['31-40', 45],
+    ['41-50', 35],
+    ['51-60', 42],
+    ['61-70', 35],
+    ['71-80', 27],
+    ['81-90', 25],
+    ['91-100', 19]
   ]);
   var options = {
-    width: '100%',
+    width: 600,
     height: 400,
-    legend: {position: 'none'},
-    vAxis: {title: 'Averaged Likelihood of Death (%)',
-      titleFontSize: 17,
-      viewWindow:{
-        max:50,
-        min:0
-      },
-      textStyle : {
-        fontSize: 17
-      },
-    },
-    hAxis: {title: 'Age Group', slantedText: true, slantedTextAngle: 60,
-      titleFontSize: 15,
+    colors: ['#2196f3'],
+    backgroundColor: '#1F1F1F',
 
-      textStyle : {
-        fontSize: 17
+    legend: {
+      position: 'none'
+    },
+    vAxis: {
+      title: 'Averaged Likelihood of Death (%)',
+      titleFontSize: 17,
+      titleTextStyle: {
+        color: '#AAAAAA'
+      },
+      viewWindow: {
+        max: 50,
+        min: 0
+      },
+      textStyle: {
+        fontSize: 17,
+        color: '#AAAAAA'
       },
     },
-    bar: { groupWidth: '75%' },
+    hAxis: {
+      title: 'Age Group',
+      slantedText: true,
+      slantedTextAngle: 60,
+      titleFontSize: 15,
+      titleTextStyle: {
+        color: '#AAAAAA'
+      },
+
+      textStyle: {
+        fontSize: 17,
+        color: '#AAAAAA'
+      },
+    },
+    bar: {
+      groupWidth: '75%'
+    },
   };
   var chart = new google.visualization.ColumnChart(document.getElementById('distribution_plods_age_distribution'));
   chart.draw(data, options);
@@ -543,36 +611,96 @@ google.charts.setOnLoadCallback(drawAvgPLODPerEpisode);
 
 function drawAvgPLODPerEpisode() {
   var data = new google.visualization.arrayToDataTable([
-    ['EpisodeE', 'Average PLOD per episode'], ['1S1E', 73], ['1S2E', 73], ['1S3E', 76], ['1S4E', 77], ['1S5E', 75], ['1S6E', 71], ['1S7E', 74], ['1S8E', 76], ['1S9E', 71], ['1S10E', 71], ['2S1E', 74], ['2S2E', 70], ['2S3E', 74], ['2S4E', 69], ['2S5E', 71], ['2S6E', 68], ['2S7E', 72], ['2S8E', 75], ['2S9E', 65], ['2S10E', 66], ['3S1E', 60], ['3S2E', 68], ['3S3E', 67], ['3S4E', 65], ['3S5E', 59], ['3S6E', 60], ['3S7E', 69], ['3S8E', 63], ['3S9E', 63], ['3S10E', 70], ['4S1E', 59], ['4S2E', 73], ['4S3E', 65], ['4S4E', 63], ['4S5E', 66], ['4S6E', 68], ['4S7E', 60], ['4S8E', 62], ['4S9E', 62], ['4S10E', 65], ['5S1E', 62], ['5S2E', 60], ['5S3E', 64], ['5S4E', 56], ['5S5E', 58], ['5S6E', 58], ['5S7E', 56], ['5S8E', 60], ['5S9E', 60], ['5S10E', 60]
+    ['EpisodeE', 'Average PLOD per episode'],
+    ['1S1E', 73],
+    ['1S2E', 73],
+    ['1S3E', 76],
+    ['1S4E', 77],
+    ['1S5E', 75],
+    ['1S6E', 71],
+    ['1S7E', 74],
+    ['1S8E', 76],
+    ['1S9E', 71],
+    ['1S10E', 71],
+    ['2S1E', 74],
+    ['2S2E', 70],
+    ['2S3E', 74],
+    ['2S4E', 69],
+    ['2S5E', 71],
+    ['2S6E', 68],
+    ['2S7E', 72],
+    ['2S8E', 75],
+    ['2S9E', 65],
+    ['2S10E', 66],
+    ['3S1E', 60],
+    ['3S2E', 68],
+    ['3S3E', 67],
+    ['3S4E', 65],
+    ['3S5E', 59],
+    ['3S6E', 60],
+    ['3S7E', 69],
+    ['3S8E', 63],
+    ['3S9E', 63],
+    ['3S10E', 70],
+    ['4S1E', 59],
+    ['4S2E', 73],
+    ['4S3E', 65],
+    ['4S4E', 63],
+    ['4S5E', 66],
+    ['4S6E', 68],
+    ['4S7E', 60],
+    ['4S8E', 62],
+    ['4S9E', 62],
+    ['4S10E', 65],
+    ['5S1E', 62],
+    ['5S2E', 60],
+    ['5S3E', 64],
+    ['5S4E', 56],
+    ['5S5E', 58],
+    ['5S6E', 58],
+    ['5S7E', 56],
+    ['5S8E', 60],
+    ['5S9E', 60],
+    ['5S10E', 60]
   ]);
   var options = {
 
     curveType: 'function',
-    legend: { position: 'none'},
-    width: '100%',
+    legend: {
+      position: 'none'
+    },
+    width: 1000,
     height: 400,
+    colors: ['#2196f3'],
+    backgroundColor: '#1F1F1F',
     pointSize: 7,
     lineWidth: 4,
     hAxis: {
       title: "Season & Episode number",
       titleFontSize: 17,
-      slantedTextAngle:60,
-      textStyle : {
-        fontSize: 17
+      titleTextStyle: {
+        color: '#AAAAAA'
+      },
+      slantedTextAngle: 60,
+      textStyle: {
+        fontSize: 17,
+        color: '#AAAAAA'
       },
     },
     vAxis: {
       title: "Average PLOD per episode (%)",
       titleFontSize: 17,
-      textStyle : {
-        fontSize: 17
+      titleTextStyle: {
+        color: '#AAAAAA'
       },
-      viewWindow:{
-        max:80,
-        min:50
+      textStyle: {
+        fontSize: 17,
+        color: '#AAAAAA'
+      },
+      viewWindow: {
+        max: 80,
+        min: 50
       }
-
-
     }
   };
   var chart = new google.visualization.LineChart(document.getElementById('avgPLOD_per_episode'));
