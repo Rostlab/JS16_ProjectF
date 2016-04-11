@@ -150,7 +150,7 @@ a:focus {
     position: relative;
 }
 .main-container {
-    padding-top: 50px;
+    padding-top: 50px!important;
     padding-bottom: 50px;
 }
 .container-fluid {
