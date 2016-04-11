@@ -22,3 +22,10 @@
 .home .map-wrapper #sidebar {
      display: none;
  }
+ .stats-home {
+ 	margin-top: 7em;
+ 	text-align: justify;
+ }
+.start-logo {
+	width: 100%;
+}
