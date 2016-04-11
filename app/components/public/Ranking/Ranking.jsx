@@ -190,7 +190,7 @@ export default class Ranking extends Component {
                                 <ul>
                                     {
                                         this.getHardcodedHousesTop5().map((house) => {
-                                            return <li><h4>{house.name}</h4></li>;
+                                            return <li><h4><a target="_blank" href={"https://awoiaf.westeros.org/index.php/" + house.name}>{house.name}</a></h4></li>;
                                         })
                                     }
                                 </ul>
