@@ -111,7 +111,7 @@ export default class Character extends Component {
                             likelihood of death based on various features that we extracted
                             for each character from the first five books of the Song of Ice
                             and Fire series. </p>
-                           <p><a href="/machine-learning-algorithm-predicts-death-game-of-thrones">Click here to read more about our prediction algorithms.</a></p>
+                           <p><a href="/machine-learning-algorithm-predicts-death-game-of-thrones">Click here to read more about our prediction algorithm.</a></p>
                     </Col>
                 </Row>
                 <Row>
