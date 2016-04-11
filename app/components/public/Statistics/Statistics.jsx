@@ -1,6 +1,6 @@
 import React from 'react';
 let {Component} = React;
-import { Row, Col } from 'react-bootstrap';
+import { Grid, Row, Col } from 'react-bootstrap';
 import $ from 'jquery';
 let js = require('raw!./src.js'); /*eslint no-undef:0 */
 
@@ -10,6 +10,7 @@ export default class Statistics extends Component {
       eval(js);
     });
     return (
+      <Grid>
       <Row>
         <Col md={8} mdPush={2}>
           <h1>Life, death and statistics in Westeros</h1>
@@ -126,6 +127,7 @@ export default class Statistics extends Component {
             </p>
         </Col>
       </Row>
+      </Grid>
     );
   }
 }
