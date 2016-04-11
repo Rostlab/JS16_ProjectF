@@ -19,11 +19,16 @@ export default class Ranking extends Component {
     }
     getHardcodedHousesTop5() {
         return [
-            {name: 'House Cole'},
-            {name: 'House Rosby'},
-            {name: 'House Chelsted'},
-            {name: 'House Stokeworth'},
-            {name: 'House Cassel'}
+            {name: 'House Tully'},
+            {name: 'House Clegane'},
+            {name: 'House Velaryon'},
+            {name: 'House Seaworth'},
+            {name: 'House Nymeros'}
+            // {name: 'House Targaryen'},
+            // {name: 'House Oakheart'},
+            // {name: 'House Greyjoy'},
+            // {name: 'House Lannister'},
+            // {name: 'House Westerling'}
         ];
     }
     getHardcodedSurvivors() {
