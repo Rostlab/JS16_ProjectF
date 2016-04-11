@@ -94,6 +94,11 @@ class TeamMemberListing extends Component {
                 team: "E"
             },
             {
+                name: "Guy Yachdav",
+                link: "https://www.linkedin.com/in/gyachdav",
+                team: "Mentor"
+            },
+            {
                 name: "Christian Dallago",
                 link: "http://dallago.us",
                 img:  "https://c2.staticflickr.com/2/1481/25418571675_2dbacb53a7_q.jpg",
@@ -170,11 +175,6 @@ class TeamMemberListing extends Component {
                 team: "B"
             },
             {
-                name: "Guy Yachdav",
-                link: "https://www.linkedin.com/in/gyachdav",
-                team: "Mentor"
-            },
-            {
                 name: "Santanu Mohanta",
                 link: "https://github.com/santanumohanta",
                 team: "D"
@@ -201,6 +201,11 @@ class TeamMemberListing extends Component {
             {
                 name: "Tatyana Goldberg",
                 link: "https://rostlab.org/~goldberg/",
+                team: "Mentor"
+            },
+            {
+                name: "Dmitrii Nechaev",
+                link: "https://github.com/dmitry-n",
                 team: "Mentor"
             },
             {
