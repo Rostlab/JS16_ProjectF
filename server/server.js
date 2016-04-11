@@ -19,6 +19,8 @@ app.use('/d5', d5);
 app.use('/d4', d4);
 app.use('/wikirequest', wikirequest);
 
+app.use(express.static(path.join(__dirname, '../static')));
+
 app.use(express.static(path.join(__dirname, '../build')));
 
 const webpack = require('webpack');

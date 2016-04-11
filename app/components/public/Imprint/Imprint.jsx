@@ -2,7 +2,7 @@ import React from 'react';
 let {Component} = React;
 import { Row, Col } from 'react-bootstrap';
 
-import ImprintText from '../../../../static/imprint.md';
+import ImprintText from '../../../../config/markdown/imprint.md';
 
 export default class Imprint extends Component {
 	render() {

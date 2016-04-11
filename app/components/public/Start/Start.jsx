@@ -5,7 +5,7 @@ import { Row,Col } from 'react-bootstrap';
 import AntagonistsComp from '../../common/AntagonistsComp/AntagonistsComp.jsx';
 import './Start.css';
 import logo from './gotstatslogosmall.jpg';
-import HomepageBlog from '../../../../static/home-blog.md';
+import HomepageBlog from '../../../../config/markdown/home-blog.md';
 
 export default class Start extends Component {
   render() {
