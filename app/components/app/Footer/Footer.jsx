@@ -35,9 +35,6 @@ export default class Footer extends Component {
                   <a href="/about">About got.show</a>
                 </p>
                 <p>
-                  <a href="/about#credits">Credits</a>
-                </p>
-                <p>
                   <a href="/attributions">Attributions</a>
                 </p>
                 <p>
