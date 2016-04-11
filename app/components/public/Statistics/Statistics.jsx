@@ -19,7 +19,7 @@ export default class Statistics extends Component {
           </p>
           <h2>Plenty of characters to go around</h2>
           <span>Our first step was to go and collect all data we can find about the characters mentioned in the five Ice and Fire books, novellas and reader&#39;
-            s companions. Turns out there&rsquo;s quite a few of them, 2028 characters to be exact. And they all have a part to play in moving the plot forward. You can see in Figure 1 how many characters (by gender) mentioned in each of the books &nbsp;</span>
+            s companions. Turns out there&rsquo;s quite a few of them, 2028 characters to be exact. And they all have a part to play in moving the plot forward. You can see in Figure 1 how many characters (by gender) mentioned in each of the books. &nbsp;</span>
             <div id="new_characters_introduced"></div>
             <p><span>Figure 1. Population by gender in the Ice and Fire books</span>
             </p>
@@ -47,21 +47,25 @@ export default class Statistics extends Component {
               <p><span></span>
               </p>
               <h2 id="h.jlkuqyn7n7zv"><span>There are more men than women in GoT. By a factor of 2. </span></h2>
-              <p><span>Having collected the data about all the characters we first wanted to see what are the survival chances of characters across gender. First it comes as no surprise that in a male dominated world such as the one described in A Song of Ice and Fire most characters are male. Actually </span><span>the male/female ratio is a bit over </span><span>2:1</span><span>. &nbsp;</span>
+              <p><span>Having collected the data about all the characters, we first wanted to see what are the survival chances of characters across gender. First, it comes as no surprise that in a male dominated world, such as the one described in A Song of Ice and Fire, most characters are male. Actually </span><span>the male/female ratio is a bit over </span><span>2:1</span><span>. &nbsp;</span>
               </p>
               <p><span></span>
               </p>
               <h2 id="h.s076qg89ov01"><span>Men tend to be more noble.</span></h2>
-              <p><span>Men also have an advantage when it comes to rank - there are 53 more noble men than simple folk. Women, however are likelier to play the role of peasants - are 1.7 peasant women for each noble woman. Check out figure 3 for rank distribution by gender.</span>
+              <p><span>Men also have an advantage when it comes to rank - there are 53 more noble men than small folk. Women, however are likelier to play the role of peasants - there are 1.7 peasant women for each noble woman. Check out Figure 3 for rank distribution by gender.</span>
               </p>
               <p><span></span>
               </p>
-              <p><span>Women are survivors</span>
-              </p>
+              <h2><span>Women are survivors </span>
+              </h2>
               <p><span></span>
               </p>
               <p><span>The good news for women are that they are less likely to be killed off than men - while 43% of men characters are dead</span><span>&nbsp;
-                by the end of fifth book&rsquo;</span><span>, 79% of women characters are still alive. Check out figure 3 for survivability distribution by gender.</span>
+                by the end of fifth book&rsquo;</span><span>, 79% of women characters are still alive. Check out Figure 3 for survivability distribution by gender.</span>
+              </p>
+              <p><span></span>
+              </p>
+              <p><span></span>
               </p>
               <p><span></span>
               </p>
@@ -70,13 +74,13 @@ export default class Statistics extends Component {
               </p>
               <h1 id="h.m7qy93gzi4my"><span>Now let&rsquo;
                 s look at the question at hand - who is likelier to die next?</span></h1>
-              <p><span>Okay so there are more men and they are at greater risk of getting hurt. This is not real news for a knight leading a vanguard of 5,000 men. &nbsp;
-                As a matter of fact our </span><span><a
+              <p><span>Okay, so there are more men and they are at greater risk of getting hurt. This is not real news for a knight leading a vanguard of 5,000 men. &nbsp;
+                As a matter of fact, our </span><span><a
                 href="https://www.google.com/url?q=http://got.show/machine-learning-algorithm-predict-death-game-of-thrones&amp;sa=D&amp;ust=1460314125633000&amp;usg=AFQjCNEjU2DA7GDi8BpPivYvSNYdXaGPfQ">machine
-                learning algorithm </a></span><span>cannot be more clear on that. See, when looking at the </span><span><a
+                learning algorithm </a></span><span>cannot be more clear on that. When looking at the </span><span><a
                 href="https://www.google.com/url?q=https://got.show/machine-learning-algorithm-predict-death-game-of-thrones&amp;sa=D&amp;ust=1460314125633000&amp;usg=AFQjCNH2dRf240CCkTkizqS0iO-4ic8Ckg">predicted
-                likelihood of death (PLOD)</a></span><span>&nbsp;in </span><span>we saw that the</span><span>&nbsp;
-                average likelihood of death for men is 33%</span><span>&nbsp;and. Figure 4 shows the distribution of PLODs for male and female characters and how men are likelier to be killed off than women. </span>
+                likelihood of death (PLOD)</a></span><span>&nbsp;</span><span>we saw that the</span><span>&nbsp;
+                average likelihood of death for men is 33%</span><span>&nbsp;and for women it is 23%. Figure 4 shows the distribution of PLODs for male and female characters and how men are likelier to be killed off than women. </span>
               </p>
               <p><span></span>
               </p>
@@ -86,13 +90,13 @@ export default class Statistics extends Component {
               </p>
               <p><span></span>
               </p>
-              <p><span>So yeah gender matters and all the ladies can kick back and relax while the guys go and butcher each other for honor and glory. But what about rank you may ask? Is being a Lord any guarantee for a safer life? Or is being the lowest of peasants buys you more years? &nbsp;
-                Turns out rank makes very little difference - kings, lords, knights, clergy, maesters and yeah peasants are all subjected to the same risk levels (Figure 5) . Pretty surprising considering this is a world where the blood of the commoners can be spilled indiscriminately. </span>
+              <p><span>So, yeah, gender matters and all the ladies can kick back and relax while the guys go and butcher each other for honor and glory. But what about rank you may ask? Is being a Lord any guarantee for a safer life? Or is being the lowest of peasants buys you more years? &nbsp;
+                As it turns out, rank makes very little difference - kings, lords, knights, clergy, maesters and yeah peasants are all subjected to the same risk levels (Figure 5) . Pretty surprising, considering this is a world where the blood of the commoners can be spilled indiscriminately. </span>
               </p>
               <p><span></span>
               </p>
               <div id="distribution_nobles_plods"></div>
-              <p><span>Figure 5. Nobles are at the same risk to die as peasants. Similar to Figure 4, plotted are percentages of noble (blue line) and peasant (red line) characters (Y-axis) for whom we predict at a certain likelihood of death (X-axis).For nobles, the average PLOD is 31% and for peasants it is 27%.</span>
+              <p><span>Figure 5. Nobles are at the same risk to die as peasants. Similar to Figure 4, plotted are percentages of noble (blue line) and peasant (red line) characters (Y-axis) for whom we predict a certain likelihood of death (X-axis).For nobles, the average PLOD is 31% and for peasants it is 27%.</span>
               </p>
               <p><span></span>
               </p>
@@ -112,13 +116,15 @@ export default class Statistics extends Component {
               </p>
               <p><span></span>
               </p>
-              <p><span>So gender, rank and age they can all play a part in determining a likelihood of death for characters in the Ice and Fire world. You can actually </span><span><a
+              <p><span>So gender, rank and age - they can all play a part in determining a likelihood of death for characters in the Ice and Fire world. You can actually </span><span><a
                 href="https://www.google.com/url?q=http://got.show/machine-learning-algorithm-predict-death-game-of-thrones&amp;sa=D&amp;ust=1460314125643000&amp;usg=AFQjCNHXCqDyLEYYrDmnsR4p86lxbUmkvA">read
-                more on the the many character features we threw into our algorithms</a></span><span>. </span>
+                more on the the many character features we threw into our prediction algorithms</a></span><span>. </span>
               </p>
+
+               <h2><span>What makes an episode great?</span></h2>
               <span>The predicted likelihood of death value is a cool way for us to estimate who is next in line to be eliminated. It can also be used to gauge</span><span>&nbsp;
-                which episode in the show could be the most suspenseful</span><span>&nbsp;- by say cramming many characters with high risk of dying into an episode and putting viewers at the edge of their sears. </span><span>We did just that </span><span>- we took our predicted risk of death values and averaged it for all characters appearing in each episode. </span><span>The result can be seen in Figure 7. </span><span>I don&#39;
-                t know about you, but it seems like</span><span>&nbsp;seasons 1 and season 2 seem like clear winners in terms of the amount of potential suspense packed into them</span><span>. What do you think? Were the first two seasons most suspenseful? </span><span><a
+                which episode in the show could be the most suspenseful</span><span>&nbsp;- by say cramming many characters with high risk of dying into an episode and putting viewers at the edge of their sears. </span><span>We did just that </span><span>- we took our predicted risk of death values and averaged them for all characters appearing in each episode. </span><span>The result can be seen in Figure 7. </span><span>I don&#39;
+                t know about you, but it seems like</span><span>&nbsp;Seasons 1 and Season 2 appear to be clear winners in terms of the amount of potential suspense packed into them</span><span>. What do you think? Were the first two seasons most suspenseful? </span><span><a
                 href="https://www.google.com/url?q=http://goo.gl/YIEa7w&amp;sa=D&amp;ust=1460314125645000&amp;usg=AFQjCNEIfnhfl99Hg3OcdjnN_E2eudNUQw">Vote
                 here</a></span><span>.</span>
               <div id="avgPLOD_per_episode"></div>
