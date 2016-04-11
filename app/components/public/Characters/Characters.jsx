@@ -55,7 +55,6 @@ export default class Character extends Component {
         const check = !character.dateOfDeath && character.gotplod && character.gotarffplod;
         this.setState({
             plod: (check) ? parseInt(character.gotplod.plod) || 0 : 100,
-            plodArff: (check) ? parseInt(character.gotarffplod.plod*100) + '%' || '0%' : '100%, because he is dead',
             plodText: (check) ? '%(percent)s%' : 'D E A D'
         });
     }
@@ -108,9 +107,11 @@ export default class Character extends Component {
                             <ProgressBar now={this.state.plod} label={this.state.plodText} />
                             <img src={tombstone} />
                         </div>
-                        <p>Our in-house developed machine learning algorithm predicts likelihood of death based on various features that we extracted for each character from the first five books of the Song of Ice and Fire series. <br />
-                            Our second, less accurate, algorithm predicts likelihood to be {this.state.plodArff}.</p>
-                        <p><a href="/machine-learning-algorithm-predicts-death-game-of-thrones">Click here to read more about our prediction algorithms.</a></p>
+                        <p>Our in-house developed machine learning algorithm predicts
+                            likelihood of death based on various features that we extracted
+                            for each character from the first five books of the Song of Ice
+                            and Fire series. </p>
+                           <p><a href="/machine-learning-algorithm-predicts-death-game-of-thrones">Click here to read more about our prediction algorithm.</a></p>
                     </Col>
                 </Row>
                 <Row>
