@@ -29,7 +29,7 @@ img {
 }
 
 .float-img-right {
-    width: 50vh;
+    width: 40%;
     float: right;
     margin: 10px 0 10px 10px;
 }
