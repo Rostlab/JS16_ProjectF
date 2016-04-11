@@ -19,11 +19,16 @@ export default class Ranking extends Component {
     }
     getHardcodedHousesTop5() {
         return [
-            {name: 'House Cole'},
-            {name: 'House Rosby'},
-            {name: 'House Chelsted'},
-            {name: 'House Stokeworth'},
-            {name: 'House Cassel'}
+            {name: 'House Tully'},
+            {name: 'House Clegane'},
+            {name: 'House Velaryon'},
+            {name: 'House Seaworth'},
+            {name: 'House Nymeros'},
+            {name: 'House Targaryen'},
+            {name: 'House Oakheart'},
+            {name: 'House Greyjoy'},
+            {name: 'House Lannister'},
+            {name: 'House Westerling'}
         ];
     }
     getHardcodedSurvivors() {
@@ -185,7 +190,7 @@ export default class Ranking extends Component {
                                 <ul>
                                     {
                                         this.getHardcodedHousesTop5().map((house) => {
-                                            return <li><h4>{house.name}</h4></li>;
+                                            return <li><h4><a target="_blank" href={"https://awoiaf.westeros.org/index.php/" + house.name}>{house.name}</a></h4></li>;
                                         })
                                     }
                                 </ul>
