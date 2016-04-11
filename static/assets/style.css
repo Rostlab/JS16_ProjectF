@@ -1,0 +1,27 @@
+body {
+    background: #1F1F1F;
+    overflow-x: hidden;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    color: whitesmoke;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    text-align: justify;
+}
+
+h1,h2,h3,h4,h5,
+title {
+    font-family: 'Cinzel Decorative', cursive;
+}
+
+a {
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+a:hover,
+a:focus {
+    color: white;
+    outline: 0;
+}
