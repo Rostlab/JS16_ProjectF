@@ -23,12 +23,12 @@ export default class Ranking extends Component {
             {name: 'House Clegane'},
             {name: 'House Velaryon'},
             {name: 'House Seaworth'},
-            {name: 'House Nymeros'}
-            // {name: 'House Targaryen'},
-            // {name: 'House Oakheart'},
-            // {name: 'House Greyjoy'},
-            // {name: 'House Lannister'},
-            // {name: 'House Westerling'}
+            {name: 'House Nymeros'},
+            {name: 'House Targaryen'},
+            {name: 'House Oakheart'},
+            {name: 'House Greyjoy'},
+            {name: 'House Lannister'},
+            {name: 'House Westerling'}
         ];
     }
     getHardcodedSurvivors() {
