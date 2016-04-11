@@ -92,7 +92,7 @@ export default class Ranking extends Component {
 
         return (
             <div>
-            <div className="header-image">
+            <div className="header-ranking">
                 <Grid>
                     <Row className="ranking-fields ranking-plod">
                         <Col xs={10} xsOffset={1} sm={8} smOffset={2}>
