@@ -22,7 +22,7 @@ export default class Start extends Component {
           </Col>
         </Row>
         <Row className="stats-home">
-           <Col xs={10} xsOffset={1} sm={5}>
+           <Col xs={10} xsOffset={2} sm={3}>
             <img src={logo} className="start-logo" />
           </Col>
           <Col xs={10} xsOffset={0} sm={5}>
