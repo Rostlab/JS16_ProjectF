@@ -144,16 +144,18 @@ a:focus {
     height: 550px;
     background-image: url('header.jpg');
     background-size: cover;
-    margin-top: -50px;
+    margin: -50px 0 0 0;
     background-position: 50% 50%;
     padding: 0;
     position: relative;
 }
 .main-container {
-    padding-top: 50px;
+    padding-top: 50px!important;
     padding-bottom: 50px;
 }
-
+.container-fluid {
+    padding: 0;
+}
 .btn--secondary {
     font-weight: normal;
     border-radius: 4px;

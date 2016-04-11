@@ -87,10 +87,10 @@ export default class Ranking extends Component {
 
         return (
             <div>
-            <div className="header-image"></div>
-                <Grid className="ranking">
-                    <Row className="ranking-fields">
-                        <Col xs={12}>
+            <div className="header-image">
+                <Grid>
+                    <Row className="ranking-fields ranking-plod">
+                        <Col xs={10} xsOffset={1} sm={8} smOffset={2}>
                             <div className="ranking-field">
                                 <h2 className="text-center ranking-title">Who is most likely to die next</h2>
                                 <ul>
@@ -107,11 +107,12 @@ export default class Ranking extends Component {
                                 <p className="see-more"><Link to={'/characters/?search=&page=1&sort=plod&order=-1'}>See more</Link></p>
                             </div>
                         </Col>
-
                     </Row>
-
+                </Grid>
+            </div>
+                <Grid className="ranking tweets-fields">
+                 <Row className="ranking-fields">
                     <h1 className="center rankingTweets-heading">Tweets about GoT-characters:</h1>
-                    <Row className="ranking-fields">
                         <Col sm={12} md={6}>
                             <div className="ranking-field">
                                     <h2 className="text-center ranking-title twitterTooltip">Most Positive Mentions
@@ -121,7 +122,6 @@ export default class Ranking extends Component {
                                     </h2>
                                     {
                                         this.state.twitterTopSentiments.map((char) => {
-                                            console.log(char); /*eslint no-console:0,no-undef:0*/
                                             return <Row>
                                                     <Col xs={8}>
                                                         <h4><Link to={'/characters/' + char.name}>

@@ -13,6 +13,8 @@ export default class FooterCopy extends Component {
                     <Row>
                         <Column md={12}>
                             <p className="text-center">
+                                A Song of Ice and Fire setting is Copyright &copy; George R.R. Martin<br/>
+                                &copy; Game of Thrones TM and copyright HBO<br/>
                                 &copy; 2016 Song of Ice and Data - <span className="build-version"></span>
                             </p>
                         </Column>

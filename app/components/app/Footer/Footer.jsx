@@ -35,9 +35,6 @@ export default class Footer extends Component {
                   <a href="/about">About got.show</a>
                 </p>
                 <p>
-                  <a href="/about#credits">Credits</a>
-                </p>
-                <p>
                   <a href="/attributions">Attributions</a>
                 </p>
                 <p>
@@ -89,7 +86,7 @@ export default class Footer extends Component {
                   <br />
                   <a rel="license" href="http://creativecommons.org/licenses/by/3.0" target="_blank">
                     Licensed under Creative Commons Attribution 3.0
-                  </a>.
+                  </a>
                 </p>
               </Column>
               <Column md={2}>
