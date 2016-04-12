@@ -24,8 +24,6 @@ At this point you're probably feeling sorry for poor Theon, right? right?? Well 
 
 Our algo is also not very forgiving - in the match up between Ramsay and Theon, it is Theon who is likelier to get wiped out first. [Check out Theon's predicted likelihood of death](https://www.got.show/characters/Theon%20Greyjoy)
 
-And what about the Bolton's, you ask? they are some nasty bunch of creeps and deserve to be taken out too. Well our algorithm says that both Roose and Ramsay chances to die are not high. [Check out Ramsay's predicted likelihood of death](https://www.got.show/characters/Ramsay%20Snow). So if you take our word, the Boltons are likely to stick around. What? Don't like this prediciton? welll, like Mr. Drumpf, we just "tell it as it is"...
-
 ![The north remembers](https://i.ytimg.com/vi/cyTWrPKIZns/maxresdefault.jpg)
 
 
