@@ -1,8 +1,11 @@
 # When Theon Met Ramsay
 
 Ahh! Theon and Ramsay, Ramsay and Theon... There used to be a time when Theon was prince and Ramsay was but a servant to that prince. Back then, Ramsay was called Reek (because he stank) and he did Theon's bidding. But, all of a sudden, the tables have turned on Theon and from being a self-proclaimed Prince of Winterfell, he was a captive at the Dreadfort, propped up to be The bastard of Bolton's personal pet. From then on, Theon was Reek and Reek was Ramsay. And as Theon was sinking lower and lower (and losing some vital body parts), Ramsay was rising in the world.
+
 ![theon and ramsay](https://i.ytimg.com/vi/in0eB7N5pNM/maxresdefault.jpg)
+
 Confused? Well, we are all confused when it comes to Ramsay and Theon. I mean, who should we hate more? Should we detest the sadistic cold bastard who turned on his friends? Or should we hate Ramsay even more? Should we hate the guy who feeds peasant girls to his hounds or the guy who burns little children and hangs their charred bodies in the castle square?
+
 ![theon twitter sentiment analysis](http://s24.postimg.org/mzxuyzvb9/Thoen_Grey_Joy_Twitter_Analysis.png)
 > Check out our Twittter sentiment analysis for Theon Greyjoy during the Epsiodes "The Old Gods and The New" (Season 5, Episode 5) and a "A Man Without Honor" (Season 5, Episode 6). Theon is no longer the sweetheart he used to be on Twitter.
 
