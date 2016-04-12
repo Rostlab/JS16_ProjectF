@@ -63,7 +63,7 @@ export default class BigBattle extends Component {
         <p>The tombstone shows our <strong>predicted likelihood of death</strong>. Read how we calculate the score <a href="/machine-learning-algorithm-predicts-death-game-of-thrones">here</a>!</p>
         <br />
         <Row className="big-battle-info">
-          <h3>Twitter Sentiments</h3>
+          <h3 className="center">Twitter Sentiments</h3>
           <Col xs={6}>
             <svg id="chart1" width="100%" height="400"></svg>
           </Col>

@@ -4,7 +4,7 @@ import React from 'react';
 let {Component} = React;
 import $ from 'jquery';
 import './Characters.css';
-import { Row, Col, Image, ProgressBar, Glyphicon } from 'react-bootstrap';
+import { Row, Col, Grid, Image, ProgressBar, Glyphicon } from 'react-bootstrap';
 import {Chart} from 'react-google-charts';
 
 import MapComp from '../../common/MapComp/MapComp.jsx';
@@ -72,6 +72,7 @@ export default class Character extends Component {
         }
 
         return (
+          <Grid>
             <div className="character-container">
                 <Row fluid>
                     <div className="header-image">
@@ -174,6 +175,7 @@ export default class Character extends Component {
                 </Row>
 
             </div>
+          </Grid>
         );
     }
 }
