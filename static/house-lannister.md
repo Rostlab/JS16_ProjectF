@@ -4,7 +4,7 @@
 
 _______________________________
 
-### H1: Cersei, Jaime, Tyrion or Tommen – Who’s next?
+### H1: Cersei, Jaime, Tyrion or Tommen – Who’s next to die on Game of Thrones?
 
 ![]( http://images6.fanpop.com/image/photos/34000000/Tyrion-Cersei-Jaime-Lannister-game-of-thrones-34013158-896-1200.jpg)
 > Alt text: Not your average Game of Thrones Family: The Lannisters
