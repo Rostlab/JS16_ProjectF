@@ -6,7 +6,7 @@ import $ from 'jquery';
 
 import { Link } from 'react-router';
 
-import {Image, Row, Col} from 'react-bootstrap';
+import {Image, Row, Col, Grid} from 'react-bootstrap';
 
 import './BigBattle.css';
 import tombstone from '../../public/Characters/rip_tombstone.png';
@@ -26,7 +26,7 @@ export default class BigBattle extends Component {
       d3.select(window).on('resize', chart2.resize);/*eslint no-undef:0*/
     });
     return (
-      <div>
+      <Grid>
         <Row className="big-battle">
           <Col xs={6}>
             <div className="antagonistImageContainer">
@@ -49,12 +49,12 @@ export default class BigBattle extends Component {
         </Row>
         <Row className="big-battle-info">
           <Col xs={6}>
-            <h3>
+            <h3 className="center">
               <Link to={'/characters/' + this.props.name1}>{this.props.name1}</Link>
             </h3>
           </Col>
           <Col xs={6}>
-            <h3>
+            <h3 className="center">
               <Link to={'/characters/' + this.props.name2}>{this.props.name2}</Link>
             </h3>
           </Col>
@@ -71,7 +71,7 @@ export default class BigBattle extends Component {
             <svg id="chart2" width="100%" height="400"></svg>
           </Col>
         </Row>
-      </div>
+      </Grid>
     );
   }
 }
