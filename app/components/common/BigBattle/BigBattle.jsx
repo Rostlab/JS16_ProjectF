@@ -6,7 +6,7 @@ import $ from 'jquery';
 
 import { Link } from 'react-router';
 
-import {Image, Row, Col} from 'react-bootstrap';
+import {Image, Row, Col, Grid} from 'react-bootstrap';
 
 import './BigBattle.css';
 import tombstone from '../../public/Characters/rip_tombstone.png';
@@ -26,7 +26,7 @@ export default class BigBattle extends Component {
       d3.select(window).on('resize', chart2.resize);/*eslint no-undef:0*/
     });
     return (
-      <div>
+      <Grid>
         <Row className="big-battle">
           <Col xs={6}>
             <div className="antagonistImageContainer">
@@ -49,12 +49,12 @@ export default class BigBattle extends Component {
         </Row>
         <Row className="big-battle-info">
           <Col xs={6}>
-            <h3>
+            <h3 className="center">
               <Link to={'/characters/' + this.props.name1}>{this.props.name1}</Link>
             </h3>
           </Col>
           <Col xs={6}>
-            <h3>
+            <h3 className="center">
               <Link to={'/characters/' + this.props.name2}>{this.props.name2}</Link>
             </h3>
           </Col>
@@ -63,7 +63,7 @@ export default class BigBattle extends Component {
         <p>The tombstone shows our <strong>predicted likelihood of death</strong>. Read how we calculate the score <a href="/machine-learning-algorithm-predicts-death-game-of-thrones">here</a>!</p>
         <br />
         <Row className="big-battle-info">
-          <h3>Twitter Sentiments</h3>
+          <h3 className="center">Twitter Sentiments</h3>
           <Col xs={6}>
             <svg id="chart1" width="100%" height="400"></svg>
           </Col>
@@ -71,7 +71,7 @@ export default class BigBattle extends Component {
             <svg id="chart2" width="100%" height="400"></svg>
           </Col>
         </Row>
-      </div>
+      </Grid>
     );
   }
 }

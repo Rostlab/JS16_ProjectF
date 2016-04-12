@@ -1,5 +1,4 @@
 import React from 'react';
-import { Grid, Row, Col } from 'react-bootstrap';
 let {Component} = React;
 require.context("./img", false, /^\.\/.*\.jpg$/); /*eslint no-undef:0*/
 
@@ -102,17 +101,11 @@ export default class AntagonistsComp extends Component {
     }
     return (
       <div>
-        <Grid>
-          <Row>
-            <Col>
-              <h1 className="text-center">{this.getTitle(this.state.characters)}</h1>
-              <BigBattle name1={name1} name2={name2} img1={img1} img2={img2} plod1={plod1} plod2={plod2}/>
-              <br />
-              <h3>{name1}'s and {name2}'s location-history on a map:</h3>
-              <MapComp character={[name1, name2]}/>
-            </Col>
-          </Row>
-        </Grid>
+        <h1 className="text-center">{this.getTitle(this.state.characters)}</h1>
+        <BigBattle name1={name1} name2={name2} img1={img1} img2={img2} plod1={plod1} plod2={plod2}/>
+        <br />
+        <h3>{name1}'s and {name2}'s location-history on a map:</h3>
+        <MapComp character={[name1, name2]}/>
       </div>
     );
   }

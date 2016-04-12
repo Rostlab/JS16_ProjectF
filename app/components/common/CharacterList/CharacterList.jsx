@@ -4,6 +4,8 @@ import CharacterThumbnail from '../CharacterThumbnail/CharacterThumbnail.jsx';
 
 import { Row, Col} from 'react-bootstrap';
 
+import './CharacterList.css';
+
 export default class CharacterList extends Component {
   constructor (props) {
     super(props);
@@ -25,10 +27,10 @@ export default class CharacterList extends Component {
               })
             }
             </div>
+            <div className="center">
+              <h3>{ found }</h3>
+            </div>
           </Col>
-          <div className="center">
-            <h3>{ found }</h3>
-          </div>
         </Row>
       </div>
     );
