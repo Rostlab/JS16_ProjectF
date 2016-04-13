@@ -63,7 +63,7 @@ return (
           <h1>
           <a href="https://got.show/House-Stark-in-Game-of-Thrones">
           Will Bran, Arya &amp; Sansa be the last of their kind in Game of Thrones?</a></h1>
-          <p className="lead"><p>House Stark of Winterfell has been having kind of a rough patch lately, don’t you think so? Although “rough patch” is
+          <p className="lead">House Stark of Winterfell has been having kind of a rough patch lately, don’t you think so? Although “rough patch” is
             quite the understatement when you’re talking about multiple fatalities in the family. And “lately” refers to the
             very first season of Game of Thrones, where we all taught an impressive lesson on how little George R.R. Martin cares
             about his main characters.It seems like winter’s been coming and staying for Bran, Arya and Sansa. But what exactly have they been up to lately – and where are they heading?<a href="https://got.show/House-Stark-in-Game-of-Thrones">Read more</a></p>
