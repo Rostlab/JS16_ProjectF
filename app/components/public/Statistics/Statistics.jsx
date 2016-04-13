@@ -75,8 +75,8 @@ export default class Statistics extends Component {
               <h1 id="h.m7qy93gzi4my"><span>Now let&rsquo;
                 s look at the question at hand - who is likelier to die next?</span></h1>
               <p><span>Okay, so there are more men and they are at greater risk of getting hurt. This is not real news for a knight leading a vanguard of 5,000 men. &nbsp;
-                As a matter of fact, our </span><span><a http://got.show/machine-learning-algorithm-predicts-death-game-of-thrones">machine
-                learning algorithm </a></span><span>cannot be more clear on that. When looking at the </span><span><a https://got.show/machine-learning-algorithm-predicts-death-game-of-thrones">predicted
+                As a matter of fact, our </span><span><a href="https://got.show/machine-learning-algorithm-predicts-death-game-of-thrones">machine
+                learning algorithm </a></span><span>cannot be more clear on that. When looking at the </span><span><a href="https://got.show/machine-learning-algorithm-predicts-death-game-of-thrones">predicted
                 likelihood of death (PLOD)</a></span><span>&nbsp;</span><span>we saw that the</span><span>&nbsp;
                 average likelihood of death for men is 33%</span><span>&nbsp;and for women it is 23%. Figure 4 shows the distribution of PLODs for male and female characters and how men are likelier to be killed off than women. </span>
               </p>
