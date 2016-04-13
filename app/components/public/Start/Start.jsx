@@ -31,7 +31,7 @@ return (
         </Col>
         </Row>
         <hr>
-        <!-- Why Jon Snow is not dead -->
+
         <Row className="stats-home">
         <Col xs={10} xsOffset={1} sm={5} smOffset={0}>
         <h1><a href="https://www.got.show/why-jon-snow-is-not-dead">Why Jon Snow is not dead</a></h1>
@@ -43,7 +43,7 @@ return (
         </Col>
         </Row>
         <hr>
-        <!-- Why Daenerys Targaryen will win the Game of Thrones -->
+
         <Row className="stats-home">
         <Col xs={10} xsOffset={1} sm={3} smOffset={0}>
         <a href="https://got.show/Why-Daenerys-Targaryen-will-win-the-Game-of-Thrones">
@@ -58,7 +58,6 @@ return (
           </Col>
           </Row>
           <hr>
-          <!-- Will Bran, Arya & Sansa be the last of their kind in Game of Thrones? -->
           <Row className="stats-home">
           <Col xs={10} xsOffset={1} sm={5} smOffset={0}>
           <h1>
@@ -75,7 +74,6 @@ return (
             </Col>
             </Row>
             <hr>
-            <!-- When Theon Met Ramsay -->
             <Row className="stats-home">
             <Col xs={10} xsOffset={1} sm={3} smOffset={0}>
             <a href="https://got.show/When-Theon-Met-Ramsay">
