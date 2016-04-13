@@ -30,8 +30,7 @@ return (
         to design some machine learning algorithm that will answer the question that is on every Game of Thrones’ fan mind - which character is likelier to die next?</p>
         </Col>
         </Row>
-        <hr>
-
+        <hr></hr>
         <Row className="stats-home">
         <Col xs={10} xsOffset={1} sm={5} smOffset={0}>
         <h1><a href="https://www.got.show/why-jon-snow-is-not-dead">Why Jon Snow is not dead</a></h1>
@@ -42,7 +41,7 @@ return (
         <img className="start-logo" alt="Official Announcement poster for the sixth season Game of Thrones, featuring Jon Snow." src="http://www.hbo.com/custom-assets/img/series/game-of-thrones/season-6-tease.jpg"/></a>
         </Col>
         </Row>
-        <hr>
+        <hr></hr>
 
         <Row className="stats-home">
         <Col xs={10} xsOffset={1} sm={3} smOffset={0}>
@@ -57,7 +56,7 @@ return (
           playing to win. Here is why we believe that soon she be sitting on the Iron Throne. <a href="https://got.show/Why-Daenerys-Targaryen-will-win-the-Game-of-Thrones">Read more</a></p>
           </Col>
           </Row>
-          <hr>
+          <hr></hr>
           <Row className="stats-home">
           <Col xs={10} xsOffset={1} sm={5} smOffset={0}>
           <h1>
@@ -73,7 +72,7 @@ return (
             <img className="start-logo" alt="Where are Arya, Sansa and Bran." src="images/sansa_bran_arya_map.png" /></a>
             </Col>
             </Row>
-            <hr>
+            <hr></hr>
             <Row className="stats-home">
             <Col xs={10} xsOffset={1} sm={3} smOffset={0}>
             <a href="https://got.show/When-Theon-Met-Ramsay">
