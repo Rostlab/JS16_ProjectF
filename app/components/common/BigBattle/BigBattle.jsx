@@ -15,7 +15,7 @@ export default class BigBattle extends Component {
   constructor(props){
     super(props);
   }
-  render() {
+  componentDidMount() {
     $('head').append('<link rel="stylesheet" type="text/css" href="/d4/chart.css">');
     let name1 = this.props.name1.replace(/ /g,'_');
     let name2 = this.props.name2.replace(/ /g,'_');
@@ -25,6 +25,9 @@ export default class BigBattle extends Component {
       var chart2 = new characterChart(d3.select("#chart2"), "/d4/csv/" + name2 + ".csv"); /*eslint no-undef:0*/
       d3.select(window).on('resize', chart2.resize);/*eslint no-undef:0*/
     });
+   }
+
+   render() {
     return (
       <Grid>
         <Row className="big-battle">
