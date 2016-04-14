@@ -41,7 +41,7 @@ export default class Start extends Component {
               <p className="lead">“The past is already written, the ink is dry” – so says the teaser for the sixth season of the popular TV show Game of Thrones. And until recently, that’s what we at got.show believed too. It was nine long months ago, dudring the season five finale (“Mother’s Mercy”) that we saw our favorite character Jon Snow join his father in GoT heaven however. But now we have reason to believe that he’s going to stick around on earth with the rest of us for just a little longer. You don’t think so? Well .. you know nothing, Jon Snow. <a href="http://www.got.show/jon-snow-is-not-dead.html">Read more</a></p>
             </Col>
             <Col xs={10} xsOffset={1} sm={3} smOffset={1}>
-              <a href="https://www.got.show/why-jon-snow-is-not-dead">
+              <a href="https://www.got.show/jon-snow-is-not-dead.html">
               <img className="start-logo" alt="Official Announcement poster for the sixth season Game of Thrones, featuring Jon Snow." src={jonSnow}/></a>
             </Col>
           </Row>
@@ -49,7 +49,7 @@ export default class Start extends Component {
           <hr></hr>
           <Row className="stats-home">
             <Col xs={10} xsOffset={1} sm={3} smOffset={1}>
-              <a href="https://got.show/Why-Daenerys-Targaryen-will-win-the-Game-of-Thrones">
+              <a href="https://got.show/daenerys-targaryen.html">
               <img className="start-logo" alt="Daenerys Targaryen. Game of Thrones‘ mother of dragons." src="http://vignette1.wikia.nocookie.net/gameofthrones/images/5/58/Daenerys-Targaryen.jpg/revision/latest?cb=20141202204150&amp;path-prefix=de"/></a>
             </Col>
             <Col xs={10} xsOffset={1} sm={6} smOffset={1}>
@@ -65,7 +65,7 @@ export default class Start extends Component {
           <Row className="stats-home">
             <Col xs={10} xsOffset={1} sm={6} smOffset={1}>
               <h1>
-              <a href="https://got.show/House-Stark-in-Game-of-Thrones">
+              <a href="https://got.show/house-stark.html">
               Will Bran, Arya &amp; Sansa be the last of their kind in Game of Thrones?</a></h1>
               <p className="lead">House Stark of Winterfell has been having kind of a rough patch lately, don’t you think so? Although “rough patch” is
                 quite the understatement when you’re talking about multiple fatalities in the family. And “lately” refers to the
@@ -81,7 +81,7 @@ export default class Start extends Component {
           <hr></hr>
           <Row className="stats-home">
             <Col xs={10} xsOffset={1} sm={3} smOffset={1}>
-              <a href="https://got.show/When-Theon-Met-Ramsay">
+              <a href="https://got.show/when-theon-met-ramsay.html">
               <img className="start-logo" alt="Theon Greyjoy and Ramsay Snow at play" src="https://i.ytimg.com/vi/in0eB7N5pNM/maxresdefault.jpg"/></a>
             </Col>
             <Col xs={10} xsOffset={1} sm={6} smOffset={1}>
