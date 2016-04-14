@@ -24,9 +24,9 @@ function drawNewCharactersIntroduced() {
       position: 'top',
       maxLines: 3,
       textStyle: {
-        fontSize: 17
+        fontSize: 17,
+        color: '#AAAAAA'
       }
-
     },
     isStacked: true,
     bar: {
