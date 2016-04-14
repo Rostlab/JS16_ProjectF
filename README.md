@@ -1,6 +1,9 @@
 # JS16_ProjectF [![Build Status](https://travis-ci.org/Rostlab/JS16_ProjectF.svg?branch=react)](https://travis-ci.org/Rostlab/JS16_ProjectF) [![Code Climate](https://codeclimate.com/github/Rostlab/JS16_ProjectF/badges/gpa.svg)](https://codeclimate.com/github/Rostlab/JS16_ProjectF) [![Codacy Badge](https://api.codacy.com/project/badge/grade/cee88a696a9749aa98ea9987ba91b926)](https://www.codacy.com/app/mail_25/JS16_ProjectF)
 In this project we will build a web portal for our GoT data analysis and visualization system. The website will integrate all the apps created in projects B-D with the help of the integration team assigned to Project E.
 
+Production:
+https://got.show
+
 Staging-Server:
 https://got-stats.herokuapp.com/
 
@@ -30,7 +33,7 @@ We're using webpack: https://github.com/webpack/webpack
 * `npm install`
 * `npm run serve`
 
-## Deploy to heroku
+## Deploy to staging/testing
 We use a dedicated 'staging' branch which is automagically deployed to https://got-stats.herokuapp.com/.
 
 **How To Deploy On Staging**:
