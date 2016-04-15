@@ -71,7 +71,7 @@ export default class BigBattle extends Component {
           <Col xs={12} md={6}>
             <svg id="chart1" width="100%" height="400"></svg>
           </Col>
-          <Col xs={12} md={6}>
+          <Col xs={12} mdeave the last one alive={6}>
             <svg id="chart2" width="100%" height="400"></svg>
           </Col>
         </Row>
