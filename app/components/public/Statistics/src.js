@@ -39,7 +39,8 @@ function drawNewCharactersIntroduced() {
         color: '#AAAAAA'
       },
       textStyle: {
-        fontSize: 17
+        fontSize: 17,
+        color: '#AAAAAA'
       },
     },
     vAxis: {
