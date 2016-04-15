@@ -21,9 +21,10 @@ export default class BigBattle extends Component {
     let name2 = this.props.name2.replace(/ /g,'_');
     $.getScript("/d4/chart.js",function(){
       var chart1 = new characterChart(d3.select("#chart1"), "/d4/csv/" + name1 + ".csv"); /*eslint no-undef:0*/
-      d3.select(window).on('resize', chart1.resize);/*eslint no-undef:0*/
       var chart2 = new characterChart(d3.select("#chart2"), "/d4/csv/" + name2 + ".csv"); /*eslint no-undef:0*/
-      d3.select(window).on('resize', chart2.resize);/*eslint no-undef:0*/
+      d3.select(window).on('resize', function () {
+        chart1.resize; chart2.resize;
+      });/*eslint no-undef:0*/
     });
    }
 
