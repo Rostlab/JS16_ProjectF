@@ -23,7 +23,7 @@ export default class BigBattle extends Component {
       var chart1 = new characterChart(d3.select("#chart1"), "/d4/csv/" + name1 + ".csv"); /*eslint no-undef:0*/
       var chart2 = new characterChart(d3.select("#chart2"), "/d4/csv/" + name2 + ".csv"); /*eslint no-undef:0*/
       d3.select(window).on('resize', function () {
-        chart1.resize; chart2.resize;
+        chart1.resize(); chart2.resize();
       });/*eslint no-undef:0*/
     });
    }
@@ -68,10 +68,10 @@ export default class BigBattle extends Component {
         <br />
         <Row className="big-battle-info">
           <h3 className="center">Twitter Sentiments</h3>
-          <Col xs={6}>
+          <Col xs={12} md={6}>
             <svg id="chart1" width="100%" height="400"></svg>
           </Col>
-          <Col xs={6}>
+          <Col xs={12} md={6}>
             <svg id="chart2" width="100%" height="400"></svg>
           </Col>
         </Row>
