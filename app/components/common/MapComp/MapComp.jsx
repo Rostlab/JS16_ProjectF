@@ -81,6 +81,9 @@ export default class MapComp extends Component {
       'characterBox':'#characters',
       'timeline':'#timeline',
       'filter':'#filter input',
+      'bgTiles': process.env.__PROTOCOL__ + 'tiles.got.show/bg/{z}/y{y}x{x}.png',
+      'labelTiles':process.env.__PROTOCOL__ +'tiles.got.show/labels/{z}/y{y}x{x}.png',
+      'errorTile':process.env.__PROTOCOL__ +'tiles.got.show/blank.png',
       'characterDetails': function (modal, character) {
         browserHistory.push('/characters/'+ character.name);
         $("body").removeClass("modal-open");
