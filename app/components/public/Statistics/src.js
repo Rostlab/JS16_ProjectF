@@ -16,7 +16,6 @@ function drawNewCharactersIntroduced() {
   var chart = new google.visualization.BarChart(document.getElementById('new_characters_introduced'));
 
   var options = {
-    width: '100%',
     height: 400,
     colors: ['#2196f3', '#f44336'],
     backgroundColor: '#1F1F1F',
@@ -126,7 +125,6 @@ function drawCharactersPerEpisode() {
         color: '#AAAAAA'
       }
     },
-    width: 1000,
     height: 400,
     pointSize: 7,
     colors: ['#2196f3', '#f44336'],
@@ -179,7 +177,6 @@ function drawDeadAndAlive() {
   var chart = new google.visualization.BarChart(document.getElementById('dead_and_alive'));
 
   var options = {
-    width: 600,
     height: 400,
     colors: ['#2196f3', '#f44336'],
     backgroundColor: '#1F1F1F',
@@ -342,7 +339,6 @@ function drawDistributionPLODs() {
     [100, 0, null, 0, null]
   ]);
   var options = {
-    width: 600,
     height: 400,
     colors: ['#2196f3', '#f44336'],
     backgroundColor: '#1F1F1F',
@@ -498,7 +494,6 @@ function drawDistributionNoblesPLODs() {
     [100, 0, 0]
   ]);
   var options = {
-    width: 600,
     height: 400,
     lineWidth: 3,
     colors: ['#2196f3', '#f44336'],
@@ -563,7 +558,6 @@ function drawDistributionPLODsAgeDistribution() {
     ['91-100', 19]
   ]);
   var options = {
-    width: 600,
     height: 400,
     colors: ['#2196f3'],
     backgroundColor: '#1F1F1F',
@@ -669,7 +663,6 @@ function drawAvgPLODPerEpisode() {
     legend: {
       position: 'none'
     },
-    width: 1000,
     height: 400,
     colors: ['#2196f3'],
     backgroundColor: '#1F1F1F',
