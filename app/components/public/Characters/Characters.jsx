@@ -27,7 +27,8 @@ export default class Character extends Component {
             sentiment: {
                 positive: 0,
                 negative: 0
-            }
+            },
+            chartLoaded: false
         };
         this._onChange = this._onChange.bind(this);
     }
@@ -57,19 +58,23 @@ export default class Character extends Component {
             plod: (check) ? parseInt(character.gotplod.plod) || 0 : 100,
             plodText: (check) ? '%(percent)s%' : 'D E A D'
         });
-    }
-    render() {
-        var base_url = process.env.__PROTOCOL__ + process.env.__API__ + "/";
-        var img = (!this.state.character.imageLink) ? "https://placeholdit.imgix.net/~text?txtsize=33&txt=profile%20picture%20&w=350&h=350" : base_url+this.state.character.imageLink;
 
         $('head').append('<link rel="stylesheet" type="text/css" href="/d4/chart.css">');
-        if (this.state.character.name != undefined){
+        if (this.state.character.name != undefined && !this.state.chartLoaded){
             const name = this.state.character.name.replace(/ |'/g,'_');
             $.getScript("/d4/chart.js",function(){
                 var chart = new characterChart(d3.select("#chart"), "/d4/csv/" + name + ".csv"); /*eslint no-undef:0*/
                 d3.select(window).on('resize', chart.resize);/*eslint no-undef:0*/
             });
         }
+
+        this.setState({
+            chartLoaded: true
+        });
+    }
+    render() {
+        var base_url = process.env.__PROTOCOL__ + process.env.__API__ + "/";
+        var img = (!this.state.character.imageLink) ? "https://placeholdit.imgix.net/~text?txtsize=33&txt=profile%20picture%20&w=350&h=350" : base_url+this.state.character.imageLink;
 
         return (
           <Grid>
