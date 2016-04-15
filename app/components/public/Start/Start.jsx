@@ -1,6 +1,7 @@
 import React from 'react';
 let {Component} = React;
 import { Row,Col, Grid } from 'react-bootstrap';
+import { Link } from 'react-router';
 import AntagonistsComp from '../../common/AntagonistsComp/AntagonistsComp.jsx';
 import './Start.css';
 import logo from './gotstatslogosmall.jpg';
@@ -25,12 +26,12 @@ export default class Start extends Component {
 
           <Row className="stats-home">
             <Col xs={10} xsOffset={1} sm={3} smOffset={1}>
-              <img src={logo} className="start-logo" />
+              <Link to={"/statistics"}><img src={logo} className="start-logo" /></Link>
             </Col>
             <Col xs={10} xsOffset={1} sm={6} smOffset={1}>
-              <h1>Life, death and statistics in Westeros</h1>
+              <Link to={"/statistics"}><h1>Life, death and statistics in Westeros</h1></Link>
               <p className="lead">While we all wait for the Winds of Winter to come out, we figured that it will be pretty cool
-              to design some machine learning algorithm that will answer the question that is on every Game of Thrones’ fan mind - which character is likelier to die next?</p>
+              to design some machine learning algorithm that will answer the question that is on every Game of Thrones’ fan mind - which character is likelier to die next? <Link to={"/statistics"}>Read more</Link></p>
             </Col>
           </Row>
 
