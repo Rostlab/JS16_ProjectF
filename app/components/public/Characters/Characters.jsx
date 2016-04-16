@@ -53,7 +53,7 @@ export default class Character extends Component {
             plod: (check) ? parseInt(character.gotplod.plod) || 0 : 100,
             plodText: (check) ? '%(percent)s%' : 'D E A D',
             character: character,
-            sentiment: SentimentStore.getCharacterSentiment() | { positive: 0, negative: 0}
+            sentiment: SentimentStore.getCharacterSentiment() || { positive: 0, negative: 0}
         });
     }
     render() {
