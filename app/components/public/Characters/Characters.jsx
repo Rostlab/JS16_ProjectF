@@ -47,13 +47,15 @@ export default class Character extends Component {
 
     _onChange() {
         const character = Store.getCharacter();
+        this.setState({
+            character: character,
+            sentiment: SentimentStore.getCharacterSentiment()
+        });
 
         const check = !character.dateOfDeath && character.gotplod && character.gotarffplod;
         this.setState({
             plod: (check) ? parseInt(character.gotplod.plod) || 0 : 100,
-            plodText: (check) ? '%(percent)s%' : 'D E A D',
-            character: character,
-            sentiment: SentimentStore.getCharacterSentiment() | { positive: 0, negative: 0}
+            plodText: (check) ? '%(percent)s%' : 'D E A D'
         });
     }
     render() {
