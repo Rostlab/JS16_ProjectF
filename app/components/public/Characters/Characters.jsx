@@ -47,6 +47,10 @@ export default class Character extends Component {
 
     _onChange() {
         const character = Store.getCharacter();
+        this.setState({
+            character: character,
+            sentiment: SentimentStore.getCharacterSentiment()
+        });
 
         const check = !character.dateOfDeath && character.gotplod && character.gotarffplod;
         this.setState({
