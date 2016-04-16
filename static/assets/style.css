@@ -33,3 +33,14 @@ img {
     float: right;
     margin: 10px 0 10px 10px;
 }
+.navbar {
+    font-family: 'Cinzel Decorative', cursive;
+}
+
+.navbar-brand {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    margin:0 auto;
+}
