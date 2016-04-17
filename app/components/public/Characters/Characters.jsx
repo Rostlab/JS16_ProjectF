@@ -5,7 +5,6 @@ let {Component} = React;
 import $ from 'jquery';
 import './Characters.css';
 import { Row, Col, Grid, Image, ProgressBar, Glyphicon } from 'react-bootstrap';
-import {Chart} from 'react-google-charts';
 
 import MapComp from '../../common/MapComp/MapComp.jsx';
 import Store from '../../../stores/CharactersStore';
@@ -131,42 +130,7 @@ export default class Character extends Component {
                 </Row>
                 <Row>
                     <Col  md={8} mdOffset={2}>
-                        <Chart
-                          chartType="PieChart"
-                          height={"400px"}
-                          width={"100%"}
-                          options = {{
-                                    title: 'Total tweets',
-                                    pieHole: 0.4,
-                                    backgroundColor: {
-                                        fill: 'transparent',
-                                        stroke: 'transparent',
-                                        strokeWidth: '0'
-                                    },
-                                    colors: ['#6AAA1F','rgb(198, 61, 23)'],
-                                    legend: {
-                                        textStyle: { color: 'white'}
-                                    },
-                                    titleTextStyle: {
-                                        color: 'white'
-                                    },
-                                    chartArea: {
-                                        backgroundColor: {
-                                            stroke: 'transparent',
-                                            strokeWidth: '0'
-                                        },
-                                        width: '80%',
-                                        height: '80%',
-                                        left: '10px'
-                                    },
-                                    pieSliceBorderColor: 'transparent'
-                                   }}
-                          data={ [
-                                      ['Task', 'Hours per Day'],
-                                      ['Positive sentiments',     this.state.sentiment.positive || 0],
-                                      ['Negative sentiments',      this.state.sentiment.negative || 0]
-                                  ]}
-                        />
+                        Overall we registered { this.state.sentiment.positive || 0 } positive tweets and {this.state.sentiment.negative || 0} negative tweets for {this.state.character.name}.
                     </Col>
                 </Row>
                 
