@@ -1,9 +1,9 @@
 import React from 'react';
 let {Component} = React;
 import './Footer.css';
-import Row from 'react-bootstrap/lib/Row';
-import Column from 'react-bootstrap/lib/Col';
-
+import { Row, Col, Image } from 'react-bootstrap';
+import rostlab from "./rostlab.png";
+import tum from "./tum-logo.png";
 import $ from 'jquery';
 
 export default class Footer extends Component {
@@ -28,7 +28,7 @@ export default class Footer extends Component {
         <footer>
           <div className="container">
             <Row>
-              <Column md={2} mdOffset={1}>
+              <Col md={2} mdOffset={1}>
                 <h4>About</h4>
                 <hr />
                 <p>
@@ -46,8 +46,8 @@ export default class Footer extends Component {
                 <p>
                   <a href="https://www.tum.de/" target="_blank">TUM</a>
                 </p>
-              </Column>
-              <Column md={2}>
+              </Col>
+              <Col md={2}>
                 <h4>Contribute</h4>
                 <hr />
                 <p>
@@ -56,8 +56,8 @@ export default class Footer extends Component {
                 <p>
                   <a href="http://map.got.show/">Edit our map</a>
                 </p>
-              </Column>
-              <Column md={2}>
+              </Col>
+              <Col md={2}>
                 <h4>Social</h4>
                 <hr />
                 <p>
@@ -69,8 +69,8 @@ export default class Footer extends Component {
                 <p>
                   <a href="https://plus.google.com/116097558064950719723/about" target="_blank">Google Plus</a>
                 </p>
-              </Column>
-              <Column md={2}>
+              </Col>
+              <Col md={2}>
                 <h4>Legal</h4>
                 <hr />
                 <p>
@@ -88,14 +88,20 @@ export default class Footer extends Component {
                     Licensed under Creative Commons Attribution 3.0
                   </a>
                 </p>
-              </Column>
-              <Column md={2}>
+              </Col>
+              <Col md={2}>
                 <h4>Contact</h4>
                 <hr />
                 <p>
                   <a href="https://github.com/got-show/general/issues" target="_blank">Feedback</a>
                 </p>
-              </Column>
+              </Col>
+            </Row>
+            <Row>
+              <Col xs={10} xsOffset={1} sm={6} smOffset={3}>
+                <a href="https://rostlab.org"><Image src={rostlab} className="footerlogo"/></a>
+                <a href="http://www.tum.de"><Image src={tum} className="footerlogo"/></a>
+              </Col>
             </Row>
           </div>
         </footer>
