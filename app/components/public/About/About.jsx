@@ -237,6 +237,16 @@ class TeamMemberListing extends Component {
                 name: "Boris Idesman",
                 link: "https://github.com/boriside",
                 team: "A"
+            },
+            {
+                name: "Boris Idesman",
+                link: "https://github.com/boriside",
+                team: "A"
+            },
+            {
+                name: "Konstantinos Angelopoulos",
+                link: "https://github.com/konstantinos-angelo",
+                team: "B"
             }
         ].filter((member) => {
             return member.team.split('').map((teamID) => {
