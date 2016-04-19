@@ -65,10 +65,10 @@ We combined these two measures into a single F-measure value:
 
 The prediction results of our method were:
 
-Label | Number of characters | Precision | Recall | F-measure
-:------------: | :-------------: | :-------------: | :-------------: | :-------------: |
-Alive | 1451 | 85% | 78% | 0.82
-Dead | 495 | 49% | 60% | 0.54
+Label | Precision | Recall | F-measure
+:------------: | :-------------: | :-------------: | :-------------: |
+Alive | 85% | 78% | 0.82
+Dead | 49% | 60% | 0.54
 
 ### References
 
