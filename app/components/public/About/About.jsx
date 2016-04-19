@@ -35,8 +35,10 @@ export default class About extends Component {
                                 <TeamMemberListing teamID="F"/>
                                 <h3>Map</h3>
                                 <TeamMemberListing teamID="C"/>
-                                 <h3>Integration</h3>
+                                <h3>Integration</h3>
                                 <TeamMemberListing teamID="E"/>
+                                <h3>Support</h3>
+                                <TeamMemberListing teamID="S"/>
                             </Col>
                                                      
                             
@@ -247,7 +249,27 @@ class TeamMemberListing extends Component {
                 name: "Konstantinos Angelopoulos",
                 link: "https://github.com/konstantinos-angelo",
                 team: "B"
-            }
+            },
+            {
+                name: "Emiliyana Kalinova",
+                link: "https://github.com/Emiliyana",
+                team: "E"
+            },
+            {
+                name: "Burkhard Rost",
+                link: "https://rost.org",
+                team: "S"
+            },
+            {
+                name: "Tim Karl",
+                link: "https://www.rostlab.org/group/people/lab-members",
+                team: "S"
+            },
+            {
+                name: "Lothar Richter",
+                link: "https://www.rostlab.org/group/people/lab-members",
+                team: "S"
+            },
         ].filter((member) => {
             return member.team.split('').map((teamID) => {
                 return projectID.indexOf(teamID) != -1;
