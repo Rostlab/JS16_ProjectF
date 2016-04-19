@@ -64,7 +64,7 @@ export default class Footer extends Component {
                   <a href="https://www.facebook.com/aSongOfIceAndData" target="_blank">Facebook</a>
                 </p>
                 <p>
-                  <a href="https://twitter.com/asoiad" target="_blank">Twitter</a>
+                  <a href="https://twitter.com/GotJstech" target="_blank">Twitter</a>
                 </p>
                 <p>
                   <a href="https://plus.google.com/116097558064950719723/about" target="_blank">Google Plus</a>
