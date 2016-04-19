@@ -269,7 +269,7 @@ class TeamMemberListing extends Component {
                 name: "Lothar Richter",
                 link: "https://www.rostlab.org/group/people/lab-members",
                 team: "S"
-            },
+            }
         ].filter((member) => {
             return member.team.split('').map((teamID) => {
                 return projectID.indexOf(teamID) != -1;
