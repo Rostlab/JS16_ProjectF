@@ -3,7 +3,6 @@ let {Component} = React;
 import './Footer.css';
 import { Row, Col, Image } from 'react-bootstrap';
 import rostlab from "./rostlab.png";
-import tum from "./tum-logo.png";
 import $ from 'jquery';
 
 export default class Footer extends Component {
