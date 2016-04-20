@@ -51,7 +51,7 @@ export default class Start extends Component {
           <Row className="stats-home">
             <Col xs={10} xsOffset={1} sm={3} smOffset={1}>
               <a href="https://got.show/daenerys-targaryen.html">
-              <img className="start-logo" alt="Daenerys Targaryen. Game of Thrones‘ mother of dragons." src="http://vignette1.wikia.nocookie.net/gameofthrones/images/5/58/Daenerys-Targaryen.jpg/revision/latest?cb=20141202204150&amp;path-prefix=de"/></a>
+              <img className="start-logo" alt="Daenerys Targaryen. Game of Thrones‘ mother of dragons." src="https://vignette1.wikia.nocookie.net/gameofthrones/images/5/58/Daenerys-Targaryen.jpg/revision/latest?cb=20141202204150&amp;path-prefix=de"/></a>
             </Col>
             <Col xs={10} xsOffset={1} sm={6} smOffset={1}>
               <h1><a href="https://got.show/daenerys-targaryen.html">Why Daenerys Targaryen will win the Game of Thrones</a></h1>
