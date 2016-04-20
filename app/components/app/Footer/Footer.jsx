@@ -100,7 +100,6 @@ export default class Footer extends Component {
             <Row>
               <Col xs={10} xsOffset={1} sm={6} smOffset={3}>
                 <a href="https://rostlab.org"><Image src={rostlab} className="footerlogo"/></a>
-                <a href="http://www.tum.de"><Image src={tum} className="footerlogo"/></a>
               </Col>
             </Row>
           </div>
