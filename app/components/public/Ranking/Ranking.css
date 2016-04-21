@@ -84,3 +84,9 @@
 	margin-left: .5em;
 	vertical-align: middle;
 }
+
+@media (max-width: 992px) {
+	.ranking-field h4 {
+		padding: 5px;
+	}
+}
