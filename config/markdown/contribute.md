@@ -38,4 +38,4 @@ If you would like to contribute code, our [GitHub repository can be found here](
 # Community
 It always feels better with friends, right? So, how about joining our growing community of developers and contributors who help make the World of Ice and Fire data accessible to all fans?  
 
-Are you a renowned expert on the geogrpahy of Essos? Do you know where exactly was the Battle of the Burning Mill? Found a mistake in one of the locations we put on the map? Then why not **use our [map editor](map.got.show)** to chart paths for less known characters and highlight landmarks where major events took place?  
+Are you a renowned expert on the geogrpahy of Essos? Do you know where exactly was the Battle of the Burning Mill? Found a mistake in one of the locations we put on the map? Then why not **use our [map editor](https://map.got.show)** to chart paths for less known characters and highlight landmarks where major events took place?  
