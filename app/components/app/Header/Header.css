@@ -51,11 +51,13 @@ header {
     transition: all .2s;
 }
 
-/*FIXES HEADER WIDTH FOR SMALL SCREENS*/
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
     .navbar-brand {
-        font-size: 15px;
+        font-size: 15px !important;
     }
+}
+/*FIXES HEADER WIDTH FOR SMALL SCREENS*/
+@media (max-width: 768px) {
     .navbar-header {
         float: none;
     }
