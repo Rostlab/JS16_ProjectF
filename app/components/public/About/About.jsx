@@ -227,7 +227,7 @@ class TeamMemberListing extends Component {
             },
             {
                 name: "Theodor Cheslerean Boghiu",
-                link: "#",
+                link: "https://de.linkedin.com/in/theodor-cheslerean-boghiu-234511102",
                 team: "A"
             },
             {
@@ -269,6 +269,16 @@ class TeamMemberListing extends Component {
                 name: "Lothar Richter",
                 link: "https://www.rostlab.org/group/people/lab-members",
                 team: "S"
+            },
+            {
+                name: "Emiliyana Kalinova",
+                link: "https://github.com/Emiliyana",
+                team: "E"
+            },
+            {
+                name: "Ange Laure Temzeung Kouemo",
+                link: "https://github.com/AngeKouemo",
+                team: "E"
             }
         ].filter((member) => {
             return member.team.split('').map((teamID) => {
