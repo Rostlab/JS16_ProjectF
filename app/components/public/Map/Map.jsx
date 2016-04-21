@@ -13,7 +13,7 @@ export default class Map extends Component {
         <Header />
         <MapComp
           pagex={this.props.location.pathname}
-          character={this.props.location.query.character}
+          character={this.props.location.query.character || []}
           begintimeline={this.props.location.query.begin_time_line}
           endtimeline={this.props.location.query.end_time_line}/>
       </div>
