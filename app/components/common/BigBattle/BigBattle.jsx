@@ -39,7 +39,6 @@ export default class BigBattle extends Component {
               </Link>
               <img className="antagonistTombstone" src={tombstone} />
               <p className="antagonistTombstonePlod">{parseInt(this.props.plod1)}%</p>
-              <p className="copyRight">© 2016 Home Box Office, Inc. / Sky All rights reserved.</p>
             </div>
           </Col>
           <Col xs={6}>
@@ -49,7 +48,6 @@ export default class BigBattle extends Component {
               </Link>
               <img className="antagonistTombstone" src={tombstone} />
               <p className="antagonistTombstonePlod">{parseInt(this.props.plod2)}%</p>
-              <p className="copyRight">© 2016 Home Box Office, Inc. / Sky All rights reserved.</p>
             </div>
           </Col>
         </Row>
