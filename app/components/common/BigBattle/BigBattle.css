@@ -35,7 +35,7 @@
     height: 150px;
     position: absolute;
     z-index: 1;
-    bottom: 0;
+    bottom: 12px;
     right: -5px;
 }
 .antagonistTombstonePlod {
@@ -48,4 +48,20 @@
     right: 25px;
     z-index: 2;
     color: black;
+}
+
+.copyRight {
+    font-family: 'Lato', sans-serif;
+    font-size: 8px;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    z-index: 2;
+    color: white;
+}
+@media (max-width: 400px) {
+    .antagonistTombstone {
+        bottom: 30px;
+    }
 }
