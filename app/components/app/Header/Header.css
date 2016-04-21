@@ -53,6 +53,9 @@ header {
 
 /*FIXES HEADER WIDTH FOR SMALL SCREENS*/
 @media (max-width: 992px) {
+    .navbar-brand {
+        font-size: 15px;
+    }
     .navbar-header {
         float: none;
     }
