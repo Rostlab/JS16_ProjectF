@@ -99,4 +99,7 @@
 		top: -50px;
 		right: 10px;
 	}
+	.row.character-intro {
+		min-height: 100px;
+	}
 }
