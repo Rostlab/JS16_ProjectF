@@ -71,9 +71,11 @@ export default class BigBattle extends Component {
         <Row className="big-battle-info">
           <h3 className="center">Twitter Sentiments</h3>
           <Col xs={12} md={6}>
+            <Link to={'/characters/' + this.props.name1}><h4 className="big-battle-name">{this.props.name1}</h4></Link>
             <svg id="chart1" width="100%" height="400"></svg>
           </Col>
           <Col xs={12} md={6}>
+            <Link to={'/characters/' + this.props.name2}><h4 className="big-battle-name">{this.props.name2}</h4></Link>
             <svg id="chart2" width="100%" height="400"></svg>
           </Col>
         </Row>
