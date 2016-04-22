@@ -89,3 +89,21 @@ header {
         display:block !important;
     }
 }
+
+.navbar-tum-top {
+    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 20px;
+    filter: grayscale(1);
+}
+
+.TUMLogo {
+    margin-top: 1px;
+    height: 16px;
+    float: right;
+    margin: 5px;
+}
+
+.TUMLogoWritten {
+    margin-left: 5px;
+}
