@@ -15,11 +15,11 @@ export default class Header extends Component {
         });
         return (
             <header>
+              <div className="navbar-tum-top">
+                <img className="TUMLogoWritten" src={TUMLogoWritten}></img>
+                <img className="TUMLogo" src={TUMLogo}></img>
+              </div>
                 <Navbar inverse>
-                    <div className="navbar-tum-top">
-                      <img className="TUMLogoWritten" src={TUMLogoWritten}></img>
-                      <img className="TUMLogo" src={TUMLogo}></img>
-                    </div>
                     <Navbar.Header>
                         <Navbar.Brand>
                             <IndexLinkContainer to={{ pathname: '/'}}>
