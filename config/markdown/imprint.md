@@ -18,4 +18,4 @@ Arcisstr. 19
 E-Mail: [gyachdav@rostlab.org](mailto:gyachdav@rostlab.org)
 
 ## Disclaimer
-Our site contains links to external websites, over which we have no control. Therefore we can not accept any responsibility for their content.The provider or operator is always responsible for the content of linked pages. The linked sites were checked at the time of linking for possible legal violations. Illegal contents were at the time of linking. A permanent control of the linked pages is unreasonable without concrete evidence of a violation. Upon notification of violations, we will immediately remove such links.
+Despite careful content control we assume no liability for the content of external links. For the corresponding content of linked pages, their administrators are responsible. Especially marked contributions in the discussion areas represent the opinion of the author. For the contents of the articles, the authors are solely responsible.
