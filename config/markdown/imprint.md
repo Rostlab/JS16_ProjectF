@@ -5,7 +5,13 @@ Arcisstraße 21
 80333 München  
 Telefon: +49 89 289-01
 
-#### Content responsible
+### Authorised representative:
+The Technische Universität München is a public body. It is legally represented by the President, Prof. Dr. Dr. H. C. mult. Wolfgang A. Herrmann.
+
+#### Supervisory authority:
+Bavarian Ministry of Education and Culture, Science and Art
+
+#### Content responsibility:
 Dr. Guy Yachdav
 Arcisstr. 19
 80333 München
