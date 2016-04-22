@@ -91,12 +91,13 @@ header {
 }
 
 .navbar-tum-top {
-    background-color: white;
+    height: 20px;
+    filter: grayscale(1);
 }
 
 .TUMLogo {
     margin-top: 1px;
-    height: 20px;
+    height: 16px;
     float: right;
-    margin: 0;
+    margin: 5px;
 }
