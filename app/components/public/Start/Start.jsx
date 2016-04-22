@@ -1,6 +1,6 @@
 import React from 'react';
 let {Component} = React;
-import { Row,Col, Grid } from 'react-bootstrap';
+import { Row,Col } from 'react-bootstrap';
 import { Link } from 'react-router';
 import AntagonistsComp from '../../common/AntagonistsComp/AntagonistsComp.jsx';
 import './Start.css';
@@ -10,11 +10,12 @@ import jonSnow from './images/season-6-tease.jpg';
 export default class Start extends Component {
   render() {
     return (
-      <Grid>
         <div className="home">
           <Row fluid>
             <Col>
-              <div className="header-image" />
+              <div className="header-image">
+                <p className="header-attribution">© 2016 Home Box Office, Inc. / Sky All rights reserved.</p>
+              </div>
             </Col>
           </Row>
 
@@ -91,7 +92,6 @@ export default class Start extends Component {
             </Col>
           </Row>
         </div>
-      </Grid>
     );
   }
 }
