@@ -11,7 +11,7 @@ export default class Statistics extends Component {
   }
   render() {
     return (
-      <Grid>
+      <Grid className="statistics-wrapper">
       <Row>
         <Col md={8} mdPush={2}>
           <h1>Life, death and statistics in Westeros</h1>
