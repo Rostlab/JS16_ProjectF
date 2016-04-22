@@ -1,8 +1,15 @@
 ## Imprint
 #### Address  
-TUM Fakultät für Informatik  
-Boltzmannstraße 3  
-85748 Garching  
+Technische Universität München  
+Arcisstraße 21  
+80333 München  
+Telefon: +49 89 289-01
+
+#### Content responsible
+Dr. Guy Yachdav
+Arcisstr. 19
+80333 München
+E-Mail: [gyachdav@rostlab.org](mailto:gyachdav@rostlab.org)
 
 ## Disclaimer
 Our site contains links to external websites, over which we have no control. Therefore we can not accept any responsibility for their content.The provider or operator is always responsible for the content of linked pages. The linked sites were checked at the time of linking for possible legal violations. Illegal contents were at the time of linking. A permanent control of the linked pages is unreasonable without concrete evidence of a violation. Upon notification of violations, we will immediately remove such links.
