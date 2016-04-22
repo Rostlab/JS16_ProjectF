@@ -41,7 +41,7 @@
     height: 150px;
     position: absolute;
     z-index: 1;
-    bottom: 12px;
+    bottom: 0;
     right: -5px;
 }
 .antagonistTombstonePlod {
@@ -72,5 +72,14 @@
     }
     .big-battle-name {
         display: block;
+    }
+}
+@media (max-width: 768px) {
+    .antagonistTombstone {
+        height: 150px;
+        position: absolute;
+        z-index: 1;
+        bottom: 12px;
+        right: -5px;
     }
 }
