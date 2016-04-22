@@ -81,7 +81,7 @@ class TeamMemberListing extends Component {
         return [
             {
                 name: "Georgi Anastasov",
-                link: "https://github.com/jorjo1",
+                link: "https://www.linkedin.com/in/georgi-anastasov-65124b11a",
                 team: "F"
             },
             {
