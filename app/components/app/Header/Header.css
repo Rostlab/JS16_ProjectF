@@ -89,3 +89,14 @@ header {
         display:block !important;
     }
 }
+
+.navbar-tum-top {
+    background-color: white;
+}
+
+.TUMLogo {
+    margin-top: 1px;
+    height: 20px;
+    float: right;
+    margin: 0;
+}
