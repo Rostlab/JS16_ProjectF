@@ -92,20 +92,19 @@ header {
 
 .navbar-tum-top {
     background-color: #353535;
-    height: 100px;
     width: 100%;
     position: relative;
     filter: grayscale(1);
 }
 
 .TUMLogo {
-    height: 50px;
+    height: 20px;
     float: right;
     margin: 10px;
-    margin-top: 40px;
 }
 
 .TUMLogoWritten {
-    margin-top: 78px;
+    margin-top: 20px;
     max-height: 25px;
+    padding-left: 5px;
 }
