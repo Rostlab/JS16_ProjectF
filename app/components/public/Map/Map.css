@@ -1,6 +1,6 @@
 .mapPage .map-wrapper {
   position: absolute;
-  top: 123px;
+  top: 92px;
   bottom: 0;
   width: 100%;
   height: auto;
@@ -15,10 +15,4 @@
 }
 .gotmap-modal a{
   color: #5A180C !important;
-}
-
-@media (max-width: 769px) {
-  .mapPage .map-wrapper {
-    top: 90px;
-  }
 }
