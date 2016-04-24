@@ -1,6 +1,6 @@
 header {
     transition: all .5s;
-    position: absolute;
+    position: relative;
     top: 0;
     width: 100%;
     z-index: 100;
@@ -91,10 +91,11 @@ header {
 }
 
 .navbar-tum-top {
-    background-color: white;
+    background-color: #353535;
     height: 100px;
     width: 100%;
     position: relative;
+    filter: grayscale(1);
 }
 
 .TUMLogo {
@@ -105,6 +106,6 @@ header {
 }
 
 .TUMLogoWritten {
-    margin-top: 73px;
-    height: 15px;
+    margin-top: 78px;
+    max-height: 25px;
 }
