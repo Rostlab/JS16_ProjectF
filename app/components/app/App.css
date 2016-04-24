@@ -173,13 +173,12 @@ td, th {
     height: 550px;
     background-image: url('header.jpg');
     background-size: cover;
-    margin: -50px 0 0 0;
+    margin: -122px 0 0 0;
     background-position: 50% 50%;
     padding: 0;
     position: relative;
 }
 .main-container {
-    padding-top: 50px!important;
     padding-bottom: 50px;
 }
 .container-fluid {

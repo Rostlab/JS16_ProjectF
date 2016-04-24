@@ -1,8 +1,10 @@
 import React from 'react';
 import 'jquery';
-import { Navbar, Nav, Button } from 'react-bootstrap';
+import { Navbar, Nav, Button, Grid, Row, Col} from 'react-bootstrap';
 import { IndexLinkContainer, LinkContainer} from 'react-router-bootstrap';
 import "./Header.css";
+import TUMLogoWritten from "./tum-word-mark.svg";
+import TUMLogo from "./tum-logo.svg";
 
 let {Component} = React;
 
@@ -13,6 +15,16 @@ export default class Header extends Component {
         });
         return (
             <header>
+                <div className="navbar-tum-top">
+                  <Grid>
+                    <Row>
+                      <Col>
+                          <img className="TUMLogoWritten" src={TUMLogoWritten} />
+                          <img className="TUMLogo" src={TUMLogo} />
+                      </Col>
+                    </Row>
+                  </Grid>
+                </div>
                 <Navbar inverse>
                     <Navbar.Header>
                         <Navbar.Brand>

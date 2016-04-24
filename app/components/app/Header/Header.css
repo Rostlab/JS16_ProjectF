@@ -1,6 +1,6 @@
 header {
     transition: all .5s;
-    position: absolute;
+    position: relative;
     top: 0;
     width: 100%;
     z-index: 100;
@@ -88,4 +88,24 @@ header {
     .collapse.in{
         display:block !important;
     }
+}
+
+.navbar-tum-top {
+    background-color: #353535;
+    height: 100px;
+    width: 100%;
+    position: relative;
+    filter: grayscale(1);
+}
+
+.TUMLogo {
+    height: 50px;
+    float: right;
+    margin: 10px;
+    margin-top: 40px;
+}
+
+.TUMLogoWritten {
+    margin-top: 78px;
+    max-height: 25px;
 }
