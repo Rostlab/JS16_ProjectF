@@ -1,6 +1,7 @@
 .mapPage .map-wrapper {
   position: absolute;
-  top: 92px;
+  /*top: 92px;*/
+  top: 142px;
   bottom: 0;
   width: 100%;
   height: auto;

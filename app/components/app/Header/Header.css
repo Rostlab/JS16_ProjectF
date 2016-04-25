@@ -108,3 +108,12 @@ header {
     max-height: 25px;
     padding-left: 5px;
 }
+.navbar-warning-top {
+    font-family: normal;
+    background-color: #853721;
+    text-align: center;
+    min-height: 50px;
+}
+.navbar-warning-top p {
+    display: inline;
+}

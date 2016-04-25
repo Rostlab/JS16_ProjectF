@@ -25,6 +25,12 @@ export default class Header extends Component {
                     </Row>
                   </Grid>
                 </div>
+                <div className="navbar-warning-top">
+                    <p><strong>Due to heavy traffic we are currently not showing predictions properly.</strong>
+                        <br />Our
+                        investigation shows that a hacker called GRRM might be behind it, trying to
+                        kill our algorithm</p>
+                </div>
                 <Navbar inverse>
                     <Navbar.Header>
                         <Navbar.Brand>
