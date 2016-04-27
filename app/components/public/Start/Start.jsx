@@ -30,7 +30,7 @@ export default class Start extends Component {
               <Link to={"/episodes-recap"}><h1>Season 6 Epsiode 1 Recap</h1></Link>
               <p className="lead">Who died? Who survived? Who died and will survive? And, who did we warn you is likely to get chopped? <Link to={"/episodes-recap"}>Read more</Link></p>
             </Col>
-            <Col xs={4} xsOffset={0} sm={3} smOffset={1}>
+            <Col xs={4} xsOffset={0} sm={2} smOffset={2}>
               <Link to={"/episodes-recap"}><img src={melisandre} className="start-logo" /></Link>
             </Col>
           </Row>
