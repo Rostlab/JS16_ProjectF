@@ -47,21 +47,16 @@ export default class Credits extends Component {
             <p><img className="img-full-width" src="images/image00.jpg"/></p>
           <p><span>Melisandre the witch. Slightly less seductive than last season. Possibly, related to the old woman from </span><span
          >The Shining</span><span>.</span></p>
-  <p><span></span></p>
-  <p><span>P.S. </span></p>
-  <p><span>We gotta admit our first miss as well - </span><span><a
-                                                                                         href="https://www.google.com/url?q=https://www.got.show/characters/Areo%2520Hotah&amp;sa=D&amp;ust=1461707331011000&amp;usg=AFQjCNHrqVW_038fxtV7BT1djFAA4OT9BQ">Areo
-                                                                                               Hotah</a></span><span>, Doran&rsquo;s faithful body guard was taken out. Poor </span><span
-      >Areo </span><span>didn&#39;t know what was coming, he was probably happy to see that his </span><span
-      >PL</span><span>o</span><span>D was at 36% </span><span>and so he felt kinda safe. Well, Areo, you know what they say about being complacent...</span>
-    </p>
-      <p><img className="img-full-width" src="images/image01.png"/></p>
-        <p><span>Twitter Sentiment analysis for Areo Hotah during last night&rsquo;s episode - most tweets were pretty negative so it seems like fans didn&rsquo;t appreciate seeing Areo taken away from us.</span>
-      </p>
-      <p>FB post: check this out, seasons 6 episode 1 is behind us and we can report that our algorithm was spot on! Read about it in our episode recap [link].
-        </p>
-      <p>Twitter post: check this out, seasons 6 episode 1 is behind us and we can report that our algorithm was spot on! Read about it in our episode recap [link to this blog entry].</p>
-
+            <p></p>
+            <p>P.S.</p>
+            <p>We gotta admit our first miss as well - <a
+            href="https://www.google.com/url?q=https://www.got.show/characters/Areo%2520Hotah&amp;sa=D&amp;ust=1461707331011000&amp;usg=AFQjCNHrqVW_038fxtV7BT1djFAA4OT9BQ">Areo
+                 Hotah</a>, Doran&rsquo;s faithful body guard was taken out. Poor Areo didn&#39;t know what was coming, he was probably happy to see that his
+            PLoD was at 36% and so he felt kinda safe. Well, Areo, you know what they say about being complacent...
+            </p>
+            <p><img className="img-full-width" src="images/image01.png"/></p>
+            <p><span>Twitter Sentiment analysis for Areo Hotah during last night&rsquo;s episode - most tweets were pretty negative so it seems like fans didn&rsquo;t appreciate seeing Areo taken away from us.</span>
+            </p>
           </Col>
         </Row>
       </Grid>
