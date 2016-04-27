@@ -6,6 +6,7 @@ import AntagonistsComp from '../../common/AntagonistsComp/AntagonistsComp.jsx';
 import './Start.css';
 import logo from './gotstatslogosmall.jpg';
 import jonSnow from './images/season-6-tease.jpg';
+import melisandre from './images/Melisandre.jpg';
 
 export default class Start extends Component {
   render() {
@@ -24,6 +25,16 @@ export default class Start extends Component {
             </Col>
           </Row>
 
+      <Row className="stats-home">
+            <Col xs={10} xsOffset={1} sm={6} smOffset={1}>
+              <Link to={"/episode-recap"}><h1>Season 6 Epsiode 1 Recap</h1></Link>
+              <p className="lead">Who died? Who survived? Who died and will survive? And, who did we warn you is likly to get chopped? <Link to={"/episode-recap"}>Read more</Link></p>
+            </Col>
+            <Col xs={10} xsOffset={1} sm={3} smOffset={1}>
+              <Link to={"/episode-recap"}><img src={melisandre} className="start-logo" /></Link>
+            </Col>
+          </Row>
+          <hr></hr>
           <Row className="stats-home">
             <Col xs={10} xsOffset={1} sm={3} smOffset={1}>
               <Link to={"/statistics"}><img src={logo} className="start-logo" /></Link>
