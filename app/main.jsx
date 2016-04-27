@@ -44,7 +44,7 @@ ReactDOM.render(
       <Route path="/imprint" component={Imprint}/>
       <Route path="/about" component={About} />
       <Route path="/credits" component={Credits} />
-      <Route path="/episodes-recap" component={EpisodesRecap}/>
+      <Route path="/episode-recap" component={EpisodesRecap}/>
       <Route path="/contribute" component={Contribute} />
       <Route path="/privacy" component={PrivacyPolicy}/>
       <Route path="/machine-learning-algorithm-predicts-death-game-of-thrones" component={PlodDescription}/>
