@@ -20,6 +20,7 @@ import Statistics from './components/public/Statistics/Statistics.jsx';
 import Attributions from './components/public/Attributions/Attributions.jsx';
 import Contribute from './components/public/Contribute/Contribute.jsx';
 import Credits from './components/public/Credits/Credits.jsx';
+import EpisodesRecap from './components/public/EpisodesRecap/EpisodesRecap.jsx';
 import Characters from './components/public/Characters/Characters.jsx';
 import CharacterListPage from 'components/public/CharacterListPage/CharacterListPage.jsx';
 import Site404 from './components/public/404/404.jsx';
@@ -43,6 +44,7 @@ ReactDOM.render(
       <Route path="/imprint" component={Imprint}/>
       <Route path="/about" component={About} />
       <Route path="/credits" component={Credits} />
+      <Route path="/episodes-recap" component={EpisodesRecap}/>
       <Route path="/contribute" component={Contribute} />
       <Route path="/privacy" component={PrivacyPolicy}/>
       <Route path="/machine-learning-algorithm-predicts-death-game-of-thrones" component={PlodDescription}/>
