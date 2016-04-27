@@ -27,11 +27,11 @@ export default class Start extends Component {
 
       <Row className="stats-home">
             <Col xs={8} xsOffset={0} sm={6} smOffset={1}>
-              <Link to={"/episode-recap"}><h1>Season 6 Epsiode 1 Recap</h1></Link>
-              <p className="lead">Who died? Who survived? Who died and will survive? And, who did we warn you is likely to get chopped? <Link to={"/episode-recap"}>Read more</Link></p>
+              <Link to={"/episodes-recap"}><h1>Season 6 Epsiode 1 Recap</h1></Link>
+              <p className="lead">Who died? Who survived? Who died and will survive? And, who did we warn you is likely to get chopped? <Link to={"/episodes-recap"}>Read more</Link></p>
             </Col>
             <Col xs={4} xsOffset={0} sm={3} smOffset={1}>
-              <Link to={"/episode-recap"}><img src={melisandre} className="start-logo" /></Link>
+              <Link to={"/episodes-recap"}><img src={melisandre} className="start-logo" /></Link>
             </Col>
           </Row>
           <hr></hr>
