@@ -51,6 +51,17 @@ export default class Header extends Component {
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
+                    <Row>
+                        <Col className="campaign">
+                        <Grid>
+                            <Row>
+                            <Col>
+                            Help us get to Morpheus Cup in Luxembourg! <a href="https://www.gofundme.com/2wjvf5q4"><Button className="campaign-button">Check out our campaign</Button></a>
+                            </Col>
+                            </Row>
+                            </Grid>
+                        </Col>
+                    </Row>
             </header>
         );
     }
