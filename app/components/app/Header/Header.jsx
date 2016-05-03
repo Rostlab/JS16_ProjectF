@@ -1,8 +1,10 @@
 import React from 'react';
 import 'jquery';
-import { Navbar, Nav, Button } from 'react-bootstrap';
+import { Navbar, Nav, Button, Grid, Row, Col} from 'react-bootstrap';
 import { IndexLinkContainer, LinkContainer} from 'react-router-bootstrap';
 import "./Header.css";
+import TUMLogoWritten from "./tum-word-mark.svg";
+import TUMLogo from "./tum-logo.svg";
 
 let {Component} = React;
 
@@ -13,6 +15,16 @@ export default class Header extends Component {
         });
         return (
             <header>
+                <div className="navbar-tum-top">
+                  <Grid>
+                    <Row>
+                      <Col>
+                          <img className="TUMLogoWritten" src={TUMLogoWritten} />
+                          <img className="TUMLogo" src={TUMLogo} />
+                      </Col>
+                    </Row>
+                  </Grid>
+                </div>
                 <Navbar inverse>
                     <Navbar.Header>
                         <Navbar.Brand>
@@ -39,6 +51,17 @@ export default class Header extends Component {
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
+                    <Row>
+                        <Col className="campaign">
+                        <Grid>
+                            <Row>
+                            <Col>
+                            Help us get to the Morpheus Cup and win in Luxembourg! <a href="https://www.gofundme.com/2wjvf5q4"><Button className="campaign-button">Check out our campaign</Button></a>
+                            </Col>
+                            </Row>
+                            </Grid>
+                        </Col>
+                    </Row>
             </header>
         );
     }

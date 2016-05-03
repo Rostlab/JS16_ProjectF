@@ -1,6 +1,6 @@
 header {
     transition: all .5s;
-    position: absolute;
+    position: relative;
     top: 0;
     width: 100%;
     z-index: 100;
@@ -11,7 +11,9 @@ header {
     position: absolute;
     bottom: 0;
 }
-
+.navbar {
+    margin-bottom: 0;
+}
 .navbar-inverse .navbar-nav > li > a,
 .navbar-brand {
     color: white;
@@ -31,7 +33,7 @@ header {
 
 .navbar-inverse {
     background-color: transparent;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 1);
     border: 0;
     border-radius: 0;
 }
@@ -51,8 +53,13 @@ header {
     transition: all .2s;
 }
 
+@media (max-width: 1024px) {
+    .navbar-brand {
+        font-size: 15px !important;
+    }
+}
 /*FIXES HEADER WIDTH FOR SMALL SCREENS*/
-@media (max-width: 992px) {
+@media (max-width: 768px) {
     .navbar-header {
         float: none;
     }
@@ -83,4 +90,36 @@ header {
     .collapse.in{
         display:block !important;
     }
+}
+
+.navbar-tum-top {
+    background-color: #353535;
+    width: 100%;
+    position: relative;
+    filter: grayscale(1);
+}
+
+.TUMLogo {
+    height: 20px;
+    float: right;
+    margin: 10px;
+}
+
+.TUMLogoWritten {
+    margin-top: 20px;
+    max-height: 25px;
+    padding-left: 5px;
+}
+
+.campaign {
+    min-height: 50px;
+    background: url(campaign.jpg) no-repeat;
+    background-size: cover;
+    line-height: 50px;
+    font-size: 20px;
+    padding: 0 50px;
+    text-align: center;
+}
+.campaign-button {
+    margin-left: 50px;
 }

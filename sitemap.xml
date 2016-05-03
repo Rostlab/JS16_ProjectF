@@ -46,12 +46,12 @@
     <url>
         <loc>https://got.show/characters/Aegon%20Frey%20(son%20of%20Aenys)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Aegon%20Frey%20(son%20of%20Stevron)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Aegon%20I%20Targaryen</loc>
@@ -91,12 +91,12 @@
     <url>
         <loc>https://got.show/characters/Aegon%20Targaryen%20(son%20of%20Jaehaerys%20I)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Aegon%20Targaryen%20(son%20of%20Rhaegar)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Aegor%20Rivers</loc>
@@ -776,7 +776,7 @@
     <url>
         <loc>https://got.show/characters/Baelon%20Targaryen%20(son%20of%20Viserys%20I)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Baelor%20Blacktyde</loc>
@@ -786,7 +786,7 @@
     <url>
         <loc>https://got.show/characters/Baelon%20Targaryen%20(son%20of%20Aerys)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Ballabar</loc>
@@ -811,7 +811,7 @@
     <url>
         <loc>https://got.show/characters/Baelor%20Targaryen%20(son%20of%20Daeron%20II)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Baelor%20I%20Targaryen</loc>
@@ -876,7 +876,7 @@
     <url>
         <loc>https://got.show/characters/Barth%20(brewer)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Barth</loc>
@@ -971,7 +971,7 @@
     <url>
         <loc>https://got.show/characters/Bellegere%20Otherys%20(Courtesan)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Bellonara%20Otherys</loc>
@@ -981,12 +981,12 @@
     <url>
         <loc>https://got.show/characters/Ben</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Ben%20(Big%20Belly)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Belwas</loc>
@@ -1036,7 +1036,7 @@
     <url>
         <loc>https://got.show/characters/Benjen%20Stark%20(Bitter)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Benfred%20Tallhart</loc>
@@ -1046,7 +1046,7 @@
     <url>
         <loc>https://got.show/characters/Benjen%20Stark%20(Sweet)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Bennard%20Brune</loc>
@@ -1126,7 +1126,7 @@
     <url>
         <loc>https://got.show/characters/Bethany%20(Blushing%20Bethany)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Beth%20Cassel</loc>
@@ -1286,12 +1286,12 @@
     <url>
         <loc>https://got.show/characters/Brandon%20Stark%20(Bad)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Brandon%20Stark%20(Burner)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Brandon%20Stark</loc>
@@ -1301,17 +1301,17 @@
     <url>
         <loc>https://got.show/characters/Brandon%20Stark%20(the%20daughterless)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Brandon%20Stark%20(son%20of%20Cregan)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Brandon%20Stark%20(Shipwright)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Branston%20Cuy</loc>
@@ -1336,7 +1336,7 @@
     <url>
         <loc>https://got.show/characters/Brea</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Brenett</loc>
@@ -1511,7 +1511,7 @@
     <url>
         <loc>https://got.show/characters/Cass</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Carrot</loc>
@@ -1656,7 +1656,7 @@
     <url>
         <loc>https://got.show/characters/Clarence%20Crabb%20(Short)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Clement</loc>
@@ -1751,7 +1751,7 @@
     <url>
         <loc>https://got.show/characters/Conn</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Conwy</loc>
@@ -1891,7 +1891,7 @@
     <url>
         <loc>https://got.show/characters/Daella%20Targaryen%20(daughter%20of%20Jaehaerys%20I)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Daeryssa</loc>
@@ -1926,7 +1926,7 @@
     <url>
         <loc>https://got.show/characters/Daenerys%20Targaryen%20(daughter%20of%20Aegon%20IV)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Daeron%20I%20Targaryen</loc>
@@ -1951,7 +1951,7 @@
     <url>
         <loc>https://got.show/characters/Daeron%20Targaryen%20(son%20of%20Viserys%20I)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Daeron%20II%20Targaryen</loc>
@@ -1961,7 +1961,7 @@
     <url>
         <loc>https://got.show/characters/Daeron%20Targaryen%20(son%20of%20Maekar%20I)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Dagmer</loc>
@@ -1991,7 +1991,7 @@
     <url>
         <loc>https://got.show/characters/Dake%20(Guard)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Dagos%20Manwoody</loc>
@@ -2046,17 +2046,17 @@
     <url>
         <loc>https://got.show/characters/Damon%20Lannister%20(lord)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Dan</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Damon%20Lannister%20(son%20of%20Jason)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Dancy</loc>
@@ -2436,7 +2436,7 @@
     <url>
         <loc>https://got.show/characters/Durran</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Dunstan%20Drumm</loc>
@@ -2706,7 +2706,7 @@
     <url>
         <loc>https://got.show/characters/Emma</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Emmon%20Cuy</loc>
@@ -2816,7 +2816,7 @@
     <url>
         <loc>https://got.show/characters/Eustace%20(Braavos)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Eustace%20Brune</loc>
@@ -3026,12 +3026,12 @@
     <url>
         <loc>https://got.show/characters/Garin%20(Prince)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Garin%20(Orphans)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Garizon</loc>
@@ -3071,7 +3071,7 @@
     <url>
         <loc>https://got.show/characters/Garth%20Gardener%20(Greenhand)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Garrett%20Flowers</loc>
@@ -3346,7 +3346,7 @@
     <url>
         <loc>https://got.show/characters/Grazdan%20(Great)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Grazdan%20mo%20Eraz</loc>
@@ -3481,7 +3481,7 @@
     <url>
         <loc>https://got.show/characters/Gurn</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Guthor%20Grimm</loc>
@@ -3606,7 +3606,7 @@
     <url>
         <loc>https://got.show/characters/Hal%20(Hog)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Haegon%20Blackfyre</loc>
@@ -3651,7 +3651,7 @@
     <url>
         <loc>https://got.show/characters/Hareth%20(Maester)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Harbert%20Paege</loc>
@@ -3901,7 +3901,7 @@
     <url>
         <loc>https://got.show/characters/Henly%20(Maester)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Helaena%20Targaryen</loc>
@@ -3926,7 +3926,7 @@
     <url>
         <loc>https://got.show/characters/Hibald</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Hilmar%20Drumm</loc>
@@ -3966,7 +3966,7 @@
     <url>
         <loc>https://got.show/characters/Hoke</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Holger</loc>
@@ -4206,7 +4206,7 @@
     <url>
         <loc>https://got.show/characters/Jaehaerys%20Targaryen%20(son%20of%20Aegon%20II)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Jaehaera%20Targaryen</loc>
@@ -4346,7 +4346,7 @@
     <url>
         <loc>https://got.show/characters/Jenny%20(Oldstones)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Jeren</loc>
@@ -4416,7 +4416,7 @@
     <url>
         <loc>https://got.show/characters/Jeyne%20Westerling%20(wife%20of%20Maegor%20I)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Jeyne%20Lydden</loc>
@@ -4596,12 +4596,12 @@
     <url>
         <loc>https://got.show/characters/Jon%20Umber%20(Smalljon)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Jon%20Umber%20(Greatjon)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Jon%20Wylde</loc>
@@ -4906,7 +4906,7 @@
     <url>
         <loc>https://got.show/characters/Kyle%20(brotherhood)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Kyle</loc>
@@ -5051,7 +5051,7 @@
     <url>
         <loc>https://got.show/characters/Lem</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Lenn</loc>
@@ -5116,7 +5116,7 @@
     <url>
         <loc>https://got.show/characters/Leo%20Tyrell%20(son%20of%20Victor)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Lester%20Morrigen</loc>
@@ -5126,7 +5126,7 @@
     <url>
         <loc>https://got.show/characters/Lester</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Leslyn%20Haigh</loc>
@@ -5136,7 +5136,7 @@
     <url>
         <loc>https://got.show/characters/Lew%20(guard)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Lewis%20Lanster</loc>
@@ -5191,7 +5191,7 @@
     <url>
         <loc>https://got.show/characters/Lister</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Liane%20Vance</loc>
@@ -5391,7 +5391,7 @@
     <url>
         <loc>https://got.show/characters/Lum</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Lucion%20Lannister</loc>
@@ -5421,12 +5421,12 @@
     <url>
         <loc>https://got.show/characters/Luthor%20Tyrell%20(son%20of%20Moryn)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Luthor%20Tyrell%20(son%20of%20Theodore)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Lyessa%20Flint</loc>
@@ -5521,7 +5521,7 @@
     <url>
         <loc>https://got.show/characters/Lyonel%20Tyrell%20(lord)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Lyonel%20Strong</loc>
@@ -5546,7 +5546,7 @@
     <url>
         <loc>https://got.show/characters/Lyonel%20Tyrell%20(son%20of%20Leo)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Maddy</loc>
@@ -5591,7 +5591,7 @@
     <url>
         <loc>https://got.show/characters/Maerie%20(Goodwife)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Maelor%20Targaryen</loc>
@@ -5616,7 +5616,7 @@
     <url>
         <loc>https://got.show/characters/Maerie%20(Whore)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Mago</loc>
@@ -5656,7 +5656,7 @@
     <url>
         <loc>https://got.show/characters/Mallor%20(Knight)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Manfred%20Lothston</loc>
@@ -5706,7 +5706,7 @@
     <url>
         <loc>https://got.show/characters/Marei</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Margot%20Lannister</loc>
@@ -6076,7 +6076,7 @@
     <url>
         <loc>https://got.show/characters/Mero</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Merlon%20Crakehall</loc>
@@ -6281,7 +6281,7 @@
     <url>
         <loc>https://got.show/characters/Mors%20Martell%20(brother%20of%20Doran)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Mors%20Umber</loc>
@@ -6311,12 +6311,12 @@
     <url>
         <loc>https://got.show/characters/Mudge%20(miller)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Mudge%20(swineherd)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Mullin</loc>
@@ -6351,7 +6351,7 @@
     <url>
         <loc>https://got.show/characters/Murch%20(Winterfell)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Murenmure</loc>
@@ -6396,7 +6396,7 @@
     <url>
         <loc>https://got.show/characters/Myles%20(squire)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Myles%20Mooton</loc>
@@ -6471,12 +6471,12 @@
     <url>
         <loc>https://got.show/characters/Nan</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Ned%20(ferryman)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Narbo</loc>
@@ -6491,7 +6491,7 @@
     <url>
         <loc>https://got.show/characters/Nella</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Nettles</loc>
@@ -6606,7 +6606,7 @@
     <url>
         <loc>https://got.show/characters/Ogo</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Old%20Crackbones</loc>
@@ -6701,7 +6701,7 @@
     <url>
         <loc>https://got.show/characters/Orell</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Omer%20Florent</loc>
@@ -6716,7 +6716,7 @@
     <url>
         <loc>https://got.show/characters/Ormond%20(knight)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Ormond%20Osgrey</loc>
@@ -6836,7 +6836,7 @@
     <url>
         <loc>https://got.show/characters/Othor</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Otter%20Gimpknee</loc>
@@ -6851,12 +6851,12 @@
     <url>
         <loc>https://got.show/characters/Owen%20(brother%20of%20Meribald)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Owen</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Owen%20Inchfield</loc>
@@ -6896,12 +6896,12 @@
     <url>
         <loc>https://got.show/characters/Pate%20(Lancewood)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Pate%20(Mory)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Pate%20(King's%20Landing)</loc>
@@ -6921,12 +6921,12 @@
     <url>
         <loc>https://got.show/characters/Pate%20(Old)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Pate%20(Pinchbottom)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Pate%20(Night's%20Watch)</loc>
@@ -6936,12 +6936,12 @@
     <url>
         <loc>https://got.show/characters/Pate%20(Shermer's%20Grove)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Pate%20(Standfast)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Pearse%20Caron</loc>
@@ -6951,7 +6951,7 @@
     <url>
         <loc>https://got.show/characters/Penny</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Patrek%20Mallister</loc>
@@ -7356,12 +7356,12 @@
     <url>
         <loc>https://got.show/characters/Ralf%20(Limper)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Ralf%20(Shepherd)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Ralf%20Kenning</loc>
@@ -7376,7 +7376,7 @@
     <url>
         <loc>https://got.show/characters/Randa</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Ralf%20Stonehouse</loc>
@@ -7386,7 +7386,7 @@
     <url>
         <loc>https://got.show/characters/Rast</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Rat%20Cook</loc>
@@ -7496,7 +7496,7 @@
     <url>
         <loc>https://got.show/characters/Redwyn</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Regenard%20Estren</loc>
@@ -7581,12 +7581,12 @@
     <url>
         <loc>https://got.show/characters/Rhaena%20Targaryen%20(daughter%20of%20Daemon)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Rhaena%20Targaryen%20(daughter%20of%20Aegon%20III)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Rhaenys%20Targaryen</loc>
@@ -7596,12 +7596,12 @@
     <url>
         <loc>https://got.show/characters/Rhaenys%20Targaryen%20(daughter%20of%20Rhaegar)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Rhaenys%20Targaryen%20(daughter%20of%20Aemon)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Rhea%20Florent</loc>
@@ -7651,7 +7651,7 @@
     <url>
         <loc>https://got.show/characters/Rickard%20Stark%20(King)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Rickard%20Ryswell</loc>
@@ -7681,7 +7681,7 @@
     <url>
         <loc>https://got.show/characters/Rob</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Rickard%20Stark</loc>
@@ -7721,7 +7721,7 @@
     <url>
         <loc>https://got.show/characters/Robert%20Brax%20(son%20of%20Flement)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Robert%20Arryn</loc>
@@ -7751,7 +7751,7 @@
     <url>
         <loc>https://got.show/characters/Robin</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Robert%20Baratheon</loc>
@@ -7781,7 +7781,7 @@
     <url>
         <loc>https://got.show/characters/Robert%20Frey%20(son%20of%20Raymund)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Robin%20Moreland</loc>
@@ -7861,7 +7861,7 @@
     <url>
         <loc>https://got.show/characters/Rodrik%20Stark%20(son%20of%20Beron)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Roggo</loc>
@@ -7881,7 +7881,7 @@
     <url>
         <loc>https://got.show/characters/Roland%20Crakehall%20(Lord)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Rolder</loc>
@@ -7891,7 +7891,7 @@
     <url>
         <loc>https://got.show/characters/Rolfe</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Roland%20Crakehall%20(Kingsguard)</loc>
@@ -7986,7 +7986,7 @@
     <url>
         <loc>https://got.show/characters/Roone%20(maester)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Roro%20Uhoris</loc>
@@ -8051,7 +8051,7 @@
     <url>
         <loc>https://got.show/characters/Rowan</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Rufus%20Leek</loc>
@@ -8081,7 +8081,7 @@
     <url>
         <loc>https://got.show/characters/Rus</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Rusty%20Flowers</loc>
@@ -8126,7 +8126,7 @@
     <url>
         <loc>https://got.show/characters/Ryk</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Ryella%20Frey</loc>
@@ -8446,7 +8446,7 @@
     <url>
         <loc>https://got.show/characters/Skinner</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Skahaz%20mo%20Kandaq</loc>
@@ -8781,7 +8781,7 @@
     <url>
         <loc>https://got.show/characters/Tansy%20(orphan)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Tanton%20Fossoway</loc>
@@ -8936,7 +8936,7 @@
     <url>
         <loc>https://got.show/characters/Timett%20(father)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Timon</loc>
@@ -9301,12 +9301,12 @@
     <url>
         <loc>https://got.show/characters/Uller</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Tywin%20Frey%20(son%20of%20Raymund)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Ulrick%20Dayne</loc>
@@ -9321,7 +9321,7 @@
     <url>
         <loc>https://got.show/characters/Umar</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Tywin%20Lannister</loc>
@@ -9406,7 +9406,7 @@
     <url>
         <loc>https://got.show/characters/Utt</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Vaellyn</loc>
@@ -9546,12 +9546,12 @@
     <url>
         <loc>https://got.show/characters/Walda%20Frey%20(daughter%20of%20Edwyn)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Walda%20Frey%20(daughter%20of%20Lothar)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Walda%20Frey%20(daughter%20of%20Walton)</loc>
@@ -9566,17 +9566,17 @@
     <url>
         <loc>https://got.show/characters/Walda%20Rivers%20(daughter%20of%20Aemon)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Walda%20Frey%20(daughter%20of%20Rhaegar)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Walda%20Frey%20(daughter%20of%20Merrett)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Walder%20Brax</loc>
@@ -9586,22 +9586,22 @@
     <url>
         <loc>https://got.show/characters/Walder%20Frey%20(son%20of%20Jammos)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Walder%20Frey%20(son%20of%20Emmon)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Walder%20Frey%20(son%20of%20Ryman)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Walder%20Frey%20(son%20of%20Merrett)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Walder%20Goodbrook</loc>
@@ -9651,7 +9651,7 @@
     <url>
         <loc>https://got.show/characters/Walton</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Walton%20Frey</loc>
@@ -9676,7 +9676,7 @@
     <url>
         <loc>https://got.show/characters/Wat%20(orphan)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Blue%20Bard</loc>
@@ -9686,7 +9686,7 @@
     <url>
         <loc>https://got.show/characters/Wat%20(Barleycorn)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Walder%20Frey</loc>
@@ -9696,22 +9696,22 @@
     <url>
         <loc>https://got.show/characters/Wat%20(sailor)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Wat%20(Standfast)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Wat%20(Wet)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Wat%20(Whitesmile)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Watt</loc>
@@ -9721,7 +9721,7 @@
     <url>
         <loc>https://got.show/characters/Wate</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Watty</loc>
@@ -9731,7 +9731,7 @@
     <url>
         <loc>https://got.show/characters/Wayn%20(guard)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Weasel</loc>
@@ -9811,42 +9811,42 @@
     <url>
         <loc>https://got.show/characters/Will%20(Fletcher)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Will</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Will%20(orphan)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Will%20(squire)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Will%20(Hookface)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Will%20(Standfast)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Will%20(Stork)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Will%20(Treb)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Will%20Humble</loc>
@@ -9946,7 +9946,7 @@
     <url>
         <loc>https://got.show/characters/Willum</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Woth</loc>
@@ -9966,7 +9966,7 @@
     <url>
         <loc>https://got.show/characters/Wyl%20(guard)</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Wyl%20the%20Whittler</loc>
@@ -10046,7 +10046,7 @@
     <url>
         <loc>https://got.show/characters/Yna</loc>
         <changefreq>weekly</changefreq>
-        <priority>NaN</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://got.show/characters/Yellow%20Dick</loc>

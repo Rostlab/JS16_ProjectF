@@ -1,8 +1,8 @@
 .header-ranking {
-    height: 550px;
+    height: 570px;
     background-image: url('ranking.jpg');
     background-size: cover;
-    margin: -50px 0 0 0;
+    margin: -20px 0 0 0;
     background-position: 50% 50%;
     padding: 0;
     position: relative;
@@ -83,4 +83,10 @@
 	font-size: .5em;
 	margin-left: .5em;
 	vertical-align: middle;
+}
+
+@media (max-width: 992px) {
+	.ranking-field h4 {
+		padding: 5px;
+	}
 }
