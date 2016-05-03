@@ -52,7 +52,7 @@ export default class About extends Component {
                 <Row>
                     <Col md={8} mdPush={2}>
                         <h1 className="about-title">Attributions</h1>
-                        <p className="about-description">Most of our data was - and is periodically- scraped by <a href="http://awoiaf.westeros.org" target="_blank">A Wiki of Ice and Fire</a>. Contributing to this wiki will enhance this portal greatly, so make sure you drop a visit to our wiki-partners and request an account.</p>
+                        <p className="about-description">Most of our data was - and is periodically- scraped from <a href="http://awoiaf.westeros.org" target="_blank">A Wiki of Ice and Fire</a>. Contributing to this wiki will enhance this portal greatly, so make sure you drop a visit to our wiki-partners and request an account.</p>
                         <p className="about-description">We used the sources and licenses listed on <a href="/attributions">this page</a>.</p>
                     </Col>
                 </Row>
