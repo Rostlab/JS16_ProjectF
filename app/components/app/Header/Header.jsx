@@ -56,7 +56,7 @@ export default class Header extends Component {
                         <Grid>
                             <Row>
                             <Col>
-                            Help us get to the Morpheus Cup and win in Luxembourg! <a href="https://www.gofundme.com/2wjvf5q4"><Button className="campaign-button">Check out our campaign</Button></a>
+                            Help us go to LUXEMBOURG and win the MORPHEUS CUP! <a href="https://www.gofundme.com/2wjvf5q4"><Button className="campaign-button">Check out our campaign</Button></a>
                             </Col>
                             </Row>
                             </Grid>
