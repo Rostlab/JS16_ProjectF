@@ -127,7 +127,6 @@ header {
 }
 .campaign-close {
     cursor: pointer;
-    cursor: hand;
     top: 3px;
     font-size: 20px;
 }
