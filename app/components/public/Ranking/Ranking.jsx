@@ -47,10 +47,7 @@ export default class Ranking extends Component {
             twitterTopSentiments: [],
             twitterFlopSentiments: [],
             twitterMostDiscussedSentiments: [],
-            twitterTopControversial: [],
-            twitterTopSentiments_d5: [],
-            twitterFlopSentiments_d5: [],
-            twitterMostDiscussedSentiments_d5: []
+            twitterTopControversial: []
         };
         this._onChange = this._onChange.bind(this);
     }
@@ -71,9 +68,6 @@ export default class Ranking extends Component {
         SentimentsActions.loadFlopSentiments(5);
         SentimentsActions.loadMostDiscussedSentiments(5);
         SentimentsActions.loadControversialSentiments(5, startDate , today);
-        SentimentsActions.loadTopSentiments_d5(5, startDate , today);
-        SentimentsActions.loadFlopSentiments_d5(5, startDate , today);
-        SentimentsActions.loadMostDiscussedSentiments_d5(5, startDate , today);
     }
 
     _onChange() {
@@ -81,10 +75,7 @@ export default class Ranking extends Component {
             twitterTopSentiments: SentimentStore.getTopSentiments(),
             twitterFlopSentiments: SentimentStore.getFlopSentiments(),
             twitterMostDiscussedSentiments: SentimentStore.getMostDiscussedSentiments(),
-            twitterTopControversial: SentimentStore.getFlopSentiments(),
-            twitterTopSentiments_d5: SentimentStore.getTopSentiments_d5(),
-            twitterFlopSentiments_d5: SentimentStore.getFlopSentiments_d5(),
-            twitterMostDiscussedSentiments_d5: SentimentStore.getMostDiscussedSentiments_d5()
+            twitterTopControversial: SentimentStore.getFlopSentiments()
         });
     }
 
@@ -137,7 +128,7 @@ export default class Ranking extends Component {
                                                     <Col xs={4} className="text-center">
                                                         <OverlayTrigger trigger="hover" placement="top" overlay={<Tooltip><u><strong>Tweets</strong></u><br/><strong>{char.positive}</strong> positive<br/><strong>{char.negative}</strong> negative<br/>
                                                         <strong>{char.total}</strong> total</Tooltip>}>
-                                                            <a href={"http://twitter.com/share?text=I%20love%20"+char.name+"&url=https://got.show/&via=asoiad"} target="_blank">
+                                                            <a href={"http://twitter.com/share?text=I%20love%20"+char.name+"&url=https://got.show/&via=gotjstech"} target="_blank">
                                                                 <h4 className="support">
                                                                 {char.positive} &nbsp;<span className="glyphicon glyphicon-thumbs-up"></span>
                                                                 </h4>
@@ -169,7 +160,7 @@ export default class Ranking extends Component {
                                                         <OverlayTrigger trigger="hover" placement="top" 
                                                         overlay={<Tooltip><u><strong>Tweets</strong></u><br/><strong>{char.positive}</strong> positive<br/><strong>{char.negative}</strong> negative<br/>
                                                         <strong>{char.total}</strong> total</Tooltip>}>
-                                                            <a href={"http://twitter.com/share?text=I%20hate%20"+char.name+"&url=https://got.show/&via=asoiad"} target="_blank">
+                                                            <a href={"http://twitter.com/share?text=I%20hate%20"+char.name+"&url=https://got.show/&via=gotjstech"} target="_blank">
                                                                 <h4 className="nosupport">
                                                                 {char.negative} &nbsp;<span className="glyphicon glyphicon-thumbs-down"></span>
                                                                 </h4>

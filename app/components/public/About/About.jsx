@@ -52,7 +52,7 @@ export default class About extends Component {
                 <Row>
                     <Col md={8} mdPush={2}>
                         <h1 className="about-title">Attributions</h1>
-                        <p className="about-description">Most of our data was - and is periodically- scraped by <a href="http://awoiaf.westeros.org" target="_blank">A Wiki of Ice and Fire</a>. Contributing to this wiki will enhance this portal greatly, so make sure you drop a visit to our wiki-partners and request an account.</p>
+                        <p className="about-description">Most of our data was - and is periodically- scraped from <a href="http://awoiaf.westeros.org" target="_blank">A Wiki of Ice and Fire</a>. Contributing to this wiki will enhance this portal greatly, so make sure you drop a visit to our wiki-partners and request an account.</p>
                         <p className="about-description">We used the sources and licenses listed on <a href="/attributions">this page</a>.</p>
                     </Col>
                 </Row>
@@ -81,7 +81,7 @@ class TeamMemberListing extends Component {
         return [
             {
                 name: "Georgi Anastasov",
-                link: "https://github.com/jorjo1",
+                link: "https://www.linkedin.com/in/georgi-anastasov-65124b11a",
                 team: "F"
             },
             {
@@ -227,7 +227,7 @@ class TeamMemberListing extends Component {
             },
             {
                 name: "Theodor Cheslerean Boghiu",
-                link: "#",
+                link: "https://de.linkedin.com/in/theodor-cheslerean-boghiu-234511102",
                 team: "A"
             },
             {
@@ -269,6 +269,16 @@ class TeamMemberListing extends Component {
                 name: "Lothar Richter",
                 link: "https://www.rostlab.org/group/people/lab-members",
                 team: "S"
+            },
+            {
+                name: "Emiliyana Kalinova",
+                link: "https://github.com/Emiliyana",
+                team: "E"
+            },
+            {
+                name: "Ange Laure Temzeung Kouemo",
+                link: "https://github.com/AngeKouemo",
+                team: "E"
             }
         ].filter((member) => {
             return member.team.split('').map((teamID) => {

@@ -6,6 +6,7 @@ import AntagonistsComp from '../../common/AntagonistsComp/AntagonistsComp.jsx';
 import './Start.css';
 import logo from './gotstatslogosmall.jpg';
 import jonSnow from './images/season-6-tease.jpg';
+import melisandre from './images/Melisandre.jpg';
 
 export default class Start extends Component {
   render() {
@@ -24,6 +25,16 @@ export default class Start extends Component {
             </Col>
           </Row>
 
+      <Row className="stats-home">
+            <Col xs={8} xsOffset={0} sm={6} smOffset={1}>
+              <Link to={"/episodes-recap"}><h1>Season 6 Epsiode 1 Recap</h1></Link>
+              <p className="lead">Who died? Who survived? Who died and will survive? And, who did we warn you is likely to get chopped? <Link to={"/episodes-recap"}>Read more</Link></p>
+            </Col>
+            <Col xs={4} xsOffset={0} sm={2} smOffset={2}>
+              <Link to={"/episodes-recap"}><img src={melisandre} className="start-logo" /></Link>
+            </Col>
+          </Row>
+          <hr></hr>
           <Row className="stats-home">
             <Col xs={10} xsOffset={1} sm={3} smOffset={1}>
               <Link to={"/statistics"}><img src={logo} className="start-logo" /></Link>
@@ -39,7 +50,7 @@ export default class Start extends Component {
           <Row className="stats-home">
             <Col xs={10} xsOffset={1} sm={6} smOffset={1}>
               <h1><a href="https://www.got.show/jon-snow-is-not-dead.html">Why Jon Snow is not dead</a></h1>
-              <p className="lead">“The past is already written, the ink is dry” – so says the teaser for the sixth season of the popular TV show Game of Thrones. And until recently, that’s what we at got.show believed too. It was nine long months ago, dudring the season five finale (“Mother’s Mercy”) that we saw our favorite character Jon Snow join his father in GoT heaven however. But now we have reason to believe that he’s going to stick around on earth with the rest of us for just a little longer. You don’t think so? Well .. you know nothing, Jon Snow. <a href="http://www.got.show/jon-snow-is-not-dead.html">Read more</a></p>
+              <p className="lead">“The past is already written, the ink is dry” – so says the teaser for the sixth season of the popular TV show Game of Thrones. And until recently, that’s what we at got.show believed too. It was nine long months ago, during the season five finale (“Mother’s Mercy”) that we saw our favorite character Jon Snow join his father in GoT heaven however. But now we have reason to believe that he’s going to stick around on earth with the rest of us for just a little longer. You don’t think so? Well .. you know nothing, Jon Snow. <a href="http://www.got.show/jon-snow-is-not-dead.html">Read more</a></p>
             </Col>
             <Col xs={10} xsOffset={1} sm={3} smOffset={1}>
               <a href="https://www.got.show/jon-snow-is-not-dead.html">
@@ -51,7 +62,7 @@ export default class Start extends Component {
           <Row className="stats-home">
             <Col xs={10} xsOffset={1} sm={3} smOffset={1}>
               <a href="https://got.show/daenerys-targaryen.html">
-              <img className="start-logo" alt="Daenerys Targaryen. Game of Thrones‘ mother of dragons." src="http://vignette1.wikia.nocookie.net/gameofthrones/images/5/58/Daenerys-Targaryen.jpg/revision/latest?cb=20141202204150&amp;path-prefix=de"/></a>
+              <img className="start-logo" alt="Daenerys Targaryen. Game of Thrones‘ mother of dragons." src="https://vignette1.wikia.nocookie.net/gameofthrones/images/5/58/Daenerys-Targaryen.jpg/revision/latest?cb=20141202204150&amp;path-prefix=de"/></a>
             </Col>
             <Col xs={10} xsOffset={1} sm={6} smOffset={1}>
               <h1><a href="https://got.show/daenerys-targaryen.html">Why Daenerys Targaryen will win the Game of Thrones</a></h1>

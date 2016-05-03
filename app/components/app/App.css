@@ -17,6 +17,16 @@ title {
     text-align: left;
 }
 
+
+@media (max-width: 992px) {
+    body {font-size: 13px;}
+    h1 { font-size: 1.5em; }
+    h2 { font-size: 1.4em; }
+    h3 { font-size: 1.2em; }
+    h4 { font-size: 1.2em; }
+    h5 { font-size: 1.1em; }
+}
+
 a {
     color: whitesmoke;
     font-weight: bold;
@@ -163,13 +173,12 @@ td, th {
     height: 550px;
     background-image: url('header.jpg');
     background-size: cover;
-    margin: -50px 0 0 0;
+    margin: -122px 0 0 0;
     background-position: 50% 50%;
     padding: 0;
     position: relative;
 }
 .main-container {
-    padding-top: 50px!important;
     padding-bottom: 50px;
 }
 .container-fluid {
@@ -206,3 +215,4 @@ td, th {
     width: 100%;
     text-align: center;
 }
+

@@ -11,7 +11,7 @@ var characters = require('./characters.json');
 
 
 function _getXmlForCharacter(character) {
-    var priority = character.pageRank / 350;
+    var priority = isNaN(character.pageRank) ? 0.1 : character.pageRank / 350;
     return '<url><loc>' + SITE_URL + '/characters/' + encodeURIComponent(character.name) +
         '</loc><changefreq>' + CHARACTER_CHANGE_FREQUENCY + '</changefreq><priority>' + priority + '</priority></url>';
 }
