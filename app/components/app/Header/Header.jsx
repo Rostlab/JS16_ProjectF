@@ -32,7 +32,7 @@ export default class Header extends Component {
                     <Navbar.Header>
                         <Navbar.Brand>
                             <IndexLinkContainer to={{ pathname: '/'}}>
-                                <Button bsStyle="link">A Song of Ice and Data</Button>
+                                <Button className="header-brand" bsStyle="link">A Song of Ice and Data</Button>
                             </IndexLinkContainer>
                         </Navbar.Brand>
                         <Navbar.Toggle />

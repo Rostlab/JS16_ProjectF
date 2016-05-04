@@ -171,3 +171,10 @@ gets colored when hovered*/
         width: 100%;
     }
 }
+
+.gotmap-character .character .name {
+    font-size: 1em; 
+}
+.gotmap-character .character .characterinfo {
+    padding: 0!important;
+}

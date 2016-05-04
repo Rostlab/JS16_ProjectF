@@ -18,8 +18,6 @@ header {
 .navbar-brand {
     color: white;
     font-size: 1.3em;
-    padding-left: 30px;
-    padding-right: 30px;
 }
 
 .navbar .navbar-nav {
@@ -53,11 +51,6 @@ header {
     transition: all .2s;
 }
 
-@media (max-width: 1024px) {
-    .navbar-brand {
-        font-size: 15px !important;
-    }
-}
 /*FIXES HEADER WIDTH FOR SMALL SCREENS*/
 @media (max-width: 768px) {
     .navbar-header {
