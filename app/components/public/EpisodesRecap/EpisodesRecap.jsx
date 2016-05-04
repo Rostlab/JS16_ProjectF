@@ -11,6 +11,7 @@ export default class Credits extends Component {
         <Row>
           <Col md={8} mdOffset={2}>
              <h1>Season Six Episode Two - Home - A got.show Recap</h1>
+            <div className="disclaimer"><strong>Disclaimer</strong>: this blogpost is dark and full of <strong>spoilers</strong>! If you hate spoilers, just don’t read any further! In case you decide to stay, don't worry - you’re safe. Nobody is going to kill your session.</div>
             <p>Episode 2 is here and this time it takes us far away from Dorne, beyond the Wall and into the Lands of Always Winter, where we find <a href="https://got.show/characters/Bran%20Stark">Bran Stark</a> all grown up after his season-five hiatus. Under the mentorship of the Three-eyed Raven, Bran has improved his warging skills as well as his Greensight. In his visions, Bran time travels forty years back to Winterfell where we discover that young Eddard was never really good at protecting himself and that speaking Hodor&rsquo;s real name is Wyllis.</p>
             <p></p>
             <p>Quite a cosy place compared to nowadays occupied Winterfell where Ramsay&rsquo;s plans of inheriting Roose Bolton and becoming the Lord of Winterfell and Warden of the North have been baffled by</p>
@@ -24,7 +25,7 @@ export default class Credits extends Component {
             <p>But guess who else came back - that&rsquo;s right world, you can relax now, Jon Snow is alive and kicking&hellip; or at least breathing heavily. So it turns out that the storyline of everyone&rsquo;s favourite Lord Commander is not over, as we have told <a className="c4" href="https://www.theguardian.com/technology/2016/apr/19/game-of-thrones-algorithm-jon-snow-death">The Guardian</a>. We <strong>predicted his resurrection due to his PLoD of only 11%</strong>, so we believed more strongly into Melisandre's abilities than she did herself. As you see, algorithms are far more reliable than the Lord of Light! By the way, did you know that as the episode aired and Jon Snow got resurrected, the orthodox world was celebrating Eastern? Maybe the producers are trying to tell us something&hellip; In any case, it was definitely a breath of fresh air!</p>
             <p></p>
             <p><a className="c4" href="https://www.youtube.com/watch?v=rOMk5GWvlks">PS: A personal message from our editorial board members regarding Jon Snow's reappearance</a></p>
-            <hr>
+            <hr />
             <h1>Season Six Episode One - The Red Woman - A got.show Recap.</h1>
             <div className="disclaimer"><strong>Disclaimer</strong>: this blogpost is dark and full of <strong>spoilers</strong>! If you hate spoilers, just don’t read any further! In case you decide to stay, don't worry - you’re safe. Nobody is going to kill your session.</div>
             <p>Season six is finally here and so our watch begins. It seems like Westeros is still the same batshit crazy, stinky, fanatic, murderous, and exciting show in town! Stay tuned for news from Castle Black, but first let's hop over to Dorne
