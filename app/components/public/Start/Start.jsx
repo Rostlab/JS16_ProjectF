@@ -11,14 +11,15 @@ import melisandre from './images/Melisandre.jpg';
 export default class Start extends Component {
   render() {
     return (
-      <Grid>
         <div className="home">
           <Row fluid>
             <Col>
-              <div className="header-image" />
+              <div className="header-image">
+                <p className="header-attribution">© 2016 Home Box Office, Inc. / Sky All rights reserved.</p>
+              </div>
             </Col>
           </Row>
-
+          <Grid>
           <Row>
             <Col>
               <AntagonistsComp />
@@ -101,8 +102,8 @@ export default class Start extends Component {
               <p className="lead">Ahh! Theon and Ramsay, Ramsay and Theon... There used to be a time when Theon was prince and Ramsay was but a servant to that prince. Back then, Ramsay was called Reek (because he stank) and he did Theon's bidding. But, all of a sudden, the tables have turned on Theon and from being a self-proclaimed Prince of Winterfell, he was a captive at the Dreadfort, propped up to be The bastard of Bolton's personal pet. From then on, Theon was Reek and Reek was Ramsay. And as Theon was sinking lower and lower (and losing some vital body parts), Ramsay was rising in the world. <a href="https://got.show/when-theon-met-ramsay.html">Read more</a></p>
             </Col>
           </Row>
+          </Grid>
         </div>
-      </Grid>
     );
   }
 }

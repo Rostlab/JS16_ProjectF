@@ -29,3 +29,9 @@
 .start-logo {
 	width: 100%;
 }
+.header-attribution {
+	position: absolute;
+	bottom: 0;
+	right: 50px;
+	font-size: 8px;
+}
