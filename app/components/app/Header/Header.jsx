@@ -58,8 +58,8 @@ export default class Header extends Component {
                         <Col className="campaign">
                         <Grid>
                             <Row>
-                            <Col>
-                            Help us go to LUXEMBOURG and win the MORPHEUS CUP! <a href="https://www.gofundme.com/2wjvf5q4"><Button className="campaign-button">Check out our campaign</Button></a>
+                            <Col md={6} mdOffset={2}>
+                            Help us go to LUXEMBOURG and win the MORPHEUS CUP!
                             </Col>
                               <Col>
                                 <a href="https://www.gofundme.com/2wjvf5q4"><Button className="campaign-button">Check out our campaign</Button></a>
