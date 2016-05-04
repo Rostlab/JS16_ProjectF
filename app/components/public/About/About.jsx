@@ -153,7 +153,7 @@ class TeamMemberListing extends Component {
             },
             {
                 name: "Yasar Kücükkaya",
-                link: "http://www.yk-code.de",
+                link: "https://de.linkedin.com/in/yasar-kücükkaya-9718bb107",
                 team: "F"
             },
             {
