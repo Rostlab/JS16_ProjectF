@@ -11,10 +11,10 @@ The Technische Universität München is a public body. It is legally represented
 #### Supervisory authority:
 Bavarian Ministry of Education and Culture, Science and Art
 
-#### Content responsibility:
-Dr. Guy Yachdav
-Arcisstr. 19
-80333 München
+#### Content responsibility:  
+Dr. Guy Yachdav  
+Arcisstr. 19  
+80333 München  
 E-Mail: [gyachdav&#64;ros&#116;lab&#46;&#111;r&#103;](&#109;&#97;&#105;&#108;to&#58;gyachda&#118;&#64;r&#111;s%7&#52;la&#98;&#46;o&#37;72%67)
 
 ## Liability notice
