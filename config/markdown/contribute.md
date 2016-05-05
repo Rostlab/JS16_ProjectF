@@ -23,13 +23,13 @@ Now it's your turn - use the data we made available and build beautiful useful a
 If you would like to access the first ever open and structured document database for the Ice and Fire world, check out our [API Reference here](https://api.got.show/doc/). 
 
 # NPM packages
-Most of the applications included in this website can be easily downloaded and installed from NPM. Feel free to download and try our apps, extend them or incorporate them in your own apps. Like our apps? [Let us know](https://twitter.com/asoiad).
+Most of the applications included in this website can be easily downloaded and installed from NPM. Feel free to download and try our apps, extend them or incorporate them in your own apps. Like our apps? [Let us know](https://twitter.com/GotJstech).
 
 | Package name  | Description   | link  |
 |---|---|---|
 | gotmap  | The most beautiful, complete and interactive map of the World of Ice and Fire. Made for fans by fans!  | https://www.npmjs.com/package/gotmap  |
 |  gotsentimental | A powerful Twitter sentiment analysis tool for GoT characters with visualization capabilities.   |  https://www.npmjs.com/package/gotsentimental |
-| gotdailysentiment  | GoT-specific Twitter senitment analysis tool.  |  https://www.npmjs.com/package/gotdailysentiment |
+| gotdailysentiment  | GoT-specific Twitter sentiment analysis tool.  |  https://www.npmjs.com/package/gotdailysentiment |
 | gotplod  | An accurate likelihood of death predictor for 1946 GoT characters.   |  https://www.npmjs.com/package/gotplod |
 
 # GitHub Repo
@@ -38,4 +38,4 @@ If you would like to contribute code, our [GitHub repository can be found here](
 # Community
 It always feels better with friends, right? So, how about joining our growing community of developers and contributors who help make the World of Ice and Fire data accessible to all fans?  
 
-Are you a renowned expert on the geogrpahy of Essos? Do you know where exactly was the Battle of the Burning Mill? Found a mistake in one of the locations we put on the map? Then why not **use our [map editor](https://map.got.show)** to chart paths for less known characters and highlight landmarks where major events took place?  
+Are you a renowned expert on the geography of Essos? Do you know where exactly was the Battle of the Burning Mill? Found a mistake in one of the locations we put on the map? Then why not **use our [map editor](https://map.got.show)** to chart paths for less known characters and highlight landmarks where major events took place?  
