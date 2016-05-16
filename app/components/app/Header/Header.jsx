@@ -9,9 +9,6 @@ import TUMLogo from "./tum-logo.svg";
 let {Component} = React;
 
 export default class Header extends Component {
-    closeCampaign() {
-      $(".campaign").hide();
-    }
     render() {
        $('.navbar-collapse.collapse.in ul li a').on('click', function(){/*eslint no-console:0,no-undef:0*/
             $(".navbar-toggle").click();/*eslint no-console:0,no-undef:0*/
@@ -54,21 +51,6 @@ export default class Header extends Component {
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
-                    <Row>
-                        <Col className="campaign">
-                        <Grid>
-                            <Row>
-                            <Col md={6} mdOffset={2}>
-                            Help us go to LUXEMBOURG and win the MORPHEUS CUP!
-                            </Col>
-                              <Col>
-                                <a href="https://www.gofundme.com/2wjvf5q4"><Button className="campaign-button">Check out our campaign</Button></a>
-                                <span onClick={this.closeCampaign} className="glyphicon glyphicon-remove-circle campaign-close" aria-hidden="true"></span>
-                              </Col>
-                            </Row>
-                            </Grid>
-                        </Col>
-                    </Row>
             </header>
         );
     }
