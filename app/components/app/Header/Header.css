@@ -31,7 +31,7 @@ header {
 
 .navbar-inverse {
     background-color: transparent;
-    background-color: rgba(0, 0, 0, 1);
+    background-color: rgba(0, 0, 0, 0.7);
     border: 0;
     border-radius: 0;
 }
@@ -102,30 +102,4 @@ header {
     margin-top: 20px;
     max-height: 25px;
     padding-left: 5px;
-}
-
-.campaign {
-    min-height: 50px;
-    background: url(campaign.jpg) no-repeat;
-    background-size: cover;
-    line-height: 50px;
-    font-size: 1em;
-    padding: 0 50px;
-    text-align: center;
-    z-index: 50;
-}
-.campaign-button {
-    margin-right: 10px;
-}
-.campaign-close {
-    cursor: pointer;
-    top: 3px;
-    font-size: 20px;
-}
-
-@media (max-width: 500px) {
-    .campaign {
-        line-height: 25px;
-        padding-bottom: 10px;
-    }
 }
