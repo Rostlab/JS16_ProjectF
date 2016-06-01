@@ -4,15 +4,66 @@ import { Row, Col, Grid } from 'react-bootstrap';
 
 import './EpisodesRecap.css';
 
+import benjen from './benjen.png';
+import jon from './jon.png';
+
 export default class Credits extends Component {
   render() {
     return (
       <Grid>
         <Row>
-          <Col md={8} mdOffset={2}>
+          <Col md={8} mdOffset={2}><br/>
+          <h1>Season six Episode Six - Blood of My Blood - A got.show Recap</h1>
+
+
+<p>
+No one dies in episode 6. Not Bran and Meera, who were still chased by the walkers army that took Hodor away from us in episode 5. Bran and Meera got saved by a masked rider, named “Cold Hands” in the books, who turned out to be fearless Benjen Stark (we predicted his PLOD at 93%). </p>
+<img src={benjen} />
+<p> Benjen was suppose to die at the hands of a Wight, but he himself was saved by the Children. You know who else did not die? The thousands of people crowding to see Margery’s walk of shame. They were pressed between a Tyrell army and the Militants - a standoff that promises rivers of blood - yet, in a last minute plotline twist, the Faith and Crown announced peace and everyone walked home happily. Well, almost everyone -- Jaime Lannister, who also did not die this episode was sent to a sort of exile in the Riverlands. Sam Tarly also managed to not die, although his douche dad tried to kill him with insults. Even Arya’s hit job on an actress got called off in the last minute, leaving us with, you guessed it - another not-dead character.  
+          </p>
+          <h1>Season six Episode Five - The Door- A got.show Recap</h1>
+         <div className="disclaimer"><strong>Disclaimer</strong>: this blogpost is dark and full of <strong>spoilers</strong>! If you hate spoilers, just don’t read any further! In case you decide to stay, don't worry - you’re safe. Nobody is going to kill your session.</div>
+            <br/> <p>
+          Hello dear readers and GoT fans! Another week passed and a lot has happened in the realm.
+          </p><p>
+          Episode 5 takes us back to Castle Black, where Sansa receives an unexpected message from the devil himself, Petyr Baelish, and even agrees to meet him at Mole‘s Town. It seems the North does indeed remember after Sansa confronts Littlefinger about her arranged marriage with the monster Ramsey. But does it also remember Lord Baelish is not to be trusted? Hard to say after Sansa’s little lie to Jon about how she knows that her uncle, Brynden the Blackfish, has retaken Riverrun and gathered an army. No wonder Jon Snow knows nothing if even his family doesn’t tell him anything. Let’s just hope Little Finger’s new move on the Game of Thrones chess board doesn’t end up bad for the Starks, especially when they are heading towards war to take Winterfell back.
+          </p><p>
+          Meanwhile, on the other side of the world, Arya Stark gets her promised second chance to make up for stealing from the many-faced God. Her assignment, however, is very interesting – she gets to assassinate Cersei Lannister… Well, in a way, at least. Shortly after giving back her sight, Jaqen H'ghar gives Arya the task of killing an actress that plays Cersei in a comedy mocking king Robert’s death, as well as Ned Stark by portraying him as a fool. Not that Ned’s decisions in King’s Landing weren’t foolish, at the end they even cost him his head. However, the Lord of Winterfell and the Hand of the King was a man of honor and not a clown. Whether it was the mockery about her father or maybe it was seeing Ned’s head being chopped off again, one thing is certain – this was definitely not the play you want to see shortly after getting your sight back, especially if you are Arya Stark… oops sorry, no one, especially when you are no one.
+          </p><p>
+          And from one Stark to another – let’s pay Bran a visit in his tree house and see what he has been up to. Just as usual, Bran and his mentor have been jumping back in time in order to learn everything. This time, we witness the creation of the white walkers and - brace yourselves – these were the Children of the Forest who made them. To Bran’s surprise, Leaf, the only one of the Children of the Forest who speaks Common Tongue of Westeros, tells him that the white walkers were created to defend the children of the forest from … men, the First Men, but still men.
+          </p><p>
+          The journey through the white walkers history continues as bored Bran decides to go for a time walk alone. The path takes him to the very same place – the weirwood tree above the cave, where he sees the Night King and his army – this time, also the Night King sees Bran and even tries to shake hands with him. The friendly gesture ends up as a mark on Bran’s arm and an invitation for the Night King to join Bran in his cozy little hideout, since now the protective magic of the cave doesn’t work anymore.
+          </p><p>
+          As Meera Reed, the Children of the Forest and the direwolf Summer fight off the white walkers marching into the cave, the three-eyed raven takes Bran back to Winterfell for one last history lesson. While still in Winterfell, Bran listens to the voice of Meera from the present and wargs into Wyllis, the young version of Hodor, finally getting them on the run after his direwolf and the Children of the Forest die defending them. As the door to the Land of Always Winter gets closer and closer, so does the revealing moment when past and future collide, turning young Willis in Hodor. As we witness Hodor’s tremendous sacrifice to „HO…ld the… DoOR“ and the white walkers, Bran watches Wyllis convulsing (we predicted his likelihood of death of 52%) in Winterfell in one of the most emotional and touching scenes in the series so far. 
+          Oh Hodor, the fandom remembers!
+          </p>
+            <h1>Season six Episodes Three and Four - Oathbreaker & Book of the Stranger - Episode Recap</h1>
+            <div className="disclaimer"><strong>Disclaimer</strong>: this blogpost is dark and full of <strong>spoilers</strong>! If you hate spoilers, just don’t read any further! In case you decide to stay, don't worry - you’re safe. Nobody is going to kill your session.</div>
+           <br/> <p>
+              Two weeks have passed since our last recap and we bet you guys missed us like Missandei and Co have been missing their queen. Well, just like Daenerys, we decided to get on a more hipster version of a Dragon and head to Luxembourg to kick some ass at the <a href="http://morpheuscup.com">Morpheus Cup 2016</a>. And oh do we have news! <a href="http://got.show">Got.show</a> won the best coding project award and we nailed the coding and design challenges! So, big thank you goes to Google Summer of Code, TU München, E&m Makeover and our two anonymous sponsors that helped us attending the competition and win (almost) all prizes they had!
+              </p><p>
+              But back to Westeros! After the worldwide celebrations of <b>Jon Snow</b> being alive, just as we predicted (his <b>likelihood of death - PLOD - equals only 11%</b>), episode 3 starts off in Castle Black. There, Jon seems to be quite surprised himself finding out that he is back to life. But then again, he knows nothing, and probably everything comes as surprise to him. 
+</p>
+<img src={jon} /> <p>
+So, let's give him some time to adjust and jump over to Meereen and the guy who knows everything - Lord Varys. He makes Vala an offer that she cannot refuse and finds out who finances the Sons of the harpies. We still suspect that his little birds are actually our twitter sentiments, but we are going to let that slide in the name of the realm.
+</p><p>
+Off to our next stop, where we take another history lesson from the greenseer together with Bran. There, we get to see young Ned Stark in a completely different light, that being the light of the Sword of the Morning, Sir Arthur Dayne. Unlike the story Bran has heard a thousand times, it turns out that Ned was overpowered by the legendary knight and managed to kill him only because one of his companions stabbed Sir Arthur in the back. So, why did Ned lie about killing Sir Arthur and what else is Ned hiding (in that tower)? Next time we see him, we will talk about it, we promise!
+</p><p>
+And speaking of seeing things differently... or at all - Arya Stark has finally become no one and got her sight back. So, the Starks seem to be finally catching a break ... well, aside from Rickon. Episode 3 leaves us in the great hall of Winterfell, where the Karstarks have caught Osha and Rickon, and killed his darewolf. Don't you just hate it when a darewolf is killed?
+</p><p>
+Well, at least Ghost seems to be safe near Jon Snow, but for how long? Jon’s decision to leave the Night's Watch seems perfectly timed with Sansa’s arrival at Castle Black, as well as with her plans of taking back Winterfell. Seems like her idea found supporters even among the wildlings, so we all hope that, as episode 5 comes, we will see a Stark reunion and not the evil things on Ramsay's wish list from the threat message he sent to Jon demanding the return of his beloved wife. 
+</p><p>
+Speaking of Ramsay, he added one more victim to his list by killing Osha. Something we have to thank Theon for, since he was the one telling Ramsay it was her who helped the Stark boys to escape. But let’s not forget that, on the other hand, Theon helped Sansa to escape by killing Ramsay’s girlfriend Myranda. So, Theon has also some good deeds and might be leaving Reek in peace and transforming back to Theon Greyjoy, whom we find in Pyke, offering his help to his sister Asha in becoming the ruler of the Iron Islands. 
+</p><p>
+On the other side of Westeros, things seem to be tightening up, as Queen Margaery and her brother are still locked in the Sept of Baelor. We finally get to see Loras, or at least what is left of him, as Margaery is allowed to see him. The once mighty Knight of the Flowers seems to have faded away instead of growing strong as the Tyrell’s House words decree. Will Loras succeed and stay strong or will the high sparrow win this battle?
+
+Now, let’s hop over to Vaes Dothrak and see how the other queen rescue operation is going. We find Jorah Mormont and Daario Naharis sneaking into the holy city of Dothraki to save Daenerys. Khal Moro and his men’s discussions on whether to trade Daenerys for livestock seem to bore the Mother of Dragons. So, she decides to heathen things up a bit. As the Dothraki temple burns down, the citizens of Vaes Dothrak gather to witness how a Targaryen throws a barbeque party and to salute their new queen. Talk about setting up the roof on fire and dynamic threes ;-)
+
+            </p>
+            <hr/>
              <h1>Season Six Episode Two - Home - A got.show Recap</h1>
             <div className="disclaimer"><strong>Disclaimer</strong>: this blogpost is dark and full of <strong>spoilers</strong>! If you hate spoilers, just don’t read any further! In case you decide to stay, don't worry - you’re safe. Nobody is going to kill your session.</div>
-            <p>Episode 2 is here and this time it takes us far away from Dorne, beyond the Wall and into the Lands of Always Winter, where we find <a href="https://got.show/characters/Bran%20Stark">Bran Stark</a> all grown up after his season-five hiatus. Under the mentorship of the Three-eyed Raven, Bran has improved his warging skills as well as his Greensight. In his visions, Bran time travels forty years back to Winterfell where we discover that young Eddard was never really good at protecting himself and that speaking Hodor&rsquo;s real name is Wyllis.</p>
+            <br/><p>Episode 2 is here and this time it takes us far away from Dorne, beyond the Wall and into the Lands of Always Winter, where we find <a href="https://got.show/characters/Bran%20Stark">Bran Stark</a> all grown up after his season-five hiatus. Under the mentorship of the Three-eyed Raven, Bran has improved his warging skills as well as his Greensight. In his visions, Bran time travels forty years back to Winterfell where we discover that young Eddard was never really good at protecting himself and that speaking Hodor&rsquo;s real name is Wyllis.</p>
             <p></p>
             <p>Quite a cosy place compared to nowadays occupied Winterfell where Ramsay&rsquo;s plans of inheriting Roose Bolton and becoming the Lord of Winterfell and Warden of the North have been baffled by</p>
             <p></p>
@@ -28,7 +79,7 @@ export default class Credits extends Component {
             <hr />
             <h1>Season Six Episode One - The Red Woman - A got.show Recap.</h1>
             <div className="disclaimer"><strong>Disclaimer</strong>: this blogpost is dark and full of <strong>spoilers</strong>! If you hate spoilers, just don’t read any further! In case you decide to stay, don't worry - you’re safe. Nobody is going to kill your session.</div>
-            <p>Season six is finally here and so our watch begins. It seems like Westeros is still the same batshit crazy, stinky, fanatic, murderous, and exciting show in town! Stay tuned for news from Castle Black, but first let's hop over to Dorne
+           <br/> <p>Season six is finally here and so our watch begins. It seems like Westeros is still the same batshit crazy, stinky, fanatic, murderous, and exciting show in town! Stay tuned for news from Castle Black, but first let's hop over to Dorne
               where clueless <a
                 href="/characters/Doran%2520Martell">
                   Doran Martell
