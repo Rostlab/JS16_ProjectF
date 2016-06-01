@@ -39,6 +39,8 @@ export default class About extends Component {
                                 <TeamMemberListing teamID="E"/>
                                 <h3>Support</h3>
                                 <TeamMemberListing teamID="S"/>
+                                <h3>Media Contact</h3>
+                                <TeamMemberListing teamID="T"/>
                             </Col>
                                                      
                             
@@ -279,6 +281,11 @@ class TeamMemberListing extends Component {
                 name: "Ange Laure Temzeung Kouemo",
                 link: "https://github.com/AngeKouemo",
                 team: "E"
+            },
+            {
+                name: "Andreas Battenberg",
+                link: "",
+                team: "T"
             }
         ].filter((member) => {
             return member.team.split('').map((teamID) => {
