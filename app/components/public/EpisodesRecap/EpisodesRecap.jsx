@@ -14,6 +14,9 @@ export default class Credits extends Component {
         <Row>
           <Col md={8} mdOffset={2}><br/>
             <h1>Season six Episode Six - Blood of My Blood - A got.show Recap</h1>
+            <div className="disclaimer"><strong>Disclaimer</strong>: this blogpost is dark and full of <strong>spoilers</strong>! If you hate spoilers, just don’t read any further! In case you decide to stay,
+              don't worry - you’re safe. Nobody is going to kill your session.
+            </div>
             <p>No one dies in episode 6. Not Bran and Meera, who were still chased by the walkers army that took Hodor
               away from us in episode 5. Bran and Meera got saved by a masked rider, named “Cold Hands” in the books,
               who turned out to be fearless Benjen Stark (we predicted his PLOD at 93%). </p>
@@ -27,8 +30,7 @@ export default class Credits extends Component {
               Even Arya’s hit job on an actress got called off in the last minute, leaving us with, you guessed it -
               another not-dead character.</p>
             <h1>Season six Episode Five - The Door- A got.show Recap</h1>
-            <div className="disclaimer"><strong>Disclaimer</strong>: this blogpost is dark and full of
-              <strong>spoilers</strong>! If you hate spoilers, just don’t read any further! In case you decide to stay,
+            <div className="disclaimer"><strong>Disclaimer</strong>: this blogpost is dark and full of <strong>spoilers</strong>! If you hate spoilers, just don’t read any further! In case you decide to stay,
               don't worry - you’re safe. Nobody is going to kill your session.
             </div>
             <br/>
@@ -76,8 +78,7 @@ export default class Credits extends Component {
               Oh Hodor, the fandom remembers!
             </p>
             <h1>Season six Episodes Three and Four - Oathbreaker & Book of the Stranger - Episode Recap</h1>
-            <div className="disclaimer"><strong>Disclaimer</strong>: this blogpost is dark and full of
-              <strong>spoilers</strong>! If you hate spoilers, just don’t read any further! In case you decide to stay,
+            <div className="disclaimer"><strong>Disclaimer</strong>: this blogpost is dark and full of <strong>spoilers</strong>! If you hate spoilers, just don’t read any further! In case you decide to stay,
               don't worry - you’re safe. Nobody is going to kill your session.
             </div>
             <br/> <p>
@@ -140,8 +141,7 @@ export default class Credits extends Component {
             </p>
             <hr/>
             <h1>Season Six Episode Two - Home - A got.show Recap</h1>
-            <div className="disclaimer"><strong>Disclaimer</strong>: this blogpost is dark and full of
-              <strong>spoilers</strong>! If you hate spoilers, just don’t read any further! In case you decide to stay,
+            <div className="disclaimer"><strong>Disclaimer</strong>: this blogpost is dark and full of <strong>spoilers</strong>! If you hate spoilers, just don’t read any further! In case you decide to stay,
               don't worry - you’re safe. Nobody is going to kill your session.
             </div>
             <br/><p>Episode 2 is here and this time it takes us far away from Dorne, beyond the Wall and into the Lands
@@ -185,8 +185,7 @@ export default class Credits extends Component {
               editorial board members regarding Jon Snow's reappearance</a></p>
             <hr />
             <h1>Season Six Episode One - The Red Woman - A got.show Recap.</h1>
-            <div className="disclaimer"><strong>Disclaimer</strong>: this blogpost is dark and full of
-              <strong>spoilers</strong>! If you hate spoilers, just don’t read any further! In case you decide to stay,
+            <div className="disclaimer"><strong>Disclaimer</strong>: this blogpost is dark and full of <strong>spoilers</strong>! If you hate spoilers, just don’t read any further! In case you decide to stay,
               don't worry - you’re safe. Nobody is going to kill your session.
             </div>
             <br/> <p>Season six is finally here and so our watch begins. It seems like Westeros is still the same
