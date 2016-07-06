@@ -6,12 +6,15 @@ import './EpisodesRecap.css';
 
 import benjen from './benjen.png';
 import jon from './jon.png';
-
+import RecapTable from '../../../../config/markdown/table-recap.md';
 export default class Credits extends Component {
   render() {
     return (
       <Grid>
         <Row>
+          <Col md={8} mdOffset={2}>
+          <div dangerouslySetInnerHTML={{ __html: RecapTable}} />
+          </Col>
           <Col md={8} mdOffset={2}><br/>
             <h1>Season six Episode Six - Blood of My Blood - A got.show Recap</h1>
             <div className="disclaimer"><strong>Disclaimer</strong>: this blogpost is dark and full of <strong>spoilers</strong>! If you hate spoilers, just don’t read any further! In case you decide to stay,
