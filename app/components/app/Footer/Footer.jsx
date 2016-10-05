@@ -97,9 +97,9 @@ export default class Footer extends Component {
               </Col>
             </Row>
             <Row>
-              <Col xs={10} xsOffset={1} sm={6} smOffset={3}>
+              <div className="text-center">
                 <a href="https://rostlab.org"><Image src={rostlab} className="footerlogo"/></a>
-              </Col>
+              </div>  
             </Row>
           </div>
         </footer>
