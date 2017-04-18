@@ -43,6 +43,7 @@
 	background-size: contain;
 	right: -50%;
 	animation: rightleft 200s infinite;
+	z-index: -1;
 }
 /* Chrome, Safari, Opera */
 @-webkit-keyframes leftright {
