@@ -4,9 +4,6 @@ In this project we will build a web portal for our GoT data analysis and visuali
 Production:
 https://got.show
 
-Staging-Server:
-https://got-stats.herokuapp.com/
-
 # Developer information
 We're using webpack: https://github.com/webpack/webpack
 
