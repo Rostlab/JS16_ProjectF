@@ -32,8 +32,8 @@ Most of the applications included in this website can be easily downloaded and i
 | gotdailysentiment  | GoT-specific Twitter sentiment analysis tool.  |  https://www.npmjs.com/package/gotdailysentiment |
 | gotplod  | An accurate likelihood of death predictor for 1946 GoT characters.   |  https://www.npmjs.com/package/gotplod |
 
-# GitHub Repo
-If you would like to contribute code, our [GitHub repository can be found here](https://github.com/got-show/general)
+# GitHub Repos
+If you would like to contribute code, our [GitHub repository can be found here](https://github.com/Rostlab?utf8=%E2%9C%93&q=JS16&type=&language=)
 
 # Community
 It always feels better with friends, right? So, how about joining our growing community of developers and contributors who help make the World of Ice and Fire data accessible to all fans?  
