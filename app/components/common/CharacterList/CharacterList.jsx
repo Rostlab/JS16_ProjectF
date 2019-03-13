@@ -25,7 +25,6 @@ export default class CharacterList extends Component {
             <div> {
               this.props.data.map(function (character) {
                 let check = !character.dateOfDeath && character.plod;
-                console.log(character); /*eslint no-console:0,no-undef:0*/
                 let plod = (check) ? ''+parseInt(character.plod)+'%': 'DEAD';
                 let plodCropperSize = (check) ? parseInt(character.plod)/100 * 50 : 50;
 
