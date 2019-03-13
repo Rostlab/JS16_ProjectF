@@ -17,13 +17,19 @@ export default class CharacterList extends Component {
     } else if (this.props.data.length === 0) {
       found = "Nothing found, please search something else";
     }
+
     return (
       <div>
         <Row>
           <Col md={8} mdOffset={2}>
             <div> {
               this.props.data.map(function (character) {
-                return <CharacterThumbnail key={character._id} name={character.name} imageUrl={character.imageLink}/>;
+                let check = !character.dateOfDeath && character.plod;
+                console.log(character); /*eslint no-console:0,no-undef:0*/
+                let plod = (check) ? ''+parseInt(character.plod)+'%': 'DEAD';
+                let plodCropperSize = (check) ? parseInt(character.plod)/100 * 50 : 50;
+
+                return <CharacterThumbnail key={character._id} name={character.name} plod={plod} plodCropperSize={plodCropperSize} imageUrl={character.imageLink}/>;
               })
             }
             </div>

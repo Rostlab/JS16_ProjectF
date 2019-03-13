@@ -29,3 +29,61 @@
     left: 0;
     right: 0;
 }
+
+.characters-list-plod {
+    position: absolute;
+    margin-left: 50%;
+
+    /* TODO: decide on variant */
+    /* variant A*/
+    /* 
+    right: 30px; 
+    top: 106px;
+    */
+
+    /* variant B*/
+    left: -25px;
+    top: 110px;
+
+    height: 50px;
+    width: 50px;
+}
+
+.characters-list-plod > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 50px;
+}
+
+.characters-list-plod .plod-percentage {
+    position: absolute;
+    top: 25px;
+    left: 0;
+    width: 47px;
+
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Cinzel Decorative', cursive;
+    color: black;
+    font-size: 11px;
+}
+
+.plod-percentage-cropper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+
+    width: 50px;
+}
+
+.plod-percentage-cropper img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    
+    height: 50px;
+    width: 50px;
+}
