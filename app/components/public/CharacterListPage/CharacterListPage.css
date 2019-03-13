@@ -35,3 +35,39 @@ input.character-search {
 .sortCol .dropdown .dropdown-menu {
     text-align: center;
 }
+
+#loadMoreButton {
+    background-color: #333;
+    border-radius: 2px;
+    padding: 5px;
+    display: inline-block;
+    width: 150px;
+}
+
+#toggleInfiniteScrolling {
+    display: block;
+    position: absolute;
+    
+    background-color: #333;
+
+    margin: 20px 15px;
+    padding: 5px 12px;
+
+    border-radius: 4px;
+    user-select: none;
+
+    cursor: pointer;
+}
+
+#toggleInfiniteScrolling input {
+    vertical-align: text-bottom;
+    width: 1em;
+    height: 1em;
+}
+
+@media (max-width : 600px) { 
+    #toggleInfiniteScrolling {
+        position: relative;
+        width: 140px;
+    }
+}

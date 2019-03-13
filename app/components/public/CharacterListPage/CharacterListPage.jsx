@@ -1,5 +1,7 @@
 
 import React, {Component} from 'react';
+import window from 'global/window';
+import document from 'global/document';
 
 import { Row, Col, Pagination, Input} from 'react-bootstrap';
 import { DropdownButton, MenuItem} from 'react-bootstrap';
@@ -73,7 +75,8 @@ export default class CharacterListPage extends Component {
         loaded: false,
         sortText: sortText,
         sort: sort,
-        text_changed: false
+        text_changed: false,
+        infiniteScrolling: true
       };
 
       this._onChange = this._onChange.bind(this);
@@ -84,11 +87,13 @@ export default class CharacterListPage extends Component {
     }
 
     componentDidMount(){
+      window.addEventListener('scroll', this.handleScroll.bind(this));
       Actions.loadCharacters();
       this.handleChange();
     }
 
     componentWillUnmount(){
+      window.removeEventListener('scroll', this.handleScroll.bind(this));
       Store.removeChangeListener(this._onChange);
     }
 
@@ -120,6 +125,40 @@ export default class CharacterListPage extends Component {
         activePage: selectedEvent.eventKey
       });
       this.pushHistory(selectedEvent.eventKey);
+    }
+
+    toggleInfiniteScrolling() {
+      this.setState({
+        infiniteScrolling: !this.state.infiniteScrolling
+      });
+    }
+
+    handleScroll() {
+      if (document.getElementById('loadMoreButton') && this.state.infiniteScrolling && this.checkLoadMoreIsVisible()) {
+        this.handleLoadMore();
+      }
+    }
+
+    checkLoadMoreIsVisible() {
+      let loadMoreElem = document.getElementById('loadMoreButton');
+      let loadMoreBoundingRect = loadMoreElem.getBoundingClientRect();
+
+      if (loadMoreBoundingRect.top < window.innerHeight - 50) {
+        return true;
+      }
+      
+      return false;
+    }
+
+    handleLoadMore() {
+      let newPage = this.state.activePage + 1;
+
+      this.setState({
+        data: [...this.state.data, ...Store.getCharacters(newPage, this.state.sort, this.state.filter)],
+        activePage: newPage
+      });
+
+      this.pushHistory(newPage);
     }
 
     handleSelectSort(event, eventKey) { // Event triggered by sort change
@@ -205,16 +244,29 @@ export default class CharacterListPage extends Component {
               </DropdownButton>
             </Col>
           </Row>
-          <div className="center">
-            <Pagination
-              boundaryLinks={true}
-              ellipsis
-              maxButtons={3}
-              items={Math.ceil(Store.getCharactersCount(this.state.filter,this.state.sort)/20)}
-              activePage={this.state.activePage}
-              onSelect={this.handleSelectPage.bind(this)} />
-          </div>
+          <Row>
+            <Col md={8} mdOffset={2}>
+              <div className="center">
+                <label id="toggleInfiniteScrolling">
+                  <input type="checkbox" defaultChecked={true} onClick={this.toggleInfiniteScrolling.bind(this)} />
+                  &nbsp;Infinite Scrolling
+                </label>
+                <Pagination
+                  boundaryLinks={true}
+                  ellipsis
+                  maxButtons={3}
+                  items={Math.ceil(Store.getCharactersCount(this.state.filter,this.state.sort)/20)}
+                  activePage={this.state.activePage}
+                  onSelect={this.handleSelectPage.bind(this)} />
+              </div>
+            </Col>
+          </Row>
           <CharacterList data={this.state.data} loaded={this.state.loaded}/>
+          <div className="center">
+            <a role="button" id="loadMoreButton" onClick={this.handleLoadMore.bind(this)}>
+              Load More
+            </a>
+          </div>
           <div className="center">
             <Pagination
               boundaryLinks={true}

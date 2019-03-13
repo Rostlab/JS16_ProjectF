@@ -37,7 +37,12 @@ browserHistory.listen(location => {
 });
 
 ReactDOM.render(
-  <Router onUpdate={() => window.scrollTo(0, 0)} history={browserHistory}>
+  <Router onUpdate={() => {
+    history.scrollRestoration = 'manual';
+    if (!window.location.href.includes("/characters/?")) {
+      window.scrollTo(0, 0);
+    }
+  }} history={browserHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={Start}/>
       <Route path="/ranking" component={Ranking}/>
