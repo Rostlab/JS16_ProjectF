@@ -14,6 +14,9 @@ import SentimentStore from '../../../stores/TwitterSentimentsStore';
 import SentimentActions from '../../../actions/TwitterSentimentsActions';
 import tombstone from './rip_tombstone.png';
 
+import characterPlaceholderMale from './placeholder-male.png';
+import characterPlaceholderFemale from './placeholder-female.png';
+
 export default class Character extends Component {
 
     constructor (props) {
@@ -74,9 +77,10 @@ export default class Character extends Component {
         });
     }
     render() {
-        var base_url = process.env.__PROTOCOL__ + process.env.__API__ + "/";
-        var img = (!this.state.character.imageLink) ? "https://placeholdit.imgix.net/~text?txtsize=33&txt=profile%20picture%20&w=350&h=350" : base_url+this.state.character.imageLink;
-
+        let img =(this.state.character.imageLink)
+            ? process.env.__PROTOCOL__ + process.env.__API__ + "/" + this.state.character.imageLink : 
+            ((this.state.character.male || this.state.character.male == undefined) ? characterPlaceholderMale : characterPlaceholderFemale);
+            
         return (
           <Grid>
             <div className="character-container">

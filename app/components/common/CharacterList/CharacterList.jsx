@@ -27,8 +27,10 @@ export default class CharacterList extends Component {
                 let check = !character.dateOfDeath && character.plod;
                 let plod = (check) ? ''+parseInt(character.plod)+'%': 'DEAD';
                 let plodCropperSize = (check) ? parseInt(character.plod)/100 * 50 : 50;
+                
+                let imageUrl = character.imageLink ? character.imageLink : ((character.male || character.male == undefined) ? 'placeholder-male' : 'placeholder-female');
 
-                return <CharacterThumbnail key={character._id} name={character.name} plod={plod} plodCropperSize={plodCropperSize} imageUrl={character.imageLink}/>;
+                return <CharacterThumbnail key={character._id} name={character.name} plod={plod} plodCropperSize={plodCropperSize} imageUrl={imageUrl}/>;
               })
             }
             </div>
