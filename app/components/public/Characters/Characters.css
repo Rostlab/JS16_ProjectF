@@ -4,13 +4,13 @@
 }
 .row.character-intro {
 	padding: 0;
-	min-height: 200px;
+	min-height: 50px;
 }
 .character-photo {
 	padding: 0;
 }
 .character-details {
-	margin-top: -5em;
+	/*margin-top: -5em;*/
 	text-align: left;
 }
 /*TODO: align char name left for bigger screens;*/
@@ -22,9 +22,9 @@
 .col-sm-3.character-photo img, .col-md-3.character-photo img, .character-photo img {
 	max-width: 100%;
 	max-height: 400px;
-	transform: translateY(-70%);
 	position: absolute;
 	right: 0;
+	bottom: -30px;
 }/*
 .col-xs-6.character-photo img{
 	position: relative;
@@ -102,4 +102,16 @@
 	.row.character-intro {
 		min-height: 100px;
 	}
+}
+
+.togglePlodDisplayButton {
+	position: absolute;
+	top: 18px; 
+	right: 33px;
+
+	background: #333;
+	border-radius: 4px;
+	padding: 5px;
+	width: 150px;
+	border: none;
 }
