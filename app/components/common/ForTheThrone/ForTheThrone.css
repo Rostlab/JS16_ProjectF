@@ -1,0 +1,141 @@
+#fttContainer {
+    width: 100%;
+    background-image: url('./img/texture.jpg');
+    background-position: -500px 0;
+}
+
+#fttAntagonists {
+    position: relative;
+
+    height: 600px;
+    width: 100%;
+
+    overflow: hidden;
+}
+
+@media (min-width: 1200px) {
+    #fttAntagonists {
+        width: 1170px;
+        margin-left: 50%;
+        left: -585px;
+    }
+}
+
+#fttThrone {
+    position: absolute;
+    bottom: 0;
+    height: 450px;
+    left: -200px;
+    margin-left: 50%;
+}
+
+#fttCharLeftContainer {
+    position: absolute;
+    bottom: 0;
+    height: 500px;
+    width: 800px;
+    left: 0;
+}
+
+#fttCharLeftImg {
+    position: absolute;
+    left: 0;
+    height: 500px;
+}
+
+#fttCharLeftArea {
+    position: absolute;
+    left: 0;
+    height: 500px;
+    width: 400px;
+}
+
+#fttCharRightContainer {
+    position: absolute;
+    bottom: 0;
+    height: 500px;
+    width: 800px;
+    right: 0;
+}
+
+#fttCharRightImg {
+    position: absolute;
+    right: 0;
+    height: 500px;
+}
+
+#fttCharRightArea {
+    position: absolute;
+    right: 0;
+    height: 500px;
+    width: 400px;
+}
+
+#fttCharRightText {
+    position: absolute;
+    text-align: left;
+    left: -150px;
+    top: -50px;
+    width: 400px;
+    opacity: 0;
+}
+
+#fttCharLeftText {
+    position: absolute;
+    text-align: left;
+    right: -150px;
+    top: -50px;
+    width: 400px;
+    opacity: 0;
+}
+
+#fttCountdown {
+    background: black;
+    text-align: center;
+}
+
+#fttCountdown h1 {
+    text-align: center;
+}
+
+.fttCharLeftTS {
+    position: absolute;
+    bottom: -20px;
+    left: 100px;
+    height: 120px;
+}
+
+.fttCharRightTS {
+    position: absolute;
+    bottom: -20px;
+    right: 100px;
+    height: 120px;
+}
+
+#fttCharLeftTSPLOD, #fttCharRightTSPLOD {
+    opacity: 0;
+}
+
+#aiLink{
+    box-sizing: border-box;
+    position: absolute;
+    display: block;
+    text-align: left;
+    width: 500px;
+    margin-left: 50%;
+    left: -250px;
+    bottom: 30px;
+    font-size: 14px;
+    padding: 20px;
+    background: rgba(32, 32, 32, 0.7);
+    border-radius: 4px;
+
+    opacity: 0;
+}
+
+#fttHeader {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
