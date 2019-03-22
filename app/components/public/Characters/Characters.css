@@ -111,7 +111,34 @@
 
 	background: #333;
 	border-radius: 4px;
-	padding: 5px;
-	width: 150px;
+	width: 140px;
 	border: none;
+	padding: 5px 0;
+
+	white-space: nowrap;
+	overflow: hidden;
+	cursor: pointer;
+	z-index: 1;
+	user-select: none;
+}
+
+.togglePlodDisplayButtonOption {
+	position: relative;
+	display: inline-block;
+	box-sizing: border-box;
+	padding: 0 5px;
+	width: 50%;
+	margin: 0;
+	text-align: center;
+	z-index: 2;
+}
+
+.togglePlodDisplayButtonBackground {
+	position: absolute;
+	width: 50%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: #5A180C;
+	z-index: 1;
 }

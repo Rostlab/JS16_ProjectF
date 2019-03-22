@@ -92,6 +92,18 @@ export default class Character extends Component {
 
     togglePlodDisplay() {
         $(".plodShowContainer, .plodBookContainer").toggleClass("hidden");
+        let button = $(".togglePlodDisplayButtonBackground");
+        if (button.hasClass("active")) {
+            button.removeClass("active").animate({
+                "left": "0",
+                "backgroundColor": "#5A180C"
+            }, 200);
+        } else {
+            button.addClass("active").animate({
+                "left": "50%",
+                "backgroundColor": "#7a7a7a"
+            }, 200);
+        }
     }
 
     render() {
@@ -123,10 +135,14 @@ export default class Character extends Component {
                 </Row>
                 <Row>
                     <Col md={8} mdOffset={2}>
+                        <div className="togglePlodDisplayButton" onClick={this.togglePlodDisplay}>
+                            <div className="togglePlodDisplayButtonBackground"></div>
+                            <div className="togglePlodDisplayButtonOption">Show</div>
+                            <div className="togglePlodDisplayButtonOption">Book</div>
+                        </div>
                         <div className="plodShowContainer">
-                            <button className="togglePlodDisplayButton" onClick={this.togglePlodDisplay}>Switch to Book</button>
-                            <h2>Chance of surival in the TV show</h2>
-                            <p>{this.state.character.name}'s likelihood to survive is:</p>
+                            <h2>Likelihood of surival</h2>
+                            <p>{this.state.character.name}'s likelihood to survive between 300 and 320 AC is:</p>
                             <div className="plodContainer">
                                 <CharacterPlodDisplay plodByYear={this.state.plodByYearShow} />
                             </div>
@@ -137,9 +153,8 @@ export default class Character extends Component {
                             </div>
                         </div>
                         <div className="plodBookContainer hidden">
-                            <button className="togglePlodDisplayButton" onClick={this.togglePlodDisplay}>Switch to Show</button>
-                            <h2>Chance of surival in the books</h2>
-                            <p>{this.state.character.name}'s likelihood to survive is:</p>
+                            <h2>Likelihood of surival</h2>
+                            <p>{this.state.character.name}'s likelihood to survive between 300 and 320 AC is:</p>
                             <div className="plodContainer">
                                 <CharacterPlodDisplay plodByYear={this.state.plodByYearBook} />
                             </div>
