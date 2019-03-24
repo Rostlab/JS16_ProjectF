@@ -45,9 +45,9 @@
 
 #fttCharLeftArea {
     position: absolute;
-    left: 0;
+    left: -500px;
     height: 500px;
-    width: 500px;
+    width: 1000px;
     z-index: 1;
 }
 
@@ -68,9 +68,9 @@
 
 #fttCharRightArea {
     position: absolute;
-    right: 0;
+    right: -500px;
     height: 500px;
-    width: 500px;
+    width: 1000px;
     z-index: 1;
 }
 
