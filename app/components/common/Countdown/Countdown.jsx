@@ -1,6 +1,9 @@
 import React from 'react';
 let { Component } = React;
+
 import window from 'global';
+
+import './Countdown.css';
 
 export default class Countdown extends Component {
 
@@ -82,32 +85,40 @@ export default class Countdown extends Component {
         return (
           <div className="Countdown">
             <span className="Countdown-col">
-              <span className="Countdown-col-element">
+              <span className="Countdown-col-number">
                   <strong>{this.addLeadingZeros(countDown.days)}</strong>
-                  <span>{countDown.days === 1 ? 'Day' : 'Days'}</span>
+              </span>
+              <br></br>
+              <span className="Countdown-col-string">
+                {countDown.days === 1 ? 'Day' : 'Days'}
               </span>
             </span>
     
             <span className="Countdown-col">
-              <span className="Countdown-col-element">
+              <span className="Countdown-col-number">
                 <strong>{this.addLeadingZeros(countDown.hours)}</strong>
-                <span>Hours</span>
+              </span>
+              <br></br>
+              <span className="Countdown-col-string">
+                {countDown.hours === 1 ? 'Hour' : 'Hours'}
               </span>
             </span>
     
     
             <span className="Countdown-col">
-              <span className="Countdown-col-element">
+              <span className="Countdown-col-number">
                 <strong>{this.addLeadingZeros(countDown.min)}</strong>
-                <span>Min</span>
               </span>
+              <br></br>
+              <span className="Countdown-col-string">Min</span>
             </span>
     
             <span className="Countdown-col">
-              <span className="Countdown-col-element">
+              <span className="Countdown-col-number">
                 <strong>{this.addLeadingZeros(countDown.sec)}</strong>
-                <span>Sec</span>
               </span>
+              <br></br>
+              <span className="Countdown-col-string">Sec</span>
             </span>
           </div>
         );
