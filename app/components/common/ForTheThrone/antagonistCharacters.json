@@ -1,0 +1,39 @@
+{
+    "characters": {
+        "TyrionLannister": {
+            "name": "Tyrion Lannister",
+            "description": "",
+            "quote": "I have a tender spot in my heart for cripples, bastards and broken things.",
+            "_id": "56ffc5c00432440819385eab"
+        },
+        "CerseiLannister": {
+            "name": "Cersei Lannister",
+            "description": "",
+            "quote": "When you play the game of thrones, you win or you die.",
+            "_id": "56ffc5bf04324408193858b3"
+        },
+        "AryaStark": {
+            "name": "Arya Stark",
+            "description": "",
+            "quote": "A girl is Arya Stark of Winterfell. And I'm going home.",
+            "_id": "56ffc5bf0432440819385802"
+        },
+        "BrienneOfTarth": {
+            "name": "Brienne of Tarth",
+            "description": "",
+            "quote": "All my life men like you have sneered at me. And all my life I've been knocking men like you into the dust.",
+            "_id": "56ffc5bf0432440819385881"
+        },
+        "SandorClegane": {
+            "name": "Sandor Clegane",
+            "description": "",
+            "quote": "Killing is the sweetest thing there is",
+            "_id": "56ffc5c00432440819385ddc"
+        }
+    },
+    "antagonists": [
+        ["TyrionLannister", "CerseiLannister"],
+        ["AryaStark", "CerseiLannister"],
+        ["SandorClegane", "BrienneOfTarth"]
+    ]
+}

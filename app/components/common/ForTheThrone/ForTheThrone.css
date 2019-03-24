@@ -1,13 +1,13 @@
 #fttContainer {
     width: 100%;
-    background-image: url('./img/texture.jpg');
+    background-image: url('/ForTheThrone/img/texture.jpg');
     background-position: -500px 0;
 }
 
 #fttAntagonists {
     position: relative;
 
-    height: 600px;
+    height: 700px;
     width: 100%;
 
     overflow: hidden;
@@ -47,7 +47,8 @@
     position: absolute;
     left: 0;
     height: 500px;
-    width: 400px;
+    width: 500px;
+    z-index: 1;
 }
 
 #fttCharRightContainer {
@@ -62,20 +63,22 @@
     position: absolute;
     right: 0;
     height: 500px;
+    transform: scaleX(-1);
 }
 
 #fttCharRightArea {
     position: absolute;
     right: 0;
     height: 500px;
-    width: 400px;
+    width: 500px;
+    z-index: 1;
 }
 
 #fttCharRightText {
     position: absolute;
     text-align: left;
     left: -150px;
-    top: -50px;
+    top: -180px;
     width: 400px;
     opacity: 0;
 }
@@ -84,7 +87,7 @@
     position: absolute;
     text-align: left;
     right: -150px;
-    top: -50px;
+    top: -180px;
     width: 400px;
     opacity: 0;
 }
@@ -125,7 +128,7 @@
     margin-left: 50%;
     left: -250px;
     bottom: 30px;
-    font-size: 14px;
+    font-size: 16px;
     padding: 20px;
     background: rgba(32, 32, 32, 0.7);
     border-radius: 4px;
@@ -136,6 +139,22 @@
 #fttHeader {
     position: absolute;
     width: 100%;
+    height: 100%;
     top: 0;
     left: 0;
+}
+
+#fttWhoDoYouChoose {
+    position: relative;
+    left: -200px;
+
+    margin-top: 60px;    
+    margin-left: 50%;    
+    width: 400px;
+    
+    text-align: center;
+}
+#fttWhoDoYouChoose h1, h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
 }
