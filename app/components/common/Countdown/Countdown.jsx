@@ -84,42 +84,42 @@ export default class Countdown extends Component {
     
         return (
           <div className="Countdown">
-            <span className="Countdown-col">
-              <span className="Countdown-col-number">
-                  <strong>{this.addLeadingZeros(countDown.days)}</strong>
-              </span>
-              <br></br>
-              <span className="Countdown-col-string">
+            <div className="Countdown-col">
+              <div className="Countdown-col-number">
+                  <strong>{this.addLeadingZeros(countDown.days)[0]}</strong>
+                  <strong>{this.addLeadingZeros(countDown.days)[1]}</strong>
+              </div>
+              <div className="Countdown-col-string">
                 {countDown.days === 1 ? 'Day' : 'Days'}
-              </span>
-            </span>
+              </div>
+            </div>
     
-            <span className="Countdown-col">
-              <span className="Countdown-col-number">
-                <strong>{this.addLeadingZeros(countDown.hours)}</strong>
-              </span>
-              <br></br>
-              <span className="Countdown-col-string">
+            <div className="Countdown-col">
+              <div className="Countdown-col-number">
+                <strong>{this.addLeadingZeros(countDown.hours)[0]}</strong>
+                <strong>{this.addLeadingZeros(countDown.hours)[1]}</strong>
+              </div>
+              <div className="Countdown-col-string">
                 {countDown.hours === 1 ? 'Hour' : 'Hours'}
-              </span>
-            </span>
+              </div>
+            </div>
     
     
-            <span className="Countdown-col">
-              <span className="Countdown-col-number">
-                <strong>{this.addLeadingZeros(countDown.min)}</strong>
-              </span>
-              <br></br>
-              <span className="Countdown-col-string">Min</span>
-            </span>
+            <div className="Countdown-col">
+              <div className="Countdown-col-number">
+                <strong>{this.addLeadingZeros(countDown.min)[0]}</strong>
+                <strong>{this.addLeadingZeros(countDown.min)[1]}</strong>
+              </div>
+              <div className="Countdown-col-string">Minutes</div>
+            </div>
     
-            <span className="Countdown-col">
-              <span className="Countdown-col-number">
-                <strong>{this.addLeadingZeros(countDown.sec)}</strong>
-              </span>
-              <br></br>
-              <span className="Countdown-col-string">Sec</span>
-            </span>
+            <div className="Countdown-col">
+              <div className="Countdown-col-number">
+                <strong>{this.addLeadingZeros(countDown.sec)[0]}</strong>
+                <strong>{this.addLeadingZeros(countDown.sec)[1]}</strong>
+              </div>
+              <div className="Countdown-col-string">Seconds</div>
+            </div>
           </div>
         );
     }

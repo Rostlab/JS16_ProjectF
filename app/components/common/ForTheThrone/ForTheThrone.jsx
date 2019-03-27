@@ -11,7 +11,6 @@ import Countdown from '../Countdown/Countdown.jsx';
 
 import $ from 'jquery';
 
-/* THIS IS JUST A MOCKUP */
 export default class ForTheThrone extends Component {
     constructor(props) {
         super(props);
@@ -20,7 +19,8 @@ export default class ForTheThrone extends Component {
             charLeft: {},
             charRight: {},
             charLeftPlod: {},
-            charRightPlod: {}
+            charRightPlod: {},
+            smallChars: []
         };
     }
 
@@ -28,26 +28,36 @@ export default class ForTheThrone extends Component {
         Store.addChangeListener(this._onChange.bind(this));
 
         let chars = this.getRandAntagonistChars();
+        let smallChars = this.getRandSmallChars(chars);
         this.setState({
             charLeft: chars[0],
-            charRight: chars[1]
+            charRight: chars[1],
+            smallChars: smallChars
         });
 
     }
 
     componentDidMount() {
-        Actions.loadCharactersPlodByName([this.state.charLeft.name,this.state.charRight.name]);
+        Actions.loadCharactersPlodByName([this.state.charLeft.name, this.state.charRight.name]);
     }
     
     _onChange() {
         let plods = Store.getCharactersPlodByName();
+        let plodLeft, plodRight;
+
+        if (plods[0].name == this.state.charLeft.name) {
+            plodLeft = plods[0];
+            plodRight = plods[1];
+        } else {
+            plodLeft = plods[1];
+            plodRight = plods[0];
+        }
+
         if (plods[0] && plods[1]) {
             this.setState({
-                charLeftPlod: plods[0],
-                charRightPlod: plods[1]
+                charLeftPlod: plodLeft,
+                charRightPlod: plodRight
             });
-
-            console.log(this.state);/*eslint no-console:0,no-undef:0*/
         }
     }
 
@@ -70,7 +80,38 @@ export default class ForTheThrone extends Component {
         return chars;
     }
 
+    getRandSmallChars(chars) {
+        let smallChars = [];
+        let smallCharsElems = [];
+        let keys = Object.keys(antagonistCharacters.characters);
+
+        while (smallChars.length < 5) {
+            let rand = Math.floor(Math.random() * keys.length);
+            if (chars[1] !== keys[rand] && chars[0] !== keys[rand] && smallChars.indexOf(keys[rand]) === -1) {
+                smallChars.push(keys[rand]);
+                smallCharsElems.push({
+                    name: antagonistCharacters.characters[keys[rand]].name,
+                    key: keys[rand]
+                });
+            }
+        }
+
+        return smallCharsElems;
+    }
+
+    focus() {
+        $( "#aiLink" ).animate({
+            opacity: "1"
+        });
+
+        $("#fttHeader, #fttWhoDoYouChoose, .fttTombstoneQuestionMark").animate({
+            opacity: "0"
+        });
+    }
+
     focusLeftChar() {
+        this.focus();
+
         $( "#fttCharLeftImg" ).animate({
             left: "140",
             bottom: "0",
@@ -79,7 +120,7 @@ export default class ForTheThrone extends Component {
 
         $( "#fttCharRightImg" ).animate({
             bottom: "0",
-            height: "400"
+            height: "350"
         });
 
         $( "#fttThrone" ).animate({
@@ -92,17 +133,11 @@ export default class ForTheThrone extends Component {
         $( "#fttCharLeftText" ).animate({
             opacity: "1"
         });
-
-        $("#fttCharLeftTSPLOD, #fttCharRightTSPLOD, #aiLink").animate({
-            opacity: "1"
-        });
-
-        $("#fttHeader, #fttWhoDoYouChoose").animate({
-            opacity: "0"
-        });
     }
 
     focusRightChar() {
+        this.focus();
+
         $( "#fttCharRightImg" ).animate({
             right: "140",
             bottom: "0",
@@ -111,7 +146,7 @@ export default class ForTheThrone extends Component {
 
         $( "#fttCharLeftImg" ).animate({
             bottom: "0",
-            height: "400"
+            height: "350"
         });
 
         $( "#fttThrone" ).animate({
@@ -123,14 +158,6 @@ export default class ForTheThrone extends Component {
 
         $( "#fttCharRightText" ).animate({
             opacity: "1"
-        });
-
-        $("#fttCharLeftTSPLOD, #fttCharRightTSPLOD, #aiLink").animate({
-            opacity: "1"
-        });
-
-        $("#fttHeader, #fttWhoDoYouChoose").animate({
-            opacity: "0"
         });
     }
 
@@ -155,68 +182,64 @@ export default class ForTheThrone extends Component {
             height: "450"
         });
 
-        $( "#fttCharLeftText, #fttCharRightText" ).animate({
+        $( "#fttCharLeftText, #fttCharRightText, #fttCharLeftTSPLOD, #fttCharRightTSPLOD" ).animate({
             opacity: "0"
         });
 
-        $("#fttCharLeftTSPLOD, #fttCharRightTSPLOD").animate({
-            opacity: "0"
-        });
-
-        $("#fttHeader").animate({
+        $("#fttHeader, .fttTombstoneQuestionMark").animate({
             opacity: "1"
         });
-
     }
 
     render() {
         return (
             <div id="fttContainer">
+                <div className="fttCharArea fttLeft" onMouseEnter={this.focusLeftChar.bind(this)} onMouseLeave={this.unfocus.bind(this)}></div>
+                <div className="fttCharArea fttRight" onMouseEnter={this.focusRightChar.bind(this)} onMouseLeave={this.unfocus.bind(this)}></div>
                 <div id="fttAntagonists">
                     <img src="ForTheThrone/img/iron-throne.png" id="fttThrone" />
                     <div id="fttHeader" className="center">
                         <br/>
                         <h3>When you play the game of thrones you win...</h3>
                         <h1 className="center">...or you die</h1>
-                        <div id="fttWhoDoYouChoose">
-                            <h3>Who do you choose</h3>
-                            <h1 className="center">#ForTheThrone?</h1>
-                            <p>Move your mouse over a character to discover their <b>Predicted Likelihood of Death</b> in GoT: Season 8!</p>
-                        </div>
                     </div>
-                    <div id="fttCharLeftContainer">
-                        <img src={this.state.charLeft.img} id="fttCharLeftImg" />
-                        <img src="ForTheThrone/img/tombstone-question-mark.png" className="fttCharLeftTS" />
-                        <img src="ForTheThrone/img/tombstone1.png" className="fttCharLeftTS" id="fttCharLeftTSPLOD"/>
-                        <div id="fttCharLeftArea" onMouseEnter={this.focusLeftChar.bind(this)} onMouseLeave={this.unfocus.bind(this)}></div>
-                        <div id="fttCharLeftText">
-                            <h1>Will {this.state.charLeft.name} meet the God of Death?</h1>
-                            <p>Curabitur turpis nibh, tempus eget sollicitudin ac, fermentum eget nunc. 
-                                Phasellus malesuada tempor euismod. Curabitur volutpat.</p>
-
+                    <div className="fttCharContainer fttLeft">
+                        <img src={this.state.charLeft.img} id="fttCharLeftImg" className="fttCharImg fttLeft" />
+                        <div className="fttCharTombstone fttCharLeftTombstone fttTombstonePlod">
+                            {this.state.charLeftPlod.plod < 100 ? parseInt(this.state.charLeftPlod.plod) : 100} %
+                        </div>
+                        <div className="fttCharTombstone fttCharLeftTombstone fttTombstoneQuestionMark">?</div>
+                        <div id="fttCharLeftText" className="fttCharText">
+                            <h2>{this.state.charLeft.question}</h2>
+                            <p>{this.state.charLeft.description}</p>
                             <i>"{this.state.charLeft.quote}"</i>
                         </div>
                     </div>
-                    <div id="fttCharRightContainer">
-                        <img src={this.state.charRight.img} id="fttCharRightImg" />
-                        <img src="ForTheThrone/img/tombstone-question-mark.png" className="fttCharRightTS" />
-                        <img src="ForTheThrone/img/tombstone2.png" className="fttCharRightTS" id="fttCharRightTSPLOD"/>
-                        <div id="fttCharRightText">
-                            <h2>Are {this.state.charRight.name}'s days numbered?</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut turpis nunc. 
-                                In mattis eros eget nibh malesuada, bibendum lobortis ex fringilla. Aenean id laoreet ex. 
-                                Donec ac lobortis leo. Aliquam pretium massa interdum pulvinar feugiat. </p>
+                    <div className="fttCharContainer fttRight">
+                        <img src={this.state.charRight.img} id="fttCharRightImg" className="fttCharImg fttRight"/>
+                        <div className="fttCharTombstone fttCharRightTombstone fttTombstonePlod">
+                            {this.state.charRightPlod.plod < 100 ? parseInt(this.state.charRightPlod.plod) : 100} %
+                        </div>
+                        <div className="fttCharTombstone fttCharRightTombstone fttTombstoneQuestionMark">?</div>
+                        <div id="fttCharRightText" className="fttCharText">
+                            <h2>{this.state.charRight.question}</h2>
+                            <p>{this.state.charRight.description}</p>
                             <i>"{this.state.charRight.quote}"</i>
                         </div>
-                        <div id="fttCharRightArea" onMouseEnter={this.focusRightChar.bind(this)} onMouseLeave={this.unfocus.bind(this)}></div>
                     </div>
 
-                    <div id="aiLink">
+                    <div id="fttWhoDoYouChoose" className="fttCard">
+                        <h4 className="center">Who do you choose</h4>
+                        <h2 className="center">#ForTheThrone?</h2>
+                        <p>Move your mouse over a character to discover their<br /><b>Predicted Likelihood of Death</b> in GoT: Season 8!</p>
+                    </div>
+
+                    <div id="aiLink" className="fttCard">
                         <h3 className="center" style={{"marginTop": "0px"}}>A Song of ice and data:</h3>
                         <h4 className="center">Westeros and Machine learning</h4>
                         <p>Our in-house developed machine learning algorithm predicts likelihood of death based on various 
-                        features that we extracted for each of the more than 2000 characters in George R. R. Martin's 
-                        <i> A Song of Ice and Fire</i> series</p>
+                        features that we extracted for each of the more than 2000 characters in George&nbsp;R.&nbsp;R.&nbsp;Martin's 
+                        <i> A&nbsp;Song&nbsp;of&nbsp;Ice&nbsp;and&nbsp;Fire</i> series</p>
                         <div className="center">
                             <a href="/machine-learning-algorithm-predicts-death-game-of-thrones">
                                 <b>Read more about our prediction algorithm.</b>
@@ -226,11 +249,27 @@ export default class ForTheThrone extends Component {
 
                 </div>
                 <div id="fttCountdown">
-                    <div className="center">
-                        <br />
-                        <h2 className="center">There is only one war that matters<br />the great war... and it is here</h2>
-                        {/* <img src="ForTheThrone/img/countdown.png" /><br /><br /><br /><br /><br /><br /> */}
-                        <Countdown date="April 15, 2019, 03:00:00"></Countdown>
+                    <div className="content">
+                        <div id="fttCountdownLeft">
+                            <br />
+                            <h4 className="center">The next episode airs in</h4>
+                            <Countdown date="April 15, 2019, 03:00:00"></Countdown>
+                        </div>
+                        <div id="fttCountdownRight">
+                            <h3>Discover your favorite character's <strong>chance of survival</strong> now!</h3>
+                        </div>
+                    </div>
+                </div>
+                <div id="fttCharacters">
+                    <div className="content">
+                        {this.state.smallChars.map(function(elem) {
+                            return (
+                                <a target="_blank" className="fttCharacter" href={"/characters/" + elem.name}>
+                                    <img src={"/ForTheThrone/img/"+elem.key+"Small.png"} />
+                                    <div>{elem.name}</div>
+                                </a>
+                            );
+                        })}
                     </div>
                 </div>
             </div>

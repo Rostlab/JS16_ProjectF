@@ -1,13 +1,19 @@
 #fttContainer {
+    position: relative;
+
     width: 100%;
     background-image: url('/ForTheThrone/img/texture.jpg');
     background-position: -500px 0;
 }
 
+p {
+    text-align: justify;
+}
+
 #fttAntagonists {
     position: relative;
 
-    height: 700px;
+    height: 620px;
     width: 100%;
 
     overflow: hidden;
@@ -29,111 +35,104 @@
     margin-left: 50%;
 }
 
-#fttCharLeftContainer {
+.fttCharContainer {
     position: absolute;
     bottom: 0;
-    height: 500px;
-    width: 800px;
+    top: 0;
+    width: 50%;
+}
+
+.fttLeft {
     left: 0;
 }
 
-#fttCharLeftImg {
-    position: absolute;
-    left: 0;
-    height: 500px;
+.fttRight {
+    right: 0;
 }
 
-#fttCharLeftArea {
-    position: absolute;
-    left: -500px;
-    height: 500px;
-    width: 1000px;
-    z-index: 1;
-}
-
-#fttCharRightContainer {
+.fttCharImg {
     position: absolute;
     bottom: 0;
     height: 500px;
-    width: 800px;
-    right: 0;
 }
 
-#fttCharRightImg {
-    position: absolute;
-    right: 0;
-    height: 500px;
+.fttCharImg.fttRight {
     transform: scaleX(-1);
 }
 
-#fttCharRightArea {
+.fttCharArea {
     position: absolute;
-    right: -500px;
-    height: 500px;
-    width: 1000px;
+    top: 0;
+    height: 620px;
+    width: calc(50vw - 100px);
     z-index: 1;
 }
 
-#fttCharRightText {
+.fttCharText {
     position: absolute;
     text-align: left;
-    left: -150px;
-    top: -180px;
-    width: 400px;
+    top: 50px;
+    width: 450px;
     opacity: 0;
+}
+
+#fttCharRightText {
+    left: -380px;
 }
 
 #fttCharLeftText {
-    position: absolute;
-    text-align: left;
-    right: -150px;
-    top: -180px;
-    width: 400px;
-    opacity: 0;
+    right: -380px;
 }
 
-#fttCountdown {
-    background: black;
-    text-align: center;
-}
-
-#fttCountdown h1 {
-    text-align: center;
-}
-
-.fttCharLeftTS {
-    position: absolute;
-    bottom: -20px;
-    left: 100px;
-    height: 120px;
-}
-
-.fttCharRightTS {
-    position: absolute;
-    bottom: -20px;
+.fttCharRightTombstone {
     right: 100px;
-    height: 120px;
 }
 
-#fttCharLeftTSPLOD, #fttCharRightTSPLOD {
-    opacity: 0;
+.fttCharLeftTombstone {
+    left: 100px;
+}
+
+.fttCharTombstone {
+    position: absolute;
+    bottom: -10px;
+    height: 120px;
+    width: 100px;
+
+    box-sizing: border-box;
+    padding-top: 60px;
+
+    background-image: url('/ForTheThrone/img/tombstone.png');
+    background-size: 100PX 120px;
+
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    font-size: 1.4em;
+
+    color: #222;
 }
 
 #aiLink{
     box-sizing: border-box;
-    position: absolute;
+
     display: block;
-    text-align: left;
     width: 500px;
     margin-left: 50%;
+
+    position: absolute;
     left: -250px;
     bottom: 30px;
+    
     font-size: 16px;
-    padding: 20px;
-    background: rgba(32, 32, 32, 0.7);
-    border-radius: 4px;
+    text-align: left;
 
     opacity: 0;
+}
+
+.fttCard {
+    padding: 20px;
+
+    background: rgba(32, 32, 32, 0.7);
+    border-radius: 20px;
 }
 
 #fttHeader {
@@ -145,16 +144,90 @@
 }
 
 #fttWhoDoYouChoose {
-    position: relative;
-    left: -200px;
+    position: absolute;
+    left: -250px;
+    bottom: 30px;
 
     margin-top: 60px;    
     margin-left: 50%;    
-    width: 400px;
+    width: 500px;
     
     text-align: center;
 }
-#fttWhoDoYouChoose h1, h3 {
+#fttWhoDoYouChoose h2, h3 {
     margin-top: 0;
     margin-bottom: 5px;
+}
+
+#fttCountdown, #fttCharacters {
+    background: black;
+    text-align: center;
+}
+
+#fttCountdown .content {
+    display: inline-block;
+    position: relative;
+    max-width: 1170px;
+}
+
+#fttCharacters .content {
+    display: inline-block;
+    position: relative;
+    width: 1000px;
+    padding-bottom: 30px;
+    padding-top: 20px;
+}
+
+#fttCountdown .content > div {
+    display: inline-block;
+}
+
+#fttCountdownLeft {
+    width: 50%;
+    text-align: center;
+}
+
+#fttCountdownLeft h4 {
+    margin-bottom: 0;
+}
+
+#fttCountdownRight {
+    box-sizing: border-box;
+
+    width: 50%;
+    padding-left: 50px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    text-align: left;
+    border-left: 2px solid white;
+}
+
+.fttCharacter {
+    display: inline-block;
+    text-align: center;
+
+    vertical-align: top;
+
+    width: 20%;
+    padding: 0;
+}
+
+.fttCharacter img {
+    box-sizing: border-box;
+    width: 90px;
+    height: 90px;
+    border: 3px solid transparent;
+    border-radius: 50%;
+
+    margin-bottom: 10px;
+}
+
+.fttCharacter:hover img {
+    border: 3px solid white;
+    transition-duration: 0.2s;
+}
+
+.fttCharacter:hover {
+    text-decoration: none !important;
 }
