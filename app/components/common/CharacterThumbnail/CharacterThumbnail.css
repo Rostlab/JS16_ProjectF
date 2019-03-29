@@ -23,7 +23,6 @@
     text-align: center;
 }
 
-
 .character-thumbmail-img-container {
     position: relative;
     display: inline-block;
@@ -31,6 +30,8 @@
     width: 98px;
     overflow: hidden;
     text-align: center;
+
+    margin-bottom: 10px;
 }
 
 .character-thumbmail-img-container img {
@@ -48,6 +49,14 @@
 .to-transition:hover {
 	transition: all .1s ease-out;
 	transform: scale(1.05);
+}
+
+.to-transition:hover .character-thumbnail {
+    background-color: #3f3f3f;
+}
+
+.to-transition:hover {
+    text-decoration: none;
 }
 
 .thumbnail .caption {

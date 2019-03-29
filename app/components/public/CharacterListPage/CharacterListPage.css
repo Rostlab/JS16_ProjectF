@@ -72,3 +72,7 @@ input.character-search {
         width: 140px;
     }
 }
+
+.pagination > li > a:hover {
+    background-color: #3f3f3f;
+}
