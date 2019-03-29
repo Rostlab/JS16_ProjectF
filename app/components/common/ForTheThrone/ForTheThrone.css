@@ -1,0 +1,499 @@
+#fttContainer {
+    position: relative;
+
+    width: 100%;
+    background-image: url('/ForTheThrone/img/texture.jpg');
+    background-position: -500px 0;
+}
+
+p {
+    text-align: justify;
+}
+
+#fttAntagonists {
+    position: relative;
+
+    height: 620px;
+    width: 100%;
+
+    overflow: hidden;
+}
+
+#fttAntagonists * {
+    transition-duration: 0.4s;
+    transition-timing-function: easeOutCubic;
+}
+
+@media (min-width: 1200px) {
+    #fttAntagonists {
+        width: 1170px;
+        margin-left: 50%;
+        left: -585px;
+    }
+}
+
+#fttThrone {
+    position: absolute;
+    bottom: 0;
+    height: 450px;
+    left: -200px;
+    margin-left: 50%;
+}
+
+.fttCharContainer {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    width: 50%;
+}
+
+.fttLeft {
+    left: 0;
+}
+
+.fttRight {
+    right: 0;
+}
+
+.fttCharImg {
+    position: absolute;
+    bottom: 0;
+    height: 500px;
+}
+
+.fttCharImg.fttRight {
+    transform: scaleX(-1);
+}
+
+.fttCharArea {
+    position: absolute;
+    top: 0;
+    height: 620px;
+    width: calc(50vw - 180px);
+    z-index: 1;
+}
+
+.fttCharText {
+    position: absolute;
+    text-align: left;
+    top: 50px;
+    width: 450px;
+    opacity: 0;
+}
+
+#fttCharRightText {
+    left: -380px;
+}
+
+#fttCharLeftText {
+    right: -380px;
+}
+
+.fttCharRightTombstone {
+    right: 100px;
+}
+
+.fttCharLeftTombstone {
+    left: 100px;
+}
+
+.fttCharTombstone {
+    position: absolute;
+    bottom: -10px;
+    height: 120px;
+    width: 100px;
+
+    box-sizing: border-box;
+    padding-top: 60px;
+
+    background-image: url('/ForTheThrone/img/tombstone.png');
+    background-size: 100PX 120px;
+
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    font-size: 1.4em;
+
+    color: #222;
+}
+
+#aiLink{
+    box-sizing: border-box;
+
+    display: block;
+    width: 500px;
+    margin-left: 50%;
+
+    position: absolute;
+    left: -250px;
+    bottom: 30px;
+    
+    font-size: 16px;
+    text-align: left;
+
+    opacity: 0;
+}
+
+.fttCard {
+    padding: 20px;
+
+    background: rgba(32, 32, 32, 0.7);
+    border-radius: 20px;
+}
+
+#fttHeader {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+#fttWhoDoYouChoose {
+    position: absolute;
+    left: -250px;
+    bottom: 30px;
+
+    margin-top: 60px;    
+    margin-left: 50%;    
+    width: 500px;
+    
+    text-align: center;
+}
+#fttWhoDoYouChoose h2, h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+#fttCountdown, #fttCharacters {
+    background: black;
+    text-align: center;
+}
+
+#fttCountdown .content {
+    display: inline-block;
+    position: relative;
+    min-width: 1000px;
+    max-width: 1170px;
+    padding-top: 20px;
+}
+
+#fttCharacters .content {
+    display: inline-block;
+    position: relative;
+    width: 1000px;
+    padding-bottom: 30px;
+    padding-top: 20px;
+}
+
+#fttCountdown .content > div {
+    display: inline-block;
+}
+
+#fttCountdownLeft {
+    width: 50%;
+    text-align: center;
+    vertical-align: top;
+}
+
+#fttCountdownLeft h4 {
+    margin-bottom: 0;
+}
+
+#fttCountdownRight {
+    box-sizing: border-box;
+
+    width: 50%;
+    padding-left: 50px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    vertical-align: top;
+
+    text-align: left;
+    border-left: 2px solid white;
+}
+
+.fttCharacter {
+    display: inline-block;
+    text-align: center;
+
+    vertical-align: top;
+
+    width: 20%;
+    padding: 0;
+}
+
+.fttCharacter img {
+    box-sizing: border-box;
+    width: 90px;
+    height: 90px;
+    border: 3px solid transparent;
+    border-radius: 50%;
+
+    margin-bottom: 10px;
+}
+
+.fttCharacter:hover img {
+    border: 3px solid white;
+    transition-duration: 0.2s;
+}
+
+.fttCharacter:hover {
+    text-decoration: none !important;
+}
+
+/* ANIMATIONS */
+@media (min-width: 1170px) {
+    .fttCharArea.fttLeft:hover ~ #fttAntagonists #fttCharRightImg, 
+    .fttCharArea.fttRight:hover ~ #fttAntagonists #fttCharLeftImg {
+        height: 350px;
+        bottom: 0;
+        transition-duration: 0.2s;
+    }
+
+    .fttCharArea.fttLeft:hover ~ #fttAntagonists #fttCharLeftImg {
+        left: 140px;
+        bottom: 0;
+        height: 600px;
+    }
+
+    .fttCharArea.fttRight:hover ~ #fttAntagonists #fttCharRightImg {
+        right: 140px;
+        bottom: 0;
+        height: 600px;
+    }
+
+    .fttCharArea.fttLeft:hover ~ #fttAntagonists #fttCharLeftImg {
+        left: 140px;
+        bottom: 0;
+        height: 600px;
+    }
+
+    .fttCharArea.fttLeft:hover ~ #fttAntagonists #fttThrone{
+        margin-left: 0;
+        left: 100px;
+        bottom: 0;
+        height: 600px;
+    }
+
+    .fttCharArea.fttRight:hover ~ #fttAntagonists #fttThrone{
+        margin-left: 0;
+        left: 550px;
+        bottom: 0;
+        height: 600px;
+    }
+
+    .fttCharArea:hover ~ #fttAntagonists #fttHeader, 
+    .fttCharArea:hover ~ #fttAntagonists #fttWhoDoYouChoose, 
+    .fttCharArea:hover ~ #fttAntagonists .fttTombstoneQuestionMark,
+    .fttCharArea:hover ~ #fttAntagonists #aiLink {
+        opacity: 0
+    }
+
+    .fttCharArea.fttLeft:hover ~ #fttAntagonists #fttCharLeftText,
+    .fttCharArea.fttRight:hover ~ #fttAntagonists #fttCharRightText {
+        opacity: 1
+    }
+}
+
+/* SMALLER SCREENS */
+@media (min-width: 860px) and (max-width: 1170px) {
+    #aiLink {
+        opacity: 1;
+        width: 650px;
+        left: -325px;
+    }
+
+    #fttWhoDoYouChoose, #fttHeader {
+        display: none;
+    }
+
+    #fttCountdown .content, #fttCharacters .content {
+        min-width: 0;
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    #fttAntagonists {
+        position: relative;
+    
+        height: 500px;
+        width: 100%;
+    
+        overflow: hidden;
+    }
+
+    .fttCharContainer.fttRight, .fttTombstoneQuestionMark {
+        display: none;
+    }
+
+    .fttCharArea {
+        display: none;
+    }
+
+    #fttAntagonists #fttCharLeftImg {
+        left: 140px;
+        bottom: 0;
+        height: 420px;
+    }
+
+    #fttAntagonists #fttThrone{
+        margin-left: 0;
+        left: 100px;
+        bottom: 0;
+        height: 420px;
+    }
+
+    #fttAntagonists #fttCharLeftText {
+        top: 25px;
+        right: -420px;
+        opacity: 1
+    }
+
+    #fttAntagonists #fttCharLeftText h2 {
+        font-size: 1.4em;
+    }
+
+    #fttCountdownRight h3 {
+        font-size: 1.2em;
+    }
+
+}
+
+/* VERY SMALL SCREENS / MOBILE */
+@media (max-width: 860px) {
+    #aiLink {
+        opacity: 1;
+    }
+
+    #fttWhoDoYouChoose, #fttHeader {
+        display: none;
+    }
+
+    #fttAntagonists, #fttContainer {
+        width: 100%;
+        height: auto;
+    }
+
+    .fttCharContainer.fttRight, .fttTombstoneQuestionMark {
+        display: none;
+    }
+
+    .fttCharContainer.fttLeft{
+        position: relative;
+        height: 250px;
+        width: 100%;
+        left: 0;
+    }
+
+    .fttCharImg.fttLeft{
+        height: 200px;
+        left: calc(10% + 10px);
+    }
+
+    .fttCharTombstone {
+        left: 50px;
+        padding-top: 50px;
+        width: 80px;
+        height: 100px;
+        background-size: 80PX 100px;
+    }
+
+    #fttThrone {
+        top: 30px;
+        bottom: auto;
+        margin-left: 0;
+        left: 10%;
+        height: 220px;
+    }
+
+    .fttCharArea {
+        display: none;
+    }
+
+    #fttCharLeftText {
+        opacity: 1;
+        left: 250px;
+        width: calc(100% - 280px);
+    }
+
+    #fttCharLeftText p {
+        display: none;
+    }
+
+    #fttCharLeftText h2 {
+        font-size: 1.2em;
+    }   
+
+    #fttCountdown .content, #fttCharacters .content {
+        min-width: 0;
+        width: 100%;
+    }
+
+    #fttCountdown .content #fttCountdownLeft {
+        display: block;
+        width: 100%;
+        padding-bottom: 10px;
+    }
+
+    #fttCountdown .content #fttCountdownRight {
+        display: inline-block;
+        font-size: 1em;
+        text-align: center;
+        border: none;
+        border-top: 2px solid white;
+        padding: 0;
+        padding-top: 20px;
+        width: calc(100% - 80px);
+        margin: 0 40px;
+    }
+    
+    #fttCharacters .content .fttCharacter {
+        width: 24%;
+    }
+
+    #fttCharacters .content .fttCharacter:nth-of-type(4) ~ .fttCharacter {
+        display: none;
+    }
+
+    #aiLink {
+        box-sizing: border-box;
+
+        width: 100%;
+        margin: 0;
+        padding: 20px 35px;
+        margin-top: 0;
+
+        position: relative;
+        left: 0;
+        top: 0;
+        bottom: 0;
+    }
+
+    #aiLink h4 {
+        font-size: 0.85em;
+    }
+
+    #readMoreLink {
+        display: block;
+        background: #333;
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    #fttContainer {
+        background-image: url('/ForTheThrone/img/textureSmall.jpg');
+    }
+}
+
+@media (max-width: 800px) {
+    #fttCharacters .content .fttCharacter:nth-of-type(3) ~ .fttCharacter {
+        display: none;
+    }
+}
+
+@media (max-width: 350px) {
+    #fttCharLeftText {
+        display: none;
+    }
+}

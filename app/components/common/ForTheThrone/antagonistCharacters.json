@@ -1,0 +1,69 @@
+{
+    "characters": {
+        "TyrionLannister": {
+            "name": "Tyrion Lannister",
+            "question": "Is Tyrion Lannister guilty of being a dwarf?",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut turpis nunc. In mattis eros eget nibh malesuada, bibendum lobortis ex fringilla. Aenean id laoreet ex Donec ac lobortis leo. Aliquam pretium massa interdum pulvinar feugiat.",
+            "quote": "I have a tender spot in my heart for cripples, bastards and broken things."
+        },
+        "CerseiLannister": {
+            "name": "Cersei Lannister",
+            "question": "Will Cersei Lannister die at the hands of the valonqar?",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut turpis nunc. In mattis eros eget nibh malesuada, bibendum lobortis ex fringilla. Aenean id laoreet ex Donec ac lobortis leo. Aliquam pretium massa interdum pulvinar feugiat.",
+            "quote": "When you play the game of thrones, you win or you die."
+        },
+        "AryaStark": {
+            "name": "Arya Stark",
+            "question": "What will Arya Stark say to the God of Death?",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut turpis nunc. In mattis eros eget nibh malesuada, bibendum lobortis ex fringilla. Aenean id laoreet ex Donec ac lobortis leo. Aliquam pretium massa interdum pulvinar feugiat.",
+            "quote": "A girl is Arya Stark of Winterfell. And I'm going home."
+        },
+        "BrienneOfTarth": {
+            "name": "Brienne of Tarth",
+            "question": "Will Brienne of Tarth meet her fate?",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut turpis nunc. In mattis eros eget nibh malesuada, bibendum lobortis ex fringilla. Aenean id laoreet ex Donec ac lobortis leo. Aliquam pretium massa interdum pulvinar feugiat.",
+            "quote": "All my life men like you have sneered at me. And all my life I've been knocking men like you into the dust."
+        },
+        "SandorClegane": {
+            "name": "Sandor Clegane",
+            "question": "Has Sandor Clegane had his last chicken?",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut turpis nunc. In mattis eros eget nibh malesuada, bibendum lobortis ex fringilla. Aenean id laoreet ex Donec ac lobortis leo. Aliquam pretium massa interdum pulvinar feugiat.",
+            "quote": "Killing is the sweetest thing there is"
+        },
+        "JaimeLannister": {
+            "name": "Jaime Lannister",
+            "question": "Is Jaime Lannister going to pay for his sins?",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut turpis nunc. In mattis eros eget nibh malesuada, bibendum lobortis ex fringilla. Aenean id laoreet ex Donec ac lobortis leo. Aliquam pretium massa interdum pulvinar feugiat.",
+            "quote": "Then he... turned to his pyromancer. Burn them all, he said. Burn them in their homes, burn them in their beds."
+        },
+        "SansaStark": {
+            "name": "Sansa Stark",
+            "question": "Will Sansa Stark meet her fate?",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut turpis nunc. In mattis eros eget nibh malesuada, bibendum lobortis ex fringilla. Aenean id laoreet ex Donec ac lobortis leo. Aliquam pretium massa interdum pulvinar feugiat.",
+            "quote": "When the snows fall and the white winds blow, the lone wolf dies, but the pack survives."
+        },
+        "DaenerysTargaryen": {
+            "name": "Daenerys Targaryen",
+            "question": "Will Daenerys Targaryen sit on the Iron Throne?",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut turpis nunc. In mattis eros eget nibh malesuada, bibendum lobortis ex fringilla. Aenean id laoreet ex Donec ac lobortis leo. Aliquam pretium massa interdum pulvinar feugiat.",
+            "quote": "Nyke Daenerys Jelmāzmo hen Targārio Lentrot, hen Valyrio Uēpo ānogar iksan. Valyrio muño ēngos ñuhys issa."
+        },
+        "JonSnow": {
+            "name": "Jon Snow",
+            "question": "Is Jon Snow the prince who was promised?",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut turpis nunc. In mattis eros eget nibh malesuada, bibendum lobortis ex fringilla. Aenean id laoreet ex Donec ac lobortis leo. Aliquam pretium massa interdum pulvinar feugiat.",
+            "quote": "You are a Stark. You may not have my name, but you have my blood."
+        }
+    },
+    "antagonists": [
+        ["TyrionLannister", "CerseiLannister"],
+        ["AryaStark", "CerseiLannister"],
+        ["SandorClegane", "BrienneOfTarth"],
+        ["DaenerysTargaryen", "JaimeLannister"],
+        ["SansaStark", "DaenerysTargaryen"],
+        ["JaimeLannister", "BrienneOfTarth"],
+        ["SansaStark", "CerseiLannister"],
+        ["DaenerysTargaryen", "JonSnow"],
+        ["TyrionLannister", "JonSnow"]
+    ]
+}

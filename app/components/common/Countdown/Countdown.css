@@ -1,0 +1,25 @@
+.Countdown{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 320px;
+    margin: auto;
+    font-family: 'Cinzel Decorative', cursive;
+    padding-bottom: 10px;
+
+    text-align: center;
+    user-select: none;
+}
+
+.Countdown-col-number{
+    font-size: 2em;
+}
+
+.Countdown-col-number strong {
+    display: inline-block;
+    width: 0.7em;
+}
+
+.Countdown-col-string{
+    font-size: 0.8em;
+}
