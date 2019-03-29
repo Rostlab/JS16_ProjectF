@@ -233,10 +233,6 @@ export default class CharacterListPage extends Component {
       return (
         <div>
           <Row className="inputbar">
-            <Col md={12}>
-            </Col>
-          </Row>
-          <Row className="inputbar">
             <Col md={7} mdOffset={1}>
               <Input value={this.props.location.query.search} className="character-search" ref="input" type="text" placeholder="Search for character" onChange={this.handleChange.bind(this)} />
             </Col>
