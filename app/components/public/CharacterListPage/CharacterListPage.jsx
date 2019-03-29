@@ -228,13 +228,19 @@ export default class CharacterListPage extends Component {
     }
 
     render() {
+      let maxPage = Math.ceil(Store.getCharactersCount(this.state.filter,this.state.sort)/36);
+
       return (
         <div>
           <Row className="inputbar">
-            <Col md={6} mdOffset={2}>
+            <Col md={12}>
+            </Col>
+          </Row>
+          <Row className="inputbar">
+            <Col md={7} mdOffset={1}>
               <Input value={this.props.location.query.search} className="character-search" ref="input" type="text" placeholder="Search for character" onChange={this.handleChange.bind(this)} />
             </Col>
-            <Col md={2} className="sortCol">
+            <Col md={3} className="sortCol">
               <DropdownButton className="sortButton" onSelect={this.handleSelectSort.bind(this)} title={this.state.sortText} id="dropdown-size-medium">
                 <MenuItem eventKey="1">{popularity.sortText}</MenuItem>
                 <MenuItem eventKey="2">{AtoZ.sortText}</MenuItem>
@@ -245,7 +251,7 @@ export default class CharacterListPage extends Component {
             </Col>
           </Row>
           <Row>
-            <Col md={8} mdOffset={2}>
+            <Col md={10} mdOffset={1}>
               <div className="center">
                 <label id="toggleInfiniteScrolling">
                   <input type="checkbox" defaultChecked={true} onClick={this.toggleInfiniteScrolling.bind(this)} />
@@ -262,17 +268,19 @@ export default class CharacterListPage extends Component {
             </Col>
           </Row>
           <CharacterList data={this.state.data} loaded={this.state.loaded}/>
-          <div className="center">
-            <a role="button" id="loadMoreButton" onClick={this.handleLoadMore.bind(this)}>
-              Load More
-            </a>
-          </div>
+          {this.state.activePage >= maxPage ? '' :
+            <div className="center">
+              <a role="button" id="loadMoreButton" onClick={this.handleLoadMore.bind(this)}>
+                Load More
+              </a>
+            </div>
+          }
           <div className="center">
             <Pagination
               boundaryLinks={true}
               ellipsis
               maxButtons={3}
-              items={Math.ceil(Store.getCharactersCount(this.state.filter,this.state.sort)/20)}
+              items={maxPage}
               activePage={this.state.activePage}
               onSelect={this.handleSelectPage.bind(this)} />
           </div>

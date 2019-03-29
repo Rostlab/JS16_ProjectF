@@ -2,7 +2,6 @@ import React from 'react';
 let {Component} = React;
 import {Link} from 'react-router';
 import Col from 'react-bootstrap/lib/Col';
-import {Thumbnail} from 'react-bootstrap';
 import "./CharacterThumbnail.css";
 
 import tombstoneTransparent from '../../public/Characters/rip_tombstone_transparent.png';
@@ -21,15 +20,18 @@ export default class CharacterThumbnail extends Component {
       var detailLink = '/characters/'+encodeURIComponent(this.props.name);
 
       return (
-          <Col md={3} xs={6}>
+          <Col lg={2} md={3} sm={4} xs={6}>
             <Link className="to-transition" to={detailLink}>
-              <Thumbnail src={img} className="character-thumbnail" >
-                  <p>{this.props.name}</p>
-              </Thumbnail>
-              <div className="characters-list-plod">
-                <img src={tombstoneTransparent} />
-                <div className="plod-percentage-cropper" style={{'height': this.props.plodCropperSize+'px'}}><img src={tombstone} /></div>
-                <div className="plod-percentage">{this.props.plod}</div>
+              <div className="character-thumbnail">
+                <div className="character-thumbmail-img-container">
+                  <img src={img} className="character-thumbnail" title={this.props.name} />
+                </div>
+                <p>{this.props.name}</p>
+                <div className="characters-list-plod">
+                  <img src={tombstoneTransparent} />
+                  <div className="plod-percentage-cropper" style={{'height': this.props.plodCropperSize+'px'}}><img src={tombstone} /></div>
+                  <div className="plod-percentage">{this.props.plod}</div>
+                </div>
               </div>
             </Link>
           </Col>

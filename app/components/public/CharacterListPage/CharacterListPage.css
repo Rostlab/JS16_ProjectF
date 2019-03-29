@@ -42,6 +42,7 @@ input.character-search {
     padding: 5px;
     display: inline-block;
     width: 150px;
+    margin-top: 30px;
 }
 
 #toggleInfiniteScrolling {

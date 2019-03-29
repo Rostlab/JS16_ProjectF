@@ -53,8 +53,8 @@ var CharactersStore = assign({}, EventEmitter.prototype, {
         if(!page){
             page = 1
         }
-        const start = page * 20-20;
-        const end = start + 20;
+        const start = page * 36-20;
+        const end = start + 36;
         const filteredCharacters = filterCharacters(_characters,filter);
         const sortedCharacters = sortCharacters(filteredCharacters,sort);
         return sortedCharacters.slice(start,end);
