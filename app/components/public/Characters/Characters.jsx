@@ -9,11 +9,13 @@ import { Row, Col, Grid, ProgressBar, Glyphicon } from 'react-bootstrap';
 import MapComp from '../../common/MapComp/MapComp.jsx';
 import Store from '../../../stores/CharactersStore';
 import Actions from '../../../actions/CharactersActions';
-import CharacterDetails from '../../common/CharacterDetails/CharacterDetails.jsx';
+import CharacterDetailsMedia from '../../common/CharacterDetails/CharacterDetailMedia.jsx';
+import CharacterDetailsStats from '../../common/CharacterDetails/CharacterDetailsStats.jsx';
 import SentimentStore from '../../../stores/TwitterSentimentsStore';
 //import SentimentActions from '../../../actions/TwitterSentimentsActions';
 import CharacterPlodDisplay from '../../common/CharacterPlodDisplay/CharacterPlodDisplay';
 import tombstone from './rip_tombstone.png';
+import DeadCharacter from './DeadCharacter';
 
 import window from 'global';
 
@@ -21,8 +23,12 @@ export default class Character extends Component {
 
     constructor (props) {
         super(props);
+
+        this.animating = false;
+        let character = Store.getCharacter();
+
         this.state = {
-            character: Store.getCharacter(),
+            character: character,
             plodShow: 0,
             plodBook: 0,
             plodArff: '0',
@@ -53,7 +59,8 @@ export default class Character extends Component {
     }
 
     _onChange() {
-        const character = Store.getCharacter();
+        let character = Store.getCharacter();
+        
         this.setState({
             character: character,
             sentiment: SentimentStore.getCharacterSentiment()
@@ -61,14 +68,22 @@ export default class Character extends Component {
 
         const checkShow = !character.dateOfDeath && character.gotplod && character.gotarffplod;
         const checkBook = !character.dateOfDeath && character.gotplod && character.gotarffplod;
+
+        let randval = parseInt(character.gotplod.plod + 10 - Math.random() * 20);
+        if (randval > 100) {
+            randval = 100;
+        } else if (randval < 0) {
+            randval = 1;
+        }
+
         this.setState({
-            // temporary dummy data
-            plodShow: (checkShow) ? parseInt(character.gotplod.plod) || 0 : 100,
+            // temporary dummy data - TODO: remove
+            plodShow: (checkShow) ? randval || 0 : 100,
             plodByYearShow: character.plodByYearShow,
             plodTextShow: (checkShow) ? '%(percent)s%' : 'D E A D',
 
-            // TODO: remove 100 -
-            plodBook: (checkBook) ? parseInt(100 - character.gotplod.plod) || 0 : 100,
+            // Book data
+            plodBook: (checkBook) ? parseInt(character.gotplod.plod) || 0 : 100,
             plodByYearBook: character.plodByYearBook,
             plodTextBook: (checkBook) ? '%(percent)s%' : 'D E A D',
 
@@ -78,28 +93,22 @@ export default class Character extends Component {
         
         // TODO: remove
         console.log(this.state); /*eslint no-console:0,no-undef:0*/
-
-        $('head').append('<link rel="stylesheet" type="text/css" href="/d4/chart.css">');
-        if (this.state.character.name != undefined && !this.state.chartLoaded){
-            const name = this.state.character.name.replace(/ |'/g,'_');
-            $.getScript("/d4/chart.js",function(){
-                var chart = new characterChart(d3.select("#chart"), "/d4/csv/" + name + ".csv"); /*eslint no-undef:0*/
-                d3.select(window).on('resize', chart.resize);/*eslint no-undef:0*/
-            });
-        }
-
-        this.setState({
-            chartLoaded: true
-        });
     }
 
     togglePlodDisplay() {
-        var bookContainer = $(".plodBookContainer");
+        if (this.animating) {
+            return;
+        }
 
+        this.animating = true;
+        var bookContainer = $(".plodBookContainer");
+        var characterShowImg = $(".character-show-img");
         if (bookContainer.hasClass('plodContainerHidden')) {
             bookContainer.removeClass("plodContainerZIndexLower").removeClass("plodContainerHidden");
+            characterShowImg.addClass("hiddenImg");
         } else {
-            bookContainer.addClass("plodContainerHidden").delay(400);
+            bookContainer.addClass("plodContainerHidden");
+            characterShowImg.removeClass("hiddenImg");
             window.setTimeout(() => {
                 $(".plodBookContainer").addClass("plodContainerZIndexLower");
             }, 400);
@@ -117,6 +126,10 @@ export default class Character extends Component {
                 "backgroundColor": "#5A180C"
             }, 200);
         }
+
+        window.setTimeout(function() {
+            this.animating = false;
+        }.bind(this), 400);
     }
 
     render() {
@@ -145,15 +158,17 @@ export default class Character extends Component {
                 <Row className="character-intro" fluid >
                     <Col md={3} className="character-photo">
                         <img src={img}/>
+                        {this.state.character.show && this.state.character.show.image ? 
+                            <img className="character-show-img" src={this.state.character.show.image}/> : ''}
                     </Col>
                     <Col md={9}>
-                        <div className="togglePlodDisplayButton" onClick={this.togglePlodDisplay}>
+                        <div className="togglePlodDisplayButton" onClick={this.togglePlodDisplay.bind(this)}>
                             <div className="togglePlodDisplayButtonBackground"></div>
                             <div className="togglePlodDisplayButtonOption">Show</div>
                             <div className="togglePlodDisplayButtonOption">Book</div>
                         </div>
                         <div className="plodOuterContainer">
-                            { this.state.plodShow < 100 ?
+                            { this.state.plodShow < 100 && this.state.character.show && this.state.character.show.alive == true ?
                                 <div className="plodShowContainer">
                                     <h3>Our Predictions</h3>
                                     <p>{this.state.character.name}'s <b>Likelihood to Survive</b> between the years 300 and 320 AC is:</p>
@@ -168,17 +183,13 @@ export default class Character extends Component {
                                 </div> 
                                 : 
                                 <div className="plodShowContainer">
-                                    <div className="noPlod">
-                                        <h3 className="center">{this.state.character.name} is dead in the TV show</h3>
-                                        <div className="deathDate">
-                                            <img src={tombstone} />
-                                            <div>{this.state.character.dateOfDeath} AC</div>
-                                        </div>
-                                    </div>
+                                    <DeadCharacter name={this.state.character.name} 
+                                                   deathText={this.state.character.show && this.state.character.show.death ? this.state.character.show.death + ' AC' : 'D E A D'} 
+                                                   mediumText="TV show"/>
                                 </div>
                             }
 
-                            { this.state.plodShow < 100 ?
+                            { this.state.plodBook < 100 && this.state.character.book && !this.state.character.book.dateOfDeath ?
                                 <div className="plodBookContainer plodContainerHidden plodContainerZIndexLower">
                                     <h3>Our Predictions</h3>
                                     <p>{this.state.character.name}'s <b>Likelihood to Survive</b> between the years 300 and 320 AC is:</p>
@@ -193,13 +204,7 @@ export default class Character extends Component {
                                 </div>
                                 : 
                                 <div className="plodBookContainer plodContainerHidden plodContainerZIndexLower">
-                                    <div className="noPlod">
-                                        <h3 className="center">{this.state.character.name} is dead in the books</h3>
-                                        <div className="deathDate">
-                                            <img src={tombstone} />
-                                            <div>{this.state.character.dateOfDeath} AC</div>
-                                        </div>
-                                    </div>
+                                    <DeadCharacter name={this.state.character.name} deathText={this.state.character.dateOfDeath + 'AC'} mediumText="books"/>
                                 </div>
                             }
                         </div>
@@ -207,11 +212,11 @@ export default class Character extends Component {
                 </Row>
                 <Row>
                     <Col className="leftBar" md={3}>
-                        <h3>Differences</h3>
+                        <h3>Comparison</h3>
                         <h4>between the&nbsp;books and&nbsp;the TV&nbsp;show</h4>
                     </Col>
                     <Col md={9}>
-                        <CharacterDetails data={this.state.character} />
+                        <CharacterDetailsMedia data={this.state} character={this.state.character}/>
                     </Col>
                 </Row>
                 <Row>
@@ -220,7 +225,7 @@ export default class Character extends Component {
                         <h4>about {this.state.character.name}</h4>
                     </Col>
                     <Col md={9}>
-                        <CharacterDetails data={this.state.character} />
+                        <CharacterDetailsStats data={this.state} />
                     </Col>
                 </Row>
                 <Row>

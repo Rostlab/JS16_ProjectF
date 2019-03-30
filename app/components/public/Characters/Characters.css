@@ -21,17 +21,30 @@ title {
 }
 
 .character-photo {
+	border: 2px solid white;
+
 	overflow: hidden;
 	position: relative;
-	top: -60px;
+	top: -50px;
 	height: 420px;
 }
 
 .character-photo img {
+	position: absolute;
 	min-width: 100%;
 	height: 100%;
 	margin-left: 50%;
 	transform: translateX(-50%);
+	opacity: 1;
+
+	transition-duration: 0.4s;
+}
+
+.character-photo .hiddenImg {
+	display: block;
+	opacity: 0;
+
+	transition-duration: 0.4s;
 }
 
 .character-header {
@@ -200,30 +213,34 @@ title {
 	z-index: -1;
 }
 
-.noPlod h3 {
+.noPlod h2 {
 	margin: 0;
 	padding: 0;
 	padding-top: 23px;
+	width: 550px;
+	height: 90px;
+	margin-left: 50%;
+	transform: translateX(-50%); 
 }
 
 .deathDate {
 	position: relative;
-	height: 310px;
+	height: 250px;
 }
 
 .deathDate > img {
 	height: 200px;
 	position: absolute;
 	bottom: 0;
-	margin-left: 50%;
 	transform: translateX(-50%);
 }
 
 .deathDate > div {
 	position: absolute;
-	top: 210px;
+	bottom: 60px;
 	width: 120px;
 	margin-left: 50%;
+	padding-right: 9px;
 	left: -60px;
 
 	color: black;
