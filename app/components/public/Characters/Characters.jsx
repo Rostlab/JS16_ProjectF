@@ -4,16 +4,18 @@ import React from 'react';
 let {Component} = React;
 import $ from 'jquery';
 import './Characters.css';
-import { Row, Col, Grid, Image, ProgressBar, Glyphicon } from 'react-bootstrap';
+import { Row, Col, Grid, ProgressBar, Glyphicon } from 'react-bootstrap';
 
 import MapComp from '../../common/MapComp/MapComp.jsx';
 import Store from '../../../stores/CharactersStore';
 import Actions from '../../../actions/CharactersActions';
 import CharacterDetails from '../../common/CharacterDetails/CharacterDetails.jsx';
 import SentimentStore from '../../../stores/TwitterSentimentsStore';
-import SentimentActions from '../../../actions/TwitterSentimentsActions';
+//import SentimentActions from '../../../actions/TwitterSentimentsActions';
 import CharacterPlodDisplay from '../../common/CharacterPlodDisplay/CharacterPlodDisplay';
 import tombstone from './rip_tombstone.png';
+
+import window from 'global';
 
 export default class Character extends Component {
 
@@ -43,7 +45,7 @@ export default class Character extends Component {
 
     componentDidMount() {
         Actions.loadCharacter(decodeURIComponent(this.props.params.id));
-        SentimentActions.loadCharacterSentiment(decodeURIComponent(this.props.params.id));
+        //SentimentActions.loadCharacterSentiment(decodeURIComponent(this.props.params.id));
     }
 
     componentWillUnmount(){
@@ -74,6 +76,7 @@ export default class Character extends Component {
             sentiment: SentimentStore.getCharacterSentiment() || { positive: 0, negative: 0}
         });
         
+        // TODO: remove
         console.log(this.state); /*eslint no-console:0,no-undef:0*/
 
         $('head').append('<link rel="stylesheet" type="text/css" href="/d4/chart.css">');
@@ -91,36 +94,47 @@ export default class Character extends Component {
     }
 
     togglePlodDisplay() {
-        $(".plodShowContainer, .plodBookContainer").toggleClass("hidden");
+        var bookContainer = $(".plodBookContainer");
+
+        if (bookContainer.hasClass('plodContainerHidden')) {
+            bookContainer.removeClass("plodContainerZIndexLower").removeClass("plodContainerHidden");
+        } else {
+            bookContainer.addClass("plodContainerHidden").delay(400);
+            window.setTimeout(() => {
+                $(".plodBookContainer").addClass("plodContainerZIndexLower");
+            }, 400);
+        }
+
         let button = $(".togglePlodDisplayButtonBackground");
         if (button.hasClass("active")) {
             button.removeClass("active").animate({
                 "left": "0",
-                "backgroundColor": "#5A180C"
+                "backgroundColor": "#7a7a7a"
             }, 200);
         } else {
             button.addClass("active").animate({
                 "left": "50%",
-                "backgroundColor": "#7a7a7a"
+                "backgroundColor": "#5A180C"
             }, 200);
         }
     }
 
     render() {
         var base_url = process.env.__PROTOCOL__ + process.env.__API__ + "/";
-        var img = (!this.state.character.imageLink) ? "https://placeholdit.imgix.net/~text?txtsize=33&txt=profile%20picture%20&w=350&h=350" : base_url+this.state.character.imageLink;
+        var img = (!this.state.character.imageLink) ? "/images/placeholder-male.png" : base_url+this.state.character.imageLink;
 
         return (
           <Grid>
             <div className="character-container">
-                <Row fluid>
-                    <div className="header-image">
+                <Row>
+                    <div className="character-header">
                         <div className="character-name-container">
-                            <Col xs={12} sm={9}  md={8} className="character-name">
+                            <div className="character-name-background"></div>
+                            <Col md={9} mdOffset={3} className="character-name">
                                 <div className="u-inlineBlock"><h1>{this.state.character.name}</h1></div>
                                 <a href={"https://awoiaf.westeros.org/index.php/" + this.state.character.name}
-                                   target="_blank"
-                                   className="btn--secondary wikiButton u-inlineBlock">
+                                    target="_blank"
+                                    className="btn--secondary wikiButton u-inlineBlock">
                                     <Glyphicon glyph="share-alt" />
                                     Wiki
                                 </a>
@@ -129,71 +143,108 @@ export default class Character extends Component {
                     </div>
                 </Row>
                 <Row className="character-intro" fluid >
-                    <Col xs={6} xsOffset={3} sm={3} smOffset={0} md={3} mdOffset={1} className="character-photo">
-                        <Image thumbnail src={img}/>
+                    <Col md={3} className="character-photo">
+                        <img src={img}/>
                     </Col>
-                </Row>
-                <Row>
-                    <Col md={8} mdOffset={2}>
+                    <Col md={9}>
                         <div className="togglePlodDisplayButton" onClick={this.togglePlodDisplay}>
                             <div className="togglePlodDisplayButtonBackground"></div>
                             <div className="togglePlodDisplayButtonOption">Show</div>
                             <div className="togglePlodDisplayButtonOption">Book</div>
                         </div>
-                        <div className="plodShowContainer">
-                            <h2>Likelihood of surival</h2>
-                            <p>{this.state.character.name}'s likelihood to survive between 300 and 320 AC is:</p>
-                            <div className="plodContainer">
-                                <CharacterPlodDisplay plodByYear={this.state.plodByYearShow} />
-                            </div>
-                            <p>{this.state.character.name}'s likelihood to die in season 8 is:</p>
-                            <div className="plodContainer">
-                                <ProgressBar now={this.state.plodShow} label={this.state.plodTextShow} />
-                                <img src={tombstone} />
-                            </div>
+                        <div className="plodOuterContainer">
+                            { this.state.plodShow < 100 ?
+                                <div className="plodShowContainer">
+                                    <h3>Our Predictions</h3>
+                                    <p>{this.state.character.name}'s <b>Likelihood to Survive</b> between the years 300 and 320 AC is:</p>
+                                    <div className="plodContainer">
+                                        <CharacterPlodDisplay plodByYear={this.state.plodByYearShow} />
+                                    </div>
+                                    <p>{this.state.character.name}'s <b>Predicted Likelihood of Death</b> in season 8 is:</p>
+                                    <div className="plodContainer">
+                                        <ProgressBar now={this.state.plodShow} label={this.state.plodTextShow} />
+                                        <img src={tombstone} />
+                                    </div>
+                                </div> 
+                                : 
+                                <div className="plodShowContainer">
+                                    <div className="noPlod">
+                                        <h3 className="center">{this.state.character.name} is dead in the TV show</h3>
+                                        <div className="deathDate">
+                                            <img src={tombstone} />
+                                            <div>{this.state.character.dateOfDeath} AC</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+
+                            { this.state.plodShow < 100 ?
+                                <div className="plodBookContainer plodContainerHidden plodContainerZIndexLower">
+                                    <h3>Our Predictions</h3>
+                                    <p>{this.state.character.name}'s <b>Likelihood to Survive</b> between the years 300 and 320 AC is:</p>
+                                    <div className="plodContainer">
+                                        <CharacterPlodDisplay plodByYear={this.state.plodByYearBook} />
+                                    </div>
+                                    <p>{this.state.character.name}'s <b>Predicted Likelihood of Death</b> in <i>'the Winds of Winter'</i> is:</p>
+                                    <div className="plodContainer">
+                                        <ProgressBar now={this.state.plodBook} label={this.state.plodTextBook} />
+                                        <img src={tombstone} />
+                                    </div>
+                                </div>
+                                : 
+                                <div className="plodBookContainer plodContainerHidden plodContainerZIndexLower">
+                                    <div className="noPlod">
+                                        <h3 className="center">{this.state.character.name} is dead in the books</h3>
+                                        <div className="deathDate">
+                                            <img src={tombstone} />
+                                            <div>{this.state.character.dateOfDeath} AC</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
                         </div>
-                        <div className="plodBookContainer hidden">
-                            <h2>Likelihood of surival</h2>
-                            <p>{this.state.character.name}'s likelihood to survive between 300 and 320 AC is:</p>
-                            <div className="plodContainer">
-                                <CharacterPlodDisplay plodByYear={this.state.plodByYearBook} />
-                            </div>
-                            <p>{this.state.character.name}'s likelihood to die in <i>'the Winds of Winter'</i> is:</p>
-                            <div className="plodContainer">
-                                <ProgressBar now={this.state.plodBook} label={this.state.plodTextBook} />
-                                <img src={tombstone} />
-                            </div>
-                        </div>
-                        <p>Our in-house developed machine learning algorithm predicts
-                            likelihood of surival based on various features that we extracted
-                            for each character from the first five books of the Song of Ice
-                            and Fire series. </p>
-                        <p><a href="/machine-learning-algorithm-predicts-death-game-of-thrones">Click here to read more about our prediction algorithm.</a></p>
                     </Col>
                 </Row>
                 <Row>
-                    <Col md={8} mdOffset={2}>
+                    <Col className="leftBar" md={3}>
+                        <h3>Differences</h3>
+                        <h4>between the&nbsp;books and&nbsp;the TV&nbsp;show</h4>
+                    </Col>
+                    <Col md={9}>
                         <CharacterDetails data={this.state.character} />
                     </Col>
                 </Row>
                 <Row>
-                    <Col md={8} mdOffset={2}>
-                        <h2>People on Twitter say</h2>
-                        <svg id="chart" width="100%" height="400"></svg>
-
+                    <Col className="leftBar" md={3}>
+                        <h3>Interesting Stats</h3>
+                        <h4>about {this.state.character.name}</h4>
+                    </Col>
+                    <Col md={9}>
+                        <CharacterDetails data={this.state.character} />
                     </Col>
                 </Row>
                 <Row>
-                    <Col  md={8} mdOffset={2}>
-                        Overall we registered { this.state.sentiment.positive || 0 } positive tweets and {this.state.sentiment.negative || 0} negative tweets for {this.state.character.name}.
+                    <Col className="leftBar" md={3}>
+                        <h3>Machine Learning</h3>
+                        <h4>predicting life and death in Westeros</h4>
+                    </Col>
+                    <Col md={9}>
+                        <p>Our in-house developed machine learning algorithm predicts
+                            two different values: <b>predicted likelihood of death</b> in season 8 of the TV show or the next book, and the <b>character longevity</b> prediction 
+                            between the years 300 to 320 AC.</p>
+                        <p>We do this based on various features that we extracted for each character from the first five books of the <i>A&nbsp;Song of&nbsp;Ice
+                            and&nbsp;Fire series</i> by George R.&nbsp;R. Martin and the first seven seasons of the TV show <i>Game of&nbsp;Thrones</i> by HBO.</p>
+                        <p><a href="/machine-learning-algorithm-predicts-death-game-of-thrones">Read more about our prediction algorithm.</a></p>
                     </Col>
                 </Row>
                 <Row>
-                    <Col md={8} mdOffset={2}>
-                        <h2>Follow {this.state.character.name}</h2>
+                    <Col md={12}>
+                        <h3>Follow {this.state.character.name}</h3>
                     </Col>
                     <Col>
-                        <MapComp character={[this.props.params.id]} />
+                        <div id="characterMap">
+                            <MapComp character={[this.props.params.id]} />
+                        </div>
                     </Col>
                 </Row>
 
