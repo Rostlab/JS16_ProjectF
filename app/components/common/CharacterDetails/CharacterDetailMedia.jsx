@@ -8,8 +8,6 @@ export default class CharacterDetailsMedia extends Component {
     constructor(props) {
         super(props);
         this.TV_YEAR = 305;
-
-        this.init();
     }
 
     init() {
@@ -45,6 +43,7 @@ export default class CharacterDetailsMedia extends Component {
 
         this.determineSbPlodDiff();
         this.determineSbAgeDiff();
+        this.determineSbAppearance();
     }
 
     charPronoun(capitalize = false) {
@@ -131,6 +130,72 @@ export default class CharacterDetailsMedia extends Component {
             text: sbPlodTextFinal,
             quote: sbPlodQuote,
             graphic: sbGraphic
+        });
+    }
+
+    determineSbAppearance(){
+        if (this.character.books.length === 0 && typeof this.character.show.slug === 'undefined'){
+            return;
+        }
+
+        let sbGraphic = (<i className="fas fa-book"></i>);
+        let TOTAL_EPISODES = 67;
+        let appearanceShow, appearanceShowPercentage, appearanceBooks = 0;
+
+        let sbAppearTitle, sbAppearText, sbAppearTextFinal, sbAppearQuote = (
+            <p className="quote">
+                "This is testing the quote"
+            </p>
+        );
+        
+        if (this.character.show && this.character.show.appearances){
+            appearanceShow = this.character.show.appearances.length;
+            appearanceShowPercentage = Math.round(appearanceShow / TOTAL_EPISODES * 100);
+        } else {
+            appearanceShowPercentage = 0;
+        }
+
+        if (this.character.books){
+            for (let i = 0; i < this.character.books.length; i++){
+                if (this.character.books[i][0].toLowerCase() === 'a'){
+                    appearanceBooks++;
+                    // console.log(this.character.books[i][0].toLowerCase() + appearanceBooks); /*eslint no-console:0,no-undef:0*/
+                }
+            }
+        } 
+
+        if (!appearanceShow && appearanceBooks > 0){
+            sbAppearTitle = "Only in the books";
+        } else if (appearanceShow && appearanceBooks === 0){
+            sbAppearTitle = "Only appears on the show";
+        } else {
+            sbAppearTitle = "In books and on the show";
+        }
+
+        // if (!appearanceShowPercentage){
+        //     sbAppearTitle = this.character.name + " does not appear on the show.";
+        // } else if (appearanceShowPercentage >= 75){
+        //     sbAppearTitle = this.character.name + " is important to the show.";
+        // } else if (appearanceShowPercentage >= 50){
+        //     sbAppearTitle = this.character.name + " appears quite regularly on the show.";
+        // } else if (appearanceShowPercentage >= 25){
+        //     sbAppearTitle = this.character.name + " has some appearances on the show.";
+        // } else {
+        //     sbAppearTitle = this.character.name + " barely appaers on the show.";
+        // }
+
+        sbAppearText = "Testing the sbAppearText";
+
+        sbAppearTextFinal = <p>{this.character.name} appears in {appearanceShow ? appearanceShow : 0} episodes. That is {appearanceShowPercentage}% of all {TOTAL_EPISODES} episodes. {sbAppearText} Appearance books: {appearanceBooks} out of 5 books</p>;
+        
+        this.blocks.push({
+            category: "Number of appearances",
+            title: sbAppearTitle,
+            text: sbAppearTextFinal,
+            quote: sbAppearQuote,
+            graphic: sbGraphic,
+            valueBook: <h1 className="center">{appearanceBooks} " out of 5 books"</h1>,
+            valueShow: <h1 className="center">{appearanceShowPercentage} "%"</h1>
         });
     }
 
