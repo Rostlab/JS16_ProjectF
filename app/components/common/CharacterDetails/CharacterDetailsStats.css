@@ -2,6 +2,8 @@
     text-align: left;
     padding-bottom: 30px;
     width: 50%;
+    box-sizing: border-box;
+    padding-right: 50px;
     display: inline-block;
 }
 
@@ -44,7 +46,13 @@
     background-color: #0c50c6
 }
 
+.cardContainer .statsCard:nth-child(3) {
+    margin-right: 0;
+}
+
 .statsCard {
+    box-sizing: border-box;
+
     display: inline-block;
     margin-right: 20px;
     vertical-align: top;
@@ -57,5 +65,28 @@
     background-color: #353535;
     padding: 20px;
 
-    width: calc(33% - 10px);
+    width: calc((100% - 40px)/3);
+}
+
+.statsCard h4{
+    margin-top: 0;
+}
+.statsCard .subtitle{
+    font-size: 0.9em;
+    color: #bbb;
+    font-family: 'Cinzel', sans;
+}
+
+.statsCard .description{
+    font-size: 0.9em;
+    color: #bbb;
+}
+
+.statsCard .proportion {
+    text-align: center;
+}
+
+.statsCard .proportion h3 {
+    font-size: 2em;
+    margin-top: 0;
 }
