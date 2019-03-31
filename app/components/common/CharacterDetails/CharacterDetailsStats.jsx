@@ -82,6 +82,10 @@ export default class CharacterDetailsStats extends Component {
         this.character = this.props.data.character;
     }
 
+    shuffle(array) {
+        array.sort(() => Math.random() - 0.5);
+    }
+
     createCards() {
         if (this.character.book && this.character.book.culture) {
             let culture = this.character.book.culture;
@@ -90,11 +94,11 @@ export default class CharacterDetailsStats extends Component {
             if (index > -1) {
                 let change = this.stats.meanBetaExp[index];
                 this.cards.push({
-                    title: this.charPronounPossesive(true) + " culture is " + culture,
+                    title: culture,
                     type: "Culture",
-                    text: "Characters with this culture have a proportionally " + (change > 0 ? 'higher' : 'lower') + " predicted likelihood of death.",
+                    text: <span>Characters with this culture have a proportionally <b>{change > 1 ? 'higher' : 'lower'}</b>  predicted likelihood of death.</span>,
                     value: culture,
-                    proportionalChange: (100 * change - 100).toPrecision(2)
+                    proportionalChange: (100 * change - 100).toFixed(2)
                 });
             }
         }
@@ -106,30 +110,33 @@ export default class CharacterDetailsStats extends Component {
             if (index > -1) {
                 let change = this.stats.meanBetaExp[index];
                 this.cards.push({
-                    title: this.charPronounPosessive(true) + " house is " + house,
+                    title: house,
                     type: "House",
-                    text: "Characters with this house have a proportionally " + (house > 0 ? 'higher' : 'lower') + " predicted likelihood of death.",
+                    text: <span>Characters with this house have a proportionally <b>{change > 1 ? 'higher' : 'lower'}</b>  predicted likelihood of death.</span>,
                     value: house,
-                    proportionalChange: (100 * change - 100).toPrecision(2)
+                    proportionalChange: (100 * change - 100).toFixed(2)
                 });
             }
         }
         
-        if (this.character.book && this.character.show.origin) {
+        if (this.character.show && this.character.show.origin) {
             let origin = this.character.show.origin;
             let index = this.stats.attributes.indexOf(origin);
             
             if (index > -1) {
                 let change = this.stats.meanBetaExp[index];
                 this.cards.push({
-                    title: this.charPronounPosessive(true) + " place of birth is " + origin,
-                    type: "BirthPlace",
-                    text: "Characters with this place of birth have a proportionally " + (origin > 0 ? 'higher' : 'lower') + " predicted likelihood of death.",
+                    title: origin,
+                    type: "Place of birth",
+                    text: <span>Characters with this place of birth have a proportionally <b>{change > 1 ? 'higher' : 'lower'}</b>  predicted likelihood of death.</span>,
                     value: origin,
-                    proportionalChange: (100 * change - 100).toPrecision(2)
+                    proportionalChange: (100 * change - 100).toFixed(2)
                 });
             }
         }
+
+        this.shuffle(this.cards);
+        this.cards = this.cards.slice(0, 3);
     }
 
     charPronoun(capitalize = false) {
@@ -189,8 +196,8 @@ export default class CharacterDetailsStats extends Component {
                     this.stats.peasants.total,
                     "Peasants",
                     this.character.show.titles.length == 0 ? this.character.name + " is a peasant" : this.character.name + " is a noble",
-                    (<span>{this.character.show.titles.length == 0 ? "Being a peasant is dangerous in the world of Westeros" : "Being a noble is safer in the world of Westeros"}. 
-                        See the following graph for the <b>percentage of dead peasant and noble</b> characters</span>)
+                    (<span><p>{this.character.show.titles.length == 0 ? "Being a peasant is dangerous in the world of Westeros" : "Being a noble is safer in the world of Westeros"}.</p>
+                    <p>See the following graph for the <b>percentage of dead peasant and noble</b> characters</p></span>)
                 )}
 
                 {this.renderSimpleBarChart(
@@ -201,19 +208,27 @@ export default class CharacterDetailsStats extends Component {
                     this.stats.male.total,
                     "Women",
                     this.character.show.gender == 'male' ? this.charPronoun(true) + " is male" : this.charPronoun(true) + " is female",
-                    (<span>{this.character.show.gender == 'male' ? "Being male is dangerous in the world of Westeros" : "Being female is safer in the world of Westeros"}. 
-                        See the following graph for the <b>percentage of dead male and female</b> characters</span>)
+                    (<span><p>{this.character.show.gender == 'male' ? "Being male is dangerous in the world of Westeros" : "Being female is safer in the world of Westeros"}.</p> 
+                    <p>See the following graph for the <b>percentage of dead male and female</b> characters</p></span>)
                 )}
 
                 <div className="cardContainer">
                 {this.cards.map(function(card, index) {
                     return (
                         <div className="statsCard" key={index}>
-                            <p>{card.type}</p>
+                            <span className="subtitle">{card.type}</span>
                             <h4>{card.title}</h4>
-                            <p>{card.text}</p>
-                            <p>{card.value}</p>
-                            <p>{card.proportionalChange}</p>
+                            <p className="description">{card.text}</p>
+                            <div className="proportion">
+                                <p>proportionally around</p>
+                                <h3>
+                                    {card.proportionalChange > 0 ? 
+                                        <i className="fas fa-arrow-circle-up" style={{color:"#c9180c"}}></i>
+                                        : <i className="fas fa-arrow-circle-down" style={{color:"#0cc90c"}}></i> }
+                                    &nbsp;{Math.abs(card.proportionalChange)} %
+                                </h3>
+                                <span><h4 className="center">{card.proportionalChange > 0 ? 'higher' : 'lower'}</h4> predicted likelihood of death on&nbsp;average.</span>
+                            </div>
                         </div>
                     );
                 }.bind(this))}
