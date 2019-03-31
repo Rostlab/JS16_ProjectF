@@ -8,7 +8,7 @@ export default class CharacterPlodDisplay extends Component {
     render() {
         return (
             <div className="plodByYearContainer">
-                <div className="plodYear plodYearScale" key={0}>
+                <div className="plodYear plodYearScale" key={0} style={{width: "40px"}}>
                     <div>100%</div>
                     <div>50%</div>
                     <div>0%</div>

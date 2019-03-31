@@ -12,7 +12,7 @@
 
 .plodYearBg, .plodYearScale {
     vertical-align: top;
-    width: calc(100%/22 - 5px);
+    width: calc((100% - 40px)/21 - 5px);
     position: relative;
     height: 150px;
     background: #333;
