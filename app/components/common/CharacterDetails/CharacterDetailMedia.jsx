@@ -40,6 +40,9 @@ export default class CharacterDetailsMedia extends Component {
             this.showDeath  = this.character.show.death;
         }
 
+        this.isDeadShow = this.character.show && !this.character.show.alive;
+        this.isDeadBook = this.character.book && (this.bookDeath || this.bookBirth < 200); // limit to 200 because of missing data
+
         this.determineSbPlodDiff();
         this.determineSbAgeDiff();
         this.determineSbAppearance();
@@ -66,7 +69,7 @@ export default class CharacterDetailsMedia extends Component {
 
         let sbPlodTitle, sbPlodText, sbPlodTextFinal, sbPlodQuote = (
             <p className="quote">
-                <i>"There is only one god and his name is Death, and there is only one thing we say to Death: 'Not today.'"</i>
+                <i>"There is only one thing we say to Death: 'Not today.'"</i>
                 <span> -&nbsp;Syrio&nbsp;Forel</span>
             </p>
         );
@@ -103,13 +106,19 @@ export default class CharacterDetailsMedia extends Component {
                 sbPlodText  = (<span>both of these are <b>higher than 80&nbsp;%</b>.</span>);
                 sbPlodQuote = (
                     <p className="quote">
-                        <i>"When you play a game of thrones you win or you die"</i>
-                        <span> -&nbsp;Cersei&nbsp;Lannister</span>
+                        <i>"If you think this has a happy ending, you haven't been paying attention."</i>
+                        <span> -&nbsp;Ramsay&nbsp;Snow</span>
                     </p>
                 );
             } else if (this.plodShow > 60 && this.plodBook > 60) {
                 sbPlodTitle = "Likely to die either way";
                 sbPlodText  = (<span>both of these are <b>higher than 60&nbsp;%</b>.</span>);
+                sbPlodQuote = (
+                    <p className="quote">
+                        <i>"Fear cuts deeper than swords."</i>
+                        <span> -&nbsp;Syrio&nbsp;Forel</span>
+                    </p>
+                );
             } else if (this.plodShow < this.plodBook - 5) {
                 sbPlodTitle = "The show is more merciful";
                 sbPlodText  = (<span>that's <b>{(this.plodBook - this.plodShow)}&nbsp;% higher</b>.</span>);
@@ -132,13 +141,18 @@ export default class CharacterDetailsMedia extends Component {
             text: sbPlodTextFinal,
             quote: sbPlodQuote,
             graphic: sbGraphic,
-            valueBook: (<div><span className="mainValue">{this.plodBook} %</span><span className="supportingText">Chance of Death</span></div>),
-            valueShow: (<div><span className="mainValue">{this.plodShow} %</span><span className="supportingText">Chance of Death</span></div>)
+            valueBook: 
+                this.isDeadBook ? (<span className="mainValue">DEAD</span>) 
+                : (<div><span className="mainValue">{this.plodBook} %</span><span className="supportingText">Chance of Death</span></div>),
+            valueShow: 
+                this.isDeadShow ? (<span className="mainValue">DEAD</span>) 
+                : (<div><span className="mainValue">{this.plodShow} %</span><span className="supportingText">Chance of Death</span></div>),
+            valueBoth: (this.isDeadShow && this.isDeadBook) ? (<span className="mainValue">DEAD</span>) : false
         });
     }
 
     determineSbAppearance(){
-        if (this.character.books.length === 0 && typeof this.character.show.slug === 'undefined'){
+        if (Array.isArray(this.character.books) && this.character.books.length === 0 && typeof this.character.show.slug === 'undefined'){
             return;
         }
 
@@ -146,11 +160,30 @@ export default class CharacterDetailsMedia extends Component {
         let TOTAL_EPISODES = 67;
         let appearanceShow, appearanceShowPercentage, appearanceBooks = 0;
 
-        let sbAppearTitle, sbAppearText, sbAppearTextFinal, sbAppearQuote = (
-            <p className="quote">
-                "This is testing the quote"
-            </p>
-        );
+        let sbAppearTitle, sbAppearTexShow, sbAppearTextBook;
+        
+        let sbAppearQuote;
+        
+        if (Math.random() < 0.5) {
+            sbAppearQuote = (
+                <div>
+                    <i className="quote">
+                        "I read it in a book."
+                    </i>
+                    <span> -&nbsp;Samwell&nbsp;Tarly</span>
+                </div>
+            );
+        } else {
+            sbAppearQuote = (
+                <div>
+                    <i className="quote">
+                        "A mind needs books as a sword needs a whetstone, if it is to keep its edge.."
+                    </i>
+                    <span> -&nbsp;Tyrion&nbsp;Lannister</span>
+                </div>
+            );
+        }
+        
         
         if (this.character.show && this.character.show.appearances){
             appearanceShow = this.character.show.appearances.length;
@@ -169,37 +202,24 @@ export default class CharacterDetailsMedia extends Component {
         } 
 
         if (!appearanceShow && appearanceBooks > 0){
-            sbAppearTitle = "Only in the books";
+            sbAppearTitle = "Book character";
         } else if (appearanceShow && appearanceBooks === 0){
-            sbAppearTitle = "Only appears on the show";
+            sbAppearTitle = "TV character";
         } else {
-            sbAppearTitle = "In books and on the show";
+            sbAppearTitle = "Book & TV character";
         }
 
-        // if (!appearanceShowPercentage){
-        //     sbAppearTitle = this.character.name + " does not appear on the show.";
-        // } else if (appearanceShowPercentage >= 75){
-        //     sbAppearTitle = this.character.name + " is important to the show.";
-        // } else if (appearanceShowPercentage >= 50){
-        //     sbAppearTitle = this.character.name + " appears quite regularly on the show.";
-        // } else if (appearanceShowPercentage >= 25){
-        //     sbAppearTitle = this.character.name + " has some appearances on the show.";
-        // } else {
-        //     sbAppearTitle = this.character.name + " barely appaers on the show.";
-        // }
-
-        sbAppearText = "Testing the sbAppearText";
-
-        sbAppearTextFinal = <p>{this.character.name} appears in {appearanceShow ? appearanceShow : 0} episodes. That is {appearanceShowPercentage}% of all {TOTAL_EPISODES} episodes. {sbAppearText} Appearance books: {appearanceBooks} out of 5 books</p>;
+        let sbAppearText = <div><p>{this.character.name} appears in {appearanceShow ? appearanceShow : 0} episodes. That is  <b>{appearanceShowPercentage}% of all {TOTAL_EPISODES}</b> episodes. {this.charPronoun(true)} appears in <b>{appearanceBooks} out of 5 books</b></p>
+        <p>{sbAppearTexShow} {sbAppearTextBook}</p></div>;
         
         this.blocks.push({
             category: "Number of appearances",
             title: sbAppearTitle,
-            text: sbAppearTextFinal,
+            text: sbAppearText,
             quote: sbAppearQuote,
             graphic: sbGraphic,
-            valueBook: <h1 className="center">{appearanceBooks} " out of 5 books"</h1>,
-            valueShow: <h1 className="center">{appearanceShowPercentage} "%"</h1>
+            valueBook: <span className="mainValue">{appearanceBooks} / 5</span>,
+            valueShow: <span className="mainValue">{appearanceShowPercentage} %</span>
         });
     }
 
@@ -217,7 +237,7 @@ export default class CharacterDetailsMedia extends Component {
             </p>
         );
        
-        var isDead = this.isDeadShow|| this.character.book && this.bookDeath && this.bookBirth < 200; // limit to 200 because of missing data
+        var isDead = this.isDeadShow|| this.usDeadBook;
 
         let booksAge = this.bookBirth && this.bookBirth > 200 ? (isDead && this.bookDeath ? this.bookDeath : this.TV_YEAR) - this.bookBirth : false;
         let showAge = this.showBirth ? (isDead && this.showDeath ? this.showDeath : this.TV_YEAR) - this.showBirth : false;
@@ -276,8 +296,8 @@ export default class CharacterDetailsMedia extends Component {
             text: sbAgeTextFinal,
             quote: sbAgeQuote,
             graphic: sbGraphic,
-            valueBook: (<div><span className="mainValue">{booksAge}</span><span className="supportingText">years old</span></div>),
-            valueShow: (<div><span className="mainValue">{showAge}</span><span className="supportingText">years old</span></div>)
+            valueBook: (<div><span className="mainValue">{booksAge ? booksAge : '?'}</span><span className="supportingText">years old</span></div>),
+            valueShow: (<div><span className="mainValue">{showAge ? showAge : '?'}</span><span className="supportingText">years old</span></div>)
         });
     }
 
@@ -296,14 +316,21 @@ export default class CharacterDetailsMedia extends Component {
                                 <h4 className="sbDiffCardCategory">{value.category}</h4>
                                 <h3 className="sbDiffTitle">{value.title}</h3>
                             </div>
-                            <div className="sbDiffValueBox center">
-                                <div className="center">{value.valueShow}</div>
-                                <span className="mediumText">TV show</span>
-                            </div>
-                            <div className="sbDiffValueBox center">
-                                <div className="center">{value.valueBook}</div>
-                                <span className="mediumText">Books</span>
-                            </div>
+                            {!value.valueBoth ? (
+                                <div className="center"><div className="sbDiffValueBox center">
+                                    <div className="center">{value.valueShow}</div>
+                                    <span className="mediumText">TV show</span>
+                                </div>
+                                <div className="sbDiffValueBox center">
+                                    <div className="center">{value.valueBook}</div>
+                                    <span className="mediumText">Books</span>
+                                </div></div>
+                                )  : (
+                                <div className="center"><div className="sbDiffValueBox center">
+                                    <div className="center">{value.valueBoth}</div>
+                                    <span className="mediumText">TV show & Books</span>
+                                </div></div>
+                            )}
                             <div className="sbDiffText">
                                 <div className="sbDiffTextValue">{value.text}</div>
                                 <blockquote>{value.quote}</blockquote>
