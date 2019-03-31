@@ -227,11 +227,19 @@ export default class CharacterDetailsStats extends Component {
                                         : <i className="fas fa-arrow-circle-down" style={{color:"#0cc90c"}}></i> }
                                     &nbsp;{Math.abs(card.proportionalChange)} %
                                 </h3>
-                                <span><h4 className="center">{card.proportionalChange > 0 ? 'higher' : 'lower'}</h4> predicted likelihood of death on&nbsp;average.</span>
+                                <span><h4 className="center">{card.proportionalChange > 0 ? 'higher' : 'lower'}</h4> Predicted Likelihood of Death on&nbsp;average.</span>
                             </div>
                         </div>
                     );
                 }.bind(this))}
+                </div>
+
+                <div className="center">
+                    <blockquote className="lowerQuote">
+                        <i>"Never forget what you are, the rest of the world will not. 
+                            Wear it like armor and it can never be used to hurt you."</i>
+                        <span> -&nbsp;Tyrion Lannister&nbsp;Dondarrion</span>
+                    </blockquote>
                 </div>
             </div>
         );

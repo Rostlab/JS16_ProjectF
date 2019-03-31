@@ -90,3 +90,16 @@
     font-size: 2em;
     margin-top: 0;
 }
+
+.lowerQuote {
+    display: inline-block;
+    border-left: 5px solid #666;
+    margin: 50px;
+    width: 50%;
+    text-align:left;
+}
+
+.lowerQuote span {
+    display: block;
+    text-align: right;
+}
