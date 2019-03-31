@@ -1,7 +1,8 @@
 import React from 'react';
-import 'jquery';
 let {Component} = React;
 import './CharacterDetailsMedia.css';
+
+import $ from 'jquery';
 
 export default class CharacterDetailsMedia extends Component {
 
@@ -41,8 +42,6 @@ export default class CharacterDetailsMedia extends Component {
             this.showDeath  = this.character.show.death;
         }
 
-
-
         this.determineSbPlodDiff();
         this.determineSbAgeDiff();
     }
@@ -73,7 +72,7 @@ export default class CharacterDetailsMedia extends Component {
             </p>
         );
         if ((this.character.show && this.showDeath || !this.showDeath) && this.character.book && this.bookDeath) {
-            sbPlodTitle = this.character.name + " has met the God of Death.";
+            sbPlodTitle = this.charPronoun(true) + "'s met the God of Death";
             sbPlodTextFinal  =  <p>{this.character.name} is dead in both the TV show and the book.</p>;
             sbPlodQuote = (
                 <p className="quote">
@@ -82,17 +81,17 @@ export default class CharacterDetailsMedia extends Component {
                 </p>
             );
         } else if (this.character.show && this.showDeath && !this.character.show.alive && this.character.book && !this.bookDeath) {
-            sbPlodTitle = this.character.name + " is still going strong in the books.";
+            sbPlodTitle = "Still going strong in the books";
             sbPlodTextFinal  =  <p>{this.character.name} is still alive has a {this.plodBook}&nbsp;% predicted likelihood of death in the books, 
                 whereas {this.charPronoun()}'s dead in the TV show</p>;
         } else if (this.character.show && this.character.show.alive && this.character.book && this.bookDeath) {
-            sbPlodTitle = this.character.name + " is still going strong in the TV show.";
+            sbPlodTitle = "Still going strong in the TV show";
             sbPlodTextFinal  =  <p>{this.character.name} is still alive has a {this.plodShow}&nbsp;% predicted likelihood of death in the TV show, 
                 whereas {this.charPronoun()}'s dead in the books</p>;
         }  else {
             if (this.plodShow < 25 && this.plodBook < 25) {
                 sbGraphic = <i className="fas fa-award"></i>;
-                sbPlodTitle = this.character.name + " is a survivor.";
+                sbPlodTitle = this.charPronoun() + "'s a survivor";
                 sbPlodText  = (<span>both of these are <b>lower than 25&nbsp;%</b>.</span>);
                 sbPlodQuote = (
                     <p className="quote">
@@ -101,7 +100,7 @@ export default class CharacterDetailsMedia extends Component {
                     </p>
                 );
             } else if (this.plodShow > 80 && this.plodBook > 80) {
-                sbPlodTitle = "It seems that " + this.character.name + "'s days are numbered.";
+                sbPlodTitle = this.charPronounPosessive(true) + " days are numbered";
                 sbPlodText  = (<span>both of these are <b>higher than 80&nbsp;%</b>.</span>);
                 sbPlodQuote = (
                     <p className="quote">
@@ -110,27 +109,32 @@ export default class CharacterDetailsMedia extends Component {
                     </p>
                 );
             } else if (this.plodShow > 60 && this.plodBook > 60) {
-                sbPlodTitle = "It seems that " + this.character.name + " is likely to die either way.";
+                sbPlodTitle = "Likely to die either way";
                 sbPlodText  = (<span>both of these are <b>higher than 60&nbsp;%</b>.</span>);
             } else if (this.plodShow < this.plodBook - 5) {
-                sbPlodTitle = "The TV show is more merciful to " + this.character.name;
+                sbPlodTitle = "The show is more merciful";
                 sbPlodText  = (<span>that's <b>{(this.plodBook - this.plodShow)}&nbsp;% higher</b>.</span>);
             } else if (this.plodShow > this.plodBook + 5) {
-                sbPlodTitle = "The books are more merciful to " + this.character.name;
+                sbPlodTitle = "The books are more merciful";
                 sbPlodText  = (<span>that's <b>{(this.plodShow - this.plodBook)}&nbsp;% lower</b>.</span>);
             } else {
-                sbPlodTitle = "Looks like the books and the TV show have the same fate planned for " + this.character.name;
+                sbPlodTitle = "The same fate";
                 sbPlodText  = (<span>that's almost the same.</span>);
             }
 
-            sbPlodTextFinal = <p>{this.character.name} has a {this.plodShow}&nbsp;% predicted likelihood of death in the TV show, whereas {this.charPronounPosessive()} likelihood of death in the books 
-            is {this.plodBook}&nbsp;%, {sbPlodText}</p>;
+            sbPlodTextFinal = <div><p>{this.character.name} has a {this.plodShow}&nbsp;% predicted likelihood of death in the TV show, whereas {this.charPronounPosessive()} likelihood of death in the books 
+            is {this.plodBook}&nbsp;%, {sbPlodText}</p>
+            <p>There are many factors which can contribute to a characters predicted likelihood of death. You can read more about them in the stats or machine learning section of this page.</p>
+            </div>;
         }
         this.blocks.push({
+            category: "Chance of death",
             title: sbPlodTitle,
             text: sbPlodTextFinal,
             quote: sbPlodQuote,
-            graphic: sbGraphic
+            graphic: sbGraphic,
+            valueBook: (<div><span className="mainValue">{this.plodBook} %</span><span className="supportingText">Chance of Death</span></div>),
+            valueShow: (<div><span className="mainValue">{this.plodShow} %</span><span className="supportingText">Chance of Death</span></div>)
         });
     }
 
@@ -141,45 +145,41 @@ export default class CharacterDetailsMedia extends Component {
 
         let sbGraphic;
 
-        let sbPlodTitle, sbPlodText, sbPlodQuote = (
+        let sbAgeTitle, sbAgeText, sbAgeQuote = (
             <p className="quote">
                 <i>"Nobody mind me. All I've ever done is lived to a ripe old age. "</i>
                 <span> -&nbsp;Ser&nbsp;Davos&nbsp;Seaworth</span>
             </p>
         );
        
-        var isDead = this.character.show && this.showDeath && !this.character.show.alive || this.character.book && this.bookDeath;
-        let isDeadTitleVerb = isDead ? 'was' : 'is';
+        var isDead = this.isDeadShow|| this.character.book && this.bookDeath && this.bookBirth < 200; // limit to 200 because of missing data
 
-        let booksAge = this.bookBirth ? (isDead && this.bookDeath ? this.bookDeath : this.TV_YEAR) - this.bookBirth : false;
+        let booksAge = this.bookBirth && this.bookBirth > 200 ? (isDead && this.bookDeath ? this.bookDeath : this.TV_YEAR) - this.bookBirth : false;
         let showAge = this.showBirth ? (isDead && this.showDeath ? this.showDeath : this.TV_YEAR) - this.showBirth : false;
         let ageDiff = (booksAge && showAge) ? Math.abs(showAge - booksAge) : false;
         
         if (!booksAge || !showAge) {
-            sbPlodTitle = this.character.name + "'s age is mysterious";
+            sbAgeTitle = this.charPronounPosessive(true) + " age is a mystery";
             if (booksAge) {
-                sbPlodText  = (<span><b>{booksAge}&nbsp;years&nbsp;old</b> in the books. We don't know {this.charPronounPosessive()} age in the show</span>);
+                sbAgeText  = (<span><b>{booksAge}&nbsp;years&nbsp;old</b> in the books. We don't know {this.charPronounPosessive()} age in the show</span>);
             } else {
-                sbPlodText  = (<span><b>{showAge}&nbsp;years&nbsp;old</b> in the TV show. We don't know {this.charPronounPosessive()} age in the books</span>);
+                sbAgeText  = (<span><b>{showAge}&nbsp;years&nbsp;old</b> in the TV show. We don't know {this.charPronounPosessive()} age in the books</span>);
             }
         } else if (showAge == booksAge) {
-            sbPlodTitle = this.character.name + " " + isDeadTitleVerb+ " the same age in both the books and the TV show";
-            sbPlodText  = (<span><b>{booksAge}&nbsp;years&nbsp;old</b></span>);
+            sbAgeTitle = "Same age in the books and TV";
+            sbAgeText  = (<span><b>{booksAge}&nbsp;years&nbsp;old</b></span>);
         } else if (ageDiff !== false && showAge < booksAge) {
-            sbPlodTitle = this.character.name + " " + isDeadTitleVerb+ " younger in the TV show";
-            sbPlodText  = (<span><b>{booksAge}&nbsp;years&nbsp;old</b> in the 
+            sbAgeTitle = "Younger on TV";
+            sbAgeText  = (<span><b>{booksAge}&nbsp;years&nbsp;old</b> in the 
                 books. {this.charPronoun(true)} is <b>{ageDiff} year{(ageDiff) > 1 ? 's' : ''} younger</b> in the show</span>);
         } else if (ageDiff !== false && showAge > booksAge) {
-            sbPlodTitle = this.character.name + " " + isDeadTitleVerb+ " older in the TV show";
-            sbPlodText  = (<span><b>{showAge}&nbsp;years&nbsp;old</b> in the 
+            sbAgeTitle = "Older on TV";
+            sbAgeText  = (<span><b>{showAge}&nbsp;years&nbsp;old</b> in the 
                 TV show. {this.charPronoun(true)} is <b>{ageDiff} year{(ageDiff) > 1 ? 's' : ''}</b> younger in the books</span>);
         }
 
         if (this.bookBirth || this.showBirth) {
-            let age = showAge ? showAge : booksAge;
-            sbGraphic  = (<div><i className="fas fa-birthday-cake"></i>
-            <h3 className="center" style={{fontSize: '1.1em', marginBottom: '0'}}>{age}</h3>
-            <h4 className="center" style={{margin: '0'}}>years</h4></div>);
+            sbGraphic  = (<i className="fas fa-birthday-cake"></i>);
         }
 
         let dateOfDeath;
@@ -199,17 +199,20 @@ export default class CharacterDetailsMedia extends Component {
             }
         }
 
-        let sbPlodTextFinal = (<div><p>
+        let sbAgeTextFinal = (<div><p>
             {!isDead ? (<span>If we assume that the current year is {this.TV_YEAR} AC in both the books and the show, then </span>) : (<span>{this.character.name} died in {dateOfDeath}. We know that </span>)} 
-            {this.charPronoun()} {isDead ? 'was' : 'is'} {sbPlodText}. {aliveInBooks}</p>
+            {this.charPronoun()} {isDead ? 'was' : 'is'} {sbAgeText}. {aliveInBooks}</p>
         <p>Ususally characters are <b>older in the TV show</b>, which may contribute to the different predicted values between the two sources, 
             as we use a character's age if it's available.</p></div>);
         
         this.blocks.push({
-            title: sbPlodTitle,
-            text: sbPlodTextFinal,
-            quote: sbPlodQuote,
-            graphic: sbGraphic
+            category: "Age",
+            title: sbAgeTitle,
+            text: sbAgeTextFinal,
+            quote: sbAgeQuote,
+            graphic: sbGraphic,
+            valueBook: (<div><span className="mainValue">{booksAge}</span><span className="supportingText">years old</span></div>),
+            valueShow: (<div><span className="mainValue">{showAge}</span><span className="supportingText">years old</span></div>)
         });
     }
 
@@ -217,22 +220,41 @@ export default class CharacterDetailsMedia extends Component {
         this.init();
 
         return (
-            <div>
+            <div className="sbDiffBlocks"> 
                 {this.blocks.map(function(value, index) {
-                    return (<div className="sbDiffBlock" key={index}>
-                        {index % 2 == 0 ? <div className="sbDiffBlockGraphic">
-                            {value.graphic}
-                        </div> : ''}
-                        <div className="sbDiffBlockText">
-                            <h4 className="sbDiffTitle">{value.title}</h4>
+                    return (
+                        <div className="sbDiffBlock" key={index}>
+                            <div className="sbDiffBlockGraphic">
+                                {value.graphic}
+                            </div>
+                            <div className="sbDiffBlockText">
+                                <h4 className="sbDiffCardCategory">{value.category}</h4>
+                                <h3 className="sbDiffTitle">{value.title}</h3>
+                            </div>
+                            <div className="sbDiffValueBox center">
+                                <div className="center">{value.valueShow}</div>
+                                <span className="mediumText">TV show</span>
+                            </div>
+                            <div className="sbDiffValueBox center">
+                                <div className="center">{value.valueBook}</div>
+                                <span className="mediumText">Books</span>
+                            </div>
                             <div className="sbDiffText">
-                            {value.text}
-                            {value.quote}</div>
+                                <div className="sbDiffTextValue">{value.text}</div>
+                                <blockquote>{value.quote}</blockquote>
+                                <div className="chevronDown" onClick={
+                                    (e) => {
+                                        console.log('lol', $(e.currentTarget), $(e.currentTarget).parent().find(".sbDiffTextValue")); /*eslint no-console:0,no-undef:0*/
+                                        $(e.currentTarget).parent().find(".sbDiffTextValue").slideToggle('fast');
+                                        $(e.currentTarget).parent().find(".fas").toggleClass('hidden');
+                                    }
+                                }>
+                                    <i className="fas fa-chevron-down"></i>
+                                    <i className="fas fa-chevron-up hidden"></i>
+                                </div>
+                            </div>
                         </div>
-                        {index % 2 == 1 ? <div className="sbDiffBlockGraphic">
-                            {value.graphic}
-                        </div> : ''}
-                    </div>);
+                    );
                 }.bind(this))}
                 
             </div>

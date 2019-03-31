@@ -137,7 +137,7 @@ export default class Character extends Component {
         var img = (!this.state.character.imageLink) ? "/images/placeholder-male.png" : base_url+this.state.character.imageLink;
 
         return (
-          <Grid>
+          <Grid id="character-page-container">
             <div className="character-container">
                 <Row>
                     <div className="character-header">
@@ -156,10 +156,12 @@ export default class Character extends Component {
                     </div>
                 </Row>
                 <Row className="character-intro" fluid >
-                    <Col md={3} className="character-photo">
-                        <img src={img}/>
-                        {this.state.character.show && this.state.character.show.image ? 
-                            <img className="character-show-img" src={this.state.character.show.image}/> : ''}
+                    <Col md={3}>
+                        <div className="character-photo">
+                            <img src={img}/>
+                            {this.state.character.show && this.state.character.show.image ? 
+                                <img className="character-show-img" src={this.state.character.show.image}/> : ''}
+                        </div>
                     </Col>
                     <Col md={9}>
                         <div className="togglePlodDisplayButton" onClick={this.togglePlodDisplay.bind(this)}>
@@ -171,6 +173,7 @@ export default class Character extends Component {
                             { this.state.plodShow < 100 && this.state.character.show && this.state.character.show.alive == true ?
                                 <div className="plodShowContainer">
                                     <h3>Our Predictions</h3>
+                                    <span className="subtitle">TV show</span>
                                     <p>{this.state.character.name}'s <b>Likelihood to Survive</b> between the years 300 and 320 AC is:</p>
                                     <div className="plodContainer">
                                         <CharacterPlodDisplay plodByYear={this.state.plodByYearShow} />
@@ -192,6 +195,7 @@ export default class Character extends Component {
                             { this.state.plodBook < 100 && this.state.character.book && !this.state.character.book.dateOfDeath ?
                                 <div className="plodBookContainer plodContainerHidden plodContainerZIndexLower">
                                     <h3>Our Predictions</h3>
+                                    <span className="subtitle">books</span>
                                     <p>{this.state.character.name}'s <b>Likelihood to Survive</b> between the years 300 and 320 AC is:</p>
                                     <div className="plodContainer">
                                         <CharacterPlodDisplay plodByYear={this.state.plodByYearBook} />
@@ -210,6 +214,7 @@ export default class Character extends Component {
                         </div>
                     </Col>
                 </Row>
+                <hr />
                 <Row>
                     <Col className="leftBar" md={3}>
                         <h3>Comparison</h3>
@@ -219,6 +224,7 @@ export default class Character extends Component {
                         <CharacterDetailsMedia data={this.state} character={this.state.character}/>
                     </Col>
                 </Row>
+                <hr />
                 <Row>
                     <Col className="leftBar" md={3}>
                         <h3>Interesting Stats</h3>
@@ -228,23 +234,28 @@ export default class Character extends Component {
                         <CharacterDetailsStats data={this.state} />
                     </Col>
                 </Row>
+                <hr />
                 <Row>
                     <Col className="leftBar" md={3}>
                         <h3>Machine Learning</h3>
                         <h4>predicting life and death in Westeros</h4>
                     </Col>
                     <Col md={9}>
-                        <p>Our in-house developed machine learning algorithm predicts
-                            two different values: <b>predicted likelihood of death</b> in season 8 of the TV show or the next book, and the <b>character longevity</b> prediction 
-                            between the years 300 to 320 AC.</p>
-                        <p>We do this based on various features that we extracted for each character from the first five books of the <i>A&nbsp;Song of&nbsp;Ice
-                            and&nbsp;Fire series</i> by George R.&nbsp;R. Martin and the first seven seasons of the TV show <i>Game of&nbsp;Thrones</i> by HBO.</p>
-                        <p><a href="/machine-learning-algorithm-predicts-death-game-of-thrones">Read more about our prediction algorithm.</a></p>
+                        <div className="card">
+                            <h3>Character Death & Longevity</h3>
+                            <p>Our in-house developed machine learning algorithm predicts
+                                two different values: <b>predicted likelihood of death</b> in season 8 of the TV show or the next book, and the <b>character longevity</b> prediction 
+                                between the years 300 to 320 AC.</p>
+                            <p>We do this based on various features that we extracted for each character from the first five books of the <i>A&nbsp;Song of&nbsp;Ice
+                                and&nbsp;Fire series</i> by George R.&nbsp;R. Martin and the first seven seasons of the TV show <i>Game of&nbsp;Thrones</i> by HBO.</p>
+                            <a href="/machine-learning-algorithm-predicts-death-game-of-thrones" className="readMore">Read more</a>
+                        </div>
                     </Col>
                 </Row>
+                <hr />
                 <Row>
                     <Col md={12}>
-                        <h3>Follow {this.state.character.name}</h3>
+                        <h3 style={{marginBottom: "35px"}}>Follow {this.state.character.name}</h3>
                     </Col>
                     <Col>
                         <div id="characterMap">
