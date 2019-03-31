@@ -149,9 +149,9 @@ export default class CharacterDetailsStats extends Component {
             }
 
             this.cards.push({
-                title: this.charPronounPosessive(true) + " has " +  numSpouses + (numSpouses === 1 ? "spouse" : "spouses"),
+                title: this.charPronoun(true) + " has " +  numSpouses + (numSpouses === 1 ? " spouse" : " spouses"),
                 type: "Number of Spouses",
-                text: "Having " + spouses + (numSpouses === 1 ? "spouse" : "spouses") + " proportionally " + (change > 1 ? 'increases' : 'decreases') + "the predicted likelihood of death.",
+                text: "Having " + numSpouses + " " + (numSpouses === 1 ? "spouse" : "spouses") + " proportionally " + (change > 1 ? 'increases' : 'decreases') + " the predicted likelihood of death.",
                 value: numSpouses,
                 proportionalChange: (100 * change - 100).toPrecision(2)
             });
@@ -162,15 +162,15 @@ export default class CharacterDetailsStats extends Component {
             let index = this.stats.attributes.indexOf("numTitles");
             let value = this.stats.meanBetaExp[index];
             let numTitles = titles.length;
-            change = value;
+            let change = value;
             for (let i = 0; i < numTitles; i++){
                 change *= value;
             }
 
             this.cards.push({
-                title: this.charPronounPosessive(true) + " has " + numTitles + (numTitles === 1 ? "title" : "titles"),
+                title: this.charPronoun(true) + " has " + numTitles + (numTitles === 1 ? " title" : " titles"),
                 type: "Number of Titles",
-                text: "Having " + numTitles + (numTitles === 1 ? "title" : "titles") + " proportionally " + (change > 1 ? 'increases' : 'decreases') + "the predicted likelihood of death.",
+                text: "Having " + numTitles + " " + (numTitles === 1 ? "title" : "titles") + " proportionally " + (change > 1 ? 'increases' : 'decreases') + " the predicted likelihood of death.",
                 value: numTitles,
                 proportionalChange: (100 * change - 100).toPrecision(2)
             });
