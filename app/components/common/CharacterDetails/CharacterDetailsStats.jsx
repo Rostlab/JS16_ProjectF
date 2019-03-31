@@ -126,22 +126,15 @@ export default class CharacterDetailsStats extends Component {
             if (index > -1) {
                 let change = this.stats.meanBetaExp[index];
                 this.cards.push({
-<<<<<<< HEAD
-                    title: this.charPronounPosessive(true) + " place of birth is " + origin,
-                    type: "BirthPlace",
-                    text: "Characters with this place of birth have a proportionally " + (house > 0 ? 'higher' : 'lower') + " predicted likelihood of death.",
-=======
                     title: origin,
                     type: "Place of birth",
                     text: <span>Characters with this place of birth have a proportionally <b>{change > 1 ? 'higher' : 'lower'}</b>  predicted likelihood of death.</span>,
->>>>>>> 621493f6a85b6da890c426f809ed88da2486fb50
                     value: origin,
                     proportionalChange: (100 * change - 100).toFixed(2)
                 });
             }
         }
 
-<<<<<<< HEAD
         if(this.character.book && this.character.book.spouse){
             let spouses = this.character.book.spouse;
             let index = this.stats.attributes.indexOf("numSpouses");
@@ -182,10 +175,8 @@ export default class CharacterDetailsStats extends Component {
                 proportionalChange: (100 * change - 100).toPrecision(2)
             });
         }
-=======
         this.shuffle(this.cards);
         this.cards = this.cards.slice(0, 3);
->>>>>>> 621493f6a85b6da890c426f809ed88da2486fb50
     }
 
     charPronoun(capitalize = false) {
@@ -287,7 +278,7 @@ export default class CharacterDetailsStats extends Component {
                     <blockquote className="lowerQuote">
                         <i>"Never forget what you are, the rest of the world will not. 
                             Wear it like armor and it can never be used to hurt you."</i>
-                        <span> -&nbsp;Tyrion Lannister&nbsp;Dondarrion</span>
+                        <span> -&nbsp;Tyrion&nbsp;Lannister</span>
                     </blockquote>
                 </div>
             </div>
