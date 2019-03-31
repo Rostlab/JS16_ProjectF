@@ -21,8 +21,27 @@ export default class CharacterDetailsMedia extends Component {
         this.plodShow = this.data.plodShow;
         this.plodBook = this.data.plodBook;
 
-        this.sbPlodTitle;
-        this.sbPlodText;
+        this.bookBirth = false;
+        this.showBirth = false;
+        this.bookDeath = false;
+        this.showDeath = false;
+        if (this.character.book && this.character.book.dateOfBirth) {
+            this.bookBirth = this.character.book.dateOfBirth;
+        }
+
+        if (this.character.show && this.character.show.birth) {
+            this.showBirth  = this.character.show.birth;
+        }
+
+        if (this.character.book && this.character.book.dateOfDeath) {
+            this.bookDeath = this.character.book.dateOfDeath;
+        }
+
+        if (this.character.show && this.character.show.death) {
+            this.showDeath  = this.character.show.death;
+        }
+
+
 
         this.determineSbPlodDiff();
         this.determineSbAgeDiff();
@@ -53,7 +72,7 @@ export default class CharacterDetailsMedia extends Component {
                 <span> -&nbsp;Syrio&nbsp;Forel</span>
             </p>
         );
-        if (this.character.show && this.character.show.death && this.character.book && this.character.dateOfDeath) {
+        if ((this.character.show && this.showDeath || !this.showDeath) && this.character.book && this.bookDeath) {
             sbPlodTitle = this.character.name + " has met the God of Death.";
             sbPlodTextFinal  =  <p>{this.character.name} is dead in both the TV show and the book.</p>;
             sbPlodQuote = (
@@ -62,11 +81,11 @@ export default class CharacterDetailsMedia extends Component {
                     <span> -&nbsp;Beric&nbsp;Dondarrion</span>
                 </p>
             );
-        } else if (this.character.show && this.character.show.death && !this.character.show.alive && this.character.book && !this.character.dateOfDeath) {
+        } else if (this.character.show && this.showDeath && !this.character.show.alive && this.character.book && !this.bookDeath) {
             sbPlodTitle = this.character.name + " is still going strong in the books.";
             sbPlodTextFinal  =  <p>{this.character.name} is still alive has a {this.plodBook}&nbsp;% predicted likelihood of death in the books, 
                 whereas {this.charPronoun()}'s dead in the TV show</p>;
-        } else if (this.character.show && this.character.show.alive && this.character.book && this.character.dateOfDeath) {
+        } else if (this.character.show && this.character.show.alive && this.character.book && this.bookDeath) {
             sbPlodTitle = this.character.name + " is still going strong in the TV show.";
             sbPlodTextFinal  =  <p>{this.character.name} is still alive has a {this.plodShow}&nbsp;% predicted likelihood of death in the TV show, 
                 whereas {this.charPronoun()}'s dead in the books</p>;
@@ -116,16 +135,7 @@ export default class CharacterDetailsMedia extends Component {
     }
 
     determineSbAgeDiff() {
-        let booksBirth, showBirth;
-        if (this.character.book && this.character.book.dateOfBirth) {
-            booksBirth = this.character.book.dateOfBirth;
-        }
-
-        if (this.character.show && this.character.show.birth) {
-            showBirth  = this.character.show.birth;
-        }
-
-        if (!booksBirth && !showBirth) {
+        if (!this.bookBirth && !this.showBirth) {
             return;
         }
 
@@ -138,34 +148,34 @@ export default class CharacterDetailsMedia extends Component {
             </p>
         );
        
-        var isDead = this.character.show && this.character.show.death && !this.character.show.alive || this.character.book && this.character.dateOfDeath;
+        var isDead = this.character.show && this.showDeath && !this.character.show.alive || this.character.book && this.bookDeath;
         let isDeadTitleVerb = isDead ? 'was' : 'is';
 
-        let booksAge = booksBirth ? (isDead && this.character.book.dateOfDeath ? this.character.book.dateOfDeath : this.TV_YEAR) - booksBirth : false;
-        let showAge = showBirth ? (isDead && this.character.show.death ? this.character.show.death : this.TV_YEAR) - showBirth : false;
-        let ageDiff = Math.abs(showAge - booksAge);
+        let booksAge = this.bookBirth ? (isDead && this.bookDeath ? this.bookDeath : this.TV_YEAR) - this.bookBirth : false;
+        let showAge = this.showBirth ? (isDead && this.showDeath ? this.showDeath : this.TV_YEAR) - this.showBirth : false;
+        let ageDiff = (booksAge && showAge) ? Math.abs(showAge - booksAge) : false;
         
-        if (!booksBirth || !showBirth) {
+        if (!booksAge || !showAge) {
             sbPlodTitle = this.character.name + "'s age is mysterious";
-            if (booksBirth) {
+            if (booksAge) {
                 sbPlodText  = (<span><b>{booksAge}&nbsp;years&nbsp;old</b> in the books. We don't know {this.charPronounPosessive()} age in the show</span>);
             } else {
                 sbPlodText  = (<span><b>{showAge}&nbsp;years&nbsp;old</b> in the TV show. We don't know {this.charPronounPosessive()} age in the books</span>);
             }
-        } else if (showBirth == booksBirth) {
+        } else if (showAge == booksAge) {
             sbPlodTitle = this.character.name + " " + isDeadTitleVerb+ " the same age in both the books and the TV show";
             sbPlodText  = (<span><b>{booksAge}&nbsp;years&nbsp;old</b></span>);
-        } else if (showBirth > booksBirth) {
+        } else if (ageDiff !== false && showAge > booksAge) {
             sbPlodTitle = this.character.name + " " + isDeadTitleVerb+ " younger in the TV show";
             sbPlodText  = (<span><b>{booksAge}&nbsp;years&nbsp;old</b> in the 
                 books. {this.charPronoun(true)} is <b>{ageDiff} year{(ageDiff) > 1 ? 's' : ''} younger</b> in the show</span>);
-        } else if (showBirth < booksBirth) {
+        } else if (ageDiff !== false && showAge < booksAge) {
             sbPlodTitle = this.character.name + " " + isDeadTitleVerb+ " older in the TV show";
             sbPlodText  = (<span><b>{showAge}&nbsp;years&nbsp;old</b> in the 
                 TV show. {this.charPronoun(true)} is <b>{ageDiff} year{(ageDiff) > 1 ? 's' : ''}</b> younger in the books</span>);
         }
 
-        if (booksBirth || showBirth) {
+        if (this.bookBirth || this.showBirth) {
             let age = showAge ? showAge : booksAge;
             sbGraphic  = (<div><i className="fas fa-birthday-cake"></i>
             <h3 className="center" style={{fontSize: '1.1em', marginBottom: '0'}}>{age}</h3>
@@ -175,16 +185,16 @@ export default class CharacterDetailsMedia extends Component {
         let dateOfDeath;
         let aliveInBooks = "";
         if (isDead) {
-            let dateOfDeathBooks = (<span>{this.character.book.dateOfDeath} AC in the books</span>);
-            let dateOfDeathShow = (<span>{this.character.show.death} AC in the TV show</span>);
+            let dateOfDeathBooks = (<span>{this.bookDeath} AC in the books</span>);
+            let dateOfDeathShow = (<span>{this.showDeath} AC in the TV show</span>);
 
-            dateOfDeath = (this.character.show.death && this.character.book.dateOfDeath) ? (<span>{dateOfDeathBooks} and {dateOfDeathShow}</span>) 
-                : (this.character.show.death ? dateOfDeathShow : dateOfDeathBooks);
-            if (this.character.show.death == this.character.book.dateOfDeath) {
-                dateOfDeath = (<span>{this.character.show.death} AC in both the books and the TV show</span>);
+            dateOfDeath = (this.showDeath && this.bookDeath) ? (<span>{dateOfDeathBooks} and {dateOfDeathShow}</span>) 
+                : (this.showDeath ? dateOfDeathShow : dateOfDeathBooks);
+            if (this.showDeath == this.bookDeath) {
+                dateOfDeath = (<span>{this.showDeath} AC in both the books and the TV show</span>);
             }
 
-            if (!this.character.book.dateOfDeath && booksAge < 50){
+            if (!this.bookDeath && booksAge < 50){
                 aliveInBooks = (<span>{this.charPronoun(true)} is still alive in the books.</span>);
             }
         }
