@@ -71,8 +71,9 @@ export default class CharacterListPage extends Component {
       this.state = {
         data: Store.getCharacters(page,sort, {'value': ''}),
         activePage: page,
-        filter: {'value': ''},
+        filter: {'value': '',"book":true,"show":true},
         loaded: false,
+        filterText: 'Both',
         sortText: sortText,
         sort: sort,
         text_changed: false,
@@ -146,7 +147,7 @@ export default class CharacterListPage extends Component {
       if (loadMoreBoundingRect.top < window.innerHeight - 50) {
         return true;
       }
-      
+
       return false;
     }
 
@@ -159,6 +160,33 @@ export default class CharacterListPage extends Component {
       });
 
       this.pushHistory(newPage);
+    }
+
+    handleSelectFilter(event, eventKey) { // Event triggered by sort change
+      let tmpFilter=Object.assign({},this.state.filter);
+      let filterText;
+      if(eventKey == 0) {
+        tmpFilter.book=false;
+        tmpFilter.show=false;
+        filterText='Both';
+      } else if(eventKey == 1) {
+        tmpFilter.book=true;
+        tmpFilter.show=false;
+        filterText='Book';
+      } else if(eventKey == 2) {
+        tmpFilter.book=false;
+        tmpFilter.show=true;
+        filterText='Show';
+      }
+      // console.log('tmpFilter');
+      // console.log(tmpFilter);
+      this.setState({
+        data: Store.getCharacters(1,this.state.sort,tmpFilter),
+        filter:tmpFilter,
+        filterText:filterText,
+        activePage: 1
+      });
+
     }
 
     handleSelectSort(event, eventKey) { // Event triggered by sort change
@@ -208,19 +236,20 @@ export default class CharacterListPage extends Component {
     }
 
     handleChange() { // Event triggered by search input
-      let filter = {'value': this.refs.input.getValue()};
+      let tmpFilter =Object.assign({},this.state.filter);
+      tmpFilter.value=this.refs.input.getValue();
       if (!this.state.text_changed) { // On page load loading
         this.setState({
           text_changed: true,
-          data: Store.getCharacters(this.state.activePage, this.state.sort, filter),
-          filter: {'value': this.refs.input.getValue()}
+          data: Store.getCharacters(this.state.activePage, this.state.sort, tmpFilter),
+          filter: tmpFilter
         });
         return;
       }
 
       this.setState({
-        data: Store.getCharacters(this.state.activePage, this.state.sort, filter),
-        filter: {'value': this.refs.input.getValue()},
+        data: Store.getCharacters(this.state.activePage, this.state.sort, tmpFilter),
+        filter: tmpFilter,
         activePage: 1
       });
 
@@ -233,10 +262,19 @@ export default class CharacterListPage extends Component {
       return (
         <div>
           <Row className="inputbar">
-            <Col md={7} mdOffset={1}>
+          <Col md={2} className="sortCol" mdOffset={1}>
+            <DropdownButton className="sortButton" onSelect={this.handleSelectFilter.bind(this)} title={this.state.filterText} id="dropdown-size-medium">
+              <MenuItem eventKey="1">Book</MenuItem>
+              <MenuItem eventKey="2">Show</MenuItem>
+              <MenuItem eventKey="0">Both</MenuItem>
+            </DropdownButton>
+          </Col>
+
+            <Col md={6} >
               <Input value={this.props.location.query.search} className="character-search" ref="input" type="text" placeholder="Search for character" onChange={this.handleChange.bind(this)} />
             </Col>
-            <Col md={3} className="sortCol">
+
+            <Col md={2} className="sortCol">
               <DropdownButton className="sortButton" onSelect={this.handleSelectSort.bind(this)} title={this.state.sortText} id="dropdown-size-medium">
                 <MenuItem eventKey="1">{popularity.sortText}</MenuItem>
                 <MenuItem eventKey="2">{AtoZ.sortText}</MenuItem>
@@ -249,10 +287,6 @@ export default class CharacterListPage extends Component {
           <Row>
             <Col md={10} mdOffset={1}>
               <div className="center">
-                <label id="toggleInfiniteScrolling">
-                  <input type="checkbox" defaultChecked={true} onClick={this.toggleInfiniteScrolling.bind(this)} />
-                  &nbsp;Infinite Scrolling
-                </label>
                 <Pagination
                   boundaryLinks={true}
                   ellipsis

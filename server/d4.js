@@ -35,7 +35,7 @@ try {
 gotsent.cfg.extend(cfg);
 
 gotsent.init();
-gotsent.startUpdateLoop();
+// gotsent.startUpdateLoop();
 
 d4.get('/chart.css', function(req,res) {
     res.sendFile(gotsent.css);

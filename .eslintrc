@@ -12,6 +12,7 @@
       },
   },
   "rules": {
+      "no-console": 'off',
       "semi": 2,
       "no-mixed-spaces-and-tabs": 0,
       "react/no-danger": 0
