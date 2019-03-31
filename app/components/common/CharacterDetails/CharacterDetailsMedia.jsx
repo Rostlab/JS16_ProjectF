@@ -12,7 +12,7 @@ export default class CharacterDetailsMedia extends Component {
     }
 
     init() {
-        this.blocks = [];
+        this.cards = [];
 
         this.data = this.props.data;
 
@@ -135,7 +135,7 @@ export default class CharacterDetailsMedia extends Component {
             <p>There are many factors which can contribute to a characters predicted likelihood of death. You can read more about them in the stats or machine learning section of this page.</p>
             </div>;
         }
-        this.blocks.push({
+        this.cards.push({
             category: "Chance of death",
             title: sbPlodTitle,
             text: sbPlodTextFinal,
@@ -212,7 +212,7 @@ export default class CharacterDetailsMedia extends Component {
         let sbAppearText = <div><p>{this.character.name} appears in {appearanceShow ? appearanceShow : 0} episodes. That is  <b>{appearanceShowPercentage}% of all {TOTAL_EPISODES}</b> episodes. {this.charPronoun(true)} appears in <b>{appearanceBooks} out of 5 books</b></p>
         <p>{sbAppearTexShow} {sbAppearTextBook}</p></div>;
         
-        this.blocks.push({
+        this.cards.push({
             category: "Number of appearances",
             title: sbAppearTitle,
             text: sbAppearText,
@@ -290,7 +290,7 @@ export default class CharacterDetailsMedia extends Component {
         <p>Ususally characters are <b>older in the TV show</b>, which may contribute to the different predicted values between the two sources, 
             as we use a character's age if it's available.</p></div>);
         
-        this.blocks.push({
+        this.cards.push({
             category: "Age",
             title: sbAgeTitle,
             text: sbAgeTextFinal,
@@ -306,7 +306,7 @@ export default class CharacterDetailsMedia extends Component {
 
         return (
             <div className="sbDiffBlocks"> 
-                {this.blocks.map(function(value, index) {
+                {this.cards.map(function(value, index) {
                     return (
                         <div className="sbDiffBlock" key={index}>
                             <div className="sbDiffBlockGraphic">

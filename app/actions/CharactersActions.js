@@ -113,7 +113,6 @@ var CharactersActions = {
 
             var characterWithPlod = Object.assign(character, characterPlod);
 
-            console.log(characterWithPlod); /*eslint no-console:0,no-undef:0*/
             AppDispatcher.handleServerAction({
                 actionType: Constants.RECEIVE_CHARACTER,
                 data: characterWithPlod

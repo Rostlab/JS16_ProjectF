@@ -9,10 +9,10 @@ import { Row, Col, Grid, ProgressBar, Glyphicon } from 'react-bootstrap';
 import MapComp from '../../common/MapComp/MapComp.jsx';
 import Store from '../../../stores/CharactersStore';
 import Actions from '../../../actions/CharactersActions';
-import CharacterDetailsMedia from '../../common/CharacterDetails/CharacterDetailMedia.jsx';
+import CharacterDetailsMedia from '../../common/CharacterDetails/CharacterDetailsMedia.jsx';
 import CharacterDetailsStats from '../../common/CharacterDetails/CharacterDetailsStats.jsx';
 import SentimentStore from '../../../stores/TwitterSentimentsStore';
-//import SentimentActions from '../../../actions/TwitterSentimentsActions';
+
 import CharacterPlodDisplay from '../../common/CharacterPlodDisplay/CharacterPlodDisplay';
 import tombstone from './rip_tombstone.png';
 import DeadCharacter from './DeadCharacter';
