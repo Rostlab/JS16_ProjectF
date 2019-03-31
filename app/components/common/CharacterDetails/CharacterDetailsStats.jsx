@@ -124,11 +124,52 @@ export default class CharacterDetailsStats extends Component {
                 this.cards.push({
                     title: this.charPronounPosessive(true) + " place of birth is " + origin,
                     type: "BirthPlace",
-                    text: "Characters with this place of birth have a proportionally " + (origin > 0 ? 'higher' : 'lower') + " predicted likelihood of death.",
+                    text: "Characters with this place of birth have a proportionally " + (house > 0 ? 'higher' : 'lower') + " predicted likelihood of death.",
                     value: origin,
                     proportionalChange: (100 * change - 100).toPrecision(2)
                 });
             }
+        }
+
+        if(this.character.book && this.character.book.spouse){
+            let spouses = this.character.book.spouse;
+            let index = this.stats.attributes.indexOf("numSpouses");
+            let value = this.stats.meanBetaExp[index];
+            if (!Array.isArray(spouses)){
+                spouses = [spouses];
+            }
+            let numSpouses = spouses.length;
+            let change = value;
+            for (let i = 1; i < numSpouses; i++){
+                change *= value;
+            }
+
+            this.cards.push({
+                title: this.charPronounPosessive(true) + " has " +  numSpouses + (numSpouses === 1 ? "spouse" : "spouses"),
+                type: "Number of Spouses",
+                text: "Having " + spouses + (numSpouses === 1 ? "spouse" : "spouses") + " proportionally " + (change > 1 ? 'increases' : 'decreases') + "the predicted likelihood of death.",
+                value: numSpouses,
+                proportionalChange: (100 * change - 100).toPrecision(2)
+            });
+        }
+
+        if (this.character.book && this.character.book.title){
+            let titles = this.character.book.titles;
+            let index = this.stats.attributes.indexOf("numTitles");
+            let value = this.stats.meanBetaExp[index];
+            let numTitles = titles.length;
+            change = value;
+            for (let i = 0; i < numTitles; i++){
+                change *= value;
+            }
+
+            this.cards.push({
+                title: this.charPronounPosessive(true) + " has " + numTitles + (numTitles === 1 ? "title" : "titles"),
+                type: "Number of Titles",
+                text: "Having " + numTitles + (numTitles === 1 ? "title" : "titles") + " proportionally " + (change > 1 ? 'increases' : 'decreases') + "the predicted likelihood of death.",
+                value: numTitles,
+                proportionalChange: (100 * change - 100).toPrecision(2)
+            });
         }
     }
 
