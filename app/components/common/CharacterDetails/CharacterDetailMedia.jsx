@@ -230,11 +230,11 @@ export default class CharacterDetailsMedia extends Component {
         } else if (showAge == booksAge) {
             sbPlodTitle = this.character.name + " " + isDeadTitleVerb+ " the same age in both the books and the TV show";
             sbPlodText  = (<span><b>{booksAge}&nbsp;years&nbsp;old</b></span>);
-        } else if (ageDiff !== false && showAge > booksAge) {
+        } else if (ageDiff !== false && showAge < booksAge) {
             sbPlodTitle = this.character.name + " " + isDeadTitleVerb+ " younger in the TV show";
             sbPlodText  = (<span><b>{booksAge}&nbsp;years&nbsp;old</b> in the 
                 books. {this.charPronoun(true)} is <b>{ageDiff} year{(ageDiff) > 1 ? 's' : ''} younger</b> in the show</span>);
-        } else if (ageDiff !== false && showAge < booksAge) {
+        } else if (ageDiff !== false && showAge > booksAge) {
             sbPlodTitle = this.character.name + " " + isDeadTitleVerb+ " older in the TV show";
             sbPlodText  = (<span><b>{showAge}&nbsp;years&nbsp;old</b> in the 
                 TV show. {this.charPronoun(true)} is <b>{ageDiff} year{(ageDiff) > 1 ? 's' : ''}</b> younger in the books</span>);
