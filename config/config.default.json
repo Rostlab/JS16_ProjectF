@@ -8,6 +8,12 @@
     "port": "443",
     "prefix": "/api/"
   },
+  "apiNew": {
+    "https": true,
+    "host": "gotdata.northeurope.cloudapp.azure.com",
+    "port": "443",
+    "prefix": "/api/"
+  },
   "twitter_hash_tag": {
     "hash": "hashtag for timeline twitter widget"
   },

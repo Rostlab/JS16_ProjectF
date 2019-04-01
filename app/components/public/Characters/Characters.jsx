@@ -4,30 +4,43 @@ import React from 'react';
 let {Component} = React;
 import $ from 'jquery';
 import './Characters.css';
-import { Row, Col, Grid, Image, ProgressBar, Glyphicon } from 'react-bootstrap';
+import { Row, Col, Grid, ProgressBar, Glyphicon } from 'react-bootstrap';
 
 import MapComp from '../../common/MapComp/MapComp.jsx';
 import Store from '../../../stores/CharactersStore';
 import Actions from '../../../actions/CharactersActions';
-import CharacterDetails from '../../common/CharacterDetails/CharacterDetails.jsx';
+import CharacterDetailsMedia from '../../common/CharacterDetails/CharacterDetailsMedia.jsx';
+import CharacterDetailsStats from '../../common/CharacterDetails/CharacterDetailsStats.jsx';
 import SentimentStore from '../../../stores/TwitterSentimentsStore';
-import SentimentActions from '../../../actions/TwitterSentimentsActions';
+
+import CharacterPlodDisplay from '../../common/CharacterPlodDisplay/CharacterPlodDisplay';
 import tombstone from './rip_tombstone.png';
+import DeadCharacter from './DeadCharacter';
+
+import window from 'global';
 
 export default class Character extends Component {
 
     constructor (props) {
         super(props);
+
+        this.animating = false;
+        let character = Store.getCharacter();
+
         this.state = {
-            character: Store.getCharacter(),
-            plod: 0,
+            character: character,
+            plodShow: 0,
+            plodBook: 0,
             plodArff: '0',
-            plodText: '',
+            plodTextShow: '',
+            plodTextBook: '',
             sentiment: {
                 positive: 0,
                 negative: 0
             },
-            chartLoaded: false
+            chartLoaded: false,
+            plodByYearShow: [],
+            plodByYearBook: []
         };
         this._onChange = this._onChange.bind(this);
     }
@@ -38,7 +51,7 @@ export default class Character extends Component {
 
     componentDidMount() {
         Actions.loadCharacter(decodeURIComponent(this.props.params.id));
-        SentimentActions.loadCharacterSentiment(decodeURIComponent(this.props.params.id));
+        //SentimentActions.loadCharacterSentiment(decodeURIComponent(this.props.params.id));
     }
 
     componentWillUnmount(){
@@ -46,48 +59,95 @@ export default class Character extends Component {
     }
 
     _onChange() {
-        const character = Store.getCharacter();
+        let character = Store.getCharacter();
+        
         this.setState({
             character: character,
             sentiment: SentimentStore.getCharacterSentiment()
         });
 
-        const check = !character.dateOfDeath && character.gotplod && character.gotarffplod;
-        this.setState({
-            plod: (check) ? parseInt(character.gotplod.plod) || 0 : 100,
-            plodText: (check) ? '%(percent)s%' : 'D E A D',
-            character: character,
-            sentiment: SentimentStore.getCharacterSentiment() || { positive: 0, negative: 0}
-        });
+        const checkShow = !character.dateOfDeath && character.gotplod && character.gotarffplod;
+        const checkBook = !character.dateOfDeath && character.gotplod && character.gotarffplod;
 
-        $('head').append('<link rel="stylesheet" type="text/css" href="/d4/chart.css">');
-        if (this.state.character.name != undefined && !this.state.chartLoaded){
-            const name = this.state.character.name.replace(/ |'/g,'_');
-            $.getScript("/d4/chart.js",function(){
-                var chart = new characterChart(d3.select("#chart"), "/d4/csv/" + name + ".csv"); /*eslint no-undef:0*/
-                d3.select(window).on('resize', chart.resize);/*eslint no-undef:0*/
-            });
+        let randval = parseInt(character.gotplod.plod + 10 - Math.random() * 20);
+        if (randval > 100) {
+            randval = 100;
+        } else if (randval < 0) {
+            randval = 1;
         }
 
         this.setState({
-            chartLoaded: true
+            // temporary dummy data - TODO: remove
+            plodShow: (checkShow) ? randval || 0 : 100,
+            plodByYearShow: character.plodByYearShow,
+            plodTextShow: (checkShow) ? '%(percent)s%' : 'D E A D',
+
+            // Book data
+            plodBook: (checkBook) ? parseInt(character.gotplod.plod) || 0 : 100,
+            plodByYearBook: character.plodByYearBook,
+            plodTextBook: (checkBook) ? '%(percent)s%' : 'D E A D',
+
+            character: character,
+            sentiment: SentimentStore.getCharacterSentiment() || { positive: 0, negative: 0}
         });
+        
+        // TODO: remove
+        console.log(this.state); /*eslint no-console:0,no-undef:0*/
     }
+
+    togglePlodDisplay() {
+        if (this.animating) {
+            return;
+        }
+
+        this.animating = true;
+        var bookContainer = $(".plodBookContainer");
+        var characterShowImg = $(".character-show-img");
+        if (bookContainer.hasClass('plodContainerHidden')) {
+            bookContainer.removeClass("plodContainerZIndexLower").removeClass("plodContainerHidden");
+            characterShowImg.addClass("hiddenImg");
+        } else {
+            bookContainer.addClass("plodContainerHidden");
+            characterShowImg.removeClass("hiddenImg");
+            window.setTimeout(() => {
+                $(".plodBookContainer").addClass("plodContainerZIndexLower");
+            }, 400);
+        }
+
+        let button = $(".togglePlodDisplayButtonBackground");
+        if (button.hasClass("active")) {
+            button.removeClass("active").animate({
+                "left": "0",
+                "backgroundColor": "#7a7a7a"
+            }, 200);
+        } else {
+            button.addClass("active").animate({
+                "left": "50%",
+                "backgroundColor": "#5A180C"
+            }, 200);
+        }
+
+        window.setTimeout(function() {
+            this.animating = false;
+        }.bind(this), 400);
+    }
+
     render() {
         var base_url = process.env.__PROTOCOL__ + process.env.__API__ + "/";
-        var img = (!this.state.character.imageLink) ? "https://placeholdit.imgix.net/~text?txtsize=33&txt=profile%20picture%20&w=350&h=350" : base_url+this.state.character.imageLink;
+        var img = (!this.state.character.imageLink) ? "/images/placeholder-male.png" : base_url+this.state.character.imageLink;
 
         return (
-          <Grid>
+          <Grid id="character-page-container">
             <div className="character-container">
-                <Row fluid>
-                    <div className="header-image">
+                <Row>
+                    <div className="character-header">
                         <div className="character-name-container">
-                            <Col xs={12} sm={9}  md={8} className="character-name">
+                            <div className="character-name-background"></div>
+                            <Col md={9} mdOffset={3} className="character-name">
                                 <div className="u-inlineBlock"><h1>{this.state.character.name}</h1></div>
                                 <a href={"https://awoiaf.westeros.org/index.php/" + this.state.character.name}
-                                   target="_blank"
-                                   className="btn--secondary wikiButton u-inlineBlock">
+                                    target="_blank"
+                                    className="btn--secondary wikiButton u-inlineBlock">
                                     <Glyphicon glyph="share-alt" />
                                     Wiki
                                 </a>
@@ -96,52 +156,111 @@ export default class Character extends Component {
                     </div>
                 </Row>
                 <Row className="character-intro" fluid >
-                    <Col xs={6} xsOffset={3} sm={3} smOffset={0} md={3} mdOffset={1} className="character-photo">
-                        <Image thumbnail src={img}/>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col md={8} mdOffset={2}>
-                        <CharacterDetails data={this.state.character} />
-                    </Col>
-                </Row>
-                <div className="character-stats">
-                <Row>
-                    <Col md={8} mdOffset={2}>
-                        <h2>Likelihood of Death</h2>
-                        <p>{this.state.character.name}'s likelihood to die is:</p>
-                        <div className="plodContainer">
-                            <ProgressBar now={this.state.plod} label={this.state.plodText} />
-                            <img src={tombstone} />
+                    <Col md={3}>
+                        <div className="character-photo">
+                            <img src={img}/>
+                            {this.state.character.show && this.state.character.show.image ? 
+                                <img className="character-show-img" src={this.state.character.show.image}/> : ''}
                         </div>
-                        <p>Our in-house developed machine learning algorithm predicts
-                            likelihood of death based on various features that we extracted
-                            for each character from the first five books of the Song of Ice
-                            and Fire series. </p>
-                           <p><a href="/machine-learning-algorithm-predicts-death-game-of-thrones">Click here to read more about our prediction algorithm.</a></p>
                     </Col>
-                </Row>
-                <Row>
-                    <Col md={8} mdOffset={2}>
-                        <h2>People on Twitter say</h2>
-                        <svg id="chart" width="100%" height="400"></svg>
+                    <Col md={9}>
+                        <div className="togglePlodDisplayButton" onClick={this.togglePlodDisplay.bind(this)}>
+                            <div className="togglePlodDisplayButtonBackground"></div>
+                            <div className="togglePlodDisplayButtonOption">Show</div>
+                            <div className="togglePlodDisplayButtonOption">Book</div>
+                        </div>
+                        <div className="plodOuterContainer">
+                            { this.state.plodShow < 100 && this.state.character.show && this.state.character.show.alive == true ?
+                                <div className="plodShowContainer">
+                                    <h3>Our Predictions</h3>
+                                    <span className="subtitle">TV show</span>
+                                    <p>{this.state.character.name}'s <b>Likelihood to Survive</b> between the years 300 and 320 AC is:</p>
+                                    <div className="plodContainer">
+                                        <CharacterPlodDisplay plodByYear={this.state.plodByYearShow} />
+                                    </div>
+                                    <p>{this.state.character.name}'s <b>Predicted Likelihood of Death</b> in season 8 is:</p>
+                                    <div className="plodContainer">
+                                        <ProgressBar now={this.state.plodShow} label={this.state.plodTextShow} />
+                                        <img src={tombstone} />
+                                    </div>
+                                </div> 
+                                : 
+                                <div className="plodShowContainer">
+                                    <DeadCharacter name={this.state.character.name} 
+                                                   deathText={this.state.character.show && this.state.character.show.death ? this.state.character.show.death + ' AC' : 'D E A D'} 
+                                                   mediumText="TV show"/>
+                                </div>
+                            }
 
+                            { this.state.plodBook < 100 && this.state.character.book && !this.state.character.book.dateOfDeath ?
+                                <div className="plodBookContainer plodContainerHidden plodContainerZIndexLower">
+                                    <h3>Our Predictions</h3>
+                                    <span className="subtitle">books</span>
+                                    <p>{this.state.character.name}'s <b>Likelihood to Survive</b> between the years 300 and 320 AC is:</p>
+                                    <div className="plodContainer">
+                                        <CharacterPlodDisplay plodByYear={this.state.plodByYearBook} />
+                                    </div>
+                                    <p>{this.state.character.name}'s <b>Predicted Likelihood of Death</b> in <i>'the Winds of Winter'</i> is:</p>
+                                    <div className="plodContainer">
+                                        <ProgressBar now={this.state.plodBook} label={this.state.plodTextBook} />
+                                        <img src={tombstone} />
+                                    </div>
+                                </div>
+                                : 
+                                <div className="plodBookContainer plodContainerHidden plodContainerZIndexLower">
+                                    <DeadCharacter name={this.state.character.name} deathText={this.state.character.dateOfDeath + 'AC'} mediumText="books"/>
+                                </div>
+                            }
+                        </div>
                     </Col>
                 </Row>
+                <hr />
                 <Row>
-                    <Col  md={8} mdOffset={2}>
-                        Overall we registered { this.state.sentiment.positive || 0 } positive tweets and {this.state.sentiment.negative || 0} negative tweets for {this.state.character.name}.
+                    <Col className="leftBar" md={3}>
+                        <h3>Comparison</h3>
+                        <h4>between the&nbsp;books and&nbsp;the TV&nbsp;show</h4>
+                    </Col>
+                    <Col md={9}>
+                        <CharacterDetailsMedia data={this.state} character={this.state.character}/>
                     </Col>
                 </Row>
-                
-                </div>
-
+                <hr />
                 <Row>
-                    <Col md={8} mdOffset={2}>
-                        <h2>Follow {this.state.character.name}</h2>
+                    <Col className="leftBar" md={3}>
+                        <h3>Interesting Stats</h3>
+                        <h4>about {this.state.character.name}</h4>
+                    </Col>
+                    <Col md={9}>
+                        <CharacterDetailsStats data={this.state} />
+                    </Col>
+                </Row>
+                <hr />
+                <Row>
+                    <Col className="leftBar" md={3}>
+                        <h3>Machine Learning</h3>
+                        <h4>predicting life and death in Westeros</h4>
+                    </Col>
+                    <Col md={9}>
+                        <div className="card">
+                            <h3>Character Death & Longevity</h3>
+                            <p>Our in-house developed machine learning algorithm predicts
+                                two different values: <b>predicted likelihood of death</b> in season 8 of the TV show or the next book, and the <b>character longevity</b> prediction 
+                                between the years 300 to 320 AC.</p>
+                            <p>We do this based on various features that we extracted for each character from the first five books of the <i>A&nbsp;Song of&nbsp;Ice
+                                and&nbsp;Fire series</i> by George R.&nbsp;R. Martin and the first seven seasons of the TV show <i>Game of&nbsp;Thrones</i> by HBO.</p>
+                            <a href="/machine-learning-algorithm-predicts-death-game-of-thrones" className="readMore">Read more</a>
+                        </div>
+                    </Col>
+                </Row>
+                <hr />
+                <Row>
+                    <Col md={12}>
+                        <h3 style={{marginBottom: "35px"}}>Follow {this.state.character.name}</h3>
                     </Col>
                     <Col>
-                        <MapComp character={[this.props.params.id]} />
+                        <div id="characterMap">
+                            <MapComp character={[this.props.params.id]} />
+                        </div>
                     </Col>
                 </Row>
 

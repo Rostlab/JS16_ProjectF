@@ -1,0 +1,124 @@
+.sbDiffBlocks .sbDiffBlock:nth-child(even) {
+    margin-right: 0;
+}
+
+.sbDiffBlock {
+    box-sizing: border-box;
+    position: relative;
+
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+
+    background-color: #353535;
+    margin-bottom: 20px;
+    padding: 20px;
+    padding-bottom: 40px;
+
+    display: inline-block;
+    width: calc((100% - 20px) / 2);
+    margin-right: 20px;
+    vertical-align: top;
+
+    min-height: 420px;
+}
+
+@media (max-width: 700px) {
+    .sbDiffBlock {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+.sbDiffBlockGraphic, .sbDiffBlockText {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.sbDiffBlockGraphic {
+    width: 100px;
+    font-size: 60px;
+    line-height: 80px;
+    text-align: center;
+}
+
+.sbDiffBlockText {
+    width: calc(100% - 100px);
+}
+
+.mainValue {
+    display: block;
+    font-size: 3em;
+    font-family: 'Cinzel', sans;
+}
+
+.supportingText {
+    font-size: 0.9em;
+    font-family: 'Cinzel', sans;
+}
+
+.mediumText {
+    font-size: 1em;
+    font-family: 'Cinzel', sans;
+    color: #bbb;
+}
+
+.sbDiffCardCategory {
+    margin-top: 20px;
+    margin-bottom: 0;
+    color: #bbb;
+}
+
+.sbDiffTitle {
+    font-size: 1.5em;
+    height: 2.5em;
+    margin: 0;
+}
+
+.sbDiffValueBox {
+    width: 50%;
+    height: 130px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.sbDiffBlock .sbDiffValueBox:nth-child(2) {
+    border-left: 2px solid transparent;
+}
+
+blockquote {
+    border-left: 5px solid #666;
+    margin: 0;
+}
+
+blockquote span {
+    display: block;
+    text-align: right;
+}
+
+.sbDiffText .chevronDown {
+    position: absolute; 
+    bottom: 0;
+    left: 0;
+    margin-left: 50%;
+	transform: translateX(-50%);
+
+    text-align: center;
+
+    display: block;
+    font-size: 1.6em;
+
+    color: #bbb;
+
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+
+.sbDiffText .chevronDown:hover {
+    color: white;
+    transition-duration: 0.2s;
+}
+
+.sbDiffTextValue {
+    display: none;
+}
