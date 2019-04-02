@@ -4,9 +4,9 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "NODE_ENV=development node ./server/server.js",
-    "build": "NODE_ENV=production node_modules/.bin/webpack --config ./configWebpack/prod.js --bail --progress",
-    "serve": "NODE_ENV=production node ./server/server.js"
+    "start": "cross-env NODE_ENV=development node ./server/server.js",
+    "build": "cross-env NODE_ENV=production node_modules/.bin/webpack --config ./configWebpack/prod.js --bail --progress",
+    "serve": "cross-env NODE_ENV=production node ./server/server.js"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,7 @@
     "babel-preset-react": "^6.5.0",
     "bootstrap": "^3.3.6",
     "compression": "^1.6.1",
+    "cross-env": "^5.2.0",
     "css-loader": "^0.23.1",
     "csslint": "^0.10.0",
     "csslint-loader": "^0.2.1",
@@ -64,6 +65,7 @@
     "react-google-charts": "^0.2.1",
     "react-router": "^2.0.0",
     "react-router-bootstrap": "^0.20.1",
+    "react-slideshow-image": "^1.1.5",
     "react-transform-hmr": "^1.0.2",
     "request": "^2.69.0",
     "style-loader": "^0.13.0",

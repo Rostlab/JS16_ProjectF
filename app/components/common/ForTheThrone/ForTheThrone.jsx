@@ -8,25 +8,19 @@ import antagonistCharacters from "json!./antagonistCharacters.json";
 import Actions from '../../../actions/CharactersPlodActions.js';
 import Store from '../../../stores/CharactersPlodStore.js';
 import Countdown from '../Countdown/Countdown.jsx';
+import Slider from './Slider/Slider.jsx';
 
 import $ from 'jquery';
 
 export default class ForTheThrone extends Component {
     constructor(props) {
-        super(props);
-
-
-        let initialSmallChars = this.getSmallCharsRow(0);
-        
+        super(props);        
 
         this.state = {
             charLeft: {},
             charRight: {},
             charLeftPlod: {},
-            charRightPlod: {},
-            smallCharsPage: 0,
-            smallChars: initialSmallChars,
-            numberOfChars: Object.keys(antagonistCharacters.characters).length
+            charRightPlod: {}
         };
     }
 
@@ -84,44 +78,6 @@ export default class ForTheThrone extends Component {
         return chars;
     }
 
-     /* getRandSmallChars() {
-        let smallChars = [];
-        let smallCharsElems = [];
-        let keys = Object.keys(antagonistCharacters.characters);
-
-        while (smallChars.length < 5) {
-            let rand = Math.floor(Math.random() * keys.length);
-            if (smallChars.indexOf(keys[rand]) === -1) {
-                smallChars.push(keys[rand]);
-                smallCharsElems.push({
-                    name: antagonistCharacters.characters[keys[rand]].name,
-                    key: keys[rand]
-                });
-            }
-        }
-
-        return smallCharsElems;
-    }  */
-
-    getSmallCharsRow(page) {
-        let smallChars = [];
-        let smallCharsElems = [];
-        let keys = Object.keys(antagonistCharacters.characters);
-        let size = 3;
-
-        for (let i = 0; i < size; i++) {
-            let rand = (page * size) + i;
-            smallChars.push(keys[rand]);
-            smallCharsElems.push({
-                name: antagonistCharacters.characters[keys[rand]].name,
-                key: keys[rand]
-            });
-
-        }
-
-        return smallCharsElems;
-    }
-
     focus() {
         $( "#aiLink" ).animate({
             opacity: "1"
@@ -132,32 +88,9 @@ export default class ForTheThrone extends Component {
         }, 0);
     }
 
-
-    nextProperty(){
-        
-        //console.log(((this.state.numberOfChars-1)/3)); /*eslint no-console:0,no-undef:0*/
-        
-        let newIndex=this.state.smallCharsPage+1;
-        let newChars = this.getSmallCharsRow(newIndex);
-        this.setState({
-            smallChars: newChars,
-            smallCharsPage: newIndex
-        });
-        //todo
-    }
-
-    prevProperty(){
-        let newIndex=this.state.smallCharsPage-1;
-        let newChars = this.getSmallCharsRow(newIndex);
-        this.setState({
-            smallChars: newChars,
-            smallCharsPage: newIndex
-        });
-        //todo
-    }
-
     render() {
         return (
+            
             <div id="fttContainer">
                 <div className="fttCharArea fttLeft" onMouseEnter={this.focus.bind(this)}></div>
                 <div className="fttCharArea fttRight" onMouseEnter={this.focus.bind(this)}></div>
@@ -226,24 +159,9 @@ export default class ForTheThrone extends Component {
                     </div>
                 </div>
                 <div id="fttCharacters">
-                    <button id="charButton" onClick={() => this.prevProperty()}
-                    disabled={this.state.smallCharsPage === 0}>
-                        Prev
-                    </button>
-                    <div className="content">
-                        {this.state.smallChars.map(function(elem, index) {
-                            return (
-                                <a target="_blank" className="fttCharacter" href={"/characters/" + elem.name} key={index}>
-                                    <img src={"/ForTheThrone/img/"+elem.key+"Small.png"} />
-                                    <div>{elem.name}</div>
-                                </a>
-                            );
-                        })}
+                <div className="content">
+                    <Slider></Slider> 
                     </div>
-                    <button id="charButton" onClick={() => this.nextProperty()}
-                    disabled={this.state.smallCharsPage>= ((this.state.numberOfChars)/3-1)}>
-                        Next
-                    </button>
                 </div>
             </div>
         );

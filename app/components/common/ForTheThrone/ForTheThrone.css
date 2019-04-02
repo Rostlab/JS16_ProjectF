@@ -13,7 +13,7 @@ p {
 #fttAntagonists {
     position: relative;
 
-    height: 620px;
+    height: 580px;
     width: 100%;
 
     overflow: hidden;
@@ -24,6 +24,12 @@ p {
     transition-timing-function: easeOutCubic;
 }
 
+#fttCharacters .indicators>div{
+    background:#333;
+}
+#fttCharacters .indicators .active{
+    background:#ccc;
+}
 @media (min-width: 1200px) {
     #fttAntagonists {
         width: 1170px;
@@ -68,7 +74,7 @@ p {
 .fttCharArea {
     position: absolute;
     top: 0;
-    height: 620px;
+    height: 580px;
     width: calc(50vw - 180px);
     z-index: 1;
 }
@@ -180,7 +186,7 @@ p {
 #fttCharacters .content {
     display: inline-block;
     position: relative;
-    width: 1000px;
+    width: 800px;
     padding-bottom: 30px;
     padding-top: 20px;
 }
@@ -211,6 +217,17 @@ p {
     text-align: left;
     border-left: 2px solid white;
 }
+.fttCharacters {
+    display: inline-block;
+    background: #000;
+    /* padding-right: 30px;
+    padding-left:30px; */
+    text-align: center;
+
+    vertical-align: top;
+
+    width: 100%;
+}
 
 .fttCharacter {
     display: inline-block;
@@ -218,8 +235,9 @@ p {
 
     vertical-align: top;
 
-    width: 20%;
+    width: 30%;
     padding: 0;
+    /* margin:20px; */
 }
 
 .fttCharacter img {
@@ -245,7 +263,7 @@ p {
 @media (min-width: 1170px) {
     .fttCharArea.fttLeft:hover ~ #fttAntagonists #fttCharRightImg, 
     .fttCharArea.fttRight:hover ~ #fttAntagonists #fttCharLeftImg {
-        height: 350px;
+        height: 320px;
         bottom: 0;
         transition-duration: 0.2s;
     }
@@ -253,33 +271,33 @@ p {
     .fttCharArea.fttLeft:hover ~ #fttAntagonists #fttCharLeftImg {
         left: 140px;
         bottom: 0;
-        height: 600px;
+        height: 560px;
     }
 
     .fttCharArea.fttRight:hover ~ #fttAntagonists #fttCharRightImg {
         right: 140px;
         bottom: 0;
-        height: 600px;
+        height: 560px;
     }
 
     .fttCharArea.fttLeft:hover ~ #fttAntagonists #fttCharLeftImg {
         left: 140px;
         bottom: 0;
-        height: 600px;
+        height: 560px;
     }
 
     .fttCharArea.fttLeft:hover ~ #fttAntagonists #fttThrone{
         margin-left: 0;
         left: 100px;
         bottom: 0;
-        height: 600px;
+        height: 560px;
     }
 
     .fttCharArea.fttRight:hover ~ #fttAntagonists #fttThrone{
         margin-left: 0;
         left: 550px;
         bottom: 0;
-        height: 600px;
+        height: 560px;
     }
 
     .fttCharArea:hover ~ #fttAntagonists #fttHeader, 
@@ -497,3 +515,4 @@ p {
         display: none;
     }
 }
+
