@@ -32,7 +32,6 @@ export default class ForTheThrone extends Component {
             charLeft: chars[0],
             charRight: chars[1]
         });
-
     }
 
     componentDidMount() {
@@ -159,8 +158,8 @@ export default class ForTheThrone extends Component {
                     </div>
                 </div>
                 <div id="fttCharacters">
-                <div className="content">
-                    <Slider></Slider> 
+                    <div className="content">
+                        <Slider></Slider> 
                     </div>
                 </div>
             </div>

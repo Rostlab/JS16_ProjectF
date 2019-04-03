@@ -26,7 +26,7 @@ export default class Slider extends Component {
     getCharPages(){
         let smallCharsElems = [];
         let keys = Object.keys(antagonistCharacters.characters);
-        let size=3;
+        let size = 4;
         for (let i = 0; i < (keys.length/size); i++) {
             let temp=[];
             for(let j=0;j<size;j++){
@@ -41,8 +41,6 @@ export default class Slider extends Component {
         }
         return smallCharsElems;
     }
-
-    
     
     render() {
         return (

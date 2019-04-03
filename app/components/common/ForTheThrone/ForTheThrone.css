@@ -6,6 +6,23 @@
     background-position: -500px 0;
 }
 
+.react-slideshow-container {
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-left: 45px;
+    padding-right: 45px;
+}
+
+.react-slideshow-container .nav:first-of-type {
+    position: relative; 
+    left: -30px;
+}
+
+.react-slideshow-container .nav:last-of-type {
+    position: relative; 
+    right: -30px;
+}
+
 p {
     text-align: justify;
 }
@@ -82,7 +99,7 @@ p {
 .fttCharText {
     position: absolute;
     text-align: left;
-    top: 50px;
+    top: 20px;
     width: 450px;
     opacity: 0;
 }
@@ -186,8 +203,8 @@ p {
 #fttCharacters .content {
     display: inline-block;
     position: relative;
-    width: 800px;
-    padding-bottom: 30px;
+    width: 1170px;
+    padding-bottom: 40px;
     padding-top: 20px;
 }
 
@@ -235,7 +252,7 @@ p {
 
     vertical-align: top;
 
-    width: 30%;
+    width: 25%;
     padding: 0;
     /* margin:20px; */
 }
@@ -465,10 +482,6 @@ p {
         width: calc(100% - 80px);
         margin: 0 40px;
     }
-    
-    #fttCharacters .content .fttCharacter {
-        width: 24%;
-    }
 
     #fttCharacters .content .fttCharacter:nth-of-type(4) ~ .fttCharacter {
         display: none;
@@ -504,15 +517,14 @@ p {
     }
 }
 
-@media (max-width: 800px) {
-    #fttCharacters .content .fttCharacter:nth-of-type(3) ~ .fttCharacter {
-        display: none;
-    }
-}
-
 @media (max-width: 350px) {
     #fttCharLeftText {
         display: none;
     }
 }
 
+@media (max-width: 550px) {
+    #fttCharacters .content .fttCharacter {
+        width: 50%;
+    }
+}
